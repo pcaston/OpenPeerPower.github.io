@@ -1,31 +1,40 @@
-# Welcome to Jekyll!
+#
 #
 # This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Iin the HTML files, these are accessed via {{ site.title }}, {{ site.email }}, etc.
+# Custom variables are accessible in the templates via {{ site.myvariable }}.
 title: Open Peer Power
-email: paul@caston.id.au
+subtitle: Open-source nano-grid power management platform running on Python 3
+author: Open Peer Power
+simple_search: https://www.google.com/search
+email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://openpeerpower.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  pcaston
+  The objective of Open Peer Power is to enable electrical power prosumers - those who both  
+  consume and produce electrical power to take control of their own situation.
+  Power comes from knowledge, control and cooperation with like minded prosumers.
 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://openpeerpower.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+source: source
+destination: public/
 # Build settings
 markdown: kramdown
+timezone: UTC
+# Default date format is "ordinal" (resulting in "July 21st 2018")
+# The format as defined in http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
+# %o yields the ordinal representation of the day
+date_format: "ordinal"
 theme: minima
 plugins:
   - jekyll-feed
