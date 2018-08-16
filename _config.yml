@@ -8,7 +8,7 @@
 # Site settings
 # Iin the HTML files, these are accessed via {{ site.title }}, {{ site.email }}, etc.
 # Custom variables are accessible in the templates via {{ site.myvariable }}.
-title: Open Peer Power
+title: Open Peer Pwer
 subtitle: Open-source nano-grid power management platform running on Python 3
 author: Open Peer Power
 simple_search: https://www.google.com/search
