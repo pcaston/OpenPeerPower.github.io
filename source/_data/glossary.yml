@@ -1,0 +1,28 @@
+- topic: Service
+  description: "[Services](/docs/scripts/service-calls/) are called to perform actions."
+- topic: Action
+  description: "[Actions](/docs/automation/action/) are events that fires once all triggers and conditions have been met."
+- topic: Event
+  description: "An [event](/docs/configuration/events/) is when something happens."
+- topic: Entity
+  description: "An [entity](/docs/configuration/platform_options/) is the representation of a single device, unit or web service."
+- topic: Device
+  description: "A device is usually a physical unit which can do or observe something."
+- topic: Discovery
+  description: "[Discovery](/components/discovery/) is the automatic setup of zeroconf/mDNS and uPnP devices after they are discovered."
+- topic: Group
+  description: "[Groups](/components/group/) are a way to organize your entities into a single unit."
+- topic: Automation
+  description: "[Automations](/docs/automation/) offer the capability to call a service based on a simple or complex trigger. Automation allows a condition such as sunset to cause an event, such as a light turning on."
+- topic: Trigger
+  description: "A [trigger](/docs/automation/trigger/) is a set of values or conditions of a platform that are defined to cause an automation to run."
+- topic: Template
+  description: "A [template](/docs/automation/templating/) is an automation definition that can include variables for the service or data from the trigger values. This allows automations to generate dynamic actions."
+- topic: Script
+  description: "[Scripts](/docs/scripts/) are components that allow users to specify a sequence of actions to be executed by Home Assistant when turned on."
+- topic: Scene
+  description: "[Scenes](/components/scene/) capture the states you want certain entities to be. For example a scene can specify that light A should be turned on and light B should be bright red." 
+- topic: Zone
+  description: "[Zones](/components/zone/) are areas that can be used for presence detection."
+- topic: Frontend
+  description: "The [frontend](/components/frontend/) is a necessary component for the UI, it is also where you can define your themes."

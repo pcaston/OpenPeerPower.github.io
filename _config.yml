@@ -1,13 +1,7 @@
-#
-#
-# This config file is meant for settings that affect your whole blog, values
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# Iin the HTML files, these are accessed via {{ site.title }}, {{ site.email }}, etc.
-# Custom variables are accessible in the templates via {{ site.myvariable }}.
+# See options at https://github.com/coogie/oscailte
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
 title: Open Peer Pwer
 subtitle: Open-source nano-grid power management platform running on Python 3
 author: Open Peer Power
@@ -35,9 +29,20 @@ timezone: UTC
 # The format as defined in http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
 # %o yields the ordinal representation of the day
 date_format: "ordinal"
-theme: minima
+kramdown:
+  input: GFM
+  auto_ids:       false
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  parse_block_html: true
+
+highlighter: rouge
 plugins:
   - jekyll-feed
+  - jekyll-time-to-read
+  - octopress-include-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
