@@ -12,29 +12,6 @@ description: Open-source power management platform running on Python 3. Monitor,
 ---
 <div class="frontpage">
   <div class="grid">
-    <div class="grid__item one-third lap-one-third palm-one-whole">
-      <div class='current-version material-card text'>
-        <h1>Current Version: {{ site.current_major_version }}.{{ site.current_minor_version }}.{{ site.current_patch_version }}</h1>
-        Released: <span class='release-date'>{{ site.date_released | date: '%B %d, %Y' }}</span>
-
-        <div class='links'>
-          <a href='/latest-release-notes/'>Release notes</a>
-        </div>
-      </div>
-    </div>
-    <div class="grid__item two-thirds lap-two-thirds palm-one-whole">
-      <div class='recent-posts material-card text'>
-        <h1>Recent Blog Posts</h1>
-
-        {% for post in site.posts limit: 3 %}
-          <li class="post">
-            <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
-            <small class='blog-date'>{{ post.date_formatted }}</small>
-          </li>
-        {% endfor %}
-      </div>
-    </div>
-
     <div class="grid__item one-third lap-one-whole palm-one-whole usp">
       <div class="grid">
         <div class="grid__item one-whole lap-one-third">
