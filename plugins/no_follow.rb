@@ -17,7 +17,7 @@ module Jekyll
                 next unless link.get_attribute('href') =~ /\Ahttp/i
 
                 # Play nice with our own links
-                next if link.get_attribute('href') =~ /\Ahttps?:\/\/\w*.?home-assistant.io/i
+                next if link.get_attribute('href') =~ /\Ahttps?:\/\/\w*.?openpeerpower.io/i
 
                 # Play nice with links that already have a rel attribute set
                 rel.unshift(link.get_attribute('rel'))

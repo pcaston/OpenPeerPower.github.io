@@ -55,7 +55,7 @@ further defined and clarified by project maintainers.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at [safety@home-assistant.io][email]. All
+reported by contacting the project team. All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The project team is
 obligated to maintain confidentiality with regard to the reporter of an incident.
@@ -76,5 +76,3 @@ This Code of Conduct was first adopted January 21st, 2017 and announced in [this
 
 [homepage]: http://contributor-covenant.org
 [version]: http://contributor-covenant.org/version/1/4/
-[email]: mailto:safety@home-assistant.io
-[coc-blog]: https://home-assistant.io/blog/2017/01/21/home-assistant-governance/
