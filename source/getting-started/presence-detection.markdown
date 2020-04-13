@@ -1,6 +1,6 @@
 ---
 title: "Setting up presence detection"
-description: "Instructions on how to setup presence detection within Open Peer Power."
+description: "Instructions on how to setup presence detection within Home Assistant."
 ---
 
 Presence detection detects if people are home, which is the most valuable input for automation. Knowing who is home or where they are, will open a whole range of other automation options:
@@ -10,16 +10,16 @@ Presence detection detects if people are home, which is the most valuable input 
 
 <p class='img'>
 <img src='/images/screenshots/map.png' />
-Screenshot of Open Peer Power showing a school, work and home zone and two people.
+Screenshot of Home Assistant showing a school, work and home zone and two people.
 </p>
 
 ### Adding presence detection
 
 There are different ways of setting up presence detection. Usually the easiest way to detect presence is by checking which devices are connected to the network. You can do that if you have one of our [supported routers][routers]. By leveraging what your router already knows, you can easily detect if people are at home.
 
-It's also possible to run an app on your phone to provide detailed location information to your Open Peer Power instance. For iOS and Android, we suggest using the [Open Peer Power Companion app][companion].
+It's also possible to run an app on your phone to provide detailed location information to your Home Assistant instance. For iOS and Android, we suggest using the [Home Assistant Companion app][companion].
 
-During the setup of Open Peer Power Companion on your mobile device, the app will ask for permission to allow the device's location to be provided to Open Peer Power. Allowing this will create a `device_tracker` entity for that device which can be used in automations and conditions.
+During the setup of Home Assistant Companion on your mobile device, the app will ask for permission to allow the device's location to be provided to Home Assistant. Allowing this will create a `device_tracker` entity for that device which can be used in automations and conditions.
 
 
 ### Zones
