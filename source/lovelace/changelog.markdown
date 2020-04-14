@@ -136,7 +136,7 @@ description: "Changelog of the Lovelace UI."
 - 🔧 Groups are now togglable
 
 ## Changes in 0.86.0
-- ❤️ Lovelace is now the default UI for Home Assistant!
+- ❤️ Lovelace is now the default UI for Open Peer Power!
 - ❤️ New Lovelace [demos](https://demo.home-assistant.io/#/lovelace/0) page
 - 🔧 [thermostat card]: Fix sizing
 - 🔧 [gauge card]: Fix sizing

@@ -1,6 +1,6 @@
 ---
 title: "Dashboards and Views"
-description: "The Lovelace UI is a powerful and configurable interface for Home Assistant."
+description: "The Lovelace UI is a powerful and configurable interface for Open Peer Power."
 ---
 
 ### Dashboards
@@ -367,7 +367,7 @@ type:
   type: string
 entity:
   required: true
-  description: Home Assistant entity ID.
+  description: Open Peer Power entity ID.
   type: string
 name:
   required: false
@@ -553,7 +553,7 @@ type:
   type: string
 entity:
   required: true
-  description: Home Assistant entity ID.
+  description: Open Peer Power entity ID.
   type: string
 name:
   required: false

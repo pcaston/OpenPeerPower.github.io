@@ -1,6 +1,6 @@
 ---
 title: Meteorologisk institutt (Met.no)
-description: Instructions on how to integrate Met.no within Home Assistant.
+description: Instructions on how to integrate Met.no within Open Peer Power.
 ha_category:
   - Weather
 ha_release: 0.79

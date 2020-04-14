@@ -1,6 +1,6 @@
 ---
-title: Zigbee Home Automation
-description: Instructions on how to integrate your Zigbee Home Automation (ZHA) devices within Home Assistant.
+title: Zigbee Power Management
+description: Instructions on how to integrate your Zigbee Power Management (ZHA) devices within Open Peer Power.
 ha_category:
   - Hub
   - Binary Sensor
@@ -20,10 +20,10 @@ ha_codeowners:
 ha_domain: zha
 ---
 
-[Zigbee Home Automation](https://zigbeealliance.org)
-integration for Home Assistant allows you to connect many off-the-shelf Zigbee based devices to Home Assistant, using one of the available Zigbee radio modules that is compatible with [zigpy](https://github.com/zigpy/zigpy) (an open source Python library implementing a Zigbee stack, which in turn relies on separate libraries which can each interface a with Zigbee radio module a different manufacturer).
+[Zigbee Power Management](https://zigbeealliance.org)
+integration for Open Peer Power allows you to connect many off-the-shelf Zigbee based devices to Open Peer Power, using one of the available Zigbee radio modules that is compatible with [zigpy](https://github.com/zigpy/zigpy) (an open source Python library implementing a Zigbee stack, which in turn relies on separate libraries which can each interface a with Zigbee radio module a different manufacturer).
 
-There is currently support for the following device types within Home Assistant:
+There is currently support for the following device types within Open Peer Power:
 
 - Binary Sensor
 - Cover
@@ -35,9 +35,9 @@ There is currently support for the following device types within Home Assistant:
 
 ## ZHA exception and deviation handling
 
-Zigbee devices that deviate from or do not fully conform to the standard specifications set by the [Zigbee Alliance](https://zigbeealliance.org) may require the development of custom [ZHA Device Handlers](https://github.com/dmulcahey/zha-device-handlers) (ZHA custom quirks handler implementation) to for all their functions to work properly with the ZHA integration in Home Assistant. These ZHA Device Handlers for Home Assistant can thus be used to parse custom messages to and from Zigbee devices.
+Zigbee devices that deviate from or do not fully conform to the standard specifications set by the [Zigbee Alliance](https://zigbeealliance.org) may require the development of custom [ZHA Device Handlers](https://github.com/dmulcahey/zha-device-handlers) (ZHA custom quirks handler implementation) to for all their functions to work properly with the ZHA integration in Open Peer Power. These ZHA Device Handlers for Open Peer Power can thus be used to parse custom messages to and from Zigbee devices.
 
-The custom quirks implementations for zigpy implemented as ZHA Device Handlers for Home Assistant are a similar concept to that of [Hub-connected Device Handlers for the SmartThings Classics platform](https://docs.smartthings.com/en/latest/device-type-developers-guide/) as well as that of [Zigbee-Shepherd Converters as used by Zigbee2mqtt](https://www.zigbee2mqtt.io/how_tos/how_to_support_new_devices.html), meaning they are each virtual representations of a physical device that expose additional functionality that is not provided out-of-the-box by the existing integration between these platforms.
+The custom quirks implementations for zigpy implemented as ZHA Device Handlers for Open Peer Power are a similar concept to that of [Hub-connected Device Handlers for the SmartThings Classics platform](https://docs.smartthings.com/en/latest/device-type-developers-guide/) as well as that of [Zigbee-Shepherd Converters as used by Zigbee2mqtt](https://www.zigbee2mqtt.io/how_tos/how_to_support_new_devices.html), meaning they are each virtual representations of a physical device that expose additional functionality that is not provided out-of-the-box by the existing integration between these platforms.
 
 ## Known working Zigbee radio modules
 
@@ -71,7 +71,7 @@ The custom quirks implementations for zigpy implemented as ZHA Device Handlers f
 
 ## Configuration - GUI
 
-From the Home Assistant front page go to **Configuration** and then select **Integrations** from the list.
+From the Open Peer Power front page go to **Configuration** and then select **Integrations** from the list.
 
 Use the plus button in the bottom right to add a new integration called **ZHA**.
 
@@ -89,7 +89,7 @@ In the popup:
 
 - Press `Submit` to save changes.
 
-The success dialog will appear or an error will be displayed in the popup. An error is likely if Home Assistant can't access the USB device or your device is not up to date. Refer to [Troubleshooting](#troubleshooting) below for more information.
+The success dialog will appear or an error will be displayed in the popup. An error is likely if Open Peer Power can't access the USB device or your device is not up to date. Refer to [Troubleshooting](#troubleshooting) below for more information.
 
 ## Configuration - Manual
 
@@ -165,7 +165,7 @@ Using a Philips Hue Dimmer Switch is probably the easiest way to factory-reset y
 
 Follow the instructions on [https://github.com/vanviegen/hue-thief/](https://github.com/vanviegen/hue-thief/) (EZSP-based Zigbee USB stick required)
 
-### ZHA Start up issue with Home Assistant Supervised or Home Assistant Core on Docker
+### ZHA Start up issue with Open Peer Power Supervised or Open Peer Power Core on Docker
 
 On Linux hosts ZHA can fail to start during HA startup or restarts because the Zigbee USB device is being claimed by the host's modemmanager service. To fix this disable the modemmanger on the host system.
 

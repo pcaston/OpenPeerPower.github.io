@@ -1,25 +1,25 @@
 ---
 title: "Installation on a Synology NAS"
-description: "Instructions to install Home Assistant on a Synology NAS."
+description: "Instructions to install Open Peer Power on a Synology NAS."
 redirect_from: /getting-started/installation-synology/
 ---
 
 <div class='note warning'>
 
-Synology only provide Python 3.5.1, which is not compatible with Home Assistant 0.65.0 or later. Until Synology offer an updated version of Python, Home Assistant 0.64 is the most recent version that will be able to be installed. You can manually specify the version of Home Assistant to install, for example to install version 0.64.3 you would do `./python3 -m pip install homeassistant==0.64.3`
+Synology only provide Python 3.5.1, which is not compatible with Open Peer Power 0.65.0 or later. Until Synology offer an updated version of Python, Open Peer Power 0.64 is the most recent version that will be able to be installed. You can manually specify the version of Open Peer Power to install, for example to install version 0.64.3 you would do `./python3 -m pip install homeassistant==0.64.3`
 
 </div>
 
-There are 3 alternatives, when using Home Assistant on Synology NAS:
-1. Using Home Assistant Core on Docker
-2. Directly running Home Assistant Core on DSM
-3. Using the Home Assistant a VM (if you have an Intel based Synology)
+There are 3 alternatives, when using Open Peer Power on Synology NAS:
+1. Using Open Peer Power Core on Docker
+2. Directly running Open Peer Power Core on DSM
+3. Using the Open Peer Power a VM (if you have an Intel based Synology)
 
 Option 1 is described on the [Docker installation page](/docs/installation/docker/).
 
-Option 3 uses the Synology Based Virtual Machine Manager. You can import the VDI image to be found at the [Home Assistant installation page](/hassio/installation/). Download the image and add it to the image store. The go to "Virtual Machine" in the interface and create a new VM with the image you just added.
+Option 3 uses the Synology Based Virtual Machine Manager. You can import the VDI image to be found at the [Open Peer Power installation page](/hassio/installation/). Download the image and add it to the image store. The go to "Virtual Machine" in the interface and create a new VM with the image you just added.
 
-The main benefit from this method is that you can assign Home Assistant its own IP number, so there is no risk regarding TCP/UDP port conflicts. USB dongles an be connected to the VM without the need to install a driver in DSM.
+The main benefit from this method is that you can assign Open Peer Power its own IP number, so there is no risk regarding TCP/UDP port conflicts. USB dongles an be connected to the VM without the need to install a driver in DSM.
 
 Option 2 is described below.
 
@@ -27,8 +27,8 @@ The following configuration has been tested on Synology 413j running DSM 6.0-732
 
 Running these commands will:
 
-- Install Home Assistant
-- Enable Home Assistant to be launched on `http://localhost:8123`
+- Install Open Peer Power
+- Enable Open Peer Power to be launched on `http://localhost:8123`
 
 Using the Synology webadmin:
 
@@ -56,13 +56,13 @@ Install PIP (Python's package management system)
 # ./python3 -m ensurepip
 ```
 
-Use PIP to install the Home Assistant package 0.64.3
+Use PIP to install the Open Peer Power package 0.64.3
 
 ```bash
 # ./python3 -m pip install homeassistant==0.64.3
 ```
 
-Create a Home Assistant configuration directory & switch to it
+Create a Open Peer Power configuration directory & switch to it
 
 ```bash
 # mkdir /volume1/homeassistant
@@ -80,7 +80,7 @@ Create hass-daemon file using the following code (edit the variables in uppercas
 
 # Package
 PACKAGE="homeassistant"
-DNAME="Home Assistant"
+DNAME="Open Peer Power"
 
 # Others
 USER="homeassistant"
@@ -218,25 +218,25 @@ That's it... you're all set to go
 
 Here are some useful commands:
 
-- Start Home Assistant:
+- Start Open Peer Power:
 
 ```bash
 $ sudo /volume1/homeassistant/hass-daemon start
 ```
 
-- Stop Home Assistant:
+- Stop Open Peer Power:
 
 ```bash
 $ sudo /volume1/homeassistant/hass-daemon stop
 ```
 
-- Restart Home Assistant:
+- Restart Open Peer Power:
 
 ```bash
 $ sudo /volume1/homeassistant/hass-daemon restart
 ```
 
-- Upgrade Home Assistant::
+- Upgrade Open Peer Power::
 
 ```bash
 $  /volume1/@appstore/py3k/usr/local/bin/python3 -m pip install --upgrade homeassistant

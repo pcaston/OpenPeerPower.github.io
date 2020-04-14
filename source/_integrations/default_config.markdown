@@ -1,16 +1,16 @@
 ---
 title: Default Config
-description: The default configuration integration will initiate a default configuration for Home Assistant.
+description: The default configuration integration will initiate a default configuration for Open Peer Power.
 ha_category:
   - Other
 ha_release: 0.88
 ha_domain: default_config
 ---
 
-This integration is a meta-component and configures a default set of integrations for Home Assistant to load. The integrations that will be loaded are:
+This integration is a meta-component and configures a default set of integrations for Open Peer Power to load. The integrations that will be loaded are:
 
 - [Automation](/integrations/automation/)
-- [Home Assistant Cloud](/integrations/cloud/)
+- [Open Peer Power Cloud](/integrations/cloud/)
 - [Configuration](/integrations/config/)
 - [Frontend](/integrations/frontend/)
 - [History](/integrations/history/)
@@ -28,7 +28,7 @@ This integration is a meta-component and configures a default set of integration
 
 ## Configuration
 
-To integrate this into Home Assistant, add the following section to your `configuration.yaml` file:
+To integrate this into Open Peer Power, add the following section to your `configuration.yaml` file:
 
 ```yaml
 # Example configuration.yaml entry

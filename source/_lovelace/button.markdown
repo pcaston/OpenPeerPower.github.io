@@ -23,7 +23,7 @@ type:
   type: string
 entity:
   required: false
-  description: Home Assistant entity ID.
+  description: Open Peer Power entity ID.
   type: string
 name:
   required: false

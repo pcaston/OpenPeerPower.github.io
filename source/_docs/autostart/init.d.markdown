@@ -1,10 +1,10 @@
 ---
 title: "Autostart using init.d"
-description: "Documentation about setting up Home Assistant as a daemon running under init.d."
+description: "Documentation about setting up Open Peer Power as a daemon running under init.d."
 redirect_from: /getting-started/autostart-init.d/
 ---
 
-Home Assistant can run as a daemon within init.d with the script below.
+ Open Peer Power can run as a daemon within init.d with the script below.
 
 ## 1. Copy script
 
@@ -18,11 +18,11 @@ sudo chmod +x /etc/init.d/hass-daemon
 
 ## 2. Select a user
 
-Create or pick a user that the Home Assistant daemon will run under. Update script to set `RUN_AS` to the username that should be used to execute Home Assistant.
+Create or pick a user that the Open Peer Power daemon will run under. Update script to set `RUN_AS` to the username that should be used to execute Open Peer Power.
 
 ## 3. Change `hass` executable and other variables if required
 
-Some installation environments may require a change in the Home Assistant executable `hass`. Update script to set `HASS_BIN` to the appropriate `hass` executable path. Please also check the other variables for the appropriate value. In general the defaults should work
+Some installation environments may require a change in the Open Peer Power executable `hass`. Update script to set `HASS_BIN` to the appropriate `hass` executable path. Please also check the other variables for the appropriate value. In general the defaults should work
 
 ## 4. Install this service
 
@@ -53,13 +53,13 @@ File `/var/log/homeassistant/home-assistant.log`:
 
 ### 6. Restart Machine
 
-That's it. Restart your machine and Home Assistant should start automatically.
+That's it. Restart your machine and Open Peer Power should start automatically.
 
-If Home Assistant does not start, check the log file output for errors at `/var/log/homeassistant/home-assistant.log`
+If Open Peer Power does not start, check the log file output for errors at `/var/log/homeassistant/home-assistant.log`
 
-### Extra: Running commands before Home Assistant executes
+### Extra: Running commands before Open Peer Power executes
 
-If any commands need to run before executing Home Assistant (like loading a virtual environment), put them in PRE_EXEC. This command must end with a semicolon.
+If any commands need to run before executing Open Peer Power (like loading a virtual environment), put them in PRE_EXEC. This command must end with a semicolon.
 
 ### Daemon script
 
@@ -74,7 +74,7 @@ If any commands need to run before executing Home Assistant (like loading a virt
 # Description:       Home\ Assistant
 ### END INIT INFO
 
-# /etc/init.d Service Script for Home Assistant
+# /etc/init.d Service Script for Open Peer Power
 # Created with: https://gist.github.com/naholyr/4275302#file-new-service-sh
 PRE_EXEC=""
 # Typically /usr/bin/hass
@@ -117,7 +117,7 @@ stop() {
 }
 
 install() {
-  echo "Installing Home Assistant Daemon (hass-daemon)"
+  echo "Installing Open Peer Power Daemon (hass-daemon)"
   update-rc.d hass-daemon defaults
   create_piddir
   mkdir -p $CONFIG_DIR
@@ -140,7 +140,7 @@ uninstall() {
     echo $LOG_DIR
     update-rc.d -f hass-daemon remove
     rm -fv "$0"
-    echo "Home Assistant Daemon has been removed. Home Assistant is still installed."
+    echo " Open Peer Power Daemon has been removed. Open Peer Power is still installed."
   fi
 }
 
@@ -195,7 +195,7 @@ esac
 # Description:       Home\ Assistant
 ### END INIT INFO
 
-# /etc/init.d Service Script for Home Assistant
+# /etc/init.d Service Script for Open Peer Power
 # Created with: https://gist.github.com/naholyr/4275302#file-new-service-sh
 PRE_EXEC="cd /srv/homeassistant; python3 -m venv .; source bin/activate;"
 # Typically /usr/bin/hass
@@ -237,7 +237,7 @@ stop() {
 }
 
 install() {
-  echo "Installing Home Assistant Daemon (hass-daemon)"
+  echo "Installing Open Peer Power Daemon (hass-daemon)"
   update-rc.d hass-daemon defaults
   create_piddir
   mkdir -p $CONFIG_DIR
@@ -260,7 +260,7 @@ uninstall() {
     echo $LOG_DIR
     update-rc.d -f hass-daemon remove
     rm -fv "$0"
-    echo "Home Assistant Daemon has been removed. Home Assistant is still installed."
+    echo " Open Peer Power Daemon has been removed. Open Peer Power is still installed."
   fi
 }
 

@@ -1,6 +1,6 @@
 ---
 title: Season
-description: Instructions on how to add season sensors into Home Assistant.
+description: Instructions on how to add season sensors into Open Peer Power.
 ha_category:
   - Utility
 ha_iot_class: Local Polling

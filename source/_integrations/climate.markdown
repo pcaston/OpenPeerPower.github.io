@@ -1,6 +1,6 @@
 ---
 title: Climate
-description: Instructions on how to setup climate control devices within Home Assistant.
+description: Instructions on how to setup climate control devices within Open Peer Power.
 ha_category:
   - Climate
 ha_release: 0.19
@@ -18,7 +18,7 @@ Available services: `climate.set_aux_heat`, `climate.set_preset_mode`, `climate.
 
 <div class='note'>
 
-Not all climate services may be available for your platform. Be sure to check the available services Home Assistant has enabled by checking <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services**.
+Not all climate services may be available for your platform. Be sure to check the available services Open Peer Power has enabled by checking <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services**.
 
 </div>
 

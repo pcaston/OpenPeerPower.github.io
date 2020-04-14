@@ -1,12 +1,12 @@
 ---
 title: "Events"
-description: "Describes all there is to know about events in Home Assistant."
+description: "Describes all there is to know about events in Open Peer Power."
 redirect_from: /topics/events/
 ---
 
-The core of Home Assistant is the event bus. The event bus allows any integration to fire or listen for events. It is the core of everything. For example, any state change will be announced on the event bus as a `state_changed` event containing the previous and the new state of an entity.
+The core of Open Peer Power is the event bus. The event bus allows any integration to fire or listen for events. It is the core of everything. For example, any state change will be announced on the event bus as a `state_changed` event containing the previous and the new state of an entity.
 
-Home Assistant contains a few built-in events that are used to coordinate between various components.
+ Open Peer Power contains a few built-in events that are used to coordinate between various components.
 
 ### Event `state_changed`
 Event `state_changed` is fired when a state changes. Both `old_state` and `new_state` are state objects. [Documentation about state objects.](/topics/state_object/)
@@ -27,7 +27,7 @@ Event `time_changed` is fired every second by the timer and contains the current
 
 
 ### Event `service_registered`
-Event `service_registered` is fired when a new service has been registered within Home Assistant.
+Event `service_registered` is fired when a new service has been registered within Open Peer Power.
 
 | Field     | Description                              |
 | --------- | ---------------------------------------- |

@@ -1,6 +1,6 @@
 ---
 title: DHT Sensor
-description: Instructions on how to integrate DHTxx sensors within Home Assistant.
+description: Instructions on how to integrate DHTxx sensors within Open Peer Power.
 ha_category:
   - DIY
 ha_release: 0.7

@@ -1,6 +1,6 @@
 ---
 title: SMTP
-description: Instructions on how to add e-mail notifications to Home Assistant.
+description: Instructions on how to add e-mail notifications to Open Peer Power.
 ha_category:
   - Notifications
 ha_release: pre 0.7
@@ -9,7 +9,7 @@ ha_codeowners:
 ha_domain: smtp
 ---
 
-The `smtp` platform allows you to deliver notifications from Home Assistant to an e-mail recipient.
+The `smtp` platform allows you to deliver notifications from Open Peer Power to an e-mail recipient.
 
 To enable notification by e-mail in your installation, add the following to your `configuration.yaml` file:
 
@@ -92,7 +92,7 @@ notify:
     recipient:
       - james@gmail.com
       - bob@gmail.com
-    sender_name: My Home Assistant
+    sender_name: My Open Peer Power
 ```
 
 Keep in mind that Google has some extra layers of protection which need special attention (Hint: 'Less secure apps'). If you have 2-step verification enabled on your Google account, you'll need to use [an application-specific password](https://support.google.com/mail/answer/185833?hl=en).

@@ -1,6 +1,6 @@
 ---
 title: BMW Connected Drive
-description: Instructions on how to setup your BMW Connected Drive account with Home Assistant.
+description: Instructions on how to setup your BMW Connected Drive account with Open Peer Power.
 ha_category:
   - Car
   - Binary Sensor
@@ -51,7 +51,7 @@ bmw_connected_drive:
   type: map
   keys:
     name:
-      description: Name of your account in Home Assistant.
+      description: Name of your account in Open Peer Power.
       required: true
       type: string
     username:
@@ -89,7 +89,7 @@ A few examples on how to use the notification service.
 action:
   service: notify.bmw_connected_drive_<your_vehicle>
   data:
-    title: Message from Home Assistant # optional, will default to "Home Assistant" when left empty
+    title: Message from Open Peer Power # optional, will default to "Open Peer Power" when left empty
     message: The text of the message you want to send to your vehicle
 ```
 

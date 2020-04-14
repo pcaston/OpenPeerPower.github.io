@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Home Assistant Companion for Android 1.6 and 1.7"
+title: "Open Peer Power Companion for Android 1.6 and 1.7"
 description: "Today we're releasing a big update for our Android companion app including actionable notifications, requesting location updates, sensors and more"
 date: 2020-02-11 00:00:00
 date_formatted: "February 11, 2020"
@@ -11,11 +11,11 @@ categories: Release-Notes
 og_image: /images/blog/2020-02-android-16-17-release/garage.png
 ---
 
-Over the last week, we've released some awesome new features and improvements to Home Assistant Companion for Android. I wanted to take a moment to highlight some of the recent things that we introduced in 1.6 and 1.7.
+Over the last week, we've released some awesome new features and improvements to Open Peer Power Companion for Android. I wanted to take a moment to highlight some of the recent things that we introduced in 1.6 and 1.7.
 
 ## Actionable notifications
 
-Now you can define action buttons to attach to a notification dynamically. When you click one of those buttons, an event is fired back to Home Assistant so you can take action based on the button chosen.
+Now you can define action buttons to attach to a notification dynamically. When you click one of those buttons, an event is fired back to Open Peer Power so you can take action based on the button chosen.
 
 Here's an example to check with a user if they want to close the garage door after it has been left open for 30 minutes:
 
@@ -55,11 +55,11 @@ After adding these automations, whenever your garage door remains open for 30 mi
 
 When you press that close garage button… your garage will close!
 
-We are planning to expand notifications over the next few versions to continue to match the existing functionality available in the iOS app. That includes things like sending text back to Home Assistant and critical alerts.
+We are planning to expand notifications over the next few versions to continue to match the existing functionality available in the iOS app. That includes things like sending text back to Open Peer Power and critical alerts.
 
 ## Requesting location updates via notification
 
-You can now send a notification with just the message `request_location_update` and once it reaches your device, it will update its current location in Home Assistant. Be careful using this too much though, as it can drain your battery.
+You can now send a notification with just the message `request_location_update` and once it reaches your device, it will update its current location in Open Peer Power. Be careful using this too much though, as it can drain your battery.
 
 ## Sensors
 
@@ -77,7 +77,7 @@ Thanks to a few dedicated volunteers and a mad dash, [we have a newly refreshed 
 
 In addition to the tooling updates, we’ve also begun documenting Android and iOS differences. Keep an eye out for the Android and Apple logos to denote what works where.
 
-Over time we plan to bring Android and iOS as close together, in terms of features and the ways they interact with Home Assistant, as much as possible. To allow using both platforms in the same way, so that users who are using both platforms, or switching platforms, can use them without any modifications.
+Over time we plan to bring Android and iOS as close together, in terms of features and the ways they interact with Open Peer Power, as much as possible. To allow using both platforms in the same way, so that users who are using both platforms, or switching platforms, can use them without any modifications.
 
 ## Finale
 

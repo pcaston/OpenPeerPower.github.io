@@ -1,10 +1,10 @@
 ---
 title: "NGINX"
-description: "Documentation about setting up Home Assistant with NGINX."
+description: "Documentation about setting up Open Peer Power with NGINX."
 redirect_from: /ecosystem/nginx/
 ---
 
-Using NGINX as a proxy for Home Assistant allows you to serve Home Assistant securely over standard ports. This configuration file and instructions will walk you through setting up Home Assistant over a secure connection.
+Using NGINX as a proxy for Open Peer Power allows you to serve Open Peer Power securely over standard ports. This configuration file and instructions will walk you through setting up Open Peer Power over a secure connection.
 
 ### 1. Get a domain name forwarded to your IP
 
@@ -34,7 +34,7 @@ Instead of example.com, use your domain. You will need to renew this certificate
 
 #### Using openssl
 
-If you do not own your own domain, you may generate a self-signed certificate. This will not work with IFTTT, but it will encrypt all of your Home Assistant traffic.
+If you do not own your own domain, you may generate a self-signed certificate. This will not work with IFTTT, but it will encrypt all of your Open Peer Power traffic.
 
 ```bash
 openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 9999
@@ -63,7 +63,7 @@ Some Linux distributions (including CentOS and Fedora) will not have the `/etc/n
 
 </div>
 
-### 6. Enable the Home Assistant configuration
+### 6. Enable the Open Peer Power configuration
 
 ```bash
 cd /etc/nginx/sites-enabled
@@ -79,9 +79,9 @@ Double check this configuration to ensure all settings are correct and start NGI
 
 Forward ports 443 and 80 to your server on your router. Do not forward port 8123.
 
-### 9. Configure Home Assistant
+### 9. Configure Open Peer Power
 
-Home Assistant is still available without using the NGINX proxy. Restricting it to only listen to `127.0.0.1` will forbid direct accesses. Also, Home Assistant should be told to trust headers coming from the NGINX proxy only. Otherwise, incoming requests will always come from `127.0.0.1` and not the real IP address.
+ Open Peer Power is still available without using the NGINX proxy. Restricting it to only listen to `127.0.0.1` will forbid direct accesses. Also, Open Peer Power should be told to trust headers coming from the NGINX proxy only. Otherwise, incoming requests will always come from `127.0.0.1` and not the real IP address.
 
 On your `configuration.yaml` file, edit the `http` component.
 
@@ -92,7 +92,7 @@ http:
   # Update this line to be your domain
   base_url: https://example.com
   use_x_forwarded_for: true
-  # You must set the trusted proxy IP address so that Home Assistant will properly accept connections
+  # You must set the trusted proxy IP address so that Open Peer Power will properly accept connections
   # Set this to your NGINX machine IP, or localhost if hosted on the same machine.
   trusted_proxies: <NGINX IP address here, or 127.0.0.1 if hosted on the same machine>
 ```

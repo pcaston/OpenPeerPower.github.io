@@ -1,14 +1,14 @@
 ---
 title: "Installation on Docker"
-description: "Instructions to install Home Assistant on a Docker."
+description: "Instructions to install Open Peer Power on a Docker."
 redirect_from: /getting-started/installation-docker/
 ---
 
 <div class='note warning'>
 
-These below instructions are for an installation of Home Assistant Core running in your own Docker environment, which you manage yourself.
+These below instructions are for an installation of Open Peer Power Core running in your own Docker environment, which you manage yourself.
 
-For an installation of Home Assistant Supervised, which includes Home Assistant's add-on ecosystem, see the instructions for installing [Home Assistant Supervised on a generic Linux host](/hassio/installation/#alternative-install-home-assistant-supervised-on-a-generic-linux-host/).
+For an installation of Open Peer Power Supervised, which includes Open Peer Power's add-on ecosystem, see the instructions for installing [Open Peer Power Supervised on a generic Linux host](/hassio/installation/#alternative-install-home-assistant-supervised-on-a-generic-linux-host/).
 
 </div>
 
@@ -65,18 +65,18 @@ It’s easier to understand the trick when put into practice. Here we would like
 docker run --init -d --name="home-assistant" -e "TZ=America/Los_Angeles" -v //c/Users/<your login name>/homeassistant:/config --net=host homeassistant/home-assistant:stable
 ```
 
-When running Home Assistant in Docker on Windows, you may have some difficulty getting ports to map for routing (since the `--net=host` switch actually applies to the hypervisor's network interface). To get around this, you will need to add port proxy ipv4 rules to your local Windows machine, like so (Replacing '192.168.1.10' with whatever your Windows IP is, and '10.0.50.2' with whatever your Docker container's IP is):
+When running Open Peer Power in Docker on Windows, you may have some difficulty getting ports to map for routing (since the `--net=host` switch actually applies to the hypervisor's network interface). To get around this, you will need to add port proxy ipv4 rules to your local Windows machine, like so (Replacing '192.168.1.10' with whatever your Windows IP is, and '10.0.50.2' with whatever your Docker container's IP is):
 
 ```bash
 netsh interface portproxy add v4tov4 listenaddress=192.168.1.10 listenport=8123 connectaddress=10.0.50.2 connectport=8123
 netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=8123 connectaddress=10.0.50.2 connectport=8123
 ```
 
-This will let you access your Home Assistant portal from `http://localhost:8123`, and if you forward port 8123 on your router to your machine IP, the traffic will be forwarded on through to the Docker container.
+This will let you access your Open Peer Power portal from `http://localhost:8123`, and if you forward port 8123 on your router to your machine IP, the traffic will be forwarded on through to the Docker container.
 
 ### Synology NAS
 
-As Synology within DSM now supports Docker (with a neat UI), you can simply install Home Assistant using Docker without the need for command-line. For details about the package (including compatibility-information, if your NAS is supported), see <https://www.synology.com/en-us/dsm/packages/Docker>
+As Synology within DSM now supports Docker (with a neat UI), you can simply install Open Peer Power using Docker without the need for command-line. For details about the package (including compatibility-information, if your NAS is supported), see <https://www.synology.com/en-us/dsm/packages/Docker>
 
 The steps would be:
 
@@ -89,12 +89,12 @@ The steps would be:
 - Choose a container-name you want (e.g., "homeassistant")
 - Click on "Advanced Settings"
 - Set "Enable auto-restart" if you like
-- Within "Volume" click on "Add Folder" and choose either an existing folder or add a new folder. The "mount path" has to be "/config", so that Home Assistant will use it for the configs and logs. It is therefore recommended that the folder you choose should be named "config" or "homeassistant/config" to avoid confusion when referencing it within service calls.
+- Within "Volume" click on "Add Folder" and choose either an existing folder or add a new folder. The "mount path" has to be "/config", so that Open Peer Power will use it for the configs and logs. It is therefore recommended that the folder you choose should be named "config" or "homeassistant/config" to avoid confusion when referencing it within service calls.
 - Within "Network" select "Use same network as Docker Host"
-- To ensure that Home Assistant displays the correct timezone go to the "Environment" tab and click the plus sign then add `variable` = `TZ` & `value` = `Europe/London` choosing [your correct timezone](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+- To ensure that Open Peer Power displays the correct timezone go to the "Environment" tab and click the plus sign then add `variable` = `TZ` & `value` = `Europe/London` choosing [your correct timezone](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 - Confirm the "Advanced Settings"
 - Click on "Next" and then "Apply"
-- Your Home Assistant within Docker should now run and will serve the web interface from port 8123 on your Docker host (this will be your Synology NAS IP address - for example `http://192.168.1.10:8123`)
+- Your Open Peer Power within Docker should now run and will serve the web interface from port 8123 on your Docker host (this will be your Synology NAS IP address - for example `http://192.168.1.10:8123`)
 
 If you are using the built-in firewall, you must also add the port 8123 to allowed list. This can be found in "Control Panel -> Security" and then the Firewall tab. Click "Edit Rules" besides the Firewall Profile dropdown box. Create a new rule and select "Custom" for Ports and add 8123. Edit Source IP if you like or leave it at default "All". Action should stay at "Allow".
 
@@ -120,7 +120,7 @@ sudo docker run --restart always -d --name="homeassistant" -v /PATH_TO_YOUR_CONF
 
 Complete the remainder of the Z-Wave configuration by [following the instructions here.](/docs/z-wave/installation)
 
-Remark: to update your Home Assistant on your Docker within Synology NAS, you just have to do the following:
+Remark: to update your Open Peer Power on your Docker within Synology NAS, you just have to do the following:
 
 - Go to the Docker-app and move to "Registry"-section
 - Find "homeassistant/home-assistant" within registry and click on "Download". Choose the "stable" tag.
@@ -128,22 +128,22 @@ Remark: to update your Home Assistant on your Docker within Synology NAS, you ju
 - Move to "Container"-section
 - Stop your container if it's running
 - Right-click on it and select "Action"->"Clear". You won't lose any data, as all files are stored in your configuration-directory
-- Start the container again - it will then boot up with the new Home Assistant image
+- Start the container again - it will then boot up with the new Open Peer Power image
 
-Remark: to restart your Home Assistant within Synology NAS, you just have to do the following:
+Remark: to restart your Open Peer Power within Synology NAS, you just have to do the following:
 
 - Go to the Docker-app and move to "Container"-section
 - Right-click on it and select "Action"->"Restart".
 
 <div class='note'>
 
-If you want to use a USB Bluetooth adapter or Z-Wave USB Stick with Home Assistant on Synology Docker these instructions do not correctly configure the container to access the USB devices. To configure these devices on your Synology Docker Home Assistant you can follow the instructions provided [here](https://philhawthorne.com/installing-home-assistant-io-on-a-synology-diskstation-nas/) by Phil Hawthorne.
+If you want to use a USB Bluetooth adapter or Z-Wave USB Stick with Open Peer Power on Synology Docker these instructions do not correctly configure the container to access the USB devices. To configure these devices on your Synology Docker Open Peer Power you can follow the instructions provided [here](https://philhawthorne.com/installing-home-assistant-io-on-a-synology-diskstation-nas/) by Phil Hawthorne.
 
 </div>
 
 ### QNAP NAS
 
-As QNAP within QTS now supports Docker (with a neat UI), you can simply install Home Assistant using Docker without the need for command-line. For details about the package (including compatibility-information, if your NAS is supported), see <https://www.qnap.com/solution/container_station/en/index.php>
+As QNAP within QTS now supports Docker (with a neat UI), you can simply install Open Peer Power using Docker without the need for command-line. For details about the package (including compatibility-information, if your NAS is supported), see <https://www.qnap.com/solution/container_station/en/index.php>
 
 The steps would be:
 
@@ -154,16 +154,16 @@ The steps would be:
 - Choose "stable" version and click next
 - Choose a container-name you want (e.g., "homeassistant")
 - Click on "Advanced Settings"
-- Within "Shared Folders" click on "Volume from host" > "Add" and choose either an existing folder or add a new folder. The "mount point has to be `/config`, so that Home Assistant will use it for the configuration and logs.
+- Within "Shared Folders" click on "Volume from host" > "Add" and choose either an existing folder or add a new folder. The "mount point has to be `/config`, so that Open Peer Power will use it for the configuration and logs.
 - Within "Network" and select Network Mode to "Host"
-- To ensure that Home Assistant displays the correct timezone go to the "Environment" tab and click the plus sign then add `variable` = `TZ` & `value` = `Europe/London` choosing [your correct timezone](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+- To ensure that Open Peer Power displays the correct timezone go to the "Environment" tab and click the plus sign then add `variable` = `TZ` & `value` = `Europe/London` choosing [your correct timezone](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 - Click on "Create"
 - Wait for some time until your NAS has created the container
-- Your Home Assistant within Docker should now run and will serve the web interface from port 8123 on your Docker host (this will be your Qnap NAS IP address - for example `http://192.xxx.xxx.xxx:8123`)
+- Your Open Peer Power within Docker should now run and will serve the web interface from port 8123 on your Docker host (this will be your Qnap NAS IP address - for example `http://192.xxx.xxx.xxx:8123`)
 
-Remark: To update your Home Assistant on your Docker within Qnap NAS, you just remove container and image and do steps again (Don't remove "config" folder).
+Remark: To update your Open Peer Power on your Docker within Qnap NAS, you just remove container and image and do steps again (Don't remove "config" folder).
 
-If you want to use a USB Bluetooth adapter or Z-Wave USB stick with Home Assistant on Qnap Docker, follow those steps:
+If you want to use a USB Bluetooth adapter or Z-Wave USB stick with Open Peer Power on Qnap Docker, follow those steps:
 
 #### Z-Wave
 
@@ -187,7 +187,7 @@ zwave:
   usb_path: /dev/ttyACM0
 ```
 
-That will tell Home Assistant where to look for our Z-Wave radio.
+That will tell Open Peer Power where to look for our Z-Wave radio.
 
 #### Bluetooth
 
@@ -236,7 +236,7 @@ Then start the container with:
 docker-compose up -d
 ```
 
-To restart Home Assistant when you have changed configuration:
+To restart Open Peer Power when you have changed configuration:
 
 ```bash
 docker-compose restart

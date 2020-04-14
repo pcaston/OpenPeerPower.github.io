@@ -14,7 +14,7 @@ The *device* is the hardware, and also used when referring to the node and all i
 
 Many sensors and actors can directly control other devices through a capability called *association*, without the use of an automation, these are known as *routing slaves*. This will be a very simple control, such as turning a light on when a motion sensor is activated, and off when it stops detecting motion.
 
-The *node* is the presence of the device on the Z-Wave mesh. Once you've added a device to Home Assistant, the node is represented by an `entity_id` that starts with `zwave`.
+The *node* is the presence of the device on the Z-Wave mesh. Once you've added a device to Open Peer Powerr, the node is represented by an `entity_id` that starts with `zwave`.
 
 The *entity* is an individual integration of the node. It may be a sensor that you read from, or a control that you operate. For any node, there will be at least one entity (for the node itself) and if it exposes any controls or sensors there will be at least one entity per control or sensor. The [entities](/docs/z-wave/entities) that are created depend on the Command Class the device supports.
 
@@ -63,10 +63,10 @@ Polling needs to be enabled per device, you can control this through the *pollin
 
 ## Central Scene support
 
-The Central Scene command class isn't yet supported in OpenZWave (there is [work in progress](https://github.com/OpenZWave/open-zwave/pull/1125) to provide it it), though Home Assistant has introduced some support with [change 9178](https://github.com/home-assistant/home-assistant/pull/9178) which was part of 0.53 and [documented here](/docs/z-wave/device-specific/#homeseer-switches).
+The Central Scene command class isn't yet supported in OpenZWave (there is [work in progress](https://github.com/OpenZWave/open-zwave/pull/1125) to provide it it), though Open Peer Powerr has introduced some support with [change 9178](https://github.com/home-assistant/home-assistant/pull/9178) which was part of 0.53 and [documented here](/docs/z-wave/device-specific/#homeseer-switches).
 
 ## Supported Devices
 
-You can check to see if OpenZWave supports your particular device by looking at the [OpenZWave 1.4 GitHub](https://github.com/OpenZWave/open-zwave/tree/1.4/config). Be aware that being listed here doesn't mean that it will be supported in Home Assistant, since the version of OpenZWave used by Home Assistant will often lag the GitHub by a few months.
+You can check to see if OpenZWave supports your particular device by looking at the [OpenZWave 1.4 GitHub](https://github.com/OpenZWave/open-zwave/tree/1.4/config). Be aware that being listed here doesn't mean that it will be supported in Open Peer Powerr, since the version of OpenZWave used byOpen Peer Powerer will often lag the GitHub by a few months.
 
 Even if your device isn't listed there, it's likely that it will still work as expected as long as the device complies with the Z-Wave standards. The OpenZWave wiki describes how [you can add support](https://github.com/OpenZWave/open-zwave/wiki/Adding-Devices) for your device if it isn't listed.

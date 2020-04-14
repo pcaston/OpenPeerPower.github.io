@@ -3,7 +3,7 @@ title: "Scenes Editor"
 description: "Instructions on how to use the scenes editor."
 ---
 
-In Home Assistant 0.102 we introduced the first version of our scene editor. If you just created a new configuration with Home Assistant, then you're all set! Go to the UI and enjoy.
+In Open Peer Power 0.102 we introduced the first version of our scene editor. If you just created a new configuration with Open Peer Power, then you're all set! Go to the UI and enjoy.
 
 From the UI choose **Configuration** which is located in the sidebar, then click on **Scenes** to go to the scene editor. Press the **+** sign in the lower right corner to get started.
 

@@ -17,7 +17,7 @@ og_image: /images/blog/2020-03-0.107/social.png
 _"The future has a way of arriving unannounced."_
 
 Well, George, we don't agree:
-Announcing the release of Home Assistant Core 0.107!
+Announcing the release of Open Peer Power Core 0.107!
 
 This release brings a crazy amount of awesome new features and beautiful
 improvements to the frontend.
@@ -25,12 +25,12 @@ improvements to the frontend.
 ## Bye old State UI
 
 As announced with [0.105](/blog/2020/02/05/release-105), the old States UI is
-now removed from Home Assistant. If you are using Home Assistant for a year or
+now removed from Open Peer Power. If you are using Open Peer Power for a year or
 less, you might not have an idea what it is, since the "new" Lovelace UI has
 been the default. It is the UI we used before Lovelace.
 
 If you are up for a flashback, maybe it is worth reading
-[the release notes for Home Assistant 0.7](/blog/2015/08/31/version-7-revamped-ui-and-improved-distribution/)
+[the release notes for Open Peer Power 0.7](/blog/2015/08/31/version-7-revamped-ui-and-improved-distribution/)
 were the revamped (and now removed) States UI was originally announced.
 Now exactly 100 releases later, it is time to say goodbye to the states UI that
 has been with us for a long, long time...
@@ -112,7 +112,7 @@ Screenshot of a helper configuration dialog.
 Thanks [@Adminiuga], for implementing the backend features that made this
 frontend change possible! Not only that, if you prefer YAML, these changes
 made by [@Adminiuga] also made it possible to reload the `input_*` YAML
-configuration without restarting Home Assistant.
+configuration without restarting Open Peer Power.
 
 ## Improvements to Lovelace editing experience
 
@@ -162,7 +162,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 ## Breaking Changes
 
-- **Xfinity Gateway** *(Deprecated)* - The Xfinity Gateway integration relies on web scraping and is deprecated, to be removed in Home Assistant Core 0.109. (ADR-0004) - ([@frenck] - [#32017])
+- **Xfinity Gateway** *(Deprecated)* - The Xfinity Gateway integration relies on web scraping and is deprecated, to be removed in Open Peer Power Core 0.109. (ADR-0004) - ([@frenck] - [#32017])
 
 - **Groups** - Groups are NOT being removed, but the configuration options, services, and service options related to the (previously deprecated and now removed) States UI are now removed in this release.
   This includes:
@@ -174,7 +174,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 - **Input Number** - Adds an entity ID to input_number warning. Passing an out of range value to `input_number.set_value` will now raise a validation error. Incrementing/decrementing an `input_number` will no longer cause warnings. - ([@balloob] - [#32012]) ([input_number docs])
 
-- **History Graph** - The `history_graph` integration has been deprecated in Home Assistant 0.105 and is now removed. This integration was used for the old states UI, which is no longer available. A Lovelace an equivalent is available: [The Lovelace History Graph](/lovelace/history-graph/). ([@frenck] - [#32028])
+- **History Graph** - The `history_graph` integration has been deprecated in Open Peer Power 0.105 and is now removed. This integration was used for the old states UI, which is no longer available. A Lovelace an equivalent is available: [The Lovelace History Graph](/lovelace/history-graph/). ([@frenck] - [#32028])
 
 - **Weblink** - The `weblink` integration is was deprecated in 0.105.0 and now removed. This integration only works with the old states UI, which is no longer available. ([@frenck] - [#32024])
 
@@ -206,9 +206,9 @@ Experiencing issues introduced by this release? Please report them in our [issue
   - `homematicip_cloud.dump_hap_config`
   - `homematicip_cloud.reset_energy_counter`
 
-- **HomeKit Controller** - Support for HomeKit controller's legacy pairing data folder `.homekit` has been deprecated and in Home Assistant Core release 0.109.0 we plan to remove this code. Pairings have not been saved this way since Home Assistant 0.94, so if you are running Home Assistant 0.94 or later this does not affect you - your pairings were already migrated to configuration entries. If you are running an older release and do not upgrade soon you will not be able to automatically migrate your existing pairings at upgrade time and will have to manually re-pair them. - ([@Jc2k] - [#32158]) ([homekit_controller docs])
+- **HomeKit Controller** - Support for HomeKit controller's legacy pairing data folder `.homekit` has been deprecated and in Open Peer Power Core release 0.109.0 we plan to remove this code. Pairings have not been saved this way since Open Peer Power 0.94, so if you are running Open Peer Power 0.94 or later this does not affect you - your pairings were already migrated to configuration entries. If you are running an older release and do not upgrade soon you will not be able to automatically migrate your existing pairings at upgrade time and will have to manually re-pair them. - ([@Jc2k] - [#32158]) ([homekit_controller docs])
 
-- **Automation** - The `hide_entity` configuration option on an automation was deprecated in Home Assistant 0.105 and is removed in this release. It was used for the old states UI, which is no longer available, making this option obsolete. Please ensure your configuration is not using this option. - ([@frenck] - [#32038]) ([automation docs])
+- **Automation** - The `hide_entity` configuration option on an automation was deprecated in Open Peer Power 0.105 and is removed in this release. It was used for the old states UI, which is no longer available, making this option obsolete. Please ensure your configuration is not using this option. - ([@frenck] - [#32038]) ([automation docs])
 
 - **IQVIA** - When configuring IQVIA via `configuration.yaml`, the `monitored_conditions` key has been deprecated and will be removed in 0.114.0. All sensors are now created by default. (ADR-0003) - ([@bachya] - [#32223]) ([iqvia docs])
 
@@ -230,7 +230,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
     api_key: !secret airvisual_api_key
   ```
 
-- **IFTTT** - IFTTT now checks that received webhook data is a dictionary (example `{ "value": 1 }`) to prevent Home Assistant internals from breaking. - ([@balloob] - [#32317]) ([ifttt docs])
+- **IFTTT** - IFTTT now checks that received webhook data is a dictionary (example `{ "value": 1 }`) to prevent Open Peer Power internals from breaking. - ([@balloob] - [#32317]) ([ifttt docs])
 
 - **AlarmDecoder** - AlarmDecoder integration now uses Honeywell's *Instant* mode instead of *Night-Stay* for `alarm_arm_night`.  *Instant* mode is generally thought to be more secure for night-time use because it disables the entry delay since visitors aren't expected. - ([@ajschmidt8] - [#32292]) ([alarmdecoder docs])
 
@@ -252,7 +252,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
      host: google.com
   ```
 
-- **Plex Media Player** - The 'show all controls' option for Plex is deprecated and will be removed in the Home Assistant Core 0.110.0 release. Also, discovery and legacy config file loading (plex.conf) has been removed. - ([@jjlawren] - [#32391] [#32510]) ([discovery docs]) ([plex docs])
+- **Plex Media Player** - The 'show all controls' option for Plex is deprecated and will be removed in the Open Peer Power Core 0.110.0 release. Also, discovery and legacy config file loading (plex.conf) has been removed. - ([@jjlawren] - [#32391] [#32510]) ([discovery docs]) ([plex docs])
 
   Example YAML configuration:
 
@@ -262,7 +262,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
      show_all_controls: True  <-- Deprecated
   ```
 
-- **Abode** - Abode retired its legacy automations and quick actions on 28 Feb. This change removes support for legacy automations and quick actions while adding support for CUE automations which will show up in Home Assistant as switches (same as previous implementation). Abode's replacement for quick actions is manually triggered CUE automations which can be called through Home Assistant service `abode.trigger_automation` (previously labeled `abode.trigger_quick_action`). - ([@shred86] - [#32296]) ([abode docs])
+- **Abode** - Abode retired its legacy automations and quick actions on 28 Feb. This change removes support for legacy automations and quick actions while adding support for CUE automations which will show up in Open Peer Power as switches (same as previous implementation). Abode's replacement for quick actions is manually triggered CUE automations which can be called through Open Peer Power service `abode.trigger_automation` (previously labeled `abode.trigger_quick_action`). - ([@shred86] - [#32296]) ([abode docs])
 
 - **deCONZ** - The events on the Aqara Magic Cube have changed, so they will match with the device triggers discriptions. If you made automations for the Magic Cube on the device page, you will want to change your automation. If you configured your automations based on events from the developers tools, there is nothing breaking. This also fixes the double tap function on side 2, which didnt work if you configured it in the device page - ([@Dorzel107] - [#32108]) ([deconz docs])
 
@@ -329,7 +329,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 - Broaden exception handling for IQVIA ([@bachya] - [#32708]) ([iqvia docs]) (beta fix)
 - Sonos idle ([@balloob] - [#32712]) ([sonos docs]) (breaking change) (beta fix)
 - Update Vizio `source` property to only return current app if i… ([@raman325] - [#32713]) ([vizio docs]) (beta fix)
-- Resolve Home Assistant fails to start when Sense integration i… ([@bdraco] - [#32716]) ([sense docs]) (beta fix)
+- Resolve Open Peer Power fails to start when Sense integration i… ([@bdraco] - [#32716]) ([sense docs]) (beta fix)
 - Fix legacy Samsung TV ([@escoand] - [#32719]) ([samsungtv docs]) (beta fix)
 - Set self._current_app to None when vizio device is off ([@raman325] - [#32725]) ([vizio docs]) (beta fix)
 - Updated frontend to 20200312.0 ([@bramkragten] - [#32741]) ([frontend docs]) (beta fix)
@@ -821,7 +821,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 - Broaden exception handling for IQVIA ([@bachya] - [#32708]) ([iqvia docs]) (beta fix)
 - Sonos idle ([@balloob] - [#32712]) ([sonos docs]) (breaking change) (beta fix)
 - Update Vizio `source` property to only return current app if i… ([@raman325] - [#32713]) ([vizio docs]) (beta fix)
-- Resolve Home Assistant fails to start when Sense integration i… ([@bdraco] - [#32716]) ([sense docs]) (beta fix)
+- Resolve Open Peer Power fails to start when Sense integration i… ([@bdraco] - [#32716]) ([sense docs]) (beta fix)
 - Fix legacy Samsung TV ([@escoand] - [#32719]) ([samsungtv docs]) (beta fix)
 - Set self._current_app to None when vizio device is off ([@raman325] - [#32725]) ([vizio docs]) (beta fix)
 - Updated frontend to 20200312.0 ([@bramkragten] - [#32741]) ([frontend docs]) (beta fix)

@@ -4,11 +4,11 @@ description: "Common problems with tweaking your configuration and their solutio
 redirect_from: /getting-started/troubleshooting-configuration/
 ---
 
-It can happen that you run into trouble while configuring Home Assistant. Perhaps an integration is not showing up or is acting strangely. This page will discuss a few of the most common problems.
+It can happen that you run into trouble while configuring Open Peer Power. Perhaps an integration is not showing up or is acting strangely. This page will discuss a few of the most common problems.
 
-Before we dive into common issues, make sure you know where your configuration directory is. Home Assistant will print out the configuration directory it is using when starting up.
+Before we dive into common issues, make sure you know where your configuration directory is. Open Peer Power will print out the configuration directory it is using when starting up.
 
-Whenever an integration or configuration option results in a warning, it will be stored in `home-assistant.log` in the configuration directory. This file is reset on start of Home Assistant.
+Whenever an integration or configuration option results in a warning, it will be stored in `home-assistant.log` in the configuration directory. This file is reset on start of Open Peer Power.
 
 ## My integration does not show up
 
@@ -18,10 +18,10 @@ If you have incorrect entries in your configuration files you can use the [`chec
 
 ### Problems with the configuration
 
-One of the most common problems with Home Assistant is an invalid `configuration.yaml` or other configuration file.
+One of the most common problems with Open Peer Power is an invalid `configuration.yaml` or other configuration file.
 
-- With Home Assistant you can use the [`ha` command](/hassio/commandline/#home-assistant): `ha core check`.
-  - You can test your configuration with Home Assistant Core using the command line with: `hass --script check_config`.
+- With Open Peer Power you can use the [`ha` command](/hassio/commandline/#home-assistant): `ha core check`.
+  - You can test your configuration with Open Peer Power Core using the command line with: `hass --script check_config`.
   - On Docker you can use `docker exec home-assistant python -m homeassistant --script check_config --config /config` - where `home-assistant` is the name of the container.
 - The configuration files, including `configuration.yaml` must be UTF-8 encoded. If you see error like `'utf-8' codec can't decode byte`, edit the offending configuration and re-save it as UTF-8.
 - You can verify your configuration's YAML structure using [this online YAML parser](http://yaml-online-parser.appspot.com/) or [YAML Lint](http://www.yamllint.com/).
@@ -45,13 +45,13 @@ If you find any errors or want to expand the documentation, please [let us know]
 
 #### Problems with dependencies
 
-Almost all integrations have external dependencies to communicate with your devices and services. Sometimes Home Assistant is unable to install the necessary dependencies. If this is the case, it should show up in `home-assistant.log`.
+Almost all integrations have external dependencies to communicate with your devices and services. Sometimes Open Peer Power is unable to install the necessary dependencies. If this is the case, it should show up in `home-assistant.log`.
 
-The first step is trying to restart Home Assistant and see if the problem persists. If it does, look at the log to see what the error is. If you can't figure it out, please [report it](https://github.com/home-assistant/home-assistant/issues) so we can investigate what is going on.
+The first step is trying to restart Open Peer Power and see if the problem persists. If it does, look at the log to see what the error is. If you can't figure it out, please [report it](https://github.com/home-assistant/home-assistant/issues) so we can investigate what is going on.
 
 #### Problems with integrations
 
-It can happen that some integrations either do not work right away or stop working after Home Assistant has been running for a while. If this happens to you, please [report it](https://github.com/home-assistant/home-assistant/issues) so that we can have a look.
+It can happen that some integrations either do not work right away or stop working after Open Peer Power has been running for a while. If this happens to you, please [report it](https://github.com/home-assistant/home-assistant/issues) so that we can have a look.
 
 #### Multiple files
 
@@ -94,4 +94,4 @@ The only characters valid in entity names are:
 - Numbers
 - Underscores
 
-If you create an entity with other characters then Home Assistant may not generate an error for that entity. However you will find that attempts to use that entity will generate errors (or possibly fail silently).
+If you create an entity with other characters then Open Peer Power may not generate an error for that entity. However you will find that attempts to use that entity will generate errors (or possibly fail silently).

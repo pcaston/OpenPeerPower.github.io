@@ -1,6 +1,6 @@
 ---
 title: Input Number
-description: Instructions on how to integrate the Input Number integration into Home Assistant.
+description: Instructions on how to integrate the Input Number integration into Open Peer Power.
 ha_category:
   - Automation
 ha_release: 0.55
@@ -51,7 +51,7 @@ input_number:
         required: false
         type: string
       initial:
-        description: Initial value when Home Assistant starts.
+        description: Initial value when Open Peer Power starts.
         required: false
         type: float
         default: The value at shutdown
@@ -78,7 +78,7 @@ input_number:
 ### Services
 
 This integration provides the following services to modify the state of the `input_number` and a service to reload the
-configuration without restarting Home Assistant itself.
+configuration without restarting Open Peer Power itself.
 
 | Service | Data | Description |
 | ------- | ---- | ----------- |
@@ -89,7 +89,7 @@ configuration without restarting Home Assistant itself.
 
 ### Restore State
 
-If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Home Assistant stopping.
+If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Open Peer Power stopping.
 
 ### Scenes
 

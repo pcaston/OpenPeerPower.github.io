@@ -1,11 +1,11 @@
 ---
 title: "Lovelace UI"
-description: "The Lovelace UI is a powerful and configurable interface for Home Assistant."
+description: "The Lovelace UI is a powerful and configurable interface for Open Peer Power."
 redirect_from:
   - /integrations/lovelace/
 ---
 
-Lovelace is the name of the Home Assistant user interface. It is a fast, customizable and powerful way for users to manage their homes, working both on mobile and desktop.
+Lovelace is the name of the Open Peer Power user interface. It is a fast, customizable and powerful way for users to manage their homes, working both on mobile and desktop.
 
 - 24 different cards to place and configure as you like.
 - UI Editor. A configuration UI to manage your Lovelace UI including live preview when editing cards.

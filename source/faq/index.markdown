@@ -1,11 +1,11 @@
 ---
 title: "FAQ"
-description: "Home Assistant's FAQ"
+description: "Open Peer Power's FAQ"
 regenerate: true
 hide_github_edit: true
 ---
 
-This is a community curated list of frequently asked questions (FAQ) about the installation, setup, and usage of Home Assistant. If you want to get details about a term, please check the [glossary](/docs/glossary/).
+This is a community curated list of frequently asked questions (FAQ) about the installation, setup, and usage of Open Peer Power. If you want to get details about a term, please check the [glossary](/docs/glossary/).
 
 {% assign faq = site.faq | sort: 'title' %}
 {% assign categories = faq | map: 'ha_category' | uniq | sort %}

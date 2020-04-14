@@ -23,12 +23,12 @@ The Logbook integration will show a line entry when an automation is triggered. 
 
 It is generally a difficult task to test an automation, especially if it includes several triggers and some conditions.
 
-Please note that if you click on **Trigger** of an automation in the frontend, **only the `action` part will be executed** by Home Assistant. That means you **can't** test your trigger or condition part that way. It also means that if your automation uses some data from triggers, it won't work properly as well just because `trigger` is not defined in this scenario.
+Please note that if you click on **Trigger** of an automation in the frontend, **only the `action` part will be executed** by Open Peer Power. That means you **can't** test your trigger or condition part that way. It also means that if your automation uses some data from triggers, it won't work properly as well just because `trigger` is not defined in this scenario.
 
 All this makes that Trigger feature pretty limited and nearly useless for debugging purposes so you need to find another way.
 Make sure you check and adapt to your circumstances appropriate examples from Automation Trigger, Conditions and Actions.
 
-It is also useful to go to **Configuration** -> **Server Control** and click on **Check Configuration** button in Configuration validation section to make sure there are no syntax errors before restarting Home Assistant. In order for **Check configuration** to be visible, you must enable **Advanced Mode** on your user profile.
+It is also useful to go to **Configuration** -> **Server Control** and click on **Check Configuration** button in Configuration validation section to make sure there are no syntax errors before restarting Open Peer Power. In order for **Check configuration** to be visible, you must enable **Advanced Mode** on your user profile.
 
 If your automation uses templates in any part, you can do the following to make sure it works as expected:
 

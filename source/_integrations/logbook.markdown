@@ -1,6 +1,6 @@
 ---
 title: Logbook
-description: Instructions on how to enable the logbook integration for Home Assistant.
+description: Instructions on how to enable the logbook integration for Open Peer Power.
 ha_category:
   - History
 ha_release: 0.7

@@ -1,6 +1,6 @@
 ---
 title: Scripts
-description: Instructions on how to setup scripts within Home Assistant.
+description: Instructions on how to setup scripts within Open Peer Power.
 ha_category:
   - Automation
 ha_release: 0.7
@@ -10,18 +10,18 @@ ha_codeowners:
 ha_domain: script
 ---
 
-The `script` integration allows users to specify a sequence of actions to be executed by Home Assistant. These are run when you turn the script on. The script integration will create an entity for each script and allow them to be controlled via services.
+The `script` integration allows users to specify a sequence of actions to be executed by Open Peer Power. These are run when you turn the script on. The script integration will create an entity for each script and allow them to be controlled via services.
 
 ## Configuration
 
-The sequence of actions is specified using the [Home Assistant Script Syntax](/getting-started/scripts/).
+The sequence of actions is specified using the [Open Peer Power Script Syntax](/getting-started/scripts/).
 
 ```yaml
 # Example configuration.yaml entry
 script:
   message_temperature:
     sequence:
-      # This is Home Assistant Script Syntax
+      # This is Open Peer Power Script Syntax
       - service: notify.notify
         data_template:
           message: Current temperature is {% raw %}{{ states('sensor.temperature') }}{% endraw %}
@@ -84,7 +84,7 @@ script: 
         description: 'The amount of time to wait before turning on the living room lights'
         example: 1
     sequence:
-      # This is Home Assistant Script Syntax
+      # This is Open Peer Power Script Syntax
       - event: LOGBOOK_ENTRY
         event_data:
           name: Paulus

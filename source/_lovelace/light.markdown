@@ -23,7 +23,7 @@ type:
   type: string
 entity:
   required: true
-  description: Home Assistant Light Domain entity ID.
+  description: Open Peer Power Light Domain entity ID.
   type: string
 name:
   required: false

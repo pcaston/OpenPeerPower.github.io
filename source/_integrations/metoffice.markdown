@@ -1,6 +1,6 @@
 ---
 title: Met Office
-description: Instructions on how to integrate Met Office weather conditions into Home Assistant.
+description: Instructions on how to integrate Met Office weather conditions into Open Peer Power.
 ha_category:
   - Weather
 ha_release: 0.42
@@ -27,7 +27,7 @@ api_key:
   required: true
   type: string
 name:
-  description: Additional name for the weather integration in Home Assistant.
+  description: Additional name for the weather integration in Open Peer Power.
   required: false
   type: string
   default: Met Office

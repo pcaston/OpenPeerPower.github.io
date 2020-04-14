@@ -21,7 +21,7 @@ You can turn MFA on and off in the [profile page](/docs/authentication/#your-acc
 
 [Time-based One-Time Password](https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm) (TOTP) is widely adopted in modern authentication systems.
 
-Home Assistant generates a secret key which is synchronized with an app on your phone. Every thirty seconds or so the phone app generates a random six digit number. Because Home Assistant knows the secret key, it knows which number will be generated. If you enter the correct digits, then you're in.
+ Open Peer Power generates a secret key which is synchronized with an app on your phone. Every thirty seconds or so the phone app generates a random six digit number. Because Open Peer Power knows the secret key, it knows which number will be generated. If you enter the correct digits, then you're in.
 
 #### Setting up TOTP
 
@@ -37,7 +37,7 @@ If no `auth_mfa_modules` configuration section is defined in `configuration.yaml
 
 You will need an authenticator app on your phone. We recommend either [Google Authenticator](https://support.google.com/accounts/answer/1066447) or [Authy](https://authy.com/). Both are available for iOS or Android.
 
-After restarting Home Assistant, go to your [profile page](/docs/authentication/#your-account-profile) and there should be a "Multi-factor Authentication Modules" section. 
+After restarting Open Peer Power, go to your [profile page](/docs/authentication/#your-account-profile) and there should be a "Multi-factor Authentication Modules" section. 
 
 Click _Enable_ and a new secret key will be generated. Go to your phone app and enter the key, either by scanning the QR code or typing in the key below the QR code manually. 
 
@@ -47,15 +47,15 @@ Click _Enable_ and a new secret key will be generated. Go to your phone app and 
 Please treat the secret key like a password - never expose it to others.
 </div>
 
-Your phone app will now start generating a different six-digit code every thirty seconds or so. Enter one of these into Home Assistant under the QR code where it asks for a _Code_. Home Assistant and your phone app are now in sync and you can now use the code displayed in the app to log in.
+Your phone app will now start generating a different six-digit code every thirty seconds or so. Enter one of these into Open Peer Power under the QR code where it asks for a _Code_. Open Peer Power and your phone app are now in sync and you can now use the code displayed in the app to log in.
 
 #### Using TOTP
 
-Once TOTP is enabled, Home Assistant requires the latest code from your phone app before you can log in. 
+Once TOTP is enabled, Open Peer Power requires the latest code from your phone app before you can log in. 
 
 <div class='note'>
 
-TOTP is _time based_ so it relies on your Home Assistant clock being accurate. If the verification keeps failing, make sure the clock on Home Assistant is correct.
+TOTP is _time based_ so it relies on your Open Peer Power clock being accurate. If the verification keeps failing, make sure the clock on Open Peer Power is correct.
 
 </div>
 
@@ -100,7 +100,7 @@ homeassistant:
       message: 'I almost forget, to get into my clubhouse, you need to say {}'
 ```
 
-After restarting Home Assistant, go to your [profile page](/docs/authentication/#your-account-profile) and there should be a "Multi-factor Authentication Modules" section. Click _Enable_ on the _Notify One-Time Password_ option.
+After restarting Open Peer Power, go to your [profile page](/docs/authentication/#your-account-profile) and there should be a "Multi-factor Authentication Modules" section. Click _Enable_ on the _Notify One-Time Password_ option.
 
 Try logging out, then logging in again. You will be asked for the six-digit one-time password that was sent to your notify service. Enter the password to log in.
 

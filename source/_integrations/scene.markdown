@@ -1,6 +1,6 @@
 ---
 title: Scenes
-description: Instructions on how to setup scenes within Home Assistant.
+description: Instructions on how to setup scenes within Open Peer Power.
 ha_category:
   - Organization
 ha_release: 0.15

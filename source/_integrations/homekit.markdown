@@ -1,17 +1,17 @@
 ---
 title: HomeKit
-description: Instructions on how to set up the HomeKit integration in Home Assistant.
+description: Instructions on how to set up the HomeKit integration in Open Peer Power.
 ha_category:
   - Voice
 ha_release: 0.64
 ha_domain: homekit
 ---
 
-The `homekit` integration allows you to forward entities from Home Assistant to Apple HomeKit, so they can be controlled from Apple's Home app and Siri. Please make sure that you have read the [considerations](#considerations) listed below to save you some trouble later. However if you do encounter issues, check out the [troubleshooting](#troubleshooting) section.
+The `homekit` integration allows you to forward entities from Open Peer Power to Apple HomeKit, so they can be controlled from Apple's Home app and Siri. Please make sure that you have read the [considerations](#considerations) listed below to save you some trouble later. However if you do encounter issues, check out the [troubleshooting](#troubleshooting) section.
 
 <div class="note">
 
-  If you want to control `HomeKit` only devices with Home Assistant, check out the [HomeKit controller](/integrations/homekit_controller/) component.
+  If you want to control `HomeKit` only devices with Open Peer Power, check out the [HomeKit controller](/integrations/homekit_controller/) component.
 
 </div>
 
@@ -59,7 +59,7 @@ homekit:
     type: map
     keys:
       auto_start:
-        description: Flag if the HomeKit Server should start automatically after the Home Assistant Core Setup is done. ([Disable Auto Start](#disable-auto-start))
+        description: Flag if the HomeKit Server should start automatically after the Open Peer Power Core Setup is done. ([Disable Auto Start](#disable-auto-start))
         required: false
         type: boolean
         default: true
@@ -69,12 +69,12 @@ homekit:
         type: integer
         default: 51827
       name:
-        description: Need to be individual for each instance of Home Assistant using the integration on the same local network. Between `3` and `25` characters. Alphanumeric and spaces allowed.
+        description: Need to be individual for each instance of Open Peer Power using the integration on the same local network. Between `3` and `25` characters. Alphanumeric and spaces allowed.
         required: false
         type: string
-        default: '`Home Assistant Bridge`'
+        default: '`Open Peer Power Bridge`'
       ip_address:
-        description: The local network IP address. Only necessary if the default from Home Assistant does not work.
+        description: The local network IP address. Only necessary if the default from Open Peer Power does not work.
         required: false
         type: string
       safe_mode:
@@ -159,30 +159,30 @@ homekit:
 
 ## Setup
 
-To enable the HomeKit integration in Home Assistant, add the following to your configuration file:
+To enable the HomeKit integration in Open Peer Power, add the following to your configuration file:
 
 ```yaml
 # Example for HomeKit setup
 homekit:
 ```
 
-After Home Assistant has started, the entities specified by the filter are exposed to HomeKit if they are [supported](#supported-components). To add them:
+After Open Peer Power has started, the entities specified by the filter are exposed to HomeKit if they are [supported](#supported-components). To add them:
 
-1. Open the Home Assistant frontend. A new card will display the `pin code`. Note: If pin code is not displayed, check "Notifications" (the bell icon) in the lower-left of the Home Assistant UI.
+1. Open the Open Peer Power frontend. A new card will display the `pin code`. Note: If pin code is not displayed, check "Notifications" (the bell icon) in the lower-left of the Open Peer Power UI.
 2. Open the `Home` app.
-3. Click `Add Accessory`, then select `Don't Have a Code or Can't Scan?` and choose the `Home Assistant Bridge`.
+3. Click `Add Accessory`, then select `Don't Have a Code or Can't Scan?` and choose the `Open Peer Power Bridge`.
 4. Confirm that you are adding an `Uncertified Accessory` by clicking on `Add Anyway`.
 5. Enter the `PIN` code.
 6. Follow the setup by clicking on `Next` and lastly `Done` in the top right-hand corner.
-7. The `Home Assistant` Bridge and the Accessories should now be listed in the `Home` app.
+7. The `Open Peer Power` Bridge and the Accessories should now be listed in the `Home` app.
 
-After the setup is completed, you should be able to control your Home Assistant integrations through Apple's Home and Siri.
+After the setup is completed, you should be able to control your Open Peer Power integrations through Apple's Home and Siri.
 
-## Move Home Assistant install
+## Move Open Peer Power install
 
-If you like to retain your HomeKit pairing through a move to a new Home Assistant device or installation, besides copying the configurations files you need to copy the `.homekit.state` file inside your configurations directory. Keep in mind though that the file is usually hidden by default, depending on your operating system.
+If you like to retain your HomeKit pairing through a move to a new Open Peer Power device or installation, besides copying the configurations files you need to copy the `.homekit.state` file inside your configurations directory. Keep in mind though that the file is usually hidden by default, depending on your operating system.
 
-Before you copy it, make sure to stop the old and new Home Assistant instances first entirely, otherwise it won't work.
+Before you copy it, make sure to stop the old and new Open Peer Power instances first entirely, otherwise it won't work.
 
 ## Considerations
 
@@ -196,7 +196,7 @@ The HomeKit guidelines only allow a maximum of 100 unique accessories (`aid`) pe
 
 ### Persistence Storage
 
-Unfortunately `HomeKit` doesn't support any persistent storage - only the configuration for accessories that are added to the `Home Assistant Bridge` are kept. To avoid problems, it is recommended to use an automation to always start `HomeKit` with at least the same entities setup. If for some reason some entities are not set up, their configuration will be deleted. (State unknown or similar will not cause any issues.)
+Unfortunately `HomeKit` doesn't support any persistent storage - only the configuration for accessories that are added to the `Open Peer Power Bridge` are kept. To avoid problems, it is recommended to use an automation to always start `HomeKit` with at least the same entities setup. If for some reason some entities are not set up, their configuration will be deleted. (State unknown or similar will not cause any issues.)
 
 A common situation might be if you decide to disable parts of the configuration for testing. Please make sure to disable `auto start` and `turn off` the `Start HomeKit` automation (if you have one).
 
@@ -236,7 +236,7 @@ For a general delay where your integration doesn't generate an event, you can al
 
 {% raw %}
 ```yaml
-# Example using a delay after the start of Home Assistant
+# Example using a delay after the start of Open Peer Power
 homekit:
   auto_start: false
 
@@ -325,11 +325,11 @@ homekit:
   safe_mode: true
 ```
 
-Restart your Home Assistant instance. If you don't see a `pincode`, follow the [guide](#deleting-the-homekitstate-file) here. Now you should be able to pair normally.
+Restart your Open Peer Power instance. If you don't see a `pincode`, follow the [guide](#deleting-the-homekitstate-file) here. Now you should be able to pair normally.
 
 <div class="note warning">
 
-To avoid any errors, after you have successfully paired your Home Assistant Bridge, remove the `safe_mode` option from your configuration and restart Home Assistant.
+To avoid any errors, after you have successfully paired your Open Peer Power Bridge, remove the `safe_mode` option from your configuration and restart Open Peer Power.
 
 </div>
 
@@ -347,7 +347,7 @@ homekit:
   zeroconf_default_interface: true
 ```
 
-Restart your Home Assistant instance. This feature requires running an mDNS forwarder on your Docker host, e.g., `avahi-daemon` in reflector mode. This kind of setup most likely requires `safe_mode` during the bridge setup.
+Restart your Open Peer Power instance. This feature requires running an mDNS forwarder on your Docker host, e.g., `avahi-daemon` in reflector mode. This kind of setup most likely requires `safe_mode` during the bridge setup.
 
 ## Supported Components
 
@@ -385,18 +385,18 @@ The following integrations are currently supported:
 
 The `.homekit.state` file can be found in the configurations directory. You might need to enable `view hidden files` to see it.
 
- 1. **Stop** Home Assistant
+ 1. **Stop** Open Peer Power
  2. Delete the `.homekit.state` file
- 3. **Start** Home Assistant
+ 3. **Start** Open Peer Power
 
 ### Errors during pairing
 
 If you encounter any issues during pairing, make sure to:
 
- 1. **Stop** Home Assistant
+ 1. **Stop** Open Peer Power
  2. Delete the `.homekit.state` file
  3. Edit your configuration (see below)
- 4. **Start** Home Assistant
+ 4. **Start** Open Peer Power
 
 ```yaml
 logger:
@@ -413,26 +413,26 @@ homekit:
 
 #### PIN doesn't appear as persistent status
 
-You might have paired the `Home Assistant Bridge` already. If not, delete the `.homekit.state` file ([guide](#deleting-the-homekitstate-file)).
+You might have paired the `Open Peer Power Bridge` already. If not, delete the `.homekit.state` file ([guide](#deleting-the-homekitstate-file)).
 
-#### `Home Assistant Bridge` doesn't appear in the Home App (for pairing)
+#### `Open Peer Power Bridge` doesn't appear in the Home App (for pairing)
 
 This is often setup and network related. Make sure to check the other issues below as well, but things that might work include:
 - Check your router configuration
 - Try with Wi-Fi **and** LAN
 - Change the default [port](#port)
 
-Remember that the iOS device needs to be in the same local network as the Home Assistant device for pairing.
+Remember that the iOS device needs to be in the same local network as the Open Peer Power device for pairing.
 
-#### `Home Assistant Bridge` doesn't appear in the Home App (for pairing) - Docker
+#### `Open Peer Power Bridge` doesn't appear in the Home App (for pairing) - Docker
 
 Set `network_mode: host`. If you have further problems this [issue](https://github.com/home-assistant/home-assistant/issues/15692) might help.
 
 You can also try to use `avahi-daemon` in reflector mode together with the option `advertise_ip`, see above.
 
-#### `Home Assistant Bridge` doesn't appear in the Home App (for pairing) - VirtualBox
+#### `Open Peer Power Bridge` doesn't appear in the Home App (for pairing) - VirtualBox
 
-Configure the network mode as `networkbridge`. Otherwise the Home Assistant Bridge won't be exposed to the network.
+Configure the network mode as `networkbridge`. Otherwise the Open Peer Power Bridge won't be exposed to the network.
 
 #### Pairing hangs - zeroconf error
 
@@ -445,7 +445,7 @@ Pairing works fine when the filter is set to only include `demo.demo`, but fails
 #### Pairing hangs - no error
 
 1. Make sure that you don't try to add more than 100 accessories, see [device limit](#device-limit). In rare cases, one of your entities doesn't work with the HomeKit component. Use the [filter](#configure-filter) to find out which one. Feel free to open a new issue in the `home-assistant` repository, so we can resolve it.
-2. Check logs, and search for `Starting accessory Home Assistant Bridge on address`. Make sure Home Assistant Bridge hook up to a correct interface. If it did not, explicitly set `homekit.ip_address` configuration variable.
+2. Check logs, and search for `Starting accessory Open Peer Power Bridge on address`. Make sure Open Peer Power Bridge hook up to a correct interface. If it did not, explicitly set `homekit.ip_address` configuration variable.
 
 #### Duplicate AID found when attempting to add accessory
 
@@ -461,13 +461,13 @@ See [disable auto start](#disable-auto-start)
 
 Check if the domain of your entity is [supported](#supported-components). If it is, check your [filter](#configure-filter) settings. Make sure the spelling is correct, especially if you use `include_entities`.
 
-#### HomeKit doesn't work on second Home Assistant instance
+#### HomeKit doesn't work on second Open Peer Power instance
 
-To use the HomeKit integration with to different Home Assistant instances on the same local network, you need to set a custom name for at least one of them. [config/name](#name)
+To use the HomeKit integration with to different Open Peer Power instances on the same local network, you need to set a custom name for at least one of them. [config/name](#name)
 
 #### Specific entity doesn't work
 
-Although we try our best, some entities don't work with the HomeKit integration yet. The result will be that either pairing fails completely or all Home Assistant accessories will stop working. Use the filter to identify which entity is causing the issue. It's best to try pairing and step by step including more entities. If it works unpair and repeat until you find the one that is causing the issues. To help others and the developers, please open a new issue here: [home-assistant/issues/new](https://github.com/home-assistant/home-assistant/issues/new?labels=component:%20homekit)
+Although we try our best, some entities don't work with the HomeKit integration yet. The result will be that either pairing fails completely or all Open Peer Power accessories will stop working. Use the filter to identify which entity is causing the issue. It's best to try pairing and step by step including more entities. If it works unpair and repeat until you find the one that is causing the issues. To help others and the developers, please open a new issue here: [home-assistant/issues/new](https://github.com/home-assistant/home-assistant/issues/new?labels=component:%20homekit)
 
 #### Accessories are all listed as not responding
 
@@ -483,7 +483,7 @@ Unfortunately, that sometimes happens at the moment. It might help to close the 
 
 #### Accessories not responding / behaving unusual - Upgrade from `0.65.x`
 
-To fix this, you need to unpair the `Home Assistant Bridge`, delete the `.homekit.state` file ([guide](#deleting-the-homekitstate-file)) and pair it again. This should only be an issue if you're upgrading from `0.65.x` or below.
+To fix this, you need to unpair the `Open Peer Power Bridge`, delete the `.homekit.state` file ([guide](#deleting-the-homekitstate-file)) and pair it again. This should only be an issue if you're upgrading from `0.65.x` or below.
 
 #### The linked battery sensor isn't recognized
 
@@ -495,12 +495,12 @@ Media Player entities with `device_class: tv` will show up as Television accesso
 
 #### Can't control volume of your TV media player?
 
-The volume and play/pause controls will show up on the Remote app or Control Center. If your TV supports volume control through Home Assistant, you will be able to control the volume using the side volume buttons on the device while having the remote selected on screen.
+The volume and play/pause controls will show up on the Remote app or Control Center. If your TV supports volume control through Open Peer Power, you will be able to control the volume using the side volume buttons on the device while having the remote selected on screen.
 
 #### Resetting accessories
 
-On Home Assistant `0.97.x` or later, you may use the service `homekit.reset_accessory` with one or more entity_ids to reset accessories whose configuration may have changed. This can be useful when changing a media_player's device class to `tv`, linking a battery, or whenever Home Assistant adds support for new HomeKit features to existing entities.
+On Open Peer Power `0.97.x` or later, you may use the service `homekit.reset_accessory` with one or more entity_ids to reset accessories whose configuration may have changed. This can be useful when changing a media_player's device class to `tv`, linking a battery, or whenever Open Peer Power adds support for new HomeKit features to existing entities.
 
-On earlier versions of Home Assistant, you can reset accessories by removing the entity from HomeKit (via [filter](#configure-filter)) and then re-adding the accessory.
+On earlier versions of Open Peer Power, you can reset accessories by removing the entity from HomeKit (via [filter](#configure-filter)) and then re-adding the accessory.
 
 With either strategy, the accessory will behave as if it's the first time the accessory has been set up, so you will need to restore the name, group, room, scene, and/or automation settings.

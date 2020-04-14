@@ -13,19 +13,19 @@ og_image: /images/blog/2020-02-0.106/social.png
 
 <a href='/integrations/#version/0.106'><img src='/images/blog/2020-02-0.106/components.png' style='border: 0;box-shadow: none;'></a>
 
-Well, hello!, Home Assistant Core 0.106! We are happy to see you 😃
+Well, hello!, Open Peer Power Core 0.106! We are happy to see you 😃
 
 A great release that improves stability, reliability and a lot of helpful additions to make everything much more friendly and easier to use. So let's dive in!
 
 ## Safe Mode improvements
 
-In Home Assistant [0.105](/blog/2020/02/05/release-105/#safe-mode), we introduced Safe Mode. Our goal is to make sure Home Assistant always starts and provide you an interface to work with. No matter what.
+In Open Peer Power [0.105](/blog/2020/02/05/release-105/#safe-mode), we introduced Safe Mode. Our goal is to make sure Open Peer Power always starts and provide you an interface to work with. No matter what.
 
-[@balloob] has been busy this release to improve on this feature even more, and Home Assistant is now able to overcome issues when things in the core system get into trouble and even when the Lovelace configuration isn't readable. Besides that, the way Safe Mode is presented has changed, so you instantly know you are in Safe Mode:
+[@balloob] has been busy this release to improve on this feature even more, and Open Peer Power is now able to overcome issues when things in the core system get into trouble and even when the Lovelace configuration isn't readable. Besides that, the way Safe Mode is presented has changed, so you instantly know you are in Safe Mode:
 
 <p class='img'>
-<img src='/images/blog/2020-02-0.106/safe-mode-activated.png' alt='Screenshot of Home Assistant running in Safe Mode'></a>
-Screenshot of Home Assistant running in Safe Mode.
+<img src='/images/blog/2020-02-0.106/safe-mode-activated.png' alt='Screenshot of Open Peer Power running in Safe Mode'></a>
+Screenshot of Open Peer Power running in Safe Mode.
 </p>
 
 ## Stepping up and down the brightness of lights
@@ -56,7 +56,7 @@ Screenshot of the new more info for a person.
 
 ## Entities configuration panel now shows all entities
 
-The entities configuration panel previously only contained entities that were uniquely identifiable by Home Assistant (they have a so-called: unique ID). However, those are not provided by all integrations of Home Assistant, confusing since the entities panel did not show all of your entities.
+The entities configuration panel previously only contained entities that were uniquely identifiable by Open Peer Power (they have a so-called: unique ID). However, those are not provided by all integrations of Open Peer Power, confusing since the entities panel did not show all of your entities.
 
 In this version, we now include all entities in the panel, giving you a nice complete overview of all available entities in your system. You can't edit all entities, since that requires an entity to be uniquely identifiable. If an entity doesn't have a unique ID, the pencil icon will be striked through.
 
@@ -195,7 +195,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 - **Orange Livebox Play TV** - The Orange Livebox Play TV integration has been removed. A change to the site scraped with this integration has changed, causing the integration to break. This integration violated our design decisions and is therefore removed. - ([@frenck] - [#31525]) (breaking change)
 
-- **Core** - Only administrator users can stop or restart Home Assistant. - ([@balloob] - [#31509]) ([homeassistant docs])
+- **Core** - Only administrator users can stop or restart Open Peer Power. - ([@balloob] - [#31509]) ([homeassistant docs])
 
 - **Sure Petcare** - Sure Petcare supports new features and has improved existing features. As a result, you will want to note that the format of the `feeders`/`flaps`/`pets` options changed from a map (`id`/`name`) to a simple list of IDs, which means the `name` option is removed. The `name` is now gathered directly from the Sure Petcare API but changeable via the HA UI.
 
@@ -598,7 +598,7 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Add multi select support to config validation and to custom serializer ([@Kane610] - [#31798])
 - Catch unexpected exceptions when validating config ([@balloob] - [#31795])
 - Use time.monotonic instead of time.time where appropriate ([@scop] - [#31780]) ([bme680 docs]) ([doods docs]) ([maxcube docs]) ([netatmo docs]) ([proxmoxve docs]) ([verisure docs])
-- Add Home Assistant Companion to manifest.json so we can sugges… ([@robbiet480] - [#31808]) ([frontend docs])
+- Add Open Peer Power Companion to manifest.json so we can sugges… ([@robbiet480] - [#31808]) ([frontend docs])
 - Update Plex connection class to push ([@jjlawren] - [#31806]) ([plex docs])
 - Remove force from async_schedule_update_ha_state for HMIPC ([@SukramJ] - [#31796]) ([homematicip_cloud docs])
 - Add summary attribtue for currently playing media ([@jjlawren] - [#31803]) ([plex docs])

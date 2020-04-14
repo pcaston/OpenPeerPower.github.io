@@ -1,10 +1,10 @@
 ---
 title: "HADashboard"
-description: "HADashboard is a dashboard for Home Assistant that is intended to be wall mounted, and is optimized for distance viewing."
+description: "HADashboard is a dashboard for Open Peer Power that is intended to be wall mounted, and is optimized for distance viewing."
 redirect_from: /ecosystem/hadashboard/
 ---
 
-HADashboard is a modular, skinnable dashboard for [Home Assistant](/) that is intended to be wall mounted, and is optimized for distance viewing.
+HADashboard is a modular, skinnable dashboard for [ Open Peer Power](/) that is intended to be wall mounted, and is optimized for distance viewing.
 
 <p class='img'>
     <img src='/images/hadashboard/dash1.png' />

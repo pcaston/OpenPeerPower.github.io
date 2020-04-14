@@ -1,6 +1,6 @@
 ---
 title: "MQTT Logging"
-description: "Instructions on how to setup MQTT Logging within Home Assistant."
+description: "Instructions on how to setup MQTT Logging within Open Peer Power."
 logo: mqtt.png
 ---
 

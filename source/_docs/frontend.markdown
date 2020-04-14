@@ -1,9 +1,9 @@
 ---
-title: "Frontend of Home Assistant"
-description: "Frontend of Home Assistant."
+title: "Frontend of Open Peer Power"
+description: "Frontend of Open Peer Power."
 ---
 
-The frontend of Home Assistant is built with [Polymer](https://www.polymer-project.org/).
+The frontend of Open Peer Power is built with [Polymer](https://www.polymer-project.org/).
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/ui2015.png' />

@@ -34,7 +34,7 @@ There are several circumstances under which `initialize()` might be called:
 - Following a change to the module parameters
 - Following initial configuration of an app
 - Following a change in the status of Daylight Savings Time
-- Following a restart of Home Assistant
+- Following a restart of Open Peer Power
 
 In every case, the App is responsible for recreating any state it might need as if it were the first time it was ever started. If `initialize()` is called, the app can safely assume that it is either being loaded for the first time, or that all callbacks and timers have been canceled. In either case, the APP will need to recreate them. Depending upon the application it may be desirable for the App to establish state such as whether or not a particular light is on, within the `initialize()` function to ensure that everything is as expected or to make immediate remedial action (e.g., turn off a light that might have been left on by mistake when the app was restarted).
 
@@ -62,7 +62,7 @@ class NightLight(appapi.AppDaemon):
 
     # Our callback function will be called by the scheduler every day at 7pm
     def run_daily_callback(self, kwargs):
-        # Call to Home Assistant to turn the porch light on
+        # Call to Open Peer Power to turn the porch light on
         self.turn_on("light.porch")
 ```
 
@@ -257,9 +257,9 @@ Given the above, NEVER use Python's `time.sleep()` if you want to perform an ope
 
 ## State Operations
 
-### A note on Home Assistant State
+### A note on Open Peer Power State
 
-State within Home Assistant is stored as a collection of dictionaries, one for each entity. Each entity's dictionary will have some common fields and a number of entity type specific fields The state for an entity will always have the attributes:
+State within Open Peer Power is stored as a collection of dictionaries, one for each entity. Each entity's dictionary will have some common fields and a number of entity type specific fields The state for an entity will always have the attributes:
 
 - `last_updated`
 - `last_changed`
@@ -279,7 +279,7 @@ In most cases, the attribute `state` has the most important value in it, e.g., f
 get_state(entity=None, attribute=None)
 ```
 
-`get_state()` is used to query the state of any integration within Home Assistant. State updates are continuously tracked so this call runs locally and does not require AppDaemon to call back to Home Assistant and as such is very efficient.
+`get_state()` is used to query the state of any integration within Open Peer Power. State updates are continuously tracked so this call runs locally and does not require AppDaemon to call back to Open Peer Power and as such is very efficient.
 
 #### Returns
 
@@ -287,7 +287,7 @@ get_state(entity=None, attribute=None)
 
 #### Parameters
 
-All parameters are optional, and if `get_state()` is called with no parameters it will return the entire state of Home Assistant at that given time. This will consist of a dictionary with a key for each entity. Under that key will be the standard entity state information.
+All parameters are optional, and if `get_state()` is called with no parameters it will return the entire state of Open Peer Power at that given time. This will consist of a dictionary with a key for each entity. Under that key will be the standard entity state information.
 
 ##### entity
 
@@ -322,11 +322,11 @@ state = self.get_state("light.office_1", attribute="all")
 
 ### set_state()
 
-`set_state()` will make a call back to Home Assistant and make changes to the internal state of Home Assistant. This is not something that you would usually want to do and the applications are limited however the call is included for completeness. Note that for instance, setting the state of a light to `on` won't actually switch the device on, it will merely change the state of the device in Home Assistant so that it no longer reflects reality. In most cases, the state will be corrected the next time Home Assistant polls the device or someone causes a state change manually. To effect actual changes of devices use one of the service call functions.
+`set_state()` will make a call back to Open Peer Power and make changes to the internal state of Open Peer Power. This is not something that you would usually want to do and the applications are limited however the call is included for completeness. Note that for instance, setting the state of a light to `on` won't actually switch the device on, it will merely change the state of the device in Open Peer Power so that it no longer reflects reality. In most cases, the state will be corrected the next time Open Peer Power polls the device or someone causes a state change manually. To effect actual changes of devices use one of the service call functions.
 
 One possible use case for `set_state()` is for testing. If for instance you are writing an App to turn on a light when it gets dark according to a luminance sensor, you can use `set_state()` to temporarily change the light level reported by the sensor to test your program. However this is also possible using the developer tools.
 
-At the time of writing, it appears that no checking is done as to whether or not the entity exists, so it is possible to add entirely new entries to Home Assistant's state with this call.
+At the time of writing, it appears that no checking is done as to whether or not the entity exists, so it is possible to add entirely new entries to Open Peer Power's state with this call.
 
 #### Synopsis
 
@@ -356,7 +356,7 @@ status = self.set_state("light.office_1", state="on", attributes={"color_name": 
 
 ### About Callbacks
 
-A large proportion of home automation revolves around waiting for something to happen and then reacting to it; a light level drops, the sun rises, a door opens etc. Home Assistant keeps track of every state change that occurs within the system and streams that information to AppDaemon almost immediately.
+A large proportion of power management revolves around waiting for something to happen and then reacting to it; a light level drops, the sun rises, a door opens etc. Open Peer Power keeps track of every state change that occurs within the system and streams that information to AppDaemon almost immediately.
 
 An individual App however usually doesn't care about the majority of state changes going on in the system; Apps usually care about something very specific, like a specific sensor or light. Apps need a way to be notified when a state change happens that they care about, and be able to ignore the rest. They do this through registering callbacks. A callback allows the App to describe exactly what it is interested in, and tells AppDaemon to make a call into its code in a specific place to be able to react to it - this is a very familiar concept to anyone familiar with event-based programming.
 
@@ -364,7 +364,7 @@ There are 3 types of callbacks within AppDaemon:
 
 - State Callbacks - react to a change in state
 - Scheduler Callbacks - react to a specific time or interval
-- Event Callbacks - react to specific Home Assistant and AppDaemon events.
+- Event Callbacks - react to specific Open Peer Power and AppDaemon events.
 
 All callbacks allow the user to specify additional parameters to be handed to the callback via the standard Python `**kwargs` mechanism for greater flexibility.
 
@@ -463,7 +463,7 @@ A unique identifier that can be used to cancel the callback if required. Since v
 
 #### Parameters
 
-All parameters except `callback` are optional, and if `listen_state()` is called with no additional parameters it will subscribe to any state change within Home Assistant.
+All parameters except `callback` are optional, and if `listen_state()` is called with no additional parameters it will subscribe to any state change within Open Peer Power.
 
 ##### callback
 
@@ -1147,7 +1147,7 @@ if self.sun_down():
 
 ### About Services
 
-Services within Home Assistant are how changes are made to the system and its devices. Services can be used to turn lights on and off, set thermostats and a whole number of other things. Home Assistant supplies a single interface to all these disparate services that take arbitrary parameters. AppDaemon provides the `call_service()` function to call into Home Assistant and run a service. In addition, it also provides convenience functions for some of the more common services making calling them a little easier.
+Services within Open Peer Power are how changes are made to the system and its devices. Services can be used to turn lights on and off, set thermostats and a whole number of other things. Open Peer Power supplies a single interface to all these disparate services that take arbitrary parameters. AppDaemon provides the `call_service()` function to call into Open Peer Power and run a service. In addition, it also provides convenience functions for some of the more common services making calling them a little easier.
 
 ### call_service()
 
@@ -1181,7 +1181,7 @@ self.call_service("notify/notify", title="Hello", message="Hello World")
 ```
 ### turn_on()
 
-This is a convenience function for the `homeassistant.turn_on` function. It is able to turn on pretty much anything in Home Assistant that can be turned on or run:
+This is a convenience function for the `homeassistant.turn_on` function. It is able to turn on pretty much anything in Open Peer Power that can be turned on or run:
 
 - Lights
 - Switches
@@ -1220,7 +1220,7 @@ self.turn_on("light.office_1", color_name="green")
 
 ### turn_off()
 
-This is a convenience function for the `homeassistant.turn_off` function. Like `homeassistant.turn_on`, it is able to turn off pretty much anything in Home Assistant that can be turned off.
+This is a convenience function for the `homeassistant.turn_off` function. Like `homeassistant.turn_on`, it is able to turn off pretty much anything in Open Peer Power that can be turned off.
 
 #### Synopsis
 
@@ -1247,7 +1247,7 @@ self.turn_off("light.office_1")
 
 ### toggle()
 
-This is a convenience function for the `homeassistant.toggle` function. It is able to flip the state of pretty much anything in Home Assistant that can be turned on or off.
+This is a convenience function for the `homeassistant.toggle` function. It is able to flip the state of pretty much anything in Open Peer Power that can be turned on or off.
 
 #### Synopsis
 
@@ -1274,7 +1274,7 @@ self.toggle("light.office_1", color_name="green")
 
 ### select_value()
 
-This is a convenience function for the `input_number.select_value` function. It is able to set the value of an input_number in Home Assistant.
+This is a convenience function for the `input_number.select_value` function. It is able to set the value of an input_number in Open Peer Power.
 
 #### Synopsis
 
@@ -1304,7 +1304,7 @@ self.select_value("input_number.alarm_hour", 6)
 
 ### select_option()
 
-This is a convenience function for the `input_select.select_option` function. It is able to set the value of an input_select in Home Assistant.
+This is a convenience function for the `input_select.select_option` function. It is able to set the value of an input_select in Open Peer Power.
 
 #### Synopsis
 
@@ -1365,7 +1365,7 @@ self.notify("", "Switching mode to Evening")
 
 ### About Events
 
-Events are a fundamental part of how Home Assistant works under the covers. HA has an event bus that all integrations can read and write to, enabling integrations to inform other integrations when important events take place. We have already seen how state changes can be propagated to AppDaemon - a state change however is merely an example of an event within Home Assistant. There are several other event types, among them are:
+Events are a fundamental part of how Open Peer Power works under the covers. HA has an event bus that all integrations can read and write to, enabling integrations to inform other integrations when important events take place. We have already seen how state changes can be propagated to AppDaemon - a state change however is merely an example of an event within Open Peer Power. There are several other event types, among them are:
 
 - `homeassistant_start`
 - `homeassistant_stop`
@@ -1378,10 +1378,10 @@ Events are a fundamental part of how Home Assistant works under the covers. HA h
 
 Using AppDaemon, it is possible to subscribe to specific events as well as fire off events.
 
-In addition to the Home Assistant supplied events, AppDaemon adds 2 more events. These are internal to AppDaemon and are not visible on the Home Assistant bus:
+In addition to the Open Peer Power supplied events, AppDaemon adds 2 more events. These are internal to AppDaemon and are not visible on the Open Peer Power bus:
 
 - `appd_started` - fired once when AppDaemon is first started and after Apps are initialized
-- `ha_started` - fired every time AppDaemon detects a Home Assistant restart
+- `ha_started` - fired every time AppDaemon detects a Open Peer Power restart
 
 ### About Event Callbacks
 
@@ -1434,7 +1434,7 @@ The function to be called when the event is fired.
 
 ##### event
 
-Name of the event to subscribe to. Can be a standard Home Assistant event such as `service_registered` or an arbitrary custom event such as `"MODE_CHANGE"`. If no event is specified, `listen_event()` will subscribe to all events.
+Name of the event to subscribe to. Can be a standard Open Peer Power event such as `service_registered` or an arbitrary custom event such as `"MODE_CHANGE"`. If no event is specified, `listen_event()` will subscribe to all events.
 
 ##### \*\*kwargs (optional)
 
@@ -1442,7 +1442,7 @@ One or more keyword value pairs representing App specific parameters to supply t
 
 As an example of this, a Minimote controller when activated will generate an event called `zwave.scene_activated`, along with 2 pieces of data that are specific to the event - `entity_id` and `scene`. If you include keyword values for either of those, the values supplied to the `listen_event()` call must match the values in the event or it will not fire. If the keywords do not match any of the data in the event they are simply ignored.
 
-Filtering will work with any event type, but it will be necessary to figure out the data associated with the event to understand what values can be filtered on. This can be achieved by examining Home Assistant's logfiles when the event fires.
+Filtering will work with any event type, but it will be necessary to figure out the data associated with the event to understand what values can be filtered on. This can be achieved by examining Open Peer Power's logfiles when the event fires.
 
 #### Examples
 
@@ -1510,7 +1510,7 @@ service, kwargs = self.info_listen_event(handle)
 
 ### fire_event()
 
-Fire an event on the Home Assistant bus, for other integrations to hear.
+Fire an event on the Open Peer Power bus, for other integrations to hear.
 
 #### Synopsis
 
@@ -1526,7 +1526,7 @@ None.
 
 ##### event
 
-Name of the event. Can be a standard Home Assistant event such as `service_registered` or an arbitrary custom event such as `"MODE_CHANGE"`.
+Name of the event. Can be a standard Open Peer Power event such as `service_registered` or an arbitrary custom event such as `"MODE_CHANGE"`.
 
 ##### \*\*kwargs
 
@@ -1555,9 +1555,9 @@ The name of the event that caused the callback, e.g., `"MODE_CHANGE"` or `call_s
 
 A dictionary containing any additional information associated with the event.
 
-### Use of Events for Signaling between Home Assistant and AppDaemon
+### Use of Events for Signaling between Open Peer Power and AppDaemon
 
-Home Assistant allows for the creation of custom events and existing integrations can send and receive them. This provides a useful mechanism for signaling back and forth between Home Assistant and AppDaemon. For instance, if you would like to create a UI Element to fire off some code in Home Assistant, all that is necessary is to create a script to fire a custom event, then subscribe to that event in AppDaemon. The script would look something like this:
+ Open Peer Power allows for the creation of custom events and existing integrations can send and receive them. This provides a useful mechanism for signaling back and forth between Open Peer Power and AppDaemon. For instance, if you would like to create a UI Element to fire off some code in Open Peer Power, all that is necessary is to create a script to fire a custom event, then subscribe to that event in AppDaemon. The script would look something like this:
 
 ```yaml
 alias: Day
@@ -1573,7 +1573,7 @@ The custom event `MODE_CHANGE` would be subscribed to with:
 self.listen_event(self.mode_event, "MODE_CHANGE")
 ```
 
-Home Assistant can send these events in a variety of other places - within automations, and also directly from Alexa intents. Home Assistant can also listen for custom events with its automation component. This can be used to signal from AppDaemon code back to Home Assistant. Here is a sample automation:
+ Open Peer Power can send these events in a variety of other places - within automations, and also directly from Alexa intents. Open Peer Power can also listen for custom events with its automation component. This can be used to signal from AppDaemon code back to Open Peer Power. Here is a sample automation:
 
 ```yaml
 automation:
@@ -1592,7 +1592,7 @@ self.fire_event("MODE_CHANGE", mode="Day")
 
 ## Presence
 
-Presence in Home Assistant is tracked using Device Trackers. The state of all device trackers can be found using the `get_state()` call, however AppDaemon provides several convenience functions to make this easier.
+Presence in Open Peer Power is tracked using Device Trackers. The state of all device trackers can be found using the `get_state()` call, however AppDaemon provides several convenience functions to make this easier.
 
 ### get_trackers()
 
@@ -1785,7 +1785,7 @@ now = self.datetime()
 
 ### convert_utc()
 
-Home Assistant provides timestamps of several different sorts that may be used to gain additional insight into state changes. These timestamps are in UTC and are coded as ISO 8601 Combined date and time strings. `convert_utc()` will accept one of these strings and convert it to a localized Python datetime object representing the timestamp
+ Open Peer Power provides timestamps of several different sorts that may be used to gain additional insight into state changes. These timestamps are in UTC and are coded as ISO 8601 Combined date and time strings. `convert_utc()` will accept one of these strings and convert it to a localized Python datetime object representing the timestamp
 
 #### Synopsis
 

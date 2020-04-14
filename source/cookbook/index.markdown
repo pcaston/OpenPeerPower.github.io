@@ -1,12 +1,12 @@
 ---
 title: "Cookbook"
-description: "Community maintained list of different ways to use Home Assistant."
+description: "Community maintained list of different ways to use Open Peer Power."
 sidebar: false
 regenerate: true
 hide_github_edit: true
 ---
 
-This is a community curated list of different ways to use Home Assistant. Most of these examples are using the [automation] integration and other built-in [automation related][sec-automation] and [organization] integrations available.
+This is a community curated list of different ways to use Open Peer Power. Most of these examples are using the [automation] integration and other built-in [automation related][sec-automation] and [organization] integrations available.
 
 For [`python_script:` examples](/integrations/python_script/) visit the [Scripts section](https://community.home-assistant.io/c/projects/scripts) in our forum.
 

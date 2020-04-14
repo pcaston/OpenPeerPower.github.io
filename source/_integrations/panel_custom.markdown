@@ -1,6 +1,6 @@
 ---
 title: Custom Panel
-description: Instructions on how to add customized panels to the frontend of Home Assistant.
+description: Instructions on how to add customized panels to the frontend of Open Peer Power.
 ha_category:
   - Front End
 ha_release: 0.26
@@ -10,7 +10,7 @@ ha_codeowners:
 ha_domain: panel_custom
 ---
 
-The `panel_custom` support allows you to add additional panels to your Home Assistant frontend. The panels are listed in the sidebar if wished and can be highly customized. See the developer documentation on [instructions how to build your own panels](https://developers.home-assistant.io/docs/en/frontend_creating_custom_panels.html).
+The `panel_custom` support allows you to add additional panels to your Open Peer Power frontend. The panels are listed in the sidebar if wished and can be highly customized. See the developer documentation on [instructions how to build your own panels](https://developers.home-assistant.io/docs/en/frontend_creating_custom_panels.html).
 
 To enable customized panels in your installation, add the following to your `configuration.yaml` file:
 

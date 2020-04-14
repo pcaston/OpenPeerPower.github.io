@@ -1,6 +1,6 @@
 ---
 title: Input Text
-description: Instructions on how to integrate the Input Text integration into Home Assistant.
+description: Instructions on how to integrate the Input Text integration into Open Peer Power.
 ha_category:
   - Automation
 ha_release: 0.53
@@ -51,7 +51,7 @@ input_text:
         type: integer
         default: 100
       initial:
-        description: Initial value when Home Assistant starts.
+        description: Initial value when Open Peer Power starts.
         required: false
         type: string
       icon:
@@ -72,7 +72,7 @@ input_text:
 
 ### Services
 
-This integration provides a service to modify the state of the `input_text` and a service to reload the `input_text` configuration without restarting Home Assistant itself.
+This integration provides a service to modify the state of the `input_text` and a service to reload the `input_text` configuration without restarting Open Peer Power itself.
 
 | Service | Data | Description |
 | ------- | ---- | ----------- |
@@ -81,7 +81,7 @@ This integration provides a service to modify the state of the `input_text` and 
 
 ### Restore State
 
-If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Home Assistant stopping.
+If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Open Peer Power stopping.
 
 ### Scenes
 

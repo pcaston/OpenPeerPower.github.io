@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "0.106.3: Coronavirus integration (COVID-19), track the outbreak"
-description: "A special release of Home Assistant, adding the Coronavirus integration (COVID-19)."
+description: "A special release of Open Peer Power, adding the Coronavirus integration (COVID-19)."
 date: 2020-03-02 00:00:00
 date_formatted: "March 02, 2020"
 author: Franck Nijhof
@@ -25,17 +25,17 @@ the virus constantly, and a lot of people are tracking the number of cases
 in their country.
 
 This special release adds the [Coronavirus integration](/integrations/coronavirus),
-allowing you to track the outbreak from within Home Assistant.
+allowing you to track the outbreak from within Open Peer Power.
 
 ## The Coronavirus integration
 
 While having a meeting at [Nabu Casa](https://www.nabucasa.com/),
 we caught ourselves talking a lot about the state of the virus spreading in
 the countries we live in. Which brought us to the subject of being able to
-track the virus in Home Assistant itself.
+track the virus in Open Peer Power itself.
 
 So together, we started working on an integration right away. We decided to
-bring you a special release of Home Assistant that includes this integration.
+bring you a special release of Open Peer Power that includes this integration.
 
 The Coronavirus integration tracks the number of people that are confirmed with,
 recovered from, and deceased caused by the virus in your country, or worldwide.
@@ -43,13 +43,13 @@ recovered from, and deceased caused by the virus in your country, or worldwide.
 The data is sourced from the [Johns Hopkins University](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6).
 
 <p class='img'>
-<img src='/images/blog/2020-03-0.106.3/screenshot.png' alt='Screenshot of the Coronavirus integration in Home Assistant'></a>
-Screenshot of the Coronavirus integration in Home Assistant.
+<img src='/images/blog/2020-03-0.106.3/screenshot.png' alt='Screenshot of the Coronavirus integration in Open Peer Power'></a>
+Screenshot of the Coronavirus integration in Open Peer Power.
 </p>
 
 ## Adding the Coronavirus integration
 
-This integration can be configured via the Home Assistant frontend.
+This integration can be configured via the Open Peer Power frontend.
 
 - Go to **Configuration** -> **Integrations**.
 - Click on the `+` in the bottom right corner to add a new integration.

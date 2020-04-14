@@ -14,11 +14,11 @@ Time for the fifth enactment of the Community Highlights!
 We've received quite a few recommendations, but also closely monitored
 social media and found some gems to share again!
 
-## Controlling 7! marine aquariums with Home Assistant
+## Controlling 7! marine aquariums with Open Peer Power
 
-Let's start with showcasing a highly unusual, but impressive, Home Assistant setup.
+Let's start with showcasing a highly unusual, but impressive, Open Peer Power setup.
 It is shared on our [Facebook group][facebook-group] by Kevin McPeake. Kevin's
-setup has a total of 5 Home Assistant instances, controlling 7x marine aquariums!
+setup has a total of 5 Open Peer Power instances, controlling 7x marine aquariums!
 
 <p class='img'>
   <a href="https://www.facebook.com/groups/HomeAssistant/permalink/2597624533842234/">
@@ -32,7 +32,7 @@ setup has a total of 5 Home Assistant instances, controlling 7x marine aquariums
 </p>
 
 Those are some big views Kevin! I bet you will be happy with the new Lovelace
-features that are coming in Home Assistant Core 0.107. It will help
+features that are coming in Open Peer Power Core 0.107. It will help
 you to trim down that a bit, into multiple Lovelace Dashboards (now in
 [beta, sneak peak?](https://rc.home-assistant.io/latest-release-notes/)).
 
@@ -81,7 +81,7 @@ If you are interested in this, more information can be found here:
 
 ## Got a tip for the next edition?
 
-Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Home Assistant?
+Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Open Peer Power?
 
 [Click here to send us your Community Highlight suggestion](/suggest-community-highlight).
 

@@ -1,6 +1,6 @@
 ---
 title: Counter
-description: Instructions on how to integrate counters into Home Assistant.
+description: Instructions on how to integrate counters into Open Peer Power.
 ha_category:
   - Automation
 ha_release: 0.53
@@ -35,12 +35,12 @@ counter:
       required: false
       type: string
     initial:
-      description: Initial value when Home Assistant starts or the counter is reset.
+      description: Initial value when Open Peer Power starts or the counter is reset.
       required: false
       type: integer
       default: 0
     restore:
-      description: Try to restore the last known value when Home Assistant starts.
+      description: Try to restore the last known value when Open Peer Power starts.
       required: false
       type: boolean
       default: true
@@ -67,7 +67,7 @@ Pick an icon that you can find on [materialdesignicons.com](https://materialdesi
 
 ### Restore State
 
-This integration will automatically restore the state it had prior to Home Assistant stopping as long as you your entity has `restore` set to `true` which is the default. To disable this feature, set `restore` to `false`.
+This integration will automatically restore the state it had prior to Open Peer Power stopping as long as you your entity has `restore` set to `true` which is the default. To disable this feature, set `restore` to `false`.
 
 If `restore` is set to `false`, the `initial` value will only be used when no previous state is found or when the counter is reset.
 
@@ -126,9 +126,9 @@ Select the **Services** tab from within **Developer Tools**. Choose **counter** 
 
 ## Examples
 
-### Counting Home Assistant errors
+### Counting Open Peer Power errors
 
-To use a counter to count errors as caught by Home Assistant, you need to add `fire_event: true` to your `configuration.yaml`, like so:
+To use a counter to count errors as caught by Open Peer Power, you need to add `fire_event: true` to your `configuration.yaml`, like so:
 
 ```yaml
 # Example configuration.yaml entry

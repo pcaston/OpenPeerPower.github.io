@@ -1,6 +1,6 @@
 ---
 title: Australian Bureau of Meteorology (BOM)
-description: Instructions on how to integrate Bureau of Meteorology Australia weather conditions into Home Assistant.
+description: Instructions on how to integrate Bureau of Meteorology Australia weather conditions into Open Peer Power.
 logo: bom.png
 ha_category:
   - Weather
@@ -15,7 +15,7 @@ ha_codeowners:
 
 The `bom` weather platform uses the [Australian Bureau of Meteorology (BOM)](http://www.bom.gov.au) as a source for current (half-hourly) meteorological data.
 
-There is currently support for the following device types within Home Assistant:
+There is currently support for the following device types within Open Peer Power:
 
 - [Camera](#camera)
 - [Sensor](#sensor)
@@ -70,7 +70,7 @@ location:
   required: true
   type: string
 name:
-  description: Allows you to override the Home Assistant-generated camera name.
+  description: Allows you to override the Open Peer Power-generated camera name.
   required: false
   type: string
 id:
@@ -148,7 +148,7 @@ camera:
 
 This option can be specified to save the animated radar-imagery GIF to the given filesystem path.
 
-Example `configuration.yaml` entry to display the `Sydney` radar and save the animated GIF to a file named `sydneyradar.gif` to the filesystem path accessible as `/local/sydneyradar.gif` via Home Assistant's web server:
+Example `configuration.yaml` entry to display the `Sydney` radar and save the animated GIF to a file named `sydneyradar.gif` to the filesystem path accessible as `/local/sydneyradar.gif` via Open Peer Power's web server:
 
 ```yaml
 camera:

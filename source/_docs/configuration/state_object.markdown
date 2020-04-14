@@ -1,10 +1,10 @@
 ---
 title: "State Objects"
-description: "Describes all there is to know about state objects in Home Assistant."
+description: "Describes all there is to know about state objects in Open Peer Power."
 redirect_from: /topics/state_object/
 ---
 
-Your devices are represented in Home Assistant as entities. The entities will write their current state to the state machine for other entities/templates/frontend to access. States are a current representation of the entity.
+Your devices are represented in Open Peer Power as entities. The entities will write their current state to the state machine for other entities/templates/frontend to access. States are a current representation of the entity.
 
 If you overwrite a state via the states dev tool or the API, it will not impact the actual device. If the device state is being polled, it will overwrite the state in the state machine the next polling.
 
@@ -21,7 +21,7 @@ Field | Description
 `state.last_changed` | Time the state changed in the state machine in UTC time. This is not updated when there are only updated attributes. Example: `2017-10-28 08:13:36.715874+00:00`.
 `state.attributes` | A dictionary with extra attributes related to the current state.
 
-The attributes of an entity are optional. There are a few attributes that are used by Home Assistant for representing the entity in a specific way. Each integration will also have its own attributes to represent extra state data about the entity. For example, the light integration has attributes for the current brightness and color of the light. When an attribute is not available, Home Assistant will not write it to the state.
+The attributes of an entity are optional. There are a few attributes that are used by Open Peer Power for representing the entity in a specific way. Each integration will also have its own attributes to represent extra state data about the entity. For example, the light integration has attributes for the current brightness and color of the light. When an attribute is not available, Open Peer Power will not write it to the state.
 
 When using templates, attributes will be available by their name. For example `state.attributes.assumed_state`.
 

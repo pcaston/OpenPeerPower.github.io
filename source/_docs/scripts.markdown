@@ -1,10 +1,10 @@
 ---
 title: "Script Syntax"
-description: "Documentation for the Home Assistant Script Syntax."
+description: "Documentation for the Open Peer Power Script Syntax."
 redirect_from: /getting-started/scripts/
 ---
 
-Scripts are a sequence of actions that Home Assistant will execute. Scripts are available as an entity through the standalone [Script component] but can also be embedded in [automations] and [Alexa/Amazon Echo] configurations.
+Scripts are a sequence of actions that Open Peer Power will execute. Scripts are available as an entity through the standalone [Script component] but can also be embedded in [automations] and [Alexa/Amazon Echo] configurations.
 
 The script syntax basic structure is a list of key/value maps that contain actions. If a script contains only 1 action, the wrapping list can be omitted.
 

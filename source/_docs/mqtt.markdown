@@ -1,11 +1,11 @@
 ---
 title: "MQTT"
-description: "Details about the MQTT support of Home Assistant."
+description: "Details about the MQTT support of Open Peer Power."
 ---
 
 MQTT (aka MQ Telemetry Transport) is a machine-to-machine or "Internet of Things" connectivity protocol on top of TCP/IP. It allows extremely lightweight publish/subscribe messaging transport.
 
-To integrate MQTT into Home Assistant, add the following section to your `configuration.yaml` file:
+To integrate MQTT into Open Peer Power, add the following section to your `configuration.yaml` file:
 
 ```yaml
 # Example configuration.yaml entry

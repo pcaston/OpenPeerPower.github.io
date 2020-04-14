@@ -7,17 +7,17 @@ The frontend contains a section called "Developer Tools".
 
 <p class='img'>
 <img src='/images/screenshots/developer-tools.png' />
-Screenshot of Home Assistant's Developer Tools.
+Screenshot of Open Peer Power's Developer Tools.
 </p>
 
 | Section |Description |
 | ------- |----- |
 | States | Sets the representation of an entity |
 | Services | Calls services from integrations |
-| Logs | Displays contents of Home Assistant log file |
+| Logs | Displays contents of Open Peer Power log file |
 | Events | Fires events |
 | Templates | Renders templates |
-| Info | Details about Home Assistant |
+| Info | Details about Open Peer Power |
 
 ## What can I do with Developer Tools?
 
@@ -48,9 +48,9 @@ rgb_color: [255, 0, 0]
 
 ## States
 
-This section shows all the available entities, their corresponding state and the attribute values. The state and the attribute information is what Home Assistant sees at run time. To update the entity with a new state, or a new attribute value, click on the entity, scroll to the top, and modify the values, and click on “SET STATE” button.
+This section shows all the available entities, their corresponding state and the attribute values. The state and the attribute information is what Open Peer Power sees at run time. To update the entity with a new state, or a new attribute value, click on the entity, scroll to the top, and modify the values, and click on “SET STATE” button.
 
-Note that this is the state representation of a device within Home Assistant. That means, it is what Home Assistant sees, and it does not communicate with the actual device in any manner. The updated information can still be used to trigger events, and state changes. To communicate with the actual device, it is recommended to call services in the services section above, instead of updating state.
+Note that this is the state representation of a device within Open Peer Power. That means, it is what Open Peer Power sees, and it does not communicate with the actual device in any manner. The updated information can still be used to trigger events, and state changes. To communicate with the actual device, it is recommended to call services in the services section above, instead of updating state.
 
 For ex: Changing the `light.bedroom` state from `off` to `on` does not turn on the light. If there is an automation that triggers on the `state` change of the `light.bedroom`, it will be triggered – even though the actual bulb has not turned on. Also, when the bulb state changes – the state information will be overridden. In other words, the changes that are made through the “States” section are temporary, and is recommended to use for testing purposes only.
 

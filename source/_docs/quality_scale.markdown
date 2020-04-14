@@ -9,11 +9,11 @@ The Integration Quality Scale scores each integration based on the code quality 
 
 ## No score
 
-This integration passes the bare minimum requirements. That's the level of most integrations when they are introduced into Home Assistant. It doesn't mean that they are bad or buggy, just that you need to configure them with an entry in your `configuration.yaml` file.
+This integration passes the bare minimum requirements. That's the level of most integrations when they are introduced into Open Peer Power. It doesn't mean that they are bad or buggy, just that you need to configure them with an entry in your `configuration.yaml` file.
 
 ## Silver 🥈
 
-This integration is able to cope when things go wrong. It will not print any exceptions nor will it fill the log with retry attempts. Also, it will show you if a device is offline or not ready when you start Home Assistant.
+This integration is able to cope when things go wrong. It will not print any exceptions nor will it fill the log with retry attempts. Also, it will show you if a device is offline or not ready when you start Open Peer Power.
 
 ## Gold 🥇
 
@@ -25,5 +25,5 @@ Best of the best. The integration is completely async, meaning it's super fast a
 
 ## Internal 🏠
 
-All integrations which are marked as **internal** are part of Home Assistant.
+All integrations which are marked as **internal** are part of Open Peer Power.
 

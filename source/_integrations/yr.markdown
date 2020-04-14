@@ -1,6 +1,6 @@
 ---
 title: Yr
-description: Instructions on how to integrate Yr.no within Home Assistant.
+description: Instructions on how to integrate Yr.no within Open Peer Power.
 ha_category:
   - Weather
 ha_release: 0.11
@@ -69,17 +69,17 @@ latitude:
   description: Manually specify latitude.
   required: false
   type: float
-  default: Provided by Home Assistant configuration.
+  default: Provided by Open Peer Power configuration.
 longitude:
   description: Manually specify longitude.
   required: false
   type: float
-  default: Provided by Home Assistant configuration.
+  default: Provided by Open Peer Power configuration.
 altitude:
   description: Manually specify altitude.
   required: false
   type: float
-  default: Provided by Home Assistant configuration.
+  default: Provided by Open Peer Power configuration.
 {% endconfiguration %}
 
 A full configuration example can be found below:

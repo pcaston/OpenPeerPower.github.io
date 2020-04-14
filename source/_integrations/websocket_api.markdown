@@ -1,6 +1,6 @@
 ---
 title: Home Asssitant WebSocket API
-description: Instructions on how to setup the WebSocket API within Home Assistant.
+description: Instructions on how to setup the WebSocket API within Open Peer Power.
 ha_category:
   - Other
 ha_release: 0.34
@@ -10,7 +10,7 @@ ha_codeowners:
 ha_domain: websocket_api
 ---
 
-The `websocket_api` integration set up a WebSocket API and allows one to interact with a Home Assistant instance that is running headless. This integration depends on the [`http` component](/integrations/http/).
+The `websocket_api` integration set up a WebSocket API and allows one to interact with a Open Peer Power instance that is running headless. This integration depends on the [`http` component](/integrations/http/).
 
 <div class='note warning'>
 

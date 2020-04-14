@@ -1,6 +1,6 @@
 ---
 title: History Stats
-description: Instructions about how to integrate historical statistics into Home Assistant.
+description: Instructions about how to integrate historical statistics into Open Peer Power.
 ha_category:
   - Utility
 ha_iot_class: Local Polling
@@ -47,7 +47,7 @@ state:
   required: true
   type: string
 name:
-  description: Name displayed on the frontend. Note that it is used by Home Assistant to generate sensor's `object_id` so it is advisable to choose a unique one and change name for frontend using [customization](/docs/configuration/customizing-devices/#friendly_name) or via [Lovelace](/lovelace/entities/#name).
+  description: Name displayed on the frontend. Note that it is used by Open Peer Power to generate sensor's `object_id` so it is advisable to choose a unique one and change name for frontend using [customization](/docs/configuration/customizing-devices/#friendly_name) or via [Lovelace](/lovelace/entities/#name).
   required: false
   default: unnamed statistics
   type: string
@@ -188,6 +188,6 @@ Here, last Monday is _today_ as a timestamp, minus 86400 times the current weekd
 
 <div class='note'>
 
-  The `/developer-tools/template` page of your Home Assistant UI can help you check if the values for `start`, `end` or `duration` are correct. If you want to check if your period is right, just click on your component, the `from` and `to` attributes will show the start and end of the period, nicely formatted.
+  The `/developer-tools/template` page of your Open Peer Power UI can help you check if the values for `start`, `end` or `duration` are correct. If you want to check if your period is right, just click on your component, the `from` and `to` attributes will show the start and end of the period, nicely formatted.
 
 </div>

@@ -1,6 +1,6 @@
 ---
 title: "Installation on your computer"
-description: "Installation of Home Assistant on your computer."
+description: "Installation of Open Peer Power on your computer."
 redirect_from: /getting-started/installation-python/
 ---
 
@@ -19,8 +19,8 @@ hass --open-ui
 
 Running these commands will:
 
- - Install Home Assistant
- - Launch Home Assistant and serve the web interface on [http://localhost:8123](http://localhost:8123)
+ - Install Open Peer Power
+ - Launch Open Peer Power and serve the web interface on [http://localhost:8123](http://localhost:8123)
 
 Video tutorials of this process for various operating systems are available here:
 

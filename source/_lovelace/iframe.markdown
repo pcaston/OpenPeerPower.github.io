@@ -1,13 +1,13 @@
 ---
 title: "Webpage Card"
 sidebar_label: Webpage
-description: "The Webpage card allows you to embed your favorite webpage right into Home Assistant."
+description: "The Webpage card allows you to embed your favorite webpage right into Open Peer Power."
 ---
 
-The Webpage card allows you to embed your favorite webpage right into Home Assistant. You can also embed files stored in your `<config-directory>/www` folder and reference them using `/local/<file>`.
+The Webpage card allows you to embed your favorite webpage right into Open Peer Power. You can also embed files stored in your `<config-directory>/www` folder and reference them using `/local/<file>`.
 
 <div class='note warning'>
-You can't embed sites using HTTP if you are using HTTPS for your Home Assistant.
+You can't embed sites using HTTP if you are using HTTPS for your Open Peer Power.
 </div>
 
 <p class='img'>

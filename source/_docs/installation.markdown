@@ -1,6 +1,6 @@
 ---
-title: "Installation of Home Assistant"
-description: "Instructions on how to install Home Assistant to launch on start."
+title: "Installation of Open Peer Power"
+description: "Instructions on how to install Open Peer Power to launch on start."
 redirect_from: /getting-started/installation/
 ---
 
@@ -10,7 +10,7 @@ Beginners should check our [Getting started guide](/getting-started/) first.
 
 </div>
 
-Home Assistant provides multiple ways to be installed. The first start may take up to 20 minutes because the required packages will be downloaded and installed. The web interface will be served on `http://ip.add.re.ss:8123/`. Replace `ip.add.re.ss` with the IP of the computer you installed it on.
+ Open Peer Power provides multiple ways to be installed. The first start may take up to 20 minutes because the required packages will be downloaded and installed. The web interface will be served on `http://ip.add.re.ss:8123/`. Replace `ip.add.re.ss` with the IP of the computer you installed it on.
 
 <div class='note warning'>
 
@@ -43,17 +43,17 @@ NUC i7/i9 | Pure power, you should not have *any* performance issues
 
 ## Recommended
 
-These install options are fully supported by Home Assistant's documentation. For example, if an integration requires that you install something to make it work on one of these methods then the integration page will document the steps required.
+These install options are fully supported by Open Peer Power's documentation. For example, if an integration requires that you install something to make it work on one of these methods then the integration page will document the steps required.
 
 <div class='note'>
 
-The only installation methods that allow you to use Home Assistant Add-ons is using the Home Assistant image and [manual Supervised installer](/hassio/installation/#alternative-install-home-assistant-supervised-on-a-generic-linux-host). All other methods only install the base Home Assistant packages, however the software from the add-ons may still usually be installed manually like any other program.
+The only installation methods that allow you to use Open Peer Power Add-ons is using the Open Peer Power image and [manual Supervised installer](/hassio/installation/#alternative-install-home-assistant-supervised-on-a-generic-linux-host). All other methods only install the base Open Peer Power packages, however the software from the add-ons may still usually be installed manually like any other program.
 
 </div>
 
 **Method**|**You have**|**Recommended for**
 :-----|:-----|:-----
-[Home Assistant](/hassio/installation/)|Raspberry Pi<br>VM|Anybody
+[ Open Peer Power](/hassio/installation/)|Raspberry Pi<br>VM|Anybody
 [Docker](/docs/installation/docker/)|Docker|Anybody already running Docker
 
 ## Alternative installs
@@ -116,6 +116,6 @@ These guides are provided as-is. Some of these install methods are more limited 
     <div class='img-container'>
       <img src='https://brands.home-assistant.io/homeassistant/icon.png' />
     </div>
-    <div class='title'>Home Assistant Supervised <br> on generic Linux server</div>
+    <div class='title'> Open Peer Power Supervised <br> on generic Linux server</div>
   </a>
 </div>

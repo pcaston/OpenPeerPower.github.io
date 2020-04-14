@@ -1,6 +1,6 @@
 ---
 title: One-Time Password (OTP)
-description: Instructions on how to add One-Time Password (OTP) sensors into Home Assistant.
+description: Instructions on how to add One-Time Password (OTP) sensors into Open Peer Power.
 ha_category:
   - Utility
 ha_iot_class: Local Polling
@@ -36,7 +36,7 @@ token:
 
 ## Generating a token
 
-A simple way to generate a `token` for a new sensor is to run this snippet of Python code in your Home Assistant virtual environment:
+A simple way to generate a `token` for a new sensor is to run this snippet of Python code in your Open Peer Power virtual environment:
 
 ```shell
 $ pip3 install pyotp
@@ -51,8 +51,8 @@ $ docker exec -it home-assistant python -c 'import pyotp; print("Token:", pyotp.
 Token: IHEDPEBEVA2WVHB7
 ```
 
-Copy and paste the token into your Home Assistant configuration and add it to your OTP generator. Verify that they generate the same code.
+Copy and paste the token into your Open Peer Power configuration and add it to your OTP generator. Verify that they generate the same code.
 
 <div class='note warning'>
-It is vital that your system clock is correct both on your Home Assistant server and on your OTP generator device (e.g., your phone). If not, the generated codes will not match! Make sure NTP is running and syncing your time correctly before creating an issue.
+It is vital that your system clock is correct both on your Open Peer Power server and on your OTP generator device (e.g., your phone). If not, the generated codes will not match! Make sure NTP is running and syncing your time correctly before creating an issue.
 </div>

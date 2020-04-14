@@ -7,7 +7,7 @@ description: "How to add and remove Z-Wave devices."
 
 To add (include) a non-secure Z-Wave [device](/docs/z-wave/devices/) to your system:
 
-1. Go to the [Z-Wave control panel](/docs/z-wave/control-panel/) in the Home Assistant frontend
+1. Go to the [Z-Wave control panel](/docs/z-wave/control-panel/) in the Open Peer Power frontend
 2. Click the **Add Node** button in the *Z-Wave Network Management* card - this will place the controller in inclusion mode
 3. Activate your device to be included by following the instructions provided with the device
 4. With the device in its final location, run a *Heal Network*
@@ -16,11 +16,11 @@ Don't use this for [secure devices](/docs/z-wave/adding/#adding-secure-devices),
 
 <div class='note warning'>
 
-Don't use the OpenZWave control panel (OZWCP), **or the physical button on a controller**, to add or remove devices. Many devices will only send the information about their capabilities at the time you include them. If you use the OpenZWave control panel, or the button on a device, then Home Assistant won't have that information. Using the physical button on a controller will also result in a non-security inclusion being performed, which may limit the features the device supports.
+Don't use the OpenZWave control panel (OZWCP), **or the physical button on a controller**, to add or remove devices. Many devices will only send the information about their capabilities at the time you include them. If you use the OpenZWave control panel, or the button on a device, then Open Peer Power won't have that information. Using the physical button on a controller will also result in a non-security inclusion being performed, which may limit the features the device supports.
 
 </div>
 
-When you add a device, it may initially appear without a specific entity ID (e.g., `zwave.__`) and without other identifying information. Running a *Heal* should help speed this process up, and you'll need to run a *Heal* anyway so that all the devices in your Z-Wave network learn about the new device. You *might* need to restart Home Assistant (not reboot the system) to have the entity ID fully visible.
+When you add a device, it may initially appear without a specific entity ID (e.g., `zwave.__`) and without other identifying information. Running a *Heal* should help speed this process up, and you'll need to run a *Heal* anyway so that all the devices in your Z-Wave network learn about the new device. You *might* need to restart Open Peer Power (not reboot the system) to have the entity ID fully visible.
 
 ## Network Key
 
@@ -64,7 +64,7 @@ Ensure you keep a backup of this key. If you have to rebuild your system and don
 
 After defining your network key, follow these steps to add (include) a secure Z-Wave device:
 
-1. Go to the [Z-Wave control panel](/docs/z-wave/control-panel/) in the Home Assistant frontend
+1. Go to the [Z-Wave control panel](/docs/z-wave/control-panel/) in the Open Peer Power frontend
 2. Click the **Add Node Secure** button in the *Z-Wave Network Management* card - this will place the controller in inclusion mode
 3. Activate your device to be included by following the instructions provided with the device
 4. With the device in its final location, run a *Heal Network*
@@ -77,15 +77,15 @@ Secure devices require additional bandwidth, and too many secure devices can slo
 
 To remove (exclude) a Z-Wave device from your system:
 
-1. Go to the Z-Wave control panel in the Home Assistant frontend
+1. Go to the Z-Wave control panel in the Open Peer Power frontend
 2. Click the **Remove Node** button in the *Z-Wave Network Management* card - this will place the controller in exclusion mode
 3. Activate your device to be excluded by following the instructions provided with the device
-4. The device will now be removed, but that won't show until you restart Home Assistant 
+4. The device will now be removed, but that won't show until you restart Open Peer Power 
 5. Run a *Heal Network* so all the other nodes learn about its removal
 
 If your device isn't responding to this process, possibly because you've factory reset it or it has failed, you can remove it using **Remove Failed Node**. This only works for devices marked as `"is_failed": true`, but you can trick the system into thinking that this the case:
 
-1. Go to the *States* menu under *Developer tools* in the Home Assistant frontend
+1. Go to the *States* menu under *Developer tools* in the Open Peer Power frontend
 2. Click on the name of the `zwave.` entity you want to remove
 3. Make note of the entity's "node_id" value as you will need to re-add the "node_id" attribute and value in step 4.
 4. At the top, edit the JSON attributes to replace `false` with `true` for `"is_failed": false,` so that it reads `"is_failed": true.` Also add the "node_id" value to the number listed in the entity's attribute. The JSON attributes should look something like below:
@@ -95,13 +95,13 @@ If your device isn't responding to this process, possibly because you've factory
     ```
 
 5. Click **Set State**
-6. Go to the Z-Wave control panel in the Home Assistant frontend
+6. Go to the Z-Wave control panel in the Open Peer Power frontend
 7. Click the **Remove Failed Node** button in the *Z-Wave Node Management* card
-8. The device will now be removed, but that won't show until you restart Home Assistant 
+8. The device will now be removed, but that won't show until you restart Open Peer Power 
 
 ## Troubleshooting
 
-Sometimes devices won't add to Home Assistant. There are a couple of possible problems.
+Sometimes devices won't add to Open Peer Power. There are a couple of possible problems.
 
 1. You're not using all Z-Wave Plus devices, in which case the device can't use the mesh to be added, and must be in the same room as your controller.
 2. The device was previously added to another controller, and not removed. You'll need to follow the process above for removing devices first, then try adding it again.

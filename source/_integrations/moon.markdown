@@ -1,6 +1,6 @@
 ---
 title: Moon
-description: Instructions on how to integrate the moon sensor into Home Assistant.
+description: Instructions on how to integrate the moon sensor into Open Peer Power.
 ha_category:
   - Environment
 ha_iot_class: Local Polling

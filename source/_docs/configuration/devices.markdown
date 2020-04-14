@@ -1,10 +1,10 @@
 ---
-title: "Adding devices to Home Assistant"
-description: "Steps to help you get your devices in Home Assistant."
+title: "Adding devices to Open Peer Power"
+description: "Steps to help you get your devices in Open Peer Power."
 redirect_from: /getting-started/devices/
 ---
 
-Home Assistant will be able to automatically discover many devices and services available on your network if you have [the discovery component](/integrations/discovery/) enabled (the default setting).
+ Open Peer Power will be able to automatically discover many devices and services available on your network if you have [the discovery component](/integrations/discovery/) enabled (the default setting).
 
 See the [integrations overview page](/integrations/) to find installation instructions for your devices and services. If you can't find support for your favorite device or service, [consider adding support](/developers/add_new_platform/).
 

@@ -1,6 +1,6 @@
 ---
 title: Modbus
-description: Instructions on how to integrate Modbus within Home Assistant.
+description: Instructions on how to integrate Modbus within Open Peer Power.
 ha_category:
   - Hub
 ha_release: pre 0.7
@@ -88,7 +88,7 @@ method:
   required: true
   type: string
 port:
-  description: The port where your Modbus device is connected to your Home Assistant host.
+  description: The port where your Modbus device is connected to your Open Peer Power host.
   required: true
   type: string
 baudrate:
@@ -179,7 +179,7 @@ logger:
     pymodbus.client: debug
 ```
 
-and restart Home Assistant, reproduce the problem, and include the log in the issue.
+and restart Open Peer Power, reproduce the problem, and include the log in the issue.
 
 ## Building on top of Modbus
 

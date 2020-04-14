@@ -1,6 +1,6 @@
 ---
 title: Conversation
-description: Instructions on how to have conversations with your Home Assistant.
+description: Instructions on how to have conversations with your Open Peer Power.
 ha_category:
   - Voice
 ha_release: 0.7
@@ -10,11 +10,11 @@ ha_codeowners:
 ha_domain: conversation
 ---
 
-The conversation integration allows you to converse with Home Assistant. You can either converse by pressing the microphone in the frontend (supported browsers only (no iOS)) or by calling the `conversation/process` service with the transcribed text.
+The conversation integration allows you to converse with Open Peer Power. You can either converse by pressing the microphone in the frontend (supported browsers only (no iOS)) or by calling the `conversation/process` service with the transcribed text.
 
 <p class='img'>
   <img src="/images/screenshots/voice-commands.png" />
-  Screenshot of the conversation interface in Home Assistant.
+  Screenshot of the conversation interface in Open Peer Power.
 </p>
 
 ```yaml

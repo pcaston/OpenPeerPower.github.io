@@ -44,9 +44,9 @@ device:
 
 To use notifications, please see the [getting started with automation page](/getting-started/automation/).
 
-If the integration is used with the Home Assistant Operating System, then version [3.6](https://github.com/home-assistant/hassos/releases/tag/3.6) or higher is required.
+If the integration is used with the Open Peer Power Operating System, then version [3.6](https://github.com/home-assistant/hassos/releases/tag/3.6) or higher is required.
 
-For installations not running on Home Assistant or Home Assistant Core using Docker, you must install `gammu-dev` package:
+For installations not running on Open Peer Power or Open Peer Power Core using Docker, you must install `gammu-dev` package:
 
 ```bash
 sudo apt-get install libgammu-dev
@@ -58,7 +58,7 @@ Before running for the first time, check that the system recognizes the modem by
 ls -l /dev/*USB*
 ```
 
-Note: When running Home Assistant, you need to install the SSH add-on.
+Note: When running Open Peer Power, you need to install the SSH add-on.
 
 ## Required Hardware
 

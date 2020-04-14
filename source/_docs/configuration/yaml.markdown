@@ -1,12 +1,12 @@
 ---
 title: "YAML"
-description: "Details about YAML to configure Home Assistant."
+description: "Details about YAML to configure Open Peer Power."
 redirect_from: /getting-started/yaml/
 ---
 
-Home Assistant uses the [YAML](https://yaml.org/) syntax for configuration. YAML might take a while to get used to but is really powerful in allowing you to express complex configurations.
+ Open Peer Power uses the [YAML](https://yaml.org/) syntax for configuration. YAML might take a while to get used to but is really powerful in allowing you to express complex configurations.
 
-For integrations that you want to use in Home Assistant, you add code in your `configuration.yaml` file to specify its settings. This especially applies to integrations that are not yet available to configure through the UI.
+For integrations that you want to use in Open Peer Power, you add code in your `configuration.yaml` file to specify its settings. This especially applies to integrations that are not yet available to configure through the UI.
 
 The following example entry assumes that you would like to set up the [notify component](/integrations/notify) with the [pushbullet platform](/integrations/pushbullet).
 
@@ -26,7 +26,7 @@ Note that indentation is an important part of specifying relationships using YAM
 
 Getting the right indentation can be tricky if you're not using an editor with a fixed width font. Tabs are not allowed to be used for indentation. Convention is to use 2 spaces for each level of indentation.
 
-You can use the online service [YAMLLint](http://www.yamllint.com/) to check if your YAML syntax is correct before loading it into Home Assistant which will save you some time. If you do so, be aware that this is a third-party service and is not maintained by the Home Assistant community.
+You can use the online service [YAMLLint](http://www.yamllint.com/) to check if your YAML syntax is correct before loading it into Open Peer Power which will save you some time. If you do so, be aware that this is a third-party service and is not maintained by the Open Peer Power community.
 
 <div class='note'>
 
@@ -52,7 +52,7 @@ input_select:
     initial: 0
 ```
 
-The following example shows nesting a collection of mappings in a mapping. In Home Assistant, this would create two sensors that each use the MQTT platform but have different values for their `state_topic` (one of the properties used for MQTT sensors).
+The following example shows nesting a collection of mappings in a mapping. In Open Peer Power, this would create two sensors that each use the MQTT platform but have different values for their `state_topic` (one of the properties used for MQTT sensors).
 
 ```yaml
 sensor:
@@ -66,9 +66,9 @@ sensor:
 
 ### Environmental variables
 
-On Home Assistant Core installations, you can include values from your system's environment variables with `!env_var`.
-Note that this will only work for Home Assistant Core installations, in a scenario where it is possible to specify these.
-Regular Home Assistant users are recommended to use `!include` statements instead.
+On Open Peer Power Core installations, you can include values from your system's environment variables with `!env_var`.
+Note that this will only work for Open Peer Power Core installations, in a scenario where it is possible to specify these.
+Regular Open Peer Power users are recommended to use `!include` statements instead.
 
 ```yaml
 example:
@@ -108,6 +108,6 @@ This means that you've mistakenly entered a tab character, instead of spaces.
 
 ### Upper and lower case
 
-Home Assistant is case sensitive, a state of `'on'` is not the same as `'On'` or `'ON'`. Similarly an entity of `group.Doors` is not the same as `group.doors`.
+ Open Peer Power is case sensitive, a state of `'on'` is not the same as `'On'` or `'ON'`. Similarly an entity of `group.Doors` is not the same as `group.doors`.
 
-If you're having trouble, check the case that Home Assistant is reporting in the dev-state menu, under *Developer tools*.
+If you're having trouble, check the case that Open Peer Power is reporting in the dev-state menu, under *Developer tools*.

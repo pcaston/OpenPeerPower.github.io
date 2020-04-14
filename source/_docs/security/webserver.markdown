@@ -1,12 +1,12 @@
 ---
 title: "Web server fingerprint"
-description: "Use nmap to scan your Home Assistant instance."
+description: "Use nmap to scan your Open Peer Power instance."
 redirect_from: /docs/frontend/webserver/
 ---
 
-It was only a matter of time until the first queries for tools like [https://www.shodan.io](https://www.shodan.io/search?query=Home+Assistant) to search for Home Assistant instances showed up.
+It was only a matter of time until the first queries for tools like [https://www.shodan.io](https://www.shodan.io/search?query=Home+Assistant) to search for Open Peer Power instances showed up.
 
-To get an idea about how your Home Assistant instance looks to a network scanner, you can use `nmap`. The `nmap` tool is already available if you are using the [Nmap device tracker](/integrations/device_tracker/). 
+To get an idea about how your Open Peer Power instance looks to a network scanner, you can use `nmap`. The `nmap` tool is already available if you are using the [Nmap device tracker](/integrations/device_tracker/). 
 
 ```bash
 $ nmap -sV -p 8123 --script=http-title,http-headers 192.168.0.3
@@ -26,13 +26,13 @@ PORT     STATE SERVICE VERSION
 |   
 |_  (Request type: GET)
 |_http-server-header: Python/3.6 aiohttp/3.1.3
-|_http-title: Home Assistant
+|_http-title: Open Peer Power
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 12.13 seconds
 ```
 
-We don't have an unique server banner but in combination with the HTML title `Home Assistant`, is it simple to identify Home Assistant instances.
+We don't have an unique server banner but in combination with the HTML title `Open Peer Power`, is it simple to identify Open Peer Power instances.
 
 ```bash
 $ nc 192.168.0.3 8123

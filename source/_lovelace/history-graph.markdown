@@ -48,7 +48,7 @@ If you define entities as objects instead of strings, you can add more customiza
 {% configuration %}
 entity:
   required: true
-  description: Home Assistant entity ID.
+  description: Open Peer Power entity ID.
   type: string
 name:
   required: false

@@ -1,6 +1,6 @@
 ---
 title: Zone
-description: Instructions on how to set up zones within Home Assistant.
+description: Instructions on how to set up zones within Open Peer Power.
 ha_category:
   - Organization
 ha_release: 0.69
@@ -72,7 +72,7 @@ If no configuration is given, the `zone` integration will create a zone for home
 
 <div class='note'>
 
-Devices that are in the zone **'Home'** will not appear on the map in the Home Assistant UI.
+Devices that are in the zone **'Home'** will not appear on the map in the Open Peer Power UI.
 
 </div>
 

@@ -1,9 +1,9 @@
 ---
 title: "HAProxy"
-description: "Documentation about setting up Home Assistant with HAProxy"
+description: "Documentation about setting up Open Peer Power with HAProxy"
 ---
 
-Using HAProxy to proxy for Home Assistant allows you to serve Home Assistant securely over standard ports with HTTP to HTTPS redirection.
+Using HAProxy to proxy for Open Peer Power allows you to serve Open Peer Power securely over standard ports with HTTP to HTTPS redirection.
 
 ### Install HAProxy on your server
 
@@ -24,7 +24,7 @@ Items to update for your deployment:
  * `bind`: Update the ports HAProxy listens on for forwarding.
  * `subdomain.domain.com`: Your domain to use
  * `ssl crt`: The path to your SSL certificate.
- * `server hass 127.0.0.1:8123`: The IP and port location of your Home Assistant instance.
+ * `server hass 127.0.0.1:8123`: The IP and port location of your Open Peer Power instance.
 
 ```text
 global
@@ -71,7 +71,7 @@ frontend www-https
 	use_backend hass-backend if hass-acl
 
 backend hass-backend
-	server hass <Home Assistant Server IP>:8123
+	server hass < Open Peer Power Server IP>:8123
 
 	mode http
 	option forwardfor
@@ -88,7 +88,7 @@ If 8123 is forwarded then it will not be secured.
 
 Replace 443 with whatever port you chose to bind to in the configuration if different.
 
-### Configure Home Assistant HTTP Component
+### Configure Open Peer Power HTTP Component
 
 In your `configuration.yaml` file, edit the [HTTP component](/integrations/http/).
 
@@ -99,7 +99,7 @@ http:
   # Update this line to be your domain
   base_url: https://example.com
   use_x_forwarded_for: true
-  # You must set the trusted proxy IP address so that Home Assistant will properly accept connections
+  # You must set the trusted proxy IP address so that Open Peer Power will properly accept connections
   # Set this to your HAProxy machine IP, or localhost if hosted on the same machine.
   trusted_proxies: <HAProxy IP address here, 127.0.0.1 if same machine>
 ```

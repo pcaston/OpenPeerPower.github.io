@@ -1,6 +1,6 @@
 ---
 title: Fronius
-description: Instructions on how to connect your Fronius Inverter to Home Assistant.
+description: Instructions on how to connect your Fronius Inverter to Open Peer Power.
 ha_category:
   - Energy
   - Sensor
@@ -11,7 +11,7 @@ ha_codeowners:
 ha_domain: fronius
 ---
 
-The `fronius` sensor polls a [Fronius](https://www.fronius.com/) solar inverter, battery system or smart meter and present the values as sensors in Home Assistant.
+The `fronius` sensor polls a [Fronius](https://www.fronius.com/) solar inverter, battery system or smart meter and present the values as sensors in Open Peer Power.
 
 ## Configuration
 
@@ -52,7 +52,7 @@ monitored_conditions:
 
 ## Monitored data
 
-Each sensor type chosen as monitored condition adds a set of sensors to Home Assistant.
+Each sensor type chosen as monitored condition adds a set of sensors to Open Peer Power.
 
 - `power_flow`
 
@@ -82,8 +82,8 @@ Each sensor type chosen as monitored condition adds a set of sensors to Home Ass
     Detailed information about current, voltage, state, cycle count, capacity and more about installed batteries.
 
 Note that some data (like photovoltaic production) is only provided by the Fronius device when non-zero.
-The corresponding sensors are added to Home Assistant as entities as soon as they are available.
-This means for example that when Home Assistant is started at night,
+The corresponding sensors are added to Open Peer Power as entities as soon as they are available.
+This means for example that when Open Peer Power is started at night,
 there might be no sensor providing photovoltaic related data.
 This does not need to be problematic as the values will be added on sunrise,
 when the Fronius devices begins providing the needed data.

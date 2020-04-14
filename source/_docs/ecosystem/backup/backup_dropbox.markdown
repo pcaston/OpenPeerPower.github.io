@@ -1,16 +1,16 @@
 ---
 title: "Configuration Backup to Dropbox"
-description: "Instructions on how backup your Home Assistant configuration to Dropbox"
+description: "Instructions on how backup your Open Peer Power configuration to Dropbox"
 redirect_from: /cookbook/dropboxbackup/
 ---
 
-Backing up and regularly syncing your Home Assistant configuration to [Dropbox](http://dropbox.com) is similar to [GitHub Backup](/docs/ecosystem/backup/backup_github/)
+Backing up and regularly syncing your Open Peer Power configuration to [Dropbox](http://dropbox.com) is similar to [GitHub Backup](/docs/ecosystem/backup/backup_github/)
 
 ## Requirements
 
 You need two parts in order to get it working correctly.
 
-Become the user that run Home Assistant.
+Become the user that run Open Peer Power.
 
 - A separate Python script that syncs a specific folder. Which can be found [here](https://gist.github.com/riemers/31e3350041fd3e47e489cbc811209d6f)
 - The excellent [dropbox uploader script](https://github.com/andreafabrizi/Dropbox-Uploader/blob/master/dropbox_uploader.sh) you can grab the .sh file only.

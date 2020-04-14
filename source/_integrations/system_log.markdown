@@ -1,6 +1,6 @@
 ---
 title: System Log
-description: Summary of errors and warnings in Home Assistant during runtime.
+description: Summary of errors and warnings in Open Peer Power during runtime.
 ha_category:
   - Other
 ha_release: 0.58
@@ -8,7 +8,7 @@ ha_quality_scale: internal
 ha_domain: system_log
 ---
 
-The `system_log` integration stores information about all logged errors and warnings in Home Assistant. All collected information is accessible directly in the frontend, just navigate to the `Info` section under `Developer Tools`. In order to not overload Home Assistant with log data, only the 50 last errors and warnings will be stored. Older entries are automatically discarded from the log. It is possible to change the number of stored log entries using the parameter `max_entries`.
+The `system_log` integration stores information about all logged errors and warnings in Open Peer Power. All collected information is accessible directly in the frontend, just navigate to the `Info` section under `Developer Tools`. In order to not overload Open Peer Power with log data, only the 50 last errors and warnings will be stored. Older entries are automatically discarded from the log. It is possible to change the number of stored log entries using the parameter `max_entries`.
 
 ## Configuration
 
@@ -60,7 +60,7 @@ Errors and warnings are posted as the event `system_log_event`, so it is possibl
 | `message`   | Descriptive message of the error, e.g., "Error handling request".           |
 | `timestamp` | Unix timestamp with as a double, e.g., 1517241010.237416.                   |
 
-Live examples of these events can be found in the Home Assistant log file (`home-assistant.log`) or by just looking in the system log. An example could, for instance, look like this:
+Live examples of these events can be found in the Open Peer Power log file (`home-assistant.log`) or by just looking in the system log. An example could, for instance, look like this:
 
 ```text
 2019-02-14 16:20:35 ERROR (MainThread) [homeassistant.loader] Unable to find integration system_healt

@@ -1,13 +1,13 @@
 ---
 title: "Installation on FreeNAS 11.2"
-description: "Installation of Home Assistant on your FreeNAS."
+description: "Installation of Open Peer Power on your FreeNAS."
 ---
 
 [FreeNAS](https://www.freenas.org) is a free and open-source network-attached storage (NAS) software based on FreeBSD and the OpenZFS file system. It is licensed under the terms of the BSD License and runs on commodity x86-64 hardware.
 
 This has been tested on FreeNAS 11.2 and should also work on FreeBSD 11.x as well. These instructions assume you already have a running and accessible jail. For more information on creating a jail read the official FreeNAS User Guide regarding [Jails](https://www.ixsystems.com/documentation/freenas/11.2/jails.html). Once you have the jail available, follow the steps below. Directories used follow standard BSD conventions but can be adjusted as you wish.
 
-Enter the Home Assistant jail. If you don't know which name you have given the jail, you can use the `iocage list` command to check.
+Enter the Open Peer Power jail. If you don't know which name you have given the jail, you can use the `iocage list` command to check.
 
 ```bash
 # If the jail is called 'HomeAssistant'
@@ -22,7 +22,7 @@ pkg upgrade
 pkg install -y autoconf bash ca_root_nss gmake pkgconf python37 py37-sqlite3
 ```
 
-Create the user and group that Home Assistant will run as. The user/group ID of `8123` can be replaced if this is already in use in your environment.
+Create the user and group that Open Peer Power will run as. The user/group ID of `8123` can be replaced if this is already in use in your environment.
 
 ```bash
 pw groupadd -n homeassistant -g 8123
@@ -36,7 +36,7 @@ mkdir -p /usr/local/share/homeassistant
 chown -R homeassistant:homeassistant /usr/local/share/homeassistant
 ```
 
-Create the virtualenv and install Home Assistant itself:
+Create the virtualenv and install Open Peer Power itself:
 
 ```bash
 su homeassistant
@@ -47,7 +47,7 @@ pip3 install --upgrade pip
 pip3 install homeassistant
 ```
 
-While still in the `venv`, start Home Assistant to populate the configuration directory.
+While still in the `venv`, start Open Peer Power to populate the configuration directory.
 
 ```bash
 hass --open-ui
@@ -56,7 +56,7 @@ hass --open-ui
 Wait until you see:
 
 ```bash
-(MainThread) [homeassistant.core] Starting Home Assistant
+(MainThread) [homeassistant.core] Starting Open Peer Power
 ```
 
 Then escape and exit the `venv`.
@@ -66,7 +66,7 @@ deactivate
 exit
 ```
 
-Create the directory and the `rc.d` script for the system-level service that enables Home Assistant to start when the jail starts.
+Create the directory and the `rc.d` script for the system-level service that enables Open Peer Power to start when the jail starts.
 
 ```bash
 mkdir /usr/local/etc/rc.d/
@@ -163,7 +163,7 @@ homeassistant_upgrade() {
 check_config_cmd="${name}_check_config"
 homeassistant_check_config() {
     [ ! -e "${homeassistant_config_dir}/configuration.yaml" ] && return 0
-    echo "Performing check on Home Assistant configuration:"
+    echo "Performing check on Open Peer Power configuration:"
     #eval "${homeassistant_venv}/bin/hass --config ${homeassistant_config_dir} --script check_config"
     su ${homeassistant_user} -c '
       source ${1}/bin/activate || exit 2
@@ -175,7 +175,7 @@ homeassistant_check_config() {
 restart_cmd="${name}_restart"
 homeassistant_restart() {
     homeassistant_check_config || exit 1
-    echo "Restarting Home Assistant"
+    echo "Restarting Open Peer Power"
     service ${name} stop
     service ${name} start
 }
@@ -190,7 +190,7 @@ homeassistant_test() {
     su "${homeassistant_user}" -c '
       source ${1}/bin/activate || exit 2
       echo " $(python --version)" || exit 3
-      echo " Home Assistant $(pip3 show homeassistant | grep Version | cut -d" " -f2)" || exit 4
+      echo " Open Peer Power $(pip3 show homeassistant | grep Version | cut -d" " -f2)" || exit 4
       deactivate
     ' _ ${homeassistant_venv}
 
@@ -207,18 +207,18 @@ Make the `rc.d` script executable:
 chmod +x /usr/local/etc/rc.d/homeassistant
 ```
 
-Configure the service to start on boot and start the Home Assistant service:
+Configure the service to start on boot and start the Open Peer Power service:
 
 ```bash
 sysrc homeassistant_enable="YES"
 service homeassistant start
 ```
 
-You can also restart the jail to ensure that Home Assistant starts on boot.
+You can also restart the jail to ensure that Open Peer Power starts on boot.
 
 <div class='note'>
 
-USB Z-Wave sticks may give `dmesg` warnings similar to "data interface 1, has no CM over data, has no break". This doesn't impact the function of the Z-Wave stick in Home Assistant. Just make sure the proper `/dev/cu*` is used in the Home Assistant `configuration.yaml` file.
+USB Z-Wave sticks may give `dmesg` warnings similar to "data interface 1, has no CM over data, has no break". This doesn't impact the function of the Z-Wave stick in Open Peer Power. Just make sure the proper `/dev/cu*` is used in the Open Peer Power `configuration.yaml` file.
 
 </div>
 
@@ -242,7 +242,7 @@ deactivate
 exit
 ```
 
-Stop the Home Assistant Jail
+Stop the Open Peer Power Jail
 
 ```bash
 sudo iocage stop HomeAssistant
@@ -270,13 +270,13 @@ sudo service devfs restart
 Edit the ruleset used by the jail in the FreeNAS GUI by going to Jails -> `hass` -> Edit ->  Jail Properties ->  devfs_ruleset
 Set it to 7
 
-Start the Home Assistant jail
+Start the Open Peer Power jail
 
 ```bash
 sudo iocage start HomeAssistant
 ```
 
-Connect to the Home Assistant jail and verify that you see the modem devices
+Connect to the Open Peer Power jail and verify that you see the modem devices
 
 ```bash
 sudo iocage console HomeAssistant
@@ -292,7 +292,7 @@ This should output the following
 /dev/cuau0      /dev/cuaU0
 ```
 
-Add the Z-Wave configuration to your `configuration.yaml` and restart Home Assistant
+Add the Z-Wave configuration to your `configuration.yaml` and restart Open Peer Power
 
 ```bash
 vi /home/homeassistant/.homeassistant/configuration.yaml
@@ -310,7 +310,7 @@ service homeassistant restart
 
 ## Updating
 
-Before updating, read the changelog to see what has changed and how it affects your Home Assistant instance. Enter the jail using `iocage exec <jailname>`. Stop the Home Assistant service:
+Before updating, read the changelog to see what has changed and how it affects your Open Peer Power instance. Enter the jail using `iocage exec <jailname>`. Stop the Open Peer Power service:
 
 ```bash
 service homeassistant stop
@@ -324,13 +324,13 @@ cd /usr/local/share/homeassistant
 source ./bin/activate
 ```
 
-Upgrade Home Assistant:
+Upgrade Open Peer Power:
 
 ```bash
 pip3 install homeassistant --upgrade
 ```
 
-Log out of the `homeassistant` user and start Home Assistant:
+Log out of the `homeassistant` user and start Open Peer Power:
 
 ```bash
 exit

@@ -1,6 +1,6 @@
 ---
 title: "Autostart using Upstart"
-description: "Instructions on how to setup Home Assistant to launch on boot using Upstart."
+description: "Instructions on how to setup Open Peer Power to launch on boot using Upstart."
 ---
 
 Many Linux distributions use the Upstart system (or similar) for managing daemons. Typically, systems based on Debian 7 or previous use Upstart. This includes Ubuntu releases before 15.04. If you are unsure if your system is using Upstart, you may check with the following command:
@@ -24,7 +24,7 @@ Upstart will launch init scripts that are located in the directory `/etc/init.d/
 # Description:       Home\ Assistant
 ### END INIT INFO
 
-# /etc/init.d Service Script for Home Assistant
+# /etc/init.d Service Script for Open Peer Power
 # Created with: https://gist.github.com/naholyr/4275302#file-new-service-sh
 #
 # Installation:
@@ -75,7 +75,7 @@ stop() {
 }
 
 install() {
-    echo "Installing Home Assistant Daemon (hass-daemon)"
+    echo "Installing Open Peer Power Daemon (hass-daemon)"
     echo "999999" > $PID_FILE
     chown $RUN_AS $PID_FILE
     mkdir -p $CONFIG_DIR
@@ -93,7 +93,7 @@ uninstall() {
     echo $CONFIG_DIR
     update-rc.d -f hass-daemon remove
     rm -fv "$0"
-    echo "Home Assistant Daemon has been removed. Home Assistant is still installed."
+    echo " Open Peer Power Daemon has been removed. Open Peer Power is still installed."
   fi
 }
 
@@ -119,13 +119,13 @@ case "$1" in
 esac
 ```
 
-To install this script, download it, tweak it to you liking, and install it by following the directions in the header. This script will setup Home Assistant to run when the system boots. To start/stop Home Assistant manually, issue the following commands:
+To install this script, download it, tweak it to you liking, and install it by following the directions in the header. This script will setup Open Peer Power to run when the system boots. To start/stop Open Peer Power manually, issue the following commands:
 
 ```bash
 sudo service hass-daemon start
 sudo service hass-daemon stop
 ```
 
-When running Home Assistant with this script, the configuration directory will be located at `/var/opt/homeassistant`. This directory will contain a verbose log rather than simply an error log.
+When running Open Peer Power with this script, the configuration directory will be located at `/var/opt/homeassistant`. This directory will contain a verbose log rather than simply an error log.
 
 When running daemons, it is good practice to have the daemon run under its own username rather than the default user's name. Instructions for setting this up are outside the scope of this document.

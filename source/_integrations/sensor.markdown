@@ -1,6 +1,6 @@
 ---
 title: Sensor
-description: Instructions on how to setup your sensors with Home Assistant.
+description: Instructions on how to setup your sensors with Open Peer Power.
 ha_category:
   - Sensor
 ha_release: 0.7
@@ -10,7 +10,7 @@ ha_domain: sensor
 
 Sensors are gathering information about states and conditions.
 
-Home Assistant currently supports a wide range of sensors. They are able to display information which are provides by Home Assistant directly, are gathered from web services, and, of course, physical devices.
+Open Peer Power currently supports a wide range of sensors. They are able to display information which are provides by Open Peer Power directly, are gathered from web services, and, of course, physical devices.
 
 ## Device Class
 

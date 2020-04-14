@@ -13,15 +13,15 @@ og_image: /images/blog/2020-02-0.105/components.png
 
 <a href='/integrations/#version/0.105'><img src='/images/blog/2020-02-0.105/components.png' style='border: 0;box-shadow: none;'></a>
 
-In case you have missed it, we decided to change the names we use here at Home Assistant, you can read all about it in [this blog post](/blog/2020/01/29/changing-the-home-assistant-brand/).
+In case you have missed it, we decided to change the names we use here at Open Peer Power, you can read all about it in [this blog post](/blog/2020/01/29/changing-the-home-assistant-brand/).
 
-Therefore, this is release 0.105 of the Home Assistant Core!
+Therefore, this is release 0.105 of the Open Peer Power Core!
 
 ## The old "States UI" is now deprecated
 
-In June 2018, we released [Home Assistant 0.72](/blog/2018/06/22/release-72/), which introduced Lovelace. It became our official default user interface in January 2019, with the release of [Home Assistant 0.86](/blog/2019/01/23/lovelace-released/).
+In June 2018, we released [Open Peer Power 0.72](/blog/2018/06/22/release-72/), which introduced Lovelace. It became our official default user interface in January 2019, with the release of [Open Peer Power 0.86](/blog/2019/01/23/lovelace-released/).
 
-This means, it is now over a year ago that Lovelace was officially introduced as a replacement for the states UI, so it is time to say goodbye to the old states UI. This release deprecates it and in version 0.107, the states UI will be removed from Home Assistant completely.
+This means, it is now over a year ago that Lovelace was officially introduced as a replacement for the states UI, so it is time to say goodbye to the old states UI. This release deprecates it and in version 0.107, the states UI will be removed from Open Peer Power completely.
 
 If you are not using Lovelace yet, we advise you to switch to it today. Lovelace is, by default, almost the same as old states UI with the bonus of a lot of flexibility, if you want it.
 
@@ -29,25 +29,25 @@ In addition to this, all configuration options for the States UI are deprecated 
 
 ## Safe mode
 
-We are humans, and we do make typos. However, if we make a typo in our configuration, we might end up with Home Assistant being completely unreachable. That really is not helpful. You lose access to Home Assistant and have to do a deep dive via other methods to find out: Why did this happen?
+We are humans, and we do make typos. However, if we make a typo in our configuration, we might end up with Open Peer Power being completely unreachable. That really is not helpful. You lose access to Open Peer Power and have to do a deep dive via other methods to find out: Why did this happen?
 
-This release introduces a "Safe mode" for Home Assistant. If during startup, Home Assistant has problems reading your configuration (for whatever reason), it will still continue to start using bits and pieces from the configuration of the last time it did start.
+This release introduces a "Safe mode" for Open Peer Power. If during startup, Open Peer Power has problems reading your configuration (for whatever reason), it will still continue to start using bits and pieces from the configuration of the last time it did start.
 
-When this happens, Home Assistant will start in "Safe mode". In this mode, nothing is loaded, but it does give you access to the Home Assistant frontend, settings and add-ons (for example, the VSCode or Configurator add-on). This gives you the possibility to correct the issue
-and restart Home Assistant to re-try.
+When this happens, Open Peer Power will start in "Safe mode". In this mode, nothing is loaded, but it does give you access to the Open Peer Power frontend, settings and add-ons (for example, the VSCode or Configurator add-on). This gives you the possibility to correct the issue
+and restart Open Peer Power to re-try.
 
 <p class='img'>
-<img src='/images/blog/2020-02-0.105/safe-mode.png' alt='Screenshot of Home Assistant started in safe mode'></a>
-Screenshot of Home Assistant started in safe mode.
+<img src='/images/blog/2020-02-0.105/safe-mode.png' alt='Screenshot of Open Peer Power started in safe mode'></a>
+Screenshot of Open Peer Power started in safe mode.
 </p>
 
-Please note, that this feature isn't perfect yet, and only works if Home Assistant was able to start successfully, after upgrading to this release, at least once.
+Please note, that this feature isn't perfect yet, and only works if Open Peer Power was able to start successfully, after upgrading to this release, at least once.
 
-We believe this feature makes Home Assistant more robust, easier to use and more forgiving, even if you made a mistake.
+We believe this feature makes Open Peer Power more robust, easier to use and more forgiving, even if you made a mistake.
 
 ## Revamped Supervisor panel
 
-Remember we used to have a Hass.io panel? Well, with the [new naming](/blog/2020/01/29/changing-the-home-assistant-brand/) for Home Assistant, it has been renamed to the Supervisor panel.
+Remember we used to have a Hass.io panel? Well, with the [new naming](/blog/2020/01/29/changing-the-home-assistant-brand/) for Open Peer Power, it has been renamed to the Supervisor panel.
 
 So [@ludeeus] has been busy! He rewrote the entire Supervisor panel to match our current frontend technologies and added some really slick new visual elements to it.
 
@@ -60,7 +60,7 @@ Screenshot of the revamped Supervisor panel.
 
 The new icons on the add-ons really make the add-on dashboard & store stand out. Also, new status indicators on the add-on cards make it easy to spot add-ons that need to be upgraded, or in case of visiting the add-on store, are installed already.
 
-Please note, you need to be running Home Assistant Core 0.105 to see the new icons.
+Please note, you need to be running Open Peer Power Core 0.105 to see the new icons.
 
 ## Configuration panel changes
 
@@ -107,7 +107,7 @@ Screen recording of the zones editor.
 The new editor will only work for zones that are created in the UI, zones that are set up in `configuration.yaml` are read-only.
 Additionally, if you define zones in your YAML configuration, please be aware that setting a [`name` is now required](#breaking-changes).
 
-As an extra added bonus, a new service was added: `zone.reload`. This service allows you to reload your zone configuration without restarting Home Assistant.
+As an extra added bonus, a new service was added: `zone.reload`. This service allows you to reload your zone configuration without restarting Open Peer Power.
 
 ## Icons no longer change color based on state
 
@@ -137,7 +137,7 @@ So if you have a light named "Living room lights" that is in the area "Living ro
 - We no longer show `device_tracker` entities in generated mode. We advise you to bind one or more device trackers to a person that will be shown in the UI.
 
 - We added many accessibility features to Lovelace; you can navigate almost everything with the tab key.
-We will continue to work on this so that people with disabilities can also enjoy Home Assistant.
+We will continue to work on this so that people with disabilities can also enjoy Open Peer Power.
 
 For a full list of changes, see the [Lovelace changelog](/lovelace/changelog/).
 
@@ -157,7 +157,7 @@ which we will put out regularly:
 
 Want to read the first edition? _[Community Highlights, first edition!](/blog/2020/01/31/community-highlights/)_
 
-Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Home Assistant? [Send us your Community Highlight suggestion](/suggest-community-highlight), so that we can include it in the next blog post.
+Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Open Peer Power? [Send us your Community Highlight suggestion](/suggest-community-highlight), so that we can include it in the next blog post.
 
 ## New Integrations
 
@@ -184,7 +184,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 ## Breaking Changes
 
-- __Safe Mode__ - `--demo-mode` has been removed. A new safe mode has now been introduced, which loads the bare minimum necessary to load the Home Assistant frontend and allows for managing the configuration. This is not yet perfect. An invalid core configuration can still cause Home Assistant to refuse to start up. ([@balloob] - [#30723]) ([frontend docs]) ([http docs]) ([safe_mode docs])
+- __Safe Mode__ - `--demo-mode` has been removed. A new safe mode has now been introduced, which loads the bare minimum necessary to load the Open Peer Power frontend and allows for managing the configuration. This is not yet perfect. An invalid core configuration can still cause Open Peer Power to refuse to start up. ([@balloob] - [#30723]) ([frontend docs]) ([http docs]) ([safe_mode docs])
 
 - __Google Assistant__ - Entities exposed to Google Assistant, that have aliases configured (YAML only feature), will now expose the configured name, instead of the first configured alias.
 
@@ -208,13 +208,13 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   ([@frenck] - [#30717]) ([spotify docs])
 
-- __Automation__ *Deprecated* - The `hide_entity` configuration option on an automation is now deprecated and will be removed in Home Assistant 0.107. With Lovelace now being the standard, this option has become obsolete. Please ensure your automations are not using this option. An example of an *invalid* configuration is below. - ([@frenck] - [#30799]) ([automation docs])
+- __Automation__ *Deprecated* - The `hide_entity` configuration option on an automation is now deprecated and will be removed in Open Peer Power 0.107. With Lovelace now being the standard, this option has become obsolete. Please ensure your automations are not using this option. An example of an *invalid* configuration is below. - ([@frenck] - [#30799]) ([automation docs])
 
   Bad configuration example YAML:
 
   ```yaml
   automation:
-    - alias: "Home Automation Gone Wrong"
+    - alias: "Power Management Gone Wrong"
       hide_entity: true  <-- remove this
       trigger:
         platform: state
@@ -224,7 +224,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
         entity_id: all
   ```
 
-- __Group__ *Deprecated* - Group configurations options, services and service options related to the old states UI are now deprecated and pending for removal in Home Assistant 0.107.0.
+- __Group__ *Deprecated* - Group configurations options, services and service options related to the old states UI are now deprecated and pending for removal in Open Peer Power 0.107.0.
 
   This includes:
 
@@ -234,9 +234,9 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Please ensure your configuration and automations do not use these anymore. - ([@frenck] - [#30831]) ([group docs])
 
-- __Weblink__ *Deprecated* - The weblink integration is now deprecated and pending removal in Home Assistant 0.107.0. This integration only works with the old states UI. - ([@frenck] - [#30834])
+- __Weblink__ *Deprecated* - The weblink integration is now deprecated and pending removal in Open Peer Power 0.107.0. This integration only works with the old states UI. - ([@frenck] - [#30834])
 
-- __History Graph__ *Deprecated* - The `history_graph` integration has been deprecated and pending for removal in Home Assistant 0.107.0. This integration was used for the old states UI. Going ahead, please ensure this configuration option is not used in your configuration. - ([@frenck] - [#30835])
+- __History Graph__ *Deprecated* - The `history_graph` integration has been deprecated and pending for removal in Open Peer Power 0.107.0. This integration was used for the old states UI. Going ahead, please ensure this configuration option is not used in your configuration. - ([@frenck] - [#30835])
 
 - __Neato__ - This change adds a neato boundary name to the state if it exists, requiring to potentially update automations. - ([@Olen] - [#29915]) ([neato docs])
 
@@ -325,15 +325,15 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 - __Emby__ - The `auto_hide` configuration option has been removed from the Emby platform. Please be sure to remove it from your configuration. - ([@frenck] - [#30729]) ([emby docs])
 
-- __Fibaro__ - Entities from the Fibaro integration were hidden in Home Assistant if they were hidden in Fibaro, which is no longer the case. This could affect automations that rely on the hidden state attribute of entities created by this integration. - ([@frenck] - [#30730]) ([fibaro docs])
+- __Fibaro__ - Entities from the Fibaro integration were hidden in Open Peer Power if they were hidden in Fibaro, which is no longer the case. This could affect automations that rely on the hidden state attribute of entities created by this integration. - ([@frenck] - [#30730]) ([fibaro docs])
 
-- __AVM FRITZ!Box Net Monitor__ - The attribute `wan_access_type` has been removed from `fritzbox_netmonitor` as the new version of the fritzconnection integration no longer exposes it. As a result, the information will no longer be available in the Home Assistant sensor. - ([@basdelfos] - [#30210]) ([fritz docs]) ([fritzbox_netmonitor docs])
+- __AVM FRITZ!Box Net Monitor__ - The attribute `wan_access_type` has been removed from `fritzbox_netmonitor` as the new version of the fritzconnection integration no longer exposes it. As a result, the information will no longer be available in the Open Peer Power sensor. - ([@basdelfos] - [#30210]) ([fritz docs]) ([fritzbox_netmonitor docs])
 
 - __MQTT Fan__ - This fixes `supported_features` for an MQTT fan. Setting speed now requires only a speed command topic.
 
-  Before this change, only a speed state topic had to be set to support the setting of a speed. The speed state topic is not taken into account as it just decides if Home Assistant gets feedback for state and speed updates.
+  Before this change, only a speed state topic had to be set to support the setting of a speed. The speed state topic is not taken into account as it just decides if Open Peer Power gets feedback for state and speed updates.
 
-  Likewise, setting oscillation now requires only an oscillation command topic. Before this change, only an oscillation state topic had to be set to support the setting of the oscillation. The oscillation state topic is not taken into account as it just decides if Home Assistant gets feedback for state and oscillation update.
+  Likewise, setting oscillation now requires only an oscillation command topic. Before this change, only an oscillation state topic had to be set to support the setting of the oscillation. The oscillation state topic is not taken into account as it just decides if Open Peer Power gets feedback for state and oscillation update.
 
   ([@springstan] - [#28680]) ([mqtt docs])
 
@@ -388,7 +388,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 - __Evohome__ - Honeywell TCC systems that consist of a single thermostat (i.e., non-evohome systems) will now be split into two climate entities instead of one: a) the whole-house zone (for target temperature), and b) the location (for Away, Eco modes). Functionality will not be lost, but this will affect automations, etc.: the entity_id of these may need changing. - ([@zxdavb] - [#30968]) ([evohome docs])
 
-- __Sonos__ - The following Sonos services now need to be called by a user with admin access: `sonos.join`, `sonos.unjoin`, `sonos.snapshot`, `sonos.restore`. Sonos services now no longer will default to "all" entities if no `entity_id` is passed in. This has been aligned with the other services in Home Assistant. To target all, add `entity_id: all`. - ([@balloob] - [#30813]) ([sonos docs])
+- __Sonos__ - The following Sonos services now need to be called by a user with admin access: `sonos.join`, `sonos.unjoin`, `sonos.snapshot`, `sonos.restore`. Sonos services now no longer will default to "all" entities if no `entity_id` is passed in. This has been aligned with the other services in Open Peer Power. To target all, add `entity_id: all`. - ([@balloob] - [#30813]) ([sonos docs])
 
 - __LG webOS Smart TV__ - After the discovery of some additional commands, the client library now has much better tracking of TV power state. As a result of the client library changes, the standby_connection parameter is no longer needed/present (since the relevant behavior can be steered automatically by the client library now) - ([@bendavid] - [#31042]) ([webostv docs])
 
@@ -477,7 +477,7 @@ Hats over your heart for these shuttered integrations. Pour one out for:
 
 - __PostNL__ *Removed* - PostNL changed their unofficial API and implemented protection, which breaks the integration. It has been confirmed through them that there is no workaround and no likely solution any time in the near future, so it is being removed. - ([@peternijssen] - [#30902])
 
-- __Cisco Spark__ *Removed* - Cisco Spark has been rebranded to Cisco Webex Teams. Cisco Webex Teams is available as integration in Home Assistant, which can be used as a replacement. - ([@frenck] - [#30738])
+- __Cisco Spark__ *Removed* - Cisco Spark has been rebranded to Cisco Webex Teams. Cisco Webex Teams is available as integration in Open Peer Power, which can be used as a replacement. - ([@frenck] - [#30738])
 
 - __Owlet__ - *Removed* - The API that the Owlet component was based on has been deprecated by the vendor. There is no other public API provided by the vendor that the component can be upgraded to use, so the component has been removed. - ([@oblogic7] - [#31160])
 
@@ -513,7 +513,7 @@ Hats over your heart for these shuttered integrations. Pour one out for:
 - Fix migrating huawei_lte entry without recipient ([@chmielowiec] - [#31522]) ([huawei_lte docs])
 - Only normalise Garmin connect data to minutes if the value is not None ([@d0ugal] - [#31526]) ([garmin_connect docs])
 - Fix iCloud determine_interval: add default interval to max_interval ([@Quentame] - [#31533]) ([icloud docs])
-- Limit OAuth scopes for Netatmo and Home Assistant Cloud ([@frenck] - [#31538]) ([netatmo docs])
+- Limit OAuth scopes for Netatmo and Open Peer Power Cloud ([@frenck] - [#31538]) ([netatmo docs])
 - Use min and m as units in Garmin Connect for consistency and correctness ([@scop] - [#31543]) ([garmin_connect docs]) (breaking change)
 - Deprecate old netatmo keys ([@balloob] - [#31544]) ([netatmo docs])
 - update aiopylgtv to 0.3.3 ([@bendavid] - [#31545]) ([webostv docs])
@@ -831,7 +831,7 @@ Hats over your heart for these shuttered integrations. Pour one out for:
 - Fix luftdaten broken icon for "Pressure at sealevel" ([@reuank] - [#31053]) ([luftdaten docs])
 - Enhance info_from_service function in zeroconf integration ([@raman325] - [#31059]) ([zeroconf docs])
 - Add zeroconf discovery support for vizio integration ([@raman325] - [#30949]) ([vizio docs])
-- Add the Home Assistant version as a Sentry release ([@d0ugal] - [#31065]) ([sentry docs])
+- Add the Open Peer Power version as a Sentry release ([@d0ugal] - [#31065]) ([sentry docs])
 - Add disabled entities support to WLED ([@frenck] - [#31040]) ([wled docs])
 - change group id creation ([@dmulcahey] - [#31075]) ([zha docs])
 - Allow unloading mobile app ([@balloob] - [#30995]) ([mobile_app docs])

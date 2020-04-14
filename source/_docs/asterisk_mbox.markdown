@@ -1,9 +1,9 @@
 ---
 title: "Asterisk Voicemail Server Installation"
-description: "Instructions on how to integrate your existing Asterisk voicemail within Home Assistant."
+description: "Instructions on how to integrate your existing Asterisk voicemail within Open Peer Power."
 ---
 
-Asterisk Voicemail integration allows Home Assistant to view, listen to and delete voicemails from a Asterisk voicemail mailbox.
+Asterisk Voicemail integration allows Open Peer Power to view, listen to and delete voicemails from a Asterisk voicemail mailbox.
 
 There are two components to the integration:
 
@@ -12,7 +12,7 @@ There are two components to the integration:
 
 Both parts are necessary for Asterisk voicemail integration.
 
-The server installation is documented below. The client is [integrated inside Home Assistant](/integrations/asterisk_mbox)
+The server installation is documented below. The client is [integrated inside Open Peer Power](/integrations/asterisk_mbox)
 
 <div class='note'>
 Currently this module can only monitor a single Asterisk PBX mailbox.
@@ -23,7 +23,7 @@ Currently this module can only monitor a single Asterisk PBX mailbox.
 Before beginning make sure that you have the following:
 
 - A functional Asterisk PBX setup which is using the default `voicemail` application.
-- Both Home Assistant and Asterisk PBX running on the same LAN (or the same server).
+- Both Open Peer Power and Asterisk PBX running on the same LAN (or the same server).
 - The Asterisk PBX server has Python 3.5 or newer installed.
 - Administrator access on the Asterisk PBX (for Python module installation).
 - Account access to the `asterisk` user that runs the Asterisk PBX software.
@@ -75,7 +75,7 @@ Before beginning make sure that you have the following:
    sudo -u asterisk asterisk_mbox_server -v --cfg /etc/asterisk/asterisk_mbox.ini
    ```
 
-   Now complete the [Home Assistant configuration](/integrations/asterisk_mbox) and verify that Home Assistant can communicate with the server
+   Now complete the [ Open Peer Power configuration](/integrations/asterisk_mbox) and verify that Open Peer Power can communicate with the server
 
    You can use `Ctrl-c` to terminate the server when done testing
 
@@ -84,7 +84,7 @@ Before beginning make sure that you have the following:
    Copy the following code into `/etc/systemd/system/asterisk_mbox.service`:
    ```ini
    [Unit]
-   Description=Asterisk PBX voicemail server for Home Assistant
+   Description=Asterisk PBX voicemail server for Open Peer Power
    Wants=network.target
    After=network.target
 

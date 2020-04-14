@@ -10,9 +10,9 @@ og_image: /images/blog/2020-01-31-community-highlights/social.png
 ---
 
 Back in [2015][community-highlights-2015] and in [2016][community-highlights-2016], we tried starting a series of blog posts called "Community Highlight",
-a few times, a blog post appeared about the amazingly awesome stuff our community does with Home Assistant.
+a few times, a blog post appeared about the amazingly awesome stuff our community does with Open Peer Power.
 
-Recently, that idea was picked up again by adding an "In Other News" section to the release notes on each Home Assistant release. However, the development pace of Home Assistant is high! As a result, that section is always hidden all the way down somewhere in those release notes. A bit unfortunate, since there is so much cool stuff to be found!
+Recently, that idea was picked up again by adding an "In Other News" section to the release notes on each Open Peer Power release. However, the development pace of Open Peer Power is high! As a result, that section is always hidden all the way down somewhere in those release notes. A bit unfortunate, since there is so much cool stuff to be found!
 
 So, today, we present you: the Community Highlights, the first edition!
 
@@ -38,7 +38,7 @@ Mattias created [a post in the Community Forum][different-take] with all the det
 
 Com'on, we all know what it is like to be in the restroom, taking a number two, discovering that you are out of paper.
 
-For the-berik, on our [subreddit][reddit], it was reason enough to do something about it. He converted his toilet roll holder into a smart version using an ESP8266 chip, a load cell and [ESPHome][esphome], allowing Home Assistant to know how many rolls of toilet paper are left on the holder.
+For the-berik, on our [subreddit][reddit], it was reason enough to do something about it. He converted his toilet roll holder into a smart version using an ESP8266 chip, a load cell and [ESPHome][esphome], allowing Open Peer Power to know how many rolls of toilet paper are left on the holder.
 
 Click on the video below to see how it works.
 
@@ -56,7 +56,7 @@ He demonstrates his mailbox in the video below.
 
 ## Got a tip for the next edition?
 
-Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Home Assistant?
+Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Open Peer Power?
 
 [Click here to send us your Community Highlight suggestion](/suggest-community-highlight).
 

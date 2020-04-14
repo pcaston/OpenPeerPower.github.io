@@ -1,6 +1,6 @@
 ---
 title: MQTT Statestream
-description: Instructions on how to setup MQTT Statestream within Home Assistant.
+description: Instructions on how to setup MQTT Statestream within Open Peer Power.
 logo: mqtt.png
 ha_category:
   - Other
@@ -9,11 +9,11 @@ ha_iot_class: Configurable
 ha_domain: mqtt_statestream
 ---
 
-The `mqtt_statestream` integration publishes state changes in Home Assistant to individual MQTT topics.
+The `mqtt_statestream` integration publishes state changes in Open Peer Power to individual MQTT topics.
 
 ## Configuration
 
-To enable MQTT Statestream in Home Assistant, add the following section to your `configuration.yaml` file:
+To enable MQTT Statestream in Open Peer Power, add the following section to your `configuration.yaml` file:
 
 ```yaml
 # Example configuration.yaml entry
@@ -68,7 +68,7 @@ include:
 
 ## Operation
 
-When any Home Assistant entity changes, this integration will publish that change to MQTT.
+When any Open Peer Power entity changes, this integration will publish that change to MQTT.
 
 The topic for each entity is different, so you can easily subscribe other systems to just the entities you are interested in.
 The topic will be in the form `base_topic/domain/entity/state`.

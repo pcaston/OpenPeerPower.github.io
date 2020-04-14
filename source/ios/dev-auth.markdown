@@ -1,6 +1,6 @@
 ---
-title: "Home Assistant iOS dev authentication"
-description: "Landing page for Home Assistant iOS dev app."
+title: "Open Peer Power iOS dev authentication"
+description: "Landing page for Open Peer Power iOS dev app."
 ---
 
 <link rel='redirect_uri' href='homeassistant-dev://auth-callback'>

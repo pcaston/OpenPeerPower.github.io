@@ -1,6 +1,6 @@
 ---
 title: Light
-description: Instructions on how to setup your lights with Home Assistant.
+description: Instructions on how to setup your lights with Open Peer Power.
 ha_category:
   - Light
 ha_release: pre 0.7

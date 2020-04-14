@@ -1,6 +1,6 @@
 ---
 title: Group
-description: Instructions on how to setup groups within Home Assistant.
+description: Instructions on how to setup groups within Open Peer Power.
 ha_category:
   - Organization
 ha_release: pre 0.7

@@ -1,6 +1,6 @@
 ---
 title: Media Player
-description: Instructions on how to setup your media players with Home Assistant.
+description: Instructions on how to setup your media players with Open Peer Power.
 ha_category:
   - Media Player
 ha_release: 0.7

@@ -1,6 +1,6 @@
 ---
 title: Recorder
-description: Instructions on how to configure the data recorder for Home Assistant.
+description: Instructions on how to configure the data recorder for Open Peer Power.
 ha_category:
   - History
 ha_release: pre 0.7
@@ -12,13 +12,13 @@ The `recorder` integration is responsible for storing details in a database, whi
 
 <div class='note'>
 
-This integration constantly saves data. If you use the default configuration, the data will be saved on the media Home Assistant is installed on. In case of Raspberry Pi with an SD card, it might affect your system's reaction time and life expectancy of the storage medium (the SD card). It is therefore recommended to store the data elsewhere (e.g., another system) or limit the amount of stored data (e.g., by excluding devices).
+This integration constantly saves data. If you use the default configuration, the data will be saved on the media Open Peer Power is installed on. In case of Raspberry Pi with an SD card, it might affect your system's reaction time and life expectancy of the storage medium (the SD card). It is therefore recommended to store the data elsewhere (e.g., another system) or limit the amount of stored data (e.g., by excluding devices).
 
 </div>
 
-Home Assistant uses [SQLAlchemy](https://www.sqlalchemy.org/), which is an Object Relational Mapper (ORM). This means that you can use **any** SQL backend for the recorder that is supported by SQLAlchemy, like [MySQL](https://www.mysql.com/), [MariaDB](https://mariadb.org/), [PostgreSQL](https://www.postgresql.org/), or [MS SQL Server](https://www.microsoft.com/en-us/sql-server/).
+Open Peer Power uses [SQLAlchemy](https://www.sqlalchemy.org/), which is an Object Relational Mapper (ORM). This means that you can use **any** SQL backend for the recorder that is supported by SQLAlchemy, like [MySQL](https://www.mysql.com/), [MariaDB](https://mariadb.org/), [PostgreSQL](https://www.postgresql.org/), or [MS SQL Server](https://www.microsoft.com/en-us/sql-server/).
 
-The default database engine is [SQLite](https://www.sqlite.org/) which does not require any configuration. The database is stored in your Home Assistant configuration directory ('/config/') and is named `home-assistant_v2.db`.
+The default database engine is [SQLite](https://www.sqlite.org/) which does not require any configuration. The database is stored in your Open Peer Power configuration directory ('/config/') and is named `home-assistant_v2.db`.
 
 To change the defaults for the `recorder` integration in your installation, add the following to your `configuration.yaml` file:
 
@@ -53,7 +53,7 @@ recorder:
       default: 10
       type: integer
     purge_interval:
-      description: How often (in days) the purge task runs. If a scheduled purge is missed (e.g., if Home Assistant was not running), the schedule will resume soon after Home Assistant restarts. You can use the [service](#service-purge) call `purge` when required without impacting the purge schedule. If this is set to `0` (zero), automatic purging is disabled.
+      description: How often (in days) the purge task runs. If a scheduled purge is missed (e.g., if Open Peer Power was not running), the schedule will resume soon after Open Peer Power restarts. You can use the [service](#service-purge) call `purge` when required without impacting the purge schedule. If this is set to `0` (zero), automatic purging is disabled.
       required: false
       default: 1
       type: integer
@@ -175,7 +175,7 @@ Some installations of MariaDB/MySQL may require an ALTERNATE_PORT (3rd-party hos
 
 <div class='note'>
 
-If using an external MariaDB backend (e.g., running on a separate NAS) with Home Assistant, you should omit `pymysql` from the URL. `pymysql` is not included in the base Docker image, and is not necessary for this to work.
+If using an external MariaDB backend (e.g., running on a separate NAS) with Open Peer Power, you should omit `pymysql` from the URL. `pymysql` is not included in the base Docker image, and is not necessary for this to work.
 
 </div>
 
@@ -199,7 +199,7 @@ If you are using the default `FULL` recovery model for MS SQL Server you will ne
 
 ### Database startup
 
-If you are running a database server instance on the same server as Home Assistant then you must ensure that this service starts before Home Assistant. For a Linux instance running Systemd (Raspberry Pi, Debian, Ubuntu and others) you should edit the service file.
+If you are running a database server instance on the same server as Open Peer Power then you must ensure that this service starts before Open Peer Power. For a Linux instance running Systemd (Raspberry Pi, Debian, Ubuntu and others) you should edit the service file.
 To help facilitate this, db_max_retry and db_retry_wait variables have been added to ensure the recorder retries the connection to your database enough times, for your database to start up.
 
 ```bash
@@ -210,7 +210,7 @@ and add the service for the database, for example, PostgreSQL:
 
 ```txt
 [Unit]
-Description=Home Assistant
+Description=Open Peer Power
 After=network.target postgresql.service
 ```
 
@@ -250,9 +250,9 @@ sudo apt-get install default-libmysqlclient-dev libssl-dev
 pip3 install mysqlclient
 ```
 
-After installing the dependencies, it is required to create the database manually. During the startup, Home Assistant will look for the database specified in the `db_url`. If the database doesn't exist, it will not automatically create it for you.
+After installing the dependencies, it is required to create the database manually. During the startup, Open Peer Power will look for the database specified in the `db_url`. If the database doesn't exist, it will not automatically create it for you.
 
-Once Home Assistant finds the database, with the right level of permissions, all the required tables will then be automatically created and the data will be populated accordingly.
+Once Open Peer Power finds the database, with the right level of permissions, all the required tables will then be automatically created and the data will be populated accordingly.
 
 ### PostgreSQL
 
@@ -267,7 +267,7 @@ For using Unix Sockets, add the following line to your [`pg_hba.conf`](https://w
 
 `local  DB_NAME USER_NAME peer`
 
-Where `DB_NAME` is the name of your database and `USER_NAME` is the name of the user running the Home Assistant instance (see [securing your installation](/docs/configuration/securing/)).
+Where `DB_NAME` is the name of your database and `USER_NAME` is the name of the user running the Open Peer Power instance (see [securing your installation](/docs/configuration/securing/)).
 
 Reload the PostgreSQL configuration after that:
 ```bash

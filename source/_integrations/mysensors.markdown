@@ -1,6 +1,6 @@
 ---
 title: MySensors
-description: Instructions on how to integrate MySensors sensors into Home Assistant.
+description: Instructions on how to integrate MySensors sensors into Open Peer Power.
 ha_category:
   - DIY
 ha_iot_class: Local Push
@@ -10,7 +10,7 @@ ha_codeowners:
 ha_domain: mysensors
 ---
 
-The [MySensors](https://www.mysensors.org) project combines devices like Arduino, ESP8266, Raspberry Pi, NRF24L01+ and RFM69 to build affordable sensor networks. This integration will automatically add all available devices to Home Assistant, after [presentation](#presentation) is done. That is, you do not need to add anything to your configuration for the devices for them to be added. Go to the **states** section of the developer tools to find the devices that have been identified.
+The [MySensors](https://www.mysensors.org) project combines devices like Arduino, ESP8266, Raspberry Pi, NRF24L01+ and RFM69 to build affordable sensor networks. This integration will automatically add all available devices to Open Peer Power, after [presentation](#presentation) is done. That is, you do not need to add anything to your configuration for the devices for them to be added. Go to the **states** section of the developer tools to find the devices that have been identified.
 
 ## Configuration
 
@@ -30,7 +30,7 @@ mysensors:
     type: map
     keys:
       device:
-        description: The path to the serial gateway where it is connected to your Home Assistant host, or the address of the TCP Ethernet gateway, or `mqtt` to setup the MQTT gateway. Resolving DNS addresses is theoretically supported but not tested.
+        description: The path to the serial gateway where it is connected to your Open Peer Power host, or the address of the TCP Ethernet gateway, or `mqtt` to setup the MQTT gateway. Resolving DNS addresses is theoretically supported but not tested.
         required: true
         type: string
       baud_rate:
@@ -49,12 +49,12 @@ mysensors:
         type: integer
         default: 5003
       topic_in_prefix:
-        description: Set the prefix of the MQTT topic for messages coming from the MySensors gateway in to Home Assistant.
+        description: Set the prefix of the MQTT topic for messages coming from the MySensors gateway in to Open Peer Power.
         required: false
         type: string
         default: ''
       topic_out_prefix:
-        description: Set the prefix of the MQTT topic for messages going from Home Assistant out to the MySensors gateway.
+        description: Set the prefix of the MQTT topic for messages going from Open Peer Power out to the MySensors gateway.
         required: false
         type: string
         default: ''
@@ -68,7 +68,7 @@ mysensors:
             required: true
             type: string
   persistence:
-    description: Enable or disable local persistence of sensor information. If this is disabled, then each sensor will need to send presentation messages after Home Assistant starts.
+    description: Enable or disable local persistence of sensor information. If this is disabled, then each sensor will need to send presentation messages after Open Peer Power starts.
     required: false
     type: integer
     default: true
@@ -78,19 +78,19 @@ mysensors:
     type: string
     default: '1.4'
   optimistic:
-    description: Enable or disable optimistic mode for actuators (switch/light). Set this to true if no state feedback from actuators is possible. Home Assistant will assume that the command succeeded and change state.
+    description: Enable or disable optimistic mode for actuators (switch/light). Set this to true if no state feedback from actuators is possible. Open Peer Power will assume that the command succeeded and change state.
     required: false
     type: integer
     default: false
   retain:
-    description: Enable or disable retain flag for published messages from Home Assistant when using the MQTT gateway.
+    description: Enable or disable retain flag for published messages from Open Peer Power when using the MQTT gateway.
     required: false
     type: integer
     default: true
 {% endconfiguration %}
 
 <div class='note'>
-Not all features of MySensors 2.x are supported by Home Assistant yet. As more features are added, they will be described here in the documentation. Go to the MySensors platform pages under "related components" to see what message types are currently supported.
+Not all features of MySensors 2.x are supported by Open Peer Power yet. As more features are added, they will be described here in the documentation. Go to the MySensors platform pages under "related components" to see what message types are currently supported.
 </div>
 
 If you are using an original Arduino as a serial gateway, the port will be named `ttyACM*`. The exact number can be determined with the command shown below.
@@ -99,7 +99,7 @@ If you are using an original Arduino as a serial gateway, the port will be named
 ls /dev/ttyACM*
 ```
 
-If you are using the MQTT gateway, you also need to have the [MQTT component](/integrations/mqtt/) configured in Home Assistant. See below for a minimum MQTT configuration:
+If you are using the MQTT gateway, you also need to have the [MQTT component](/integrations/mqtt/) configured in Open Peer Power. See below for a minimum MQTT configuration:
 
 ```yaml
 mqtt:
@@ -146,7 +146,7 @@ Present a MySensors sensor or actuator, by following these steps:
 
 1. Connect the serial gateway to your computer or the Ethernet or MQTT gateway to your network.
 2. Configure the MySensors integration in `configuration.yaml`.
-3. Start Home Assistant.
+3. Start Open Peer Power.
 4. Write and upload your MySensors sketch to the sensor. Make sure you:
     - Send sketch name.
     - Present the sensor's `S_TYPE`.
@@ -235,21 +235,21 @@ void receive(const MyMessage &message) {
 
 ### SmartSleep
 
-Sending a heartbeat, `I_HEARTBEAT_RESPONSE`, from the MySensors device to Home Assistant, using MySensors version 2.0 - 2.1, activates the SmartSleep functionality in Home Assistant. This means that messages are buffered and only sent to the device upon receiving a heartbeat from the device. State changes are stored so that only the last requested state change is sent to the device. Other types of messages are queued in a FIFO queue. SmartSleep is useful for battery powered actuators that are waiting for commands. See the MySensors library API for information on how to send heartbeats and sleep the device.
+Sending a heartbeat, `I_HEARTBEAT_RESPONSE`, from the MySensors device to Open Peer Power, using MySensors version 2.0 - 2.1, activates the SmartSleep functionality in Open Peer Power. This means that messages are buffered and only sent to the device upon receiving a heartbeat from the device. State changes are stored so that only the last requested state change is sent to the device. Other types of messages are queued in a FIFO queue. SmartSleep is useful for battery powered actuators that are waiting for commands. See the MySensors library API for information on how to send heartbeats and sleep the device.
 
-In MySensors version 2.2 the serial API changed from using `I_HEARTBEAT_RESPONSE` to signal SmartSleep, to using `I_PRE_SLEEP_NOTIFICATION` and `I_POST_SLEEP_NOTIFICATION`. Home Assistant has been upgraded to support the new message types and will activate SmartSleep when receiving a message of type `I_PRE_SLEEP_NOTIFICATION`, if using MySensors version 2.2.x or higher. If Home Assistant is configured to use MySensors version 2.0 - 2.1 the old SmartSleep behavior is retained.
+In MySensors version 2.2 the serial API changed from using `I_HEARTBEAT_RESPONSE` to signal SmartSleep, to using `I_PRE_SLEEP_NOTIFICATION` and `I_POST_SLEEP_NOTIFICATION`. Open Peer Power has been upgraded to support the new message types and will activate SmartSleep when receiving a message of type `I_PRE_SLEEP_NOTIFICATION`, if using MySensors version 2.2.x or higher. If Open Peer Power is configured to use MySensors version 2.0 - 2.1 the old SmartSleep behavior is retained.
 
 ### Message validation
 
-Messages sent to or from Home Assistant from or to a MySensors device will be validated according to the MySensors [serial API](https://www.mysensors.org/download/serial_api_20). If a message doesn't pass validation, it will be dropped and not be passed forward either to or from Home Assistant. Make sure you follow the serial API for your version of MySensors when writing your Arduino sketch.
+Messages sent to or from Open Peer Power from or to a MySensors device will be validated according to the MySensors [serial API](https://www.mysensors.org/download/serial_api_20). If a message doesn't pass validation, it will be dropped and not be passed forward either to or from Open Peer Power. Make sure you follow the serial API for your version of MySensors when writing your Arduino sketch.
 
-The log should warn you of messages that failed validation or if a child value is missing that is required for a certain child type. Home Assistant will log failed validations of child values at warning level if e.g.,  one required value type for a platform has been received, but other required value types are missing.
+The log should warn you of messages that failed validation or if a child value is missing that is required for a certain child type. Open Peer Power will log failed validations of child values at warning level if e.g.,  one required value type for a platform has been received, but other required value types are missing.
 
-Message validation was introduced in version 0.52 of Home Assistant.
+Message validation was introduced in version 0.52 of Open Peer Power.
 
 ### Debug logging
 
-If you experience dropped messages or that a device is not added to Home Assistant, please turn on debug logging for the `mysensors` integration and the `mysensors` package. This will help you see what is going on. Make sure you use these logging settings to collect a log sample if you report an issue about the `mysensors` integration in our GitHub issue tracker.
+If you experience dropped messages or that a device is not added to Open Peer Power, please turn on debug logging for the `mysensors` integration and the `mysensors` package. This will help you see what is going on. Make sure you use these logging settings to collect a log sample if you report an issue about the `mysensors` integration in our GitHub issue tracker.
 
 ```yaml
 logger:

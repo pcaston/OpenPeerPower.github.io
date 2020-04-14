@@ -1,6 +1,6 @@
 ---
 title: Smappee
-description: Instructions on how to setup Smappee within Home Assistant.
+description: Instructions on how to setup Smappee within Open Peer Power.
 ha_release: 0.64
 ha_category:
   - Hub
@@ -13,7 +13,7 @@ ha_domain: smappee
 
 The `smappee` integration adds support for the [Smappee](https://www.smappee.com/) controller for energy monitoring and Comport plug switches.
 
-There is currently support for the following device types within Home Assistant:
+There is currently support for the following device types within Open Peer Power:
 
 - Sensor
 - Switch

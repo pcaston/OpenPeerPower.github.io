@@ -10,5 +10,5 @@ ha_codeowners:
 ha_domain: auth
 ---
 
-This integration creates the endpoints for the [authentication system](/docs/authentication/) that is built into Home Assistant.
+This integration creates the endpoints for the [authentication system](/docs/authentication/) that is built into Open Peer Power.
 There are no configuration options for this integration directly as it relies on the auth system in the core.

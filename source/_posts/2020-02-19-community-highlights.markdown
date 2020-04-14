@@ -19,14 +19,14 @@ Visual Studio Code is a free text editor by Microsoft that works inside your bro
 
 The add-on used to be only available for x64 devices like intel NUC. With this update, it is now also available for ARM64 devices, including the Raspberry Pi 3 and 4 (the 64-bit version).
 
-It comes installed with all the extensions necessary for editing Home Assistant related files:
+It comes installed with all the extensions necessary for editing Open Peer Power related files:
 
-- [Home Assistant Config Helper](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-home-assistant)
+- [Open Peer Power Config Helper](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-home-assistant)
 - [ESPHome VSCode](https://marketplace.visualstudio.com/items?itemName=ESPHome.esphome-vscode)
 - YAML checker
 - Material Design Icons support
 
-If this is the first time you hear about the Home Assistant Config Helper, it is genius. It will set-up a realtime connection from VS Code directly to your Home Assistant installation so it can offer auto-complete suggestions when editing your configuration. This is pre-configured and works out of the box with the VS Code add-on.
+If this is the first time you hear about the Open Peer Power Config Helper, it is genius. It will set-up a realtime connection from VS Code directly to your Open Peer Power installation so it can offer auto-complete suggestions when editing your configuration. This is pre-configured and works out of the box with the VS Code add-on.
 
 To install the add-on, search for Visual Studio Code in the add-on store.
 
@@ -34,7 +34,7 @@ To install the add-on, search for Visual Studio Code in the add-on store.
 
 ## VS Code add-on part 2
 
-But there is more in the add-on! Home Assistant contains an add-on service registry where add-ons can make their services available for other add-ons without requiring any configuration. The VS Code add-on uses this feature to offer a built-in terminal that has pre-configured tools to connect to the MariaDB add-on and the MQTT add-on.
+But there is more in the add-on! Open Peer Power contains an add-on service registry where add-ons can make their services available for other add-ons without requiring any configuration. The VS Code add-on uses this feature to offer a built-in terminal that has pre-configured tools to connect to the MariaDB add-on and the MQTT add-on.
 
 To try it out, open VS Code, click on the menu button top left -> view -> terminal.
 
@@ -66,7 +66,7 @@ mysql -D homeassistant -e "SELECT entity_id, state, last_updated FROM states LIM
 
 ## Beta time!
 
-Today we are releasing the first beta of Home Assistant Core 0.106. It is packed with awesome features. For a sneak peek of what is coming, check the [beta release notes](https://rc.home-assistant.io/latest-release-notes/).
+Today we are releasing the first beta of Open Peer Power Core 0.106. It is packed with awesome features. For a sneak peek of what is coming, check the [beta release notes](https://rc.home-assistant.io/latest-release-notes/).
 
 I'm personally most excited about the extended safe mode. It will guarantee that the frontend will always load, no matter how broken your configuration is.
 
@@ -82,7 +82,7 @@ _Thanks, Jean-Loïc Pouffier & cogneato for sending in this item! 👍_
 
 ## Got a tip for the next edition?
 
-Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Home Assistant?
+Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Open Peer Power?
 
 [Click here to send us your Community Highlight suggestion](/suggest-community-highlight).
 

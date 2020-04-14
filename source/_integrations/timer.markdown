@@ -1,6 +1,6 @@
 ---
 title: Timer
-description: Instructions on how to integrate timers into Home Assistant.
+description: Instructions on how to integrate timers into Open Peer Power.
 ha_category:
   - Automation
 ha_release: 0.57
@@ -38,7 +38,7 @@ timer:
       required: false
       type: string
     duration:
-      description: Initial duration in seconds or `00:00:00` when Home Assistant starts.
+      description: Initial duration in seconds or `00:00:00` when Open Peer Power starts.
       required: false
       type: [integer, time]
       default: 0
@@ -64,7 +64,7 @@ Pick an icon that you can find on [materialdesignicons.com](https://materialdesi
 
 ### Service `timer.start`
 
-Starts or restarts a timer with the provided duration. If no duration is given, it will either restart with its initial value, or continue a paused timer with the remaining duration. If a new duration is provided, this will be the new default for the timer until Home Assistant is restarted (which loads your default values). The duration can be specified as a number of seconds or the easier to read `01:23:45` format.  
+Starts or restarts a timer with the provided duration. If no duration is given, it will either restart with its initial value, or continue a paused timer with the remaining duration. If a new duration is provided, this will be the new default for the timer until Open Peer Power is restarted (which loads your default values). The duration can be specified as a number of seconds or the easier to read `01:23:45` format.  
 You can also use `entity_id: all` and all active timers will be started.
 
 | Service data attribute | Optional | Description |
@@ -98,7 +98,7 @@ Manually finish a running timer earlier than scheduled. You can also use `entity
 
 ### Service `timer.reload`
 
-Reload `timer`'s configuration without restarting Home Assistant itself. This service takes no service data attributes.
+Reload `timer`'s configuration without restarting Open Peer Power itself. This service takes no service data attributes.
 
 ### Use the service
 

@@ -1,6 +1,6 @@
 ---
 title: Stream
-description: Instructions on how to integrate live streams within Home Assistant.
+description: Instructions on how to integrate live streams within Open Peer Power.
 ha_category:
   - Other
 ha_release: '0.90'
@@ -11,7 +11,7 @@ ha_codeowners:
 ha_domain: stream
 ---
 
-The `stream` integration provides a way to proxy live streams through Home Assistant. The integration currently only supports proxying H.264 source streams to the HLS format and requires at least FFmpeg >= 3.2.
+The `stream` integration provides a way to proxy live streams through Open Peer Power. The integration currently only supports proxying H.264 source streams to the HLS format and requires at least FFmpeg >= 3.2.
 
 ## Configuration
 
@@ -54,7 +54,7 @@ action:
 
 ## Streaming in Lovelace
 
-As of Home Assistant version 0.92 you can now live-stream a camera feed directly in lovelace.
+As of Open Peer Power version 0.92 you can now live-stream a camera feed directly in lovelace.
 To do this add either [picture-entity](/lovelace/picture-entity/), [picture-glance](/lovelace/picture-glance/) or [picture-elements](/lovelace/picture-elements/), set `camera_image` to a stream-ready camera entity and set `camera_view` to `live` in one of your Lovelace views.
 
 ## Troubleshooting
@@ -67,7 +67,7 @@ Some users on manual installs may see the following error in their logs after re
 2019-03-12 08:49:59 ERROR (MainThread) [homeassistant.setup] Setup failed for stream: Could not install all requirements.
 ```
 
-If you see this error you can solve it by running the following commands and restarting Home Assistant (commands do not need to be ran as the `homeassistant` user):
+If you see this error you can solve it by running the following commands and restarting Open Peer Power (commands do not need to be ran as the `homeassistant` user):
 
 ```text
 sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev

@@ -1,12 +1,12 @@
 ---
 title: "Updater"
-description: "Details what the updater integration is reporting about your Home Assistant instance."
+description: "Details what the updater integration is reporting about your Open Peer Power instance."
 redirect_from: /details/updater/
 ---
 
-Starting with 0.31 the [updater component](/integrations/updater/) sends an optional report about Home Assistant instance.
+Starting with 0.31 the [updater component](/integrations/updater/) sends an optional report about Open Peer Power instance.
 
-If you want to opt-in to include integration information, add `include_used_components` to your configuration. This will allow the Home Assistant developers to focus development efforts on the most popular components.
+If you want to opt-in to include integration information, add `include_used_components` to your configuration. This will allow the Open Peer Power developers to focus development efforts on the most popular components.
 
 ```yaml
 updater:
@@ -38,10 +38,10 @@ We are only collecting this information to better understand our user base to pr
 | `timezone`            | Timezone                                   | `America/Los_Angeles`              | Local Instance |
 | `user_agent`          | User agent used to submit analytics        | `python-requests/2.11.1`           | Local Instance |
 | `uuid`                | Unique identifier                          | `10321ee6094d4a2ebb5ed55c675d5f5e` | Local Instance |
-| `version`             | Home Assistant version                     | `0.31.0`                           | Local Instance |
+| `version`             | Open Peer Power version                     | `0.31.0`                           | Local Instance |
 | `virtualenv`          | True if running inside virtualenv          | `true`                             | Local Instance |
 
-In addition to the above collected data, the server will also use your IP address to do a geographic IP address lookup to determine a general geographic area that your address is located in. To be extremely, extremely clear about this bit: __The Home Assistant updater does not: store your IP address in a database and also does not submit the location information from your `configuration.yaml`.__
+In addition to the above collected data, the server will also use your IP address to do a geographic IP address lookup to determine a general geographic area that your address is located in. To be extremely, extremely clear about this bit: __The Open Peer Power updater does not: store your IP address in a database and also does not submit the location information from your `configuration.yaml`.__
 
 Our tests showed that at best, we get 4 digits of accuracy on your IP address location which is a 5 mile radius of your actual IP location, assuming that it is even correct in the first place (geo IP lookups are very hit or miss).
 
@@ -50,4 +50,4 @@ The server also adds two timestamps to the data:
 - the original date your instance UUID was first seen
 - the timestamp of the last time we have seen your instance
 
-We will never publicly expose individual gathered data. We might however publish aggregated stats about our user base (example: 70% of all users use Linux). We will never sell or allow the use of this information for non-Home Assistant development purposes.
+We will never publicly expose individual gathered data. We might however publish aggregated stats about our user base (example: 70% of all users use Linux). We will never sell or allow the use of this information for non- Open Peer Power development purposes.

@@ -54,7 +54,7 @@ If you define entities as objects instead of strings (by adding `entity:` before
 {% configuration %}
 entity:
   required: true
-  description: Home Assistant entity ID.
+  description: Open Peer Power entity ID.
   type: string
 type:
   required: false
@@ -146,7 +146,7 @@ service_data:
 
 ### Cast
 
-Special row to start Home Assistant Cast.
+Special row to start Open Peer Power Cast.
 
 {% configuration %}
 type:
@@ -165,7 +165,7 @@ name:
   required: false
   description: Name to show in the row
   type: string
-  default: Home Assistant Cast
+  default: Open Peer Power Cast
 icon:
   required: false
   description: Icon to use
@@ -303,7 +303,7 @@ type:
   type: string
 entity:
   required: true
-  description: Home Assistant entity ID.
+  description: Open Peer Power entity ID.
   type: string
 attribute:
   required: true
@@ -359,7 +359,7 @@ entities:
       entity_id: light.bed_light
   - type: divider
   - type: weblink
-    name: Home Assistant
+    name: Open Peer Power
     url: https://www.home-assistant.io/
     icon: mdi:home-assistant
 ```

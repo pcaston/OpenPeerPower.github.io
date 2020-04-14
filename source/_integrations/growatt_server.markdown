@@ -1,6 +1,6 @@
 ---
 title: Growatt
-description: Instructions on how to integrate your Growatt server solar inverter within Home Assistant.
+description: Instructions on how to integrate your Growatt server solar inverter within Open Peer Power.
 ha_category:
   - Sensor
   - Energy

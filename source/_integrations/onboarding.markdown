@@ -1,5 +1,5 @@
 ---
-title: Home Assistant Onboarding
+title: Open Peer Power Onboarding
 description: This integration is responsible for providing the onboarding endpoints.
 ha_category:
   - Other
@@ -10,4 +10,4 @@ ha_codeowners:
 ha_domain: onboarding
 ---
 
-This integration creates the endpoints for the onboarding that is built into Home Assistant. There are no configuration options for this integration directly.
+This integration creates the endpoints for the onboarding that is built into Open Peer Power. There are no configuration options for this integration directly.

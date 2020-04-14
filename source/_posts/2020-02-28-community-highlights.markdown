@@ -20,7 +20,7 @@ Ready for some highly inspiring and mind-blowing 3D creations?
 ## 3D home navigation and control, using Unity
 
 Are you sure you ready? Because Harrie de Groot created a fully navigatable
-3D model of his home using Unity, accessible from within Home Assistant.
+3D model of his home using Unity, accessible from within Open Peer Power.
 
 You really **need** to watch the video below now...
 
@@ -31,14 +31,14 @@ You really **need** to watch the video below now...
 Well done, Harrie! That looks slick!
 
 More details on his creation can be found on the
-[Home Assistant Community Forum](https://community.home-assistant.io/t/3d-home-navigation-control-unity-home-assistant/174972).
+[Open Peer Power Community Forum](https://community.home-assistant.io/t/3d-home-navigation-control-unity-home-assistant/174972).
 
 ## 3D printed interactive floorplan
 
 If you have been around a bit, you might have come across a screenshot of
-someone with an interactive floorplan in Home Assistant. [Ryan Connolly](https://twitter.com/rynam0)
+someone with an interactive floorplan in Open Peer Power. [Ryan Connolly](https://twitter.com/rynam0)
 took that idea straight into the real world by 3D printing his floorplan,
-wired it, and hooked it up Home Assistant.
+wired it, and hooked it up Open Peer Power.
 
 Talking about taking things into another dimension...
 
@@ -62,7 +62,7 @@ Aaron shows you what his floorplan looks like
 He followed up with two blog posting on how to achieve this:
 
 - [Tips for creating a Floorplan in Sweet Home 3D](https://aarongodfrey.dev/home%20automation/tips_for_creating_a_3d_floorplan_using_sweethome3d/)
-- [Creating an Interactive 3D Floorplan in Home Assistant](https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/)
+- [Creating an Interactive 3D Floorplan in Open Peer Power](https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/)
 
 ### Bonus tip: HomeByMe
 
@@ -79,7 +79,7 @@ gem [Andrea Donno](https://www.twitter.com/andreadonno)!
 
 ## Got a tip for the next edition?
 
-Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Home Assistant?
+Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Open Peer Power?
 
 [Click here to send us your Community Highlight suggestion](/suggest-community-highlight).
 

@@ -1,10 +1,10 @@
 ---
 title: "Setup basic information"
-description: "Setting up the basic info of Home Assistant."
+description: "Setting up the basic info of Open Peer Power."
 redirect_from: /getting-started/basic/
 ---
 
-As part of the default onboarding process, Home Assistant can detect your location from IP address geolocation. Home Assistant will automatically select a temperature unit and time zone based on this location. You may adjust this during onboarding, or afterwards at Configuration -> General. 
+As part of the default onboarding process, Open Peer Power can detect your location from IP address geolocation. Open Peer Power will automatically select a temperature unit and time zone based on this location. You may adjust this during onboarding, or afterwards at Configuration -> General. 
 
 If you prefer YAML, you can add the following information to your `configuration.yaml`:
 
@@ -43,7 +43,7 @@ time_zone:
   required: false
   type: string
 name:
-  description: Name of the location where Home Assistant is running.
+  description: Name of the location where Open Peer Power is running.
   required: false
   type: string
 customize:
@@ -66,4 +66,4 @@ whitelist_external_dirs:
 
 ### Reload Core Service
 
-Home Assistant offers a service to reload the core configuration while Home Assistant is running called `homeassistant.reload_core_config`. This allows you to change any of the above sections and see it being applied without having to restart Home Assistant. To call this service, go to the "Service" tab under Developer Tools, select the `homeassistant.reload_core_config` service and click the "CALL SERVICE" button. Alternatively, you can press the "Reload Location & Customizations" button under Configuration > Server Control.
+ Open Peer Power offers a service to reload the core configuration while Open Peer Power is running called `homeassistant.reload_core_config`. This allows you to change any of the above sections and see it being applied without having to restart Open Peer Power. To call this service, go to the "Service" tab under Developer Tools, select the `homeassistant.reload_core_config` service and click the "CALL SERVICE" button. Alternatively, you can press the "Reload Location & Customizations" button under Configuration > Server Control.

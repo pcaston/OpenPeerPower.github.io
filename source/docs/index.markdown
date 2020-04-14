@@ -1,9 +1,9 @@
 ---
 title: "Documentation"
-description: "Documentation for Home Assistant"
+description: "Documentation for Open Peer Power"
 ---
 
-The documentation covers beginner to advanced topics around the installation, setup, configuration, and usage of Home Assistant.
+The documentation covers beginner to advanced topics around the installation, setup, configuration, and usage of Open Peer Power.
 
 <div class="text-center hass-option-cards" markdown="0">
   <a class='option-card' href='/hassio/'>
@@ -46,4 +46,4 @@ The documentation covers beginner to advanced topics around the installation, se
 
 <br/>
 
-To see what Home Assistant can do, take a look at the [demo page](/demo).
+To see what Open Peer Power can do, take a look at the [demo page](/demo).

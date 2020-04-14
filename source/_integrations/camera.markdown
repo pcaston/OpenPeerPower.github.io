@@ -1,6 +1,6 @@
 ---
 title: Camera
-description: Instructions on how to integrate cameras within Home Assistant.
+description: Instructions on how to integrate cameras within Open Peer Power.
 ha_category:
   - Camera
 ha_release: 0.7
@@ -8,16 +8,16 @@ ha_quality_scale: internal
 ha_domain: camera
 ---
 
-The camera integration allows you to use IP cameras with Home Assistant.
+The camera integration allows you to use IP cameras with Open Peer Power.
 
 ### Streaming Video
 
 If your camera supports it, and the [`stream`](/integrations/stream) integration is setup, you will be able to stream your cameras in the frontend and on supported media players.
 
-This option will keep the stream alive, and preload the feed on Home Assistant startup. This will result in reduced latency when opening the stream in the frontend, as well as when using the `play_stream` service or Google Assistant integration. It does, however, utilize more resources on your machine, so it is recommended to check CPU usage if you plan to use this feature.
+This option will keep the stream alive, and preload the feed on Open Peer Power startup. This will result in reduced latency when opening the stream in the frontend, as well as when using the `play_stream` service or Google Assistant integration. It does, however, utilize more resources on your machine, so it is recommended to check CPU usage if you plan to use this feature.
 
 <p class='img'>
-  <img src='/images/integrations/camera/preload-stream.png' alt='Screenshot showing Preload Stream option in Home Assistant front end.'>
+  <img src='/images/integrations/camera/preload-stream.png' alt='Screenshot showing Preload Stream option in Open Peer Power front end.'>
   Example showing the Preload Stream option in the camera dialog.
 </p>
 

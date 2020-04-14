@@ -1,9 +1,9 @@
 ---
 title: "The Apache 2.0 License"
-description: "The License that all Home Assistant projects are licensed under"
+description: "The License that all Open Peer Power projects are licensed under"
 ---
 
-The Home Assistant source code is released under the following license.
+The Open Peer Power source code is released under the following license.
 
 ```txt
                                  Apache License

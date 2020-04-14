@@ -1,6 +1,6 @@
 ---
 title: MQTT Eventstream
-description: Instructions on how to setup MQTT eventstream within Home Assistant.
+description: Instructions on how to setup MQTT eventstream within Open Peer Power.
 logo: mqtt.png
 ha_category:
   - Other
@@ -9,11 +9,11 @@ ha_iot_class: Configurable
 ha_domain: mqtt_eventstream
 ---
 
-The `mqtt_eventstream` integration connects two Home Assistant instances via MQTT.
+The `mqtt_eventstream` integration connects two Open Peer Power instances via MQTT.
 
 ## Configuration
 
-To integrate MQTT Eventstream into Home Assistant, add the following section to your `configuration.yaml` file:
+To integrate MQTT Eventstream into Open Peer Power, add the following section to your `configuration.yaml` file:
 
 ```yaml
 # Example configuration.yaml entry

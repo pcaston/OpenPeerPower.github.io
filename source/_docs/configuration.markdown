@@ -1,17 +1,17 @@
 ---
-title: "Configuring Home Assistant"
-description: "Configuring Home Assistant."
+title: "Configuring Open Peer Power"
+description: "Configuring Open Peer Power."
 ---
 
-When launched for the first time, Home Assistant will create a default configuration file enabling the web interface and device discovery. It can take up to a minute after startup for your devices to be discovered and appear in the user interface.
+When launched for the first time, Open Peer Power will create a default configuration file enabling the web interface and device discovery. It can take up to a minute after startup for your devices to be discovered and appear in the user interface.
 
-The web interface can be found at `http://ip.ad.dre.ss:8123/` - for example if your Home Assistant system has the IP address `192.168.0.40` then you'll find the web interface as `http://192.168.0.40:8123/`.
+The web interface can be found at `http://ip.ad.dre.ss:8123/` - for example if your Open Peer Power system has the IP address `192.168.0.40` then you'll find the web interface as `http://192.168.0.40:8123/`.
 
 The location of the folder differs between operating systems:
 
 | OS             | Path                       |
 | -------------- | -------------------------- |
-| Home Assistant | `/config`                  |
+| Open Peer Power | `/config`                  |
 | Docker         | `/config`                  |
 | macOS          | `~/.homeassistant`         |
 | Linux          | `~/.homeassistant`         |
@@ -21,17 +21,17 @@ If you want to use a different folder for configuration, use the configuration c
 
 Inside your configuration folder is the file `configuration.yaml`. This is the main file that contains integrations to be loaded with their configurations. Throughout the documentation you will find snippets that you can add to your configuration file to enable functionality.
 
-If you run into trouble while configuring Home Assistant, have a look at the [configuration troubleshooting page](/getting-started/troubleshooting-configuration/) and at the [`configuration.yaml` examples](/cookbook/#example-configurationyaml).
+If you run into trouble while configuring Open Peer Power, have a look at the [configuration troubleshooting page](/getting-started/troubleshooting-configuration/) and at the [`configuration.yaml` examples](/cookbook/#example-configurationyaml).
 
 <div class='note tip'>
 
-  Test any changes to your configuration files from the command line with `hass --script check_config`. This script allows you to test changes without the need to restart Home Assistant. Remember to run this as the user you run Home Assistant as.
+  Test any changes to your configuration files from the command line with `hass --script check_config`. This script allows you to test changes without the need to restart Open Peer Power. Remember to run this as the user you run Open Peer Power as.
 
 </div>
 
 ## Reloading changes
 
-You will have to restart Home Assistant for most changes to `configuration.yaml` to take effect.
+You will have to restart Open Peer Power for most changes to `configuration.yaml` to take effect.
 You can load changes to [automations](/docs/automation/), [core (customize)](/docs/configuration/customizing-devices/), [groups](/integrations/group/), [input_booleans](/integrations/input_boolean/), [input_datetimes](/integrations/input_datetime/), [input_numbers](/integrations/input_number/), [input_selects](/integrations/input_select/), [input_texts](/integrations/input_text/), [persons](/integrations/person/), [scenes](/integrations/scene/), [scripts](/integrations/script/), [timers](/integrations/timer/), and [zones](/integrations/zone/) without restarting.
 
 <div class='note warning'>

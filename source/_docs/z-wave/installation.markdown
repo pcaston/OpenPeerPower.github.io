@@ -17,7 +17,7 @@ zwave:
 
 {% configuration Z-Wave %}
 usb_path:
-  description: The port where your device is connected to your Home Assistant host. Z-Wave sticks will generally be `/dev/ttyACM0` and GPIO hats will generally be `/dev/ttyAMA0`.
+  description: The port where your device is connected to your Open Peer Power host. Z-Wave sticks will generally be `/dev/ttyACM0` and GPIO hats will generally be `/dev/ttyAMA0`.
   required: false
   type: string
   default: /zwaveusbstick
@@ -105,13 +105,13 @@ Ensure you keep a backup of this key. If you have to rebuild your system and don
 
 ## First Run
 
-On platforms other than Home Assistant and Docker, the compilation and installation of python-openzwave happens when you first enable the Z-Wave component, and can take half an hour or more on a Raspberry Pi. When you upgrade Home Assistant and python-openzwave is also upgraded, this will also result in a delay while the new version is compiled and installed.
+On platforms other than Open Peer Power and Docker, the compilation and installation of python-openzwave happens when you first enable the Z-Wave component, and can take half an hour or more on a Raspberry Pi. When you upgrade Open Peer Power and python-openzwave is also upgraded, this will also result in a delay while the new version is compiled and installed.
 
 The first run after adding a device is when the `zwave` integration will take time to initialize the entities, some entities may appear with incomplete names. Running a network heal may speed up this process.
 
 ## Platform specific instructions
 
-### Home Assistant
+### Open Peer Power
 
 You do not need to install any software to use Z-Wave.
 
@@ -123,7 +123,7 @@ You can also check what hardware has been found using the [`ha` command](/hassio
 ha hardware info
 ```
 
-If you did an alternative install of Home Assistant on Linux (e.g.,  installing Ubuntu, then Docker, then Home Assistant Supervised) then the `modemmanager` package will interfere with any Z-Wave (or Zigbee) stick and should be removed or disabled in the host OS. Failure to do so will result in random failures of those components, e.g.,  dead or unreachable Z-Wave nodes, most notably right after Home Assistant restarts. Connect to your host OS via SSH, then you can disable with `sudo systemctl disable ModemManager` and remove with `sudo apt-get purge modemmanager` (commands are for Debian/Ubuntu).
+If you did an alternative install of Open Peer Power on Linux (e.g.,  installing Ubuntu, then Docker, then Open Peer Power Supervised) then the `modemmanager` package will interfere with any Z-Wave (or Zigbee) stick and should be removed or disabled in the host OS. Failure to do so will result in random failures of those components, e.g.,  dead or unreachable Z-Wave nodes, most notably right after Open Peer Power restarts. Connect to your host OS via SSH, then you can disable with `sudo systemctl disable ModemManager` and remove with `sudo apt-get purge modemmanager` (commands are for Debian/Ubuntu).
 
 ### Docker
 
@@ -147,9 +147,9 @@ The `modemmanager` package will interfere with any Z-Wave (or Zigbee) stick and 
 
 #### Raspberry Pi specific
 
-On the Raspberry Pi you will need to enable the serial interface in the `raspi-config` tool before you can add Z-Wave to Home Assistant. Make sure to reboot the Raspberry Pi for the setting to take effect.
+On the Raspberry Pi you will need to enable the serial interface in the `raspi-config` tool before you can add Z-Wave to Open Peer Power. Make sure to reboot the Raspberry Pi for the setting to take effect.
 
-#### Linux with Home Assistant Core
+#### Linux with Open Peer Power Core
 
 On Debian Linux platforms there are dependencies you will need to have installed ahead of time (included in `systemd-devel` on Fedora/RHEL systems):
 
@@ -181,7 +181,7 @@ Or, if there is no result, try to find detailed USB connection info with:
 dmesg | grep USB
 ```
 
-If Home Assistant (`hass`) runs with another user (e.g., `homeassistant`) you need to give access to the stick with:
+If Open Peer Power (`hass`) runs with another user (e.g., `homeassistant`) you need to give access to the stick with:
 
 ```bash
 sudo usermod -aG dialout homeassistant
@@ -221,8 +221,8 @@ If your device path changes when you restart, see [this guide](http://hintshop.l
 
 If this applies to your situation:
 
-- Some or all Z-Wave nodes are unreachable after restarting Home Assistant; not necessarily after every restart but seemingly random.
-- The Z-Wave stick stops responding, needs to be re-plugged or Home Assistant needs a restart to get Z-Wave back.
+- Some or all Z-Wave nodes are unreachable after restarting Open Peer Power; not necessarily after every restart but seemingly random.
+- The Z-Wave stick stops responding, needs to be re-plugged or Open Peer Power needs a restart to get Z-Wave back.
 - Your host OS is Debian-based/Ubuntu (for example: you installed Ubuntu, then Docker, then Hass.io).
 
 Then chances are high that the ModemManager in the host OS is causing the issue, claiming or interfering with the USB Z-Wave stick like the much used Aeotec ones. In this case you need to disable ModemManager.
@@ -254,7 +254,7 @@ sudo chgrp dialout /dev/ttyAMA0
 sudo chmod g+rw /dev/ttyAMA0
 ```
 
-Check too that the account you're running Home Assistant as is in the `dialout` group. For instance, if you're using `homeassistant`:
+Check too that the account you're running Open Peer Power as is in the `dialout` group. For instance, if you're using `homeassistant`:
 
 ```bash
 groups homeassistant
@@ -286,7 +286,7 @@ WARNING: Out of frame flow! (0xfe).  Sending NAK
 WARNING: Checksum incorrect - sending NAK
 ```
 
-If you see any of these messages repeated in the log then _probably_ you've got something else running that's also using the Z-Wave controller. That might mean you've also got the OpenZ-Wave control panel (ozwcp) running, a second instance of Home Assistant or something else. You need to stop that other process to resolve this.
+If you see any of these messages repeated in the log then _probably_ you've got something else running that's also using the Z-Wave controller. That might mean you've also got the OpenZ-Wave control panel (ozwcp) running, a second instance of Open Peer Power or something else. You need to stop that other process to resolve this.
 
 ### Changing device paths
 

@@ -1,12 +1,12 @@
 ---
 title: "Templating"
-description: "Instructions on how to use the templating feature of Home Assistant."
+description: "Instructions on how to use the templating feature of Open Peer Power."
 redirect_from: /topics/templating/
 ---
 
-This is an advanced feature of Home Assistant. You'll need a basic understanding of:
+This is an advanced feature of Open Peer Power. You'll need a basic understanding of:
 
-- [Home Assistant architecture](/developers/architecture/), especially states.
+- [ Open Peer Power architecture](/developers/architecture/), especially states.
 - The [State object](/topics/state_object/).
 
 Templating is a powerful feature that allows you to control information going into and out of the system. It is used for:
@@ -17,7 +17,7 @@ Templating is a powerful feature that allows you to control information going in
 
 ## Building templates
 
-Templating in Home Assistant is powered by the [Jinja2](https://palletsprojects.com/p/jinja) templating engine. This means that we are using their syntax and make some custom Home Assistant variables available to templates during rendering. Jinja2 supports a wide variety of operations:
+Templating in Open Peer Power is powered by the [Jinja2](https://palletsprojects.com/p/jinja) templating engine. This means that we are using their syntax and make some custom Open Peer Power variables available to templates during rendering. Jinja2 supports a wide variety of operations:
 
 - [Mathematical operation](https://jinja.palletsprojects.com/en/master/templates/#math)
 - [Comparisons](https://jinja.palletsprojects.com/en/master/templates/#comparisons)
@@ -45,9 +45,9 @@ script:
 ```
 {% endraw %}
 
-## Home Assistant template extensions
+## Open Peer Power template extensions
 
-Extensions allow templates to access all of the Home Assistant specific states and adds other convenience functions and filters.
+Extensions allow templates to access all of the Open Peer Power specific states and adds other convenience functions and filters.
 
 ### States
 
@@ -61,7 +61,7 @@ Extensions allow templates to access all of the Home Assistant specific states a
 
 <div class='note warning'>
 
-  Avoid using `states.sensor.temperature.state`, instead use `states('sensor.temperature')`. It is strongly advised to use the `states()`, `is_state()`, `state_attr()` and `is_state_attr()` as much as possible, to avoid errors and error message when the entity isn't ready yet (e.g., during Home Assistant startup).
+  Avoid using `states.sensor.temperature.state`, instead use `states('sensor.temperature')`. It is strongly advised to use the `states()`, `is_state()`, `state_attr()` and `is_state_attr()` as much as possible, to avoid errors and error message when the entity isn't ready yet (e.g., during Open Peer Power startup).
 
 </div>
 
@@ -243,7 +243,7 @@ The temperature is 25°C
 
 #### Distance examples
 
-If only one location is passed in, Home Assistant will measure the distance from home.
+If only one location is passed in, Open Peer Power will measure the distance from home.
 
 {% raw %}
 ```text
@@ -354,7 +354,7 @@ Some of these functions can also be used in a [filter](https://jinja.palletsproj
 
 The other part of templating is processing incoming data. It allows you to modify incoming data and extract only the data you care about. This will only work for platforms and integrations that mention support for this in their documentation.
 
-It depends per integration or platform, but it is common to be able to define a template using the `value_template` configuration key. When a new value arrives, your template will be rendered while having access to the following values on top of the usual Home Assistant extensions:
+It depends per integration or platform, but it is common to be able to define a template using the `value_template` configuration key. When a new value arrives, your template will be rendered while having access to the following values on top of the usual Open Peer Power extensions:
 
 | Variable     | Description                        |
 |--------------|------------------------------------|

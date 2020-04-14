@@ -1,6 +1,6 @@
 ---
 title: Dialogflow
-description: Instructions on how integrate Dialogflow with Home Assistant.
+description: Instructions on how integrate Dialogflow with Open Peer Power.
 logo: dialogflow.png
 ha_category:
   - Voice
@@ -11,7 +11,7 @@ ha_domain: dialogflow
 
 The `dialogflow` integration is designed to be used with the [webhook](https://dialogflow.com/docs/fulfillment#webhook) integration of [Dialogflow](https://dialogflow.com/). When a conversation ends with a user, Dialogflow sends an action and parameters to the webhook.
 
-To be able to receive messages from Dialogflow, your Home Assistant instance needs to be accessible from the web and you need to have the `base_url` configured for the HTTP integration ([documentation](/integrations/http/#base_url)). Dialogflow will return fallback answers if your server does not answer or takes too long (more than 5 seconds).
+To be able to receive messages from Dialogflow, your Open Peer Power instance needs to be accessible from the web and you need to have the `base_url` configured for the HTTP integration ([documentation](/integrations/http/#base_url)). Dialogflow will return fallback answers if your server does not answer or takes too long (more than 5 seconds).
 
 Dialogflow could be [integrated](https://dialogflow.com/docs/integrations/) with many popular messaging, virtual assistant and IoT platforms.
 
@@ -29,7 +29,7 @@ _User: In the kitchen_
 
 _Bot: Turning on kitchen light_
 
-To use this integration, you should define a conversation (intent) in Dialogflow, configure Home Assistant with the speech to return and, optionally, the action to execute.
+To use this integration, you should define a conversation (intent) in Dialogflow, configure Open Peer Power with the speech to return and, optionally, the action to execute.
 
 ### Configuring your Dialogflow account
 
@@ -44,12 +44,12 @@ To get the webhook URL, go to the integrations page in the configuration screen 
 - Click "Save"
 - Create a new intent
 - Below "User says" write one phrase that you, the user, will tell Dialogflow, e.g., `What is the temperature at home?`
-- In "Action" set some key (this will be the bind with Home Assistant configuration), e.g.,: GetTemperature
-- In "Response" set "Cannot connect to Home Assistant or it is taking to long" (fall back response)
+- In "Action" set some key (this will be the bind with Open Peer Power configuration), e.g.,: GetTemperature
+- In "Response" set "Cannot connect to Open Peer Power or it is taking to long" (fall back response)
 - At the end of the page, click on "Fulfillment" and check "Use webhook"
 - Click "Save"
 - On the top right, where is written "Try it now...", write, or say, the phrase you have previously defined and hit enter
-- Dialogflow has send a request to your Home Assistant server
+- Dialogflow has send a request to your Open Peer Power server
 
 <div class='note warning'>
 
@@ -59,9 +59,9 @@ To get the webhook URL, go to the integrations page in the configuration screen 
 
 Take a look to "Integrations", in the left menu, to configure third parties.
 
-### Configuring Home Assistant
+### Configuring Open Peer Power
 
-When activated, the [`alexa` integration](/integrations/alexa/) will have Home Assistant's native intent support handle the incoming intents. If you want to run actions based on intents, use the [`intent_script`](/integrations/intent_script) integration.
+When activated, the [`alexa` integration](/integrations/alexa/) will have Open Peer Power's native intent support handle the incoming intents. If you want to run actions based on intents, use the [`intent_script`](/integrations/intent_script) integration.
 
 ## Examples
 

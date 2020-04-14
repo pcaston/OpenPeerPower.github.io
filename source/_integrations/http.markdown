@@ -13,16 +13,16 @@ ha_codeowners:
 ha_domain: http
 ---
 
-The `http` integration serves all files and data required for the Home Assistant frontend. You only need to add this to your configuration file if you want to change any of the default settings.
+The `http` integration serves all files and data required for the Open Peer Power frontend. You only need to add this to your configuration file if you want to change any of the default settings.
 
-There is currently support for the following device types within Home Assistant:
+There is currently support for the following device types within Open Peer Power:
 
 - [Binary Sensor](#binary-sensor)
 - [Sensor](#sensor)
 
 <div class='note'>
 
-The option option `server_host` should only be used on a Home Assistant Core installation!
+The option option `server_host` should only be used on a Open Peer Power Core installation!
 
 </div>
 
@@ -43,12 +43,12 @@ server_port:
   type: integer
   default: 8123
 base_url:
-  description: "The URL that Home Assistant is available on the internet. For example: `https://hass-example.duckdns.org:8123`. The iOS app finds local installations, if you have an outside URL use this so that you can auto-fill when discovered in the app. Note that this setting may only contain a protocol, hostname and port; using a path is *not* currently supported."
+  description: "The URL that Open Peer Power is available on the internet. For example: `https://hass-example.duckdns.org:8123`. The iOS app finds local installations, if you have an outside URL use this so that you can auto-fill when discovered in the app. Note that this setting may only contain a protocol, hostname and port; using a path is *not* currently supported."
   required: false
   type: string
   default: Your local IP address
 ssl_certificate:
-  description: Path to your TLS/SSL certificate to serve Home Assistant over a secure connection.
+  description: Path to your TLS/SSL certificate to serve Open Peer Power over a secure connection.
   required: false
   type: string
 ssl_peer_certificate:
@@ -56,7 +56,7 @@ ssl_peer_certificate:
   required: false
   type: string
 ssl_key:
-  description: Path to your TLS/SSL key to serve Home Assistant over a secure connection.
+  description: Path to your TLS/SSL key to serve Open Peer Power over a secure connection.
   required: false
   type: string
 cors_allowed_origins:
@@ -69,11 +69,11 @@ use_x_forwarded_for:
   type: boolean
   default: false
 trusted_proxies:
-  description: "List of trusted proxies, consisting of IP addresses or networks, that are allowed to set the `X-Forwarded-For` header.  This is required when using `use_x_forwarded_for` because all requests to Home Assistant, regardless of source, will arrive from the reverse proxy IP address. Therefore in a reverse proxy scenario, this option should be set with extreme care."
+  description: "List of trusted proxies, consisting of IP addresses or networks, that are allowed to set the `X-Forwarded-For` header.  This is required when using `use_x_forwarded_for` because all requests to Open Peer Power, regardless of source, will arrive from the reverse proxy IP address. Therefore in a reverse proxy scenario, this option should be set with extreme care."
   required: false
   type: [string, list]
 trusted_networks:
-  description: "**Deprecated since 0.89 release. Configuration moved to [Trusted Networks auth provider](/docs/authentication/providers/#trusted-networks).** List of trusted networks, consisting of IP addresses or networks, that are allowed to bypass password protection when accessing Home Assistant.  If using a reverse proxy with the `use_x_forwarded_for` and `trusted_proxies` options enabled, requests proxied to Home Assistant with a trusted `X-Forwarded-For` header will appear to come from the IP given in that header instead of the proxy IP."
+  description: "**Deprecated since 0.89 release. Configuration moved to [Trusted Networks auth provider](/docs/authentication/providers/#trusted-networks).** List of trusted networks, consisting of IP addresses or networks, that are allowed to bypass password protection when accessing Open Peer Power.  If using a reverse proxy with the `use_x_forwarded_for` and `trusted_proxies` options enabled, requests proxied to Open Peer Power with a trusted `X-Forwarded-For` header will appear to come from the IP given in that header instead of the proxy IP."
   required: false
   type: [string, list]
 ip_ban_enabled:
@@ -95,7 +95,7 @@ ssl_profile:
 
 <div class='note'>
 
-Configuring trusted_networks via the `http` integration will be deprecated and moved to `auth_providers` instead. For instructions, see <a href="/docs/authentication/providers/#trusted-networks">trusted networks</a>. In Home Assistant 0.89.0 and 0.89.1, you need place the trusted network under both `http` and `auth_providers` if you still want to use trusted networks features. You can remove it from `http` section starting from 0.89.2.
+Configuring trusted_networks via the `http` integration will be deprecated and moved to `auth_providers` instead. For instructions, see <a href="/docs/authentication/providers/#trusted-networks">trusted networks</a>. In Open Peer Power 0.89.0 and 0.89.1, you need place the trusted network under both `http` and `auth_providers` if you still want to use trusted networks features. You can remove it from `http` section starting from 0.89.2.
 
 </div>
 
@@ -125,13 +125,13 @@ Or use a self signed certificate following the instructions here [Self-signed ce
 
 On top of the `http` integration is a [REST API](/developers/rest_api/), [Python API](/developers/python_api/) and [WebSocket API](/developers/websocket_api/) available. There is also support for [Server-sent events](/developers/server_sent_events/).
 
-The `http` platforms are not real platforms within the meaning of the terminology used around Home Assistant. Home Assistant's [REST API](/developers/rest_api/) sends and receives messages over HTTP.
+The `http` platforms are not real platforms within the meaning of the terminology used around Open Peer Power. Open Peer Power's [REST API](/developers/rest_api/) sends and receives messages over HTTP.
 
 ## HTTP sensors
 
-To use those kind of [sensors](#sensor) or [binary sensors](#binary-sensor) in your installation no configuration in Home Assistant is needed. All configuration is done on the devices themselves. This means that you must be able to edit the target URL or endpoint and the payload. The entity will be created after the first message has arrived.
+To use those kind of [sensors](#sensor) or [binary sensors](#binary-sensor) in your installation no configuration in Open Peer Power is needed. All configuration is done on the devices themselves. This means that you must be able to edit the target URL or endpoint and the payload. The entity will be created after the first message has arrived.
 
-Create a [Long-Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token) in the Home Assistant UI at the bottom of your profile if you want to use HTTP sensors.
+Create a [Long-Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token) in the Open Peer Power UI at the bottom of your profile if you want to use HTTP sensors.
 
 All [requests](/developers/rest_api/#post-apistatesltentity_id) need to be sent to the endpoint of the device and must be **POST**.
 
@@ -144,7 +144,7 @@ If you want to apply additional IP filtering, and automatically ban brute force 
   banned_at: '2016-11-16T19:20:03'
 ```
 
-After a ban is added a Persistent Notification is populated to the Home Assistant frontend.
+After a ban is added a Persistent Notification is populated to the Open Peer Power frontend.
 
 <div class='note warning'>
 
@@ -154,17 +154,17 @@ Please note, that sources from `trusted_networks` won't be banned automatically.
 
 ## Hosting files
 
-If you want to use Home Assistant to host or serve static files then create a directory called `www` under the configuration path (`/config`). The static files in `www/` can be accessed by the following URL `http://your.domain:8123/local/`, for example `audio.mp3` would be accessed as `http://your.domain:8123/local/audio.mp3`.
+If you want to use Open Peer Power to host or serve static files then create a directory called `www` under the configuration path (`/config`). The static files in `www/` can be accessed by the following URL `http://your.domain:8123/local/`, for example `audio.mp3` would be accessed as `http://your.domain:8123/local/audio.mp3`.
 
 <div class='note'>
 
-  If you've had to create the `www/` folder for the first time, you'll need to restart Home Assistant.
+  If you've had to create the `www/` folder for the first time, you'll need to restart Open Peer Power.
 
 </div>
 
 <div class='note warning'>
 
-  Files served from the `www`/`local` folder, aren't protected by the Home Assistant authentication. Files stored in this folder, if the URL is known, can be accessed by anybody without authentication.
+  Files served from the `www`/`local` folder, aren't protected by the Open Peer Power authentication. Files stored in this folder, if the URL is known, can be accessed by anybody without authentication.
 
 </div>
 
@@ -172,7 +172,7 @@ If you want to use Home Assistant to host or serve static files then create a di
 
 The HTTP binary sensor is dynamically created with the first request that is made to its URL. You don't have to define it in the configuration first.
 
-The sensor will then exist as long as Home Assistant is running. After a restart of Home Assistant the sensor will be gone until it is triggered again.
+The sensor will then exist as long as Open Peer Power is running. After a restart of Open Peer Power the sensor will be gone until it is triggered again.
 
 The URL for a binary sensor looks like the example below:
 
@@ -222,7 +222,7 @@ In this section you'll find some real-life examples of how to use this sensor, b
 
 #### Using Python request module
 
-As already shown on the [API](/developers/rest_api/) page, it's very simple to use Python and the [Requests](https://requests.kennethreitz.org/en/latest/) module for the interaction with Home Assistant.
+As already shown on the [API](/developers/rest_api/) page, it's very simple to use Python and the [Requests](https://requests.kennethreitz.org/en/latest/) module for the interaction with Open Peer Power.
 
 ```python
 response = requests.post(
@@ -250,7 +250,7 @@ $ http -v POST http://localhost:8123/api/states/binary_sensor.radio \
 
 The HTTP sensor is dynamically created with the first request that is made to its URL. You don't have to define it in the configuration first.
 
-The sensor will then exist as long as Home Assistant is running. After a restart of Home Assistant the sensor will be gone until it is triggered again.
+The sensor will then exist as long as Open Peer Power is running. After a restart of Open Peer Power the sensor will be gone until it is triggered again.
 
 The URL for a sensor looks like the example below:
 

@@ -1,6 +1,6 @@
 ---
 title: Person
-description: Instructions on how to set up people tracking within Home Assistant.
+description: Instructions on how to set up people tracking within Open Peer Power.
 ha_category:
   - Presence Detection
 ha_release: 0.88
@@ -19,7 +19,7 @@ Let's say, for example, that you have 3 trackers: 'tracker_gps', 'tracker_router
 1. You're at home, all 3 devices show status 'home' - status of your Person entity will be 'home' with source 'tracker_router' or 'tracker_ble', whichever was most recently updated.
 2. You just left home. 'tracker_gps' shows status 'not_home', but the other two trackers show status 'home' (they may not have yet updated due to their 'consider_home' setting see [device_tracker](/integrations/device_tracker/#configuring-a-device_tracker-platform)). Since the stationary trackers have priority, you are considered 'home'.
 3. After some time, both stationary trackers show status 'not_home'. Now your Person entity has status 'not_home' with source 'tracker_gps'.
-4. While you are away from home, your Home Assistant is restarted. Until 'tracker_gps' receives an update, your status will be determined by the stationary trackers, since they will have the most recent update after a restart. Obviously, the status will be 'not_home'.
+4. While you are away from home, your Open Peer Power is restarted. Until 'tracker_gps' receives an update, your status will be determined by the stationary trackers, since they will have the most recent update after a restart. Obviously, the status will be 'not_home'.
 5. Then you're going into a zone you have defined as 'zone1', 'tracker_gps' sends an update, and now your status is 'zone1' with source 'tracker_gps'.
 6. You've returned home and your mobile device has connected to the router, but 'tracker_gps' hasn't updated yet. Your status will be 'home' with source 'tracker_router'.
 7. After the 'tracker_gps' update occurs, your status will still be 'home' with source 'tracker_router' or 'tracker_ble', whichever has the most recent update.
@@ -30,7 +30,7 @@ TL;DR: When you're at home, your position is determined first by stationary trac
 
 You can manage persons via the UI from the person page inside the configuration panel or via `YAML` in your `configuration.yaml` file.
 
-## Configuring the `person` integration via the Home Assistant configuration panel
+## Configuring the `person` integration via the Open Peer Power configuration panel
 
 This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
@@ -61,7 +61,7 @@ person:
     required: true
     type: string
   user_id:
-    description: The user id of the Home Assistant user account for the person. *`user_id` (aka `ID`) of users can be inspected in the "Users"/"Manage users" screen in the configuration panel.*
+    description: The user id of the Open Peer Power user account for the person. *`user_id` (aka `ID`) of users can be inspected in the "Users"/"Manage users" screen in the configuration panel.*
     required: false
     type: string
   device_trackers:

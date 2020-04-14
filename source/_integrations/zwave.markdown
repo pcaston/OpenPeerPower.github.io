@@ -1,6 +1,6 @@
 ---
 title: Z-Wave
-description: Instructions on how to integrate your existing Z-Wave within Home Assistant.
+description: Instructions on how to integrate your existing Z-Wave within Open Peer Power.
 ha_category:
   - Hub
   - Binary Sensor
@@ -20,9 +20,9 @@ ha_codeowners:
 ha_domain: zwave
 ---
 
-The [Z-Wave](https://www.z-wave.com/) integration for Home Assistant allows you to observe and control connected Z-Wave devices. Please see the [Z-Wave getting started section](/docs/z-wave/) for in-depth documentation on how to use and setup the Z-Wave component.
+The [Z-Wave](https://www.z-wave.com/) integration for Open Peer Power allows you to observe and control connected Z-Wave devices. Please see the [Z-Wave getting started section](/docs/z-wave/) for in-depth documentation on how to use and setup the Z-Wave component.
 
-There is currently support for the following device types within Home Assistant:
+There is currently support for the following device types within Open Peer Power:
 
 - Binary Sensor
 - [Climate](#climate)
@@ -44,7 +44,7 @@ zwave:
 
 ## Climate
 
-To get your Z-Wave thermostat or HVAC unit working with Home Assistant, follow the instructions for the general [Z-Wave component](/getting-started/z-wave/).
+To get your Z-Wave thermostat or HVAC unit working with Open Peer Power, follow the instructions for the general [Z-Wave component](/getting-started/z-wave/).
 
 <div class='note'>
 
@@ -61,7 +61,7 @@ climate:
   - platform: zwave
 ```
 
-Once enabled, any Z-Wave climate devices will be available to Home Assistant. Multiple entities may be created. The following entities are created for a Remotec ZXT-120.
+Once enabled, any Z-Wave climate devices will be available to Open Peer Power. Multiple entities may be created. The following entities are created for a Remotec ZXT-120.
 
 - `climate.remotec_zxt120_heating_1_id`: Allows you to control the connected device. See below for examples.
 - `sensor.remotec_zxt120_temperature_38`: A sensor which returns the current temperature set on the attached device.
@@ -87,7 +87,7 @@ automation:
           temperature: 24
 ```
 
-Generally, in Home Assistant, you can use the `homeassistant/turn_off` service to turn devices off. For the Remotec ZXT-120, you must instead make a service call like the following.
+Generally, in Open Peer Power, you can use the `homeassistant/turn_off` service to turn devices off. For the Remotec ZXT-120, you must instead make a service call like the following.
 
 ```yaml
 automation:
@@ -117,9 +117,9 @@ A simple way to test if your Z-Wave climate device is working is to use <img src
 
 ## Cover
 
-Z-Wave garage doors, blinds, and roller shutters are supported as cover in Home Assistant.
+Z-Wave garage doors, blinds, and roller shutters are supported as cover in Open Peer Power.
 
-To get your Z-Wave covers working with Home Assistant, follow the instructions for the general [Z-Wave component](#configuration).
+To get your Z-Wave covers working with Open Peer Power, follow the instructions for the general [Z-Wave component](#configuration).
 
 If you discover that you need to [invert the operation](/docs/z-wave/installation/#invert_openclose_buttons) of open/close for a particular device, you may change this behavior in your Z-Wave section of your `configuration.yaml` file as follows, in addition you can also [invert percent position](/docs/z-wave/installation/#invert_percent):
 
@@ -133,7 +133,7 @@ zwave:
 
 ## Lock
 
-To get your Z-Wave locks working with Home Assistant, follow the instructions for the general [Z-Wave component](#configuration).
+To get your Z-Wave locks working with Open Peer Power, follow the instructions for the general [Z-Wave component](#configuration).
 
 Z-Wave locks will expose three services under the lock domain to manage usercodes if the lock supports it:
 

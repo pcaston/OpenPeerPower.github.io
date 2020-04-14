@@ -1,6 +1,6 @@
 ---
 title: MQTT
-description: Instructions on how to setup MQTT within Home Assistant.
+description: Instructions on how to setup MQTT within Open Peer Power.
 ha_category:
   - Hub
 featured: true
@@ -14,9 +14,9 @@ ha_domain: mqtt
 
 MQTT (aka MQ Telemetry Transport) is a machine-to-machine or "Internet of Things" connectivity protocol on top of TCP/IP. It allows extremely lightweight publish/subscribe messaging transport.
 
-Your first step to get MQTT and Home Assistant working is to choose a [broker](/docs/mqtt/broker).
+Your first step to get MQTT and Open Peer Power working is to choose a [broker](/docs/mqtt/broker).
 
-To integrate MQTT into Home Assistant, add the following section to your `configuration.yaml` file.
+To integrate MQTT into Open Peer Power, add the following section to your `configuration.yaml` file.
 
 To connect to your [own MQTT broker](/docs/mqtt/broker#run-your-own):
 

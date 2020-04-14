@@ -8,7 +8,7 @@ The `configuration.yaml` file is a plain-text file, thus it is readable by anyon
 
 ### Using `secrets.yaml`
 
-The workflow for moving private information to `secrets.yaml` is very similar to the [splitting of the configuration](/docs/configuration/splitting_configuration/). Create a `secrets.yaml` file in your Home Assistant [configuration directory](/docs/configuration/).
+The workflow for moving private information to `secrets.yaml` is very similar to the [splitting of the configuration](/docs/configuration/splitting_configuration/). Create a `secrets.yaml` file in your Open Peer Power [configuration directory](/docs/configuration/).
 
 The entries for password and API keys in the `configuration.yaml` file usually looks like the example below.
 
@@ -44,7 +44,7 @@ When you start splitting your configuration into multiple files, you might end u
 
 To see where secrets are being loaded from, you can either add an option to your `secrets.yaml` file or use the `check_config` script.
 
-*Option 1*: Print where secrets are retrieved from to the Home Assistant log by adding the following to `secrets.yaml`:
+*Option 1*: Print where secrets are retrieved from to the Open Peer Power log by adding the following to `secrets.yaml`:
 
 ```yaml
 logger: debug

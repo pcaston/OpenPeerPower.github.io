@@ -15,7 +15,7 @@ og_image: /images/blog/2020-04-0.108/social.png
 
 Before we talk about anything that matches the title of this blog post:
 
-On behalf of everybody working on the Home Assistant project, we hope you, your
+On behalf of everybody working on the Open Peer Power project, we hope you, your
 family and loved ones are safe and remain healthy during this pandemic.
 Our thoughts are with everyone that has been deeply affected by the current situation.
 
@@ -30,7 +30,7 @@ the past months, which is correct. This is not because everything was shipped
 in a broken state, but we are trying to ship **any** bug fix to you as soon as
 possible! Just so you don't have to wait 3 weeks for something to get fixed.
 
-So let's talk about the elephant in the room: Home Assistant Core 0.108!
+So let's talk about the elephant in the room: Open Peer Power Core 0.108!
 
 ## Martin Hjelmare & Ashton Lafferty join Nabu Casa
 
@@ -40,8 +40,8 @@ has joined [Nabu Casa](https://www.nabucasa.com)!
 Martin is a core team member for a long time, and initially started out
 contributing to the project by his work on the
 [MySensors](https://www.home-assistant.io/integrations/mysensors/) integration
-back in [Home Assistant 0.11](https://www.home-assistant.io/blog/2016/01/17/extended-support-for-diy-solutions/)
-(2016)! Most contributors to Home Assistant, will know Martin for his endless
+back in [Open Peer Power 0.11](https://www.home-assistant.io/blog/2016/01/17/extended-support-for-diy-solutions/)
+(2016)! Most contributors to Open Peer Power, will know Martin for his endless
 patience on the incredible code reviews he does.
 
 Furthermore, Ashton Lafferty (cogneato) has been working some hours for
@@ -56,11 +56,11 @@ Congratulations Martin and Ashton! 🎉
 ## Integration logos & icons
 
 We have created a [new repository](https://github.com/home-assistant/brands)
-on GitHub containing all the brand icons and logos Home Assistant is able to
+on GitHub containing all the brand icons and logos Open Peer Power is able to
 integrate with. These images are, for example, used in our documentation.
 
 In 0.108, we made a start on using the content from this repository in the
-Home Assistant frontend. The device information page got a layout update and
+Open Peer Power frontend. The device information page got a layout update and
 the integrations page as well.
 
 These pages will now show the icons and logos matching the integration.
@@ -70,7 +70,7 @@ These pages will now show the icons and logos matching the integration.
 Device information page showing the Hue logo.
 </p>
 
-Looking for a way to contribute to the Home Assistant project?
+Looking for a way to contribute to the Open Peer Power project?
 We still are missing a lot of images; So we are
 [calling out for help](https://github.com/home-assistant/brands/issues)!
 
@@ -78,7 +78,7 @@ We still are missing a lot of images; So we are
 
 It is absolutely amazing to see all the upgraded integrations this release!
 Many contributors have gone out and added support to a lot of integrations
-to allow them to be configured via the Home Assistant frontend.
+to allow them to be configured via the Open Peer Power frontend.
 
 Not all of them were ready in time for this release; nevertheless, the list is
 amazing already:
@@ -164,15 +164,15 @@ Before and after screenshot for the Horizontal Stack improvements.
   them to turn on or off at the exact same time. Thank you [@dmulcahey]!
 
 - Cameras added using the [ONVIF][onvif docs] integration now automatically
-  use the still images provided by the camera, instead of Home Assistant
+  use the still images provided by the camera, instead of Open Peer Power
   generating one. Nice work [@roleoroleo]!
 
 - [WLED][wled docs] got quite a few internal upgrades, has added new Wi-Fi
   sensors and now has a service to control the effects of your WLED device.
 
-- Docker images for Home Assistant are now using Jemalloc, to reduce memory
+- Docker images for Open Peer Power are now using Jemalloc, to reduce memory
   fragmentation and speed up memory allocation. So, less memory and generally
-  a faster Home Assistant.
+  a faster Open Peer Power.
 
 ## New Integrations
 
@@ -203,7 +203,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 - **Lovelace themes** - We discovered our theme logic was wrong, when you didn't specify a theme for a Lovelace card or view. It would default to the backend selected theme, even when your local theme was different, or your view had a different theme. To fix this we removed the options `default` and `Backend selected` from the Lovelace theme selection, and when there is not theme selected it will not set a theme. This will make sure the element has the same theme as it's parent.
 
-- **Freebox** - Freebox is now available as an integration from the Integrations UI! You will need to re-authorize Home Assistant to access the Freebox router. - ([@Quentame] - [#30334]) ([freebox docs])
+- **Freebox** - Freebox is now available as an integration from the Integrations UI! You will need to re-authorize Open Peer Power to access the Freebox router. - ([@Quentame] - [#30334]) ([freebox docs])
 
 - **UniFi** - Manual configuration has been deprecated as the UI integration now supports all of the previous available options and more. Your existing YAML configuration has previously been imported so just remove it. - ([@Kane610] - [#32699]) ([unifi docs])
 
@@ -250,11 +250,11 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 - **Sonos** - Sonos attributes have been cleaned up for radio streams. - ([@amelchio] - [#33063]) ([sonos docs])
   - Sonos entities playing radio streams used to merge the radio name, the artist and the song name into two attributes. They now have `media_artist` and `media_title` attributes that match the playing music (when available).
-  - Radio station artwork is no longer available for Sonos entities in polling mode (i.e., on a network separate to the network Home Assistant is on).
+  - Radio station artwork is no longer available for Sonos entities in polling mode (i.e., on a network separate to the network Open Peer Power is on).
 
 - **Monoprice** - Monoprice is now available as an integration from the UI! Please remove the configuration from YAML and add the Monoprice integration from the Integrations page. - ([@OnFreund] - [#30337]) ([monoprice docs])
 
-- **Lutron Caseta** - As a result of some cleanup, the `Device ID` and `Zone ID` attributes of Lutron Caseta devices have been renamed to `device_id` and `zone_id` to match the convention of the rest of Home Assistant. If you have any automations that reference these attributes, they will need to be updated. - ([@swails] - [#33144]) ([lutron_caseta docs])
+- **Lutron Caseta** - As a result of some cleanup, the `Device ID` and `Zone ID` attributes of Lutron Caseta devices have been renamed to `device_id` and `zone_id` to match the convention of the rest of Open Peer Power. If you have any automations that reference these attributes, they will need to be updated. - ([@swails] - [#33144]) ([lutron_caseta docs])
 
 - **NuHeat** - NuHeat is now available as an integration from the UI! The previous service has been removed and is now handled by `set_hvac_mode` (climate 1.0). - ([@bdraco] - [#32885]) ([nuheat docs])
 
@@ -262,7 +262,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 - **HmIP** - After HmIP Cloud Maintanance (17.3.2020) it's possible to define labels for each channel of a multi device. If the labels of a multi channel device have been changed in the native Homemamtic IP Cloud App, then the entity names will change accordingly. - ([@SukramJ] - [#32925]) ([homematicip_cloud docs])
 
-- **Slack** - The Slack integration got an overhaul and added support for async and Slack's Block Kit. As the YAML configuration schema for this integration has changed, please be sure to read the documentation. Additionally, because it represents an unacceptable security risk, remote files (i.e., those that do not exist in a whitelisted directory local to Home Assistant) can no longer be sent to Slack via this integration. - ([@bachya] - [#33287]) ([slack docs])
+- **Slack** - The Slack integration got an overhaul and added support for async and Slack's Block Kit. As the YAML configuration schema for this integration has changed, please be sure to read the documentation. Additionally, because it represents an unacceptable security risk, remote files (i.e., those that do not exist in a whitelisted directory local to Open Peer Power) can no longer be sent to Slack via this integration. - ([@bachya] - [#33287]) ([slack docs])
 
   Example YAML configuration:
 

@@ -1,28 +1,28 @@
 ---
 title: "Apache Proxy"
-description: "Configure Apache to work with Home Assistant as a subdomain"
+description: "Configure Apache to work with Open Peer Power as a subdomain"
 redirect_from: /cookbook/apache_configuration/
 ---
 
-This example demonstrates how you can configure Apache to act as a proxy for Home Assistant.
+This example demonstrates how you can configure Apache to act as a proxy for Open Peer Power.
 
 This is useful if you want to have:
 
- * a subdomain redirecting to your Home Assistant instance
+ * a subdomain redirecting to your Open Peer Power instance
  * several subdomain for several instance
  * HTTPS redirection
 
 #### Subdomain
 
-So you already have a working Apache server available at example.org. Your Home Assistant is correctly working on this web server and available at `http://localhost:8123`
+So you already have a working Apache server available at example.org. Your Open Peer Power is correctly working on this web server and available at `http://localhost:8123`
 
-Enable [`mod_proxy_wstunnel`](https://httpd.apache.org/docs/2.4/mod/mod_proxy_wstunnel.html) by running if you encounter issues while serving Home Assistant through your proxy:
+Enable [`mod_proxy_wstunnel`](https://httpd.apache.org/docs/2.4/mod/mod_proxy_wstunnel.html) by running if you encounter issues while serving Open Peer Power through your proxy:
 
 ```bash
 $ sudo a2enmod proxy_wstunnel
 ```
 
-To be able to access to your Home Assistant instance by using `https://home.example.org`, add the following file to `/etc/httpd/conf/extra/` as `hass.conf`
+To be able to access to your Open Peer Power instance by using `https://home.example.org`, add the following file to `/etc/httpd/conf/extra/` as `hass.conf`
 
 ```text
 <VirtualHost *:443>
@@ -68,13 +68,13 @@ In case you are getting occasional HTTP 504 error messages ("Gateway Timeout") o
 
 #### Multiple Instance
 
-You already have Home Assistant running on `http://localhost:8123` and available at home.example.org as describe before. The configuration file for this Home Assistant is available in `/home/alice/.homeassistant/configuration.yaml`
+You already have Open Peer Power running on `http://localhost:8123` and available at home.example.org as describe before. The configuration file for this Open Peer Power is available in `/home/alice/.homeassistant/configuration.yaml`
 
 You want another instance available at `https://countryside.example.org`
 
 You can either :
- * Create a new user, `bob`, to hold the configuration file in `/home/bob/.homeassistant/configuration.yaml` and run Home Assistant as this new user
- * Create another configuration directory in `/home/alice/.homeassistan2/configuration.yaml` and run Home Assistant using `hass --config /home/alice/.homeassistant2/`
+ * Create a new user, `bob`, to hold the configuration file in `/home/bob/.homeassistant/configuration.yaml` and run Open Peer Power as this new user
+ * Create another configuration directory in `/home/alice/.homeassistan2/configuration.yaml` and run Open Peer Power using `hass --config /home/alice/.homeassistant2/`
 
 In both solution, change port number used by modifying `configuration.yaml`
 
@@ -84,7 +84,7 @@ http:
   ...
 ```
 
-Start Home Assistant: Now, you have another instance running on `http://localhost:8124`
+Start Open Peer Power: Now, you have another instance running on `http://localhost:8124`
 
 To access this instance by using `https://countryside.example.org` add to `/etc/httpd/conf/extra/hass.conf`
 

@@ -1,5 +1,5 @@
 ---
-title: Home Assistant Core Integration
+title: Open Peer Power Core Integration
 description: Description of the homeassistant integration.
 ha_release: 0.0
 ha_quality_scale: internal
@@ -8,15 +8,15 @@ ha_codeowners:
 ha_domain: homeassistant
 ---
 
-The Home Assistant integration provides generic implementations like the generic `homeassistant.turn_on`.
+The Open Peer Power integration provides generic implementations like the generic `homeassistant.turn_on`.
 
 ## Services
 
-The `homeassistant` integration provides services for controlling Home Assistant itself, as well as generic controls for any entity.
+The `homeassistant` integration provides services for controlling Open Peer Power itself, as well as generic controls for any entity.
 
 ### Service `homeassistant.check_config`
 
-Reads the configuration files and checks them for correctness, but **does not** load them into Home Assistant. Creates a persistent notification and log entry if errors are found.
+Reads the configuration files and checks them for correctness, but **does not** load them into Open Peer Power. Creates a persistent notification and log entry if errors are found.
 
 ### Service `homeassistant.reload_core_config`
 
@@ -24,15 +24,15 @@ Loads the main configuration file (`configuration.yaml`) and all linked files. O
 
 ### Service `homeassistant.restart`
 
-Restarts the Home Assistant instance (also reloading the configuration on start).
+Restarts the Open Peer Power instance (also reloading the configuration on start).
 
 ### Service `homeassistant.stop`
 
-Stops the Home Assistant instance. Home Assistant must be restarted from the Host device to run again.
+Stops the Open Peer Power instance. Open Peer Power must be restarted from the Host device to run again.
 
 ### Service `homeassistant.set_location`
 
-Update the location of the Home Assistant default zone (usually "Home").
+Update the location of the Open Peer Power default zone (usually "Home").
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|

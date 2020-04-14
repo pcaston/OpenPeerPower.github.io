@@ -1,21 +1,21 @@
 ---
 title: "NGINX Configuration"
-description: "Configure Nginx to work with Home Assistant as a subdomain"
+description: "Configure Nginx to work with Open Peer Power as a subdomain"
 ---
 
-This example demonstrates how you can configure NGINX to act as a proxy for Home Assistant.
+This example demonstrates how you can configure NGINX to act as a proxy for Open Peer Power.
 
 This is useful if you want to have:
 
- * a subdomain redirecting to your Home Assistant instance
+ * a subdomain redirecting to your Open Peer Power instance
  * several subdomain for several instance
  * HTTPS redirection
 
 #### Subdomain
 
-So you already have a working NGINX server available at example.org. Your Home Assistant is correctly working on this web server and available at `http://localhost:8123`
+So you already have a working NGINX server available at example.org. Your Open Peer Power is correctly working on this web server and available at `http://localhost:8123`
 
-To be able to access to your Home Assistant instance by using `https://home.example.org`, create file `/etc/nginx/sites-enabled/homeassistant` (or symlink via `/etc/nginx/sites-available`) and add the following:
+To be able to access to your Open Peer Power instance by using `https://home.example.org`, create file `/etc/nginx/sites-enabled/homeassistant` (or symlink via `/etc/nginx/sites-available`) and add the following:
 
 ```nginx
 server {
@@ -52,13 +52,13 @@ If you don't want HTTPS, you can change `listen 443 ssl` to `listen 80` or bette
 
 #### Multiple Instance
 
-You already have Home Assistant running on `http://localhost:8123` and available at home.example.org as describe before. The configuration file for this Home Assistant is available in `/home/alice/.homeassistant/configuration.yaml`.
+You already have Open Peer Power running on `http://localhost:8123` and available at home.example.org as describe before. The configuration file for this Open Peer Power is available in `/home/alice/.homeassistant/configuration.yaml`.
 
 You want another instance available at `https://countryside.example.org`
 
 You can either :
- * Create a new user, `bob`, to hold the configuration file in `/home/bob/.homeassistant/configuration.yaml` and run Home Assistant as this new user
- * Create another configuration directory in `/home/alice/.homeassistant2/configuration.yaml` and run Home Assistant using `hass --config /home/alice/.homeassistant2/`
+ * Create a new user, `bob`, to hold the configuration file in `/home/bob/.homeassistant/configuration.yaml` and run Open Peer Power as this new user
+ * Create another configuration directory in `/home/alice/.homeassistant2/configuration.yaml` and run Open Peer Power using `hass --config /home/alice/.homeassistant2/`
 
 In both solution, change port number used by modifying `configuration.yaml` file.
 
@@ -68,7 +68,7 @@ http:
   ...
 ```
 
-Start Home Assistant: Now, you have another instance running on `http://localhost:8124`
+Start Open Peer Power: Now, you have another instance running on `http://localhost:8124`
 
 To access this instance by using `https://countryside.example.org` create the file `/etc/nginx/sites-enabled/countryside.example.org` (or symlink via `/etc/nginx/sites-available`) and add the following:
 

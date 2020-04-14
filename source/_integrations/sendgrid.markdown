@@ -1,6 +1,6 @@
 ---
 title: SendGrid
-description: Instructions on how to add email notifications via SendGrid to Home Assistant.
+description: Instructions on how to add email notifications via SendGrid to Open Peer Power.
 logo: sendgrid.png
 ha_category:
   - Notifications
@@ -43,7 +43,7 @@ sender:
   required: true
   type: string
 sender_name:
-  description: The name of the sender. Defaults to "Home Assistant" if not set.
+  description: The name of the sender. Defaults to "Open Peer Power" if not set.
   required: false
   type: string
 recipient:

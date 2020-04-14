@@ -3,7 +3,7 @@ title: "hass"
 description: "Description of hass."
 ---
 
-The command-line part of Home Assistant is `hass`.
+The command-line part of Open Peer Power is `hass`.
 
 
 ```bash
@@ -13,16 +13,16 @@ usage: hass [-h] [--version] [-c path_to_config_dir] [--demo-mode] [--debug]
             [--log-rotate-days LOG_ROTATE_DAYS] [--log-file LOG_FILE]
             [--log-no-color] [--runner] [--script ...] [--daemon]
 
-Home Assistant: Observe, Control, Automate.
+Open Peer Power: Observe, Control, Automate.
 
 optional arguments:
   -h, --help            show this help message and exit
   --version             show program's version number and exit
   -c path_to_config_dir, --config path_to_config_dir
-                        Directory that contains the Home Assistant
+                        Directory that contains the Open Peer Power
                         configuration
-  --demo-mode           Start Home Assistant in demo mode
-  --debug               Start Home Assistant in debug mode
+  --demo-mode           Start Open Peer Power in demo mode
+  --debug               Start Open Peer Power in debug mode
   --open-ui             Open the webinterface in a browser
   --skip-pip            Skips pip install of required packages on startup
   -v, --verbose         Enable verbose logging to file.
@@ -36,5 +36,5 @@ optional arguments:
   --log-no-color        Disable color logs
   --runner              On restart exit with code 100
   --script ...          Run one of the embedded scripts
-  --daemon              Run Home Assistant as daemon
+  --daemon              Run Open Peer Power as daemon
 ```

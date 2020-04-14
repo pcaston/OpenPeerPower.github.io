@@ -1,6 +1,6 @@
 ---
 title: Sun
-description: Instructions on how to track the sun within Home Assistant.
+description: Instructions on how to track the sun within Open Peer Power.
 ha_category:
   - Environment
 ha_release: pre 0.7

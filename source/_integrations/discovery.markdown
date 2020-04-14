@@ -1,6 +1,6 @@
 ---
 title: Discovery
-description: Instructions on how to setup Home Assistant to discover new devices.
+description: Instructions on how to setup Open Peer Power to discover new devices.
 ha_category:
   - Other
 ha_release: 0.7
@@ -8,7 +8,7 @@ ha_quality_scale: internal
 ha_domain: discovery
 ---
 
-Home Assistant can discover and automatically configure [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)/[mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) and [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) devices on your network. Currently the `discovery` integration can detect:
+Open Peer Power can discover and automatically configure [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)/[mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) and [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) devices on your network. Currently the `discovery` integration can detect:
 
  * [Apple TV](/integrations/apple_tv/)
  * [Belkin WeMo switches](/integrations/wemo/)
@@ -104,8 +104,8 @@ Valid values for enable are:
 
 ### UPnP
 
-Home Assistant must be on the same network as the devices for UPnP discovery to work.
-If running Home Assistant in a [Docker container](/docs/installation/docker/) use switch `--net=host` to put it on the host's network.
+Open Peer Power must be on the same network as the devices for UPnP discovery to work.
+If running Open Peer Power in a [Docker container](/docs/installation/docker/) use switch `--net=host` to put it on the host's network.
 
 ### Windows
 
@@ -114,7 +114,7 @@ There is currently a <a href='https://bitbucket.org/al45tair/netifaces/issues/17
 
 ### could not install dependency netdisco
 
-If you see `Not initializing discovery because could not install dependency netdisco==0.6.1` in the logs, you will need to install the `python3-dev` or `python3-devel` package on your system manually (eg. `sudo apt-get install python3-dev` or `sudo dnf -y install python3-devel`). On the next restart of Home Assistant, the discovery should work. If you still get an error, check if you have a compiler (`gcc`) available on your system.
+If you see `Not initializing discovery because could not install dependency netdisco==0.6.1` in the logs, you will need to install the `python3-dev` or `python3-devel` package on your system manually (eg. `sudo apt-get install python3-dev` or `sudo dnf -y install python3-devel`). On the next restart of Open Peer Power, the discovery should work. If you still get an error, check if you have a compiler (`gcc`) available on your system.
 
 ### DSM and Synology
 

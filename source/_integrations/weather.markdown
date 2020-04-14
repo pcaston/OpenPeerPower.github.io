@@ -1,6 +1,6 @@
 ---
 title: Weather
-description: Instructions on how to setup your Weather platforms with Home Assistant.
+description: Instructions on how to setup your Weather platforms with Open Peer Power.
 ha_category:
   - Weather
 ha_release: 0.32
@@ -12,7 +12,7 @@ ha_domain: weather
 
 The `weather` platforms gather meteorological information from web services and display the conditions and other details about the weather at the given location. Read the integration documentation for your particular weather provider to learn how to set it up.
 
-Home Assistant currently supports free web services some of which require registration.
+Open Peer Power currently supports free web services some of which require registration.
 
 ## Condition mapping
 

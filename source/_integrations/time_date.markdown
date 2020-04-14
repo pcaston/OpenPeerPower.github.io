@@ -1,6 +1,6 @@
 ---
 title: Time & Date
-description: Instructions on how to integrate the time and the date within Home Assistant.
+description: Instructions on how to integrate the time and the date within Open Peer Power.
 ha_category:
   - Calendar
 ha_iot_class: Local Push
@@ -11,7 +11,7 @@ ha_codeowners:
 ha_domain: time_date
 ---
 
-The time and date (`time_date`) sensor platform adds one or more sensors to your Home Assistant state machine.
+The time and date (`time_date`) sensor platform adds one or more sensors to your Open Peer Power state machine.
 To have these sensors available in your installation, add the following to your `configuration.yaml` file (each option creates a separate sensor that contains appropriate data, e.g.,  `sensor.date` for the `date` option):
 
 ```yaml

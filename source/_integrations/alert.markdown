@@ -1,6 +1,6 @@
 ---
 title: Alert
-description: Instructions on how to setup automatic alerts within Home Assistant.
+description: Instructions on how to setup automatic alerts within Open Peer Power.
 ha_category:
   - Automation
 ha_release: 0.38
@@ -106,7 +106,7 @@ This indicates that the door has been opened. Because the `skip_first` option
 was set to `true`, the first notification will not be delivered immediately.
 However, every 30 minutes, a notification will be delivered until either
 `input_boolean.garage_door` no longer has a state of `on` or until the alert is
-acknowledged using the Home Assistant frontend.
+acknowledged using the Open Peer Power frontend.
 
 For notifiers that require other parameters (such as `twilio_sms` which requires
 you specify a `target` parameter when sending the notification), you can use the

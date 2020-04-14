@@ -1,6 +1,6 @@
 ---
 title: Zigbee
-description: Instructions on how to integrate a Zigbee network with Home Assistant.
+description: Instructions on how to integrate a Zigbee network with Open Peer Power.
 logo: zigbee.png
 ha_category:
   - Binary Sensor
@@ -12,9 +12,9 @@ ha_iot_class: Local Polling
 ha_domain: zigbee
 ---
 
-[Zigbee](https://zigbee.org/what-is-zigbee/) integration for Home Assistant allows you to utilize modules such as the [XBee](https://www.digi.com/xbee) as wireless General Purpose Input/Output (GPIO) devices. The integration requires a local Zigbee device to be connected to a serial port. Through this, it will send and receive commands to and from other devices on the Zigbee mesh network.
+[Zigbee](https://zigbee.org/what-is-zigbee/) integration for Open Peer Power allows you to utilize modules such as the [XBee](https://www.digi.com/xbee) as wireless General Purpose Input/Output (GPIO) devices. The integration requires a local Zigbee device to be connected to a serial port. Through this, it will send and receive commands to and from other devices on the Zigbee mesh network.
 
-There is currently support for the following device types within Home Assistant:
+There is currently support for the following device types within Open Peer Power:
 
 - [Binary Sensor](#binary-sensor) - Digital input pins
 - [Sensor](#sensor) - Analog input pins and temperature sensor
@@ -82,7 +82,7 @@ binary_sensor:
 
 {% configuration %}
 name:
-  description: The name you would like to give the binary sensor in Home Assistant.
+  description: The name you would like to give the binary sensor in Open Peer Power.
   required: true
   type: string
 pin:
@@ -115,7 +115,7 @@ light:
 
 {% configuration %}
 name:
-  description: The name you would like to give the light in Home Assistant.
+  description: The name you would like to give the light in Open Peer Power.
   required: true
   type: string
 pin:
@@ -135,7 +135,7 @@ on_state:
 
 ## Sensor
 
-There are two types of [Zigbee](https://zigbee.org/) sensor available to Home Assistant:
+There are two types of [Zigbee](https://zigbee.org/) sensor available to Open Peer Power:
 
 - [Analog input pin](#analog-input-pin)
 - [Temperature sensor](#temperature-sensor) (XBee Pro)
@@ -154,7 +154,7 @@ sensor:
 
 {% configuration %}
 name:
-  description: The name you would like to give the sensor in Home Assistant.
+  description: The name you would like to give the sensor in Open Peer Power.
   required: true
   type: string
 type:
@@ -228,7 +228,7 @@ switch:
 
 {% configuration %}
 name:
-  description: The name you would like to give the switch in Home Assistant.
+  description: The name you would like to give the switch in Open Peer Power.
   required: true
   type: string
 pin:

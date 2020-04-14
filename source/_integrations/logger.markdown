@@ -1,6 +1,6 @@
 ---
 title: Logger
-description: Instructions on how to enable the logger integration for Home Assistant.
+description: Instructions on how to enable the logger integration for Open Peer Power.
 ha_category:
   - Utility
 ha_release: 0.8

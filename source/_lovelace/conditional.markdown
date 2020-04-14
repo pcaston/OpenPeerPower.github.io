@@ -18,7 +18,7 @@ conditions:
   keys:
     entity:
       required: true
-      description: Home Assistant entity ID.
+      description: Open Peer Power entity ID.
       type: string
     state:
       required: false

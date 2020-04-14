@@ -5,11 +5,11 @@ redirect_from: /getting-started/automation-trigger/
 ---
 
 ### What are triggers
-Triggers are what starts the processing of an automation rule. When _any_ of the automation's triggers becomes true (trigger _fires_), Home Assistant will validate the [conditions](/docs/automation/condition/), if any, and call the [action](/docs/automation/action/).
+Triggers are what starts the processing of an automation rule. When _any_ of the automation's triggers becomes true (trigger _fires_), Open Peer Power will validate the [conditions](/docs/automation/condition/), if any, and call the [action](/docs/automation/action/).
 
 ### Event trigger
 
-Fires when an event is being received. Events are the raw building blocks of Home Assistant. You can match events on just the event name or also require specific event data to be present.
+Fires when an event is being received. Events are the raw building blocks of Open Peer Power. You can match events on just the event name or also require specific event data to be present.
 
 Events can be fired by integrations or via the API. There is no limitation to the types. A list of built-in events can be found [here](/docs/configuration/events/).
 
@@ -23,9 +23,9 @@ automation:
       mood: happy
 ```
 
-### Home Assistant trigger
+### Open Peer Power trigger
 
-Fires when Home Assistant starts up or shuts down.
+Fires when Open Peer Power starts up or shuts down.
 
 ```yaml
 automation:

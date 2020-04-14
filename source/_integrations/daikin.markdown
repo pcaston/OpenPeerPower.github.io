@@ -1,6 +1,6 @@
 ---
 title: Daikin AC
-description: Instructions on how to integrate Daikin AC devices with Home Assistant.
+description: Instructions on how to integrate Daikin AC devices with Open Peer Power.
 ha_category:
   - Climate
   - Sensor
@@ -15,9 +15,9 @@ ha_codeowners:
 ha_domain: daikin
 ---
 
-The `daikin` integration integrates Daikin air conditioning systems into Home Assistant.
+The `daikin` integration integrates Daikin air conditioning systems into Open Peer Power.
 
-There is currently support for the following device types within Home Assistant:
+There is currently support for the following device types within Open Peer Power:
 
 - [Climate](#climate)
 - [Sensor](#sensor)
@@ -34,7 +34,7 @@ There is currently support for the following device types within Home Assistant:
 The Daikin integration can be configured in three ways.
 
 - Automatically via the [discovery]({{site_root}}/integrations/discovery/) integration.
-- Via the Home Assistant user interface where it will let you enter the IP-address of your Daikin AC.
+- Via the Open Peer Power user interface where it will let you enter the IP-address of your Daikin AC.
 - Or via the `configuration.yaml` file by adding the following:
 
 ```yaml
@@ -54,7 +54,7 @@ hosts:
 
 ## Climate
 
-The `daikin` climate platform integrates Daikin air conditioning systems into Home Assistant, enabling control of setting the following parameters:
+The `daikin` climate platform integrates Daikin air conditioning systems into Open Peer Power, enabling control of setting the following parameters:
 
 - [**set_hvac_mode**](/integrations/climate/#service-climateset_hvac_mode) (`off`, `heat`, `cool`, `heat_cool`, or `fan_only`)
 - [**target temperature**](/integrations/climate#service-climateset_temperature)
@@ -85,7 +85,7 @@ _When "Holiday mode" is enabled, the following action take place:_
 
 ## Sensor
 
-The `daikin` sensor platform integrates Daikin air conditioning systems into Home Assistant, enabling displaying the following parameters:
+The `daikin` sensor platform integrates Daikin air conditioning systems into Open Peer Power, enabling displaying the following parameters:
 
 - Inside temperature
 - Outside temperature

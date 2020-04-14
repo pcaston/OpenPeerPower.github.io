@@ -1,6 +1,6 @@
 ---
 title: Heatmiser
-description: Instructions on how to integrate Heatmiser thermostats within Home Assistant.
+description: Instructions on how to integrate Heatmiser thermostats within Open Peer Power.
 logo: heatmiser.png
 ha_category:
   - Climate

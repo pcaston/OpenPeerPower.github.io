@@ -1,10 +1,10 @@
 ---
 title: "Autostart on Synology NAS boot"
-description: "Instructions on how to setup Home Assistant to launch on boot on Synology NAS."
+description: "Instructions on how to setup Open Peer Power to launch on boot on Synology NAS."
 redirect_from: /getting-started/autostart-synology/
 ---
 
-To get Home Assistant to automatically start when you boot your Synology NAS:
+To get Open Peer Power to automatically start when you boot your Synology NAS:
 
 SSH into your Synology & login as admin or root
 
@@ -41,4 +41,4 @@ Make the relevant files executable:
 chmod -r 777 /etc/init/homeassistant.conf
 ```
 
-That's it - reboot your NAS and Home Assistant should automatically start
+That's it - reboot your NAS and Open Peer Power should automatically start

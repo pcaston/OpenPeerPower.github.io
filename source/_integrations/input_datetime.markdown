@@ -1,6 +1,6 @@
 ---
 title: Input Datetime
-description: Instructions on how to integrate the Input Datetime integration into Home Assistant.
+description: Instructions on how to integrate the Input Datetime integration into Open Peer Power.
 ha_category:
   - Automation
 ha_release: 0.55
@@ -80,7 +80,7 @@ automations and templates.
 
 ### Restore State
 
-If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Home Assistant stopping.
+If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Open Peer Power stopping.
 
 ### Services
 
@@ -94,7 +94,7 @@ Service data attribute | Format String | Description
 
 To set both the date and time in the same call, use `date` and `time` together, or use `datetime` by itself. Using `datetime` has the advantage that both can be set using one template.
 
-`input_dateteime.reload` service allows one to reload `input_datetime`'s configuration without restarting Home Assistant itself.
+`input_dateteime.reload` service allows one to reload `input_datetime`'s configuration without restarting Open Peer Power itself.
 
 ## Automation Examples
 

@@ -1,14 +1,14 @@
 ---
 title: Geolocation
-description: Instructions on how to integrate geolocation aware platforms into Home Assistant.
+description: Instructions on how to integrate geolocation aware platforms into Open Peer Power.
 logo: geo_location.png
 ha_release: 0.78
 ha_domain: geo_location
 ---
 
-Geolocation aware entities are typically related to events in the real world in the vicinity of Home Assistant's location, like for example weather events, bush fires or earthquakes.
+Geolocation aware entities are typically related to events in the real world in the vicinity of Open Peer Power's location, like for example weather events, bush fires or earthquakes.
 
-Entities can have associated geolocation coordinates (latitude and longitude) so that they are displayed on the map. The distance from the entity's coordinates to Home Assistant's location can be used for filtering.
+Entities can have associated geolocation coordinates (latitude and longitude) so that they are displayed on the map. The distance from the entity's coordinates to Open Peer Power's location can be used for filtering.
 
 ## Geolocation trigger
 

@@ -8,21 +8,21 @@ or need to recover your data.
 
 ## Forgot Password
 
-### Home Assistant (including Supervised)
+### Open Peer Power (including Supervised)
 
 If you are still logged in to the web interface with your user, then you are in luck. Add a new user as an administrator and give the new user a password you can remember. Then log out, and log in with this new user. You may then delete the old user account. But this way, your configuration will remain, and you don't have to do a new onboarding process.
 
 If you’ve forgotten your user, then deleting the files mentioned above will be necessary to start a new onboarding process.
 
-If you know the user, but not the password and you can access the [Home Assistant console](https://www.home-assistant.io/hassio/commandline/) and use the command below:
+If you know the user, but not the password and you can access the [ Open Peer Power console](https://www.home-assistant.io/hassio/commandline/) and use the command below:
 
 Connect a keyboard and monitor to your device.
 
 `auth reset --username existing_user --password new_password`
 
-### Home Assistant Core
+### Open Peer Power Core
 
-While you should hopefully be storing your passwords in a password manager, if you lose the password associated with the owner account the only way to resolve this is to delete *all* the authentication data. You do this by shutting down Home Assistant and deleting the following files from the `.storage/` folder in your [configuration folder](/docs/configuration/):
+While you should hopefully be storing your passwords in a password manager, if you lose the password associated with the owner account the only way to resolve this is to delete *all* the authentication data. You do this by shutting down Open Peer Power and deleting the following files from the `.storage/` folder in your [configuration folder](/docs/configuration/):
 
 - `auth`
 - `auth_provider.homeassistant`
@@ -30,7 +30,7 @@ While you should hopefully be storing your passwords in a password manager, if y
 - `hassio`
 - `cloud`
 
-## Recovering Data for Home Assistant (including Supervised)
+## Recovering Data for Open Peer Power (including Supervised)
 
 Unless your SD card/data is corrupted, you can still get to your files or troubleshoot further.
 There are a few routes:
@@ -45,9 +45,9 @@ If you’re using a Raspberry Pi, you're likely going to have to pull the power 
 Once you're connected, you'll see a running dmesg log. Hit the enter key to interrupt the log.
 Sign in as "root". There is no password.
 
-You will then be at the Home Assistant CLI, where you can run the custom commands. These are the same as you would run using the SSH add-on but without using `ha` in front of it. For example:
+You will then be at the Open Peer Power CLI, where you can run the custom commands. These are the same as you would run using the SSH add-on but without using `ha` in front of it. For example:
 
-- `core logs` for Home Assistant Core log
+- `core logs` for Open Peer Power Core log
 - `supervisor logs` for supervisor logs
 - `host reboot` to reboot the host
 - `dns logs` for checking DNS

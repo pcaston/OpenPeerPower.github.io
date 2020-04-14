@@ -1,6 +1,6 @@
 ---
 title: Persistent Notification
-description: Instructions on how to integrate persistent notifications into Home Assistant.
+description: Instructions on how to integrate persistent notifications into Open Peer Power.
 ha_category:
   - Other
 ha_release: 0.23

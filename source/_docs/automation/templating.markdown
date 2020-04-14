@@ -4,7 +4,7 @@ description: "Advanced automation documentation using templating."
 redirect_from: /getting-started/automation-templating/
 ---
 
-In Home Assistant 0.19 we introduced a new powerful feature: variables in scripts and automations. This makes it possible to adjust your condition and action based on the information of the trigger.
+In Open Peer Power 0.19 we introduced a new powerful feature: variables in scripts and automations. This makes it possible to adjust your condition and action based on the information of the trigger.
 
 The trigger data made is available during [template](/docs/configuration/templating/) rendering as the `trigger` variable.
 

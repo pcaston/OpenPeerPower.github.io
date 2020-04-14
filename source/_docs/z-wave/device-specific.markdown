@@ -8,7 +8,7 @@ redirect_from: /getting-started/z-wave-device-specific/
 
 ### Motion or alarm sensors
 
-In order for Home Assistant to recognize the sensor properly, you will need to change its configuration from `Basic Set (default)` to `Binary Sensor report` or `Alarm report`.
+In order for Open Peer Power to recognize the sensor properly, you will need to change its configuration from `Basic Set (default)` to `Binary Sensor report` or `Alarm report`.
 These devices will either show as a binary sensor or a sensor called `Alarm xxxx` and will report a numeric value. Test to see what value is what. Sometimes this is noted in the device manual.
 
 You can set the settings of the Z-Wave device through the Z-Wave control panel.
@@ -17,7 +17,7 @@ You can set the settings of the Z-Wave device through the Z-Wave control panel.
 
 These devices require a network key to be set for the Z-Wave network before they are paired, using the **Add Node Secure** option.
 
-Home Assistant stores logs from Z-Wave in `OZW_log.txt` in the Home Assistant configuration directory, when you pair a secure device you should see communication from the node with lines starting with `info: NONCES` in `OZW_log.txt` when the device is paired successfully with a secure connection.
+Open Peer Power stores logs from Z-Wave in `OZW_log.txt` in the Open Peer Power configuration directory, when you pair a secure device you should see communication from the node with lines starting with `info: NONCES` in `OZW_log.txt` when the device is paired successfully with a secure connection.
 
 ### Specific Devices
 
@@ -27,7 +27,7 @@ It's totally normal for your Z-Wave stick to cycle through its LEDs (Yellow, Blu
 
 Use the following example commands from a terminal session on your Pi where your Z-Wave stick is connected.
 
-**Note:** You should only do this when Home Assistant has been stopped.
+**Note:** You should only do this when Open Peer Power has been stopped.
 
 Turn off "Disco lights":
 
@@ -82,7 +82,7 @@ $ sudo usermod -a -G dialout homeassistant
 
 <div class='note'>
 
-  If you've installed the Z-Way software, you'll need to ensure you disable it before you install Home Assistant or you won't be able to access the board. Do this with `sudo /etc/init.d/z-way-server stop; sudo update-rc.d z-way-server disable`.
+  If you've installed the Z-Way software, you'll need to ensure you disable it before you install Open Peer Power or you won't be able to access the board. Do this with `sudo /etc/init.d/z-way-server stop; sudo update-rc.d z-way-server disable`.
 
 </div>
 
@@ -163,7 +163,7 @@ Some models of the Zooz Toggle switches ship with an instruction manual with inc
 
 ## Central Scene configuration
 
-To provide Central Scene support you need to **shutdown Home Assistant** and modify your `zwcfg_*.xml` file according to the following guides.
+To provide Central Scene support you need to **shutdown Open Peer Power** and modify your `zwcfg_*.xml` file according to the following guides.
 
 ### Inovelli Scene Capable On/Off and Dimmer Wall Switches
 
@@ -329,7 +329,7 @@ For Zooz switches, you'll need to update (or possibly add) the `COMMAND_CLASS_CE
 </CommandClass>
 ```
 
-Go to the Z-Wave Network Management section in the Home Assistant Configuration, select the node which has just been updated and enable the scene support configuration parameter.
+Go to the Z-Wave Network Management section in the Open Peer Power Configuration, select the node which has just been updated and enable the scene support configuration parameter.
 
 Once this is complete, you should see the following `zwave.scene_activated` events:
 
@@ -457,7 +457,7 @@ Press circle and plus simultaneously to wake up the device.
 
 <!-- from https://products.z-wavealliance.org/products/2817 -->
 
-Once you've added the NanoMote to your Z-Wave network, you'll need to update your `zwcfg_*.xml` file with the below XML data. Stop Home Assistant and open your `zwcfg_*.xml` file (located in your configuration folder). Find the NanoMote device section and then its corresponding `CommandClass` section with id="91". Replace the entire CommandClass section with the below XML data. Save the file and restart Home Assistant.  
+Once you've added the NanoMote to your Z-Wave network, you'll need to update your `zwcfg_*.xml` file with the below XML data. Stop Open Peer Power and open your `zwcfg_*.xml` file (located in your configuration folder). Find the NanoMote device section and then its corresponding `CommandClass` section with id="91". Replace the entire CommandClass section with the below XML data. Save the file and restart Open Peer Power.  
 
 ```xml
     <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
@@ -592,10 +592,10 @@ Button four release|Circle with Line|4|1
 
 ### Remotec ZRC-90 Scene Master
 
-To get the ZRC-90 Scene Master working in Home Assistant, you must first edit the `COMMAND_CLASS_CENTRAL_SCENE` in your `zwcfg` file.
+To get the ZRC-90 Scene Master working in Open Peer Power, you must first edit the `COMMAND_CLASS_CENTRAL_SCENE` in your `zwcfg` file.
 
-1. Go the Z-Wave control panel in Home Assistant and make a note of the node number your ZRC-90 has been assigned.
-2. *Stop* Home Assistant.
+1. Go the Z-Wave control panel in Open Peer Power and make a note of the node number your ZRC-90 has been assigned.
+2. *Stop* Open Peer Power.
 3. Make a backup of your `zwfcg` file, just in case.
 4. In the `zwcfg` file, find the `Node id` that corresponds to the number you noted in the first step.
 5. Within the `Node id` you identified, highlight everything between `<CommandClass id="91"` and `</CommandClass>` (inclusive) and paste in the following:
@@ -616,7 +616,7 @@ To get the ZRC-90 Scene Master working in Home Assistant, you must first edit th
     </CommandClass>
     ```
 
-6. Save the changes you made the `zwcfg` file and start Home Assistant back up.
+6. Save the changes you made the `zwcfg` file and start Open Peer Power back up.
 
 Button presses will trigger `zwave.scene_activated` with the following:
 
@@ -778,10 +778,10 @@ switch:
 
 ### HeatIt/ThermoFloor Z-Push Button 2/8 Wall Switch
 
-To get the Z-Push Button 2 or the Z-Push Button 8 working in Home Assistant, you must first edit the `COMMAND_CLASS_CENTRAL_SCENE` in your `zwcfg` file.
+To get the Z-Push Button 2 or the Z-Push Button 8 working in Open Peer Power, you must first edit the `COMMAND_CLASS_CENTRAL_SCENE` in your `zwcfg` file.
 
-1. Go the Z-Wave control panel in Home Assistant and make a note of the node number your wall switch has been assigned.
-2. *Stop* Home Assistant.
+1. Go the Z-Wave control panel in Open Peer Power and make a note of the node number your wall switch has been assigned.
+2. *Stop* Open Peer Power.
 3. Make a backup of your `zwfcg` file, just in case.
 4. In the `zwcfg` file, find the `Node id` that corresponds to the number you noted in the first step.
 5. Within the `Node id` you identified, highlight everything between `<CommandClass id="91"` and `</CommandClass>` (inclusive) and paste in the following:
@@ -811,7 +811,7 @@ To get the Z-Push Button 2 or the Z-Push Button 8 working in Home Assistant, you
         </CommandClass>
     ```
 
-6. Save the changes you made the `zwcfg` file and start Home Assistant back up.
+6. Save the changes you made the `zwcfg` file and start Open Peer Power back up.
 
 Button presses will trigger `zwave.scene_activated` with the following:
 
@@ -823,7 +823,7 @@ Button presses will trigger `zwave.scene_activated` with the following:
 
 <!-- from https://products.z-wavealliance.org/products/3399/ -->
 
-Once you've added the ZDB5100 to your Z-Wave network, you'll need to update your `zwcfg_*.xml` file with the below XML data. Stop Home Assistant and open your `zwcfg_*.xml` file (located in your configuration folder). Find the ZDB5100 device section and then its corresponding `CommandClass` section with id="91". Replace the entire CommandClass section with the below XML data. Save the file and restart Home Assistant.  
+Once you've added the ZDB5100 to your Z-Wave network, you'll need to update your `zwcfg_*.xml` file with the below XML data. Stop Open Peer Power and open your `zwcfg_*.xml` file (located in your configuration folder). Find the ZDB5100 device section and then its corresponding `CommandClass` section with id="91". Replace the entire CommandClass section with the below XML data. Save the file and restart Open Peer Power.  
 
 ```xml
     <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">

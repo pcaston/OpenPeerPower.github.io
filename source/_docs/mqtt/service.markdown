@@ -1,6 +1,6 @@
 ---
 title: "MQTT Publish service"
-description: "Instructions on how to setup the MQTT Publish service within Home Assistant."
+description: "Instructions on how to setup the MQTT Publish service within Open Peer Power."
 logo: mqtt.png
 ---
 

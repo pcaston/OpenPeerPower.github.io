@@ -1,6 +1,6 @@
 ---
-title: Home Assistant Frontend
-description: Offers a frontend to Home Assistant.
+title: Open Peer Power Frontend
+description: Offers a frontend to Open Peer Power.
 ha_category:
   - Other
 ha_release: 0.7
@@ -10,7 +10,7 @@ ha_codeowners:
 ha_domain: frontend
 ---
 
-This offers the official frontend to control Home Assistant. This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+This offers the official frontend to control Open Peer Power. This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
 ```yaml
 # Example configuration.yaml entry
@@ -83,7 +83,7 @@ There are 2 themes-related services:
 
 Example in automation:
 
-Set a theme at the startup of Home Assistant:
+Set a theme at the startup of Open Peer Power:
 
 ```yaml
 automation:

@@ -1,6 +1,6 @@
 ---
 title: History
-description: Instructions on how to enable history support for Home Assistant.
+description: Instructions on how to enable history support for Open Peer Power.
 ha_category:
   - History
 ha_release: pre 0.7

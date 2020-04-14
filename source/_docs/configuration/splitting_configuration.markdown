@@ -4,7 +4,7 @@ description: "Splitting the configuration.yaml into several files."
 redirect_from: /topics/splitting_configuration/
 ---
 
-So you've been using Home Assistant for a while now and your `configuration.yaml` file brings people to tears or you simply want to start off with the distributed approach, here's how to split the `configuration.yaml` into more manageable (read: humanly readable) pieces.
+So you've been using Open Peer Power for a while now and your `configuration.yaml` file brings people to tears or you simply want to start off with the distributed approach, here's how to split the `configuration.yaml` into more manageable (read: humanly readable) pieces.
 
 First off, several community members have sanitized (read: without API keys/passwords etc) versions of their configurations available for viewing, you can see a list of them [here](/cookbook/#example-configurationyaml).
 
@@ -16,8 +16,8 @@ In this lighter version we will still need what could be called the core snippet
 
 ```yaml
 homeassistant:
-  # Name of the location where Home Assistant is running
-  name: My Home Assistant Instance
+  # Name of the location where Open Peer Power is running
+  name: My Open Peer Power Instance
   # Location required to calculate the time the sun rises and sets
   latitude: 37
   longitude: -121
@@ -28,9 +28,9 @@ homeassistant:
   customize: !include customize.yaml
 ```
 
-Note that each line after `homeassistant:` is indented two (2) spaces. Since the configuration files in Home Assistant are based on the YAML language, indentation and spacing are important. Also note that seemingly strange entry under `customize:`.
+Note that each line after `homeassistant:` is indented two (2) spaces. Since the configuration files in Open Peer Power are based on the YAML language, indentation and spacing are important. Also note that seemingly strange entry under `customize:`.
 
-`!include filename.yaml` is the statement that tells Home Assistant to insert the contents of `filename.yaml` at that point. This is how we are going to break a monolithic and hard to read file (when it gets big) into more manageable chunks.
+`!include filename.yaml` is the statement that tells Open Peer Power to insert the contents of `filename.yaml` at that point. This is how we are going to break a monolithic and hard to read file (when it gets big) into more manageable chunks.
 
 Now before we start splitting out the different components, let's look at the other integrations (in our example) that will stay in the base file:
 
@@ -61,7 +61,7 @@ As with the core snippet, indentation makes a difference. The integration header
 
 While some of these integrations can technically be moved to a separate file they are so small or "one off's" where splitting them off is superfluous. Also, you'll notice the # symbol (hash/pound). This represents a "comment" as far as the commands are interpreted. Put another way, any line prefixed with a `#` will be ignored. This makes breaking up files for human readability really convenient, not to mention turning off features while leaving the entry intact.
 
-Now, lets assume that a blank file has been created in the Home Assistant configuration directory for each of the following:
+Now, lets assume that a blank file has been created in the Open Peer Power configuration directory for each of the following:
 
 ```text
 automation.yaml
@@ -151,7 +151,7 @@ If you have issues checkout `home-assistant.log` in the configuration directory 
 
 ## Debugging multiple configuration files
 
-If you have many configuration files, the `check_config` script allows you to see how Home Assistant interprets them:
+If you have many configuration files, the `check_config` script allows you to see how Open Peer Power interprets them:
 
 - Listing all loaded files: `hass --script check_config --files`
 - Viewing a component's configuration: `hass --script check_config --info light`

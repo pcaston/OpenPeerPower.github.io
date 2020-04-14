@@ -1,6 +1,6 @@
 ---
 title: Almond
-description: Instructions on how to setup Almond within Home Assistant.
+description: Instructions on how to setup Almond within Open Peer Power.
 ha_category:
   - Voice
 ha_iot_class: Local Polling
@@ -12,11 +12,11 @@ ha_codeowners:
 ha_domain: almond
 ---
 
-[Almond](https://almond.stanford.edu/) is an open, privacy-preserving virtual assistant by [Stanford Open Virtual Assistant Lab](https://oval.cs.stanford.edu/). It allows you, among other things, to control Home Assistant using natural language. Once installed, it will be available on Lovelace via the microphone icon in the top right.
+[Almond](https://almond.stanford.edu/) is an open, privacy-preserving virtual assistant by [Stanford Open Virtual Assistant Lab](https://oval.cs.stanford.edu/). It allows you, among other things, to control Open Peer Power using natural language. Once installed, it will be available on Lovelace via the microphone icon in the top right.
 
 Almond consists of three parts:
 
-- Almond Server: Knows about Home Assistant and your data. Executes your sentences.
+- Almond Server: Knows about Open Peer Power and your data. Executes your sentences.
 - LUInet: Neural network that converts your sentences into Thingtalk programs.
 - Thingpedia: Skills that provide the building blocks for Thingtalk programs.
 
@@ -24,15 +24,15 @@ Almond consists of three parts:
 
 ## Installation
 
-### Home Assistant add-on installation
+### Open Peer Power add-on installation
 
-To install Almond Server, go to the Home Assistant add-on store, search for Almond and click on Install. Once started, it will initiate a configuration flow to finish set up in Home Assistant. You can find it on the integrations page in the configuration panel.
+To install Almond Server, go to the Open Peer Power add-on store, search for Almond and click on Install. Once started, it will initiate a configuration flow to finish set up in Open Peer Power. You can find it on the integrations page in the configuration panel.
 
 ### Manual installation
 
 You can install Almond Server by following [the instructions in their README](https://github.com/stanford-oval/almond-server#running-almond-server).
 
-Before linking it to Home Assistant, you will need to visit the Almond UI once to create a password. It is by default available on port 3000.
+Before linking it to Open Peer Power, you will need to visit the Almond UI once to create a password. It is by default available on port 3000.
 
 Once installed, configure Almond like this:
 
@@ -43,13 +43,13 @@ almond:
   host: http://127.0.0.1:3000
 ```
 
-The Almond integration does not update configuration entries yet. If you make a change to configuration.yaml, you will need to remove the configuration entry and then restart Home Assistant.
+The Almond integration does not update configuration entries yet. If you make a change to configuration.yaml, you will need to remove the configuration entry and then restart Open Peer Power.
 
 ### Almond Web
 
 Stanford offers a hosted version of Almond Server called Almond Web. To use this, go to the integrations page and add Almond using the add integration flow.
 
-Your Home Assistant installation needs to be externally accessible if you want Almond Web to be able to control Home Assistant.
+Your Open Peer Power installation needs to be externally accessible if you want Almond Web to be able to control Open Peer Power.
 
 ### Almond Web - Manual installation
 

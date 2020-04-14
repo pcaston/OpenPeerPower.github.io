@@ -1,6 +1,6 @@
 ---
 title: Automation
-description: Instructions on how to setup automation within Home Assistant.
+description: Instructions on how to setup automation within Open Peer Power.
 ha_category:
   - Automation
 ha_release: 0.7
@@ -18,7 +18,7 @@ documentation on how to use the automation integration.
 </p>
 
 You can also use `initial_state: 'false'` so that the automation
-is not automatically turned on after a Home Assistant reboot.
+is not automatically turned on after a Open Peer Power reboot.
 
 ```yaml
 automation:

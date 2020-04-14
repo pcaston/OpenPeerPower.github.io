@@ -22,7 +22,7 @@ Create an entry in your keyring.
 $ hass --script keyring set integration1_key
 ```
 
-If you launch Home Assistant now, you will be prompted for the keyring password to unlock your keyring.
+If you launch Open Peer Power now, you will be prompted for the keyring password to unlock your keyring.
 
 ```bash
 $ hass
@@ -32,6 +32,6 @@ Please enter password for encrypted keyring:
 
 <div class='note warning'>
 
-  If you are using the Python Keyring, [autostarting](/getting-started/autostart/) of Home Assistant will no longer work.
+  If you are using the Python Keyring, [autostarting](/getting-started/autostart/) of Open Peer Power will no longer work.
 
 </div>

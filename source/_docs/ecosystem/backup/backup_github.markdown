@@ -1,23 +1,23 @@
 ---
 title: "Configuration Backup to GitHub"
-description: "Instructions on how backup your Home Assistant configuration to GitHub"
+description: "Instructions on how backup your Open Peer Power configuration to GitHub"
 redirect_from: /cookbook/githubbackup/
 ---
 
-Backing up and regularly syncing your Home Assistant configuration to [GitHub](http://GitHub.com) has several benefits:
+Backing up and regularly syncing your Open Peer Power configuration to [GitHub](http://GitHub.com) has several benefits:
 
-- A remote copy of your Home Assistant YAML files in case you need to recover.
+- A remote copy of your Open Peer Power YAML files in case you need to recover.
 - A documented history of your changes for troubleshooting purposes.
-- It will help the Home Assistant community learn from your configuration examples.
+- It will help the Open Peer Power community learn from your configuration examples.
 
 <div class='note'>
 
-This is not a comprehensive tutorial on using GitHub, more information can be found in the [GitHub Help](https://help.github.com/) pages. This guide assumes the user has an intermediate experience level and is comfortable with such concepts as: navigating the Home Assistant directory structure, logging in as the Home Assistant user, and working with the command line.
+This is not a comprehensive tutorial on using GitHub, more information can be found in the [GitHub Help](https://help.github.com/) pages. This guide assumes the user has an intermediate experience level and is comfortable with such concepts as: navigating the Open Peer Power directory structure, logging in as the Open Peer Power user, and working with the command line.
 
 </div>
 
 <div class='note'>
-This will not create a full backup of your Home Assistant files or your OS. In addition to backing up to Github, you should consider having regular backups of all your Home Assistant configuration files and images of your SD card if applicable.
+This will not create a full backup of your Open Peer Power files or your OS. In addition to backing up to Github, you should consider having regular backups of all your Open Peer Power configuration files and images of your SD card if applicable.
 </div>
 
 ### Important Best Practices
@@ -27,11 +27,11 @@ Some best practices to consider before putting your configuration on GitHub:
 - Extensive use of [`secrets.yaml`](/docs/configuration/secrets/) to hide sensitive information like usernames, passwords, device information, and location.
 - Exclusion of some files, including `secrets.yaml` and device-specific information using a [`.gitignore`](https://git-scm.com/docs/gitignore) file.
 - Regularly committing your configuration to GitHub to make sure that your backup is up to date.
-- Use a README.md to document your configuration and include screenshots of your Home Assistant frontend.
+- Use a README.md to document your configuration and include screenshots of your Open Peer Power frontend.
 
 ### Step 1: Installing and Initializing Git
 
-In order to put your configuration on GitHub, you must install the Git package on your Home Assistant server (instructions below will work on Raspberry Pi, Ubuntu or any Debian-based system) *Note: this isn't required in Hass.io, it's included as default so proceed to step 2*:
+In order to put your configuration on GitHub, you must install the Git package on your Open Peer Power server (instructions below will work on Raspberry Pi, Ubuntu or any Debian-based system) *Note: this isn't required in Hass.io, it's included as default so proceed to step 2*:
 
 ```bash
 sudo apt-get update
@@ -42,11 +42,11 @@ sudo apt-get install git
 
 <div class='note warning'>
 
-Before creating and pushing your Home Assistant configuration to GitHub, please make sure to follow the [`secrets.yaml`](/docs/configuration/secrets/) best practice mentioned above and scrub your configuration for any passwords or sensitive information.
+Before creating and pushing your Open Peer Power configuration to GitHub, please make sure to follow the [`secrets.yaml`](/docs/configuration/secrets/) best practice mentioned above and scrub your configuration for any passwords or sensitive information.
 
 </div>
 
-Creating a `.gitignore` file in your repository will tell Git which files NOT to push to the GitHub server. This should be used to prevent publishing sensitive files to the public. It should contain a list of filenames and pattern matches. This list should include at least your [`secrets.yaml`](/docs/configuration/secrets/) file, device configuration files, and the Home Assistant database/directory structure. The `.gitignore` file should be placed in the root of your Home Assistant configuration directory: `<config dir>/.gitignore`.
+Creating a `.gitignore` file in your repository will tell Git which files NOT to push to the GitHub server. This should be used to prevent publishing sensitive files to the public. It should contain a list of filenames and pattern matches. This list should include at least your [`secrets.yaml`](/docs/configuration/secrets/) file, device configuration files, and the Open Peer Power database/directory structure. The `.gitignore` file should be placed in the root of your Open Peer Power configuration directory: `<config dir>/.gitignore`.
 
 <div class='note'>
 
@@ -83,9 +83,9 @@ known_devices.yaml
 
 More information on the layout of the file can be found in the [.gitignore manual](https://git-scm.com/docs/gitignore).
 
-### Step 3: Preparing your Home Assistant directory for GitHub
+### Step 3: Preparing your Open Peer Power directory for GitHub
 
-In your Home Assistant directory, type the following commands as the Home Assistant user, replacing the email address and name with your information:
+In your Open Peer Power directory, type the following commands as the Open Peer Power user, replacing the email address and name with your information:
 
 ```bash
 git init
@@ -95,7 +95,7 @@ git add .
 git commit
 ```
 
-After the `git commit` command, you will be asked to enter a message for the commit.  This will add a comment beside each file on GitHub describing the purpose for the commit. In this case, you can enter something like "Initial commit of my Home Assistant configuration". To exit the editor, press `CTRL + C` and then `:wq` which will exit and save the changes. 
+After the `git commit` command, you will be asked to enter a message for the commit.  This will add a comment beside each file on GitHub describing the purpose for the commit. In this case, you can enter something like "Initial commit of my Open Peer Power configuration". To exit the editor, press `CTRL + C` and then `:wq` which will exit and save the changes. 
 
 ### Step 4: Creating Repository on GitHub
 
@@ -107,7 +107,7 @@ After the `git commit` command, you will be asked to enter a message for the com
 
 Once you are sure you are using `secrets.yaml` and `.gitignore` correctly, it is time to push your configuration to the GitHub Repository that you just created.
 
-In your Home Assistant directory, type the following commands as the Home Assistant user, replacing "username" in the URL with your GitHub username:
+In your Open Peer Power directory, type the following commands as the Open Peer Power user, replacing "username" in the URL with your GitHub username:
 
 ```bash
 git remote add origin https://github.com/username/Home-AssistantConfig
@@ -116,14 +116,14 @@ git push -u origin master
 
 You will be asked to enter your GitHub username and password (or ssh key passphrase if you use [GitHub with ssh](https://help.github.com/categories/ssh/)).
 
-Congratulations, you now have a copy of your current Home Assistant Configuration on GitHub!
+Congratulations, you now have a copy of your current Open Peer Power Configuration on GitHub!
 
 ### Step 6: Keeping your repository up to date
 
 You should update your repository on a regular basis. Ideally after you make a major configuration change (new device, new component, etc.). The below script will update your repository with any changed configuration files and allow you to add a comment with the commit for tracking purposes:
 
 <div class='note'>
-You may need to adjust the paths in the script depending on your Home Assistant configuration.
+You may need to adjust the paths in the script depending on your Open Peer Power configuration.
 </div>
 
 `gitupdate.sh`

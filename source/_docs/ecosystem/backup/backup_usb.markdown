@@ -1,9 +1,9 @@
 ---
 title: "Configuration Backup to USB drive"
-description: "Instructions on how backup your Home Assistant configuration to USB drive"
+description: "Instructions on how backup your Open Peer Power configuration to USB drive"
 ---
 
-This will step you through the process of setting up a backup of your Home Assistant configuration to a USB device. This is a good method if you don't want to mask all of your passwords since the backup is kept locally at your home/residence.
+This will step you through the process of setting up a backup of your Open Peer Power configuration to a USB device. This is a good method if you don't want to mask all of your passwords since the backup is kept locally at your home/residence.
 
 ### Requirements
 
@@ -37,7 +37,7 @@ Mount the drive (as root) to `/media`
 
 ### Prepare the USB Device
 
-Change to the `/media` directory and create a folder called `hassbackup`. Change the ownership to the user that runs Home Assistant. In this example case, the user and group are both `homeassistant`.
+Change to the `/media` directory and create a folder called `hassbackup`. Change the ownership to the user that runs Open Peer Power. In this example case, the user and group are both `homeassistant`.
 
 ```bash
 # cd /media/
@@ -65,7 +65,7 @@ Setting up zip (3.0-8) ...
 
 ### Download and Run Script
 
-Become the `homeassistant` user (or whatever user runs Home Assistant). Change to whatever directory you would like the [script](https://gist.github.com/riemers/041c6a386a2eab95c55ba3ccaa10e7b0) placed into and run the following command.
+Become the `homeassistant` user (or whatever user runs Open Peer Power). Change to whatever directory you would like the [script](https://gist.github.com/riemers/041c6a386a2eab95c55ba3ccaa10e7b0) placed into and run the following command.
 
 ```bash
 # wget https://gist.githubusercontent.com/riemers/041c6a386a2eab95c55ba3ccaa10e7b0/raw/86727d4e72e9757da4f68f1c9d784720e72d0e99/usb_backup.sh

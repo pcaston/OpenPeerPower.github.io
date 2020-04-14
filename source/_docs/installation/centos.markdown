@@ -1,6 +1,6 @@
 ---
 title: "Installation on CentOS/RHEL"
-description: "Installation of Home Assistant on your CentOS/RHEL computer."
+description: "Installation of Open Peer Power on your CentOS/RHEL computer."
 ---
 
 To run Python 3.x on [CentOS](https://www.centos.org/) or RHEL (Red Hat Enterprise Linux), [Software Collections](https://www.softwarecollections.org/en/scls/rhscl/rh-python36/) needs to be activated first.
@@ -46,18 +46,18 @@ $ python --version
 Python 3.6.3
 ```
 
-You will be in a command shell set up with Python 3.6 as your default version. The `virtualenv` and `pip` commands will be correct for this version, so you can now create a virtual environment and install Home Assistant following the main [instructions](/docs/installation/virtualenv/#step-4-set-up-the-virtualenv).
+You will be in a command shell set up with Python 3.6 as your default version. The `virtualenv` and `pip` commands will be correct for this version, so you can now create a virtual environment and install Open Peer Power following the main [instructions](/docs/installation/virtualenv/#step-4-set-up-the-virtualenv).
 
 You will need to enable the software collection each time you log on before you activate your virtual environment.
 
 ### Systemd with Software Collections
 
-To autostart Home Assistant using systemd and a python36 (from SCL) virtual environment, follow the main [instructions](/docs/autostart/systemd/) and adjust the template as follows:
+To autostart Open Peer Power using systemd and a python36 (from SCL) virtual environment, follow the main [instructions](/docs/autostart/systemd/) and adjust the template as follows:
 
 Filename: `/etc/systemd/system/home-assistant@homeassistant.service`
 ```txt
 [Unit]
-Description=Home Assistant
+Description=Open Peer Power
 After=network-online.target
 
 [Service]

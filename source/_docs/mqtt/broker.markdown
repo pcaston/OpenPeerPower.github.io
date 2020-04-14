@@ -1,10 +1,10 @@
 ---
 title: "MQTT Broker"
-description: "Instructions on how to setup a MQTT broker for Home Assistant."
+description: "Instructions on how to setup a MQTT broker for Open Peer Power."
 logo: mqtt.png
 ---
 
-The MQTT integration needs you to run an MQTT broker for Home Assistant to connect to.
+The MQTT integration needs you to run an MQTT broker for Open Peer Power to connect to.
 
 ### Run your own
 
@@ -31,7 +31,7 @@ port:
   type: integer
 client_id:
   required: false
-  description: The client ID that Home Assistant will use. Has to be unique on the server. Default is a randomly generated one.
+  description: The client ID that Open Peer Power will use. Has to be unique on the server. Default is a randomly generated one.
   type: string
 keepalive:
   required: false
@@ -91,14 +91,14 @@ mqtt:
 [CloudMQTT](https://www.cloudmqtt.com) is a hosted private MQTT instance that is free for up to 10 connected devices. This is enough to get started with for example [OwnTracks](/integrations/owntracks/) and give you a taste of what is possible.
 
 <div class='note'>
-Home Assistant is not affiliated with CloudMQTT nor will receive any kickbacks.
+Open Peer Power is not affiliated with CloudMQTT nor will receive any kickbacks.
 </div>
 
  1. [Create an account](https://customer.cloudmqtt.com/login) (no payment details needed)
  2. [Create a new CloudMQTT instance](https://customer.cloudmqtt.com/subscription/create)
     (Cute Cat is the free plan)
  3. From the control panel, click on the _Details_ button.
- 4. Create unique users for Home Assistant and each phone to connect<br>(CloudMQTT does not allow two connections from the same user)
+ 4. Create unique users for Open Peer Power and each phone to connect<br>(CloudMQTT does not allow two connections from the same user)
       1. Under manage users, fill in username, password and click add
       2. Under ACLs, select user, topic `#`, check 'read access' and 'write access'
  5. Copy the instance info to your configuration.yaml:
@@ -112,18 +112,18 @@ mqtt:
 ```
 
 <div class='note'>
-Home Assistant will automatically load the correct certificate if you connect to an encrypted channel of CloudMQTT (port range 20000-30000).
+Open Peer Power will automatically load the correct certificate if you connect to an encrypted channel of CloudMQTT (port range 20000-30000).
 </div>
 
 <div class='note'>
 
-If you experience an error message like `Failed to connect due to exception: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed`, then add `certificate: auto` to your broker configuration and restart Home Assistant.
+If you experience an error message like `Failed to connect due to exception: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed`, then add `certificate: auto` to your broker configuration and restart Open Peer Power.
 
 </div>
 
 ### Embedded broker (Deprecated)
 
-Home Assistant contains an embedded MQTT broker called [HBMQTT](https://pypi.python.org/pypi/hbmqtt). If you don't have an MQTT broker, you can configure this one to be used. If configured, Home Assistant will automatically connect to it.
+Open Peer Power contains an embedded MQTT broker called [HBMQTT](https://pypi.python.org/pypi/hbmqtt). If you don't have an MQTT broker, you can configure this one to be used. If configured, Open Peer Power will automatically connect to it.
 
 | Setting        | Value                              |
 | -------------- | ---------------------------------- |

@@ -1,6 +1,6 @@
 ---
 title: MQTT JSON
-description: Instructions on how to use JSON MQTT to track devices in Home Assistant.
+description: Instructions on how to use JSON MQTT to track devices in Open Peer Power.
 logo: mqtt.png
 ha_category:
   - Presence Detection

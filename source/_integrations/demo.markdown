@@ -1,6 +1,6 @@
 ---
 title: Demo
-description: Instructions on how to use the Platform demos with Home Assistant.
+description: Instructions on how to use the Platform demos with Open Peer Power.
 ha_category:
   - Other
 ha_release: 0.7
@@ -10,7 +10,7 @@ ha_codeowners:
 ha_domain: demo
 ---
 
-The `demo` platform allows you to use integrations which are providing a demo of their implementation. The demo entities are dummies but show you how the actual platform looks like. This way you can run own demonstration instance like the online [Home Assistant demo](/demo/)but combined with your own real/functional platforms.
+The `demo` platform allows you to use integrations which are providing a demo of their implementation. The demo entities are dummies but show you how the actual platform looks like. This way you can run own demonstration instance like the online [Open Peer Power demo](/demo/)but combined with your own real/functional platforms.
 
 Available demo platforms:
 
@@ -35,7 +35,7 @@ Available demo platforms:
 - [Weather](/integrations/weather/) (`weather`)
 
 
-To integrate a demo platform in Home Assistant, add the following section to your `configuration.yaml` file:
+To integrate a demo platform in Open Peer Power, add the following section to your `configuration.yaml` file:
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,6 +1,6 @@
 ---
-title: "Home Assistant iOS beta authentication"
-description: "Landing page for Home Assistant iOS beta app."
+title: "Open Peer Power iOS beta authentication"
+description: "Landing page for Open Peer Power iOS beta app."
 ---
 
 <link rel='redirect_uri' href='homeassistant-beta://auth-callback'>

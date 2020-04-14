@@ -1,11 +1,11 @@
 ---
 title: "Glossary"
-description: "Home Assistant's Glossary."
+description: "Open Peer Power's Glossary."
 ---
 
 {% assign entries = site.data.glossary | sort: 'topic'  %}
 
-The glossary covers terms which are used around Home Assistant.
+The glossary covers terms which are used around Open Peer Power.
 
 <ul>
 {% for entry in entries %}

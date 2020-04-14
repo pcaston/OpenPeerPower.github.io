@@ -49,7 +49,7 @@ Here is where you [include and exclude](/docs/z-wave/adding/) Z-Wave devices fro
 *  **is_awake** Whether the device is awake or not
 *  **is_failed** Whether the device has been marked as failed. The controller won't try to contact failed devices.
 *  **is_info_received** True once the controller has received the node information from the node.
-*  **is_ready** When you start the network (or Home Assistant) it will take a short while before all devices are ready, this shows which aren't yet ready.
+*  **is_ready** When you start the network (or Open Peer Power) it will take a short while before all devices are ready, this shows which aren't yet ready.
 *  **is_zwave_plus** True for any Z-Wave Plus devices (note that controllers always report *false*, regardless of whether they are Plus devices or not)
 *  **lastRequestRTT** The Round Trip Time of the last request
 *  **lastResponseRTT** The Round Trip Time of the response to the last request
@@ -84,7 +84,7 @@ Here you can mark a device as requiring polling so the controller is aware of ch
 
 The **Polling intensity** says how many poll intervals this device is polled on. For example, if you set 2 then it's polled on every second interval.
 
-You can also exclude a Z-Wave devices from Home Assistant. You can do that if you have a device that you need to have on the Z-Wave network, but you don't want it to appear in Home Assistant, or if you've got a device that's failed and you're unable to exclude it.
+You can also exclude a Z-Wave devices from Open Peer Power. You can do that if you have a device that you need to have on the Z-Wave network, but you don't want it to appear in Open Peer Power, or if you've got a device that's failed and you're unable to exclude it.
 
 ### Node Values
 

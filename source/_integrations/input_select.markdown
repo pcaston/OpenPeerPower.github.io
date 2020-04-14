@@ -1,6 +1,6 @@
 ---
 title: Input Select
-description: Instructions on how to integrate the Input Select integration into Home Assistant.
+description: Instructions on how to integrate the Input Select integration into Open Peer Power.
 ha_category:
   - Automation
 ha_release: 0.13
@@ -46,7 +46,7 @@ input_select:
         required: false
         type: string
       initial:
-        description: Initial value when Home Assistant starts.
+        description: Initial value when Open Peer Power starts.
         required: false
         type: map
         default: First element of options
@@ -64,7 +64,7 @@ Because YAML defines [booleans](https://yaml.org/type/bool.html) as equivalent, 
 
 ### Restore State
 
-If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Home Assistant stopping.
+If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Open Peer Power stopping.
 
 ### Services
 

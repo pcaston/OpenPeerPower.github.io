@@ -1,10 +1,10 @@
 ---
 title: "Certificate Authority and self-signed certificate for SSL/TLS"
-description: "Configure a Certificate Authority and self-signed certificate to use with Home Assistant"
+description: "Configure a Certificate Authority and self-signed certificate to use with Open Peer Power"
 redirect_from: /cookbook/tls_self_signed_certificate/
 ---
 
-If your Home Assistant instance is only accessible from your local network, you can still protect the communication between your browsers and the frontend with SSL/TLS.
+If your Open Peer Power instance is only accessible from your local network, you can still protect the communication between your browsers and the frontend with SSL/TLS.
 [Let's Encrypt](/blog/2017/09/27/effortless-encryption-with-lets-encrypt-and-duckdns/) will only work if you have a DNS entry and remote access is allowed.
 
 The solution is to use a self-signed certificate. Please note, however, that after you have completed these steps, your browser will complain about the security of the certificate as it was not issued by a trusted authority.
@@ -14,11 +14,11 @@ The solution is to use a self-signed certificate. Please note, however, that aft
 
 If you don't mind the browser warnings and simply want SSL/TLS encryption and therefore have decided to use a self-signed certificate permanently or temporarily, read on!
 
-If you use Chrome browser version 58 or above and/or **don't want to have issues regarding a non-trusted CA or CN (Common Name)**, follow this full tutorial: [Create Root Certificate Authority and self-signed certificate for your Home Assistant. Compatible with Chrome browser > version 58](https://gist.github.com/tiagofreire-pt/4920be8d03a3dfa8201c6afedd00305e). Otherwise, follow this:
+If you use Chrome browser version 58 or above and/or **don't want to have issues regarding a non-trusted CA or CN (Common Name)**, follow this full tutorial: [Create Root Certificate Authority and self-signed certificate for your Open Peer Power. Compatible with Chrome browser > version 58](https://gist.github.com/tiagofreire-pt/4920be8d03a3dfa8201c6afedd00305e). Otherwise, follow this:
 
 To create a certificate locally, you need the [OpenSSL](https://www.openssl.org/) command-line tool.
 
-Change to your Home Assistant [configuration directory](/getting-started/configuration/) like `~/.homeassistant`. This will make it easier to backup your certificate and the key. Run the command shown below.
+Change to your Open Peer Power [configuration directory](/getting-started/configuration/) like `~/.homeassistant`. This will make it easier to backup your certificate and the key. Run the command shown below.
 
 The certificate **must** be `.pem` extension.
 
@@ -26,7 +26,7 @@ The certificate **must** be `.pem` extension.
 openssl req -sha256 -addext "subjectAltName = IP:X.X.X.X" -newkey rsa:4096 -nodes -keyout privkey.pem -x509 -days 730 -out fullchain.pem
 ```
 
-Where the `X.X.X.X` must be replaced with the IP address of your local machine running Home Assistant (e.g., `192.168.1.20`).
+Where the `X.X.X.X` must be replaced with the IP address of your local machine running Open Peer Power (e.g., `192.168.1.20`).
 
 For details about the parameters, please check the OpenSSL documentation. Provide the requested information during the generation process.
 
@@ -50,11 +50,11 @@ http:
   ssl_key: /home/your_user/.homeassistant/privkey.pem
 ```
 
-A restart of Home Assistant is required for the new certificate to take effect.
+A restart of Open Peer Power is required for the new certificate to take effect.
 
-If you get any log error about *ssl_key* or *ssl_certificate* that is **not a file for dictionary value** when run Home Assistant, you need to change owner or access permission of the `.pem` files as following:
+If you get any log error about *ssl_key* or *ssl_certificate* that is **not a file for dictionary value** when run Open Peer Power, you need to change owner or access permission of the `.pem` files as following:
 
-Home Assistant (through console or SSH add-on):
+Open Peer Power (through console or SSH add-on):
 
 ```bash
 chown root:root fullchain.pem privkey.pem
