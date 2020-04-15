@@ -4,9 +4,9 @@
 # ----------------------- #
 
 url: https://www.home-assistant.io
-title: Home Assistant
+title: Open Peer Power
 subtitle: Open source home automation that puts local control and privacy first.
-author: Home Assistant
+author: Open Peer Power
 simple_search: https://www.google.com/search
 description: Open source home automation that puts local control and privacy first.
 
@@ -98,7 +98,7 @@ social:
   twitter:
     account: home_assistant
 
-# Home Assistant release details
+# Open Peer Power release details
 current_major_version: 0
 current_minor_version: 108
 current_patch_version: 0

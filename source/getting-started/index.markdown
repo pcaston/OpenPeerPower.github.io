@@ -25,7 +25,7 @@ So here are guidelines:
 
 {% endcomment %}
 
-This guide will help you get Open Peer Power running on a Raspberry Pi, turning your Raspberry Pi into the ultimate power management hub.
+This guide will help you get Open Peer Power running on a Raspberry Pi, to create an efficient power management hub.
 
 Follow this guide if you want to get started with Open Peer Power easily or if you have little to no Linux experience. For advanced users (or if you don't have a [device that is supported by this guide][supported]), check out our [alternative installation methods](/docs/installation/). Once you finish your alternative installation, you can continue at the [next step][next-step].
 
@@ -33,11 +33,11 @@ Follow this guide if you want to get started with Open Peer Power easily or if y
 
 ### Suggested hardware
 
-We will need a few things to get started with installing Open Peer Power. The Raspberry Pi 4 Model B is a good, affordable starting point for your power management journey. Links below lead to Amazon US. If you're not in the US, you should be able to find these items in web stores in your country.
+The Raspberry Pi 4 Model B is a good, affordable option for the power management server. 
 
-- [Raspberry Pi 4 Model B (2GB)](https://amzn.to/2XULT2z) + [Power Supply](https://www.raspberrypi.org/help/faqs/#powerReqs) (at least 2.5A)
-- [Micro SD Card](https://amzn.to/2X0Z2di). Ideally get one that is [Application Class 2](https://www.sdcard.org/developers/overview/application/index.html) as they handle small I/O much more consistently than cards not optimized to host applications. A 32 GB or bigger card is recommended.
-- SD Card reader. This is already part of most laptops, but you can purchase a [standalone USB adapter](https://amzn.to/2WWxntY) if you don't have one. The brand doesn't matter, just pick the cheapest.
+- Raspberry Pi 4 Model B (2GB) + Power Supply (at least 2.5A)
+- Micro SD Card. Ideally get one that is Application Class 2 as they handle small I/O much more consistently than cards not optimized to host applications. A 32 GB or bigger card is recommended.
+- SD Card reader. This is already part of most laptops, but you can purchase a standalone USB adapter if you don't have one. The brand doesn't matter, just pick the cheapest.
 - Ethernet cable. Open Peer Power can work with Wi-Fi, but an Ethernet connection would be more reliable.
 
 ### Software requirements
@@ -70,5 +70,3 @@ We will need a few things to get started with installing Open Peer Power. The Ra
 ### [Next step: Onboarding &raquo;][next-step]
 
 [next-step]: /getting-started/onboarding/
-
-_As an Amazon Associate Open Peer Power earns from qualifying purchases._
