@@ -6,7 +6,7 @@ redirect_from:
  - /getting-started/automation-2/
 ---
 
-Once your devices are set up, you can start to automate. In this guide we're going to create a simple automation rule to **turn on the lights when the sun sets**.
+Once your devices are set up, it's time to put the cherry on the pie: automation. In this guide we're going to create a simple automation rule to **turn on the lights when the sun sets**.
 
 In the user interface, click Configuration in the sidebar, then click Automation. You will now see the automation screen from which you can manage all the automations in Open Peer Power.
 
@@ -22,11 +22,11 @@ Click the orange button at the bottom right to create a new automation. You are 
 The start of a new automation.
 </p>
 
-First set a name. Enter "Turn Lights On at Sunset".
+The first thing we will do is set a name. Enter "Turn Lights On at Sunset".
 
-Secondly define the trigger for your automation to run. In this case, the sun setting event will trigger your automation. However, if we turn the lights on when the sun sets, it would be too late as it already gets quite dark while it's setting. So we're going to add an offset.
+The second step is defining what should trigger our automation to run. In this case, we want to use the event of the sun setting to trigger our automation. However, if we would turn on the lights when the sun actually sets, it would be too late as it already gets quite dark while it's setting. So we're going to add an offset.
 
-In the trigger section, click on the dropdown menu and change the trigger type to "Sun." It allows us to choose sunrise or sunset, so go ahead and pick sunset. As we discussed, we want our automation to be triggered a little before the sun actually sets, so let's add `-00:30` as the offset. This indicates that the automation will be triggered 30 minutes before the sun actually sets.
+In the trigger section, click on the dropdown menu and change the trigger type to "Sun." It allows us to choose sunrise or sunset, so go ahead and pick sunset. As we discussed, we want our automation to be triggered a little before the sun actually sets, so let's add `-00:30` as the offset. This indicates that the automation will be triggered 30 minutes before the sun actually sets. Neat!
 
 <p class='img'>
 <img src='/images/getting-started/new-trigger.png'>
