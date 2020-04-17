@@ -9,76 +9,76 @@ This has been tested on FreeNAS 11.2 and should also work on FreeBSD 11.x as wel
 
 Enter the Open Peer Power jail. If you don't know which name you have given the jail, you can use the `iocage list` command to check.
 
-```bash
+{% highlight bash %}
 # If the jail is called 'HomeAssistant'
 iocage exec HomeAssistant
-```
+{% endhighlight %}
 
 Install the suggested packages:
 
-```bash
+{% highlight bash %}
 pkg update
 pkg upgrade
 pkg install -y autoconf bash ca_root_nss gmake pkgconf python37 py37-sqlite3
-```
+{% endhighlight %}
 
 Create the user and group that Open Peer Power will run as. The user/group ID of `8123` can be replaced if this is already in use in your environment.
 
-```bash
+{% highlight bash %}
 pw groupadd -n homeassistant -g 8123
 echo 'homeassistant:8123:8123::::::/usr/local/bin/bash:' | adduser -f -
-```
+{% endhighlight %}
 
 Create the installation directory:
 
-```bash
+{% highlight bash %}
 mkdir -p /usr/local/share/homeassistant
 chown -R homeassistant:homeassistant /usr/local/share/homeassistant
-```
+{% endhighlight %}
 
 Create the virtualenv and install Open Peer Power itself:
 
-```bash
+{% highlight bash %}
 su homeassistant
 cd /usr/local/share/homeassistant
 python3.7 -m venv .
 source ./bin/activate
 pip3 install --upgrade pip
 pip3 install homeassistant
-```
+{% endhighlight %}
 
 While still in the `venv`, start Open Peer Power to populate the configuration directory.
 
-```bash
+{% highlight bash %}
 hass --open-ui
-```
+{% endhighlight %}
 
 Wait until you see:
 
-```bash
+{% highlight bash %}
 (MainThread) [homeassistant.core] Starting Open Peer Power
-```
+{% endhighlight %}
 
 Then escape and exit the `venv`.
 
-```bash
+{% highlight bash %}
 deactivate
 exit
-```
+{% endhighlight %}
 
 Create the directory and the `rc.d` script for the system-level service that enables Open Peer Power to start when the jail starts.
 
-```bash
+{% highlight bash %}
 mkdir /usr/local/etc/rc.d/
-```
+{% endhighlight %}
 
 Then create a file at `/usr/local/etc/rc.d/homeassistant` and insert the content below:
 
-```bash
+{% highlight bash %}
 vi /usr/local/etc/rc.d/homeassistant
-```
+{% endhighlight %}
 
-```bash
+{% highlight bash %}
 #!/bin/sh
 #
 # Based upon work by tprelog at https://github.com/tprelog/iocage-homeassistant/blob/11.3-RELEASE/overlay/usr/local/etc/rc.d/homeassistant
@@ -199,20 +199,20 @@ homeassistant_test() {
 
 load_rc_config ${name}
 run_rc_command "$1"
-```
+{% endhighlight %}
 
 Make the `rc.d` script executable:
 
-```bash
+{% highlight bash %}
 chmod +x /usr/local/etc/rc.d/homeassistant
-```
+{% endhighlight %}
 
 Configure the service to start on boot and start the Open Peer Power service:
 
-```bash
+{% highlight bash %}
 sysrc homeassistant_enable="YES"
 service homeassistant start
-```
+{% endhighlight %}
 
 You can also restart the jail to ensure that Open Peer Power starts on boot.
 
@@ -226,113 +226,113 @@ USB Z-Wave sticks may give `dmesg` warnings similar to "data interface 1, has no
 
 The following two packages need to be installed in the jail
 
-```bash
+{% highlight bash %}
 pkg install gmake
 pkg install libudev-devd
-```
+{% endhighlight %}
 
 Then you can install the Z-Wave package
 
-```bash
+{% highlight bash %}
 su homeassistant
 cd /usr/local/share/homeassistant
 source ./bin/activate.csh
 pip3 install homeassistant-pyozw==0.1.7
 deactivate
 exit
-```
+{% endhighlight %}
 
 Stop the Open Peer Power Jail
 
-```bash
+{% highlight bash %}
 sudo iocage stop HomeAssistant
-```
+{% endhighlight %}
 
 Edit the devfs rules on the FreenNAS Host
 
-```bash
+{% highlight bash %}
 vi /etc/devfs.rules
-```
+{% endhighlight %}
 
 Add the following lines
 
-```bash
+{% highlight bash %}
 [devfsrules_jail_allow_usb=7]
 add path 'cu\*' mode 0660 group 8123 unhide
-```
+{% endhighlight %}
 
 Reload devfs
 
-```bash
+{% highlight bash %}
 sudo service devfs restart
-```
+{% endhighlight %}
 
 Edit the ruleset used by the jail in the FreeNAS GUI by going to Jails -> `hass` -> Edit ->  Jail Properties ->  devfs_ruleset
 Set it to 7
 
 Start the Open Peer Power jail
 
-```bash
+{% highlight bash %}
 sudo iocage start HomeAssistant
-```
+{% endhighlight %}
 
 Connect to the Open Peer Power jail and verify that you see the modem devices
 
-```bash
+{% highlight bash %}
 sudo iocage console HomeAssistant
-```
+{% endhighlight %}
 
-```bash
+{% highlight bash %}
 ls /dev/cu*
-```
+{% endhighlight %}
 
 This should output the following
 
-```bash
+{% highlight bash %}
 /dev/cuau0      /dev/cuaU0
-```
+{% endhighlight %}
 
 Add the Z-Wave configuration to your `configuration.yaml` and restart Open Peer Power
 
-```bash
+{% highlight bash %}
 vi /home/homeassistant/.homeassistant/configuration.yaml
-```
+{% endhighlight %}
 
-```yaml
+{% highlight yaml %}
 zwave:
   usb_path: /dev/cuaU0
   polling_interval: 10000
-```
+{% endhighlight %}
 
-```bash
+{% highlight bash %}
 service homeassistant restart
-```
+{% endhighlight %}
 
 ## Updating
 
 Before updating, read the changelog to see what has changed and how it affects your Open Peer Power instance. Enter the jail using `iocage exec <jailname>`. Stop the Open Peer Power service:
 
-```bash
+{% highlight bash %}
 service homeassistant stop
-```
+{% endhighlight %}
 
 Then, enter the `venv`:
 
-```bash
+{% highlight bash %}
 su homeassistant
 cd /usr/local/share/homeassistant
 source ./bin/activate
-```
+{% endhighlight %}
 
 Upgrade Open Peer Power:
 
-```bash
+{% highlight bash %}
 pip3 install homeassistant --upgrade
-```
+{% endhighlight %}
 
 Log out of the `homeassistant` user and start Open Peer Power:
 
-```bash
+{% highlight bash %}
 exit
 service homeassistant start
-```
+{% endhighlight %}

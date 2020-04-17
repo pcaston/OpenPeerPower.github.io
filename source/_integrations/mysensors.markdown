@@ -16,12 +16,12 @@ The [MySensors](https://www.mysensors.org) project combines devices like Arduino
 
 Integrate your Serial, Ethernet (LAN) or MQTT MySensors Gateway by adding the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 mysensors:
   gateways:
     - device: '/dev/ttyUSB0'
-```
+{% endhighlight %}
 
 {% configuration %}
   gateways:
@@ -95,16 +95,16 @@ Not all features of MySensors 2.x are supported by Open Peer Power yet. As more 
 
 If you are using an original Arduino as a serial gateway, the port will be named `ttyACM*`. The exact number can be determined with the command shown below.
 
-```bash
+{% highlight bash %}
 ls /dev/ttyACM*
-```
+{% endhighlight %}
 
 If you are using the MQTT gateway, you also need to have the [MQTT component](/integrations/mqtt/) configured in Open Peer Power. See below for a minimum MQTT configuration:
 
-```yaml
+{% highlight yaml %}
 mqtt:
   client_id: home-assistant-1
-```
+{% endhighlight %}
 
 <div class='note'>
 The MQTT gateway requires MySensors version 2.0+ and only the MQTT client gateway is supported.
@@ -112,7 +112,7 @@ The MQTT gateway requires MySensors version 2.0+ and only the MQTT client gatewa
 
 ### Extended configuration example
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 mysensors:
   gateways:
@@ -138,7 +138,7 @@ mysensors:
   persistence: true
   retain: true
   version: '2.0'
-```
+{% endhighlight %}
 
 ### Presentation
 
@@ -153,7 +153,7 @@ Present a MySensors sensor or actuator, by following these steps:
     - Send at least one initial value per `V_TYPE`. In version 2.x of MySensors, this has to be done in the loop function. See below for an example in 2.0 of how to make sure the initial value has been received by the controller.
 5. Start the sensor.
 
-```cpp
+{% highlight cpp %}
 /*
  * Documentation: https://www.mysensors.org
  * Support Forum: https://forum.mysensors.org
@@ -231,7 +231,7 @@ void receive(const MyMessage &message) {
     send(msg.set(state?RELAY_ON:RELAY_OFF));
   }
 }
-```
+{% endhighlight %}
 
 ### SmartSleep
 
@@ -251,13 +251,13 @@ Message validation was introduced in version 0.52 of Open Peer Power.
 
 If you experience dropped messages or that a device is not added to Open Peer Power, please turn on debug logging for the `mysensors` integration and the `mysensors` package. This will help you see what is going on. Make sure you use these logging settings to collect a log sample if you report an issue about the `mysensors` integration in our GitHub issue tracker.
 
-```yaml
+{% highlight yaml %}
 logger:
   default: info
   logs:
     homeassistant.components.mysensors: debug
     mysensors: debug
-```
+{% endhighlight %}
 
 Visit the [library API][MySensors library api] of MySensors for more information.
 

@@ -63,26 +63,26 @@ hours_to_show:
 
 ## Examples
 
-```yaml
+{% highlight yaml %}
 type: map
 aspect_ratio: 16:9
 default_zoom: 8
 entities:
   - device_tracker.demo_paulus
   - zone.home
-```
+{% endhighlight %}
 
-```yaml
+{% highlight yaml %}
 type: map
 geo_location_sources:
   - nsw_rural_fire_service_feed
 entities:
   - zone.home
-```
+{% endhighlight %}
 
-```yaml
+{% highlight yaml %}
 type: map
 entities:
   - device_tracker.demo_paulus
 hours_to_show: 48
-```
+{% endhighlight %}

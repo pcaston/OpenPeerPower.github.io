@@ -5,13 +5,13 @@ description: "Script to perform a check of the current configuration"
 
 Test any changes to your `configuration.yaml` file before launching Open Peer Power. This script allows you to test changes without the need to restart Open Peer Power.
 
-```bash
+{% highlight bash %}
 $ hass --script check_config
-```
+{% endhighlight %}
 
 The script has further options like checking configuration files which are not located in the default directory or showing your secrets for debugging.
 
-```bash
+{% highlight bash %}
 $ hass --script check_config -h
 usage: hass [-h] [--script {check_config}] [-c CONFIG] [-i [INFO]] [-f] [-s]
 
@@ -27,5 +27,5 @@ optional arguments:
                         Show a portion of the config
   -f, --files           Show used configuration files
   -s, --secrets         Show secret information
-```
+{% endhighlight %}
 

@@ -17,7 +17,7 @@ Device automations are meant to be configured via the UI.
 
 Example:
 
-```yaml
+{% highlight yaml %}
 - id: "123456789"
   alias: Light turns off
   trigger:
@@ -28,4 +28,4 @@ Example:
       entity_id: light.bowl
   action:
     - service: camera.turn_off
-```
+{% endhighlight %}

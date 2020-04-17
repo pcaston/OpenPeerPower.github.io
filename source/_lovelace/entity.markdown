@@ -50,7 +50,7 @@ footer:
 
 ## Example
 
-```yaml
+{% highlight yaml %}
 - type: entity
   entity: cover.kitchen_window
 - type: entity
@@ -63,4 +63,4 @@ footer:
   icon: 'mdi:battery'
   attribute: battery_level
   unit: '%'
-```
+{% endhighlight %}

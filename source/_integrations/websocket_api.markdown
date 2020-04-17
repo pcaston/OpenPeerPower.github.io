@@ -20,10 +20,10 @@ It is HIGHLY recommended that you set the `api_password`, especially if you are 
 
 ## Configuration
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 websocket_api:
-```
+{% endhighlight %}
 
 For details to use the WebSocket API, please refer to the [WebSocket API documentation](/developers/websocket_api/) .
 
@@ -31,8 +31,8 @@ For details to use the WebSocket API, please refer to the [WebSocket API documen
 
 The websocket API provides a sensor that will keep track of the number of current connected clients. You can add it by adding the following to your configuration:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   platform: websocket_api
-```
+{% endhighlight %}

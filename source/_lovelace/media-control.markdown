@@ -24,7 +24,7 @@ entity:
 
 ## Example
 
-```yaml
+{% highlight yaml %}
 type: media-control
 entity: media_player.lounge_room
-```
+{% endhighlight %}

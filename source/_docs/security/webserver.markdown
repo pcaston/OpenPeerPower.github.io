@@ -8,7 +8,7 @@ It was only a matter of time until the first queries for tools like [https://www
 
 To get an idea about how your Open Peer Power instance looks to a network scanner, you can use `nmap`. The `nmap` tool is already available if you are using the [Nmap device tracker](/integrations/device_tracker/). 
 
-```bash
+{% highlight bash %}
 $ nmap -sV -p 8123 --script=http-title,http-headers 192.168.0.3
 
 Starting Nmap 7.60 ( https://nmap.org ) at 2018-05-29 18:16 CEST
@@ -30,11 +30,11 @@ PORT     STATE SERVICE VERSION
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 12.13 seconds
-```
+{% endhighlight %}
 
 We don't have an unique server banner but in combination with the HTML title `Open Peer Power`, is it simple to identify Open Peer Power instances.
 
-```bash
+{% highlight bash %}
 $ nc 192.168.0.3 8123
 GET / HTTP/1.1
 host: localhost
@@ -42,7 +42,7 @@ host: localhost
 HTTP/1.1 200 OK
 Server: Python/3.6 aiohttp/3.1.3
 [...]
-```
+{% endhighlight %}
 
 One option to avoid this exposure is using a [reverse proxy](/docs/ecosystem/nginx/).
 

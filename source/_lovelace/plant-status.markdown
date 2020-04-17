@@ -33,7 +33,7 @@ theme:
 
 ## Example
 
-```yaml
+{% highlight yaml %}
 type: plant-status
 entity: plant.bonsai
-```
+{% endhighlight %}

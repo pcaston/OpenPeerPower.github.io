@@ -14,10 +14,10 @@ The `system_log` integration stores information about all logged errors and warn
 
 This integration is automatically loaded by the `frontend` (so no need to do anything if you are using the frontend). If you are not doing so, or if you wish to change a parameter, add the following section to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 system_log:
   max_entries: MAX_ENTRIES
-```
+{% endhighlight %}
 
 {% configuration %}
 max_entries:
@@ -62,13 +62,13 @@ Errors and warnings are posted as the event `system_log_event`, so it is possibl
 
 Live examples of these events can be found in the Open Peer Power log file (`home-assistant.log`) or by just looking in the system log. An example could, for instance, look like this:
 
-```text
+{% highlight text %}
 2019-02-14 16:20:35 ERROR (MainThread) [homeassistant.loader] Unable to find integration system_healt
 2019-02-14 16:20:36 ERROR (MainThread) [homeassistant.components.device_tracker] Error setting up platform google_maps
 Traceback (most recent call last):
   File "/home/fab/Documents/repos/ha/home-assistant/homeassistant/integrations/device_tracker/__init__.py", line 184, in
 [...]
-```
+{% endhighlight %}
 
 The message ("Unable to find integration system_healt"), source (`homeassistant.loader`) and level (`ERROR`) can easily be extracted from the log. The exact timestamp and if there is a stack trace that's shown as well. Here is another error caused by the `google_map` integration with additional output present.
 
@@ -80,7 +80,7 @@ Here are some examples using the events posted by `system_log`. `fire_event` mus
 
 This will create a `counter` that increases every time a warning is logged:
 
-```yaml
+{% highlight yaml %}
 counter:
   warning_counter:
     name: Warnings
@@ -96,14 +96,14 @@ automation:
     action:
       service: counter.increment
       entity_id: counter.warning_counter
-```
+{% endhighlight %}
 
 ### Conditional Messages
 
 This automation will create a persistent notification whenever an error or warning is logged that has the word "service" in the message:
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 automation:
   - alias: Create notifications for "service" errors
     trigger:
@@ -117,7 +117,7 @@ automation:
       data_template:
         title: Something bad happened
         message: '{{ trigger.event.data.message }}'
-```
+{% endhighlight %}
 {% endraw %}
 
 ### Writing to log
@@ -125,7 +125,7 @@ automation:
 This automation will create a new log entry when the door is opened:
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 automation:
   - alias: Log door opened
     trigger:
@@ -138,5 +138,5 @@ automation:
       data_template:
         message: 'Door opened!'
         level: info
-```
+{% endhighlight %}
 {% endraw %}

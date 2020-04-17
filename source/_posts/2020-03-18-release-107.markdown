@@ -214,10 +214,10 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   iqvia:
     zip_code: !secret iqvia_zip_code
-  ```
+  {% endhighlight %}
 
 - **GitHub** - The entity state has been changed to return the 'short SHA' commit hash, so automations based on `latest_commit_sha` should be adapted to that. - ([@Mariusthvdb] - [#31581]) ([github docs])
 
@@ -225,10 +225,10 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   airvisual:
     api_key: !secret airvisual_api_key
-  ```
+  {% endhighlight %}
 
 - **IFTTT** - IFTTT now checks that received webhook data is a dictionary (example `{ "value": 1 }`) to prevent Open Peer Power internals from breaking. - ([@balloob] - [#32317]) ([ifttt docs])
 
@@ -246,21 +246,21 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   sensor:
    - platform: cert_expiry
      host: google.com
-  ```
+  {% endhighlight %}
 
 - **Plex Media Player** - The 'show all controls' option for Plex is deprecated and will be removed in the Open Peer Power Core 0.110.0 release. Also, discovery and legacy config file loading (plex.conf) has been removed. - ([@jjlawren] - [#32391] [#32510]) ([discovery docs]) ([plex docs])
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   plex:
    media_player:
      show_all_controls: True  <-- Deprecated
-  ```
+  {% endhighlight %}
 
 - **Abode** - Abode retired its legacy automations and quick actions on 28 Feb. This change removes support for legacy automations and quick actions while adding support for CUE automations which will show up in Open Peer Power as switches (same as previous implementation). Abode's replacement for quick actions is manually triggered CUE automations which can be called through Open Peer Power service `abode.trigger_automation` (previously labeled `abode.trigger_quick_action`). - ([@shred86] - [#32296]) ([abode docs])
 
@@ -279,7 +279,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   - type: entity-button
       entity: camera.foscam
       icon: mdi:arrow-left-bold-outline
@@ -295,7 +295,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
           move_mode: ContinuousMove
           continuous_duration: 0.8
           distance: 1
-  ```
+  {% endhighlight %}
 
 - **Facebook Messenger** - On October 29, 2019 Facebook announced a breaking change that all broadcast API will stop working on March 4th, 2020, so BROADCAST as a target option is now removed. - ([@chmielowiec] - [#32517]) ([facebook docs])
 
@@ -305,13 +305,13 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example trigger for automations:
 
-  ```yaml
+  {% highlight yaml %}
   trigger:
     - event_data:
         type: movement
       event_type: netatmo_event
       platform: event
-  ```
+  {% endhighlight %}
 
 - **DirecTV** - DirecTV is now available to be added from the integrations UI. The concept of device has been removed and now the DirecTV receiver, and all client devices, are added. There is no longer a `port` option as the default port should work just fine. The name can be set via entity UI rather than `name` option. - ([@ctalkington] - [#32162]) ([directv docs]) ([directv docs])
 

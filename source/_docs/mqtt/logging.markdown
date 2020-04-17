@@ -6,11 +6,11 @@ logo: mqtt.png
 
 The [logger](/integrations/logger/) integration allows the logging of received MQTT messages.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 logger:
   default: warning
   logs:
     homeassistant.components.mqtt: debug
-```
+{% endhighlight %}
 

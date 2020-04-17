@@ -29,14 +29,14 @@ Now let's make a change using the file editor: we are going to change the name, 
  - Click the folder icon in the top left of the file editor window to open the file browser sidebar.
  - Click the `configuration.yaml` file (in the `/config/` folder) to load it into the main file editor window.
  - Add the following to this file (preferably at the very top, but it ultimately doesn't matter):
- ```yaml
+ {% highlight yaml %}
      homeassistant:
        name: Home
        latitude: xx.xxxx
        longitude: xx.xxxx
        unit_system: imperial
        time_zone: America/Chicago
-  ```
+  {% endhighlight %}
 <div class='note'>
  
   Valid options for `unit_system` are `imperial` or `metric`. See [here](https://timezonedb.com/time-zones) for a list of valid time zones. Enter the appropriate option found under the Time Zone column at that page.

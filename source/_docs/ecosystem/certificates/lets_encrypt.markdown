@@ -47,9 +47,9 @@ So, when we want to connect to our Open Peer Power instance from outside our net
 
 We will be looking for a system to run like this (in this example I will pretend our external IP is 203.0.113.12):
 
-```text
+{% highlight text %}
 Outside world -> 203.0.113.12:8123 -> your router -> 192.168.0.200:8123
-```
+{% endhighlight %}
 
 Sounds simple?  It really is except for two small, but easy to overcome, complications:
 
@@ -64,9 +64,9 @@ We then have no control over our external IP, as our Service Provider will give 
 
 To get around the issue of not being able to chain the IP addresses together (I can't say I want to call 203.0.113.12 and be put through to 192.168.0.200, and then be put through to extension 8123) we use port forwarding. Port forwarding is the process of telling your router which device to allow the outside connection to speak to.  In the doctors surgery example, port forwarding is the receptionist. This takes a call from outside, and forwards it to the correct extension number inside.  It is important to note that port forwarding can forward an incoming request for one port to a different port on your internal network if you so choose, and we will be doing this later on. The end result being that when we have our TLS/SSL certificate our incoming call will by default be requesting port 443 (because that is the default HTTPS port, like the default SSH port is 22), our port forwarding rule can forward this to our Open Peer Power instance on port 8123 (or we can specify the port number in the URL). When this guide is completed we will run something like this:
 
-```text
+{% highlight text %}
 Outside world -> https://examplehome.duckdns.org -> 203.0.113.12:443 -> your router -> 192.168.0.200:8123
-```
+{% endhighlight %}
 
 So, let's make it happen...
 
@@ -78,9 +78,9 @@ SSH in to your system running Open Peer Power and login.
 
 Type the following command to list your network interfaces:
 
-```bash
+{% highlight bash %}
 ifconfig
-```
+{% endhighlight %}
 
 You will receive an output similar to the image below:
 
@@ -93,23 +93,23 @@ Make a note of the interface name and the IP address you are currently on. In th
 
 Then type the following command to open the text file that controls your network connection:
 
-```bash
+{% highlight bash %}
 sudo nano /etc/dhcpcd.conf
-```
+{% endhighlight %}
 
 At the bottom of the file add the following lines:
 
-```text
+{% highlight text %}
 interface wlan0 <----- or the interface you just wrote down.
 
 static ip_address=192.168.0.200/24  <---- the IP address you just wrote down with a '/24' at the end
 static routers=192.168.0.1      <---- Your router's IP address
 static domain_name_servers=192.168.0.1 <---- Your router's IP address
-```
+{% endhighlight %}
 
 It is important to note that the first three bytes of your static IP address and your router's IP address should be the same, e.g.:
 
-```text
+{% highlight text %}
 Router: 192.168.0.1
 
 Yes
@@ -117,23 +117,23 @@ HA IP: 192.168.0.200
 
 No
 HA IP: 192.175.96.200
-```
+{% endhighlight %}
 
 Press Ctrl + x to close the editor, pressing Y to save the changes when prompted.
 
 Reboot your device running HA:
 
-```bash
+{% highlight bash %}
 sudo reboot
-```
+{% endhighlight %}
 
 When it comes back up check that you can SSH in to it again on the IP address you wrote down.
 
 Make sure Open Peer Power is running and access it via the local network by typing the IP address and port number in to the browser:
 
-```text
+{% highlight text %}
 http://192.168.0.200:8123.
-```
+{% endhighlight %}
 
 All working?  Hooray!  You now have a static IP. This will now always be your internal IP address for your Open Peer Power device. This will be known as YOUR-HA-IP for the rest of this guide.
 
@@ -147,29 +147,29 @@ You may also have other options (like 'source IP'), these can usually be left bl
 
 Set the port forwarding to:
 
-```text
+{% highlight text %}
 Service name - ha_test
 Port Range - 8123
 Local IP - YOUR-HA-IP
 Local Port - 8123
 Protocol - Both
-```
+{% endhighlight %}
 
 Then save the change. On my router you have to fill these values in, then press an 'add' button to add the new rule to the list, then save the changes. All routers have a different interface, but you must ensure that these rules are saved at this point.  If you are unsure, you can reboot the router and log back in, if the rule is present it was saved, if not, it wasn't!
 
 Once you have saved this rule, go to your browser, and go to:
 
-```text
+{% highlight text %}
 https://whatismyipaddress.com/
-```
+{% endhighlight %}
 
 This will tell you your current external IP address
 
 Type the external IP address in to the URL bar with `http://` in front and :8123 after like so (203.0.113.12 is my example!):
 
-```text
+{% highlight text %}
 http://203.0.113.12:8123
-```
+{% endhighlight %}
 
 Can you see your Open Peer Power instance? If not, your router may not support 'loopback' - try the next step anyway and if that works, and this one still doesn't, just remember that you cannot use loopback, so will have to use internal addresses when you're on your home network. More on this later on if it's relevant to you.
 
@@ -191,11 +191,11 @@ The URL you will be using later to access your Open Peer Power instance from out
 
 Set up Open Peer Power to keep your DuckDNS URL and external IP address in sync. In your `configuration.yaml` file add the following:
 
-```yaml
+{% highlight yaml %}
 duckdns:
   domain: examplehome
   access_token: abcdefgh-1234-abcd-1234-abcdefgh
-```
+{% endhighlight %}
 
 The access token is available on your DuckDNS page. Restart Open Peer Power after the change.
 
@@ -203,9 +203,9 @@ What you have now done is set up DuckDNS so that whenever you type examplehome.d
 
 Now type your new URL in to your address bar on your browser with port 8123 on the end:
 
-```text
+{% highlight text %}
 http://examplehome.duckdns.org:8123
-```
+{% endhighlight %}
 
 What now happens behind the scenes is this:
 
@@ -222,13 +222,13 @@ You now have a remotely accessible Open Peer Power instance that has a text-base
 
 First we need to set up another port forward like we did in step 2.  Set your new rule to:
 
-```text
+{% highlight text %}
 Service name - ha_letsencrypt
 Port Range - 80
 Local IP - YOUR-HA-IP
 Local Port - 80
 Protocol - Both
-```
+{% endhighlight %}
 
 Remember to save the new rule.
 
@@ -242,60 +242,60 @@ Now SSH in to the device your Open Peer Power is running on.
 
 If you're running the 'standard' setup on a Raspberry Pi the chances are you just logged in as the 'pi' user. If not, you may have logged in as the Open Peer Power user. There are commands below that require the Open Peer Power user to be on the `sudoers` list. If you are not using the 'standard' Pi setup it is presumed you will know how to get your Open Peer Power user on the `sudoers` list before continuing.  If you are running the 'standard' Pi setup, from your 'pi' user issue the following command (where `homeassistant` is the Open Peer Power user):
 
-```bash
+{% highlight bash %}
 sudo adduser homeassistant sudo
-```
+{% endhighlight %}
 
 </div>
 
 If you did not already log in as the user that currently runs Open Peer Power, change to that user (usually `homeassistant` or `hass` - you may have used a command similar to this in the past):
 
-```bash
+{% highlight bash %}
 sudo -u homeassistant -H -s
-```
+{% endhighlight %}
 
 Make sure you are in the home directory for the Open Peer Power user:
 
-```bash
+{% highlight bash %}
 cd
-```
+{% endhighlight %}
 
 We will now install the certbot software:
 
-```bash
+{% highlight bash %}
 sudo apt-get install certbot -y
-```
+{% endhighlight %}
 
 You might need to stop Open Peer Power before continuing with the next step. You can do this via the Web-UI or use the following command if you are running on Raspbian:
 
-```bash
+{% highlight bash %}
 sudo systemctl stop home-assistant@homeassistant.service
-```
+{% endhighlight %}
 
 You can restart Open Peer Power after the next step using the same command and replacing `stop` with `start`.
 Now we will run the certbot program to get our SSL certificate. You will need to include your email address and your DuckDNS URL in the appropriate places:
 
-```bash
+{% highlight bash %}
 sudo certbot certonly --standalone --preferred-challenges http-01 --email your@email.address -d examplehome.duckdns.org
-```
+{% endhighlight %}
 
 Once the program has run it will generate a certificate and other files and place them in a folder `/etc/letsencrypt/` .
 
 Confirm this file has been populated:
 
-```bash
+{% highlight bash %}
 ls /etc/letsencrypt/live/
-```
+{% endhighlight %}
 
 This should show a folder named exactly after your DuckDNS URL.
 
 Our Open Peer Power user needs access to files within the letsencrypt folder, so issue the following commands to change the permissions.
 
-```bash
+{% highlight bash %}
 sudo chmod 755 /etc/letsencrypt/live/
 sudo chmod 755 /etc/letsencrypt/archive/
 sudo chmod -R 777 /etc/letsencrypt/
-```
+{% endhighlight %}
 
 Did all of that go without a hitch? Wahoo! Your Let's Encrypt certificate is now ready to be used with Open Peer Power. Move to step 5 to put it all together
 
@@ -305,9 +305,9 @@ Did all of that go without a hitch? Wahoo! Your Let's Encrypt certificate is now
 
 Following on from Step 4 your SSH will still be in the certbot folder. If you edit your configuration files over SSH you will need to change to our `homeassistant` folder:
 
-```bash
+{% highlight bash %}
 cd ~/.homeassistant
-```
+{% endhighlight %}
 
 If you use Samba shares to edit your files you can exit your SSH now.
 
@@ -317,24 +317,24 @@ If during step 4 you had to use port 443 instead of port 80 to generate your cer
 
 Go to your router's configuration pages and set up a new port forwarding rule, thus:
 
-```text
+{% highlight text %}
 Service name - ha_ssl
 Port Range - 443
 Local IP - YOUR-HA-IP
 Local Port - 8123
 Protocol - Both
-```
+{% endhighlight %}
 
 Remember to save the rule changes.
 
 Now edit your `configuration.yaml` file to reflect the SSL entries and your base URL (changing the `examplehome` subdomain to yours in all three places):
 
-```yaml
+{% highlight yaml %}
 http:
   ssl_certificate: /etc/letsencrypt/live/examplehome.duckdns.org/fullchain.pem
   ssl_key: /etc/letsencrypt/live/examplehome.duckdns.org/privkey.pem
   base_url: examplehome.duckdns.org
-```
+{% endhighlight %}
 
 You may wish to set up other options for the [HTTP](/integrations/http/) integration at this point, these extra options are beyond the scope of this guide.
 
@@ -342,9 +342,9 @@ Save the changes to `configuration.yaml`. Restart Open Peer Power.
 
 In step 3 we accessed our Open Peer Power from the outside world with our DuckDNS URL and our port number. We are going to use a slightly different URL this time.
 
-```text
+{% highlight text %}
 https://examplehome.duckdns.org
-```
+{% endhighlight %}
 
 Note the **S** after http, and that no port number is added. This is because HTTPS will use port 443 automatically, and we have already set up our port forward to redirect this request to our Open Peer Power instance on port 8123.
 
@@ -354,9 +354,9 @@ You will now NO LONGER be able to access your Open Peer Power via your old inter
 
 In cases where you need to access via the local network only (which should be few and far between) you can access it with the following URL (note the added **S** after http):
 
-```text
+{% highlight text %}
 https://YOUR-HA-IP:8123
-```
+{% endhighlight %}
 
 ...and accepting the browsers warning that you are connecting to an insecure site. This warning occurs because your certificate expects your incoming connection to come via your DuckDNS URL. It does not mean that your device has suddenly become insecure.
 
@@ -402,10 +402,10 @@ If you do not wish to set up a sensor you can skip straight to step 8 to learn h
 
 The sensor will rely on a command line program that needs to be installed on your device running Open Peer Power. SSH in to the device and run the following commands:
 
-```bash
+{% highlight bash %}
 sudo apt-get update
 sudo apt-get install ssl-cert-check
-```
+{% endhighlight %}
 
 <div class='note'>
 
@@ -415,14 +415,14 @@ In cases where, for whatever reason, apt-get installing is not appropriate for y
 
 To set up a senor add the following to your `configuration.yaml` (remembering to correct the URL for your DuckDNS):
 
-```yaml
+{% highlight yaml %}
 sensor:
   - platform: command_line
     name: SSL cert expiry
     unit_of_measurement: days
     scan_interval: 10800
     command: "ssl-cert-check -b -c /etc/letsencrypt/live/examplehome.duckdns.org/cert.pem | awk '{ print $NF }'"
-```
+{% endhighlight %}
 
 Save the `configuration.yaml`. Restart Open Peer Power.
 
@@ -449,27 +449,27 @@ To set a cron job to run the script at regular intervals:
 - SSH in to your device running Open Peer Power.
 - Change to your Open Peer Power user (where `homeassistant` is the name of the user):
 
-  ```bash
+  {% highlight bash %}
   sudo -u homeassistant -H -s
-  ```
+  {% endhighlight %}
 
 - Open the crontab:
 
-  ```bash
+  {% highlight bash %}
   crontab -e
-  ```
+  {% endhighlight %}
 
 - If you are a TWO-RULE Person: Scroll to the bottom of the file and paste in the following line
 
-  ```text
+  {% highlight text %}
   30 2 * * 1 certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
-  ```
+  {% endhighlight %}
 
 - If you are a ONE-RULE Person: Scroll to the bottom of the file and paste in the following line
 
-  ```text
+  {% highlight text %}
   30 2 * * 1 certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop home-assistant@homeassistant.service" --post-hook "sudo systemctl start home-assistant@homeassistant.service"
-  ```
+  {% endhighlight %}
 
 - Let's take a moment to look at the differences here:
   1. This method uses a `tls-sni` challenge, so the Let's Encrypt CA will attempt to bind port 443 externally (which you have forwarded)
@@ -484,7 +484,7 @@ You can set an automation in Open Peer Power to run the certbot renewal script.
 
 Add the following sections to your `configuration.yaml` if you are a TWO-RULE person
 
-```yaml
+{% highlight yaml %}
 shell_command:
   renew_ssl: certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
 
@@ -496,7 +496,7 @@ automation:
       below: 29
     action:
       service: shell_command.renew_ssl
-```
+{% endhighlight %}
 
 If you are a ONE-RULE person, replace the `certbot` command above with `certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop home-assistant@homeassistant.service" --post-hook "sudo systemctl start home-assistant@homeassistant.service"`
 
@@ -509,21 +509,21 @@ To manually update:
 - SSH in to your device running Open Peer Power.
 - Change to your Open Peer Power user (where `homeassistant` is the name of the user):
 
-  ```bash
+  {% highlight bash %}
   sudo -u homeassistant -H -s
-  ```
+  {% endhighlight %}
 
 - Change to your certbot folder
 
-  ```bash
+  {% highlight bash %}
   cd ~/certbot/
-  ```
+  {% endhighlight %}
 
 - Run the renewal command
 
-  ```bash
+  {% highlight bash %}
   certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
-  ```
+  {% endhighlight %}
 
 - If you are a ONE-RULE person, replace the `certbot` command above with `certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop home-assistant@homeassistant.service" --post-hook "sudo systemctl start home-assistant@homeassistant.service"`
 
@@ -535,7 +535,7 @@ We set up our automatic renewal of our certificates and whatever method we used 
 
 In your `configuration.yaml` add the following automation, adding your preferred notification platform where appropriate:
 
-```yaml
+{% highlight yaml %}
 automation:
   - alias: 'SSL expiry notification'
     trigger:
@@ -546,7 +546,7 @@ automation:
       service: notify.[your_notification_preference]
       data:
         message: 'Warning - SSL certificate expires in 21 days and has not been automatically renewed'
-```
+{% endhighlight %}
 
 If you receive this warning notification, follow the steps for a manual update from step 8. Any error messages received at that point can be googled and resolved. If the manual update goes without a hitch there may be something wrong with your chosen method for automatic updates, and you can start troubleshooting from there.
 

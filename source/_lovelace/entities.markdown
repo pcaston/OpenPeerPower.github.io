@@ -327,7 +327,7 @@ name:
 
 Entity rows:
 
-```yaml
+{% highlight yaml %}
 type: entities
 title: Entities card sample
 show_header_toggle: true
@@ -341,11 +341,11 @@ entities:
   - switch.decorative_lights
   - group.all_lights
   - group.all_locks
-```
+{% endhighlight %}
 
 Special rows:
 
-```yaml
+{% highlight yaml %}
 type: entities
 title: Entities card sample
 show_header_toggle: true
@@ -362,7 +362,7 @@ entities:
     name: Open Peer Power
     url: https://www.home-assistant.io/
     icon: mdi:home-assistant
-```
+{% endhighlight %}
 
 <div class='note'>
 Please be aware that the entity types divider and weblink aren't yet supported by the UI editor and a warning about `Expected a value of type...` is shown. You can ignore the warning and save your edits to verify.

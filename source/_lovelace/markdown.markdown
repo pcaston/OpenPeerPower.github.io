@@ -45,13 +45,13 @@ theme:
 
 ## Example
 
-```yaml
+{% highlight yaml %}
 type: markdown
 content: >
   ## Lovelace
 
   Starting with Open Peer Power 0.72, we're experimenting with a new way of defining your interface. We're calling it the **Lovelace UI**.
-```
+{% endhighlight %}
 
 ## Template variables
 
@@ -61,7 +61,7 @@ For example:
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 type: entity-filter
 entities:
   - light.bed_light
@@ -78,7 +78,7 @@ card:
     {%- endfor %}
 
     And the door is {% if is_state('binary_sensor.door', 'on') %} open {% else %} closed {% endif %}.
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -89,10 +89,10 @@ For example:
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 type: markdown
 content: |
   Hello, {{user}}
-```
+{% endhighlight %}
 
 {% endraw %}

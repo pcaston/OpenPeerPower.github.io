@@ -392,40 +392,40 @@ for more information.
 
 Position and style your elements using [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets). More/other keys are also possible.
 
-```yaml
+{% highlight yaml %}
 style:
   # Positioning of the element
   left: 50%
   top: 50%
   # Overwrite color for icons
   "--paper-item-icon-color": pink
-```
+{% endhighlight %}
 
 ## How to use state_image
 
 Specify a different image to display based on the state of the entity.
 
-```yaml
+{% highlight yaml %}
 state_image:
   "on": /local/living_room_on.jpg
   "off": /local/living_room_off.jpg
-```
+{% endhighlight %}
 
 ## How to use state_filter
 
 Specify different [CSS filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
 
-```yaml
+{% highlight yaml %}
 state_filter:
   "on": brightness(110%) saturate(1.2)
   "off": brightness(50%) hue-rotate(45deg)
-```
+{% endhighlight %}
 
 ## How to use click-and-hold
 
 If the option `hold_action` is specified, that action will be performed when the entity is clicked and held for half a second or more.
 
-```yaml
+{% highlight yaml %}
 tap_action:
   action: toggle
 hold_action:
@@ -434,11 +434,11 @@ hold_action:
   service_data:
     entity_id: light.bed_light
     brightness_pct: 100
-```
+{% endhighlight %}
 
 ## Example
 
-```yaml
+{% highlight yaml %}
 type: picture-elements
 image: /local/floorplan.png
 elements:
@@ -484,11 +484,11 @@ elements:
     style:
       top: 10%
       left: 10%
-```
+{% endhighlight %}
 
 ## Images Example
 
-```yaml
+{% highlight yaml %}
 type: picture-elements
 image: /local/floorplan.png
 elements:
@@ -533,11 +533,11 @@ elements:
       top: 40%
       left: 75%
       width: 5%
-```
+{% endhighlight %}
 
 ## Conditional Example
 
-```yaml
+{% highlight yaml %}
 type: picture-elements
 image: /local/House.png
 elements:
@@ -556,4 +556,4 @@ elements:
         style:
           top: 47%
           left: 42%
-```
+{% endhighlight %}

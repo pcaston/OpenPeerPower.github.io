@@ -14,10 +14,10 @@ The `config` integration is designed to display panels in the frontend to config
 
 This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 config:
-```
+{% endhighlight %}
 
 ### Integrations
 

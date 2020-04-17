@@ -30,7 +30,7 @@ The frontend has a template editor tool to help develop and debug templates. Cli
 Templates can get big pretty fast. To keep a clear overview, consider using YAML multiline strings to define your templates:
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 script:
   msg_who_is_home:
     sequence:
@@ -42,7 +42,7 @@ script:
             {% else %}
               Paulus is at {{ states('device_tracker.paulus') }}.
             {% endif %}
-```
+{% endhighlight %}
 {% endraw %}
 
 ## Open Peer Power template extensions
@@ -72,26 +72,26 @@ Besides the normal [state object methods and properties](/topics/state_object/),
 The next two statements result in the same value if the state exists. The second one will result in an error if the state does not exist.
 
 {% raw %}
-```text
+{% highlight text %}
 {{ states('device_tracker.paulus') }}
 {{ states.device_tracker.paulus.state }}
-```
+{% endhighlight %}
 {% endraw %}
 
 Print out a list of all the sensor states:
 
 {% raw %}
-```text
+{% highlight text %}
 {% for state in states.sensor %}
   {{ state.entity_id }}={{ state.state }},
 {% endfor %}
-```
+{% endhighlight %}
 {% endraw %}
 
 Other state examples:
 {% raw %}
 
-```text
+{% highlight text %}
 {% if is_state('device_tracker.paulus', 'home') %}
   Ha, Paulus is home!
 {% else %}
@@ -109,7 +109,7 @@ Other state examples:
 {{ as_timestamp(states.binary_sensor.garage_door.last_changed) }}
 
 {{ as_timestamp(now()) - as_timestamp(states.binary_sensor.garage_door.last_changed) }}
-```
+{% endhighlight %}
 {% endraw %}
 
 ### Attributes
@@ -119,19 +119,19 @@ You can print an attribute with `state_attr` if state is defined.
 #### Attributes examples
 
 {% raw %}
-```text
+{% highlight text %}
 {% if states.device_tracker.paulus %}
   {{ state_attr('device_tracker.paulus', 'battery') }}
 {% else %}
   ??
 {% endif %}
-```
+{% endhighlight %}
 {% endraw %}
 
 With strings:
 
 {% raw %}
-```text
+{% highlight text %}
 {% set tracker_name = "paulus"%}
 
 {% if states("device_tracker." + tracker_name) != "unknown" %}
@@ -139,7 +139,7 @@ With strings:
 {% else %}
   ??
 {% endif %}
-```
+{% endhighlight %}
 {% endraw %}
 
 ### Working with Groups
@@ -149,22 +149,22 @@ The `expand` function and filter can be used to sort entities and expand groups.
 #### Expand examples
 
 {% raw %}
-```text
+{% highlight text %}
 {% for tracker in expand('device_tracker.paulus', 'group.child_trackers') %}
   {{ state_attr(tracker, 'battery') }}
   {%- if not loop.last %}, {% endif -%}
 {% endfor %}
-```
+{% endhighlight %}
 {% endraw %}
 
 The same thing can also be expressed as a filter:
 
 {% raw %}
-```text
+{% highlight text %}
 {{ ['device_tracker.paulus', 'group.child_trackers'] | expand 
   | selectattr("attributes.battery", 'defined')
   | join(', ', attribute="attributes.battery") }}
-```
+{% endhighlight %}
 {% endraw %}
 
 ### Time
@@ -183,9 +183,9 @@ The same thing can also be expressed as a filter:
 Note: [UNIX timestamp](https://en.wikipedia.org/wiki/Unix_time) is the number of seconds that have elapsed since 00:00:00 UTC on 1 January 1970. Therefore, if used as a function's argument, it can be substituted with a numeric value (`int` or `float`):  
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 {{ 120 | timestamp_local }}
-```
+{% endhighlight %}
 {% endraw %}
 
 ### To/From JSON
@@ -201,20 +201,20 @@ In this example, the special character '°' will be automatically escaped in ord
 *Template*
 
 {% raw %}
-```text
+{% highlight text %}
 {% set temp = {'temperature': 25, 'unit': '°C'} %}
 stringified object: {{ temp }}
 object|to_json: {{ temp|to_json }}
-```
+{% endhighlight %}
 {% endraw %}
 
 *Output*
 
 {% raw %}
-```text
+{% highlight text %}
 stringified object: {'temperature': 25, 'unit': '°C'}
 object|to_json: {"temperature": 25, "unit": "\u00b0C"}
-```
+{% endhighlight %}
 {% endraw %}
 
 Conversely, `from_json` can be used to de-serialize a JSON string back into an object to make it possible to easily extract usable data.
@@ -222,18 +222,18 @@ Conversely, `from_json` can be used to de-serialize a JSON string back into an o
 *Template*
 
 {% raw %}
-```text
+{% highlight text %}
 {% set temp = '{"temperature": 25, "unit": "\u00b0C"}'|from_json %}
 The temperature is {{ temp.temperature }}{{ temp.unit }}
-```
+{% endhighlight %}
 {% endraw %}
 
 *Output*
 
 {% raw %}
-```text
+{% highlight text %}
 The temperature is 25°C
-```
+{% endhighlight %}
 {% endraw %}
 
 ### Distance
@@ -246,7 +246,7 @@ The temperature is 25°C
 If only one location is passed in, Open Peer Power will measure the distance from home.
 
 {% raw %}
-```text
+{% highlight text %}
 Using Lat Lng coordinates: {{ distance(123.45, 123.45) }}
 
 Using State: {{ distance(states.device_tracker.paulus) }}
@@ -254,7 +254,7 @@ Using State: {{ distance(states.device_tracker.paulus) }}
 These can also be combined in any combination:
 {{ distance(123.45, 123.45, 'device_tracker.paulus') }}
 {{ distance('device_tracker.anne_therese', 'device_tracker.paulus') }}
-```
+{% endhighlight %}
 {% endraw %}
 
 #### Closest examples
@@ -262,54 +262,54 @@ These can also be combined in any combination:
 The closest function and filter will find the closest entity to the Home Assisant location:
 
 {% raw %}
-```text
+{% highlight text %}
 Query all entities: {{ closest(states) }}
 Query all entities of a specific domain: {{ closest(states.device_tracker) }}
 Query all entities in group.children: {{ closest('group.children') }}
 Query all entities in group.children: {{ closest(states.group.children) }}
-```
+{% endhighlight %}
 {% endraw %}
 
 Find entities closest to a coordinate or another entity. All previous arguments still apply for second argument.
 
 {% raw %}
-```text
+{% highlight text %}
 Closest to a coordinate: {{ closest(23.456, 23.456, 'group.children') }}
 Closest to an entity: {{ closest('zone.school', 'group.children') }}
 Closest to an entity: {{ closest(states.zone.school, 'group.children') }}
-```
+{% endhighlight %}
 {% endraw %}
 
 Since closest returns a state, we can combine it with distance too.
 
 {% raw %}
-```text
+{% highlight text %}
 {{ closest(states).name }} is {{ distance(closest(states)) }} kilometers away.
-```
+{% endhighlight %}
 {% endraw %}
 
 The last argument of the closest function has an implicit `expand`, and can take any iterable sequence of states or entity IDs, and will expand groups:
 
 {% raw %}
-```text
+{% highlight text %}
 Closest out of given entities: 
     {{ closest(['group.children', states.device_tracker]) }}
 Closest to a coordinate:  
     {{ closest(23.456, 23.456, ['group.children', states.device_tracker]) }}
 Closest to some entity: 
     {{ closest(states.zone.school, ['group.children', states.device_tracker]) }}
-```
+{% endhighlight %}
 
 It will also work as a filter over an iterable group of entities or groups:
 
-```text
+{% highlight text %}
 Closest out of given entities: 
     {{ ['group.children', states.device_tracker] | closest }}
 Closest to a coordinate:  
     {{ ['group.children', states.device_tracker] | closest(23.456, 23.456) }}
 Closest to some entity: 
     {{ ['group.children', states.device_tracker] | closest(states.zone.school) }}
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -363,24 +363,24 @@ It depends per integration or platform, but it is common to be able to define a 
 
 This means that if the incoming values looks like the sample below:
 
-```json
+{% highlight json %}
 {
   "on": "true",
   "temp": 21
 }
-```
+{% endhighlight %}
 
 The template for `on` would be:
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 '{{value_json.on}}'
-```
+{% endhighlight %}
 {% endraw %}
 
 Nested JSON in a response is supported as well:
 
-```json
+{% highlight json %}
 {
   "sensor": {
     "type": "air",
@@ -391,19 +391,19 @@ Nested JSON in a response is supported as well:
     "hum": 56.73
   }
 }
-```
+{% endhighlight %}
 
 Just use the "Square bracket notation" to get the value.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 '{{ value_json['values']['temp'] }}'
-```
+{% endhighlight %}
 {% endraw %}
 
 The following overview contains a couple of options to get the needed values:
 
-```text
+{% highlight text %}
 # Incoming value:
 {"primes": [2, 3, 5, 7, 11, 13]}
 
@@ -427,12 +427,12 @@ The following overview contains a couple of options to get the needed values:
 {% raw %}{{ value_json.tst | timestamp_local }}{% endraw %}
 {% raw %}{{ value_json.tst | timestamp_utc }}{% endraw %}
 {% raw %}{{ value_json.tst | timestamp_custom('%Y' True) }}{% endraw %}
-```
+{% endhighlight %}
 
 To evaluate a response, go to the <img src='/images/screenshots/developer-tool-templates-icon.png' alt='template developer tool icon' class="no-shadow" height="38" /> template developer tools, create your output in "Template", and check the result.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 {% set value_json=
     {"name":"Outside",
 	 "device":"weather-ha",
@@ -442,7 +442,7 @@ To evaluate a response, go to the <img src='/images/screenshots/developer-tool-t
 		 }	}%}
 
 {{value_json.data.hum[:-1]}}
-```
+{% endhighlight %}
 {% endraw %}
 
 ## Some more things to keep in mind
@@ -460,9 +460,9 @@ Note that templates that depend on time (`now()`) and do not use any entities wi
 The default priority of operators is that the filter (`|`) has priority over everything except brackets. This means that:
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 {{ states('sensor.temperature') | float / 10 | round(2) }}
-```
+{% endhighlight %}
 {% endraw %}
 
 Would round `10` to 2 decimal places, then divide `states('sensor.temperature')` by that.

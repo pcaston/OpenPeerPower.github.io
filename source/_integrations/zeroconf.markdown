@@ -19,7 +19,7 @@ Integrations can opt-in to be found by adding either [a Zeroconf section](https:
 
 This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, and you wish to have Open Peer Power scan for integrations using zeroconf and HomeKit, the following example shows you how to enable this integration manually:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 zeroconf:
-```
+{% endhighlight %}

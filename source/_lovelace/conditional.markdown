@@ -40,7 +40,7 @@ Note: Conditions with more than one entity are treated as an 'and' condition. Th
 
 ## Examples
 
-```yaml
+{% highlight yaml %}
 type: conditional
 conditions:
   - entity: light.bed_light
@@ -55,4 +55,4 @@ card:
     - group.kitchen
     - lock.kitchen_door
     - light.bed_light
-```
+{% endhighlight %}

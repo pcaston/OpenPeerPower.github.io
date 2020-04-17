@@ -14,7 +14,7 @@ Zones allow you to specify certain regions on earth (for now). When a device tra
 
 The `zone` integration uses YAML sequences to configure multiple zones:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 zone:
   - name: School
@@ -33,7 +33,7 @@ zone:
     longitude: -117.2474053
     radius: 100
     icon: mdi:account-multiple
-```
+{% endhighlight %}
 
 {% configuration %}
 name:

@@ -12,7 +12,7 @@ Unlike a trigger, which is always `or`, conditions are `and` by default - all co
 
 Test multiple conditions in one condition statement. Passes if all embedded conditions are valid.
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: and
   conditions:
@@ -22,13 +22,13 @@ condition:
     - condition: numeric_state
       entity_id: 'sensor.temperature'
       below: 20
-```
+{% endhighlight %}
 
 If you do not want to combine AND and OR conditions, you can list them sequentially.
 
 The following configuration works the same as the one listed above:
 
-```yaml
+{% highlight yaml %}
 condition:
   - condition: state
     entity_id: 'device_tracker.paulus'
@@ -36,7 +36,7 @@ condition:
   - condition: numeric_state
     entity_id: 'sensor.temperature'
     below: 20
-```
+{% endhighlight %}
 
 Currently you need to format your conditions like this to be able to edit them using the [automations editor](/docs/automation/editor/).
 
@@ -44,7 +44,7 @@ Currently you need to format your conditions like this to be able to edit them u
 
 Test multiple conditions in one condition statement. Passes if any embedded condition is valid.
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: or
   conditions:
@@ -54,14 +54,14 @@ condition:
     - condition: numeric_state
       entity_id: 'sensor.temperature'
       below: 20
-```
+{% endhighlight %}
 
 ### MIXED AND and OR conditions
 
 Test multiple AND and OR conditions in one condition statement. Passes if any embedded condition is valid.
 This allows you to mix several AND and OR conditions together.
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: and
   conditions:
@@ -76,7 +76,7 @@ condition:
         - condition: numeric_state
           entity_id: 'sensor.temperature'
           below: 20
-```
+{% endhighlight %}
 
 ### Numeric state condition
 
@@ -86,7 +86,7 @@ If both `below` and `above` are specified, both tests have to pass.
 
 You can optionally use a `value_template` to process the value of the state before testing it.
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: numeric_state
   entity_id: sensor.temperature
@@ -94,13 +94,13 @@ condition:
   below: 25
   # If your sensor value needs to be adjusted
   value_template: {% raw %}'{{ float(state.state) + 2 }}'{% endraw %}
-```
+{% endhighlight %}
 
 ### State condition
 
 Tests if an entity is a specified state.
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: state
   entity_id: device_tracker.paulus
@@ -110,7 +110,7 @@ condition:
     hours: 1
     minutes: 10
     seconds: 5
-```
+{% endhighlight %}
 
 ### Sun condition
 
@@ -118,19 +118,19 @@ condition:
 
 The sun state can be used to test if the sun has set or risen.
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: state  # 'day' condition: from sunrise until sunset
   entity_id: sun.sun
   state: 'above_horizon'
-```
+{% endhighlight %}
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: state  # from sunset until sunrise
   entity_id: sun.sun
   state: 'below_horizon'
-```
+{% endhighlight %}
 
 #### Sun elevation condition
 
@@ -139,7 +139,7 @@ For an in-depth explanation of sun elevation, see [sun elevation trigger][sun_el
 
 [sun_elevation_trigger]: /docs/automation/trigger/#sun-elevation-trigger
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: and  # 'twilight' condition: dusk and dawn, in typical locations
   conditions:
@@ -147,13 +147,13 @@ condition:
       value_template: {% raw %}'{{ state_attr("sun.sun", "elevation") < 0 }}'{% endraw %}
     - condition: template
       value_template: {% raw %}'{{ state_attr("sun.sun", "elevation") > -6 }}'{% endraw %}
-```
+{% endhighlight %}
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: template  # 'night' condition: from dusk to dawn, in typical locations
   value_template: {% raw %}'{{ state_attr("sun.sun", "elevation") < -6 }}'{% endraw %}
-```
+{% endhighlight %}
 
 #### Sunset/sunrise condition
 
@@ -169,27 +169,27 @@ The sunset/sunrise conditions do not work in locations inside the polar circles,
 In those cases it is advised to use conditions evaluating the solar elevation instead of the before/after sunset/sunrise conditions.
 </div>
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: sun
   after: sunset
   after_offset: "-01:00:00"
-```
+{% endhighlight %}
 
 This is 'when light' - equivalent to a state condition on `sun.sun` of `above_horizon`.
 
-```yaml
+{% highlight yaml %}
 condition:
   - condition: sun
       after: sunrise
       before: sunset
-```
+{% endhighlight %}
 
 This is 'when dark' - equivalent to a state condition on `sun.sun` of `below_horizon`.
 
 We cannot use both keys in this case as it will always be `false`.
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: or
   conditions:
@@ -197,7 +197,7 @@ condition:
       after: sunset
     - condition: sun
       before: sunrise
-```
+{% endhighlight %}
 
 A visual timeline is provided below showing an example of when these conditions are true. In this chart, sunrise is at 6:00, and sunset is at 18:00 (6:00 PM). The green areas of the chart indicate when the specified conditions are true.
 
@@ -207,11 +207,11 @@ A visual timeline is provided below showing an example of when these conditions 
 
 The template condition tests if the [given template][template] renders a value equal to true. This is achieved by having the template result in a true boolean expression or by having the template render 'true'.
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: template
   value_template: "{% raw %}{{ (state_attr('device_tracker.iphone', 'battery_level')|int) > 50 }}{% endraw %}"
-```
+{% endhighlight %}
 
 Within an automation, template conditions also have access to the `trigger` variable as [described here][automation-templating].
 
@@ -222,7 +222,7 @@ Within an automation, template conditions also have access to the `trigger` vari
 
 The time condition can test if it is after a specified time, before a specified time or if it is a certain day of the week.
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: time
   # At least one of the following is required.
@@ -232,7 +232,7 @@ condition:
     - mon
     - wed
     - fri
-```
+{% endhighlight %}
 
 Valid values for `weekday` are `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`.
 Note that if only `before` key is used, the condition will be `true` *from midnight* until the specified time.
@@ -249,16 +249,16 @@ A better weekday condition could be by using the [Workday Binary Sensor](/integr
 
 Zone conditions test if an entity is in a certain zone. For zone automation to work, you need to have set up a device tracker platform that supports reporting GPS coordinates.
 
-```yaml
+{% highlight yaml %}
 condition:
   condition: zone
   entity_id: device_tracker.paulus
   zone: zone.home
-```
+{% endhighlight %}
 
 ### Examples
 
-```yaml
+{% highlight yaml %}
 condition:
   - condition: numeric_state
     entity_id: sun.sun
@@ -273,4 +273,4 @@ condition:
   - condition: state
     entity_id: script.light_turned_off_5min
     state: 'off'
-```
+{% endhighlight %}

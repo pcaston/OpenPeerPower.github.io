@@ -12,9 +12,9 @@ The System Health integration provides an API to offer information on the system
 
 This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 system_health:
-```
+{% endhighlight %}
 
 System Health integration data can be viewed in Developer Tools on the "Info" tab.

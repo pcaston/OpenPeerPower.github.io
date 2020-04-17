@@ -17,7 +17,7 @@ So you already have a working NGINX server available at example.org. Your Open P
 
 To be able to access to your Open Peer Power instance by using `https://home.example.org`, create file `/etc/nginx/sites-enabled/homeassistant` (or symlink via `/etc/nginx/sites-available`) and add the following:
 
-```nginx
+{% highlight nginx %}
 server {
     listen       443 ssl;
     server_name  home.example.org;
@@ -46,7 +46,7 @@ server {
 
     }
 }
-```
+{% endhighlight %}
 
 If you don't want HTTPS, you can change `listen 443 ssl` to `listen 80` or better, consider redirecting all HTTP to HTTPS. See further down.
 
@@ -62,17 +62,17 @@ You can either :
 
 In both solution, change port number used by modifying `configuration.yaml` file.
 
-```yaml
+{% highlight yaml %}
 http:
   server_port: 8124
   ...
-```
+{% endhighlight %}
 
 Start Open Peer Power: Now, you have another instance running on `http://localhost:8124`
 
 To access this instance by using `https://countryside.example.org` create the file `/etc/nginx/sites-enabled/countryside.example.org` (or symlink via `/etc/nginx/sites-available`) and add the following:
 
-```nginx
+{% highlight nginx %}
 server {
     listen       443 ssl;
     server_name  countryside.example.org;
@@ -101,18 +101,18 @@ server {
 
     }
 }
-```
+{% endhighlight %}
 
 #### HTTP to HTTPS redirection
 
 Add to your `/etc/nginx/sites-enabled/default`
 
-```nginx
+{% highlight nginx %}
 server {
     listen       80 default_server;
     server_name  example.tld;
 
     return 301 https://$host$request_uri;
 }
-```
+{% endhighlight %}
 

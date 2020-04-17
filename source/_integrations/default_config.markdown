@@ -30,7 +30,7 @@ This integration is a meta-component and configures a default set of integration
 
 To integrate this into Open Peer Power, add the following section to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 default_config:
-```
+{% endhighlight %}

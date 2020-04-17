@@ -14,7 +14,7 @@ Groups allow the user to combine multiple entities into one.
 
 Check the **States** <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' /> page from the **Developer Tools** and browse the **Current entities:** listing for all available entities.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 group:
   kitchen:
@@ -31,7 +31,7 @@ group:
     entities:
       - device_tracker.dad_smith
       - device_tracker.mom_smith
-```
+{% endhighlight %}
 
 {% configuration %}
 name:

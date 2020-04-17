@@ -19,7 +19,7 @@ Now you can define action buttons to attach to a notification dynamically. When 
 
 Here's an example to check with a user if they want to close the garage door after it has been left open for 30 minutes:
 
-```yaml
+{% highlight yaml %}
 automation:
   - alias: Notify apps when the garage door opens
     trigger:
@@ -47,7 +47,7 @@ automation:
     action:
       service: cover.close_cover
       entity_id: cover.garage_door
-```
+{% endhighlight %}
 
 After adding these automations, whenever your garage door remains open for 30 minutes, your device will get a notification that looks like this:
 

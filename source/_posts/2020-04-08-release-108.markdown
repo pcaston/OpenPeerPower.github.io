@@ -211,7 +211,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   emulated_hue:
     host_ip: 192.168.1.186
     listen_port: 8300
@@ -228,7 +228,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
         name: "Bedside Lamp"
       light.ceiling_lights:
         hidden: true
-    ```
+    {% endhighlight %}
 
 - **Roku** - Roku is now available as an integration from the integrations UI! The `roku_scan` service has been removed in favor of discovery via `ssdp`. -  ([@ctalkington] - [#31988]) ([roku docs])
 
@@ -241,12 +241,12 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   remote:
     - platform: harmony
       name: Bedroom
       host: 10.168.1.13
-  ```
+  {% endhighlight %}
 
 - **Sonos** - Sonos attributes have been cleaned up for radio streams. - ([@amelchio] - [#33063]) ([sonos docs])
   - Sonos entities playing radio streams used to merge the radio name, the artist and the song name into two attributes. They now have `media_artist` and `media_title` attributes that match the playing music (when available).
@@ -266,12 +266,12 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   notify:
     - platform: slack
       api_key: !secret slack_api_key
       default_channel: "#home-assistant"
-  ```
+  {% endhighlight %}
 
 - **Network UPS Tools (NUT)** - The NUT integration is now available as an integration from the UI! ([@bdraco] - [#33457]) ([nut docs]) (breaking change)
 

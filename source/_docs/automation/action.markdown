@@ -8,7 +8,7 @@ The action of an automation rule is what is being executed when a rule fires. Th
 
 You can also call the service to activate [a scene](/integrations/scene/) which will allow you to define how you want your devices to be and have Open Peer Power call the right services.
 
-```yaml
+{% highlight yaml %}
 automation:
   # Change the light in the kitchen and living room to 150 brightness and color red.
   trigger:
@@ -37,11 +37,11 @@ automation 2:
     - service: notify.notify
       data:
         message: Oh wow you really missed something great.
-```
+{% endhighlight %}
 
 Conditions can also be part of an action. You can combine multiple service calls and conditions in a single action, and they will be processed in the order you put them in. If the result of a condition is false, the action will stop there so any service calls after that condition will not be executed.
 
-```yaml
+{% highlight yaml %}
 automation:
 - alias: 'Enciende Despacho'
   trigger:
@@ -60,4 +60,4 @@ automation:
           value_template: '{% raw %}{{ states('sensor.sensorluz_7_0') < 10 }}{% endraw %}'
     - service: scene.turn_on
       entity_id: scene.DespiertaDespacho
-```
+{% endhighlight %}

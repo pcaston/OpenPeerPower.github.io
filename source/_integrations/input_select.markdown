@@ -14,7 +14,7 @@ The `input_select` integration allows the user to define a list of values that c
 
 To enable this platform in your installation, add the following lines to your `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 input_select:
   who_cooks:
@@ -29,7 +29,7 @@ input_select:
       - Visitors
       - Visitors with kids
       - Home Alone
-```
+{% endhighlight %}
 
 {% configuration %}
   input_select:
@@ -82,17 +82,17 @@ This integration provides three services to modify the state of the `input_selec
 
 Specifying a target option in a [Scene](/integrations/scene/) is simple:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 scene:
   - name: Example1
     entities:
       input_select.who_cooks: Paulus
-```
+{% endhighlight %}
 
 The list of options can also be set in a [Scene](/integrations/scene). In that case, you also need to specify what the new state will be.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 scene:
   - name: Example2
@@ -103,14 +103,14 @@ scene:
           - Bob
           - Paulus
         state: Bob
-```
+{% endhighlight %}
 
 
 ## Automation Examples
 
 The following example shows the usage of the `input_select.select_option` service in an automation:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 automation:
   - alias: example automation
@@ -122,11 +122,11 @@ automation:
         data:
           entity_id: input_select.who_cooks
           option: Paulus
-```
+{% endhighlight %}
 
 To dynamically set the `input_select` options you can call `input_select.set_options`. The following example can be used in an automation rule:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 automation:
   - alias: example automation
@@ -138,12 +138,12 @@ automation:
         data:
           entity_id: input_select.who_cooks
           options: ["Item A", "Item B", "Item C"]
-```
+{% endhighlight %}
 
 Example of `input_select` being used in a bidirectional manner, both being set by and controlled by an MQTT action in an automation.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry using 'input_select' in an action in an automation
    
 # Define input_select
@@ -183,5 +183,5 @@ input_select:
       topic: "thermostatMode"
       retain: true
       payload: "{{ states('input_select.thermostat_mode') }}"
-```
+{% endhighlight %}
 {% endraw %}

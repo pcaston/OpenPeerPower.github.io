@@ -10,12 +10,12 @@ For integrations that you want to use in Open Peer Power, you add code in your `
 
 The following example entry assumes that you would like to set up the [notify component](/integrations/notify) with the [pushbullet platform](/integrations/pushbullet).
 
-```yaml
+{% highlight yaml %}
 notify:
   platform: pushbullet
   api_key: "o.1234abcd"
   name: pushbullet
-```
+{% endhighlight %}
 
 - A **component** provides the core logic for some functionality (like `notify` provides sending notifications).
 - A **platform** makes the connection to a specific software or hardware platform (like `pushbullet` works with the service from pushbullet.com).
@@ -39,7 +39,7 @@ Strings of text following a `#` are comments and are ignored by the system.
 The next example shows an [input_select](/integrations/input_select) integration that uses a block collection for the values of options.
 The other properties (like `name:`) are specified using mappings. Note that the second line just has `threat:` with no value on the same line. Here threat is the name of the input_select and the values for it are everything nested below it.
 
-```yaml
+{% highlight yaml %}
 input_select:
   threat:
     name: Threat level
@@ -50,17 +50,17 @@ input_select:
      - 2
      - 3
     initial: 0
-```
+{% endhighlight %}
 
 The following example shows nesting a collection of mappings in a mapping. In Open Peer Power, this would create two sensors that each use the MQTT platform but have different values for their `state_topic` (one of the properties used for MQTT sensors).
 
-```yaml
+{% highlight yaml %}
 sensor:
   - platform: mqtt
     state_topic: sensor/topic
   - platform: mqtt
     state_topic: sensor2/topic
-```
+{% endhighlight %}
 
 ## Including values
 
@@ -70,27 +70,27 @@ On Open Peer Power Core installations, you can include values from your system's
 Note that this will only work for Open Peer Power Core installations, in a scenario where it is possible to specify these.
 Regular Open Peer Power users are recommended to use `!include` statements instead.
 
-```yaml
+{% highlight yaml %}
 example:
   password: !env_var PASSWORD
-```
+{% endhighlight %}
 
 #### Default value
 
 If an environment variable is not set, you can fallback to a default value.
 
-```yaml
+{% highlight yaml %}
 example:
   password: !env_var PASSWORD default_password
-```
+{% endhighlight %}
 
 ### Including entire files
 
 To improve readability, you can source out certain domains from your main configuration file with the `!include`-syntax.
 
-```yaml
+{% highlight yaml %}
 light: !include lights.yaml
-```
+{% endhighlight %}
 
 More information about this feature can also be found at [splitting configuration](/docs/configuration/splitting_configuration/).
 
@@ -100,9 +100,9 @@ More information about this feature can also be found at [splitting configuratio
 
 If you see the following message:
 
-```txt
+{% highlight txt %}
 found character '\t' that cannot start any token
-```
+{% endhighlight %}
 
 This means that you've mistakenly entered a tab character, instead of spaces.
 

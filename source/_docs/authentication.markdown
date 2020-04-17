@@ -59,9 +59,9 @@ If you're seeing authentication failures from `127.0.0.1` and you're using the `
 
 Under the new authentication system you'll see the following warning logged when the [legacy API password](/docs/authentication/providers/#legacy-api-password) is supplied, but not configured in Open Peer Power:
 
-```txt
+{% highlight txt %}
 WARNING (MainThread) [homeassistant.components.http.auth] You need to use a bearer token to access /blah/blah from 192.0.2.4
-```
+{% endhighlight %}
 
 If you see this, you need to add an [`api_password`](/integrations/http/#api_password) to your `http:` configuration.
 
@@ -69,9 +69,9 @@ If you see this, you need to add an [`api_password`](/integrations/http/#api_pas
 
 If you see the following, then this is a message for integration developers, to tell them they need to update how they authenticate to Open Peer Power. As an end user you don't need to do anything:
 
-```txt
+{% highlight txt %}
 INFO (MainThread) [homeassistant.components.http.auth] You need to use a bearer token to access /blah/blah from 192.0.2.4
-```
+{% endhighlight %}
 
 ### Lost owner password
 
@@ -97,9 +97,9 @@ This is because we only allow an IP address as a client ID when your IP address 
 
 If you don't have a valid domain name for your Open Peer Power instance, you can modify the `hosts` file on your computer to fake one. On Windows, edit the `C:\Windows\System32\Drivers\etc\hosts` file with administrator privilege, or on Linux the `/etc/hosts` file,  and add following entry:
 
-```text
+{% highlight text %}
 12.34.56.78 homeassistant.home
-```
+{% endhighlight %}
 
 Replace `12.34.56.78` with your Open Peer Power's public IP address.
 

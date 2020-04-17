@@ -33,10 +33,10 @@ Some best practices to consider before putting your configuration on GitHub:
 
 In order to put your configuration on GitHub, you must install the Git package on your Open Peer Power server (instructions below will work on Raspberry Pi, Ubuntu or any Debian-based system) *Note: this isn't required in Hass.io, it's included as default so proceed to step 2*:
 
-```bash
+{% highlight bash %}
 sudo apt-get update
 sudo apt-get install git
-```
+{% endhighlight %}
 
 ### Step 2: Creating `.gitignore`
 
@@ -56,7 +56,7 @@ Creating a `.gitignore` file in your repository will tell Git which files NOT to
 
 Here is an example that will ignore everything but your YAML configuration.
 
-```bash
+{% highlight bash %}
 # Example .gitignore file for your config dir.
 # An * ensures that everything will be ignored.
 *
@@ -75,7 +75,7 @@ Here is an example that will ignore everything but your YAML configuration.
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
-```
+{% endhighlight %}
 
 <div class='note'>
   You might read this guide too late and accidentally already have your secrets published. It is not enough to just remove them with a new commit. Git is a version control system and keeps history. You need to delete your repository and start a new one. Also change all passwords and revoke the API keys that were public.
@@ -87,13 +87,13 @@ More information on the layout of the file can be found in the [.gitignore manua
 
 In your Open Peer Power directory, type the following commands as the Open Peer Power user, replacing the email address and name with your information:
 
-```bash
+{% highlight bash %}
 git init
 git config user.email "you@example.com"
 git config user.name "Your Name"
 git add .
 git commit
-```
+{% endhighlight %}
 
 After the `git commit` command, you will be asked to enter a message for the commit.  This will add a comment beside each file on GitHub describing the purpose for the commit. In this case, you can enter something like "Initial commit of my Open Peer Power configuration". To exit the editor, press `CTRL + C` and then `:wq` which will exit and save the changes. 
 
@@ -109,10 +109,10 @@ Once you are sure you are using `secrets.yaml` and `.gitignore` correctly, it is
 
 In your Open Peer Power directory, type the following commands as the Open Peer Power user, replacing "username" in the URL with your GitHub username:
 
-```bash
+{% highlight bash %}
 git remote add origin https://github.com/username/Home-AssistantConfig
 git push -u origin master
-```
+{% endhighlight %}
 
 You will be asked to enter your GitHub username and password (or ssh key passphrase if you use [GitHub with ssh](https://help.github.com/categories/ssh/)).
 
@@ -128,7 +128,7 @@ You may need to adjust the paths in the script depending on your Open Peer Power
 
 `gitupdate.sh`
 
-```bash
+{% highlight bash %}
 #!/bin/bash
 
 cd /home/homeassistant/.homeassistant
@@ -143,7 +143,7 @@ git commit -m "${CHANGE_MSG}"
 git push origin master
 
 exit
-```
+{% endhighlight %}
 
 Every time you run this script, you will be prompted for a comment to describe the change(s) that you are committing. This comment will be displayed beside each changed file on GitHub and will be stored after each commit. You will also be asked to enter your GitHub username and password (or SSH key passphrase if you use [GitHub with SSH](https://help.github.com/categories/ssh/)).
 
@@ -156,7 +156,7 @@ Every time you run this script, you will be prompted for a comment to describe t
 - Create a dummy `secrets.yaml` for Travis.
 
 Example .travis.yml
-```yaml
+{% highlight yaml %}
 language: python
 python:
   - "3.7"
@@ -167,29 +167,29 @@ install:
   - pip3 install homeassistant
 script:
   - hass -c . --script check_config
-```
+{% endhighlight %}
 
 Since the `secrets.yaml` should _not_ be stored in your repository for security reasons, you won't be able to access it at build time. Creating a dummy `secrets.yaml` is as simple as creating a new file that mimics your existing `secrets.yaml` with the required keys, but not their value.
 
-```yaml
+{% highlight yaml %}
 #travis_secrets.yaml
 http_api: 000000000000000000000000
 home_latitude: 00.00000
 home_longitude: 00.0000
 home_elevation: 0
-```
+{% endhighlight %}
 
 ### Extra commands
 
 You can enter these commands to get a list of the files in your local Git repository and a status of files that have changed but not committed yet:
 
-```bash
+{% highlight bash %}
 git ls-files
 git status
-```
+{% endhighlight %}
 Examples:
 
-```bash
+{% highlight bash %}
 homeassistant@raspberrypi:~/.homeassistant $ git ls-files
 .gitignore
 README.md
@@ -213,4 +213,4 @@ Changes not staged for commit:
         modified:   group.yaml
 
 no changes added to commit (use "git add" and/or "git commit -a")
-```
+{% endhighlight %}

@@ -18,22 +18,22 @@ Use the "Services" tab under Developer Tools to discover available services.
 
 Call the service `homeassistant.turn_on` on the entity `group.living_room`. This will turn all members of `group.living_room` on. You can also use `entity_id: all` and it will turn on all possible entities.
 
-```yaml
+{% highlight yaml %}
 service: homeassistant.turn_on
 entity_id: group.living_room
-```
+{% endhighlight %}
 
 ### Passing data to the service call
 
 You can also specify other parameters beside the entity to target. For example, the light turn on service allows specifying the brightness.
 
-```yaml
+{% highlight yaml %}
 service: light.turn_on
 entity_id: group.living_room
 data:
   brightness: 120
   rgb_color: [255, 0, 0]
-```
+{% endhighlight %}
 
 A full list of the parameters for a service can be found on the documentation page of each component, in the same way as it's done for the `light.turn_on` [service](/integrations/light/#service-lightturn_on).
 
@@ -41,7 +41,7 @@ A full list of the parameters for a service can be found on the documentation pa
 
 You can use [templating] support to dynamically choose which service to call. For example, you can call a certain service based on if a light is on.
 
-```yaml
+{% highlight yaml %}
 service_template: >
   {% raw %}{% if states('sensor.temperature') | float > 15 %}
     switch.turn_on
@@ -49,7 +49,7 @@ service_template: >
     switch.turn_off
   {% endif %}{% endraw %}
 entity_id: switch.ac
-```
+{% endhighlight %}
 
 ### Using the Services Developer Tool
 
@@ -65,7 +65,7 @@ To turn a group on or off, pass the following info:
 
 Templates can also be used for the data that you pass to the service call.
 
-```yaml
+{% highlight yaml %}
 service: thermostat.set_temperature
 data_template:
   entity_id: >
@@ -75,17 +75,17 @@ data_template:
       thermostat.downstairs
     {% endif %}{% endraw %}
   temperature: {% raw %}{{ 22 - distance(states.device_tracker.paulus) }}{% endraw %}
-```
+{% endhighlight %}
 
 It is even possible to use `data` and `data_template` concurrently but be aware that `data_template` will overwrite attributes that are provided in both.
 
-```yaml
+{% highlight yaml %}
 service: thermostat.set_temperature
 data:
   entity_id: thermostat.upstairs
 data_template:
   temperature: {% raw %}{{ 22 - distance(states.device_tracker.paulus) }}{% endraw %}
-```
+{% endhighlight %}
 
 ### `homeassistant` services
 

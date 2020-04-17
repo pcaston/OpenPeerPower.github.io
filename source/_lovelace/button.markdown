@@ -11,10 +11,10 @@ The Button card allows you to add buttons to perform tasks.
 Screenshot of the Button card.
 </p>
 
-```yaml
+{% highlight yaml %}
 type: button
 entity: light.living_room
-```
+{% endhighlight %}
 
 {% configuration %}
 type:
@@ -86,7 +86,7 @@ user:
 
 Title and Script Service Example:
 
-```yaml
+{% highlight yaml %}
 type: button
 name: Turn Off Lights
 tap_action:
@@ -94,7 +94,7 @@ tap_action:
   service: script.turn_on
   service_data:
     entity_id: script.turn_off_lights
-```
+{% endhighlight %}
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_entity_button_complex_card.png' alt='Screenshot of the button card'>

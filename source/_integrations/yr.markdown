@@ -17,11 +17,11 @@ Norwegian Meteorological Institute and the NRK.
 To add YR to your installation,
 add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   - platform: yr
-```
+{% endhighlight %}
 
 {% configuration %}
 name:
@@ -84,7 +84,7 @@ altitude:
 
 A full configuration example can be found below:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   - platform: yr
@@ -104,4 +104,4 @@ sensor:
       - mediumClouds
       - highClouds
       - dewpointTemperature
-```
+{% endhighlight %}

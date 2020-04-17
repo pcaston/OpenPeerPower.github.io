@@ -255,18 +255,18 @@ Make sure to fill in all fields of the issue template, that is helping us a lot!
 
     Example configuration:
 
-  ```yaml
+  {% highlight yaml %}
   pi_hole:
     - host: pi.hole
       ssl: false
     - host: backup.pi.hole
-  ```
+  {% endhighlight %}
 
 - __HERE Travel Time__ - HERE has deprecated the usage of `app_code` and new users can only generate an `api_key`. If you are already using HERE Travel Time, you have to follow the [migration guide](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html) to retrieve the, now required, `api_key`. - ([@eifinger] - [#29966]) ([here_travel_time docs])
 
     Example configuration:
 
-  ```yaml
+  {% highlight yaml %}
   sensor:
     - platform: here_travel_time
       api_key: "YOUR_API_KEY"
@@ -274,7 +274,7 @@ Make sure to fill in all fields of the issue template, that is helping us a lot!
       origin_longitude: "9.267577"
       destination_latitude: "51.257430"
       destination_longitude: "9.335892"
-  ```
+  {% endhighlight %}
 
 - __ZHA__ - The default divisor for `active_power` has changed. Now, multiplier and divisor both default to 1 if the device does not support these attributes or when getting those attributes from the device fails. - ([@Adminiuga] - [#30130]) ([zha docs])
 
@@ -285,19 +285,19 @@ Make sure to fill in all fields of the issue template, that is helping us a lot!
 
    Example configuration:
 
-   ```yaml
+   {% highlight yaml %}
    huawei_lte:
      - url: ...
        password: ...
        notify:
          name: sms
-   ```
+   {% endhighlight %}
 
 - __Amcrest__ *(Removed)* - Amcrest sensors and switches that were deprecated in previous releases have now been removed. - ([@pnbruckner] - [#30308]) ([amcrest docs])
 
    Example configuration:
 
-   ```yaml
+   {% highlight yaml %}
    amcrest:
    - ...
      sensors:
@@ -307,13 +307,13 @@ Make sure to fill in all fields of the issue template, that is helping us a lot!
      switches:
        - motion_detection
        - motion_recording
-   ```
+   {% endhighlight %}
 
 - __MQTT__ - Added separate command and state topics for the MQTT lock. Two new properties are introduced with `state_locked` (default: LOCKED) and `state_unlocked` (default: UNLOCKED). If you are using the same topic as `state_topic` as for the `command_topic` you can reestablish the old behavior by setting `state_locked` to *LOCK* and `state_unlocked` to *UNLOCK*. Effectively, this change allows you to distinguish commands and states in two topics with different values. - ([@tuxbox] - [#29808]) ([mqtt docs])
 
    Example configuration:
 
-   ```yaml
+   {% highlight yaml %}
    lock:
      - platform: mqtt
        command_topic: "/dev/ha/lock/cmd"
@@ -321,13 +321,13 @@ Make sure to fill in all fields of the issue template, that is helping us a lot!
        value_template: "{{ value_json.state }}"
        state_locked: "locked"
        state_unlocked: "unlocked"
-   ```
+   {% endhighlight %}
 
 - __LG webOS Smart TV__ - The component setup now uses the `webostv` domain instead of `media_player`. The host configuration option is now required and the timeout and filename options have been removed. The state handling for webOStv has also been cleaned up. An entity will have `on` when the tv is on instead of `playing` or `paused` as was previously the case. You need to update automations that depend on the entity state. - ([@bendavid] - [#29296] [#30416]) ([webostv docs])
 
      Example configuration:
 
-     ```yaml
+     {% highlight yaml %}
      webostv:
          name: LG TV
          host: 192.168.1.53
@@ -337,15 +337,15 @@ Make sure to fill in all fields of the issue template, that is helping us a lot!
              data:
                mac: "00:00:00:00:00:00"
          standby_connection: true
-     ```
+     {% endhighlight %}
 
 - __Axis__ - Axis integration will no longer accept manual configuration of devices, all configuration of the Axis integration will now be handled from the integrations panel. - ([@Kane610] - [#30365]) ([axis docs])
 
   TL;DR This will no longer work:
 
-  ```yaml
+  {% highlight yaml %}
   axis:
-  ```
+  {% endhighlight %}
 
 - __WLED__ - Improved WLED pure white support for RGBW LED strips. When using WLED with RGBW strips, setting the color in Open Peer Power to white, will turn off the RGB LEDs of the strip and use the W channel only. - ([@frenck] - [#30477]) ([wled docs])
 
@@ -355,13 +355,13 @@ Make sure to fill in all fields of the issue template, that is helping us a lot!
 
   Example configuration:
 
-  ```yaml
+  {% highlight yaml %}
   media_player:
     - platform: vizio
       host: '<IP>:<PORT>'
       access_token: '<AUTH_TOKEN>'
       device_class: tv
-  ```
+  {% endhighlight %}
 
 - __RFXtrx__ - Bump pyRFXtrx to 0.25. This update switches the commands for `open` and `close` for RFXtrx covers of the "Rollertrol" type, as they were switched (clicking open resulted in closing of the cover and vice versa). Existing automations should be updated. - ([@Ernst79] - [#30566]) ([rfxtrx docs])
 

@@ -13,9 +13,9 @@ Setup of the [Shopping List Intent](/integrations/shopping_list/) is required
 Screenshot of the Shopping List card.
 </p>
 
-```yaml
+{% highlight yaml %}
 type: shopping-list
-```
+{% endhighlight %}
 
 {% configuration %}
 type:
@@ -36,7 +36,7 @@ theme:
 
 Title Example:
 
-```yaml
+{% highlight yaml %}
 type: shopping-list
 title: Shopping List
-```
+{% endhighlight %}

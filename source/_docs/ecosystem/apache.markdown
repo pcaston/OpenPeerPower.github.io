@@ -18,13 +18,13 @@ So you already have a working Apache server available at example.org. Your Open 
 
 Enable [`mod_proxy_wstunnel`](https://httpd.apache.org/docs/2.4/mod/mod_proxy_wstunnel.html) by running if you encounter issues while serving Open Peer Power through your proxy:
 
-```bash
+{% highlight bash %}
 $ sudo a2enmod proxy_wstunnel
-```
+{% endhighlight %}
 
 To be able to access to your Open Peer Power instance by using `https://home.example.org`, add the following file to `/etc/httpd/conf/extra/` as `hass.conf`
 
-```text
+{% highlight text %}
 <VirtualHost *:443>
   ServerName home.example.org
   ProxyPreserveHost On
@@ -40,15 +40,15 @@ To be able to access to your Open Peer Power instance by using `https://home.exa
   RewriteCond %{HTTP:Upgrade} !=websocket [NC]
   RewriteRule /(.*)  http://localhost:8123/$1 [P,L]
 </VirtualHost>
-```
+{% endhighlight %}
 
 and make sure that this file is read by Apache's main configuration file `/etc/httpd/conf/httpd.conf`
 
-```text
+{% highlight text %}
 ...
 Include conf/extra/hass.conf
 ...
-```
+{% endhighlight %}
 
 If you don't want HTTPS, you can change `<VirtualHost *:443>` to `<VirtualHost *:80>` or better consider redirecting all HTTP to HTTPS.
 
@@ -56,7 +56,7 @@ If you don't want HTTPS, you can change `<VirtualHost *:443>` to `<VirtualHost *
 In case you are getting occasional HTTP 504 error messages ("Gateway Timeout") or HTTP 502 messages ("Bad Gateway") when accessing the Web UI through your proxy, try adding disablereuse=on to both ProxyPass directives:
 </div>
 
-```text
+{% highlight text %}
 <VirtualHost *:443>
   [...]
   ProxyPass /api/websocket ws://localhost:8123/api/websocket disablereuse=on
@@ -64,7 +64,7 @@ In case you are getting occasional HTTP 504 error messages ("Gateway Timeout") o
   ProxyPass / http://localhost:8123/ disablereuse=on
   [...]
 </VirtualHost>
-```
+{% endhighlight %}
 
 #### Multiple Instance
 
@@ -78,17 +78,17 @@ You can either :
 
 In both solution, change port number used by modifying `configuration.yaml`
 
-```yaml
+{% highlight yaml %}
 http:
   server_port: 8124
   ...
-```
+{% endhighlight %}
 
 Start Open Peer Power: Now, you have another instance running on `http://localhost:8124`
 
 To access this instance by using `https://countryside.example.org` add to `/etc/httpd/conf/extra/hass.conf`
 
-```text
+{% highlight text %}
 <VirtualHost *:443>
   ProxyPreserveHost On
   ProxyRequests Off
@@ -98,13 +98,13 @@ To access this instance by using `https://countryside.example.org` add to `/etc/
   ProxyPass / http://localhost:8124/
   ProxyPassReverse / http://localhost:8124/
 </VirtualHost>
-```
+{% endhighlight %}
 
 #### HTTP to HTTPS redirection
 
 Add to your `/etc/httpd/conf/extra/hass.conf`
 
-```text
+{% highlight text %}
 <VirtualHost *:80>
   ServerName example.org
   ServerSignature Off
@@ -113,4 +113,4 @@ Add to your `/etc/httpd/conf/extra/hass.conf`
   RewriteCond %{HTTPS} !=on
   RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [NE,R,L]
 </VirtualHost>
-```
+{% endhighlight %}

@@ -18,7 +18,7 @@ You need an [API key](https://app.sendgrid.com/settings/api_keys) from SendGrid.
 
 To enable notification emails via SendGrid in your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 notify:
   - name: NOTIFIER_NAME
@@ -26,7 +26,7 @@ notify:
     api_key: YOUR_API_KEY
     sender: SENDER_EMAIL_ADDRESS
     recipient: YOUR_RECIPIENT
-```
+{% endhighlight %}
 
 {% configuration %}
 name:

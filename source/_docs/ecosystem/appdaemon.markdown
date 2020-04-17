@@ -28,7 +28,7 @@ The best way to show what AppDaemon does is through a few simple examples.
 
 Let's start with a simple App to turn a light on every night at sunset and off every morning at sunrise. Every App when first started will have its `initialize()` function called, which gives it a chance to register a callback for AppDaemons's scheduler for a specific time. In this case, we are using `run_at_sunrise()` and `run_at_sunset()` to register two separate callbacks. The argument `0` is the number of seconds offset from sunrise or sunset and can be negative or positive. For complex intervals, it can be convenient to use Python's `datetime.timedelta` class for calculations. When sunrise or sunset occurs, the appropriate callback function, `sunrise_cb()` or `sunset_cb()`, is called, which then makes a call to Open Peer Power to turn the porch light on or off by activating a scene. The variables `args["on_scene"]` and `args["off_scene"]` are passed through from the configuration of this particular App, and the same code could be reused to activate completely different scenes in a different version of the App.
 
-```python
+{% highlight python %}
 import appdaemon.plugins.hass.hassapi as hass
 
 
@@ -42,7 +42,7 @@ class OutsideLights(hass.Hass):
 
     def sunset_cb(self, kwargs):
         self.turn_on(self.args["on_scene"])
-```
+{% endhighlight %}
 
 This is also fairly easy to achieve with Open Peer Power automations, but we are just getting started.
 
@@ -50,7 +50,7 @@ This is also fairly easy to achieve with Open Peer Power automations, but we are
 
 Our next example is to turn on a light when motion is detected and it is dark, and turn it off after a period of time. This time, the `initialize()` function registers a callback on a state change (of the motion sensor) rather than a specific time. We tell AppDaemon that we are only interested in state changes where the motion detector comes on by adding an additional parameter to the callback registration - `new = "on"`. When the motion is detected, the callback function `motion()` is called, and we check whether or not the sun has set using a built-in convenience function: `sun_down()`. Next, we turn the light on with `turn_on()`, then set a timer using `run_in()` to turn the light off after 60 seconds, which is another call to the scheduler to execute in a set time from now, which results in `AppDaemon` calling `light_off()` 60 seconds later using the `turn_off()` call to actually turn the light off. This is still pretty simple in code terms:
 
-```python
+{% highlight python %}
 import appdaemon.plugins.hass.hassapi as hass
 
 
@@ -65,13 +65,13 @@ class FlashyMotionLights(hass.Hass):
 
     def light_off(self, kwargs):
         self.turn_off("light.drive")
-```
+{% endhighlight %}
 
 This is starting to get a little more complex in Open Peer Power automations, requiring an automation rule and two separate scripts.
 
 Now let's extend this with a somewhat artificial example to show something that is simple in AppDaemon but very difficult if not impossible using automations. Let's warn someone inside the house that there has been motion outside by flashing a lamp on and off ten times. We are reacting to the motion as before by turning on the light and setting a timer to turn it off again, but in addition, we set a 1-second timer to run `flash_warning()`, which, when called, toggles the inside light and sets another timer to call itself a second later. To avoid re-triggering forever, it keeps a count of how many times it has been activated and bails out after ten iterations.
 
-```python
+{% highlight python %}
 import appdaemon.plugins.hass.hassapi as hass
 
 
@@ -94,7 +94,7 @@ class MotionLights(hass.Hass):
         self.flashcount += 1
         if self.flashcount < 10:
             self.run_in(self.flash_warning, 1)
-```
+{% endhighlight %}
 
 Of course, if I wanted to make this App or its predecessor reusable, I would have provide parameters for the sensor, the light to activate on motion, the warning light, and even the number of flashes and delay between flashes.
 

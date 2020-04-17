@@ -23,36 +23,36 @@ When you leave the editor the states of the devices are restored to the state fr
 
 First, check that you have activated the configuration editor.
 
-```yaml
+{% highlight yaml %}
 # Activate the configuration editor
 config:
-```
+{% endhighlight %}
 
 The scene editor reads and writes to the file `scenes.yaml` in the root of your [configuration](/docs/configuration/) folder.
 Currently, both the name of this file and its location are fixed.
 Make sure that you have set up the scene integration to read from it:
 
-```yaml
+{% highlight yaml %}
 # Configuration.yaml example
 scene: !include scenes.yaml
-```
+{% endhighlight %}
 
 If you still want to use your old scene section, add a label to the old entry:
 
-```yaml
+{% highlight yaml %}
 scene old:
   - name: ...
-```
+{% endhighlight %}
 
 You can use the `scene:` and `scene old:` sections at the same time:
 
 - `scene old:` to keep your manual designed scenes
 - `scene:` to save the scene created by the online editor
 
-```yaml
+{% highlight yaml %}
 scene: !include scenes.yaml
 scene old: !include_dir_merge_list scenes
-```
+{% endhighlight %}
 
 ## Migrating your scenes to `scenes.yaml`
 
@@ -60,7 +60,7 @@ If you want to migrate your old scenes to use the editor, you'll have to copy th
 
 For example:
 
-```yaml
+{% highlight yaml %}
 # Example scenes.yaml entry
 - id: my_unique_id # <-- Required for editor to work.
   name: Romantic
@@ -70,7 +70,7 @@ For example:
       state: on
       xy_color: [0.33, 0.66]
       brightness: 200
-```
+{% endhighlight %}
 
 <div class='note'>
 Any comments in the YAML file will be lost and templates will be reformatted when you update a scene via the editor.

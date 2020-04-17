@@ -23,12 +23,12 @@ You first need to create an additional Google account and share your location wi
 
 To integrate Google Maps Location Sharing in Open Peer Power, add the following section to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 device_tracker:
   - platform: google_maps
     username: YOUR_USERNAME
-```
+{% endhighlight %}
 
 Once enabled and you have rebooted devices discovered through this integration will be listed in the `known_devices.yaml` file within your configuration directory.
 

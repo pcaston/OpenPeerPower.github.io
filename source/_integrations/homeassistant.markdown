@@ -41,13 +41,13 @@ Update the location of the Open Peer Power default zone (usually "Home").
 
 #### Example
 
-```yaml
+{% highlight yaml %}
 action:
   service: homeassistant.set_location
   data:
     latitude: 32.87336
     longitude: 117.22743
-```
+{% endhighlight %}
 
 ### Service `homeassistant.toggle` 
 
@@ -59,12 +59,12 @@ Generic service to toggle devices on/off under any domain. Same usage as the lig
 
 #### Example
 
-```yaml
+{% highlight yaml %}
 action:
   service: homeassistant.toggle
   data:
     entity_id: light.living_room
-```
+{% endhighlight %}
 
 #### Service `homeassistant.turn_on` 
 
@@ -76,12 +76,12 @@ Generic service to turn devices on under any domain. Same usage as the light.tur
 
 #### Example
 
-```yaml
+{% highlight yaml %}
 action:
   service: homeassistant.turn_on
   data:
     entity_id: light.living_room
-```
+{% endhighlight %}
 
 ### Service `homeassistant.turn_off` 
 
@@ -93,12 +93,12 @@ Generic service to turn devices off under any domain. Same usage as the light.tu
 
 #### Example
 
-```yaml
+{% highlight yaml %}
 action:
   service: homeassistant.turn_off
   data:
     entity_id: light.living_room
-```
+{% endhighlight %}
 
 ### Service `homeassistant.update_entity` 
 
@@ -110,11 +110,11 @@ Force one or more entities to update its data rather than wait for the next sche
 
 #### Example
 
-```yaml
+{% highlight yaml %}
 action:
   service: homeassistant.update_entity
   data:
     entity_id:
     - light.living_room
     - switch.coffe_pot
-```
+{% endhighlight %}
