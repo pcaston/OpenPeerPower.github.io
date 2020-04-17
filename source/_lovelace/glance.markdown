@@ -112,7 +112,7 @@ user:
 
 Basic example:
 
-```yaml
+{% highlight yaml %}
 type: glance
 title: Glance card sample
 entities:
@@ -123,7 +123,7 @@ entities:
   - light.ceiling_lights
   - switch.ac
   - lock.kitchen_door
-```
+{% endhighlight %}
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_glance_card.png' alt='Screenshot of the glance card with custom title'>
@@ -132,7 +132,7 @@ Screenshot of the glance card with custom title.
 
 Define entities as objects and apply a custom name:
 
-```yaml
+{% highlight yaml %}
 type: glance
 title: Better names
 entities:
@@ -147,4 +147,4 @@ entities:
   - entity: switch.wall_plug_switch
     tap_action:
       action: toggle
-```
+{% endhighlight %}

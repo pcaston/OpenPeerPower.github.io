@@ -37,10 +37,10 @@ There is currently support for the following device types within Open Peer Power
 
 If you have setup the requirements, then add the following entry `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 zwave:
-```
+{% endhighlight %}
 
 ## Climate
 
@@ -56,10 +56,10 @@ If the thermostat supports different operating modes, you will get one thermosta
 
 To enable the climate integration for your Z-Wave network, add the following to your `configuration.yaml` file.
 
-```yaml
+{% highlight yaml %}
 climate:
   - platform: zwave
-```
+{% endhighlight %}
 
 Once enabled, any Z-Wave climate devices will be available to Open Peer Power. Multiple entities may be created. The following entities are created for a Remotec ZXT-120.
 
@@ -70,7 +70,7 @@ Once enabled, any Z-Wave climate devices will be available to Open Peer Power. M
 
 The following examples will instruct a Remotec ZXT-120 to turn the attached device mode to Heating, and set the temperature at 24 degrees after 8pm. Add it to `automation.yaml`.
 
-```yaml
+{% highlight yaml %}
 automation:
   - alias: Turn on Heater at 8pm
     trigger:
@@ -85,11 +85,11 @@ automation:
         data:
           entity_id: climate.remotec_zxt120_heating_1_39
           temperature: 24
-```
+{% endhighlight %}
 
 Generally, in Open Peer Power, you can use the `homeassistant/turn_off` service to turn devices off. For the Remotec ZXT-120, you must instead make a service call like the following.
 
-```yaml
+{% highlight yaml %}
 automation:
   - alias: Turn off Heater at 9pm
     trigger:
@@ -100,7 +100,7 @@ automation:
         data:
           entity_id: climate.remotec_zxt120_heating_1_id
           hvac_mode: 'Off'
-```
+{% endhighlight %}
 
 **Note:** In the example above, the word `Off` is encased in single quotes to be valid YAML.
 
@@ -108,12 +108,12 @@ automation:
 
 A simple way to test if your Z-Wave climate device is working is to use <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services** from the **Developer Tools**. Choose the applicable Climate service from the list of **Available services:** and enter something like the sample below into the **Service Data** field and then press **CALL SERVICE**.
 
-```json
+{% highlight json %}
 {
   "entity_id": "climate.remotec_zxt120_heating_1_id",
   "hvac_mode": "Heat"
 }
-```
+{% endhighlight %}
 
 ## Cover
 
@@ -123,13 +123,13 @@ To get your Z-Wave covers working with Open Peer Power, follow the instructions 
 
 If you discover that you need to [invert the operation](/docs/z-wave/installation/#invert_openclose_buttons) of open/close for a particular device, you may change this behavior in your Z-Wave section of your `configuration.yaml` file as follows, in addition you can also [invert percent position](/docs/z-wave/installation/#invert_percent):
 
-```yaml
+{% highlight yaml %}
 zwave:
   device_config:
     cover.my_cover:
       invert_openclose_buttons: true
       invert_percent: true
-```
+{% endhighlight %}
 
 ## Lock
 

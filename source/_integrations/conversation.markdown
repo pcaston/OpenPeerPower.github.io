@@ -17,10 +17,10 @@ The conversation integration allows you to converse with Open Peer Power. You ca
   Screenshot of the conversation interface in Open Peer Power.
 </p>
 
-```yaml
+{% highlight yaml %}
 # Example base configuration.yaml entry
 conversation:
-```
+{% endhighlight %}
 
 {% configuration %}
 intents:
@@ -40,7 +40,7 @@ By default, it will support turning devices on and off. You can say things like 
 
 Here is a simple example to be able to ask what the temperature in the living room is.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 conversation:
   intents:
@@ -51,7 +51,7 @@ intent_script:
   LivingRoomTemperature:
     speech:
       text: It is currently {% raw %}{{ states.sensor.temperature }}{% endraw %} degrees in the living room.
-```
+{% endhighlight %}
 
 ## Adding advanced custom sentences
 
@@ -66,7 +66,7 @@ The following configuration can handle the following sentences:
  - Change the lights to the color green
  - Change the lights to the color blue
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 conversation:
   intents:
@@ -85,7 +85,7 @@ intent_script:
           - "{% if color == 'green' %}255{% else %}0{% endif %}"
           - "{% if color == 'blue' %}255{% else %}0{% endif %}"
 {% endraw %}
-```
+{% endhighlight %}
 
 #### Service `conversation.process`
 

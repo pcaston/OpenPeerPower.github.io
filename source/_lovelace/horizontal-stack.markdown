@@ -23,7 +23,7 @@ cards:
 
 ## Example
 
-```yaml
+{% highlight yaml %}
 type: horizontal-stack
 title: Lights
 cards:
@@ -33,7 +33,7 @@ cards:
   - type: picture-entity
     image: /local/bed_2.png
     entity: light.bed_light
-```
+{% endhighlight %}
 
 <p class='img'>
   <img src='/images/lovelace/lovelace_horizontal_stack.PNG' alt='Two picture cards in a horizontal stack card'>

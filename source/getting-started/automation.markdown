@@ -35,9 +35,9 @@ A new automation with a sun trigger filled in.
 
 Once we have defined our trigger, scroll down to the action section. Make sure the action type is set to "Call service," and change the service to `light.turn_on`. For this automation we're going to turn on all lights, so let's change the service data to:
 
-```yaml
+{% highlight yaml %}
 entity_id: all
-```
+{% endhighlight %}
 
 <p class='img'>
 <img src='/images/getting-started/action.png'>

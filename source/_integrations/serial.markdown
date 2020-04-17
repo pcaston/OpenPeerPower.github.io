@@ -14,20 +14,20 @@ The `serial` sensor platform is using the data provided by a device connected to
 
 To check what kind of data is arriving at your serial port, use a command-line tool like `minicom` or `picocom` on Linux, on a macOS you can use `screen` or on Windows `putty`.
 
-```bash
+{% highlight bash %}
 sudo minicom -D /dev/ttyACM0
-```
+{% endhighlight %}
 
 ## Configuration
 
 To setup a serial sensor to your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   - platform: serial
     serial_port: /dev/ttyACM0
-```
+{% endhighlight %}
 
 {% configuration %}
 serial_port:
@@ -54,7 +54,7 @@ value_template:
 ### TMP36
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 "{{ (((states('sensor.serial_sensor') | float * 5 / 1024 ) - 0.5) * 100) | round(1) }}"
 ```
 {% endraw %}
@@ -65,7 +65,7 @@ value_template:
 
 For controllers of the Arduino family, a possible sketch to read the temperature and the humidity could look like the sample below.The returned data is in JSON format and can be split into the individual sensor values using a [template](/docs/configuration/templating/#processing-incoming-data).
 
-```c
+{% highlight c %}
 #include <ArduinoJson.h>
 
 void setup() {
@@ -83,21 +83,21 @@ void loop() {
   
   delay(1000);
 }
-```
+{% endhighlight %}
 
 ### Devices returning multiple sensors as a text string
 
 For devices that return multiple sensors as a concatenated string of values with a delimiter, (i.e., the returned string is not JSON formatted) you can make several template sensors, all using the same serial response. For example, a stream from the [Sparkfun USB Weather Board](https://www.sparkfun.com/products/retired/9800) includes temperature, humidity and barometric pressure within it returned text string. Sample returned data:
 
-```c
+{% highlight c %}
 $,24.1,50,12.9,1029.83,0.0,0.00,*
 $,24.3,51,12.8,1029.76,0.0,0.00,*
-```
+{% endhighlight %}
 
 To parse this into individual sensors, split using the comma delimiter and then create a template sensor for each item of interest.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   - platform: serial
@@ -118,7 +118,7 @@ sensor:
         friendly_name: Barometer
         unit_of_measurement: "mbar"
         value_template: "{{ states('sensor.serial_sensor').split(',')[4] | float }}"
-```
+{% endhighlight %}
 {% endraw %}
 
 ### Digispark USB Development Board

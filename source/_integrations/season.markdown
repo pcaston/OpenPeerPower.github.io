@@ -25,11 +25,11 @@ All information about how the seasons work was taken from Wikipedia:
 
 To enable the sensor, add the following lines to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   - platform: season
-```
+{% endhighlight %}
 
 {% configuration %}
 type:

@@ -9,7 +9,7 @@ In Open Peer Power 0.19 we introduced a new powerful feature: variables in scrip
 The trigger data made is available during [template](/docs/configuration/templating/) rendering as the `trigger` variable.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entries
 automation:
   trigger:
@@ -48,7 +48,7 @@ automation 3:
       data_template:
         # Turn off whichever entity triggered the automation.
         entity_id: "{{ trigger.entity_id }}"
-```
+{% endhighlight %}
 {% endraw %}
 
 ## Important Template Rules

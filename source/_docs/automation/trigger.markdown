@@ -13,7 +13,7 @@ Fires when an event is being received. Events are the raw building blocks of Ope
 
 Events can be fired by integrations or via the API. There is no limitation to the types. A list of built-in events can be found [here](/docs/configuration/events/).
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: event
@@ -21,25 +21,25 @@ automation:
     # optional
     event_data:
       mood: happy
-```
+{% endhighlight %}
 
 ### Open Peer Power trigger
 
 Fires when Open Peer Power starts up or shuts down.
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: homeassistant
     # Event can also be 'shutdown'
     event: start
-```
+{% endhighlight %}
 
 ### MQTT trigger
 
 Fires when a specific message is received on given MQTT topic. Optionally can match on the payload being sent over the topic. The default payload encoding is 'utf-8'. For images and other byte payloads use `encoding: ''` to disable payload decoding completely.
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: mqtt
@@ -47,7 +47,7 @@ automation:
     # Optional
     payload: "on"
     encoding: "utf-8"
-```
+{% endhighlight %}
 
 ### Numeric state trigger
 
@@ -55,7 +55,7 @@ Fires when numeric value of an entity's state crosses a given threshold. On stat
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: numeric_state
@@ -71,7 +71,7 @@ automation:
       hours: 1
       minutes: 10
       seconds: 5
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -84,7 +84,7 @@ The `for:` can also be specified as `HH:MM:SS` like this:
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: numeric_state
@@ -97,7 +97,7 @@ automation:
 
     # If given, will trigger when condition has been for X time.
     for: "01:10:05"
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -105,7 +105,7 @@ You can also use templates in the `for` option.
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: numeric_state
@@ -121,7 +121,7 @@ automation:
     data_template:
       message: >
         {{ trigger.to_state.name }} too high for {{ trigger.for }}!
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -137,7 +137,7 @@ The values you see in your overview will often not be the same as the actual sta
 
 </div>
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: state
@@ -149,13 +149,13 @@ automation:
 
     # If given, will trigger when state has been the to state for X time.
     for: "01:10:05"
-```
+{% endhighlight %}
 
 You can also use templates in the `for` option.
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: state
@@ -167,7 +167,7 @@ automation:
   action:
     service: lock.lock
     entity_id: lock.my_place
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -195,7 +195,7 @@ Since the duration of twilight is different throughout the year, it is recommend
 
 [sun_elevation_trigger]: /docs/automation/trigger/#sun-elevation-trigger
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: sun
@@ -203,7 +203,7 @@ automation:
     event: sunset
     # Optional time offset. This example will trigger 45 minutes before sunset.
     offset: "-00:45:00"
-```
+{% endhighlight %}
 
 #### Sun elevation trigger
 
@@ -211,7 +211,7 @@ Sometimes you may want more granular control over an automation than simply suns
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 automation:
   alias: "Exterior Lighting on when dark outside"
   trigger:
@@ -223,7 +223,7 @@ automation:
   action:
     service: switch.turn_on
     entity_id: switch.exterior_lighting
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -247,7 +247,7 @@ With template triggers you can also evaluate attribute changes by using is_state
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: template
@@ -255,7 +255,7 @@ automation:
 
     # If given, will trigger when template remains true for X time.
     for: "00:01:00"
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -263,14 +263,14 @@ You can also use templates in the `for` option.
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: template
     value_template: "{{ is_state('device_tracker.paulus', 'home') }}"
     for:
       minutes: "{{ states('input_number.minutes')|int(0) }}"
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -285,12 +285,12 @@ As an alternative, providing you include the sensor [time](/integrations/time_da
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: template
     value_template: "{{ (states.sensor.time.last_changed - states.YOUR.ENTITY.last_changed).total_seconds() > 300 }}"
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -300,19 +300,19 @@ which will evaluate to `True` if `YOUR.ENTITY` changed more than 300 seconds ago
 
 The time trigger is configured to fire once at a specific point in time each day.
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time
     # Military time format. This trigger will fire at 3:32 PM
     at: "15:32:00"
-```
+{% endhighlight %}
 
 ### Time pattern trigger
 
 With the time pattern trigger, you can match if the hour, minute or second of the current time matches a specific value. You can prefix the value with a `/` to match whenever the value is divisible by that number. You can specify `*` to match any value (when using the web interface this is required, the fields cannot be left empty).
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time_pattern
@@ -331,7 +331,7 @@ automation 3:
     platform: time_pattern
     # You can also match on interval. This will match every 5 minutes
     minutes: "/5"
-```
+{% endhighlight %}
 
 <div class='note warning'>
 
@@ -343,12 +343,12 @@ Do not prefix numbers with a zero - using `'00'` instead of '0' for example will
 
 Webhook trigger fires when a web request is made to the webhook endpoint: `/api/webhook/<webhook_id>`. This endpoint does not require authentication besides knowing the webhook id. You can either send encoded form or JSON data, available in the template as either `trigger.json` or `trigger.data`. URL query parameters are available in the template as `trigger.query`.
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: webhook
     webhook_id: some_hook_id
-```
+{% endhighlight %}
 
 You could run the above automation by sending a POST HTTP request to `http://your-home-assistant:8123/api/webhook/some_hook_id`. An example with no data sent to a SSL/TLS secured installation and using the command-line curl program is `curl -d "" https://your-home-assistant:8123/api/webhook/some_hook_id`.
 
@@ -356,7 +356,7 @@ You could run the above automation by sending a POST HTTP request to `http://you
 
 Zone trigger fires when an entity is entering or leaving the zone. For zone automation to work, you need to have setup a device tracker platform that supports reporting GPS coordinates. This includes [GPS Logger](/integrations/gpslogger/), the [OwnTracks platform](/integrations/owntracks/) and the [iCloud platform](/integrations/icloud/).
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: zone
@@ -364,14 +364,14 @@ automation:
     zone: zone.home
     # Event is either enter or leave
     event: enter # or "leave"
-```
+{% endhighlight %}
 
 ### Geolocation trigger
 
 Geolocation trigger fires when an entity is appearing in or disappearing from a zone. Entities that are created by a [Geolocation](/integrations/geo_location/) platform support reporting GPS coordinates.
 Because entities are generated and removed by these platforms automatically, the entity id normally cannot be predicted. Instead, this trigger requires the definition of a `source`, which is directly linked to one of the Geolocation platforms.
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: geo_location
@@ -379,13 +379,13 @@ automation:
     zone: zone.bushfire_alert_zone
     # Event is either enter or leave
     event: enter # or "leave"
-```
+{% endhighlight %}
 
 ### Multiple triggers
 
 It is possible to specify multiple triggers for the same rule. To do so just prefix the first line of each trigger with a dash (-) and indent the next lines accordingly. Whenever one of the triggers fires, [processing](#what-are-triggers) of your automation rule begins.
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     # first trigger
@@ -394,4 +394,4 @@ automation:
       # our second trigger is the sunset
     - platform: sun
       event: sunset
-```
+{% endhighlight %}

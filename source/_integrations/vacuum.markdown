@@ -11,13 +11,13 @@ The `vacuum` integration enables the ability to control home cleaning robots wit
 
 To use this integration in your installation, add a `vacuum` platform to your `configuration.yaml` file, like the [Xiaomi](/integrations/vacuum.xiaomi_miio/).
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 vacuum:
   - platform: xiaomi_miio
     name: Living room
     host: 192.168.1.2
-```
+{% endhighlight %}
 
 ### Component services
 

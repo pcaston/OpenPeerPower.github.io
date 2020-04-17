@@ -14,11 +14,11 @@ The recommended setup method is to use the [Mosquitto MQTT broker add-on](/addon
 
 ## Configuration
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 mqtt:
   broker: 192.168.1.100
-```
+{% endhighlight %}
 
 {% configuration %}
 broker:
@@ -74,7 +74,7 @@ If you are running a Mosquitto instance on a different server with proper SSL en
 
 The Mosquitto project runs a [public broker](http://test.mosquitto.org). This is the easiest to set up, but there is no privacy as all messages are public. Use this only for testing purposes and not for real tracking of your devices or controlling your home.
 
-```yaml
+{% highlight yaml %}
 mqtt:
   broker: test.mosquitto.org
   port: 1883 or 8883
@@ -84,7 +84,7 @@ mqtt:
   port: 8883
   # Download certificate from http://test.mosquitto.org/ssl/mosquitto.org.crt
   certificate: /home/paulus/downloads/mosquitto.org.crt
-```
+{% endhighlight %}
 
 ### CloudMQTT
 
@@ -103,13 +103,13 @@ Open Peer Power is not affiliated with CloudMQTT nor will receive any kickbacks.
       2. Under ACLs, select user, topic `#`, check 'read access' and 'write access'
  5. Copy the instance info to your configuration.yaml:
 
-```yaml
+{% highlight yaml %}
 mqtt:
   broker: CLOUDMQTT_SERVER
   port: CLOUDMQTT_PORT
   username: CLOUDMQTT_USER
   password: CLOUDMQTT_PASSWORD
-```
+{% endhighlight %}
 
 <div class='note'>
 Open Peer Power will automatically load the correct certificate if you connect to an encrypted channel of CloudMQTT (port range 20000-30000).
@@ -134,11 +134,11 @@ Open Peer Power contains an embedded MQTT broker called [HBMQTT](https://pypi.py
 | Password       | _password set under MQTT settings_ |
 | Websocket port | 8080                               |
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 mqtt:
   password: hello
-```
+{% endhighlight %}
 
 <div class='note warning'>
 As of release 0.92, the embedded broker has been marked as deprecated. This means bugs may not be fixed, and the functionality may be removed in a future release.
@@ -160,10 +160,10 @@ In the Owntracks preferences (Android: v1.2.3+, iOS: v9.5.1+) open **Configurati
 
 If you want to customize the settings of the embedded broker, use `embedded:` and the values shown in the [HBMQTT Broker configuration](http://hbmqtt.readthedocs.org/en/latest/references/broker.html#broker-configuration). This will replace the default configuration.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 mqtt:
   embedded:
     # Your HBMQTT config here. Example at:
     # http://hbmqtt.readthedocs.org/en/latest/references/broker.html#broker-configuration
-```
+{% endhighlight %}

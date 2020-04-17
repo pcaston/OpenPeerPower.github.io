@@ -102,9 +102,9 @@ There may be multiple groups, that are used for different purposes. The manual o
 
 Some Z-Wave devices may associate themselves with the broadcast node (node 255). You'll be able to tell if this has happened if opening a door (or triggering a motion sensor) causes lights to come on, and closing the door (or the motion sensor going clear) causes lights to run off. You can get rid of this by selecting any target node. If the group has node 255 in it, a *Remove broadcast* button will appear. You can also use the `zwave.change_association` service:
 
-```json
+{% highlight json %}
 {"association": "remove", "node_id": 3, "group": 1, "target_node_id": 255}
-```
+{% endhighlight %}
 
 That would remove the broadcast group from association group 1 of the device with node_id 3.
 
@@ -127,7 +127,7 @@ Set the new selection by pressing the **Set Protection** button.
 ## Node user codes
 
 If your node has user codes, you can set and delete them. The format is raw hex ASCII code. Below the input you will see your actual code. For normal nodes this is as follows:
-```yaml
+{% highlight yaml %}
 \x30 = 0
 \x31 = 1
 \x32 = 2
@@ -138,13 +138,13 @@ If your node has user codes, you can set and delete them. The format is raw hex 
 \x37 = 7
 \x38 = 8
 \x39 = 9
-```
+{% endhighlight %}
 Some non compliant device like tag readers, have implemented to use raw hex code.
 Please refer to a hex ASCII table to set your code. Example: http://www.asciitable.com/
 
 Here is a small Python program than will take numbers on the command line and print the correct sequence for compliant devices:
 
-```python
+{% highlight python %}
 #! /usr/bin/python3
 import sys
 
@@ -155,7 +155,7 @@ for x in range(0, 10):
 
 for c in sys.argv[1]:
     print(translations[c], end="")
-```
+{% endhighlight %}
 
 ## OZW Log
 

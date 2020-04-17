@@ -24,25 +24,25 @@ It should not contain any OS specific instructions.
 ### Install
 
  1. Create a virtual environment in your current directory:
-    ```bash
+    {% highlight bash %}
     python3 -m venv homeassistant
-    ```
+    {% endhighlight %}
  2. Open the virtual environment:
-    ```bash
+    {% highlight bash %}
     cd homeassistant
-    ```
+    {% endhighlight %}
  3. Activate the virtual environment:
-    ```bash
+    {% highlight bash %}
     source bin/activate
-    ```
+    {% endhighlight %}
  4. Install Open Peer Power:
-    ```bash
+    {% highlight bash %}
     python3 -m pip install homeassistant
-    ```    
+    {% endhighlight %}    
  5. Run Open Peer Power:
-    ```bash
+    {% highlight bash %}
     hass --open-ui
-    ```
+    {% endhighlight %}
  6. You can now reach the web interface on `http://ipaddress:8123/` - the first start may take a couple of minutes before the web interface is available. This can take longer if you're using lower-end hardware like a Raspberry Pi Zero.
  
 ### Upgrade
@@ -50,11 +50,11 @@ It should not contain any OS specific instructions.
  1. Stop Open Peer Power
 
  2. Open the directory where the virtual environment is located, activate the virtual environment, then upgrade Open Peer Power:
-    ```bash
+    {% highlight bash %}
     cd homeassistant
     source bin/activate
     python3 -m pip install --upgrade homeassistant
-    ```
+    {% endhighlight %}
  3. Start Open Peer Power
  4. You can now reach the web interface on `http://ipaddress:8123/` - the first start may take some time before the web interface is available, depending on how many integrations need to be upgraded.
 
@@ -62,21 +62,21 @@ It should not contain any OS specific instructions.
 
 In the event that a Open Peer Power version doesn't play well with your hardware setup, you can downgrade to a previous release. For example:
 
-```bash
+{% highlight bash %}
 cd homeassistant
 source bin/activate
 pip3 install homeassistant==0.XX.X
-```
+{% endhighlight %}
 
 #### Run the beta version
 
 If you would like to test next release before anyone else, you can install the beta version, for example:
 
-```bash
+{% highlight bash %}
 cd homeassistant
 source bin/activate
 pip3 install --pre --upgrade homeassistant
-```
+{% endhighlight %}
 
 #### Run the development version
 
@@ -88,11 +88,11 @@ If you want to stay on the bleeding-edge Open Peer Power development branch, you
 
 For example:
 
-```bash
+{% highlight bash %}
 cd homeassistant
 source bin/activate
 pip3 install --upgrade git+git://github.com/home-assistant/home-assistant.git@dev
-```
+{% endhighlight %}
 
 ### Notes
 
@@ -110,8 +110,8 @@ Looking for more advanced guides? Check our [Raspbian guide](/docs/installation/
 
 If you've upgraded Python (for example, you were running 3.7.1 and now you've installed 3.7.3) then you'll need to build a new virtual environment. Simply rename your existing virtual environment directory:
 
-```bash
+{% highlight bash %}
 mv homeassistant homeassistant.old
-```
+{% endhighlight %}
 
 Then follow the [Install](#install) steps again, being sure to use the newly installed version of Python.

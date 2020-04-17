@@ -16,27 +16,27 @@ Assistant.
 To enable the `logger` integration in your installation,
 add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 logger:
-```
+{% endhighlight %}
 
 To log all messages and ignore events lower than critical for specified
 components:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 logger:
   default: info
   logs:
     homeassistant.components.yamaha: critical
     custom_components.my_integration: critical
-```
+{% endhighlight %}
 
 To ignore all messages lower than critical and log event for specified
 components:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 logger:
   default: critical
@@ -65,7 +65,7 @@ logger:
     # log level for both 'glances_api' and 'glances' integration
     homeassistant.components.glances: fatal
     glances_api: fatal
-```
+{% endhighlight %}
 
 The log entries are in the form  
 *timestamp* *log-level* *thread* [**namespace**] *message*  
@@ -116,11 +116,11 @@ level) using the service `logger.set_default_level`.
 
 An example call might look like this:
 
-```yaml
+{% highlight yaml %}
 service: logger.set_default_level
 data:
   level: info
-```
+{% endhighlight %}
 
 ### Service `set_level`
 
@@ -129,7 +129,7 @@ You can alter log level for one or several integrations using the service
 
 An example call might look like this:
 
-```yaml
+{% highlight yaml %}
 service: logger.set_level
 data:
   homeassistant.core: fatal
@@ -137,7 +137,7 @@ data:
   homeassistant.components.smartthings.light: info
   custom_components.my_integration: debug
   aiohttp: error
-```
+{% endhighlight %}
 
 The log information are stored in the
 [configuration directory](/docs/configuration/) as `home-assistant.log`
@@ -146,15 +146,15 @@ with `tail -f`.
 
 You can use the example below, when logged in through the [SSH add-on](/addons/ssh/):
 
-```bash
+{% highlight bash %}
 tail -f /config/home-assistant.log
-```
+{% endhighlight %}
 
 On Docker you can use your host command line directly - follow the logs dynamically with:
 
-```bash
+{% highlight bash %}
 # follow the log dynamically
 docker logs --follow  MY_CONTAINER_ID
-```
+{% endhighlight %}
 
 To see other options use `--help` instead, or simply leave with no options to display the entire log.

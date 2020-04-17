@@ -11,10 +11,10 @@ The Light card allows you to change the brightness of the light.
 Screenshot of the Light card.
 </p>
 
-```yaml
+{% highlight yaml %}
 type: light
 entity: light.bedroom
-```
+{% endhighlight %}
 
 {% configuration %}
 type:
@@ -45,17 +45,17 @@ theme:
 
 Overwriting names example:
 
-```yaml
+{% highlight yaml %}
 type: light
 entity: light.bedroom
 name: Kids Bedroom
-```
+{% endhighlight %}
 
-```yaml
+{% highlight yaml %}
 type: light
 entity: light.office
 name: My Office
-```
+{% endhighlight %}
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_light_complex_card.png' alt='Screenshot of the Light card'>

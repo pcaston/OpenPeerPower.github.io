@@ -24,11 +24,11 @@ There is currently support for the following device types within Open Peer Power
 
 To add the BOM weather platform to your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 weather:
   - platform: bom
-```
+{% endhighlight %}
 
 {% configuration %}
 name:
@@ -55,12 +55,12 @@ The `bom` camera platform uses the [Australian Bureau of Meteorology (BOM)](http
 
 To add the BOM camera to your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 camera:
   - platform: bom
     location: YOUR_LOCATION
-```
+{% endhighlight %}
 
 See below for a list of valid `location` values, and subsitute one for `YOUR_LOCATION`.
 
@@ -93,7 +93,7 @@ filename:
 
 ### Valid `location` values
 
-```txt
+{% highlight txt %}
 Adelaide        Albany          AliceSprings    Bairnsdale      Bowen
 Brisbane        Broome          Cairns          Canberra        Carnarvon
 Ceduna          Dampier         Darwin          Emerald         Esperance
@@ -106,7 +106,7 @@ Perth           PortHedland     SellicksHill    SouthDoodlakine Sydney
 Townsville      WaggaWagga      Warrego         Warruwi         Watheroo
 Weipa           WillisIs        Wollongong      Woomera         Wyndham
 Yarrawonga
-```
+{% endhighlight %}
 
 ### Examples
 
@@ -114,12 +114,12 @@ Yarrawonga
 
 Example `configuration.yaml` entry to display the `Townsville` radar with a camera named `mytowsvilleradar`:
 
-```yaml
+{% highlight yaml %}
 camera:
   - platform: bom
     name: mytownsvilleradar
     location: Townsville
-```
+{% endhighlight %}
 
 #### Using `id`, `delta` and `frames`
 
@@ -127,22 +127,22 @@ In the event BOM creates a new radar, or a radar's ID changes, you may define a 
 
 To find a live radar ID (e.g.,  for the `Townsville` radar), visit the [BOM website's radars page](http://www.bom.gov.au/australia/radar/), click the link for the radar you are interested in, and note the URL, for example: `http://www.bom.gov.au/products/IDR733.loop.shtml`. The ID is the number following `IDR` (i.e., `733`) in the URL. You can also see, at the bottom of the radar image, a rotating set of times corresponding to the frames of the BOM's JavaScript-driven animation. The number of minutes (in seconds) between these times corresponds to the camera's `delta` value, and the number of frames corresponds to the `frames` value. At the time of this writing, the `Townsville` radar loop is composed of 4 frames at 10-minute (600 second) intervals. Since these are also the default values, this configuration block
 
-```yaml
+{% highlight yaml %}
 camera:
   - platform: bom
     location: Townsville
-```
+{% endhighlight %}
 
 is equivalent to this one
 
-```yaml
+{% highlight yaml %}
 camera:
   - platform: bom
     id: '053'
     delta: 600
     frames: 4
     name: 'Carnarvon'
-```
+{% endhighlight %}
 
 #### Using `filename`
 
@@ -150,12 +150,12 @@ This option can be specified to save the animated radar-imagery GIF to the given
 
 Example `configuration.yaml` entry to display the `Sydney` radar and save the animated GIF to a file named `sydneyradar.gif` to the filesystem path accessible as `/local/sydneyradar.gif` via Open Peer Power's web server:
 
-```yaml
+{% highlight yaml %}
 camera:
   - platform: bom
     id: Sydney
     filename: /config/www/images/sydneyradar.gif
-```
+{% endhighlight %}
 
 The file will be updated every `delta` seconds when the camera regenerates the animation.
 
@@ -169,7 +169,7 @@ The `bom` sensor platform uses the [Australian Bureau of Meteorology (BOM)](http
 
 To add the BOM weather observation to your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   - platform: bom
@@ -202,7 +202,7 @@ sensor:
       - wind_dir
       - wind_spd_kmh
       - wind_spd_kt
-```
+{% endhighlight %}
 
 To get the station ID for any BOM station:
 - Find your station on these maps: [NSW](http://www.bom.gov.au/nsw/observations/map.shtml), [QLD](http://www.bom.gov.au/qld/observations/map.shtml), [VIC](http://www.bom.gov.au/vic/observations/map.shtml), [WA](http://www.bom.gov.au/wa/observations/map.shtml), [SA](http://www.bom.gov.au/sa/observations/map.shtml), [TAS](http://www.bom.gov.au/tas/observations/map.shtml), [ACT](http://www.bom.gov.au/act/observations/canberramap.shtml), [NT](http://www.bom.gov.au/nt/observations/map.shtml).

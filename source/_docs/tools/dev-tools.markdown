@@ -40,11 +40,11 @@ To turn on a light bulb, use the following steps:
 2.	Select the entity (typically the light bulb) from the Entity drop down (if no entity_id is selected, it turns on ALL lights)
 3.	If an entity is selected, the service data is populated with basic JSON that will be passed to the service. An additional data can also be passed by updating the JSON as below.
 
-```yaml
+{% highlight yaml %}
 entity_id: light.bedroom
 brightness: 255
 rgb_color: [255, 0, 0]
-```
+{% endhighlight %}
 
 ## States
 
@@ -60,13 +60,13 @@ This Events section is as basic as it can get. It does only one thing – fires 
 To fire an event, simply type the name of the event, and pass the event data in JSON format.
 For ex: To fire a custom event, enter the `event_type` as `event_light_state_changed` and the event data JSON as
 
-```yaml
+{% highlight yaml %}
 state: on
-```
+{% endhighlight %}
 
 If there is an automation that handles that event, it will be automatically triggered. See below:
 
-```yaml
+{% highlight yaml %}
 - alias: Capture Event
   trigger:
     platform: event
@@ -75,7 +75,7 @@ If there is an automation that handles that event, it will be automatically trig
     - service: notify.notify
       data_template:
         message: "Light is turned {{ trigger.event.data.state }}"
-```
+{% endhighlight %}
 
 ## Template Editor
 

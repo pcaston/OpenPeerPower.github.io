@@ -14,13 +14,13 @@ If your Open Peer Power instance is only accessible from your local network you 
 
 ### Run certbot
 
-```bash
+{% highlight bash %}
 mkdir certbot
 cd certbot
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
 sudo ./certbot-auto --manual certonly --preferred-challenges dns -d "mydomain.com" --email your@email.address
-```
+{% endhighlight %}
 
 * Agree to Terms of Service
 * Choose whether to share your email with Electronic Frontier Foundation.
@@ -28,7 +28,7 @@ sudo ./certbot-auto --manual certonly --preferred-challenges dns -d "mydomain.co
 
 You will get the following text:
 
-```text
+{% highlight text %}
 Please deploy a DNS TXT record under the name
 _acme-challenge.mydomain.com with the following value:
 
@@ -37,7 +37,7 @@ deadbeefdeadbeefdeadbeefdeadbeefdeadbeef
 Once this is deployed,
 -------------------------------------------------------------------------------
 Press Enter to Continue
-```
+{% endhighlight %}
 
 * Deploy the value to TXT field using your domain registrar.
 * Go to a site that queries domain record. For example [this one](https://mxtoolbox.com/TXTLookup.aspx) and look if it sees your brand new TXT field (Don't forget to enter the full domain: `_acme-challenge.mydomain.com`)
@@ -47,19 +47,19 @@ Press Enter to Continue
 
 If your router uses DNSMasq (for example DDWRT) add the following line to DNSMasq options:
 
-```text
+{% highlight text %}
 address=/mydomain.com/<hass IP>
-```
+{% endhighlight %}
 
 ### Edit your Open Peer Power configuration to use your certificates
 
 The [`http`](/integrations/http/) section must contain the full path to the needed files.
 
-```yaml
+{% highlight yaml %}
 http:
   base_url: https://mydomain.com:8123
   ssl_certificate: /etc/letsencrypt/live/mydomain.com/fullchain.pem
   ssl_key: /etc/letsencrypt/live/mydomain.com/privkey.pem
-```
+{% endhighlight %}
 
 Make sure the files are accessible by the user that runs Open Peer Power.

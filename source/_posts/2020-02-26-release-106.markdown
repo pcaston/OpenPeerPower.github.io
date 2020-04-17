@@ -102,7 +102,7 @@ If you want to have your automations and/or battery in your Lovelace UI, you can
 
 - Scripts and scenes now have the ability to set a custom icon. Previously, you would have to create a customization to do this, now, you can just set them in your configuration.
 
-  ```yaml
+  {% highlight yaml %}
   scene:
     - name: Movies
       icon: mdi:movie-open
@@ -111,7 +111,7 @@ If you want to have your automations and/or battery in your Lovelace UI, you can
           state: on
           brightness: 125
         light.ceiling: off
-  ```
+  {% endhighlight %}
 
 ## Custom cards
 
@@ -153,22 +153,22 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   switch:
     - platform: fritzdect
       username: YOUR_USERNAME
       password: YOUR_PASSWORD
-  ```
+  {% endhighlight %}
 
   should change to
 
-  ```yaml
+  {% highlight yaml %}
   fritzbox:
   devices:
     - host: fritz.box
       username: YOUR_USERNAME
       password: YOUR_PASSWORD
-  ```
+  {% endhighlight %}
 
 - **Danfoss Air** - The names of some danfoss_air sensors include a misspelling of the word Danfoss. This typo has been corrected and you will need to adjust all occurrences respectively. - ([@KasperLK] - [#31344]) ([danfoss_air docs])
 
@@ -203,14 +203,14 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   surepetcare:
     username: YOUR_SURE_PETCARE_LOGIN
     password: YOUR_SURE_PETCARE_PASSWORD
     feeders: [12345, 67890]
     flaps: [13579]
     pets: [24680]
-  ```
+  {% endhighlight %}
 
 - **Frontend** - `frontend.set_theme` and `frontend.reload_themes` now require admin access. This will not break automations that set themes because those are run with admin access. Also, a `themes_updated event` no longer contains all theme data. - ([@balloob] - [#31654]) ([frontend docs])
 
@@ -218,7 +218,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   binary_sensor:
     - platform: modbus
       scan_interval: 10
@@ -228,7 +228,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
           slave: 1
           address: 100
           input_type: discrete_input
-  ```
+  {% endhighlight %}
 
 - **Tado** - Adding support of multiple Tado accounts has changed the unique ID generation of sensor and climate devices, and now includes the ID of the home. As a result you will see new entity ID's for `sensor` and `climate` devices.
 
@@ -238,21 +238,21 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   tado:
     - username: user1@example.com
       password: !secret tado_pwd1
     - username: user2@example.com
       password: !secret tado_pwd2
-  ```
+  {% endhighlight %}
 
   If you have only one account this configuration will also work:
 
-  ```yaml
+  {% highlight yaml %}
   tado:
     username: user@example.com
     password: !secret tado_pwd
-  ```
+  {% endhighlight %}
 
 - **UniFi** - Changing tracking settings will no longer disable entities but will remove them completely from the state machine and entity registry. The SSID filter will now mark all wireless clients as `not_home` if they are connected to SSIDs that are not a part of the filter. - ([@Kane610] - [#31762]) ([unifi docs])
 
@@ -264,7 +264,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example YAML configuration:
 
-  ```yaml
+  {% highlight yaml %}
   sensor:
     - platform: rest
       resource: http://192.168.1.20/status.xml
@@ -290,7 +290,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
         - "btn0"
       json_attributes_path: "$.response"
       value_template: "OK"
-  ```
+  {% endhighlight %}
 
 - **GreenEye Monitor (GEM)** - Greeneye Monitor temperature readings are now correct (previously they would report as twice the actual value). If you've compensated for this in your dashboards or displays, you'll need to undo that compensation with this release. - ([@jkeljo] - [#31896]) ([greeneye_monitor docs])
 

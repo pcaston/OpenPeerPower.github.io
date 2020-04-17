@@ -29,13 +29,13 @@ One of the most common problems with Open Peer Power is an invalid `configuratio
 
 `configuration.yaml` does not allow multiple sections to have the same name. If you want to load multiple platforms for one component, you can append a [number or string](/getting-started/devices/#style-2-list-each-device-separately) to the name or nest them using [this style](/getting-started/devices/#style-1-collect-every-entity-under-the-parent):
 
-```yaml
+{% highlight yaml %}
 sensor:
   - platform: forecast
     ...
   - platform: bitcoin
     ...
-```
+{% endhighlight %}
 
 Another common problem is that a required configuration setting is missing. If this is the case, the integration will report this to `home-assistant.log`. You can have a look at [the various integration pages](/integrations/) for instructions on how to setup the components.
 
@@ -57,22 +57,22 @@ It can happen that some integrations either do not work right away or stop worki
 
 If you are using multiple files for your setup, make sure that the pointers are correct and the format of the files is valid.
 
-```yaml
+{% highlight yaml %}
 light: !include devices/lights.yaml
 sensor: !include devices/sensors.yaml
-```
+{% endhighlight %}
 
 Contents of `lights.yaml` (notice it does not contain `light:`):
 
-```yaml
+{% highlight yaml %}
 - platform: hyperion
   host: 192.168.1.98
   ...
-```
+{% endhighlight %}
 
 Contents of `sensors.yaml`:
 
-```yaml
+{% highlight yaml %}
 - platform: mqtt
   name: "Room Humidity"
   state_topic: "room/humidity"
@@ -80,7 +80,7 @@ Contents of `sensors.yaml`:
   name: "Door Motion"
   state_topic: "door/motion"
   ...
-```
+{% endhighlight %}
 
 <div class='note'>
 Whenever you report an issue, be aware that we are volunteers who do not have access to every single device in the world nor unlimited time to fix every problem out there.

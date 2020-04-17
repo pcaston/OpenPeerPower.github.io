@@ -16,13 +16,13 @@ The Open Peer Power Cloud allows you to quickly integrate your local Open Peer P
 
 This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry to enable the cloud component
 cloud:
-```
+{% endhighlight %}
 
 Once activated, go to the configuration panel in Open Peer Power and create an account and log in. If you are not seeing the **Configuration** panel, make sure you have the following option enabled in your `configuration.yaml` file.
 
-```yaml
+{% highlight yaml %}
 config:
-```
+{% endhighlight %}

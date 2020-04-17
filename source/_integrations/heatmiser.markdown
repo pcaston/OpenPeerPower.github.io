@@ -17,7 +17,7 @@ Further work would be required to get this setup to connect over Wi-Fi, but the 
 
 To set it up, add the following information to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 climate:
   - platform: heatmiser
     host: YOUR_IP_ADDRESS
@@ -25,7 +25,7 @@ climate:
     tstats:
       - id: THERMOSTAT_ID
         name: THERMOSTAT_NAME
-```
+{% endhighlight %}
 
 A single interface can handle up to 32 connected devices.
 

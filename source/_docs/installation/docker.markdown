@@ -18,21 +18,21 @@ Installation with Docker is straightforward. Adjust the following command so tha
 
 ### Linux
 
-```bash
+{% highlight bash %}
 docker run --init -d --name="home-assistant" -e "TZ=America/New_York" -v /PATH_TO_YOUR_CONFIG:/config --net=host homeassistant/home-assistant:stable
-```
+{% endhighlight %}
 
 ### Raspberry Pi 3 (Raspbian)
 
-```bash
+{% highlight bash %}
 docker run --init -d --name="home-assistant" -e "TZ=America/New_York" -v /PATH_TO_YOUR_CONFIG:/config --net=host homeassistant/raspberrypi3-homeassistant:stable
-```
+{% endhighlight %}
 
 You need to replace `/PATH_TO_YOUR_CONFIG` with your path to the configuration, for example if you choose your configuration path to be `/home/pi/homeassistant`, then command would be:
 
-```bash
+{% highlight bash %}
 docker run --init -d --name="home-assistant" -e "TZ=America/New_York" -v /home/pi/homeassistant:/config --net=host homeassistant/raspberrypi3-homeassistant:stable
-```
+{% endhighlight %}
 
 ### macOS
 
@@ -40,9 +40,9 @@ When using `docker-ce` (or `boot2docker`) on macOS, you are unable to map the lo
 
 If you wish to browse directly to `http://localhost:8123` from your macOS host, meaning forward ports directly to the container, replace the `--net=host` switch with `-p 8123:8123`. More detail can be found in [the Docker forums](https://forums.docker.com/t/should-docker-run-net-host-work/14215/10).
 
-```bash
+{% highlight bash %}
 docker run --init -d --name="home-assistant" -e "TZ=America/Los_Angeles" -v /PATH_TO_YOUR_CONFIG:/config -p 8123:8123 homeassistant/home-assistant:stable
-```
+{% endhighlight %}
 
 Alternatively, `docker-compose` works with any recent release of `docker-ce` on macOS. Note that (further down this page) we provide an example `docker-compose.yml` however it differs from the `docker run` example above. To make the .yml directives match, you would need to make _two_ changes: first add the equivalent `ports:` directive, then _remove_ the `network_mode: host` section. This is because `Port mapping is incompatible with network_mode: host:`. More details can be found at [Docker networking documentation](https://docs.docker.com/network/). Note also the `/dev/tty*` device name used by your Arduino etc. devices will differ from the Linux example, so the compose `mount:` may require updates.
 
@@ -55,22 +55,22 @@ Before proceeding, make sure you have shared out a drive for Docker to mount to.
 <https://docs.docker.com/docker-for-windows/#shared-drives>
 <https://docs.docker.com/docker-for-windows/troubleshoot/#verify-domain-user-has-permissions-for-shared-drives-volumes>
 
-```powershell
+{% highlight powershell %}
 docker run --init -d --name="home-assistant" -e "TZ=America/Los_Angeles" -v /PATH_TO_YOUR_CONFIG:/config --net=host homeassistant/home-assistant:stable
-```
+{% endhighlight %}
 
 It’s easier to understand the trick when put into practice. Here we would like to mount a current working directory (something like `C:\Users\<your login name>\homeassistant` make sure this exists first) into the `homeassistant/home-assistant:stable` image at the `/config` location in the container. We would do that as so:
 
-```powershell
+{% highlight powershell %}
 docker run --init -d --name="home-assistant" -e "TZ=America/Los_Angeles" -v //c/Users/<your login name>/homeassistant:/config --net=host homeassistant/home-assistant:stable
-```
+{% endhighlight %}
 
 When running Open Peer Power in Docker on Windows, you may have some difficulty getting ports to map for routing (since the `--net=host` switch actually applies to the hypervisor's network interface). To get around this, you will need to add port proxy ipv4 rules to your local Windows machine, like so (Replacing '192.168.1.10' with whatever your Windows IP is, and '10.0.50.2' with whatever your Docker container's IP is):
 
-```bash
+{% highlight bash %}
 netsh interface portproxy add v4tov4 listenaddress=192.168.1.10 listenport=8123 connectaddress=10.0.50.2 connectport=8123
 netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=8123 connectaddress=10.0.50.2 connectport=8123
-```
+{% endhighlight %}
 
 This will let you access your Open Peer Power portal from `http://localhost:8123`, and if you forward port 8123 on your router to your machine IP, the traffic will be forwarded on through to the Docker container.
 
@@ -114,9 +114,9 @@ Adjust the following Terminal command as follows :
 
 Run it in Terminal.  
 
-```bash
+{% highlight bash %}
 sudo docker run --restart always -d --name="homeassistant" -v /PATH_TO_YOUR_CONFIG:/config --device=/PATH_TO_YOUR_USB_STICK -e TZ=Australia/Melbourne --net=host homeassistant/home-assistant:stable
-```
+{% endhighlight %}
 
 Complete the remainder of the Z-Wave configuration by [following the instructions here.](/docs/z-wave/installation)
 
@@ -182,10 +182,10 @@ If you want to use a USB Bluetooth adapter or Z-Wave USB stick with Open Peer Po
   
 - Edit `configuration.yaml`
 
-```yaml
+{% highlight yaml %}
 zwave:
   usb_path: /dev/ttyACM0
-```
+{% endhighlight %}
 
 That will tell Open Peer Power where to look for our Z-Wave radio.
 
@@ -200,10 +200,10 @@ That will tell Open Peer Power where to look for our Z-Wave radio.
   
 - Edit the `configuration.yaml` file
 
-```yaml
+{% highlight yaml %}
 device_tracker:
   - platform: bluetooth_tracker
-```
+{% endhighlight %}
 
 ## Restart
 
@@ -216,7 +216,7 @@ If you change the configuration you have to restart the server. To do that you h
 
 As the Docker command becomes more complex, switching to `docker-compose` can be preferable and support automatically restarting on failure or system restart. Create a `docker-compose.yml` file:
 
-```yaml
+{% highlight yaml %}
   version: '3'
   services:
     homeassistant:
@@ -228,33 +228,33 @@ As the Docker command becomes more complex, switching to `docker-compose` can be
         - TZ=America/New_York
       restart: always
       network_mode: host
-```
+{% endhighlight %}
 
 Then start the container with:
 
-```bash
+{% highlight bash %}
 docker-compose up -d
-```
+{% endhighlight %}
 
 To restart Open Peer Power when you have changed configuration:
 
-```bash
+{% highlight bash %}
 docker-compose restart
-```
+{% endhighlight %}
 
 ## Exposing Devices
 
 In order to use Z-Wave, Zigbee or other integrations that require access to devices, you need to map the appropriate device into the container. Ensure the user that is running the container has the correct privileges to access the `/dev/tty*` file, then add the device mapping to your Docker command:
 
-```bash
+{% highlight bash %}
 $ docker run --init -d --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/config \
    -e "TZ=Australia/Melbourne" --device /dev/ttyUSB0:/dev/ttyUSB0 \
    --net=host homeassistant/home-assistant:stable
-```
+{% endhighlight %}
 
 or in a `docker-compose.yml` file:
 
-```yaml
+{% highlight yaml %}
   version: '3'
   services:
     homeassistant:
@@ -270,7 +270,7 @@ or in a `docker-compose.yml` file:
         - TZ=America/New_York
       restart: always
       network_mode: host
-```
+{% endhighlight %}
 
 <div class='note'>
 

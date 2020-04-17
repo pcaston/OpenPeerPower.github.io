@@ -17,9 +17,9 @@ Keeps track which switches are in your environment, their state and allows you t
 
 In the frontend open the sidebar. At the bottom, under **Developer Tools**, click **Services**. From the Service dropdown menu choose `switch.turn_on` or `switch.turn_off` from the list of available services. In the Entity dropdown menu choose or enter the entity ID you want to work with. This will enter something like the sample below into the **Service Data** field. Now hit **CALL SERVICE**.
 
-```json
+{% highlight json %}
 {"entity_id":"switch.livingroom_pin2"}
-```
+{% endhighlight %}
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

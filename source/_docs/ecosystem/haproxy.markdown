@@ -26,7 +26,7 @@ Items to update for your deployment:
  * `ssl crt`: The path to your SSL certificate.
  * `server hass 127.0.0.1:8123`: The IP and port location of your Open Peer Power instance.
 
-```text
+{% highlight text %}
 global
 	log /dev/log	local0
 	log /dev/log	local1 notice
@@ -77,7 +77,7 @@ backend hass-backend
 	option forwardfor
 	http-request add-header X-Forwarded-Proto https
 	http-request add-header X-Forwarded-Port 443
-```
+{% endhighlight %}
 
 ### Forward Ports
 
@@ -92,7 +92,7 @@ Replace 443 with whatever port you chose to bind to in the configuration if diff
 
 In your `configuration.yaml` file, edit the [HTTP component](/integrations/http/).
 
-```text
+{% highlight text %}
 http:
   # For extra security set this to only accept connection on localhost if HAProxy is on the same machine
   # server_host: 127.0.0.1
@@ -102,7 +102,7 @@ http:
   # You must set the trusted proxy IP address so that Open Peer Power will properly accept connections
   # Set this to your HAProxy machine IP, or localhost if hosted on the same machine.
   trusted_proxies: <HAProxy IP address here, 127.0.0.1 if same machine>
-```
+{% endhighlight %}
 
 ### Restart or Reload HAProxy
 

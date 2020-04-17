@@ -33,7 +33,7 @@ theme:
 
 ## Example
 
-```yaml
+{% highlight yaml %}
 type: thermostat
 entity: climate.nest
-```
+{% endhighlight %}

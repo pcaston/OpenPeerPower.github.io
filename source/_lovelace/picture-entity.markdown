@@ -90,37 +90,37 @@ user:
 
 Specify different [CSS filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
 
-```yaml
+{% highlight yaml %}
 state_filter:
   "on": brightness(110%) saturate(1.2)
   "off": brightness(50%) hue-rotate(45deg)
-```
+{% endhighlight %}
 
 ## Examples
 
 Basic example:
 
-```yaml
+{% highlight yaml %}
 type: picture-entity
 entity: light.bed_light
 image: /local/bed_light.png
-```
+{% endhighlight %}
 
 Different images for each state:
 
-```yaml
+{% highlight yaml %}
 type: picture-entity
 entity: light.bed_light
 state_image:
   "on": /local/bed_light_on.png
   "off": /local/bed_light_off.png
-```
+{% endhighlight %}
 
 Displaying a live feed from an FFmpeg camera:
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 type: picture-entity
 entity: camera.backdoor
 camera_view: live
@@ -130,7 +130,7 @@ tap_action:
   service_data:
     entity_id: camera.backdoor
     filename: '/shared/backdoor-{{ now().strftime("%Y-%m-%d-%H%M%S") }}.jpg'
-```
+{% endhighlight %}
 
 {% endraw %}
 

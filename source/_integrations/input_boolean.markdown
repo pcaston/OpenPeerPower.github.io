@@ -14,14 +14,14 @@ The `input_boolean` integration allows the user to define boolean values that ca
 
 To enable input booleans in your installation, add the following lines to your `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 input_boolean:
   notify_home:
     name: Notify when someone arrives home
     initial: off
     icon: mdi:car
-```
+{% endhighlight %}
 
 {% configuration %}
   input_boolean:
@@ -64,7 +64,7 @@ If you set a valid value for `initial` this integration will start with state se
 
 Here's an example of an automation using the above `input_boolean`. This action will only occur if the switch is on.
 
-```yaml
+{% highlight yaml %}
 automation:
   alias: Arriving home
   trigger:
@@ -80,12 +80,12 @@ automation:
     data:
       title: ""
       message: "Honey, I'm home!"
-```
+{% endhighlight %}
 
 You can also set or change the status of an `input_boolean` by using `input_boolean.turn_on`, `input_boolean.turn_off` or `input_boolean.toggle` in your automations.
 
-```yaml
+{% highlight yaml %}
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.notify_home
-```
+{% endhighlight %}

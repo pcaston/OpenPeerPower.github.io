@@ -31,54 +31,54 @@ Use the following example commands from a terminal session on your Pi where your
 
 Turn off "Disco lights":
 
-```bash
+{% highlight bash %}
 $ echo -e -n "\x01\x08\x00\xF2\x51\x01\x00\x05\x01\x51" > /dev/serial/by-id/usb-0658_0200-if00
-```
+{% endhighlight %}
 
 Turn on "Disco lights":
 
-```bash
+{% highlight bash %}
 $ echo -e -n "\x01\x08\x00\xF2\x51\x01\x01\x05\x01\x50" > /dev/serial/by-id/usb-0658_0200-if00
-```
+{% endhighlight %}
 
 If the above two commands give errors about not having that device, you should try replacing the `/dev/serial/by-id/usb-0658_0200-if00` with `/dev/ttyACM0` or `/dev/ttyACM1` (depending on which tty your Aeotec stick is addressed to).
 
 On some systems, such as macOS, you need to pipe the output of the `echo` command, rather than redirecting to the serial device, to something like `cu` (replacing `/dev/zstick` acccordingly) to properly set the baud rate to 115200 bps:
 
-```bash
+{% highlight bash %}
 echo -e -n "...turn on/off string from examples above..." | cu -l /dev/zstick -s 115200
-```
+{% endhighlight %}
 
 ### Razberry Board
 
 You need to disable the on-board Bluetooth since the board requires the use of the hardware UART (and there's only one on the Pi3). You do this by adding the following to the end of `/boot/config.txt`:
 
-```text
+{% highlight text %}
 dtoverlay=pi3-disable-bt
-```
+{% endhighlight %}
 
 Then disable the Bluetooth modem service:
 
-```bash
+{% highlight bash %}
 $ sudo systemctl disable hciuart
-```
+{% endhighlight %}
 
 Once Bluetooth is off, enable the serial interface via the `raspi-config` tool. After reboot run:
 
-```bash
+{% highlight bash %}
 $ sudo systemctl mask serial-getty@ttyAMA0.service
-```
+{% endhighlight %}
 
 so that your serial interface looks like:
 
-```text
+{% highlight text %}
 crw-rw---- 1 root dialout 204, 64 Sep  2 14:38 /dev/ttyAMA0
-```
+{% endhighlight %}
 at this point simply add your user (homeassistant) to the dialout group:
 
-```bash
+{% highlight bash %}
 $ sudo usermod -a -G dialout homeassistant
-```
+{% endhighlight %}
 
 <div class='note'>
 
@@ -90,7 +90,7 @@ $ sudo usermod -a -G dialout homeassistant
 
 Here's a handy configuration for the Aeon Labs Minimote that defines all possible button presses. Put it into `automation.yaml`.
 
-```yaml
+{% highlight yaml %}
   - id: mini_1_pressed
     alias: 'Minimote Button 1 Pressed'
     trigger:
@@ -155,7 +155,7 @@ Here's a handy configuration for the Aeon Labs Minimote that defines all possibl
         event_data:
           entity_id: zwave.aeon_labs_minimote_1
           scene_id: 8
-```
+{% endhighlight %}
 
 ### Zooz Toggle Switches
 
@@ -169,14 +169,14 @@ To provide Central Scene support you need to **shutdown Open Peer Power** and mo
 
 For Inovelli switches, you'll need to update (or possibly add) the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
 
-```xml
+{% highlight xml %}
 			<CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
 				<Instance index="1" />
 				<Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="2" />
 				<Value type="int" genre="user" instance="1" index="1" label="Bottom Button Scene" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="3" />
 				<Value type="int" genre="user" instance="1" index="2" label="Top Button Scene" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="3" />
 			</CommandClass>
-```
+{% endhighlight %}
 
 Once this is complete, you should see the follow `zwave.scene_activated` events:
 
@@ -198,7 +198,7 @@ Many Zooz Zen26/27 switches that have been sold do not have firmware 2.0+. Conta
 Once the firmware is updated, the the new configuration parameters will have to be added to the `zwcfg` file. Replace the existing `COMMAND_CLASS_CONFIGURATION` with the one of the following options (depending on your model of switch):
 
 Zen26 (On/Off Switch):
-```xml
+{% highlight xml %}
 <CommandClass id="112" name="COMMAND_CLASS_CONFIGURATION" version="1" request_flags="4" innif="true">
 	<Instance index="1" />
 	<Value type="list" genre="config" instance="1" index="1" label="Paddle Control" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="2" vindex="0" size="1">
@@ -247,10 +247,10 @@ Zen26 (On/Off Switch):
 		<Item label="Enabled (Default)" value="1" />
 	</Value>
 </CommandClass>
-```
+{% endhighlight %}
 
 Zen27 (Dimmer):
-```xml
+{% highlight xml %}
 <CommandClass id="112" name="COMMAND_CLASS_CONFIGURATION" version="1" request_flags="4" innif="true">
 	<Instance index="1" />
 	<Value type="list" genre="config" instance="1" index="1" label="Paddle Control" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="0" max="2" vindex="0" size="1">
@@ -317,17 +317,17 @@ Zen27 (Dimmer):
 		<Item label="Enabled" value="1" />
 	</Value>
 </CommandClass>
-```
+{% endhighlight %}
 
 For Zooz switches, you'll need to update (or possibly add) the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
-```xml
+{% highlight xml %}
 <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
 	<Instance index="1" />
 	<Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="2" />
 	<Value type="int" genre="user" instance="1" index="1" label="Bottom Button Scene" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="3" />
 	<Value type="int" genre="user" instance="1" index="2" label="Top Button Scene" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="3" />
 </CommandClass>
-```
+{% endhighlight %}
 
 Go to the Z-Wave Network Management section in the Open Peer Power Configuration, select the node which has just been updated and enable the scene support configuration parameter.
 
@@ -350,14 +350,14 @@ Triple tap on|2|7920
 
 For the HomeSeer devices specifically, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
 
-```xml
+{% highlight xml %}
 <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
   <Instance index="1" />
   <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false"   verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="2" />
   <Value type="int" genre="user" instance="1" index="1" label="Top Button Scene" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
   <Value type="int" genre="user" instance="1" index="2" label="Bottom Button Scene" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
 </CommandClass>
-```
+{% endhighlight %}
 
 Below is a table of the action/scenes for the HomeSeer devices (as a reference for other similar devices):
 
@@ -392,13 +392,13 @@ Hold Button|7740
 
 For the Button, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
 
-```xml
+{% highlight xml %}
       <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
         <Instance index="1" />
           <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
           <Value type="int" genre="system" instance="1" index="1" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="3" />
       </CommandClass>
-```
+{% endhighlight %}
 
 Below is a table of the action/scenes for the Button (as a reference for other similar devices):
 
@@ -415,7 +415,7 @@ Tap and hold wakes up the Button.
 
 For the Fibaro Keyfob, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
 
-```xml
+{% highlight xml %}
       <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="6">
 	<Instance index="1" />
 	<Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="6" />
@@ -426,7 +426,7 @@ For the Fibaro Keyfob, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` 
 	<Value type="int" genre="user" instance="1" index="5" label="Minus" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
 	<Value type="int" genre="user" instance="1" index="6" label="Plus" units="" read_only="false" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
 </CommandClass>
-```
+{% endhighlight %}
 
 Below is a table of the action/scenes for the Keyfob (as a reference for other similar devices):
 
@@ -459,7 +459,7 @@ Press circle and plus simultaneously to wake up the device.
 
 Once you've added the NanoMote to your Z-Wave network, you'll need to update your `zwcfg_*.xml` file with the below XML data. Stop Open Peer Power and open your `zwcfg_*.xml` file (located in your configuration folder). Find the NanoMote device section and then its corresponding `CommandClass` section with id="91". Replace the entire CommandClass section with the below XML data. Save the file and restart Open Peer Power.  
 
-```xml
+{% highlight xml %}
     <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
         <Instance index="1" />
         <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
@@ -468,7 +468,7 @@ Once you've added the NanoMote to your Z-Wave network, you'll need to update you
         <Value type="int" genre="system" instance="1" index="3" label="Button Three" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
         <Value type="int" genre="system" instance="1" index="4" label="Button Four" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
     </CommandClass>
-```
+{% endhighlight %}
 
 Below is a table of the action/scenes for the NanoMote Quad:
 
@@ -489,14 +489,14 @@ Button four release|4|7740
 
 Example Event:
 
-```yaml
+{% highlight yaml %}
     "event_type": "zwave.scene_activated",
     "data": {
         "entity_id": "zwave.nanomote",
         "scene_id": 2,
         "scene_data": 7680
     }
-```
+{% endhighlight %}
 
 ### Aeotec Wallmote
 
@@ -504,7 +504,7 @@ Example Event:
 
 For the Aeotec Wallmote, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
 
-```xml
+{% highlight xml %}
       <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="5" innif="true" scenecount="0">
         <Instance index="1" />
           <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
@@ -514,7 +514,7 @@ For the Aeotec Wallmote, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE
           <Value type="int" genre="system" instance="1" index="4" label="Button Four" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
           <Value type="int" genre="system" instance="1" index="5" label="Other" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
       </CommandClass>
-```
+{% endhighlight %}
 
 Below is a table of the action/scenes for the Wallmote (as a reference for other similar devices):
 
@@ -541,13 +541,13 @@ Use the same configuration as for the Aeotec Wallmote.
 
 For the HANK One-key Scene Controller, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
 
-```xml
+{% highlight xml %}
       <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="1" innif="true" scenecount="0">
         <Instance index="1" />
         <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
         <Value type="int" genre="system" instance="1" index="1" label="Button One" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
       </CommandClass>
-```
+{% endhighlight %}
 
 Below is a table of the action/scenes for the Button (as a reference for other similar devices):
 
@@ -561,7 +561,7 @@ Button release|1|1
 
 For the HANK Four-key Scene Controller, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
 
-```xml
+{% highlight xml %}
       <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="5" innif="true" scenecount="0">
         <Instance index="1" />
         <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
@@ -571,7 +571,7 @@ For the HANK Four-key Scene Controller, you may need to update the `COMMAND_CLAS
         <Value type="int" genre="system" instance="1" index="4" label="Button Four" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="1" />
         <Value type="int" genre="system" instance="1" index="5" label="Other" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
       </CommandClass>
-```
+{% endhighlight %}
 
 Below is a table of the action/scenes for the Buttons and associated Pictogram:
 
@@ -600,7 +600,7 @@ To get the ZRC-90 Scene Master working in Open Peer Power, you must first edit t
 4. In the `zwcfg` file, find the `Node id` that corresponds to the number you noted in the first step.
 5. Within the `Node id` you identified, highlight everything between `<CommandClass id="91"` and `</CommandClass>` (inclusive) and paste in the following:
 
-    ```xml
+    {% highlight xml %}
     <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="5" innif="true" scenecount="0">
       <Instance index="1" />
       <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
@@ -614,7 +614,7 @@ To get the ZRC-90 Scene Master working in Open Peer Power, you must first edit t
       <Value type="int" genre="system" instance="1" index="8" label="Scene 8" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
       <Value type="int" genre="system" instance="1" index="9" label="Other" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
     </CommandClass>
-    ```
+    {% endhighlight %}
 
 6. Save the changes you made the `zwcfg` file and start Open Peer Power back up.
 
@@ -636,7 +636,7 @@ Double-press | 3
 
 Let's see how this works in an automation for a Scene Master that's assigned as Node 7:
 
-```yaml
+{% highlight yaml %}
 - id: '1234567890'
   alias: Double-press Button 2 to toggle all lights
   trigger:
@@ -651,13 +651,13 @@ Let's see how this works in an automation for a Scene Master that's assigned as 
   - data:
     service: light.toggle
       entity_id: group.all_lights
-```
+{% endhighlight %}
 
 ### RFWDC Cooper 5-button Scene Control Keypad
 
 For the RFWDC Cooper 5-button Scene Control Keypad, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
 
-```xml
+{% highlight xml %}
 <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="5" innif="true" scenecount="0">
   <Instance index="1" />
   <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
@@ -667,7 +667,7 @@ For the RFWDC Cooper 5-button Scene Control Keypad, you may need to update the `
   <Value type="int" genre="system" instance="1" index="4" label="Button Four" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
   <Value type="int" genre="system" instance="1" index="5" label="Button Five" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
 </CommandClass>
-```
+{% endhighlight %}
 
 Below is a table of the action/scenes for the Buttons:
 
@@ -684,7 +684,7 @@ When a button turns off, the controller sends `basic_set` in a generic `node_eve
 Here is an example configuration needed for the scene controller:
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 automation:
   - alias: Sync the indicator value on button events
     trigger:
@@ -774,7 +774,7 @@ switch:
             node_id: 3
             value_id: "{{ state_attr('sensor.scene_contrl_indicator','value_id') }}"
             value: "{{ states('sensor.scene_contrl_indicator')|int - 16 }}"
-```
+{% endhighlight %}
 
 ### HeatIt/ThermoFloor Z-Push Button 2/8 Wall Switch
 
@@ -787,17 +787,17 @@ To get the Z-Push Button 2 or the Z-Push Button 8 working in Open Peer Power, yo
 5. Within the `Node id` you identified, highlight everything between `<CommandClass id="91"` and `</CommandClass>` (inclusive) and paste in the following:
     - 5.1 For the Z-Push Button 2:
 
-    ```xml
+    {% highlight xml %}
         <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">				<Instance index="1" />
 	    <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
 	    <Value type="int" genre="user" instance="1" index="1" label="Button 1" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
 	    <Value type="int" genre="user" instance="1" index="2" label="Button 2" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
         </CommandClass>
-    ```
+    {% endhighlight %}
 
     - 5.2 For the Z-Push Button 8:
 
-    ```xml
+    {% highlight xml %}
         <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">				<Instance index="1" />
 	    <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
 	    <Value type="int" genre="user" instance="1" index="1" label="Button 1" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
@@ -809,7 +809,7 @@ To get the Z-Push Button 2 or the Z-Push Button 8 working in Open Peer Power, yo
 	    <Value type="int" genre="user" instance="1" index="7" label="Button 7" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
 	    <Value type="int" genre="user" instance="1" index="8" label="Button 8" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
         </CommandClass>
-    ```
+    {% endhighlight %}
 
 6. Save the changes you made the `zwcfg` file and start Open Peer Power back up.
 
@@ -825,7 +825,7 @@ Button presses will trigger `zwave.scene_activated` with the following:
 
 Once you've added the ZDB5100 to your Z-Wave network, you'll need to update your `zwcfg_*.xml` file with the below XML data. Stop Open Peer Power and open your `zwcfg_*.xml` file (located in your configuration folder). Find the ZDB5100 device section and then its corresponding `CommandClass` section with id="91". Replace the entire CommandClass section with the below XML data. Save the file and restart Open Peer Power.  
 
-```xml
+{% highlight xml %}
     <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
         <Instance index="1" />
         <Value type="int" genre="system" instance="1" index="0" label="Scene Count" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
@@ -834,7 +834,7 @@ Once you've added the ZDB5100 to your Z-Wave network, you'll need to update your
         <Value type="int" genre="system" instance="1" index="3" label="Button Three" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
         <Value type="int" genre="system" instance="1" index="4" label="Button Four" units="" read_only="true" write_only="false" verify_changes="false" poll_intensity="0" min="-2147483648" max="2147483647" value="0" />
     </CommandClass>
-```
+{% endhighlight %}
 
 Below is a table of the action/scenes for the ZDB5100 Matrix:
 
@@ -863,7 +863,7 @@ Button four release|4|7740
 
 Example Event:
 
-```yaml
+{% highlight yaml %}
 - alias: MatrixButton2
   trigger:
     - event_type: zwave.scene_activated
@@ -875,4 +875,4 @@ Example Event:
   action:
     - service: switch.toggle
       entity_id: switch.office_fan
-```
+{% endhighlight %}

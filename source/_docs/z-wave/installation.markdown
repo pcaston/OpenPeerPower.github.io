@@ -8,12 +8,12 @@ Z-Wave can be configured using the Z-Wave *Integration* in the *Configuration* m
 
 ## Configuration
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 zwave:
   usb_path: /dev/ttyACM0
   device_config: !include zwave_device_config.yaml
-```
+{% endhighlight %}
 
 {% configuration Z-Wave %}
 usb_path:
@@ -89,17 +89,17 @@ Security Z-Wave devices require a network key before being added to the network 
 
 An easy script to generate a random key:
 
-```bash
+{% highlight bash %}
 cat /dev/urandom | tr -dc '0-9A-F' | fold -w 32 | head -n 1 | sed -e 's/\(..\)/0x\1, /g' -e 's/, $//'
-```
+{% endhighlight %}
 
 You can also use sites like [this one](https://www.random.org/cgi-bin/randbyte?nbytes=16&format=h) to generate the required data, just remember to put `0x` before each pair of characters:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry for network_key
 zwave:
   network_key: "0x2e, 0xcc, 0xab, 0x1c, 0xa3, 0x7f, 0x0e, 0xb5, 0x70, 0x71, 0x2d, 0x98, 0x25, 0x43, 0xee, 0x0c"
-```
+{% endhighlight %}
 
 Ensure you keep a backup of this key. If you have to rebuild your system and don't have a backup of this key, you won't be able to reconnect to any security devices. This may mean you have to do a factory reset on those devices, and your controller, before rebuilding your Z-Wave network.
 
@@ -119,9 +119,9 @@ If the path of `/dev/ttyACM0` doesn't work, look in the *System* section of the 
 
 You can also check what hardware has been found using the [`ha` command](/hassio/commandline/#hardware):
 
-```bash
+{% highlight bash %}
 ha hardware info
-```
+{% endhighlight %}
 
 If you did an alternative install of Open Peer Power on Linux (e.g.,  installing Ubuntu, then Docker, then Open Peer Power Supervised) then the `modemmanager` package will interfere with any Z-Wave (or Zigbee) stick and should be removed or disabled in the host OS. Failure to do so will result in random failures of those components, e.g.,  dead or unreachable Z-Wave nodes, most notably right after Open Peer Power restarts. Connect to your host OS via SSH, then you can disable with `sudo systemctl disable ModemManager` and remove with `sudo apt-get purge modemmanager` (commands are for Debian/Ubuntu).
 
@@ -131,15 +131,15 @@ You do not need to install any software to use Z-Wave.
 
 To enable access to the Z-Wave stick, add `--device=/dev/ttyACM0` to the `docker` command that starts your container, for example:
 
-```bash
+{% highlight bash %}
 docker run -d --name="home-assistant" -v /home/pi/homeassistant:/config -v /etc/localtime:/etc/localtime:ro --net=host --device=/dev/ttyACM0 homeassistant/raspberrypi3-homeassistant
-```
+{% endhighlight %}
 
 If the path of `/dev/ttyACM0` doesn't work then you can find the path of the stick by disconnecting and then reconnecting it, and running the following in the Docker host:
 
-```bash
+{% highlight bash %}
 ls -1tr /dev/tty*|tail -n 1
-```
+{% endhighlight %}
 
 The `modemmanager` package will interfere with any Z-Wave (or Zigbee) stick and should be removed or disabled. Failure to do so will result in random failures of those components. For example you can disable with `sudo systemctl disable ModemManager` and remove with `sudo apt-get purge modemmanager`
 
@@ -153,9 +153,9 @@ On the Raspberry Pi you will need to enable the serial interface in the `raspi-c
 
 On Debian Linux platforms there are dependencies you will need to have installed ahead of time (included in `systemd-devel` on Fedora/RHEL systems):
 
-```bash
+{% highlight bash %}
 sudo apt-get install libudev-dev build-essential
-```
+{% endhighlight %}
 
 You may also have to install the Python development libraries for your version of Python. For example `libpython3.6-dev`, and possibly `python3.6-dev` if you're using Python 3.6.
 
@@ -163,29 +163,29 @@ You may also have to install the Python development libraries for your version o
 
 To find the path of your Z-Wave USB stick, disconnect it and then reconnect it to your system and run:
 
-```bash
+{% highlight bash %}
 ls -ltr /dev/tty*|tail -n 1
-```
+{% endhighlight %}
 
 That will give you a line that looks something like this:
 
-```bash
+{% highlight bash %}
 crw-rw---- 1 root dialout 204, 64 Sep 21 10:25 /dev/ttyACM0
-```
+{% endhighlight %}
 
 Where the date and time displayed is approximately the time you connected the USB stick or module (it may also be something like `/dev/ttyAMA0` or `/dev/ttyUSB0`). The number will be zero for the first device connected, and higher numbers for later devices.
 
 Or, if there is no result, try to find detailed USB connection info with:
 
-```bash
+{% highlight bash %}
 dmesg | grep USB
-```
+{% endhighlight %}
 
 If Open Peer Power (`hass`) runs with another user (e.g., `homeassistant`) you need to give access to the stick with:
 
-```bash
+{% highlight bash %}
 sudo usermod -aG dialout homeassistant
-```
+{% endhighlight %}
 
 The output from `ls -ltr` above contains the following information:
 
@@ -201,15 +201,15 @@ The output from `ls -ltr` above contains the following information:
 
 When installing on macOS you may have to also run the command below ahead of time, replace "x.x" with the version of Python (`$ python3 --version`) you have installed.
 
-```bash
+{% highlight bash %}
 sudo /Applications/Python\ x.x/Install\ Certificates.command
-```
+{% endhighlight %}
 
 On macOS you can find the USB stick with:
 
-```bash
+{% highlight bash %}
 ls /dev/cu.usbmodem*
-```
+{% endhighlight %}
 
 ## Troubleshooting
 
@@ -229,50 +229,50 @@ Then chances are high that the ModemManager in the host OS is causing the issue,
 
 Connect to your host OS (e.g.,  Ubuntu) through SSH, then execute the following command on your host system to disable the ModemManager:
 
- ```bash
+ {% highlight bash %}
 systemctl disable ModemManager.service
-```
+{% endhighlight %}
 
 ### Component could not be set up
 
 Sometimes the device may not be accessible and you'll get an error message upon startup about not being able to set up Z-Wave. Run the following command for your device path (here we're using `/dev/ttyAMA0` for our Razberry board):
 
-```bash
+{% highlight bash %}
 ls -l /dev/ttyAMA0
-```
+{% endhighlight %}
 
 You should then see something like this:
 
-```txt
+{% highlight txt %}
 crw-rw---- 1 root dialout 204, 64 Apr  1 12:34 /dev/ttyAMA0
-```
+{% endhighlight %}
 
 The important pieces are the first piece `crw-rw----` and the group `dialout`. If those are different then, for your device path, run:
 
-```bash
+{% highlight bash %}
 sudo chgrp dialout /dev/ttyAMA0
 sudo chmod g+rw /dev/ttyAMA0
-```
+{% endhighlight %}
 
 Check too that the account you're running Open Peer Power as is in the `dialout` group. For instance, if you're using `homeassistant`:
 
-```bash
+{% highlight bash %}
 groups homeassistant
-```
+{% endhighlight %}
 
 That should include `dialout`, if it doesn't then:
 
-```bash
+{% highlight bash %}
 sudo usermod -aG dialout homeassistant
-```
+{% endhighlight %}
 
 ### Unable to install Python Openzwave
 
 If you're getting errors like:
 
-```txt
+{% highlight txt %}
 openzwave-embed/open-zwave-master/libopenzwave.a: No such file or directory
-```
+{% endhighlight %}
 
 Then the problem is that you're missing `libudev-dev` (or the equivalent for your distribution), please [install it](/docs/z-wave/installation/#linux).
 
@@ -280,11 +280,11 @@ Then the problem is that you're missing `libudev-dev` (or the equivalent for you
 
 If you're having random failures of the mesh, devices going missing, things randomly not working, check your `OZW_Log.txt` for the following messages:
 
-```txt
+{% highlight txt %}
 WARNING: 500ms passed without reading the rest of the frame...aborting frame read
 WARNING: Out of frame flow! (0xfe).  Sending NAK
 WARNING: Checksum incorrect - sending NAK
-```
+{% endhighlight %}
 
 If you see any of these messages repeated in the log then _probably_ you've got something else running that's also using the Z-Wave controller. That might mean you've also got the OpenZ-Wave control panel (ozwcp) running, a second instance of Open Peer Power or something else. You need to stop that other process to resolve this.
 

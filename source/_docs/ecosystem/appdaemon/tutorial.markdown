@@ -55,7 +55,7 @@ activating a scene. The variables `args["on_scene"]` and
 particular App, and the same code could be reused to activate completely
 different scenes in a different version of the App.
 
-```python
+{% highlight python %}
     import appdaemon.plugins.hass.hassapi as hass
 
 
@@ -69,7 +69,7 @@ different scenes in a different version of the App.
 
         def before_sunset_cb(self, kwargs):
             self.turn_on(self.args["on_scene"])
-```
+{% endhighlight %}
 
 This is also fairly easy to achieve with Open Peer Power automations, but we are just getting started.
 
@@ -77,7 +77,7 @@ This is also fairly easy to achieve with Open Peer Power automations, but we are
 
 Our next example is to turn on a light when motion is detected and it is dark, and turn it off after a period of time. This time, the `initialize()` function registers a callback on a state change (of the motion sensor) rather than a specific time. We tell AppDaemon that we are only interested in state changes where the motion detector comes on by adding an additional parameter to the callback registration - `new = "on"`. When the motion is detected, the callback function `motion()` is called, and we check whether or not the sun has set using a built-in convenience function: `sun_down()`. Next, we turn the light on with `turn_on()`, then set a timer using `run_in()` to turn the light off after 60 seconds, which is another call to the scheduler to execute in a set time from now, which results in `AppDaemon` calling `light_off()` 60 seconds later using the `turn_off()` call to actually turn the light off. This is still pretty simple in code terms:
 
-```python
+{% highlight python %}
 import appdaemon.appapi as appapi
 
 
@@ -92,13 +92,13 @@ class FlashyMotionLights(appapi.AppDaemon):
 
     def light_off(self, kwargs):
         self.turn_off("light.drive")
-```
+{% endhighlight %}
 
 This is starting to get a little more complex in Open Peer Power automations requiring an Automation rule and two separate scripts.
 
 Now lets extend this with a somewhat artificial example to show something that is simple in AppDaemon but very difficult if not impossible using automations. Lets warn someone inside the house that there has been motion outside by flashing a lamp on and off 10 times. We are reacting to the motion as before by turning on the light and setting a timer to turn it off again, but in addition, we set a 1 second timer to run `flash_warning()` which when called, toggles the inside light and sets another timer to call itself a second later. To avoid re-triggering forever, it keeps a count of how many times it has been activated and bales out after 10 iterations.
 
-```python
+{% highlight python %}
 import homeassistant.appapi as appapi
 
 
@@ -121,7 +121,7 @@ class MotionLights(appapi.AppDaemon):
         self.flashcount += 1
         if self.flashcount < 10:
             self.run_in(self.flash_warning, 1)
-```
+{% endhighlight %}
 
 Of course if I wanted to make this App or its predecessor reusable I would have provide parameters for the sensor, the light to activate on motion, the warning light and even the number of flashes and delay between flashes.
 

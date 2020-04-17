@@ -10,7 +10,7 @@ The available conditions for an automation are the same as for the script syntax
 
 Example of using condition:
 
-```yaml
+{% highlight yaml %}
 automation:
 - alias: 'Enciende Despacho'
   trigger:
@@ -27,5 +27,5 @@ automation:
   action:
     - service: scene.turn_on
       entity_id: scene.DespiertaDespacho
-```
+{% endhighlight %}
 

@@ -14,7 +14,7 @@ The `input_number` integration allows the user to define values that can be cont
 
 To enable this input number in your installation, add the following lines to your `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 input_number:
   slider1:
@@ -30,7 +30,7 @@ input_number:
     max: 35
     step: 1
     mode: box
-```
+{% endhighlight %}
 
 {% configuration %}
   input_number:
@@ -95,20 +95,20 @@ If you set a valid value for `initial` this integration will start with state se
 
 To set the value of an input_number in a [Scene](/integrations/scene/):
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 scene:
   - name: Example Scene
     entities:
       input_number.example_number: 13
-```
+{% endhighlight %}
 
 ## Automation Examples
 
 Here's an example of `input_number` being used as a trigger in an automation.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry using 'input_number' as a trigger in an automation
 input_number:
   bedroom_brightness:
@@ -128,13 +128,13 @@ automation:
         data_template:
           entity_id: light.bedroom
           brightness: "{{ trigger.to_state.state | int }}"
-```
+{% endhighlight %}
 {% endraw %}
 
 Another code example using `input_number`, this time being used in an action in an automation.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry using 'input_number' in an action in an automation
 input_select:
   scene_bedroom:
@@ -166,13 +166,13 @@ automation:
         data_template:
           entity_id: light.bedroom
           brightness: "{{ states('input_number.bedroom_brightness') | int }}"
-```
+{% endhighlight %}
 {% endraw %}
 
 Example of `input_number` being used in a bidirectional manner, both being set by and controlled by an MQTT action in an automation.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry using 'input_number' in an action in an automation
 input_number:
   target_temp:
@@ -208,13 +208,13 @@ automation:
         topic: 'setTemperature'
         retain: true
         payload: "{{ states('input_number.target_temp') | int }}"
-```
+{% endhighlight %}
 {% endraw %}
 
 Here's an example of `input_number` being used as a delay in an automation.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry using 'input_number' as a delay in an automation
 input_number:
   minutes:
@@ -243,5 +243,5 @@ automation:
      - delay: '00:{{ states('input_number.minutes') | int }}:{{ states('input_number.seconds') | int }}'
      - service: switch.turn_off
        entity_id: switch.something
-```
+{% endhighlight %}
 {% endraw %}

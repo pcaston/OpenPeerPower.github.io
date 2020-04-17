@@ -22,14 +22,14 @@ The configuration for adding modbus to your installation depends on the connecti
 
 For a network connection, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry for a TCP connection
 modbus:
   name: hub1
   type: tcp
   host: IP_ADDRESS
   port: 2020
-```
+{% endhighlight %}
 
 {% configuration %}
 type:
@@ -65,7 +65,7 @@ delay:
 
 For a serial connection, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry for a serial connection
 modbus:
   name: hub1
@@ -76,7 +76,7 @@ modbus:
   stopbits: 1
   bytesize: 8
   parity: N
-```
+{% endhighlight %}
 
 {% configuration %}
 type:
@@ -123,7 +123,7 @@ timeout:
 
 Multiple connections are possible, add something like the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry for multiple TCP connections
 modbus:
   - type: tcp
@@ -135,7 +135,7 @@ modbus:
     host: IP_ADDRESS_2
     port: 501
     name: hub2
-```
+{% endhighlight %}
 
 ### Services
 
@@ -172,12 +172,12 @@ When opening an issue, please add your current configuration (or a scaled down v
 In order for the developers better to identify the problem, please add the
 following lines to configuration.yaml:
 
-```yaml
+{% highlight yaml %}
 logger:
   logs:
     homeassistant.components.modbus: debug
     pymodbus.client: debug
-```
+{% endhighlight %}
 
 and restart Open Peer Power, reproduce the problem, and include the log in the issue.
 

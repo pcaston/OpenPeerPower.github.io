@@ -12,27 +12,27 @@ The workflow for moving private information to `secrets.yaml` is very similar to
 
 The entries for password and API keys in the `configuration.yaml` file usually looks like the example below.
 
-```yaml
+{% highlight yaml %}
 homeassistant:
   auth_providers:
    - type: legacy_api_password
      api_password: YOUR_PASSWORD
-```
+{% endhighlight %}
 
 Those entries need to be replaced with `!secret` and an identifier.
 
-```yaml
+{% highlight yaml %}
 homeassistant:
   auth_providers:
    - type: legacy_api_password
      api_password: !secret http_password
-```
+{% endhighlight %}
 
 The `secrets.yaml` file contains the corresponding password assigned to the identifier.
 
-```yaml
+{% highlight yaml %}
 http_password: YOUR_PASSWORD
-```
+{% endhighlight %}
 
 ### Debugging secrets
 
@@ -46,16 +46,16 @@ To see where secrets are being loaded from, you can either add an option to your
 
 *Option 1*: Print where secrets are retrieved from to the Open Peer Power log by adding the following to `secrets.yaml`:
 
-```yaml
+{% highlight yaml %}
 logger: debug
-```
+{% endhighlight %}
 This will not print the actual secret's value to the log.
 
 *Option 2*: To view where secrets are retrieved from and the contents of all `secrets.yaml` files used, you can use the [`check_config` script](/docs/tools/check_config/) from the command line:
 
-```bash
+{% highlight bash %}
 $ hass --script check_config --secrets
-```
+{% endhighlight %}
 This will print all your secrets.
 
 ## Alternatives to `secrets.yaml`

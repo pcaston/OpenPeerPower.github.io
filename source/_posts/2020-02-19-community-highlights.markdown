@@ -44,15 +44,15 @@ _This requires the Mosquitto add-on to be installed and an MQTT sensor ([instruc
 
 To publish a message to an MQTT topic:
 
-```bash
+{% highlight bash %}
 mosquitto_pub -t home/bedroom/temperature -m 23
-```
+{% endhighlight %}
 
 Or watch all messages that go through your MQTT broker:
 
-```bash
+{% highlight bash %}
 mosquitto_sub -t \#
-```
+{% endhighlight %}
 
 ### SQL command-line
 
@@ -60,9 +60,9 @@ _This requires the MariaDB add-on to be installed and the recorder configured to
 
 To query the available tables:
 
-```bash
+{% highlight bash %}
 mysql -D homeassistant -e "SELECT entity_id, state, last_updated FROM states LIMIT 0, 10"
-```
+{% endhighlight %}
 
 ## Beta time!
 

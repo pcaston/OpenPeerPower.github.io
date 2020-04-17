@@ -14,9 +14,9 @@ In Open Peer Power 0.52 we introduced the first version of our script editor. If
 
 The script editor reads and writes to the file `scripts.yaml` in your [configuration](/docs/configuration/) folder. Make sure that you have set up the script integration to read from it:
 
-```yaml
+{% highlight yaml %}
 # Configuration.yaml example
 script: !include scripts.yaml
-```
+{% endhighlight %}
 
 The content that was under `script:` should now be moved to `scripts.yaml` to be editable.

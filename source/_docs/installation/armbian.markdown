@@ -7,20 +7,20 @@ description: "Instructions to install Open Peer Power on an Armbian-powered syst
 
 Setup Python and `pip`:
 
-```bash
+{% highlight bash %}
 sudo apt-get update
 sudo apt-get install python3-dev python3-pip libffi-dev libssl-dev
-```
+{% endhighlight %}
 
 Now that you installed python, there are two ways to install Open Peer Power:
 
 1. It is recommended to install Open Peer Power in a virtual environment to avoid using `root`, using the [VirtualEnv instructions](/docs/installation/virtualenv/)
 2. Alternatively, you can install Open Peer Power for the user you created when first booting Armbian:
 
-```bash
+{% highlight bash %}
 sudo pip3 install homeassistant
 hass --open-ui
-```
+{% endhighlight %}
 
 Running these commands will:
 

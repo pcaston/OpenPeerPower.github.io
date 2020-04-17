@@ -20,11 +20,11 @@ To integrate MQTT into Open Peer Power, add the following section to your `confi
 
 To connect to your [own MQTT broker](/docs/mqtt/broker#run-your-own):
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 mqtt:
   broker: IP_ADDRESS_BROKER
-```
+{% endhighlight %}
 
 You can also use the [embedded MQTT broker](/docs/mqtt/broker#embedded-broker). A separate broker is advised for more stability.
 
@@ -32,11 +32,11 @@ You can also use the [embedded MQTT broker](/docs/mqtt/broker#embedded-broker). 
 As of release 0.92, the embedded broker has been marked as deprecated. This means bugs may not be fixed, and the broker functionality will be removed in a future release.
 </div>
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 mqtt:
   password: hello
-```
+{% endhighlight %}
 
 This allows you to connect to the MQTT broker with user `homeassistant` and password `hello`.
 

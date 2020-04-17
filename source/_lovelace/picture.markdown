@@ -51,22 +51,22 @@ user:
 
 Navigate to another view:
 
-```yaml
+{% highlight yaml %}
 type: picture
 image: /local/home.jpg
 tap_action:
   action: navigate
   navigation_path: /lovelace/home
-```
+{% endhighlight %}
 
 Check the [views](/lovelace/views/) setup on how to setup custom IDs.
 
 Toggle entity using a service:
 
-```yaml
+{% highlight yaml %}
 type: picture
 image: /local/light.png
 service: light.toggle
 service_data:
   entity_id: light.ceiling_lights
-```
+{% endhighlight %}

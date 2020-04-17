@@ -20,12 +20,12 @@ When a timer finishes or gets canceled the corresponding events are fired. This 
 
 To add a timer to your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 timer:
   laundry:
     duration: '00:01:00'
-```
+{% endhighlight %}
 
 {% configuration %}
 "[alias]":
@@ -104,26 +104,26 @@ Reload `timer`'s configuration without restarting Open Peer Power itself. This s
 
 Select <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services** from the **Developer Tools**. Choose **timer** from the list of **Domains**, select the **Service**, enter something like the sample below into the **Service Data** field, and hit **CALL SERVICE**.
 
-```json
+{% highlight json %}
 {
   "entity_id": "timer.timer0"
 }
-```
+{% endhighlight %}
 
 ## Examples
 
 Set a timer called `test` to a duration of 30 seconds.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 timer:
   test:
     duration: '00:00:30'
-```
+{% endhighlight %}
 
 ### Control a timer from the frontend
 
-```yaml
+{% highlight yaml %}
 # Example automations.yaml entry
 - alias: Timerswitch
   id: 'Timerstart'
@@ -148,13 +148,13 @@ timer:
   - service: notify.nma
     data:
       message: "Timer stop"
-```
+{% endhighlight %}
 
 ### Control a timer manually
 
 With the [`script`](/integrations/script/) integration you would be able to control a timer (see above for a `timer` configuration sample) manually.
 
-```yaml
+{% highlight yaml %}
 script:
   start_timer:
     alias: Start timer
@@ -176,4 +176,4 @@ script:
     sequence:
       - service: timer.finish
         entity_id: timer.test
-```
+{% endhighlight %}

@@ -8,7 +8,7 @@ As part of the default onboarding process, Open Peer Power can detect your locat
 
 If you prefer YAML, you can add the following information to your `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 homeassistant:
   latitude: 32.87336
   longitude: 117.22743
@@ -19,7 +19,7 @@ homeassistant:
   whitelist_external_dirs:
     - /usr/var/dumping-ground
     - /tmp
-```
+{% endhighlight %}
 
 {% configuration %}
 latitude:

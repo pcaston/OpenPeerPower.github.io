@@ -26,14 +26,14 @@ Forward ports 443 and 80 to your server on your router. Do not forward port 8123
 
 Use this as your Caddyfile, change the domain name to match yours.
 
-```text
+{% highlight text %}
 example.com {
     proxy / localhost:8123 {
         websocket
         transparent
     }
 }
-```
+{% endhighlight %}
 
 ### 5. Configure Open Peer Power
 
@@ -41,7 +41,7 @@ example.com {
 
 On your `configuration.yaml` file, edit the `http` component.
 
-```yaml
+{% highlight yaml %}
 http:
   # For extra security set this to only accept connections on localhost if Caddy is on the same machine
   # server_host: 127.0.0.1
@@ -51,7 +51,7 @@ http:
   # You must set the trusted proxy IP address so that Open Peer Power will properly accept connections
   # Set this to your Caddy machine IP, or localhost if hosted on the same machine.
   trusted_proxies: <Caddy IP address here, or 127.0.0.1 if hosted on the same machine>
-```
+{% endhighlight %}
 
 ### 6. Start Caddy
 

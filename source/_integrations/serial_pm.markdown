@@ -30,12 +30,12 @@ At this time, the following sensors are supported:
 
 To use your PM sensor in your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 sensor:
   - platform: serial_pm
     serial_device: /dev/tty.SLAB_USBtoUART
     brand: oneair,s3
-```
+{% endhighlight %}
 
 {% configuration %}
 serial_device:
@@ -54,10 +54,10 @@ brand:
 
 ### Named Sensor Configuration Example
 
-```yaml
+{% highlight yaml %}
 sensor:
   - platform: serial_pm
     serial_device: /dev/tty.SLAB_USBtoUART
     name: Nova
     brand: novafitness,sds011
-```
+{% endhighlight %}

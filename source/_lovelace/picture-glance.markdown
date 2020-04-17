@@ -138,16 +138,16 @@ user:
 
 Specify different [CSS filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
 
-```yaml
+{% highlight yaml %}
 state_filter:
   "on": brightness(110%) saturate(1.2)
   "off": brightness(50%) hue-rotate(45deg)
 entity: switch.decorative_lights
-```
+{% endhighlight %}
 
 ## Examples
 
-```yaml
+{% highlight yaml %}
 type: picture-glance
 title: Living room
 entities:
@@ -157,31 +157,31 @@ entities:
   - binary_sensor.movement_backyard
   - binary_sensor.basement_floor_wet
 image: /local/living_room.png
-```
+{% endhighlight %}
 
 Display a camera image as background:
 
-```yaml
+{% highlight yaml %}
 type: picture-glance
 title: Living room
 entities:
   - switch.decorative_lights
   - light.ceiling_lights
 camera_image: camera.demo_camera
-```
+{% endhighlight %}
 
 Display a camera image without additional entities:
 
-```yaml
+{% highlight yaml %}
 type: picture-glance
 title: Front garden
 entities: []
 camera_image: camera.front_garden_camera
-```
+{% endhighlight %}
 
 Use different images based on entity state:
 
-```yaml
+{% highlight yaml %}
 type: picture-glance
 title: Living room
 entities:
@@ -191,4 +191,4 @@ state_image:
   "on": /local/living_room_on.png
   "off": /local/living_room_off.png
 entity: group.living.room
-```
+{% endhighlight %}

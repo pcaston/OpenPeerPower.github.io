@@ -56,13 +56,13 @@ Play a live stream from a camera to selected media player(s). Requires [`stream`
 
 For example, the following action in an automation would send an `hls` live stream to your chromecast.
 
-```yaml
+{% highlight yaml %}
 action:
   service: camera.play_stream
   data:
     entity_id: camera.yourcamera
     media_player: media_player.chromecast
-```
+{% endhighlight %}
 
 #### Service `record`
 
@@ -82,13 +82,13 @@ The path part of `filename` must be an entry in the `whitelist_external_dirs` in
 For example, the following action in an automation would take a recording from "yourcamera" and save it to /tmp with a timestamped filename.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 action:
   service: camera.record
   data:
     entity_id: camera.yourcamera
     filename: '/tmp/{{ entity_id }}_{{ now().strftime("%Y%m%d-%H%M%S") }}.mp4'
-```
+{% endhighlight %}
 {% endraw %}
 
 #### Service `snapshot`
@@ -105,13 +105,13 @@ The path part of `filename` must be an entry in the `whitelist_external_dirs` in
 For example, the following action in an automation would take a snapshot from "yourcamera" and save it to /tmp with a timestamped filename.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 action:
   service: camera.snapshot
   data:
     entity_id: camera.yourcamera
     filename: '/tmp/yourcamera_{{ now().strftime("%Y%m%d-%H%M%S") }}.jpg'
-```
+{% endhighlight %}
 {% endraw %}
 
 #### Service `turn_off`
@@ -134,6 +134,6 @@ Turn on camera. Not all camera models support this service, please consult indiv
 
 A simple way to test if you have set up your `camera` platform correctly, is to use <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services** from the **Developer Tools**. Choose your service from the dropdown menu **Service**, enter something like the sample below into the **Service Data** field, and hit **CALL SERVICE**.
 
-```yaml
+{% highlight yaml %}
 entity_id: camera.living_room_camera
-```
+{% endhighlight %}

@@ -35,14 +35,14 @@ This integration provides the following platforms:
 To enable this integration in your installation, add the following to your
 `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 bmw_connected_drive:
   name:
     username: USERNAME_BMW_CONNECTED_DRIVE
     password: PASSWORD_BMW_CONNECTED_DRIVE
     region: one of "north_america", "china", "rest_of_world"
-```
+{% endhighlight %}
 
 {% configuration %}
 bmw_connected_drive:
@@ -84,18 +84,18 @@ A few examples on how to use the notification service.
 
 #### Send a text message to your vehicle
 
-```yaml
+{% highlight yaml %}
 ...
 action:
   service: notify.bmw_connected_drive_<your_vehicle>
   data:
     title: Message from Open Peer Power # optional, will default to "Open Peer Power" when left empty
     message: The text of the message you want to send to your vehicle
-```
+{% endhighlight %}
 
 #### Send a Point of Interest to your vehicle
 
-```yaml
+{% highlight yaml %}
 ...
 action:
   service: notify.bmw_connected_drive_<your_vehicle>
@@ -109,7 +109,7 @@ action:
         city: City name  # Optional
         postal_code: Postal Code  # Optional
         country: Country  # Optional
-```
+{% endhighlight %}
 
 ## Services
 

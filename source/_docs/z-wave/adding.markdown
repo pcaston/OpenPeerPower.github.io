@@ -28,11 +28,11 @@ Security Z-Wave devices require a network key. Some devices only expose their fu
 
 A valid network key will be a 16 byte value, defined in the Z-Wave section of your configuration, such as the following example:
 
-```yaml
+{% highlight yaml %}
 zwave:
   usb_path: /dev/ttyACM0
   network_key: "0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10"
-```
+{% endhighlight %}
 
 Each individual value in the defined key can be anywhere from 0x00 to 0xFF. Define your own key by making changes to the above example key or for additional security try one of the two scripts mentioned below.
 
@@ -40,21 +40,21 @@ Each individual value in the defined key can be anywhere from 0x00 to 0xFF. Defi
 
 An easy script to generate a random key:
 
-```bash
+{% highlight bash %}
 $ cat /dev/urandom | tr -dc '0-9A-F' | fold -w 32 | head -n 1 | sed -e 's/\(..\)/0x\1, /g' -e 's/, $//'
-```
+{% endhighlight %}
 
 On macOS, this script will generate a random key:
 
-```bash
+{% highlight bash %}
 $ cat /dev/urandom | LC_CTYPE=C tr -dc '0-9A-F' | fold -w 32 | head -n 1 | sed -e 's/\(..\)/0x\1, /g' -e 's/, $//'
-```
+{% endhighlight %}
 
 If the above command doesn't work then replace `LC_CTYPE=C` with `LC_ALL=C`:
 
-```bash
+{% highlight bash %}
 $ cat /dev/urandom | LC_ALL=C tr -dc '0-9A-F' | fold -w 32 | head -n 1 | sed -e 's/\(..\)/0x\1, /g' -e 's/, $//'
-```
+{% endhighlight %}
 
 <div class='note warning'>
 Ensure you keep a backup of this key. If you have to rebuild your system and don't have a backup of this key, you won't be able to reconnect to any security devices. This may mean you have to do a factory reset on those devices, and your controller, before rebuilding your Z-Wave network.
@@ -90,9 +90,9 @@ If your device isn't responding to this process, possibly because you've factory
 3. Make note of the entity's "node_id" value as you will need to re-add the "node_id" attribute and value in step 4.
 4. At the top, edit the JSON attributes to replace `false` with `true` for `"is_failed": false,` so that it reads `"is_failed": true.` Also add the "node_id" value to the number listed in the entity's attribute. The JSON attributes should look something like below:
 
-    ```yaml
+    {% highlight yaml %}
     {"node_id":6, "is_failed":true}
-    ```
+    {% endhighlight %}
 
 5. Click **Set State**
 6. Go to the Z-Wave control panel in the Open Peer Power frontend

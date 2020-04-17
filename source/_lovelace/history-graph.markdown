@@ -58,11 +58,11 @@ name:
 
 ## Example
 
-```yaml
+{% highlight yaml %}
 type: history-graph
 title: 'My Graph'
 entities:
   - sensor.outside_temperature
   - entity: media_player.lounge_room
     name: Main player
-```
+{% endhighlight %}

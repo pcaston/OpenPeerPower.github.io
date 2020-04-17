@@ -33,7 +33,7 @@ Turn auxiliary heater on/off for climate device
 
 #### Automation example
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time
@@ -43,7 +43,7 @@ automation:
       data:
         entity_id: climate.kitchen
         aux_heat: true
-```
+{% endhighlight %}
 
 ### Service `climate.set_preset_mode`
 
@@ -58,7 +58,7 @@ reflecting a situation where the climate device is set to save energy. For examp
 
 #### Automation example
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time
@@ -68,7 +68,7 @@ automation:
       data:
         entity_id: climate.kitchen
         preset_mode: 'eco'
-```
+{% endhighlight %}
 
 ### Service `climate.set_temperature`
 
@@ -84,7 +84,7 @@ Set target temperature of climate device
 
 #### Automation examples
 
-```yaml
+{% highlight yaml %}
 ### Set temperature to 24 in heat mode
 automation:
   trigger:
@@ -96,9 +96,9 @@ automation:
         entity_id: climate.kitchen
         temperature: 24
         hvac_mode: heat
-```
+{% endhighlight %}
 
-```yaml
+{% highlight yaml %}
 ### Set temperature range to 20 to 24 in heat_cool mode
 automation:
   trigger:
@@ -111,7 +111,7 @@ automation:
         target_temp_high: 24
         target_temp_low: 20
         hvac_mode: heat_cool
-```
+{% endhighlight %}
 
 ### Service `climate.set_humidity`
 
@@ -124,7 +124,7 @@ Set target humidity of climate device
 
 #### Automation example
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time
@@ -134,7 +134,7 @@ automation:
       data:
         entity_id: climate.kitchen
         humidity: 60
-```
+{% endhighlight %}
 
 ### Service `climate.set_fan_mode`
 
@@ -147,7 +147,7 @@ Set fan operation for climate device
 
 #### Automation example
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time
@@ -157,7 +157,7 @@ automation:
       data:
         entity_id: climate.kitchen
         fan_mode: 'On Low'
-```
+{% endhighlight %}
 
 ### Service `climate.set_hvac_mode`
 
@@ -170,7 +170,7 @@ Set climate device's HVAC mode
 
 #### Automation example
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time
@@ -180,7 +180,7 @@ automation:
       data:
         entity_id: climate.kitchen
         hvac_mode: heat
-```
+{% endhighlight %}
 
 ### Service `climate.set_swing_mode`
 
@@ -193,7 +193,7 @@ Set swing operation mode for climate device
 
 #### Automation example
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time
@@ -203,7 +203,7 @@ automation:
       data:
         entity_id: climate.kitchen
         swing_mode: 1
-```
+{% endhighlight %}
 
 ### Service `climate.turn_on`
 

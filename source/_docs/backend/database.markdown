@@ -9,34 +9,34 @@ Database is used in by Open Peer Power as history and tracker only, to store the
 To work with the SQLite database manually from the command-line, you will need an [installation](http://www.sqlitetutorial.net/download-install-sqlite/) of `sqlite3`. Alternatively [DB Browser for SQLite](http://sqlitebrowser.org/) provides a viewer for exploring the database data and an editor for executing SQL commands.
 First load your database with `sqlite3`:
 
-```bash
+{% highlight bash %}
 $ sqlite3 home-assistant_v2.db
 SQLite version 3.13.0 2016-05-18 10:57:30
 Enter ".help" for usage hints.
 sqlite>
-```
+{% endhighlight %}
 
 It helps to set some options to make the output more readable:
 
-```bash
+{% highlight bash %}
 sqlite> .header on
 sqlite> .mode column
-```
+{% endhighlight %}
 
 You could also start `sqlite3` and attach the database later. Not sure what database you are working with? Check it, especially if you are going to delete data.
 
-```bash
+{% highlight bash %}
 sqlite> .databases
 seq  name             file
 ---  ---------------  ----------------------------------------------------------
 0    main             /home/fab/.homeassistant/home-assistant_v2.db
-```
+{% endhighlight %}
 
 ### Schema
 
 Get all available tables from your current Open Peer Power database:
 
-```bash
+{% highlight bash %}
 sqlite> SELECT sql FROM sqlite_master;
 
 -------------------------------------------------------------------------------------
@@ -75,19 +75,19 @@ CREATE TABLE states (
 CREATE INDEX states__significant_changes ON states (domain, last_updated, entity_id)
 CREATE INDEX states__state_changes ON states (last_changed, last_updated, entity_id)
 CREATE TABLE sqlite_stat1(tbl,idx,stat)
-```
+{% endhighlight %}
 
 To only show the details about the `states` table (since we are using that one in the next examples):
 
-```bash
+{% highlight bash %}
 sqlite> SELECT sql FROM sqlite_master WHERE type = 'table' AND tbl_name = 'states';
-```
+{% endhighlight %}
 
 ### Query
 
 The identification of the available columns in the table is done and we are now able to create a query. Let's list your Top 10 entities:
 
-```bash
+{% highlight bash %}
 sqlite> .width 30, 10,
 sqlite> SELECT entity_id, COUNT(*) as count FROM states GROUP BY entity_id ORDER BY count DESC LIMIT 10;
 entity_id                       count
@@ -102,20 +102,20 @@ sensor.internet_time            12963
 sensor.solar_angle1             11397
 sensor.solar_angle              10440
 group.all_switches              8018
-```
+{% endhighlight %}
 
 ### Delete
 
 If you don't want to keep certain entities, you can delete them permanently:
 
-```bash
+{% highlight bash %}
 sqlite> DELETE FROM states WHERE entity_id="sensor.cpu";
-```
+{% endhighlight %}
 
 The `VACUUM` command cleans your database.
 
-```bash
+{% highlight bash %}
 sqlite> VACUUM;
-```
+{% endhighlight %}
 
 For a more interactive way of working with the database, check the [Data Science Portal](https://data.home-assistant.io/).

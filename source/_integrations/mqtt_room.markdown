@@ -15,12 +15,12 @@ The `mqtt_room` sensor platform allows you to detect the indoor location of devi
 
 To use this device tracker in your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   - platform: mqtt_room
     device_id: 123testid
-```
+{% endhighlight %}
 
 {% configuration %}
 device_id:
@@ -52,13 +52,13 @@ away_timeout:
 
 Example JSON that should be published to the room topics:
 
-```json
+{% highlight json %}
 {
   "id": "123testid",
   "name": "Test Device",
   "distance": 5.678
 }
-```
+{% endhighlight %}
 
 ### Setting up clients
 

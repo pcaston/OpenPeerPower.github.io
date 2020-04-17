@@ -20,33 +20,33 @@ The MQTT integration will register the service `mqtt.publish` which allows publi
 You need to include either payload or payload_template, but not both.
 </div>
 
-```yaml
+{% highlight yaml %}
 topic: home-assistant/light/1/command
 payload: on
-```
+{% endhighlight %}
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 topic: home-assistant/light/1/state
 payload_template: {{ states('device_tracker.paulus') }}
-```
+{% endhighlight %}
 {% endraw %}
 
 `payload` must be a string. If you want to send JSON then you need to format/escape it properly. Like:
 
-```yaml
+{% highlight yaml %}
 topic: home-assistant/light/1/state
 payload: "{\"Status\":\"off\", \"Data\":\"something\"}"
-```
+{% endhighlight %}
 
 Example of how to use `qos` and `retain`:
 
-```yaml
+{% highlight yaml %}
 topic: home-assistant/light/1/command
 payload: on
 qos: 2
 retain: true
-```
+{% endhighlight %}
 
 ### Service `mqtt.dump`
 
@@ -57,6 +57,6 @@ Listen to the specified topic matcher and dumps all received messages within a s
 | `topic` | no | Topic to dump. Can contain a wildcard (`#` or `+`).
 | `duration` | yes | Duration in seconds that we will listen for messages. Default is 5 seconds.
 
-```yaml
+{% highlight yaml %}
 topic: openzwave/#
-```
+{% endhighlight %}

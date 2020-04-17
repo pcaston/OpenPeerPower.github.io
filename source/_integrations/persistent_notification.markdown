@@ -28,26 +28,26 @@ The service `persistent_notification.create` takes in `message`, `title`, and `n
 
 Here is how an [action](/getting-started/automation-action/) of your [automation setup](/getting-started/automation/) with static content could look like.
 
-```yaml
+{% highlight yaml %}
 action:
   service: persistent_notification.create
   data:
     message: "Your message goes here"
     title: "Custom subject"
-```
+{% endhighlight %}
 
 If you want to show some runtime information, you have to use [templates](/topics/templating/ inside `data_template`.
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 action:
   service: persistent_notification.create
   data_template:
     title: >
       Thermostat is {{ state_attr('climate.thermostat', 'hvac_action') }}
     message: "Temperature {{ state_attr('climate.thermostat', 'current_temperature') }}"
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -59,16 +59,16 @@ The service `persistent_notification.dismiss` requires a `notification_id`.
 
 This service allows you to remove a notifications by script or automation.
 
-```yaml
+{% highlight yaml %}
 action:
   service: persistent_notification.dismiss
   data:
     notification_id: "1234"
-```
+{% endhighlight %}
 
 This automation example shows a notification when the Z-Wave network is starting and removes it when the network is ready.
 
-```yaml
+{% highlight yaml %}
 - alias: 'Z-Wave network is starting'
   trigger:
     - platform: event
@@ -88,7 +88,7 @@ This automation example shows a notification when the Z-Wave network is starting
     - service: persistent_notification.dismiss
       data:
         notification_id: zwave
-```
+{% endhighlight %}
 
 ### Markdown support
 
@@ -114,11 +114,11 @@ The message attribute supports the [Markdown formatting syntax](https://daringfi
 
 Choose the **Services** tab from the **Developer Tools** sidebar item, then select the `persistent_notification.create` service from the "Service" dropdown. Enter something like the sample below into the **Service Data** field and press the **CALL SERVICE** button.
 
-```json
+{% highlight json %}
 {
   "notification_id": "1234",
   "title": "Sample notification",
   "message": "This is a sample text"
 }
-```
+{% endhighlight %}
 This will create the notification entry shown above.

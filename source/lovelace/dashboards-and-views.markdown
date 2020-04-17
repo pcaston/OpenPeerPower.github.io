@@ -9,7 +9,7 @@ You can define multiple dashboards that all have their own YAML file, and add cu
 
 The key of the dashboard is used as the URL, this needs to contain a hyphen (`-`).
 
-```yaml
+{% highlight yaml %}
 lovelace:
   mode: yaml
   # Include external resources only add when mode is yaml, otherwise manage in the resources in the lovelace configuration panel.
@@ -32,10 +32,10 @@ lovelace:
       title: hidden
       show_in_sidebar: false
       filename: hidden.yaml
-```
+{% endhighlight %}
 
 You can also add YAML dashboards when your main dashboard is UI configurated:
-```yaml
+{% highlight yaml %}
 lovelace:
   mode: storage
   # Add yaml dashboards
@@ -46,7 +46,7 @@ lovelace:
       icon: mdi:script
       show_in_sidebar: true
       filename: lovelace.yaml
-```
+{% endhighlight %}
 
 {% configuration Lovelace %}
 mode:
@@ -101,7 +101,7 @@ dashboards:
 
 As a super minimal example of a Lovelace dashboard config, here's the bare minimum you will need for it to work:
 
-```yaml
+{% highlight yaml %}
 title: My Awesome Home
 views:
     # View tab title.
@@ -112,11 +112,11 @@ views:
         title: Lovelace
         content: >
           Welcome to your **Lovelace UI**.
-```
+{% endhighlight %}
 
 A slightly more advanced example:
 
-```yaml
+{% highlight yaml %}
 title: My Awesome Home
 views:
     # View tab title.
@@ -166,7 +166,7 @@ views:
         title: Lovelace
         content: >
           Welcome to your **Lovelace UI**.
-```
+{% endhighlight %}
 
 ### Views
 
@@ -228,7 +228,7 @@ views:
 
 View configuration:
 
-```yaml
+{% highlight yaml %}
 - title: Living room
   badges:
     - device_tracker.demo_paulus
@@ -237,7 +237,7 @@ View configuration:
       icon: mdi:bulb
     - entity: switch.decorative_lights
       image: /local/lights.png
-```
+{% endhighlight %}
 
 ## Path
 
@@ -247,21 +247,21 @@ You can link to one view from a card in another view when using cards that suppo
 
 View configuration:
 
-```yaml
+{% highlight yaml %}
 - title: Living room
   # the final path is /lovelace/living_room
   path: living_room
-```
+{% endhighlight %}
 
 Picture card configuration:
 
-```yaml
+{% highlight yaml %}
 - type: picture
   image: /local/living_room.png
   tap_action:
     action: navigate
     navigation_path: /lovelace/living_room
-```
+{% endhighlight %}
 
 ## Icon
 
@@ -269,10 +269,10 @@ If you define an icon the title will be used as a tool-tip.
 
 #### Example
 
-```yaml
+{% highlight yaml %}
 - title: Garden
   icon: mdi:flower
-```
+{% endhighlight %}
 
 ## Visible
 
@@ -280,7 +280,7 @@ You can specify the visibility of views as a whole or per-user. (Note: This is o
 
 #### Example
 
-```yaml
+{% highlight yaml %}
 views:
   - title: Ian
     visible:
@@ -296,7 +296,7 @@ views:
     visible: db34e025e5c84b70968f6530823b117f
     cards:
       ...
-```
+{% endhighlight %}
 ### Options For Visible
 
 If you define `visible` as objects instead of a boolean to specify conditions for displaying the view tab:
@@ -314,7 +314,7 @@ Setting panel true sets the view to panel mode. In this mode the first card is r
 
 #### Example
 
-```yaml
+{% highlight yaml %}
 - title: Map
   panel: true
   cards:
@@ -322,7 +322,7 @@ Setting panel true sets the view to panel mode. In this mode the first card is r
       entities:
         - device_tracker.demo_paulus
         - zone.home
-```
+{% endhighlight %}
 
 ## Theme
 
@@ -330,10 +330,10 @@ Set a separate [theme](/integrations/frontend/#themes) for the view and its card
 
 #### Example
 
-```yaml
+{% highlight yaml %}
 - title: Home
   theme: happy
-```
+{% endhighlight %}
 
 ## Background
 
@@ -341,13 +341,13 @@ You can style the background of your views with a [theme](/integrations/frontend
 
 #### Example
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 frontend:
   themes:
     example:
       lovelace-background: center / cover no-repeat url("/local/background.png") fixed
-```
+{% endhighlight %}
 
 ## Badges
 
@@ -355,10 +355,10 @@ frontend:
 
 The State Label badge allows you to dislay a state badge
 
-```yaml
+{% highlight yaml %}
 type: state-label
 entity: light.living_room
-```
+{% endhighlight %}
 
 {% configuration state_label %}
 type:
@@ -596,7 +596,7 @@ attribute:
 
 Show only active switches or lights in the house
 
-```yaml
+{% highlight yaml %}
 type: entity-filter
 entities:
   - entity: light.bed_light
@@ -605,11 +605,11 @@ entities:
   - light.ceiling_lights
 state_filter:
   - "on"
-```
+{% endhighlight %}
 
 Specify filter for a single entity
 
-```yaml
+{% highlight yaml %}
 type: entity-filter
 state_filter:
   - "on"
@@ -623,4 +623,4 @@ entities:
       - operator: ">"
         value: 50
         attribute: humidity
-```
+{% endhighlight %}

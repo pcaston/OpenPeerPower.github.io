@@ -26,9 +26,9 @@ There are two ways of obtaining an SSL certificate.
 
 If you purchased your own domain, you can use <https://letsencrypt.org> to obtain a free, publicly trusted SSL certificate. This will allow you to work with services like IFTTT. Download and install per the instructions online and get a certificate using the following command.
 
-```bash
+{% highlight bash %}
 $ sudo ./letsencrypt-auto certonly --standalone -d example.com -d www.example.com
-```
+{% endhighlight %}
 
 Instead of example.com, use your domain. You will need to renew this certificate every 90 days.
 
@@ -36,22 +36,22 @@ Instead of example.com, use your domain. You will need to renew this certificate
 
 If you do not own your own domain, you may generate a self-signed certificate. This will not work with IFTTT, but it will encrypt all of your Open Peer Power traffic.
 
-```bash
+{% highlight bash %}
 openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 9999
 openssl rsa -in key.pem -out key.pem
 sudo cp key.pem cert.pem /etc/nginx/ssl
 sudo chmod 600 /etc/nginx/ssl/key.pem /etc/nginx/ssl/cert.pem
 sudo chown root:root /etc/nginx/ssl/key.pem /etc/nginx/ssl/cert.pem
-```
+{% endhighlight %}
 
 ### 4. Create dhparams file
 
 As a fair warning, this file will take a while to generate.
 
-```bash
+{% highlight bash %}
 cd /etc/nginx/ssl
 sudo openssl dhparam -out dhparams.pem 2048
-```
+{% endhighlight %}
 
 ### 5. Install configuration file in NGINX
 
@@ -65,11 +65,11 @@ Some Linux distributions (including CentOS and Fedora) will not have the `/etc/n
 
 ### 6. Enable the Open Peer Power configuration
 
-```bash
+{% highlight bash %}
 cd /etc/nginx/sites-enabled
 sudo unlink default
 sudo ln ../sites-available/hass default
-```
+{% endhighlight %}
 
 ### 7. Start NGINX
 
@@ -85,7 +85,7 @@ Forward ports 443 and 80 to your server on your router. Do not forward port 8123
 
 On your `configuration.yaml` file, edit the `http` component.
 
-```yaml
+{% highlight yaml %}
 http:
   # For extra security set this to only accept connections on localhost if NGINX is on the same machine
   # server_host: 127.0.0.1
@@ -95,11 +95,11 @@ http:
   # You must set the trusted proxy IP address so that Open Peer Power will properly accept connections
   # Set this to your NGINX machine IP, or localhost if hosted on the same machine.
   trusted_proxies: <NGINX IP address here, or 127.0.0.1 if hosted on the same machine>
-```
+{% endhighlight %}
 
 ### NGINX configuration
 
-```nginx
+{% highlight nginx %}
 map $http_upgrade $connection_upgrade {
     default upgrade;
     ''      close;
@@ -150,4 +150,4 @@ server {
         proxy_set_header Connection $connection_upgrade;
     }
 }
-```
+{% endhighlight %}

@@ -8,13 +8,13 @@ Packages in Open Peer Power provide a way to bundle different component's config
 
 Packages are configured under the core `homeassistant/packages` in the configuration and take the format of a package name (no spaces, all lower case) followed by a dictionary with the package configuration. For example, package `pack_1` would be created as:
 
-```yaml
+{% highlight yaml %}
 homeassistant:
   ...
   packages: 
     pack_1:
       ...package configuration here...
-```
+{% endhighlight %}
 
 The package configuration can include: `switch`, `light`, `automation`, `groups`, or most other Open Peer Power integrations including hardware platforms.
 
@@ -22,7 +22,7 @@ It can be specified inline or in a separate YAML file using `!include`.
 
 Inline example, main `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 homeassistant:
   ...
   packages: 
@@ -33,27 +33,27 @@ homeassistant:
       light:
         - platform: rpi
           ...
-```
+{% endhighlight %}
 
 Include example, main `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 homeassistant:
   ...
   packages: 
     pack_1: !include my_package.yaml
-```
+{% endhighlight %}
 
 The file `my_package.yaml` contains the "top-level" configuration:
 
-```yaml
+{% highlight yaml %}
 switch:
   - platform: rest
     ...
 light:
   - platform: rpi
     ...
-```
+{% endhighlight %}
 
 There are some rules for packages that will be merged:
 
@@ -62,10 +62,10 @@ There are some rules for packages that will be merged:
 
     For example if we have the following in the main configuration. You are not allowed to re-use "my_input" again for `input_boolean` in a package:
     
-    ```yaml
+    {% highlight yaml %}
     input_boolean:
       my_input:
-    ```
+    {% endhighlight %}
 3. Any integration that is not a platform [2], or dictionaries with Entity ID keys [3] can only be merged if its keys, except those for lists, are solely defined once.
 
 <div class='note tip'>
@@ -76,37 +76,37 @@ Components inside packages can only specify platform entries using configuration
 
 One way to organize packages is to create a folder named "packages" in your Open Peer Power configuration directory. In the packages directory you can store any number of packages in a YAML file. This entry in your `configuration.yaml` will load all packages:
 
-```yaml
+{% highlight yaml %}
 homeassistant:
   packages: !include_dir_named packages
-```
+{% endhighlight %}
 
 This uses the concept splitting the configuration and will include all files in a directory with the keys representing the filenames.
 See the documentation about [splitting the configuration](/docs/configuration/splitting_configuration/) for more information about `!include_dir_named` and other include statements that might be helpful. The benefit of this approach is to pull all configurations required to integrate a system, into one file, rather than across several.
 
 The following example allows to have subfolders in the `packages` folder, which could make managing multiple packages easier by grouping:
 
-```yaml
+{% highlight yaml %}
 homeassistant:
   packages: !include_dir_merge_named packages/
-```
+{% endhighlight %}
 
 and in `packages/subsystem1/functionality1.yaml`:
 
-```yaml
+{% highlight yaml %}
 subsystem1_functionality1:
   input_boolean:
   ...
   binary_sensor:
   ...
   automation:
-```
+{% endhighlight %}
 
 ### Customizing entities with packages
 
 It is possible to [customize entities](/docs/configuration/customizing-devices/) within packages. Just create your customization entries under:
 
-```yaml
+{% highlight yaml %}
 homeassistant:
   customize:
-```
+{% endhighlight %}
