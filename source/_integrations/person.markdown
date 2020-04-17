@@ -34,22 +34,22 @@ You can manage persons via the UI from the person page inside the configuration 
 
 This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
-```yaml
+{% highlight yaml %}
 person:
-```
+{% endhighlight %}
 
 ## Configuring the `person` integration via YAML
 
 If you prefer YAML, you can also configure your persons via `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 person:
   - name: Ada
     id: ada6789
     device_trackers:
       - device_tracker.ada
-```
+{% endhighlight %}
 
 {% configuration %}
   id:
@@ -72,7 +72,7 @@ person:
 
 An extended example would look like the following sample:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 person:
   - name: Ada
@@ -85,7 +85,7 @@ person:
     device_trackers:
       - device_tracker.stacey
       - device_tracker.beacon
-```
+{% endhighlight %}
 
 If you change the YAML, you can reload it by calling the `person.reload` service.
 
@@ -93,10 +93,10 @@ If you change the YAML, you can reload it by calling the `person.reload` service
 
 By following the instructions on the [customizing entities](/docs/configuration/customizing-devices#entity_picture) page, you can customize the picture used for a person entity in the `customize:` section of your configuration. For example:
 
-```yaml
+{% highlight yaml %}
 customize:
   person.ada:
     entity_picture: "/local/ada.jpg"
-```
+{% endhighlight %}
 
 See the documentation about [hosting files](/integrations/http/#hosting-files) for more information about the `www` folder.

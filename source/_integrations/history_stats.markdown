@@ -24,7 +24,7 @@ Examples of what you can track:
 To enable the history statistics sensor, add the following lines to your `configuration.yaml`:
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   - platform: history_stats
@@ -34,7 +34,7 @@ sensor:
     type: time
     start: '{{ now().replace(hour=0, minute=0, second=0) }}'
     end: '{{ now() }}'
-```
+{% endhighlight %}
 {% endraw %}
 
 {% configuration %}
@@ -99,23 +99,23 @@ As `start` and `end` variables can be either datetimes or timestamps, you can co
 
 The duration variable is used when the time period is fixed. Different syntaxes for the duration are supported, as shown below.
 
-```yaml
+{% highlight yaml %}
 # 6 hours
 duration: 06:00
-```
+{% endhighlight %}
 
-```yaml
+{% highlight yaml %}
 # 1 minute, 30 seconds
 duration: 00:01:30
-```
+{% endhighlight %}
 
-```yaml
+{% highlight yaml %}
 # 2 hours and 30 minutes
 duration:
   # supports seconds, minutes, hours, days
   hours: 2
   minutes: 30
-```
+{% endhighlight %}
 
 <div class='note'>
 
@@ -130,30 +130,30 @@ Here are some examples of periods you could work with, and what to write in your
 **Today**: starts at 00:00 of the current day and ends right now.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
     start: '{{ now().replace(hour=0, minute=0, second=0) }}'
     end: '{{ now() }}'
-```
+{% endhighlight %}
 {% endraw %}
 
 **Yesterday**: ends today at 00:00, lasts 24 hours.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
     end: '{{ now().replace(hour=0, minute=0, second=0) }}'
     duration:
       hours: 24
-```
+{% endhighlight %}
 {% endraw %}
 
 **This morning (6AM - 11AM)**: starts today at 6, lasts 5 hours.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
     start: '{{ now().replace(hour=6, minute=0, second=0) }}'
     duration:
       hours: 5
-```
+{% endhighlight %}
 {% endraw %}
 
 **Current week**: starts last Monday at 00:00, ends right now.
@@ -161,29 +161,29 @@ Here are some examples of periods you could work with, and what to write in your
 Here, last Monday is _today_ as a timestamp, minus 86400 times the current weekday (86400 is the number of seconds in one day, the weekday is 0 on Monday, 6 on Sunday).
 
 {% raw %}
-```yaml
+{% highlight yaml %}
     start: '{{ as_timestamp( now().replace(hour=0, minute=0, second=0) ) - now().weekday() * 86400 }}'
     end: '{{ now() }}'
-```
+{% endhighlight %}
 {% endraw %}
 
 **Last 30 days**: ends today at 00:00, lasts 30 days. Easy one.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
     end: '{{ now().replace(hour=0, minute=0, second=0) }}'
     duration:
       days: 30
-```
+{% endhighlight %}
 {% endraw %}
 
 **All your history** starts at timestamp = 0, and ends right now.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
     start: '{{ 0 }}'
     end: '{{ now() }}'
-```
+{% endhighlight %}
 {% endraw %}
 
 <div class='note'>

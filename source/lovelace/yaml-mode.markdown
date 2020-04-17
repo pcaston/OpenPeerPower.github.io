@@ -5,10 +5,10 @@ description: "Advanced users can switch on YAML mode for editing the Lovelace UI
 
 It is possible to customize your Open Peer Power interface by writing in YAML instead of via the UI. To do so, you configure the Lovelace integration to be in YAML mode by adding the following to your `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 lovelace:
   mode: yaml
-```
+{% endhighlight %}
 
 Restart Open Peer Power for the mode to be changed. Create a new file `<config>/ui-lovelace.yaml` and add your Lovelace configuration. A good way to start this file is to copy and paste the "Raw configuration" from the UI so your manual configuration starts the same as your existing UI.
 

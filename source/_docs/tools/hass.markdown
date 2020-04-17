@@ -6,7 +6,7 @@ description: "Description of hass."
 The command-line part of Open Peer Power is `hass`.
 
 
-```bash
+{% highlight bash %}
 $ hass -h
 usage: hass [-h] [--version] [-c path_to_config_dir] [--demo-mode] [--debug]
             [--open-ui] [--skip-pip] [-v] [--pid-file path_to_pid_file]
@@ -37,4 +37,4 @@ optional arguments:
   --runner              On restart exit with code 100
   --script ...          Run one of the embedded scripts
   --daemon              Run Open Peer Power as daemon
-```
+{% endhighlight %}

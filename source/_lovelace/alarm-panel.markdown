@@ -11,10 +11,10 @@ The Alarm Panel card allows you to Arm and Disarm your alarm control panel integ
 Screenshot of the Alarm Panel card.
 </p>
 
-```yaml
+{% highlight yaml %}
 type: alarm-panel
 entity: alarm_control_panel.alarm
-```
+{% endhighlight %}
 
 {% configuration %}
 type:
@@ -54,11 +54,11 @@ theme:
 
 Title Example:
 
-```yaml
+{% highlight yaml %}
 - type: alarm-panel
   name: House Alarm
   entity: alarm_control_panel.alarm
-```
+{% endhighlight %}
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_alarm_panel_title_card.gif' alt='Screenshot of the alarm panel card'>
@@ -67,7 +67,7 @@ Screenshot of the Alarm Panel card.
 
 Define the State List:
 
-```yaml
+{% highlight yaml %}
 type: alarm-panel
 name: House Alarm
 entity: alarm_control_panel.alarm
@@ -76,4 +76,4 @@ states:
   - arm_away
   - arm_night
   - armed_custom_bypass
-```
+{% endhighlight %}

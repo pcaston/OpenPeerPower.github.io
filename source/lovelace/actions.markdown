@@ -19,10 +19,10 @@ Actions can be enabled on:
 
 Action that will be performed when an object on a card is tapped.
 
-```yaml
+{% highlight yaml %}
 tap_action:
   action: toggle
-```
+{% endhighlight %}
 
 {% configuration tap-action %}
 tap_action:
@@ -66,10 +66,10 @@ tap_action:
 
 Action that will be performed when an object on a card is tapped and held.
 
-```yaml
+{% highlight yaml %}
 hold_action:
   action: toggle
-```
+{% endhighlight %}
 
 {% configuration hold_action %}
 hold_action:
@@ -113,10 +113,10 @@ hold_action:
 
 Action that will be performed when an object on a card is double-tapped.
 
-```yaml
+{% highlight yaml %}
 double_tap_action:
   action: toggle
-```
+{% endhighlight %}
 
 {% configuration double_tap_action %}
 double_tap_action:
@@ -160,13 +160,13 @@ double_tap_action:
 
 If you define confirmation as an object instead of boolean, you can add more customization and configurations.
 
-```yaml
+{% highlight yaml %}
 double_tap_action:
   action: call-service
   confirmation:
     text: Are you sure you want to restart?
   service: script.restart
-```
+{% endhighlight %}
 
 {% configuration confirmation%}
 text:
@@ -192,10 +192,10 @@ user:
 
 Tap action implemented on an entity button card:
 
-```yaml
+{% highlight yaml %}
 type: button
 tap_action:
   action: toggle
 hold_action:
   action: more-info
-```
+{% endhighlight %}

@@ -54,8 +54,8 @@ theme:
 
 ## Example
 
-```yaml
+{% highlight yaml %}
 type: sensor
 entity: sensor.illumination
 name: Illumination
-```
+{% endhighlight %}

@@ -13,14 +13,14 @@ The `smtp` platform allows you to deliver notifications from Open Peer Power to 
 
 To enable notification by e-mail in your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 notify:
   - name: NOTIFIER_NAME
     platform: smtp
     sender: YOUR_SENDER
     recipient: YOUR_RECIPIENT
-```
+{% endhighlight %}
 
 {% configuration %}
 name:
@@ -77,7 +77,7 @@ debug:
 
 A sample configuration entry for Google Mail.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 notify:
   - name: NOTIFIER_NAME
@@ -93,13 +93,13 @@ notify:
       - james@gmail.com
       - bob@gmail.com
     sender_name: My Open Peer Power
-```
+{% endhighlight %}
 
 Keep in mind that Google has some extra layers of protection which need special attention (Hint: 'Less secure apps'). If you have 2-step verification enabled on your Google account, you'll need to use [an application-specific password](https://support.google.com/mail/answer/185833?hl=en).
 
 To use the SMTP notification, refer to it in an automation or script like in this example:
 
-```yaml
+{% highlight yaml %}
   burglar:
     alias: Burglar Alarm
     sequence:
@@ -114,13 +114,13 @@ To use the SMTP notification, refer to it in an automation or script like in thi
                 images:
                     - /home/pi/snapshot1.jpg
                     - /home/pi/snapshot2.jpg
-```
+{% endhighlight %}
 
 The optional `images` field adds in-line image attachments to the email. This sends a text/HTML multi-part message instead of the plain text default.
 
 The optional `html` field makes a custom text/HTML multi-part message, allowing total freedom for sending rich html emails. In them, if you need to attach images, you can pass both arguments (`html` and `images`), the attachments will be joined with the basename of the images, so they can be included in the html page with `src="cid:image_name.ext"`.
 
-```yaml
+{% highlight yaml %}
   burglar:
     alias: Burglar Alarm
     sequence:
@@ -182,7 +182,7 @@ The optional `html` field makes a custom text/HTML multi-part message, allowing 
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
                 </html>
 
-```
+{% endhighlight %}
 Obviously, this kind of complex html email reporting is done much more conveniently using Jinja2 templating from an [AppDaemon app](/docs/ecosystem/appdaemon/tutorial/), for example.
 
 This platform is fragile and not able to catch all exceptions in a smart way because of the large number of possible configuration combinations.

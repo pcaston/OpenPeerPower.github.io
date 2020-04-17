@@ -33,10 +33,10 @@ theme:
 
 Example
 
-```yaml
+{% highlight yaml %}
 type: weather-forecast
 entity: weather.dark_sky
-```
+{% endhighlight %}
 
 <div class="note">
 

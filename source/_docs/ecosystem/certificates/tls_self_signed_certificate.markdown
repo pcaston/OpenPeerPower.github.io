@@ -22,9 +22,9 @@ Change to your Open Peer Power [configuration directory](/getting-started/config
 
 The certificate **must** be `.pem` extension.
 
-```bash
+{% highlight bash %}
 openssl req -sha256 -addext "subjectAltName = IP:X.X.X.X" -newkey rsa:4096 -nodes -keyout privkey.pem -x509 -days 730 -out fullchain.pem
-```
+{% endhighlight %}
 
 Where the `X.X.X.X` must be replaced with the IP address of your local machine running Open Peer Power (e.g., `192.168.1.20`).
 
@@ -36,19 +36,19 @@ Update the `http:` entry in your `configuration.yaml` file and let it point to y
 
 Hass.io:
 
-```yaml
+{% highlight yaml %}
 http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
-```
+{% endhighlight %}
 
 Non-Hass.io:
 
-```yaml
+{% highlight yaml %}
 http:
   ssl_certificate: /home/your_user/.homeassistant/fullchain.pem
   ssl_key: /home/your_user/.homeassistant/privkey.pem
-```
+{% endhighlight %}
 
 A restart of Open Peer Power is required for the new certificate to take effect.
 
@@ -56,17 +56,17 @@ If you get any log error about *ssl_key* or *ssl_certificate* that is **not a fi
 
 Open Peer Power (through console or SSH add-on):
 
-```bash
+{% highlight bash %}
 chown root:root fullchain.pem privkey.pem
 chmod 600 fullchain.pem privkey.pem
-```
+{% endhighlight %}
   
 Non-hass-io:
 
-```bash
+{% highlight bash %}
 sudo chown homeassistant:homeassistant fullchain.pem privkey.pem
 sudo chmod 600 fullchain.pem privkey.pem
-```
+{% endhighlight %}
 
 A tutorial "[Working with SSL Certificates, Private Keys and CSRs](https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs)" could give you some insight about special cases.
 

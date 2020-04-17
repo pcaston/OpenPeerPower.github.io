@@ -14,7 +14,7 @@ The device tracker allows you to track devices in Open Peer Power. This can happ
 
 To get started add the following lines to your `configuration.yaml` (example for Netgear):
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry for Netgear device
 device_tracker:
   - platform: netgear
@@ -23,7 +23,7 @@ device_tracker:
     password: YOUR_PASSWORD
     new_device_defaults:
       track_new_devices: true
-```
+{% endhighlight %}
 
 The following optional parameters can be used with any platform:
 
@@ -44,7 +44,7 @@ The following optional parameters can be used with any platform:
 
 The extended example from above would look like the following sample:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry for Netgear device
 device_tracker:
   - platform: netgear
@@ -54,7 +54,7 @@ device_tracker:
     consider_home: 180
     new_device_defaults:
       track_new_devices: true
-```
+{% endhighlight %}
 
 Multiple device trackers can be used in parallel, such as [Owntracks](/integrations/owntracks/) and [Nmap](/integrations/nmap_tracker/). The state of the device will be determined by the source that reported last.
 
@@ -70,13 +70,13 @@ Once `device_tracker` is enabled, a file will be created in your configuration d
 
 Here's an example configuration for a single device:
 
-```yaml
+{% highlight yaml %}
 devicename:
   name: Friendly Name
   mac: EA:AA:55:E7:C6:94
   picture: https://www.home-assistant.io/images/favicon-192x192.png
   track: true
-```
+{% endhighlight %}
 
 <div class='note warning'>
 

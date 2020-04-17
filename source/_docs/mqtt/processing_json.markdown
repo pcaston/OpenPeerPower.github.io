@@ -14,17 +14,17 @@ The MQTT [switch](/integrations/switch.mqtt/) and [sensor](/integrations/sensor.
 
 To use this, add the following key to your `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 switch:
   platform: mqtt
   state_format: 'json:somekey[0].value'
-```
+{% endhighlight %}
 It is also possible to extract JSON values by using a value template:
 
-```yaml
+{% highlight yaml %}
 switch:
   platform: mqtt
   value_template: '{% raw %}{{ value_json.somekey[0].value }}{% endraw %}'
-```
+{% endhighlight %}
 
 More information about the full JSONPath syntax can be found [in their documentation](https://github.com/kennknowles/python-jsonpath-rw#jsonpath-syntax).

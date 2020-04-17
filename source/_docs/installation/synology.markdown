@@ -40,42 +40,42 @@ SSH onto your Synology & login as admin or root
 - Log in with your own administrator account
 - Switch to root using:
 
-```bash
+{% highlight bash %}
 $ sudo -i
-```
+{% endhighlight %}
 
 Check the path to python3 (assumed to be /volume1/@appstore/py3k/usr/local/bin)
 
-```bash
+{% highlight bash %}
 # cd /volume1/@appstore/py3k/usr/local/bin
-```
+{% endhighlight %}
 
 Install PIP (Python's package management system)
 
-```bash
+{% highlight bash %}
 # ./python3 -m ensurepip
-```
+{% endhighlight %}
 
 Use PIP to install the Open Peer Power package 0.64.3
 
-```bash
+{% highlight bash %}
 # ./python3 -m pip install homeassistant==0.64.3
-```
+{% endhighlight %}
 
 Create a Open Peer Power configuration directory & switch to it
 
-```bash
+{% highlight bash %}
 # mkdir /volume1/homeassistant
 # chown homeassistant /volume1/homeassistant 
 # chmod 755 /volume1/homeassistant
 # cd /volume1/homeassistant
-```
+{% endhighlight %}
 
 Hint: alternatively you can also create a "Shared Folder" via Synology WebUI (e.g., via "File Station") - this has the advantage that the folder is visible via "File Station".
 
 Create hass-daemon file using the following code (edit the variables in uppercase if necessary)
 
-```bash
+{% highlight bash %}
 #!/bin/sh
 
 # Package
@@ -178,27 +178,27 @@ case $1 in
         ;;
 esac
 
-```
+{% endhighlight %}
 
 Create links to Python folders to make things easier in the future:
 
-```bash
+{% highlight bash %}
 # ln -s /volume1/@appstore/py3k/usr/local/bin/python3 python3
 # ln -s /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/homeassistant homeassistant
-```
+{% endhighlight %}
 
 Set the owner and permissions on your configuration folder
 
-```bash
+{% highlight bash %}
 # chown -R homeassistant:users /volume1/homeassistant
 # chmod -R 664 /volume1/homeassistant
-```
+{% endhighlight %}
 
 Make the daemon file executable:
 
-```bash
+{% highlight bash %}
 # chmod 755 /volume1/homeassistant/hass-daemon
-```
+{% endhighlight %}
 
 Update your firewall (if it is turned on the Synology device):
 
@@ -220,24 +220,24 @@ Here are some useful commands:
 
 - Start Open Peer Power:
 
-```bash
+{% highlight bash %}
 $ sudo /volume1/homeassistant/hass-daemon start
-```
+{% endhighlight %}
 
 - Stop Open Peer Power:
 
-```bash
+{% highlight bash %}
 $ sudo /volume1/homeassistant/hass-daemon stop
-```
+{% endhighlight %}
 
 - Restart Open Peer Power:
 
-```bash
+{% highlight bash %}
 $ sudo /volume1/homeassistant/hass-daemon restart
-```
+{% endhighlight %}
 
 - Upgrade Open Peer Power::
 
-```bash
+{% highlight bash %}
 $  /volume1/@appstore/py3k/usr/local/bin/python3 -m pip install --upgrade homeassistant
-```
+{% endhighlight %}

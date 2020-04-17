@@ -17,11 +17,11 @@ The `moon` integration tracks the phases of the moon.
 
 To enable the moon sensor, add the following lines to your `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   - platform: moon
-```
+{% endhighlight %}
 
 This sensor will return one of the following values:
 `new_moon`, `waxing_crescent`, `first_quarter`, `waxing_gibbous`, `full_moon`, `waning_gibbous`, `last_quarter` or `waning_crescent` .

@@ -5,15 +5,15 @@ description: "Instructions on how to setup Open Peer Power to launch on boot usi
 
 Many Linux distributions use the Upstart system (or similar) for managing daemons. Typically, systems based on Debian 7 or previous use Upstart. This includes Ubuntu releases before 15.04. If you are unsure if your system is using Upstart, you may check with the following command:
 
-```bash
+{% highlight bash %}
 ps -p 1 -o comm=
-```
+{% endhighlight %}
 
 If the preceding command returns the string `init`, you are likely using Upstart.
 
 Upstart will launch init scripts that are located in the directory `/etc/init.d/`. A sample init script for systems using Upstart could look like the sample below.
 
-```bash
+{% highlight bash %}
 #!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          hass
@@ -117,14 +117,14 @@ case "$1" in
   *)
     echo "Usage: $0 {start|stop|restart|install|uninstall}"
 esac
-```
+{% endhighlight %}
 
 To install this script, download it, tweak it to you liking, and install it by following the directions in the header. This script will setup Open Peer Power to run when the system boots. To start/stop Open Peer Power manually, issue the following commands:
 
-```bash
+{% highlight bash %}
 sudo service hass-daemon start
 sudo service hass-daemon stop
-```
+{% endhighlight %}
 
 When running Open Peer Power with this script, the configuration directory will be located at `/var/opt/homeassistant`. This directory will contain a verbose log rather than simply an error log.
 

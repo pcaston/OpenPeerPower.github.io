@@ -5,7 +5,7 @@ description: "The Code of Conduct for Open Peer Power projects."
 
 # Contributor License Agreement
 
-```txt
+{% highlight txt %}
 By making a contribution to this project, I certify that:
 
 (a) The contribution was created in whole or in part by me and I
@@ -26,7 +26,7 @@ By making a contribution to this project, I certify that:
     personal information I submit with it) is maintained indefinitely
     and may be redistributed consistent with this project or the open
     source license(s) involved.
-```
+{% endhighlight %}
 
 ## Attribution
 

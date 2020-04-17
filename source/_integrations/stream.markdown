@@ -17,10 +17,10 @@ The `stream` integration provides a way to proxy live streams through Open Peer 
 
 To enable this component, add the following lines to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 stream:
-```
+{% endhighlight %}
 
 ### Services
 
@@ -43,14 +43,14 @@ The path part of `filename` must be an entry in the `whitelist_external_dirs` in
 
 For example, the following action in an automation would take a recording from `rtsp://my.stream.feed:554` and save it to `/config/www`.
 
-```yaml
+{% highlight yaml %}
 action:
   service: camera.record
   data:
     entity_id: camera.quintal
     filename: '/config/www/my_stream.mp4'
     duration: 30
-```
+{% endhighlight %}
 
 ## Streaming in Lovelace
 
@@ -61,14 +61,14 @@ To do this add either [picture-entity](/lovelace/picture-entity/), [picture-glan
 
 Some users on manual installs may see the following error in their logs after restarting:
 
-```text
+{% highlight text %}
 2019-03-12 08:49:59 ERROR (SyncWorker_5) [homeassistant.util.package] Unable to install package av==6.1.2: Command "/home/pi/home-assistant/bin/python3 -u -c "import setuptools, tokenize;__file__='/tmp/pip-install-udfl2b3t/av/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-record-ftn5zmh2/install-record.txt --single-version-externally-managed --compile --install-headers /home/pi/home-assistant/include/site/python3.6/av" failed with error code 1 in /tmp/pip-install-udfl2b3t/av/
 2019-03-12 08:49:59 ERROR (MainThread) [homeassistant.requirements] Not initializing stream because could not install requirement av==6.1.2
 2019-03-12 08:49:59 ERROR (MainThread) [homeassistant.setup] Setup failed for stream: Could not install all requirements.
-```
+{% endhighlight %}
 
 If you see this error you can solve it by running the following commands and restarting Open Peer Power (commands do not need to be ran as the `homeassistant` user):
 
-```text
+{% highlight text %}
 sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev
-```
+{% endhighlight %}

@@ -36,12 +36,12 @@ Before linking it to Open Peer Power, you will need to visit the Almond UI once 
 
 Once installed, configure Almond like this:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 almond:
   type: local
   host: http://127.0.0.1:3000
-```
+{% endhighlight %}
 
 The Almond integration does not update configuration entries yet. If you make a change to configuration.yaml, you will need to remove the configuration entry and then restart Open Peer Power.
 
@@ -55,13 +55,13 @@ Your Open Peer Power installation needs to be externally accessible if you want 
 
 It is possible to set up Almond Web manually. You will need to create your own client ID and secret in the web interface.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 almond:
   type: oauth2
   client_id: AAAAAAAAAAAAA
   client_secret: BBBBBBBBBBBBBBBBB
-```
+{% endhighlight %}
 
 You can now go to the integrations page and start the configuration flow.
 

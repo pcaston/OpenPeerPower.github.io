@@ -10,14 +10,14 @@ ha_domain: generic_thermostat
 
 The `generic_thermostat` climate platform is a thermostat implemented in Open Peer Power. It uses a sensor and a switch connected to a heater or air conditioning under the hood. When in heater mode, if the measured temperature is cooler than the target temperature, the heater will be turned on and turned off when the required temperature is reached. When in air conditioning mode, if the measured temperature is hotter than the target temperature, the air conditioning will be turned on and turned off when required temperature is reached. One Generic Thermostat entity can only control one switch. If you need to activate two switches, one for a heater and one for an air conditioner, you will need two Generic Thermostat entities.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 climate:
   - platform: generic_thermostat
     name: Study
     heater: switch.study_heater
     target_sensor: sensor.study_temperature
-```
+{% endhighlight %}
 
 {% configuration %}
 name:
@@ -93,7 +93,7 @@ Please note that when changing the preset mode to away, you will force a target 
 
 ## Full configuration example
 
-```yaml
+{% highlight yaml %}
 climate:
   - platform: generic_thermostat
     name: Study
@@ -112,4 +112,4 @@ climate:
     initial_hvac_mode: "off"
     away_temp: 16
     precision: 0.1
-```
+{% endhighlight %}

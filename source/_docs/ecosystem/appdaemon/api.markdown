@@ -10,20 +10,20 @@ Automations in AppDaemon are performed by creating a piece of code (essentially 
 
 The first step is to create a unique file within the apps directory (as defined in the `[AppDaemon]` section of configuration file). This file is in fact a Python module, and is expected to contain one or more classes derived from the supplied `AppDaemon` class, imported from the supplied `homeassistant.appapi` module. The start of an app might look like this:
 
-```python
+{% highlight python %}
 import homeassistant.appapi as appapi
 
 
 class MotionLights(appapi.AppDaemon):
     """Motion lights implementation."""
-```
+{% endhighlight %}
 
 When configured as an app in the configuration file (more on that later) the lifecycle of the App begins. It will be instantiated as an object by AppDaemon, and immediately, it will have a call made to its `initialize()` function - this function must appear as part of every app:
 
-```python
+{% highlight python %}
   def initialize(self):
       """Perform initialization."""
-```
+{% endhighlight %}
 
 The initialize function allows the app to register any callbacks it might need for responding to state changes, and also any setup activities. When the `initialize()` function returns, the App will be dormant until any of its callbacks are activated.
 
@@ -47,7 +47,7 @@ These, along with their various subscription calls and helper functions, will be
 
 To wrap up this section, here is a complete functioning App (with comments):
 
-```python
+{% highlight python %}
 import homeassistant.appapi as appapi
 import datetime
 
@@ -64,7 +64,7 @@ class NightLight(appapi.AppDaemon):
     def run_daily_callback(self, kwargs):
         # Call to Open Peer Power to turn the porch light on
         self.turn_on("light.porch")
-```
+{% endhighlight %}
 
 To summarize - an App's lifecycle consists of being initialized, which allows it to set one or more state and/or schedule callbacks. When those callbacks are activated, the App will typically use one of the Service Calling calls to effect some change to the devices of the system and then wait for the next relevant state change. That's all there is to it!
 
@@ -82,11 +82,11 @@ To configure a new App you need a minimum of two directives:
 
 Although the section/App name must be unique, it is possible to re-use a class as many times as you want, and conversely to put as many classes in a module as you want. A sample definition for a new App might look as follows:
 
-```ini
+{% highlight ini %}
 [newapp]
 module = new
 class = NewApp
-```
+{% endhighlight %}
 
 When AppDaemon sees the following configuration it will expect to find a class called `NewApp` defined in a module called `new.py` in the apps subdirectory. Apps can be placed at the root of the Apps directory or within a subdirectory, an arbitrary depth down - wherever the App is, as long as it is in some subdirectory of the Apps dir, or in the Apps dir itself, AppDaemon will find it. There is no need to include information about the path, just the name of the file itself (without the `.py`) is sufficient. If names in the subdirectories overlap, AppDir will pick one of them but the exact choice it will make is undefined.
 
@@ -110,24 +110,24 @@ The suggested order for creating a new App is to add the module code first and w
 
 There wouldn't be much point in being able to run multiple versions of an App if there wasn't some way to instruct them to do something different. For this reason it is possible to pass any required arguments to an App, which are then made available to the object at runtime. The arguments themselves can be called anything (apart from `module` or `class`) and are simply added into the section after the 2 mandatory directives like so:
 
-```ini
+{% highlight ini %}
 [MyApp]
 module = myapp
 class = MyApp
 param1 = spam
 param2 = eggs
-```
+{% endhighlight %}
 
 Within the Apps code, the 2 parameters (as well as the module and class) are available as a dictionary called `args`, and accessed as follows:
 
-```python
+{% highlight python %}
 param1 = self.args["param1"]
 param2 = self.args["param2"]
-```
+{% endhighlight %}
 
 A use case for this might be an App that detects motion and turns on a light. If you have 3 places you want to run this, rather than hardcoding this into 3 separate Apps, you need only code a single app and instantiate it 3 times with different arguments. It might look something like this:
 
-```ini
+{% highlight ini %}
 [downstairs_motion_light]
 module = motion_light
 class = MotionLight
@@ -143,7 +143,7 @@ module = motion_light
 class = MotionLight
 sensor = binary_sensor.garage
 light = light.garage
-```
+{% endhighlight %}
 
 ## Callback Constraints
 
@@ -153,12 +153,12 @@ Put simply, callback constraints are one or more conditions on callback executio
 
 For example, the presence callback constraint can be added to an App by adding a parameter to its configuration like this:
 
-```ini
+{% highlight ini %}
 [some_app]
 module = some_module
 class = SomeClass
 constrain_presence = noone
-```
+{% endhighlight %}
 
 Now, although the `initialize()` function will be called for MyClass, and it will have a chance to register as many callbacks as it desires, none of the callbacks will execute, in this case, until everyone has left. This could be useful for an interior motion detector App for instance. There are several different types of constraints:
 
@@ -174,31 +174,31 @@ They are described individually below.
 ### input_boolean
 By default, the input_boolean constraint prevents callbacks unless the specified input_boolean is set to "on". This is useful to allow certain Apps to be turned on and off from the user interface. For example:
 
-```ini
+{% highlight ini %}
 [some_app]
 module = some_module
 class = SomeClass
 constrain_input_boolean = input_boolean.enable_motion_detection
-```
+{% endhighlight %}
 
 If you want to reverse the logic so the constraint is only called when the input_boolean is off, use the optional state parameter by appending ",off" to the argument, e.g.:
 
-```ini
+{% highlight ini %}
 [some_app]
 module = some_module
 class = SomeClass
 constrain_input_boolean = input_boolean.enable_motion_detection,off
-```
+{% endhighlight %}
 
 ### input_select
 The input_select constraint prevents callbacks unless the specified input_select is set to one or more of the nominated (comma separated) values. This is useful to allow certain Apps to be turned on and off according to some flag, e.g., a house mode flag.
 
-```ini
+{% highlight ini %}
 # Single value
 constrain_input_select = input_select.house_mode,Day
 # or multiple values
 constrain_input_select = input_select.house_mode,Day,Evening,Night
-```
+{% endhighlight %}
 
 ### presence
 The presence constraint will constrain based on presence of device trackers. It takes 3 possible values:
@@ -206,13 +206,13 @@ The presence constraint will constrain based on presence of device trackers. It 
 - `anyone` - only allow callback execution when one or more person is home
 - `everyone` - only allow callback execution when everyone is home
 
-```ini
+{% highlight ini %}
 constrain_presence = anyone
 # or
 constrain_presence = someone
 # or
 constrain_presence = noone
-```
+{% endhighlight %}
 
 ### time
 The time constraint consists of 2 variables, `constrain_start_time` and `constrain_end_time`. Callbacks will only be executed if the current time is between the start and end times.
@@ -226,7 +226,7 @@ The times are specified in a string format with one of the following formats:
 
 The time based constraint system correctly interprets start and end times that span midnight.
 
-```ini
+{% highlight ini %}
 # Run between 8am and 10pm
 constrain_start_time = 08:00:00
 constrain_end_time = 22:00:00
@@ -236,14 +236,14 @@ constrain_end_time = sunset
 # Run between 45 minutes before sunset and 45 minutes after sunrise the next day
 constrain_start_time = sunset - 00:45:00
 constrain_end_time = sunrise + 00:45:00
-```
+{% endhighlight %}
 
 ### days
 The day constraint consists of as list of days for which the callbacks will fire, e.g.
 
-```ini
+{% highlight ini %}
 constrain_days = mon,tue,wed
-```
+{% endhighlight %}
 
 Callback constraints can also be applied to individual callbacks within Apps, see later for more details.
 
@@ -275,9 +275,9 @@ In most cases, the attribute `state` has the most important value in it, e.g., f
 
 #### Synopsis
 
-```python
+{% highlight python %}
 get_state(entity=None, attribute=None)
-```
+{% endhighlight %}
 
 `get_state()` is used to query the state of any integration within Open Peer Power. State updates are continuously tracked so this call runs locally and does not require AppDaemon to call back to Open Peer Power and as such is very efficient.
 
@@ -303,7 +303,7 @@ The value `all` for attribute has special significance and will return the entir
 
 #### Examples
 
-```python
+{% highlight python %}
 # Return state for the entire system
 state = self.get_state()
 
@@ -318,7 +318,7 @@ state = self.get_state("light.office_1", attribute="brightness")
 
 # Return the entire state for light.office_1
 state = self.get_state("light.office_1", attribute="all")
-```
+{% endhighlight %}
 
 ### set_state()
 
@@ -330,9 +330,9 @@ At the time of writing, it appears that no checking is done as to whether or not
 
 #### Synopsis
 
-```python
+{% highlight python %}
 set_state(entity_id, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -350,9 +350,9 @@ A list of keyword values to be changed or added to the entities state. e.g., `st
 
 #### Examples
 
-```python
+{% highlight python %}
 status = self.set_state("light.office_1", state="on", attributes={"color_name": "red"})
-```
+{% endhighlight %}
 
 ### About Callbacks
 
@@ -398,10 +398,10 @@ Any callback has the ability to allow the App creator to pass through arbitrary 
 
 Then in the callback you could use it as follows:
 
-```python
+{% highlight python %}
 def motion(self, entity, attribute, old, new, **kwargs):
     self.log("Arg1 is {}".format(kwargs["arg1"]))
-```
+{% endhighlight %}
 
 ### State Callbacks
 
@@ -411,11 +411,11 @@ AppDaemons's state callbacks allow an App to listen to a wide variety of events,
 
 When calling back into the App, the App must provide a class function with a known signature for AppDaemon to call. The callback will provide various information to the function to enable the function to respond appropriately. For state callbacks, a class defined callback function should look like this:
 
-```python
+{% highlight python %}
 def my_callback(self, entity, attribute, old, new, **kwargs):
     """Handle state callback."""
     # do some useful work here
-```
+{% endhighlight %}
 
 You can call the function whatever you like - you will reference it in the `listen_state()` call, and you can create as many callback functions as you need.
 
@@ -453,9 +453,9 @@ A dictionary containing any constraints and/or additional user specific keyword 
 
 #### Synopsis
 
-```python
+{% highlight python %}
 handle = listen_state(callback, entity=None, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -495,11 +495,11 @@ Note: `old` and `new` can be used singly or together.
 
 If duration is supplied as a parameter, the callback will not fire unless the state listened for is maintained for that number of seconds. This makes the most sense if a specific attribute is specified (or the default os `state` is used), an in conjunction with the `old` or `new` parameters, or both. When the callback is called, it is supplied with the values of `entity`, `attr`, `old` and `new` that were current at the time the actual event occurred, since the assumption is that none of them have changed in the intervening period.
 
-```python
+{% highlight python %}
 def my_callback(self, **kwargs):
     """Handle state change."""
     # do some useful work here
-```
+{% endhighlight %}
 
 (Scheduler callbacks are documented in detail later in this document)
 
@@ -509,7 +509,7 @@ Zero or more keyword arguments that will be supplied to the callback when it is 
 
 #### Examples
 
-```python
+{% highlight python %}
 # Listen for any state change and return the state attribute
 self.handle = self.listen_state(self.my_callback)
 
@@ -539,7 +539,7 @@ self.handle = self.listen_state(
 self.handle = self.listen_state(
     self.my_callback, "light.office_1", new="on", duration=60
 )
-```
+{% endhighlight %}
 
 ### cancel_listen_state()
 
@@ -547,9 +547,9 @@ Cancel a `listen_state()` callback. This will mean that the App will no longer b
 
 #### Synopsis
 
-```python
+{% highlight python %}
 cancel_listen_state(handle)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -563,9 +563,9 @@ The handle returned when the `listen_state()` call was made.
 
 #### Examples
 
-```python
+{% highlight python %}
 self.cancel_listen_state(self.office_light_handle)
-```
+{% endhighlight %}
 
 ### info_listen_state()
 
@@ -573,9 +573,9 @@ Get information on state a callback from its handle.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 entity, attribute, kwargs = self.info_listen_state(self.handle)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -589,9 +589,9 @@ The handle returned when the `listen_state()` call was made.
 
 #### Examples
 
-```python
+{% highlight python %}
 entity, attribute, kwargs = self.info_listen_state(self.handle)
-```
+{% endhighlight %}
 
 ## Scheduler
 
@@ -601,11 +601,11 @@ AppDaemon contains a powerful scheduler that is able to run with 1 second resolu
 
 As with State Change callbacks, Scheduler Callbacks expect to call into functions with a known and specific signature and a class defined Scheduler callback function should look like this:
 
-```python
+{% highlight python %}
 def my_callback(self, **kwargs):
     """Handle scheduler callback."""
     # do some useful work here
-```
+{% endhighlight %}
 
 You can call the function whatever you like; you will reference it in the Scheduler call, and you can create as many callback functions as you need.
 
@@ -628,9 +628,9 @@ Run the callback in a defined number of seconds. This is used to add a delay, fo
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.handle = self.run_in(callback, delay, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -652,19 +652,19 @@ Arbitrary keyword parameters to be provided to the callback function when it is 
 
 #### Examples
 
-```python
+{% highlight python %}
 self.handle = self.run_in(self.run_in_c)
 self.handle = self.run_in(self.run_in_c, title="run_in5")
-```
+{% endhighlight %}
 #### run_once()
 
 Run the callback once, at the specified time of day. If the time of day is in the past, the callback will occur on the next day.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.handle = self.run_once(callback, time, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -686,14 +686,14 @@ Arbitrary keyword parameters to be provided to the callback function when it is 
 
 #### Examples
 
-```python
+{% highlight python %}
 # Run at 4pm today, or 4pm tomorrow if it is already after 4pm
 import datetime
 
 ...
 runtime = datetime.time(16, 0, 0)
 handle = self.run_once(self.run_once_c, runtime)
-```
+{% endhighlight %}
 
 #### run_at()
 
@@ -701,9 +701,9 @@ Run the callback once, at the specified date and time.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.handle = self.run_at(callback, datetime, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -725,7 +725,7 @@ Arbitrary keyword parameters to be provided to the callback function when it is 
 
 #### Examples
 
-```python
+{% highlight python %}
 # Run at 4pm today
 import datetime
 
@@ -734,16 +734,16 @@ runtime = datetime.time(16, 0, 0)
 today = datetime.date.today()
 event = datetime.datetime.combine(today, runtime)
 handle = self.run_once(self.run_once_c, event)
-```
+{% endhighlight %}
 #### run_daily()
 
 Execute a callback at the same time every day. If the time has already passed, the function will not be invoked until the following day at the specified time.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.handle = self.run_daily(callback, time, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -765,14 +765,14 @@ Arbitrary keyword parameters to be provided to the callback function when it is 
 
 #### Examples
 
-```python
+{% highlight python %}
 # Run daily at 7pm
 import datetime
 
 ...
 time = datetime.time(19, 0, 0)
 self.run_daily(self.run_daily_c, runtime)
-```
+{% endhighlight %}
 
 #### run_hourly()
 
@@ -780,9 +780,9 @@ Execute a callback at the same time every hour. If the time has already passed, 
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.handle = self.run_hourly(callback, time=None, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -804,23 +804,23 @@ Arbitrary keyword parameters to be provided to the callback function when it is 
 
 #### Examples
 
-```python
+{% highlight python %}
 # Run every hour, on the hour
 import datetime
 
 ...
 time = datetime.time(0, 0, 0)
 self.run_daily(self.run_daily_c, runtime)
-```
+{% endhighlight %}
 #### run_minutely()
 
 Execute a callback at the same time every minute. If the time has already passed, the function will not be invoked until the following minute at the specified time.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.handle = self.run_minutely(callback, time=None, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -842,14 +842,14 @@ Arbitrary keyword parameters to be provided to the callback function when it is 
 
 #### Examples
 
-```python
+{% highlight python %}
 # Run Every Minute on the minute
 import datetime
 
 ...
 time = datetime.time(0, 0, 0)
 self.run_minutely(self.run_minutely_c, time)
-```
+{% endhighlight %}
 
 #### run_every()
 
@@ -857,9 +857,9 @@ Execute a repeating callback with a configurable delay starting at a specific ti
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.handle = self.run_every(callback, time, repeat, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -885,22 +885,22 @@ Arbitrary keyword parameters to be provided to the callback function when it is 
 
 #### Examples
 
-```python
+{% highlight python %}
 # Run every 17 minutes starting in 2 hours time
 import datetime
 
 ...
 self.run_every(self.run_every_c, time, 17 * 60)
-```
+{% endhighlight %}
 
 #### cancel_timer()
 Cancel a previously created timer
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.cancel_timer(handle)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -914,9 +914,9 @@ A handle value returned from the original call to create the timer.
 
 #### Examples
 
-```python
+{% highlight python %}
 self.cancel_timer(handle)
-```
+{% endhighlight %}
 
 ### info_timer()
 
@@ -924,9 +924,9 @@ Get information on a scheduler event from its handle.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 time, interval, kwargs = self.info_timer(handle)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -944,9 +944,9 @@ The handle returned when the scheduler call was made.
 
 #### Examples
 
-```python
+{% highlight python %}
 time, interval, kwargs = self.info_timer(handle)
-```
+{% endhighlight %}
 
 ### Scheduler Randomization
 
@@ -959,14 +959,14 @@ All of the scheduler calls above support 2 additional optional arguments, `rando
 
 For example:
 
-```python
+{% highlight python %}
 # Run a callback in 2 minutes minus a random number of seconds between 0 and 60, e.g., run between 60 and 120 seconds from now
 self.handle = self.run_in(callback, 120, random_start=-60, **kwargs)
 # Run a callback in 2 minutes plus a random number of seconds between 0 and 60, e.g., run between 120 and 180 seconds from now
 self.handle = self.run_in(callback, 120, random_end=60, **kwargs)
 # Run a callback in 2 minutes plus or minus a random number of seconds between 0 and 60, e.g., run between 60 and 180 seconds from now
 self.handle = self.run_in(callback, 120, random_start=-60, random_end=60, **kwargs)
-```
+{% endhighlight %}
 
 ## Sunrise and Sunset
 
@@ -978,9 +978,9 @@ Run a callback at or around sunrise.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.handle = self.run_at_sunrise(callback, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1002,7 +1002,7 @@ Arbitrary keyword parameters to be provided to the callback function when it is 
 
 #### Examples
 
-```python
+{% highlight python %}
 import datetime
 
 # ...
@@ -1015,7 +1015,7 @@ self.run_at_sunrise(self.sun, offset=30 * 60)  # Sunrise +30 mins
 self.run_at_sunrise(self.sun, random_start=-60 * 60, random_end=60 * 60)
 # Run at a random time between 30 and 60 minutes before sunrise
 self.run_at_sunrise(self.sun, random_start=-60 * 60, random_end=30 * 60)
-```
+{% endhighlight %}
 
 ### run_at_sunset()
 
@@ -1023,9 +1023,9 @@ Run a callback at or around sunset.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.handle = self.run_at_sunset(callback, offset, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1047,7 +1047,7 @@ Arbitrary keyword parameters to be provided to the callback function when it is 
 
 #### Examples
 
-```python
+{% highlight python %}
 # Example using timedelta
 import datetime
 
@@ -1062,16 +1062,16 @@ self.run_at_sunset(self.sun, 30 * 60)  # Sunset +30 mins
 self.run_at_sunset(self.sun, random_start=-60 * 60, random_end=60 * 60)
 # Run at a random time between 30 and 60 minutes before sunset
 self.run_at_sunset(self.sun, random_start=-60 * 60, random_end=30 * 60)
-```
+{% endhighlight %}
 ### sunrise()
 
 Return the time that the next Sunrise will occur.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.sunrise()
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1079,18 +1079,18 @@ A Python datetime that represents the next time Sunrise will occur.
 
 #### Examples
 
-```python
+{% highlight python %}
 rise_time = self.sunrise()
-```
+{% endhighlight %}
 ### sunset()
 
 Return the time that the next Sunset will occur.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.sunset()
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1098,18 +1098,18 @@ A Python datetime that represents the next time Sunset will occur.
 
 #### Examples
 
-```python
+{% highlight python %}
 set_time = self.sunset()
-```
+{% endhighlight %}
 ### sun_up()
 
 A function that allows you to determine if the sun is currently up.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 result = self.sun_up()
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1117,10 +1117,10 @@ result = self.sun_up()
 
 #### Examples
 
-```python
+{% highlight python %}
 if self.sun_up():
     do_something()
-```
+{% endhighlight %}
 
 ### sun_down()
 
@@ -1128,9 +1128,9 @@ A function that allows you to determine if the sun is currently down.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 result = self.sun_down()
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1138,10 +1138,10 @@ result = self.sun_down()
 
 #### Examples
 
-```python
+{% highlight python %}
 if self.sun_down():
     do_something()
-```
+{% endhighlight %}
 
 ## Calling Services
 
@@ -1155,9 +1155,9 @@ Call service is the basic way of calling a service within AppDaemon. It can call
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.call_service(service, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1175,10 +1175,10 @@ Each service has different parameter requirements. This argument allows you to s
 
 #### Examples
 
-```python
+{% highlight python %}
 self.call_service("light/turn_on", entity_id="light.office_lamp", color_name="red")
 self.call_service("notify/notify", title="Hello", message="Hello World")
-```
+{% endhighlight %}
 ### turn_on()
 
 This is a convenience function for the `homeassistant.turn_on` function. It is able to turn on pretty much anything in Open Peer Power that can be turned on or run:
@@ -1192,9 +1192,9 @@ And many more.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.turn_on(entity_id, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1212,11 +1212,11 @@ A comma separated list of key value pairs to allow specification of parameters o
 
 #### Examples
 
-```python
+{% highlight python %}
 self.turn_on("switch.patio_lights")
 self.turn_on("scene.bedroom_on")
 self.turn_on("light.office_1", color_name="green")
-```
+{% endhighlight %}
 
 ### turn_off()
 
@@ -1224,9 +1224,9 @@ This is a convenience function for the `homeassistant.turn_off` function. Like `
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.turn_off(entity_id)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1240,10 +1240,10 @@ Fully qualified entity_id of the thing to be turned off, e.g., `light.office_lam
 
 #### Examples
 
-```python
+{% highlight python %}
 self.turn_off("switch.patio_lights")
 self.turn_off("light.office_1")
-```
+{% endhighlight %}
 
 ### toggle()
 
@@ -1251,9 +1251,9 @@ This is a convenience function for the `homeassistant.toggle` function. It is ab
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.toggle(entity_id)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1267,10 +1267,10 @@ Fully qualified entity_id of the thing to be toggled, e.g., `light.office_lamp` 
 
 #### Examples
 
-```python
+{% highlight python %}
 self.toggle("switch.patio_lights")
 self.toggle("light.office_1", color_name="green")
-```
+{% endhighlight %}
 
 ### select_value()
 
@@ -1278,9 +1278,9 @@ This is a convenience function for the `input_number.select_value` function. It 
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.select_value(entity_id, value)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1298,9 +1298,9 @@ The new value to set the input number to.
 
 #### Examples
 
-```python
+{% highlight python %}
 self.select_value("input_number.alarm_hour", 6)
-```
+{% endhighlight %}
 
 ### select_option()
 
@@ -1308,9 +1308,9 @@ This is a convenience function for the `input_select.select_option` function. It
 
 #### Synopsis
 
-```python
+{% highlight python %}
 self.select_option(entity_id, option)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1328,9 +1328,9 @@ The new value to set the input number to.
 
 #### Examples
 
-```python
+{% highlight python %}
 self.select_option("input_select.mode", "Day")
-```
+{% endhighlight %}
 
 ### notify()
 
@@ -1338,9 +1338,9 @@ This is a convenience function for the `notify.notify` service. It will send a n
 
 #### Synopsis
 
-```python
+{% highlight python %}
 notify(message, title=None)
-```
+{% endhighlight %}
 #### Returns
 
 None
@@ -1357,9 +1357,9 @@ Title of the notification - optional.
 
 #### Examples
 
-```python
+{% highlight python %}
 self.notify("", "Switching mode to Evening")
-```
+{% endhighlight %}
 
 ## Events
 
@@ -1387,11 +1387,11 @@ In addition to the Open Peer Power supplied events, AppDaemon adds 2 more events
 
 As with State Change and Scheduler callbacks, Event Callbacks expect to call into functions with a known and specific signature and a class defined Scheduler callback function should look like this:
 
-```python
+{% highlight python %}
 def my_callback(self, event_name, data, kwargs):
     """Handle event callback."""
     # do some useful work here
-```
+{% endhighlight %}
 
 You can call the function whatever you like - you will reference it in the Scheduler call, and you can create as many callback functions as you need.
 
@@ -1419,9 +1419,9 @@ Listen event sets up a callback for a specific event, or any event.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 handle = listen_event(function, event=None, **kwargs)
-```
+{% endhighlight %}
 #### Returns
 
 A handle that can be used to cancel the callback.
@@ -1446,7 +1446,7 @@ Filtering will work with any event type, but it will be necessary to figure out 
 
 #### Examples
 
-```python
+{% highlight python %}
 self.listen_event(self.mode_event, "MODE_CHANGE")
 # Listen for a minimote event activating scene 3:
 self.listen_event(self.generic_event, "zwave.scene_activated", scene_id=3)
@@ -1454,7 +1454,7 @@ self.listen_event(self.generic_event, "zwave.scene_activated", scene_id=3)
 self.listen_event(
     self.generic_event, "zwave.scene_activated", entity_id="minimote_31", scene_id=3
 )
-```
+{% endhighlight %}
 
 ### cancel_listen_event()
 
@@ -1462,9 +1462,9 @@ Cancels callbacks for a specific event.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 cancel_listen_event(handle)
-```
+{% endhighlight %}
 #### Returns
 
 None.
@@ -1477,9 +1477,9 @@ A handle returned from a previous call to `listen_event()`.
 
 #### Examples
 
-```python
+{% highlight python %}
 self.cancel_listen_event(handle)
-```
+{% endhighlight %}
 
 ### info_listen_event()
 
@@ -1487,9 +1487,9 @@ Get information on an event callback from its handle.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 service, kwargs = self.info_listen_event(handle)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1503,9 +1503,9 @@ The handle returned when the `listen_event()` call was made.
 
 #### Examples
 
-```python
+{% highlight python %}
 service, kwargs = self.info_listen_event(handle)
-```
+{% endhighlight %}
 
 
 ### fire_event()
@@ -1514,9 +1514,9 @@ Fire an event on the Open Peer Power bus, for other integrations to hear.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 fire_event(event, **kwargs)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1534,18 +1534,18 @@ Zero or more keyword arguments that will be supplied as part of the event.
 
 #### Examples
 
-```python
+{% highlight python %}
 self.fire_event("MY_CUSTOM_EVENT", jam="true")
-```
+{% endhighlight %}
 
 ### Event Callback Function Signature
 
 Functions called as an event callback will be supplied with 2 arguments:
 
-```python
+{% highlight python %}
 def service(self, event_name, data):
     """Handle event."""
-```
+{% endhighlight %}
 
 #### event_name
 
@@ -1559,36 +1559,36 @@ A dictionary containing any additional information associated with the event.
 
  Open Peer Power allows for the creation of custom events and existing integrations can send and receive them. This provides a useful mechanism for signaling back and forth between Open Peer Power and AppDaemon. For instance, if you would like to create a UI Element to fire off some code in Open Peer Power, all that is necessary is to create a script to fire a custom event, then subscribe to that event in AppDaemon. The script would look something like this:
 
-```yaml
+{% highlight yaml %}
 alias: Day
 sequence:
 - event: MODE_CHANGE
   event_data:
     mode: Day
-```
+{% endhighlight %}
 
 The custom event `MODE_CHANGE` would be subscribed to with:
 
-```python
+{% highlight python %}
 self.listen_event(self.mode_event, "MODE_CHANGE")
-```
+{% endhighlight %}
 
  Open Peer Power can send these events in a variety of other places - within automations, and also directly from Alexa intents. Open Peer Power can also listen for custom events with its automation component. This can be used to signal from AppDaemon code back to Open Peer Power. Here is a sample automation:
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: event
     event_type: MODE_CHANGE
     ...
     ...
-```
+{% endhighlight %}
 
 This can be triggered with a call to AppDaemon's fire_event() as follows:
 
-```python
+{% highlight python %}
 self.fire_event("MODE_CHANGE", mode="Day")
-```
+{% endhighlight %}
 
 ## Presence
 
@@ -1600,20 +1600,20 @@ Return a list of all device trackers. This is designed to be iterated over.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 tracker_list = get_trackers()
-```
+{% endhighlight %}
 #### Returns
 
 An iterable list of all device trackers.
 
 #### Examples
 
-```python
+{% highlight python %}
 trackers = self.get_trackers()
 for tracker in trackers:
     do_something(tracker)
-```
+{% endhighlight %}
 
 ### get_tracker_state()
 
@@ -1626,9 +1626,9 @@ Some types of device tracker are in addition able to supply locations that have 
 
 #### Synopsis
 
-```python
+{% highlight python %}
 location = self.get_tracker_state(tracker_id)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1642,11 +1642,11 @@ Fully qualified entity_id of the device tracker to query, e.g., `device_tracker.
 
 #### Examples
 
-```python
+{% highlight python %}
 trackers = self.get_trackers()
 for tracker in trackers:
     self.log("{} is {}".format(tracker, self.get_tracker_state(tracker)))
-```
+{% endhighlight %}
 
 ### everyone_home()
 
@@ -1654,28 +1654,28 @@ A convenience function to determine if everyone is home.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 result = self.everyone_home()
-```
+{% endhighlight %}
 #### Returns
 
 Returns `True` if everyone is at home, `False` otherwise.
 
 #### Examples
 
-```python
+{% highlight python %}
 if self.everyone_home():
     do_something()
-```
+{% endhighlight %}
 ### anyone_home()
 
 A convenience function to determine if one or more person is home.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 result = self.anyone_home()
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1683,19 +1683,19 @@ Returns `True` if anyone is at home, `False` otherwise.
 
 #### Examples
 
-```python
+{% highlight python %}
 if self.anyone_home():
     do_something()
-```
+{% endhighlight %}
 ### noone_home()
 
 A convenience function to determine if no people are at home.
 
 #### Synopsis
 
-```python
+{% highlight python %}
 result = self.noone_home()
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1703,10 +1703,10 @@ Returns `True` if no one is home, `False` otherwise.
 
 #### Examples
 
-```python
+{% highlight python %}
 if self.noone_home():
     do_something()
-```
+{% endhighlight %}
 
 ## Miscellaneous Helper Functions
 
@@ -1716,9 +1716,9 @@ Returns a Python `time` object representing the current time. Use this in prefer
 
 #### Synopsis
 
-```python
+{% highlight python %}
 time()
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1730,9 +1730,9 @@ None
 
 #### Example
 
-```python
+{% highlight python %}
 now = self.time()
-```
+{% endhighlight %}
 
 ### date()
 
@@ -1740,9 +1740,9 @@ Returns a Python `date` object representing the current date. Use this in prefer
 
 #### Synopsis
 
-```python
+{% highlight python %}
 date()
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1754,9 +1754,9 @@ None
 
 #### Example
 
-```python
+{% highlight python %}
 today = self.date()
-```
+{% endhighlight %}
 
 ### datetime()
 
@@ -1764,9 +1764,9 @@ Returns a Python `datetime` object representing the current date and time. Use t
 
 #### Synopsis
 
-```python
+{% highlight python %}
 datetime()
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1778,9 +1778,9 @@ None
 
 #### Example
 
-```python
+{% highlight python %}
 now = self.datetime()
-```
+{% endhighlight %}
 
 
 ### convert_utc()
@@ -1789,9 +1789,9 @@ now = self.datetime()
 
 #### Synopsis
 
-```python
+{% highlight python %}
 convert_utc(utc_string)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1811,9 +1811,9 @@ Takes a string representation of a time, or sunrise or sunset offset and convert
 
 #### Synopsis
 
-```python
+{% highlight python %}
 parse_time(time_string)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1830,12 +1830,12 @@ A representation of the time in a string format with one of the following format
 
 #### Example
 
-```python
+{% highlight python %}
 time = self.parse_time("17:30:00")
 time = self.parse_time("sunrise")
 time = self.parse_time("sunset + 00:30:00")
 time = self.parse_time("sunrise + 01:00:00")
-```
+{% endhighlight %}
 
 ### now_is_between()
 
@@ -1843,9 +1843,9 @@ Takes two string representations of a time, or sunrise or sunset offset and retu
 
 #### Synopsis
 
-```python
+{% highlight python %}
 now_is_between(start_time_string, end_time_string)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1862,12 +1862,12 @@ A representation of the start and end time respectively in a string format with 
 
 #### Example
 
-```python
+{% highlight python %}
 if self.now_is_between("17:30:00", "08:00:00"):
     do_something()
 if self.now_is_between("sunset - 00:45:00", "sunrise + 00:45:00"):
     do_something_else()
-```
+{% endhighlight %}
 
 ### friendly_name()
 
@@ -1875,9 +1875,9 @@ if self.now_is_between("sunset - 00:45:00", "sunrise + 00:45:00"):
 
 #### Synopsis
 
-```python
+{% highlight python %}
 Name = self.friendly_name(entity_id)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1885,14 +1885,14 @@ The friendly name of the entity if it exists or the entity id if not.
 
 #### Example
 
-```python
+{% highlight python %}
 tracker = "device_tracker.andrew"
 self.log(
     "{}  ({}) is {}".format(
         tracker, self.friendly_name(tracker), self.get_tracker_state(tracker)
     )
 )
-```
+{% endhighlight %}
 
 ### split_entity()
 
@@ -1900,9 +1900,9 @@ self.log(
 
 #### Synopsis
 
-```python
+{% highlight python %}
 device, entity = self.split_entity(entity_id)
-```
+{% endhighlight %}
 
 #### Parameters
 
@@ -1916,11 +1916,11 @@ A list with 2 entries, the device and entity respectively.
 
 #### Example
 
-```python
+{% highlight python %}
 device, entity = self.split_entity(entity_id)
 if device == "scene":
     do_something_specific_to_scenes()
-```
+{% endhighlight %}
 
 
 ### get_app()
@@ -1929,9 +1929,9 @@ if device == "scene":
 
 #### Synopsis
 
-```python
+{% highlight python %}
 get_app(self, name)
-```
+{% endhighlight %}
 #### Parameters
 
 ##### name
@@ -1943,10 +1943,10 @@ Name of the app required. This is the name specified in header section of the co
 An object reference to the class.
 
 #### Example
-```python
+{% highlight python %}
 MyApp = self.get_app("MotionLights")
 MyApp.turn_light_on()
-```
+{% endhighlight %}
 
 ### split_device_list()
 
@@ -1954,9 +1954,9 @@ MyApp.turn_light_on()
 
 #### Synopsis
 
-```python
+{% highlight python %}
 devices = split_device_list(list)
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1964,10 +1964,10 @@ A list of split devices with 1 or more entries.
 
 #### Example
 
-```python
+{% highlight python %}
 for sensor in self.split_device_list(self.args["sensors"]):
     do_something(sensor)  # e.g.,  make a state subscription
-```
+{% endhighlight %}
 
 
 ### Writing to Logfiles
@@ -1978,9 +1978,9 @@ AppDaemon uses 2 separate logs - the general log and the error log. An AppDaemon
 
 #### Synopsis
 
-```python
+{% highlight python %}
 log(message, level="INFO")
-```
+{% endhighlight %}
 
 #### Returns
 
@@ -1998,18 +1998,18 @@ The log level of the message - takes a string representing the standard logger l
 
 #### Examples
 
-```python
+{% highlight python %}
 self.log("Log Test: Parameter is {}".format(some_variable))
 self.log("Log Test: Parameter is {}".format(some_variable), level="ERROR")
-```
+{% endhighlight %}
 
 ### error()
 
 #### Synopsis
 
-```python
+{% highlight python %}
 error(message, level="WARNING")
-```
+{% endhighlight %}
 #### Returns
 
 Nothing
@@ -2026,10 +2026,10 @@ The log level of the message - takes a string representing the standard logger l
 
 #### Examples
 
-```python
+{% highlight python %}
 self.error("Some Warning string")
 self.error("Some Critical string", level="CRITICAL")
-```
+{% endhighlight %}
 
 ## Sharing information between Apps
 
@@ -2037,31 +2037,31 @@ Sharing information between different Apps is very simple if required. Each app 
 
 In addition, Apps have access to the entire configuration if required, meaning they can access AppDaemon configuration items as well as parameters from other Apps. To use this, there is a class attribute called `self.config`. It contains a `ConfigParser` object, which is similar in operation to a `Dictionary`. To access any apps parameters, simply reference the ConfigParser object using the Apps name (form the configuration file) as the first key, and the parameter required as the second, for instance:
 
-```python
+{% highlight python %}
 other_apps_arg = self.config["some_app"]["some_parameter"]
-```
+{% endhighlight %}
 
 To get AppDaemon's configuration parameters, use the key "AppDaemon", e.g.:
 
-```python
+{% highlight python %}
 app_timezone = self.config["AppDaemon"]["time_zone"]
-```
+{% endhighlight %}
 
 And finally, it is also possible to use the AppDaemon as a global area for sharing parameters across Apps. Simply add the required parameters to the AppDaemon section of your configuration:
 
-```ini
+{% highlight ini %}
 [AppDaemon]
 ha_url = <some url>
 ha_key = <some key>
 ...
 global_var = hello world
-```
+{% endhighlight %}
 
 Then access it as follows:
 
-```python
+{% highlight python %}
 my_global_var = conf.config["AppDaemon"]["global_var"]
-```
+{% endhighlight %}
 
 ## Development Workflow
 
@@ -2085,13 +2085,13 @@ OK, time travel sadly isn't really possible but it can be very useful when testi
 
 Internally, AppDaemon keeps track of its own time relative to when it was started. This make is possible to start AppDaemon with a different start time and date to the current time. For instance to test that sunset App, start AppDaemon at a time just before sunset and see if it works as expected. To do this, simply use the "-s" argument on AppDaemon's command line. e,g,:
 
-```bash
+{% highlight bash %}
 $ appdaemon -s "2016-06-06 19:16:00"
 2016-09-06 17:16:00 INFO AppDaemon Version 1.3.2 starting
 2016-09-06 17:16:00 INFO Got initial state
 2016-09-06 17:16:00 INFO Loading Module: /export/hass/appdaemon_test/conf/test_apps/sunset.py
 ...
-```
+{% endhighlight %}
 
 Note the timestamps in the log - AppDaemon believes it is now just before sunset and will process any callbacks appropriately.
 
@@ -2099,33 +2099,33 @@ Note the timestamps in the log - AppDaemon believes it is now just before sunset
 
 Some Apps need to run for periods of a day or two for you to test all aspects. This can be time consuming, but Time Travel can also help here in two ways. The first is by speeding up time. To do this, simply use the `-t` option on the command line. This specifies the amount of time a second lasts while time traveling. The default of course is 1 second, but if you change it to `0.1` for instance, AppDaemon will work 10x faster. If you set it to `0`, AppDaemon will work as fast as possible and, depending in your hardware, may be able to get through an entire day in a matter of minutes. Bear in mind however, due to the threaded nature of AppDaemon, when you are running with `-t 0` you may see actual events firing a little later than expected as the rest of the system tries to keep up with the timer. To set the tick time, start AppDaemon as follows:
 
-```bash
+{% highlight bash %}
 $ appdaemon -t 0.1
-```
+{% endhighlight %}
 
 AppDaemon also has an interval flag - think of this as a second multiplier. If the flag is set to 3600 for instance, each tick of the scheduler will jump the time forward by an hour. This is good for covering vast amounts of time quickly but event firing accuracy will suffer as a result. For example:
 
-```bash
+{% highlight bash %}
 $ appdaemon -e 3600
-```
+{% endhighlight %}
 
 ### Automatically stopping
 
 AppDaemon can be set to terminate automatically at a specific time. This can be useful if you want to repeatedly rerun a test, for example to test that random values are behaving as expected. Simply specify the end time with the `-e` flag as follows:
 
-```bash
+{% highlight bash %}
 $ appdaemon -e "2016-06-06 10:10:00"
 2016-09-06 17:16:00 INFO AppDaemon Version 1.3.2 starting
 2016-09-06 17:16:00 INFO Got initial state
 2016-09-06 17:16:00 INFO Loading Module: /export/hass/appdaemon_test/conf/test_apps/sunset.py
 ...
-```
+{% endhighlight %}
 
 The `-e` flag is most useful when used in conjunction with the -s flag and optionally the `-t` flag. For example, to run from just before sunset, for an hour, as fast as possible:
 
-```bash
+{% highlight bash %}
 $ appdaemon -s "2016-06-06 19:16:00" -s "2016-06-06 20:16:00" -t 0
-```
+{% endhighlight %}
 
 
 ### A Note on Times

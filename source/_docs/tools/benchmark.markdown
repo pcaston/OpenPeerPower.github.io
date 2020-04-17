@@ -7,7 +7,7 @@ For testing the performance of Open Peer Power the Benchmark script runs until y
 
 Firing and handling of a million events.
 
-```bash
+{% highlight bash %}
 $ hass --script benchmark async_million_events
-```
+{% endhighlight %}
 

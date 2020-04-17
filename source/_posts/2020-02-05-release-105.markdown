@@ -212,7 +212,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Bad configuration example YAML:
 
-  ```yaml
+  {% highlight yaml %}
   automation:
     - alias: "Power Management Gone Wrong"
       hide_entity: true  <-- remove this
@@ -222,7 +222,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
       action:
         service: light.turn_off
         entity_id: all
-  ```
+  {% endhighlight %}
 
 - __Group__ *Deprecated* - Group configurations options, services and service options related to the old states UI are now deprecated and pending for removal in Open Peer Power 0.107.0.
 
@@ -253,10 +253,10 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example configuration YAML:
 
-  ```yaml
+  {% highlight yaml %}
   samsungtv:
     - host: 192.168.12.34
-  ```
+  {% endhighlight %}
 
 - __Netatmo__ - Netatmo is now available from the integrations UI and takes advantage of OAuth2 account linking! There are a good number of changes to note:
 
@@ -272,11 +272,11 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
     Example configuration YAML:
 
-  ```yaml
+  {% highlight yaml %}
   netatmo:
     client_id: your_client_id
     client_secret: your_client_secret
-  ```
+  {% endhighlight %}
 
 - __Nederlandse Spoorwegen (NS)__ - The Nederlandse Spoorwegen API and NSAPI have recently changed and this change accommodates for that. The `nederlandse_spoorwegen` sensor now requires a single API token instead of username and password credentials.
 
@@ -293,14 +293,14 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example configuration YAML:
 
-  ```yaml
+  {% highlight yaml %}
   - platform: nederlandse_spoorwegen
     password: !secret ns_api_key
     routes:
     - name: Rijswijk-Rotterdam
       from: Rsw
       to: Rtd
-  ```
+  {% endhighlight %}
 
 - __Simplisafe__ - Many changes here!
 
@@ -314,12 +314,12 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example configuration YAML:
 
-  ```yaml
+  {% highlight yaml %}
   simplisafe:
     accounts:
       username: !secret ss_username
       password: !secret ss_password
-  ```
+  {% endhighlight %}
 
 - __Egardia__ - Binary sensors for the Egardia integration were hidden by default, which is no longer the case. This could affect automations that rely on the hidden state attribute of entities created by this integration. - ([@frenck] - [#30728]) ([egardia docs])
 
@@ -339,7 +339,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example configuration YAML:
 
-  ```yaml
+  {% highlight yaml %}
   fan:
     - platform: mqtt
       name: "room2"
@@ -353,18 +353,18 @@ Experiencing issues introduced by this release? Please report them in our [issue
       qos: 1
       retain: false
       optimistic: false
-  ```
+  {% endhighlight %}
 
 - __Vizio SmartCast TV__ - The Vizio integration is now available to be added from the integrations UI! When adding a soundbar the options are now between `tv` or `speaker` in order to align with the device classes defined in the media_player component and to add Amazon Alexa and Google Assistant support. If you prefer to enter the configuration manually make note of the changes below. - ([@raman325] - [#30653], [#30802]) ([vizio docs])
 
   Example configuration YAML:
 
-  ```yaml
+  {% highlight yaml %}
   vizio:
     - host: IP_ADDRESS
       access_token: AUTH_TOKEN
       device_type: speaker
-  ```
+  {% endhighlight %}
 
 - __Statistics__ - If max_age is configured, this change will keep updating the statistics even when none of the observed entities change their state. That means that after some time, all recorded states are purged and the statistics sensor itself changes to state unknown instead of just keeping its old state indefinitely. Also, some attributes (`total`, `min_age`, `change`, `change_rate`, `mean`, `stdev`) will change to `unknown`.
 
@@ -374,13 +374,13 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example `configuration.yaml`:
 
-  ```yaml
+  {% highlight yaml %}
   sensor:
     - platform: statistics
       entity_id: sensor.pulse_counter
       max_age:
         minutes: 10
-  ```
+  {% endhighlight %}
 
 - __PulseAudio Loopback__ *Revert* - The default port was incorrectly changed to 4713, however, the official documentation states that the default port is 4712 for `module-cli-protocol` which is used in this integration. Therefore, the port has been changed back to 4712 and all previously configured switches now need to listen to port 4712. - ([@springstan] - [#30939]) ([pulseaudio_loopback docs])
 
@@ -396,33 +396,33 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example configuration YAML:
 
-  ```yaml
+  {% highlight yaml %}
   - name: Hellmouth
     latitude: 0.2133478
     longitude: 6.7242336
     radius: 200
     icon: mdi:fire
-  ```
+  {% endhighlight %}
 
 - __Openuv__ - Openuv is now available to be added from the integrations UI! It is no longer possible to specify monitored conditions within the OpenUV integration; all entities are added by default. - ([@bachya] - [#31019]) ([openuv docs])
 
   Example configuration yaml:
 
-  ```yaml
+  {% highlight yaml %}
   openuv:
     api_key: !secret openuv_api_key
-  ```
+  {% endhighlight %}
 
 - __RainMachine__ - RainMachine is now available to be added from the integrations UI! It is no longer possible to specify monitored conditions within the RainMachine integration; all entities are added by default. Additionally, the `zone_run_time` parameter is now configured directly within the controller within `configuration.yaml`. - ([@bachya] - [#31066]) ([rainmachine docs])
 
   Example configuration YAML:
 
-  ```yaml
+  {% highlight yaml %}
   rainmachine:
     controllers:
       - ip_address: !secret rainmachine_ip_address
         password: !secret rainmachine_password
-  ```
+  {% endhighlight %}
 
 - __MaryTTS__ - The codec and locale configuration changed to the official config keys from MaryTTS. - ([@Poeschl] - [#30805]) ([marytts docs])
 
@@ -433,7 +433,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
   Example configuration YAML:
 
-  ```yaml
+  {% highlight yaml %}
   tts:
     - platform: marytts
       host: 'localhost'
@@ -453,7 +453,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
         Chorus: "delay1:466;amp1:0.54;delay2:600;amp2:-0.10;delay3:250;amp3:0.30",
         FIRFilter: "type:3;fc1:500.0;fc2:2000.0",
         JetPilot: ""
-  ```
+  {% endhighlight %}
 
 - __ZHA remotes__ - `binary_sensor` and `switch` entities are not going to be available for some Zigbee "remotes", but they were not supposed to be available to begin with. - ([@Adminiuga] - [#31146]) ([zha docs])
 

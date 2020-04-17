@@ -8,10 +8,10 @@ Starting with 0.31 the [updater component](/integrations/updater/) sends an opti
 
 If you want to opt-in to include integration information, add `include_used_components` to your configuration. This will allow the Open Peer Power developers to focus development efforts on the most popular components.
 
-```yaml
+{% highlight yaml %}
 updater:
   include_used_components: true
-```
+{% endhighlight %}
 
 We are only collecting this information to better understand our user base to provide better long term support and feature development.
 

@@ -47,7 +47,7 @@ In order to apply attributes to an entity, you will need to add `data:` to the c
 
 </div>
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 automation:
 - id: one
@@ -62,8 +62,8 @@ automation:
         entity_id: light.living_room
         brightness: 255
         kelvin: 2700
-```
-```yaml
+{% endhighlight %}
+{% highlight yaml %}
 # Ledlist morning on, red
 - id: llmor
   alias: Stair morning on
@@ -76,7 +76,7 @@ automation:
         entity_id: light.ledliststair
         brightness: 130
         rgb_color: [255,0,0]
-```
+{% endhighlight %}
 
 ### Service `light.turn_off`
 

@@ -15,14 +15,14 @@ The `mqtt_json` device tracker platform allows you to detect presence by monitor
 
 To use this device tracker in your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 device_tracker:
   - platform: mqtt_json
     devices:
       paulus_oneplus: location/paulus
       annetherese_n4: location/annetherese
-```
+{% endhighlight %}
 
 {% configuration %}
 devices:
@@ -39,9 +39,9 @@ qos:
 
 This platform receives JSON formatted payloads containing GPS information, for example:
 
-```json
+{% highlight json %}
 {"longitude": 1.0,"gps_accuracy": 60,"latitude": 2.0,"battery_level": 99.9}
-```
+{% endhighlight %}
 
 Where `longitude` is the longitude, `latitude` is the latitude, `gps_accuracy` is the accuracy in meters, `battery_level` is the current battery level of the device sending the update.
 `longitude` and `latitude` are required keys, `gps_accuracy` and `battery_level` are optional.

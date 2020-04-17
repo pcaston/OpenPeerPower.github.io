@@ -7,11 +7,11 @@ MQTT (aka MQ Telemetry Transport) is a machine-to-machine or "Internet of Things
 
 To integrate MQTT into Open Peer Power, add the following section to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 mqtt:
   broker: IP_ADDRESS
-```
+{% endhighlight %}
 
 For detailed setup instructions, please refer to the [MQTT broker](/docs/mqtt/broker) documentation.
 

@@ -22,10 +22,10 @@ The default database engine is [SQLite](https://www.sqlite.org/) which does not 
 
 To change the defaults for the `recorder` integration in your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 recorder:
-```
+{% endhighlight %}
 
 {% configuration %}
 recorder:
@@ -96,7 +96,7 @@ recorder:
 
 Defining domains and entities to `exclude` (aka. blacklist) is convenient when you are basically happy with the information recorded, but just want to remove some entities or domains. Usually, these are entities/domains that do not change or rarely change (like `updater` or `automation`).
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry with exclude
 recorder:
   purge_keep_days: 5
@@ -111,11 +111,11 @@ recorder:
       - sensor.date
     event_types:
       - call_service # Don't record service calls
-```
+{% endhighlight %}
 
 define domains and entities to record by using the `include` configuration (aka. whitelist) is convenient if you have a lot of entities in your system and your `exclude` lists possibly get very large, so it might be better just to define the entities or domains to record.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry with include
 recorder:
   include:
@@ -123,11 +123,11 @@ recorder:
       - sensor
       - switch
       - media_player
-```
+{% endhighlight %}
 
 You can also use the `include` list to define the domains/entities to record, and exclude some of those within the `exclude` list. This makes sense if you, for instance, include the `sensor` domain, but want to exclude some specific sensors. Instead of adding every sensor entity to the `include` `entities` list just include the `sensor` domain and exclude the sensor entities you are not interested in.
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry with include and exclude
 recorder:
   include:
@@ -139,7 +139,7 @@ recorder:
     entities:
       - sensor.last_boot
       - sensor.date
-```
+{% endhighlight %}
 
 If you only want to hide events from your history, take a look at the [`history` integration](/integrations/history/). The same goes for the [logbook](/integrations/logbook/). But if you have privacy concerns about certain events or want them in neither the history or logbook, you should use the `exclude`/`include` options of the `recorder` integration. That way they aren't even in your database, you can reduce storage and keep the database small by excluding certain often-logged events (like `sensor.last_boot`).
 
@@ -202,23 +202,23 @@ If you are using the default `FULL` recovery model for MS SQL Server you will ne
 If you are running a database server instance on the same server as Open Peer Power then you must ensure that this service starts before Open Peer Power. For a Linux instance running Systemd (Raspberry Pi, Debian, Ubuntu and others) you should edit the service file.
 To help facilitate this, db_max_retry and db_retry_wait variables have been added to ensure the recorder retries the connection to your database enough times, for your database to start up.
 
-```bash
+{% highlight bash %}
 sudo nano /etc/systemd/system/home-assistant@homeassistant.service
-```
+{% endhighlight %}
 
 and add the service for the database, for example, PostgreSQL:
 
-```txt
+{% highlight txt %}
 [Unit]
 Description=Open Peer Power
 After=network.target postgresql.service
-```
+{% endhighlight %}
 
 Save the file then reload `systemctl`:
 
-```bash
+{% highlight bash %}
 sudo systemctl daemon-reload
-```
+{% endhighlight %}
 
 ## Installation notes
 
@@ -228,27 +228,27 @@ Not all Python bindings for the chosen database engine can be installed directly
 
 If you are in a virtual environment, don't forget to activate it before installing the `mysqlclient` Python package described below.
 
-```bash
+{% highlight bash %}
 pi@homeassistant:~ $ sudo -u homeassistant -H -s
 homeassistant@homeassistant:~$ source /srv/homeassistant/bin/activate
 (homeassistant) homeassistant@homeassistant:~$ pip3 install mysqlclient
-```
+{% endhighlight %}
 
 For MariaDB you may have to install a few dependencies. If you're using MariaDB version 10.2, `libmariadbclient-dev` was renamed to `libmariadb-dev`. If you're using MariaDB 10.3, the package `libmariadb-dev-compat` must also be installed. For MariaDB v10.0.34 only `libmariadb-dev-compat` is needed. Please install the correct packages based on your MariaDB version.
 
 On the Python side we use the `mysqlclient`:
 
-```bash
+{% highlight bash %}
 sudo apt-get install libmariadbclient-dev libssl-dev
 pip3 install mysqlclient
-```
+{% endhighlight %}
 
 For MySQL you may have to install a few dependencies. You can choose between `pymysql` and `mysqlclient`:
 
-```bash
+{% highlight bash %}
 sudo apt-get install default-libmysqlclient-dev libssl-dev
 pip3 install mysqlclient
-```
+{% endhighlight %}
 
 After installing the dependencies, it is required to create the database manually. During the startup, Open Peer Power will look for the database specified in the `db_url`. If the database doesn't exist, it will not automatically create it for you.
 
@@ -258,10 +258,10 @@ Once Open Peer Power finds the database, with the right level of permissions, al
 
 For PostgreSQL you may have to install a few dependencies:
 
-```bash
+{% highlight bash %}
 sudo apt-get install postgresql-server-dev-X.Y
 pip3 install psycopg2
-```
+{% endhighlight %}
 
 For using Unix Sockets, add the following line to your [`pg_hba.conf`](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html):
 
@@ -270,31 +270,31 @@ For using Unix Sockets, add the following line to your [`pg_hba.conf`](https://w
 Where `DB_NAME` is the name of your database and `USER_NAME` is the name of the user running the Open Peer Power instance (see [securing your installation](/docs/configuration/securing/)).
 
 Reload the PostgreSQL configuration after that:
-```bash
+{% highlight bash %}
 $ sudo -i -u postgres psql -c "SELECT pg_reload_conf();"
  pg_reload_conf
 ----------------
  t
 (1 row)
-```
+{% endhighlight %}
 A service restart will work as well.
 
 ### MS SQL Server
 
 For MS SQL Server you will have to install a few dependencies:
 
-```bash
+{% highlight bash %}
 sudo apt-get install unixodbc-dev
 pip3 install pyodbc
-```
+{% endhighlight %}
 
 If you are in a virtual environment, don't forget to activate it before installing the pyodbc package.
 
-```bash
+{% highlight bash %}
 sudo -u homeassistant -H -s
 source /srv/homeassistant/bin/activate
 pip3 install pyodbc
-```
+{% endhighlight %}
 
 You will also need to install an ODBC Driver. Microsoft ODBC drivers are recommended, however FreeTDS is available for systems that are not supported by Microsoft. Instrucitons for installing the Microsoft ODBC drivers can be found [here](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server).
 

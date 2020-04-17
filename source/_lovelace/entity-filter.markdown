@@ -95,7 +95,7 @@ attribute:
 ### Examples
 
 Show only active switches or lights in the house
-```yaml
+{% highlight yaml %}
 type: entity-filter
 entities:
   - entity: light.bed_light
@@ -104,11 +104,11 @@ entities:
   - light.ceiling_lights
 state_filter:
   - "on"
-```
+{% endhighlight %}
 
 Show only people that are at home using [glance](/lovelace/glance/):
 
-```yaml
+{% highlight yaml %}
 type: entity-filter
 entities:
   - device_tracker.demo_paulus
@@ -119,11 +119,11 @@ state_filter:
 card:
   type: glance
   title: People at home
-```
+{% endhighlight %}
 
 Specify filter for a single entity
 
-```yaml
+{% highlight yaml %}
 type: entity-filter
 state_filter:
   - "on"
@@ -137,7 +137,7 @@ entities:
       - operator: ">"
         value: 50
         attribute: humidity
-```
+{% endhighlight %}
 
 <p class='img'>
   <img src='/images/lovelace/lovelace_entity_filter_glance.png' alt='Entity filter combined with glance card'>

@@ -10,7 +10,7 @@ This will step you through the process of setting up a backup of your Open Peer 
 First, you need a USB drive. It should be formatted properly for your device and connected to your device before beginning. Any type of partition will work, but Linux filesystems are preferred so that you can set permissions.
 Once connected you want to mount the drive. To find the path where it is located, you can use the `dmesg` command. 
 
-```bash
+{% highlight bash %}
 # dmesg | grep sd
 [    0.909712] sdhci: Secure Digital Host Controller Interface driver
 [    0.916414] sdhci: Copyright(c) Pierre Ossman
@@ -25,21 +25,21 @@ Once connected you want to mount the drive. To find the path where it is located
 [726259.186445] sd 0:0:0:0: [sda] Assuming drive cache: write through
 [726259.206085]  sda: sda1
 [726259.209004] sd 0:0:0:0: [sda] Attached SCSI removable disk
-```
+{% endhighlight %}
 
 The device here is `sda` and our partition is `sda1`. So our partition is located here `/dev/sda1`. 
 
 Mount the drive (as root) to `/media`
 
-```bash
+{% highlight bash %}
 # sudo mount /dev/sda1 /media/
-```
+{% endhighlight %}
 
 ### Prepare the USB Device
 
 Change to the `/media` directory and create a folder called `hassbackup`. Change the ownership to the user that runs Open Peer Power. In this example case, the user and group are both `homeassistant`.
 
-```bash
+{% highlight bash %}
 # cd /media/
 /media# mkdir hassbackup
 /media# chown homeassistant:homeassistant hassbackup/
@@ -49,51 +49,51 @@ drwxr-xr-x  4 root          root           4096 Apr 29 10:36 .
 drwxr-xr-x 22 root          root           4096 Mar 22 18:37 ..
 drwxr-xr-x  2 homeassistant homeassistant  4096 Apr 29 10:36 hassbackup
 drwx------  2 root          root          16384 Apr 29 10:18 lost+found
-```
+{% endhighlight %}
 
 ### Install Dependency
 
 The script in the next section uses zip to preserve space on your drive. So we will install zip next.
 
-```bash
+{% highlight bash %}
 /media# apt-get install zip
 Reading package lists... Done
 Building dependency tree
 [...]
 Setting up zip (3.0-8) ...
-```
+{% endhighlight %}
 
 ### Download and Run Script
 
 Become the `homeassistant` user (or whatever user runs Open Peer Power). Change to whatever directory you would like the [script](https://gist.github.com/riemers/041c6a386a2eab95c55ba3ccaa10e7b0) placed into and run the following command.
 
-```bash
+{% highlight bash %}
 # wget https://gist.githubusercontent.com/riemers/041c6a386a2eab95c55ba3ccaa10e7b0/raw/86727d4e72e9757da4f68f1c9d784720e72d0e99/usb_backup.sh
-```
+{% endhighlight %}
 
 Make the downloaded script executable.
 
-```bash
+{% highlight bash %}
 # chmod +x usb_backup.sh
-```
+{% endhighlight %}
 
 Edit the script file using your preferred text editor (use nano if you are not advanced). Change the paths to reflect your configuration, then simply run `./usb_backup.sh`.
 
-```bash
+{% highlight bash %}
 $ .homeassistant/extraconfig/shell_code/usb_backup.sh
 [i] Creating backup
 [i] Backup complete: /media/hassbackup/hass-config_20170429_112728.zip
 [i] Keeping all files no prunning set
-```
+{% endhighlight %}
 
 ### Set Up Crontab
 
 To automatically backup your configuration on a schedule, you can add a crontab for it as the `homeassistant` user.
 Change the path below to the directory where you placed the `usb_backup.sh` and run the following line. This will backup every night at 3 am.
 
-```bash
+{% highlight bash %}
 (crontab -l 2>/dev/null; echo "0 3 * * * /home/homeassistant/.homeassistant/extraconfig/shell_code/usb_backup.sh") | crontab -
-```
+{% endhighlight %}
 
 ### Auto Mount the USB Device
 
@@ -101,12 +101,12 @@ NOTE: This does not automatically mount your USB drive at boot. You will need to
 
 To manually mount a USB drive located at `/dev/sda1`, run the following line: 
 
-```bash
+{% highlight bash %}
 # mount /dev/sda1 /media
-```
+{% endhighlight %}
 
 Alternatively, auto-mount the drive by adding the following entry to your `/etc/fstab`:
 
-```text
+{% highlight text %}
 /dev/sda1  /media               ext4    defaults,noatime  0       1
-```
+{% endhighlight %}

@@ -23,15 +23,15 @@ Onion sites are websites that run on a Tor Hidden Service node. "dot onion" site
 
 First, install Tor. On a Debian-based system, you can install the package easily:
 
-```bash
+{% highlight bash %}
 $ sudo apt-get install tor
-```
+{% endhighlight %}
 
 You can find more instructions for downloading and installing Tor on other platforms on the [Tor Project Download Page](https://www.torproject.org/download/download.html).
 
 Next, modify Tor's main configuration file `/etc/tor/torrc` to include the following lines:
 
-```bash
+{% highlight bash %}
 ############### This section is just for location-hidden services ###
 
 ## Once you have configured a hidden service, you can look at the
@@ -42,27 +42,27 @@ HiddenServiceDir /var/lib/tor/homeassistant/
 HiddenServicePort 80 127.0.0.1:8123
 HiddenServiceAuthorizeClient stealth haremote1
 ...
-```
+{% endhighlight %}
 
 The "stealth" entry above ensures traffic to and from your Open Peer Power instance over Tor, is hidden even from other nodes on the Tor network. The `haremote1` value is a generic client name entry that you can modify as you please.
 
 Then, restart Tor:
 
-```bash
+{% highlight bash %}
 $ sudo systemctl restart tor
-```
+{% endhighlight %}
 
 Then read the new generated authentication cookie from the Tor-generated hostname file:
 
-```bash
+{% highlight bash %}
 $ sudo more /var/lib/tor/homeassistant/hostname
-```
+{% endhighlight %}
 
 The output of that command should look something like this, but with your own unique "dot onion" domain and authentication cookie:
 
-```bash
+{% highlight bash %}
 abcdef1234567890.onion ABCDEF1122334455667789 # client: haremote1
-```
+{% endhighlight %}
 
 You are now done with the Open Peer Power Tor server configuration. Make sure your Open Peer Power instance is running, and now you can move to client configuration.
 
@@ -72,9 +72,9 @@ Using this setup, you can access your Open Peer Power instance over Tor from you
 
 Add the authentication cookie to your `torrc` client configuration on your laptop or mobile device. Using the sample values from above, it would look like this:
 
-```bash
+{% highlight bash %}
 HidServAuth abcdef1234567890.onion ABCDEF1122334455667789
-```
+{% endhighlight %}
 
 For Tor Browser on Windows, Mac or Linux, you can find the torrc file here: `<tor browser install directory>/Browser/TorBrowser/Data/Tor/torrc`
 

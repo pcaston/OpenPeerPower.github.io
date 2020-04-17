@@ -26,10 +26,10 @@ The option option `server_host` should only be used on a Open Peer Power Core in
 
 </div>
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 http:
-```
+{% endhighlight %}
 
 {% configuration %}
 server_host:
@@ -101,7 +101,7 @@ Configuring trusted_networks via the `http` integration will be deprecated and m
 
 The sample below shows a configuration entry with possible values:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 http:
   server_port: 12345
@@ -115,7 +115,7 @@ http:
     - 10.0.0.200
   ip_ban_enabled: true
   login_attempts_threshold: 5
-```
+{% endhighlight %}
 
 The [Set up encryption using Let's Encrypt](/blog/2015/12/13/setup-encryption-using-lets-encrypt/) blog post gives you details about the encryption of your traffic using free certificates from [Let's Encrypt](https://letsencrypt.org/).
 
@@ -139,10 +139,10 @@ All [requests](/developers/rest_api/#post-apistatesltentity_id) need to be sent 
 
 If you want to apply additional IP filtering, and automatically ban brute force attempts, set `ip_ban_enabled` to `true` and the maximum number of attempts. After the first ban, an `ip_bans.yaml` file will be created in the root configuration folder. It will have the banned IP address and time in UTC when it was added:
 
-```yaml
+{% highlight yaml %}
 127.0.0.1:
   banned_at: '2016-11-16T19:20:03'
-```
+{% endhighlight %}
 
 After a ban is added a Persistent Notification is populated to the Open Peer Power frontend.
 
@@ -176,9 +176,9 @@ The sensor will then exist as long as Open Peer Power is running. After a restar
 
 The URL for a binary sensor looks like the example below:
 
-```bash
+{% highlight bash %}
 http://IP_ADDRESS:8123/api/states/binary_sensor.DEVICE_NAME
-```
+{% endhighlight %}
 
 <div class='note'>
 You should choose a unique device name (DEVICE_NAME) to avoid clashes with other devices.
@@ -186,22 +186,22 @@ You should choose a unique device name (DEVICE_NAME) to avoid clashes with other
 
 The JSON payload must contain the new state and can have a friendly name. The friendly name is used in the frontend to name the sensor.
 
-```json
+{% highlight json %}
 {"state": "on", "attributes": {"friendly_name": "Radio"}}
-```
+{% endhighlight %}
 
 For a quick test `curl` can be useful to "simulate" a device.
 
-```bash
+{% highlight bash %}
 $ curl -X POST -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
     -H "Content-Type: application/json" \
     -d '{"state": "off", "attributes": {"friendly_name": "Radio"}}' \
     http://localhost:8123/api/states/binary_sensor.radio
-```
+{% endhighlight %}
 
 To check if the sensor is working, use again `curl` to retrieve the [current state](/developers/rest_api/#get-apistatesltentity_id).
 
-```bash
+{% highlight bash %}
 $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
        -H "Content-Type: application/json" \
        http://localhost:8123/api/states/binary_sensor.radio
@@ -214,7 +214,7 @@ $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
     "last_updated": "16:45:51 05-02-2016",
     "state": "off"
 }
-```
+{% endhighlight %}
 
 ### Examples
 
@@ -224,7 +224,7 @@ In this section you'll find some real-life examples of how to use this sensor, b
 
 As already shown on the [API](/developers/rest_api/) page, it's very simple to use Python and the [Requests](https://requests.kennethreitz.org/en/latest/) module for the interaction with Open Peer Power.
 
-```python
+{% highlight python %}
 response = requests.post(
     "http://localhost:8123/api/states/binary_sensor.radio",
     headers={
@@ -234,17 +234,17 @@ response = requests.post(
     data=json.dumps({"state": "on", "attributes": {"friendly_name": "Radio"}}),
 )
 print(response.text)
-```
+{% endhighlight %}
 
 #### Using `httpie`
 
 [`httpie`](https://github.com/jkbrzt/httpie) is a user-friendly CLI HTTP client.
 
-```bash
+{% highlight bash %}
 $ http -v POST http://localhost:8123/api/states/binary_sensor.radio \
       'Authorization:Bearer LONG_LIVED_ACCESS_TOKEN' content-type:application/json state=off \
       attributes:='{"friendly_name": "Radio"}'
-```
+{% endhighlight %}
 
 ## Sensor
 
@@ -254,9 +254,9 @@ The sensor will then exist as long as Open Peer Power is running. After a restar
 
 The URL for a sensor looks like the example below:
 
-```bash
+{% highlight bash %}
 http://IP_ADDRESS:8123/api/states/sensor.DEVICE_NAME
-```
+{% endhighlight %}
 
 <div class='note'>
 You should choose a unique device name (DEVICE_NAME) to avoid clashes with other devices.
@@ -264,22 +264,22 @@ You should choose a unique device name (DEVICE_NAME) to avoid clashes with other
 
  The JSON payload must contain the new state and should include the unit of measurement and a friendly name. The friendly name is used in the frontend to name the sensor.
 
-```json
+{% highlight json %}
 {"state": "20", "attributes": {"unit_of_measurement": "°C", "friendly_name": "Bathroom Temperature"}}
-```
+{% endhighlight %}
 
 For a quick test, `curl` can be useful to "simulate" a device.
 
-```bash
+{% highlight bash %}
 $ curl -X POST -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
        -H "Content-Type: application/json" \
        -d '{"state": "20", "attributes": {"unit_of_measurement": "°C", "friendly_name": "Bathroom Temp"}}' \
        http://localhost:8123/api/states/sensor.bathroom_temperature
-```
+{% endhighlight %}
 
 You can then use `curl` again to retrieve the [current sensor state](/developers/rest_api/#get-apistatesltentity_id) and verify the sensor is working.
 
-```bash
+{% highlight bash %}
 $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
        -H "Content-Type: application/json" \
        http://localhost:8123/api/states/sensor.bathroom_temperature
@@ -293,6 +293,6 @@ $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
     "last_updated": "09:48:46 06-02-2016",
     "state": "20"
 }
-```
+{% endhighlight %}
 
 For more examples please visit the [HTTP Binary Sensor](#examples) page.

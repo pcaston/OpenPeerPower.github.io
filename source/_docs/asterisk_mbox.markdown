@@ -34,15 +34,15 @@ Before beginning make sure that you have the following:
 
 2. Install the `asterisk_mbox_server` Python module:
 
-   ```bash
+   {% highlight bash %}
    pip3 install asterisk_mbox_server
-   ```
+   {% endhighlight %}
 
 3. Create a configuration file for the server
 
    As the `asterisk` user create an `asterisk_mbox.ini` file. You can place this in any directory you choose, but the recommended location is `/etc/asterisk/asterisk_mbox.ini`.
 
-   ```ini
+   {% highlight ini %}
    [default]
    host = IP_ADDRESS 
    port = PORT
@@ -52,7 +52,7 @@ Before beginning make sure that you have the following:
    google_key = GOOGLE_API_KEY
    cdr = mysql+pymysql://<mysql-user>:<mysql-password>@localhost/asterisk/cdr
 
-   ```
+   {% endhighlight %}
 
    - `host` (*Optional*): The IP address to listen on for client requests. This defaults to all IP addresses on the server. To listen only locally, choose `127.0.0.1`
    - `port` (*Optional*): The port to listen on for client requests. Defaults to 12345.
@@ -64,16 +64,16 @@ Before beginning make sure that you have the following:
 
    Once complete, ensure this file is only accessible by the Asterisk user:
 
-   ```bash
+   {% highlight bash %}
    sudo chown asterisk:asterisk /etc/asterisk/asterisk_mbox.ini
    sudo chmod 600 /etc/asterisk/asterisk_mbox.ini
-   ```
+   {% endhighlight %}
 
 4. Interactively start the server to verify it is functioning
 
-   ```bash
+   {% highlight bash %}
    sudo -u asterisk asterisk_mbox_server -v --cfg /etc/asterisk/asterisk_mbox.ini
-   ```
+   {% endhighlight %}
 
    Now complete the [ Open Peer Power configuration](/integrations/asterisk_mbox) and verify that Open Peer Power can communicate with the server
 
@@ -82,7 +82,7 @@ Before beginning make sure that you have the following:
 5. Configure the server to start automatically
 
    Copy the following code into `/etc/systemd/system/asterisk_mbox.service`:
-   ```ini
+   {% highlight ini %}
    [Unit]
    Description=Asterisk PBX voicemail server for Open Peer Power
    Wants=network.target
@@ -97,7 +97,7 @@ Before beginning make sure that you have the following:
 
    [Install]
    WantedBy=multi-user.target
-   ```
+   {% endhighlight %}
 
 <div class='note'>
 

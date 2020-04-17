@@ -21,10 +21,10 @@ below the horizon. The sun can be used within automation as
 
 This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sun:
-```
+{% endhighlight %}
 
 {% configuration %}
 elevation:
@@ -45,14 +45,14 @@ an offset.
 The sun event need to have the type 'sun', which service to call,
 which event (sunset or sunrise) and the offset.
 
-```json
+{% highlight json %}
 {
     "type": "sun",
     "service": "switch.turn_on",
     "event": "sunset",
     "offset": "-01:00:00"
 }
-```
+{% endhighlight %}
 
 ### Maintains entity `sun.sun`
 

@@ -21,10 +21,10 @@ In the Python script you can specify which files and directories should be exclu
 
 ### Step 1: Linking your Dropbox account
 
-```bash
+{% highlight bash %}
 chmod +x dropbox_uploader.sh
 ./dropbox_uploader.sh
-```
+{% endhighlight %}
 
 Follow the instructions you see on your screen.
 
@@ -38,19 +38,19 @@ Go to the folder you have placed `dropbox.py`.
   Edit `dropbox.py`:
   Change the following line:
 
-  ```txt
+  {% highlight txt %}
   uploader = "/home/homeassistant/.homeassistant/extraconfig/shell_code/dropbox_uploader.sh"
-  ```
+  {% endhighlight %}
 
   to where you placed your file: (for example):
 
-  ```txt
+  {% highlight txt %}
   uploader = "/home/homeassistant/MyFolder/dropbox_uploader.sh"
-  ```
+  {% endhighlight %}
 
-```bash
+{% highlight bash %}
 python dropbox.py
-```
+{% endhighlight %}
 
 The first time can take a lot of time since it will upload all your files!
 Do note, this will **backup your passwords to Dropbox**.
@@ -60,6 +60,6 @@ Do note, this will **backup your passwords to Dropbox**.
 So you just made a full backup, next time you want it to be done automatically. Since your database can change and so do other files over time.
 Add it to your crontab, edit the **path/to** part.
 
-```bash
+{% highlight bash %}
 (crontab -l 2>/dev/null; echo "0 3 * * * python /path/to/dropbox.py") | crontab -
-```
+{% endhighlight %}

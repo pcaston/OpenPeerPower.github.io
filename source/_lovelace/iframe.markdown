@@ -37,8 +37,8 @@ title:
 
 ### Examples
 
-```yaml
+{% highlight yaml %}
 type: iframe
 url: https://grafana.localhost/d/000000027/worldping-endpoint-summary?var-probe=All&panelId=2&fullscreen&orgId=3&theme=light
 aspect_ratio: 75%
-```
+{% endhighlight %}

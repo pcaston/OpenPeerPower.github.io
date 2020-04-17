@@ -12,18 +12,18 @@ This utility should have been installed as part of the Python installation. Chec
 
 If you are able to successfully run `python3 --version` but not `pip3`, install Open Peer Power by running the following command instead:
 
-```bash
+{% highlight bash %}
 python3 -m pip install homeassistant
-```
+{% endhighlight %}
 
 On a Debian system, you can also install python3 by `sudo apt-get install python3`, and pip3 by `sudo apt-get install python3-pip`.
 
 #### No module named pip
 [Pip](https://pip.pypa.io/en/stable/) should come bundled with the latest Python 3 but is omitted by some distributions. If you are unable to run `python3 -m pip --version` you can install `pip` by [downloading the installer](https://bootstrap.pypa.io/get-pip.py) and running it with Python 3:
 
-```bash
+{% highlight bash %}
 python3 get-pip.py
-```
+{% endhighlight %}
 
 #### libyaml is not found or a compiler error
 
@@ -42,23 +42,23 @@ To fix this you will need to open your machine's firewall for TCP traffic to por
 
 For systems with **firewalld** (Fedora, CentOS/RHEL, etc.):
 
-```bash
+{% highlight bash %}
 sudo firewall-cmd --permanent --add-port=8123/tcp
 sudo firewall-cmd --reload
-```
+{% endhighlight %}
 
 For UFW systems (Ubuntu, Debian, Raspbian, etc.):
 
-```bash
+{% highlight bash %}
 sudo ufw allow 8123/tcp
-```
+{% endhighlight %}
 
 For `iptables` systems (was the default for older distributions):
 
-```bash
+{% highlight bash %}
 iptables -I INPUT -p tcp --dport 8123 -j ACCEPT
 iptables-save > /etc/network/iptables.rules  # your rules may be saved elsewhere
-```
+{% endhighlight %}
 
 #### After upgrading, your browser login gets stuck at the "loading data" step
 After upgrading to a new version, you may notice your browser gets stuck at the "loading data" login screen. Close the window/tab and go into your browser settings and delete all the cookies for your URL. You can then log back in and it should work. 

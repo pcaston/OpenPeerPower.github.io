@@ -20,20 +20,20 @@ documentation on how to use the automation integration.
 You can also use `initial_state: 'false'` so that the automation
 is not automatically turned on after a Open Peer Power reboot.
 
-```yaml
+{% highlight yaml %}
 automation:
   - alias: Door alarm
     initial_state: true
     trigger:
       - platform: state
   ...
-```
+{% endhighlight %}
 
 ## Configuration
 
 This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 automation:
-```
+{% endhighlight %}

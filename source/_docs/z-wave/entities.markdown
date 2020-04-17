@@ -23,9 +23,9 @@ Devices (usually sensors) that support the Alarm command class will create entit
 
 Note that the older Z-Wave alarm command class version 1 didn't have standardized types, and so each manufacturer specified their own version and type info. With Version 2 the alarm type was standardized to the below list. See the [openzwave alarm command class documents](https://github.com/OpenZWave/open-zwave/wiki/Alarm-Command-Class) for more info. You can see which version your sensor supports via the `zwcfg_0x*.xml` file. An example with version 2 support:
 
-```xml
+{% highlight xml %}
 <CommandClass id="113" name="COMMAND_CLASS_ALARM" version="2" request_flags="2" innif="true">
-```
+{% endhighlight %}
 
 ### Alarm Type Entity
 
@@ -152,7 +152,7 @@ If your device has an `access_control` entity, but not a `binary_sensor` equival
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 binary_sensor:
   - platform: template
     sensors:
@@ -160,7 +160,7 @@ binary_sensor:
         friendly_name: "Friendly name here"
         device_class: door
         value_template: "{{ is_state('sensor.YOUR_ORIGINAL_SENSOR_access_control', '22') }}"
-```
+{% endhighlight %}
 
 {% endraw %}
 
@@ -180,7 +180,7 @@ If your device has a `burglar` entity, but not a `binary_sensor` equivalent, you
 
 {% raw %}
 
-```yaml
+{% highlight yaml %}
 binary_sensor:
   - platform: template
     sensors:
@@ -188,7 +188,7 @@ binary_sensor:
         friendly_name: "Friendly name here"
         device_class: motion
         value_template: "{{ is_state('sensor.YOUR_SENSOR_burglar', '8') }}"
-```
+{% endhighlight %}
 
 {% endraw %}
 

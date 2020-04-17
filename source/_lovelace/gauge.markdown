@@ -11,10 +11,10 @@ The Gauge card is a basic card that allows visually seeing sensor data.
 Screenshot of the gauge card.
 </p>
 
-```yaml
+{% highlight yaml %}
 type: gauge
 entity: sensor.cpu_usage
-```
+{% endhighlight %}
 
 {% configuration %}
 type:
@@ -72,12 +72,12 @@ severity:
 
 Title and Unit of Measurement Example:
 
-```yaml
+{% highlight yaml %}
 type: gauge
 name: CPU Usuage
 unit: '%'
 entity: sensor.cpu_usage
-```
+{% endhighlight %}
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_gauge_card.gif' alt='Screenshot of the gauge card with custom title and unit of measurement'>
@@ -86,7 +86,7 @@ Screenshot of the gauge card with custom title and unit of measurement.
 
 Define the severity map:
 
-```yaml
+{% highlight yaml %}
 type: gauge
 name: With Severity
 unit: '%'
@@ -95,4 +95,4 @@ severity:
   green: 0
   yellow: 45
   red: 85
-```
+{% endhighlight %}

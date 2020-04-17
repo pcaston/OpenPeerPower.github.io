@@ -14,7 +14,7 @@ The `panel_custom` support allows you to add additional panels to your Open Peer
 
 To enable customized panels in your installation, add the following to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 panel_custom:
   - name: my-panel
@@ -24,7 +24,7 @@ panel_custom:
     js_url: /local/my-panel.js
     config:
       who: world
-```
+{% endhighlight %}
 
 <div class='note'>
 

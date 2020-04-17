@@ -34,7 +34,7 @@ Sets the speed for fan device
 
 #### Automation example
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time
@@ -44,7 +44,7 @@ automation:
       data:
         entity_id: fan.kitchen
         speed: low
-```
+{% endhighlight %}
 
 ### Service `fan.set_direction`
 
@@ -57,7 +57,7 @@ Sets the rotation for fan device
 
 #### Automation example
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time
@@ -67,7 +67,7 @@ automation:
       data:
         entity_id: fan.kitchen
         direction: forward
-```
+{% endhighlight %}
 
 ### Service `fan.oscillate`
 
@@ -80,7 +80,7 @@ Sets the oscillation for fan device
 
 #### Automation example
 
-```yaml
+{% highlight yaml %}
 automation:
   trigger:
     platform: time
@@ -90,7 +90,7 @@ automation:
       data:
         entity_id: fan.kitchen
         oscillating: True
-```
+{% endhighlight %}
 
 ### Service `fan.turn_on`
 

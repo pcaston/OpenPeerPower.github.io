@@ -9,10 +9,10 @@ To run Open Peer Power on macOS, you need to install Python first. Download Pyth
 
 Open a terminal and install Open Peer Power in a virtual environment:
 
-```bash
+{% highlight bash %}
 python3 -m venv homeassistant
 source homeassistant/bin/activate
 pip3 install homeassistant
-```
+{% endhighlight %}
 
 You can then configure Open Peer Power to autostart by following [this guide](/docs/autostart/macos/).

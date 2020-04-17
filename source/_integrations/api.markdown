@@ -12,9 +12,9 @@ ha_domain: api
 
 The `api` integration exposes a RESTful API and allows one to interact with a Open Peer Power instance that is running headless. This integration depends on the [`http` integration](/integrations/http/).
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 api:
-```
+{% endhighlight %}
 
 For details to use the API, please refer to the [REST API](/developers/rest_api/) in the "Developer" section.

@@ -7,7 +7,7 @@ redirect_from: /getting-started/automation-examples/
 Just some sample automation rules to get you started.
 
 {% raw %}
-```yaml
+{% highlight yaml %}
 # Example of entry in configuration.yaml
 automation:
 # Turns on lights 1 hour before sunset if people are home
@@ -74,5 +74,5 @@ automation:
       data_template: 
         title: "Cube event detected"
         message: "Cube has triggered this event: {{ trigger.event }}"
-```
+{% endhighlight %}
 {% endraw %}

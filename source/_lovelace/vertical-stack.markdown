@@ -25,7 +25,7 @@ cards:
 
 Basic example:
 
-```yaml
+{% highlight yaml %}
 type: vertical-stack
 title: Backyard
 cards:
@@ -35,7 +35,7 @@ cards:
   - type: entities
     entities:
       - binary_sensor.movement_backyard
-```
+{% endhighlight %}
 
 <p class="img">
   <img src="/images/lovelace/lovelace_vertical-stack.png" alt="Picture- and entities-card in a stack">
@@ -44,7 +44,7 @@ cards:
 
 Combination of vertical and horizontal stack card:
 
-```yaml
+{% highlight yaml %}
 type: vertical-stack
 cards:
   - type: picture-entity
@@ -58,7 +58,7 @@ cards:
       - type: picture-entity
         entity: light.bed_light
         image: /local/bed_2.png
-```
+{% endhighlight %}
 
 <p class="img">
   <img src="/images/lovelace/lovelace_vertical-horizontal-stack.png" alt="Create a grid layout using vertical and horizontal stack">

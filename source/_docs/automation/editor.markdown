@@ -27,11 +27,11 @@ Firing a [persistent notification](/integrations/persistent_notification/) is th
 
 As "Service Data" we want a simple text that is shown as part of the notification.
 
-```json
+{% highlight json %}
 { 
   "message": "Sensor value greater than 10"
 }
-```
+{% endhighlight %}
 
 Don't forget to save your new automation rule. For your saved automation rule to come into effect, you will need to go to the **Configuration** page and click on **Reload Automation**.
 
@@ -39,36 +39,36 @@ Don't forget to save your new automation rule. For your saved automation rule to
 
 First, check that you have activated the configuration editor.
 
-```yaml
+{% highlight yaml %}
 # Activate the configuration editor
 config:
-```
+{% endhighlight %}
 
 The automation editor reads and writes to the file `automations.yaml` in the root of your [configuration](/docs/configuration/) folder. 
 Currently, both the name of this file and its location are fixed.
 Make sure that you have set up the automation integration to read from it:
 
-```yaml
+{% highlight yaml %}
 # Configuration.yaml example
 automation: !include automations.yaml
-```
+{% endhighlight %}
 
 If you still want to use your old automation section, add a label to the old entry:
 
-```yaml
+{% highlight yaml %}
 automation old:
 - trigger:
     platform: ...
-```
+{% endhighlight %}
 
 You can use the `automation:` and `automation old:` sections at the same time:
  - `automation old:` to keep your manual designed automations
  - `automation:` to save the automation created by the online editor
 
-```yaml
+{% highlight yaml %}
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automations
-```
+{% endhighlight %}
 
 
 ## Migrating your automations to `automations.yaml`
@@ -77,7 +77,7 @@ If you want to migrate your old automations to use the editor, you'll have to co
 
 For example, the below automation will be triggered when the sun goes from below the horizon to above the horizon. Then, if the temperature is between 17 and 25 degrees, a light will be turned on.
 
-```yaml
+{% highlight yaml %}
 # Example automations.yaml entry
 - id: my_unique_id  # <-- Required for editor to work, for automations created with the editor the id will be automatically generated.
   alias: Hello world
@@ -94,7 +94,7 @@ For example, the below automation will be triggered when the sun goes from below
     value_template: '{% raw %}{{ float(state.state) + 2 }}{% endraw %}'
   action:
   - service: light.turn_on
-```
+{% endhighlight %}
 
 <div class='note'>
 Any comments in the YAML file will be lost and templates will be reformatted when you update an automation via the editor.

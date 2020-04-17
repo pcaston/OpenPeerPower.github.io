@@ -9,11 +9,11 @@ description: "Steps to help you get automation setup in Open Peer Power."
 
 Before you can go ahead and create your own automations, it's important to learn the basics. To explore these, let's have a look at the following example power management rule:
 
-```text
+{% highlight text %}
 (trigger)    When Paulus arrives home
 (condition)  and it is after sunset:
 (action)     Turn the lights in the living room on
-```
+{% endhighlight %}
 
 The example consists of three different parts: a [trigger](/docs/automation/trigger/), a [condition](/docs/automation/condition/) and an [action](/docs/automation/action/).
 
@@ -47,10 +47,10 @@ When you create a new automation, it will be enabled unless you explicitly add `
 
 Please note that if for some reason Open Peer Power cannot restore the previous state, it will result in the automation being enabled.
 
-```text
+{% highlight text %}
 automation:
 - alias: Automation Name
   initial_state: false
   trigger:
   ...
-```
+{% endhighlight %}

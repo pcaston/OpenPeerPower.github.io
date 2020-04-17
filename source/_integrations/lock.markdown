@@ -27,12 +27,12 @@ Lock your door, the attribute should appear under a 'data' attribute for the ser
 
 ##### Example
 
-```yaml
+{% highlight yaml %}
 action:
   service: lock.lock
   data:
     entity_id: lock.my_place
-```
+{% endhighlight %}
 
 #### Service `lock.unlock` 
 
@@ -44,20 +44,20 @@ Unlock your door, the attribute should appear under a 'data' attribute for the s
 
 ##### Example
 
-```yaml
+{% highlight yaml %}
 action:
   service: lock.unlock
   data:
     entity_id: lock.my_place
-```
+{% endhighlight %}
 
 ### Use the services
 
 Go to the **Developer Tools**, then to **Call Service** in the frontend, and choose `lock.lock`, `lock.unlock` or `lock.open` from the list of available services (**Services:** on the left). Enter something like the sample below into the **Service Data** field and hit **CALL SERVICE**.
 
-```json
+{% highlight json %}
 {"entity_id":"lock.front_door"}
-```
+{% endhighlight %}
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

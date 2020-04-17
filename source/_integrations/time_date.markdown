@@ -14,7 +14,7 @@ ha_domain: time_date
 The time and date (`time_date`) sensor platform adds one or more sensors to your Open Peer Power state machine.
 To have these sensors available in your installation, add the following to your `configuration.yaml` file (each option creates a separate sensor that contains appropriate data, e.g.,  `sensor.date` for the `date` option):
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 sensor:
   - platform: time_date
@@ -27,7 +27,7 @@ sensor:
       - 'time_date'
       - 'time_utc'
       - 'beat'
-```
+{% endhighlight %}
 
 - **display_options** array (*Required*): The option to display. The types *date_time*, *date_time_utc*, *time_date*, and *date_time_iso* shows the date and the time. The other types just the time or the date. *beat* shows the [Swatch Internet Time](https://www.swatch.com/en_us/internet-time).
 

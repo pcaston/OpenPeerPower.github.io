@@ -14,10 +14,10 @@ The `browser` integration provides a service to open URLs in the default browser
 
 To load this component, add the following lines to your `configuration.yaml`:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 browser:
-```
+{% endhighlight %}
 
 #### Service `browser/browse_url`
 
@@ -30,8 +30,8 @@ browser:
 
 To use this service, choose **Call Service** from the **Developer Tools**. Choose the service *browser/browse_url* from the list of **Available services:** and enter the URL into the **Service Data** field and hit **CALL SERVICE**.
 
-```json
+{% highlight json %}
 {"url": "http://www.google.com"}
-```
+{% endhighlight %}
 
 This will open the given URL on the host machine.

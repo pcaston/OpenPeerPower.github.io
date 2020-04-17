@@ -15,12 +15,12 @@ The `mqtt_eventstream` integration connects two Open Peer Power instances via MQ
 
 To integrate MQTT Eventstream into Open Peer Power, add the following section to your `configuration.yaml` file:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 mqtt_eventstream:
   publish_topic: MyServerName
   subscribe_topic: OtherHaServerName
-```
+{% endhighlight %}
 
 {% configuration %}
 publish_topic:
@@ -41,7 +41,7 @@ ignore_event:
 
 Events from multiple instances can be aggregated to a single master instance by subscribing to a wildcard topic from the master instance.
 
-```yaml
+{% highlight yaml %}
 # Example master instance configuration.yaml entry
 mqtt_eventstream:
   publish_topic: master/topic
@@ -49,20 +49,20 @@ mqtt_eventstream:
   ignore_event:
     - call_service
     - state_changed
-```
+{% endhighlight %}
 
 For a multiple instance setup, each slave would publish to their own topic.
 
-```yaml
+{% highlight yaml %}
 # Example slave instance configuration.yaml entry
 mqtt_eventstream:
   publish_topic: slaves/upstairs
   subscribe_topic: master/topic
-```
+{% endhighlight %}
 
-```yaml
+{% highlight yaml %}
 # Example slave instance configuration.yaml entry
 mqtt_eventstream:
   publish_topic: slaves/downstairs
   subscribe_topic: master/topic
-```
+{% endhighlight %}

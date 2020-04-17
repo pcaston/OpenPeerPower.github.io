@@ -12,9 +12,9 @@ Copy either the daemon script or the Python environment script at the end of thi
 
 After that, set the script to be executable:
 
-```bash
+{% highlight bash %}
 sudo chmod +x /etc/init.d/hass-daemon
-```
+{% endhighlight %}
 
 ## 2. Select a user
 
@@ -26,9 +26,9 @@ Some installation environments may require a change in the Open Peer Power execu
 
 ## 4. Install this service
 
-```bash
+{% highlight bash %}
 sudo service hass-daemon install
-```
+{% endhighlight %}
 
 ## 5. Create logrotate rule
 
@@ -36,7 +36,7 @@ This logrotate script at `/etc/logrotate.d/homeassistant` will create an outage 
 
 File `/var/log/homeassistant/home-assistant.log`:
 
-```text
+{% highlight text %}
 {
         rotate 7
         daily
@@ -49,7 +49,7 @@ File `/var/log/homeassistant/home-assistant.log`:
         endscript
 }
 
-```
+{% endhighlight %}
 
 ### 6. Restart Machine
 
@@ -63,7 +63,7 @@ If any commands need to run before executing Open Peer Power (like loading a vir
 
 ### Daemon script
 
-```bash
+{% highlight bash %}
 #!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          hass
@@ -180,11 +180,11 @@ case "$1" in
   *)
     echo "Usage: $0 {start|stop|restart|install|uninstall}"
 esac
-```
+{% endhighlight %}
 
 ### Python virtual environment
 
-```bash
+{% highlight bash %}
 #!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          hass
@@ -300,4 +300,4 @@ case "$1" in
   *)
     echo "Usage: $0 {start|stop|restart|install|uninstall}"
 esac
-```
+{% endhighlight %}

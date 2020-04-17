@@ -13,11 +13,11 @@ Screenshot of an entities card with a picture header and buttons footer.
 
 Widget to show a picture as a header or a footer. A picture can have touch actions associated with it.
 
-```yaml
+{% highlight yaml %}
 header:
   type: picture
   image: 'https://www.home-assistant.io/images/lovelace/header-footer/balloons-header.png'
-```
+{% endhighlight %}
 
 {% configuration header-footer %}
 type:
@@ -46,7 +46,7 @@ double_tap_action:
 
 Widget to show entities as buttons in the header or footer.
 
-```yaml
+{% highlight yaml %}
 footer:
   type: buttons
   entities:
@@ -55,7 +55,7 @@ footer:
       icon: 'mdi:track-light'
     - entity: script.run_siren
       icon: 'mdi:alarm-light'
-```
+{% endhighlight %}
 
 {% configuration header-footer %}
 entities:
@@ -89,13 +89,13 @@ Widget to show an entity in the sensor domain as a graph in the header or footer
 Screenshot of an entities card with a graph footer.
 </p>
 
-```yaml
+{% highlight yaml %}
 footer:
   type: graph
   entity: sensor.outside_temperature
   hours_to_show: 24
   detail: 1
-```
+{% endhighlight %}
 
 {% configuration header-footer %}
 entity:

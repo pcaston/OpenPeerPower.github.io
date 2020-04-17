@@ -10,10 +10,10 @@ ha_domain: map
 
 This offers a map on the frontend to display the location of tracked devices. To set up tracked devices, look at the [device tracker](/integrations/device_tracker/) documentation. This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
-```yaml
+{% highlight yaml %}
 # Example configuration.yaml entry
 map:
-```
+{% endhighlight %}
 
 <div class='note'>
 Devices that are currently at home won't show on the map.
