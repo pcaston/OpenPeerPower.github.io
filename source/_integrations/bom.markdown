@@ -11,6 +11,7 @@ ha_iot_class: Cloud Polling
 ha_domain: bom
 ha_codeowners:
   - '@maddenp'
+excerpt: none
 ---
 
 The `bom` weather platform uses the [Australian Bureau of Meteorology (BOM)](http://www.bom.gov.au) as a source for current (half-hourly) meteorological data.
@@ -29,18 +30,6 @@ To add the BOM weather platform to your installation, add the following to your 
 weather:
   - platform: bom
 {% endhighlight %}
-
-{% configuration %}
-name:
-  description:  The name you would like to give to the weather station.
-  required: false
-  type: string
-station:
-  description: "The station ID string. See the [`sensor.bom` documentation](#sensor) for details on how to find the ID of a station."
-  required: false
-  type: string
-  default: The closest station
-{% endconfiguration %}
 
 <div class='note'>
 
@@ -63,33 +52,6 @@ camera:
 {% endhighlight %}
 
 See below for a list of valid `location` values, and subsitute one for `YOUR_LOCATION`.
-
-{% configuration %}
-location:
-  description: Required unless `id` is specified. See below for a list of valid locations.
-  required: true
-  type: string
-name:
-  description: Allows you to override the Open Peer Power-generated camera name.
-  required: false
-  type: string
-id:
-  description: Allows you to manually specify a BOM Radar ID (either `location` or `id` must be defined, but not both).
-  required: false
-  type: integer
-delta:
-  description: Time in seconds between BOM radar images available for this radar. Optional if `location` is defined; required if `id` is defined.
-  required: false
-  type: integer
-frames:
-  description: Number of frames in the animated GIF. Optional if `location` is defined; required if `id` is defined.
-  required: false
-  type: integer
-filename:
-  description: Periodically save the animated GIF image to this filesystem path.
-  required: false
-  type: string
-{% endconfiguration %}
 
 ### Valid `location` values
 
@@ -209,75 +171,6 @@ To get the station ID for any BOM station:
  - alternatively, from the [BOM website](http://www.bom.gov.au/), navigate to State -> Observations -> Latest Observations -> Choose the station.
 - The URL will look like `http://www.bom.gov.au/products/IDx60801/[station].shtml`
 - For Adelaide, the URL will look like `http://www.bom.gov.au/products/IDS60801/IDS60801.94675.shtml`; the station ID is `IDS60801.94675`.
-
-{% configuration %}
-station:
-  description: The station ID string as identified from the BOM website.
-  required: false
-  type: string
-  default: If not given, defaults to the closest station based on location data in configuration.yaml.
-name:
-  description: The name you would like to give to the weather station.
-  required: false
-  type: string
-monitored_conditions:
-  description: A list of the conditions to monitor.
-  required: true
-  type: list
-  keys:
-    apparent_t:
-      description: Feels like temperature in C.
-    cloud:
-      description: Cloud cover.
-    cloud_base_m:
-      description: Cloud Base in m.
-    cloud_oktas:
-      description: Cloud Oktas.
-    cloud_type_id:
-      description: Cloud type ID.
-    cloud_type:
-      description: Cloud type description.
-    delta_t:
-      description: Delta temperature in C.
-    gust_kmh:
-      description: Wind gust in km/h.
-    gust_kt:
-      description: Wing gust in kt.
-    air_temp:
-      description: Air temperature in C.
-    dewpt:
-      description: Dew point in C.
-    press:
-      description: Pressure in mbar.
-    press_qnh:
-      description: Pressure in qnh.
-    press_msl:
-      description: Pressure in msl.
-    press_tend:
-      description: Pressure trend.
-    rain_trace:
-      description: Raing today in mm.
-    rel_hum:
-      description: Relative Humidity in %.
-    sea_state:
-      description: Sea state.
-    swell_dir_worded:
-      description: Swell direction.
-    swell_height:
-      description: Swell height in m.
-    swell_period:
-      description: Swell period.
-    vis_km:
-      description: Visibility in km.
-    weather:
-      description: Weather summary.
-    wind_dir:
-      description: Wind direction.
-    wind_spd_kmh:
-      description: Wind speed in km/h.
-    wind_spd_kt:
-      description: Wind speed in kt.
-{% endconfiguration %}
 
 <div class='note'>
 

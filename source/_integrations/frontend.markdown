@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/frontend'
 ha_domain: frontend
+excerpt: none
 ---
 
 This offers the official frontend to control Open Peer Power. This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
@@ -16,45 +17,6 @@ This offers the official frontend to control Open Peer Power. This integration i
 # Example configuration.yaml entry
 frontend:
 {% endhighlight %}
-
-{% configuration %}
-  javascript_version:
-    description: "DEPRECATED, it is now done using feature detection in the browser. Version of the JavaScript to serve to clients. Options: `es5` - transpiled so old browsers understand it.  `latest` - not transpiled, so will work on recent browsers only. `auto` - select a version according to the browser user-agent. The value in the configuration can be overiden by putting `es5` or `latest` in the URL. For example `http://localhost:8123/states?es5` "
-    required: false
-    type: string
-    default: auto
-  themes:
-    description: Allow to define different themes. See below for further details.
-    required: false
-    type: map
-    keys:
-      "[identifier]":
-        description: Name to use in the frontend.
-        required: true
-        type: [list, map]
-        keys:
-          "[css-identifier]":
-            description: The CSS identifier.
-            required: true
-            type: [list, string]
-  extra_html_url:
-    description: "List of additional [resources](/developers/frontend_creating_custom_ui/) to load in `latest` javascript mode."
-    required: false
-    type: list
-  extra_module_url:
-    description: "List of additional javascript modules to load."
-    required: false
-    type: list
-  extra_js_url_es5:
-    description: "List of additional javascript code to load in `es5` javascript mode."
-    required: false
-    type: list
-  development_repo:
-    description: Allow to point to a directory containing frontend files instead of taking them from a pre-built PyPI package. Useful for Frontend development.
-    required: false
-    type: string
-{% endconfiguration %}
-
 
 ## Defining Themes
 

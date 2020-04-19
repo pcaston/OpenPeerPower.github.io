@@ -7,6 +7,7 @@ ha_category:
 ha_release: 0.26
 ha_iot_class: Local Polling
 ha_domain: serial_pm
+excerpt: none
 ---
 
 Particulate matter sensors measure the amount of very small particles in the air. A short introduction how these sensors work can be found on [Open Power Management](https://www.open-homeautomation.com/2016/07/19/measuring-air-quality/).
@@ -36,21 +37,6 @@ sensor:
     serial_device: /dev/tty.SLAB_USBtoUART
     brand: oneair,s3
 {% endhighlight %}
-
-{% configuration %}
-serial_device:
-  description: The serial port to use. On *nix systems, it can often be identified by `$ ls /dev/tty*`
-  required: true
-  type: string
-name:
-  description: The name displayed in the frontend.
-  required: false
-  type: string
-brand:
-  description: Manufacturer and type of the sensor. (Use a value from the supported sensors list.).
-  required: true
-  type: string
-{% endconfiguration %}
 
 ### Named Sensor Configuration Example
 

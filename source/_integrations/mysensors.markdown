@@ -8,6 +8,7 @@ ha_release: 0.73
 ha_codeowners:
   - '@MartinHjelmare'
 ha_domain: mysensors
+excerpt: none
 ---
 
 The [MySensors](https://www.mysensors.org) project combines devices like Arduino, ESP8266, Raspberry Pi, NRF24L01+ and RFM69 to build affordable sensor networks. This integration will automatically add all available devices to Open Peer Power, after [presentation](#presentation) is done. That is, you do not need to add anything to your configuration for the devices for them to be added. Go to the **states** section of the developer tools to find the devices that have been identified.
@@ -22,72 +23,6 @@ mysensors:
   gateways:
     - device: '/dev/ttyUSB0'
 {% endhighlight %}
-
-{% configuration %}
-  gateways:
-    description: A list of gateways to set up.
-    required: true
-    type: map
-    keys:
-      device:
-        description: The path to the serial gateway where it is connected to your Open Peer Power host, or the address of the TCP Ethernet gateway, or `mqtt` to setup the MQTT gateway. Resolving DNS addresses is theoretically supported but not tested.
-        required: true
-        type: string
-      baud_rate:
-        description: Specifies the baud rate of the connected serial gateway.
-        required: false
-        type: integer
-        default: 115200
-      persistence_file:
-        description: The path to a file to save sensor information. The file extension determines the file type. Currently supported file types are 'pickle' and 'json'.
-        required: false
-        type: string
-        default: path/to/config/directory/mysensors.pickle
-      tcp_port:
-        description: Specifies the port of the connected TCP Ethernet gateway.
-        required: false
-        type: integer
-        default: 5003
-      topic_in_prefix:
-        description: Set the prefix of the MQTT topic for messages coming from the MySensors gateway in to Open Peer Power.
-        required: false
-        type: string
-        default: ''
-      topic_out_prefix:
-        description: Set the prefix of the MQTT topic for messages going from Open Peer Power out to the MySensors gateway.
-        required: false
-        type: string
-        default: ''
-      nodes:
-        description: A mapping of node ids to node settings, e.g.,  custom name.
-        required: false
-        type: map
-        keys:
-          name:
-            description: The name the node will be renamed to. This node name becomes part of the entity_id. Default entity_id is [sketch_name]\_[node_id]\_[child_id] and when this name is set, the entity_id becomes [name]\_[child_id].
-            required: true
-            type: string
-  persistence:
-    description: Enable or disable local persistence of sensor information. If this is disabled, then each sensor will need to send presentation messages after Open Peer Power starts.
-    required: false
-    type: integer
-    default: true
-  version:
-    description: Specifies the MySensors protocol version to use. Supports versions 1.4 to 2.3.
-    required: false
-    type: string
-    default: '1.4'
-  optimistic:
-    description: Enable or disable optimistic mode for actuators (switch/light). Set this to true if no state feedback from actuators is possible. Open Peer Power will assume that the command succeeded and change state.
-    required: false
-    type: integer
-    default: false
-  retain:
-    description: Enable or disable retain flag for published messages from Open Peer Power when using the MQTT gateway.
-    required: false
-    type: integer
-    default: true
-{% endconfiguration %}
 
 <div class='note'>
 Not all features of MySensors 2.x are supported by Open Peer Power yet. As more features are added, they will be described here in the documentation. Go to the MySensors platform pages under "related components" to see what message types are currently supported.

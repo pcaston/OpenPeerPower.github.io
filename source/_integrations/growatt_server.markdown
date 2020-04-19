@@ -9,6 +9,7 @@ ha_iot_class: Cloud Polling
 ha_codeowners:
   - '@indykoning'
 ha_domain: growatt_server
+excerpt: none
 ---
 
 This is a sensor to collect information from your Growatt inverters using [Growatt server](https://server.growatt.com/).
@@ -26,27 +27,6 @@ sensor:
     username: GROWATT_SERVER_USERNAME
     password: GROWATT_SERVER_PASSWORD
 {% endhighlight %}
-
-{% configuration %}
-username:
-  description: The username used to log into Growatt server.
-  required: true
-  type: string
-password:
-  description: The password used to log into Growatt server.
-  required: true
-  type: string
-plant_id:
-  description: The plant id to use in case you have multiple plants on your account.
-  required: false
-  type: integer
-  default: 0
-name:
-  description: Name of the sensor to use in the frontend.
-  required: false
-  default: Growatt
-  type: string
-{% endconfiguration %}
 
 ## Example with multiple plants
 

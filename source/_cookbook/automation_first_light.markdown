@@ -2,6 +2,7 @@
 title: "Examples using first light"
 description: "Automation examples that trigger lights in the morning."
 ha_category: Automation Examples
+excerpt: none
 ---
 
 #### Create an input_boolean

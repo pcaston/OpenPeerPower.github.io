@@ -11,6 +11,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: http
+excerpt: none
 ---
 
 The `http` integration serves all files and data required for the Open Peer Power frontend. You only need to add this to your configuration file if you want to change any of the default settings.
@@ -30,68 +31,6 @@ The option option `server_host` should only be used on a Open Peer Power Core in
 # Example configuration.yaml entry
 http:
 {% endhighlight %}
-
-{% configuration %}
-server_host:
-  description: "Only listen to incoming requests on specific IP/host. By default it will accept all IPv4 connections. Use `server_host: ::0` if you want to listen to (and only) IPv6."
-  required: false
-  type: string
-  default: 0.0.0.0
-server_port:
-  description: Let you set a port to use.
-  required: false
-  type: integer
-  default: 8123
-base_url:
-  description: "The URL that Open Peer Power is available on the internet. For example: `https://hass-example.duckdns.org:8123`. The iOS app finds local installations, if you have an outside URL use this so that you can auto-fill when discovered in the app. Note that this setting may only contain a protocol, hostname and port; using a path is *not* currently supported."
-  required: false
-  type: string
-  default: Your local IP address
-ssl_certificate:
-  description: Path to your TLS/SSL certificate to serve Open Peer Power over a secure connection.
-  required: false
-  type: string
-ssl_peer_certificate:
-  description: Path to the client/peer TLS/SSL certificate to accept secure connections from.
-  required: false
-  type: string
-ssl_key:
-  description: Path to your TLS/SSL key to serve Open Peer Power over a secure connection.
-  required: false
-  type: string
-cors_allowed_origins:
-  description: "A list of origin domain names to allow [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) requests from. Enabling this will set the `Access-Control-Allow-Origin` header to the Origin header if it is found in the list, and the `Access-Control-Allow-Headers` header to `Origin, Accept, X-Requested-With, Content-type, Authorization`. You must provide the exact Origin, i.e., `https://www.home-assistant.io` will allow requests from `https://www.home-assistant.io` but __not__ `http://www.home-assistant.io`."
-  required: false
-  type: [string, list]
-use_x_forwarded_for:
-  description: "Enable parsing of the `X-Forwarded-For` header, passing on the client's correct IP address in proxied setups. You **must** also whitelist trusted proxies using the `trusted_proxies` setting for this to work. Non-whitelisted requests with this header will be considered IP spoofing attacks, and the header will, therefore, be ignored."
-  required: false
-  type: boolean
-  default: false
-trusted_proxies:
-  description: "List of trusted proxies, consisting of IP addresses or networks, that are allowed to set the `X-Forwarded-For` header.  This is required when using `use_x_forwarded_for` because all requests to Open Peer Power, regardless of source, will arrive from the reverse proxy IP address. Therefore in a reverse proxy scenario, this option should be set with extreme care."
-  required: false
-  type: [string, list]
-trusted_networks:
-  description: "**Deprecated since 0.89 release. Configuration moved to [Trusted Networks auth provider](/docs/authentication/providers/#trusted-networks).** List of trusted networks, consisting of IP addresses or networks, that are allowed to bypass password protection when accessing Open Peer Power.  If using a reverse proxy with the `use_x_forwarded_for` and `trusted_proxies` options enabled, requests proxied to Open Peer Power with a trusted `X-Forwarded-For` header will appear to come from the IP given in that header instead of the proxy IP."
-  required: false
-  type: [string, list]
-ip_ban_enabled:
-  description: Flag indicating whether additional IP filtering is enabled.
-  required: false
-  type: boolean
-  default: false
-login_attempts_threshold:
-  description: "Number of failed login attempt from single IP after which it will be automatically banned if `ip_ban_enabled` is `true`. When set to -1 no new automatic bans will be added."
-  required: false
-  type: integer
-  default: -1
-ssl_profile:
-  description: The [Mozilla SSL profile](https://wiki.mozilla.org/Security/Server_Side_TLS) to use. Only lower if you are experiencing integrations causing SSL handshake errors.
-  required: false
-  type: string
-  default: modern
-{% endconfiguration %}
 
 <div class='note'>
 

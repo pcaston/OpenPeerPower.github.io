@@ -18,6 +18,7 @@ ha_codeowners:
   - '@dmulcahey'
   - '@adminiuga'
 ha_domain: zha
+excerpt: none
 ---
 
 [Zigbee Power Management](https://zigbeealliance.org)
@@ -109,32 +110,6 @@ If you are use ZiGate, you have to use some special usb_path configuration:
 - ZiGate USB TTL or DIN: `/dev/ttyUSB0` or `auto` to auto discover the zigate
 - PiZigate : `pizigate:/dev/serial0`
 - Wifi Zigate : `socket://[IP]:[PORT]` for example `socket://192.168.1.10:9999`
-
-{% configuration %}
-radio_type:
-  description: One of `deconz`, `ezsp`, `ti_cc`, `xbee` or `zigate`.
-  required: false
-  type: string
-  default: ezsp
-usb_path:
-  description: Path to the serial device for the radio.
-  required: true
-  type: string
-baudrate:
-  description: Baud rate of the serial device.
-  required: false
-  type: integer
-  default: 57600
-database_path:
-  description: _Full_ path to the database which will keep persistent network data.
-  required: true
-  type: string
-enable_quirks:
-  description: Enable quirks mode for devices where manufacturers didn't follow specs.
-  required: false
-  type: boolean
-  default: true
-{% endconfiguration %}
 
 To add new devices to the network, call the `permit` service on the `zha` domain. Do this by clicking the Service icon in Developer tools and typing `zha.permit` in the **Service** dropdown box. Next, follow the device instructions for adding, scanning or factory reset.
 

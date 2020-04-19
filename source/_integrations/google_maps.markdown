@@ -6,6 +6,7 @@ ha_category:
   - Presence Detection
 ha_iot_class: Cloud Polling
 ha_domain: google_maps
+excerpt: none
 ---
 
 The `google_maps` platform allows you to detect presence using the unofficial API of [Google Maps Location Sharing](https://myaccount.google.com/locationsharing).
@@ -33,22 +34,6 @@ device_tracker:
 Once enabled and you have rebooted devices discovered through this integration will be listed in the `known_devices.yaml` file within your configuration directory.
 
 They will be created with indentifiers like `google_maps_<numeric_id>`. To be able to properly track entities you must set the `track` attribute to `true`. 
-
-{% configuration %}
-username:
-  description: The email address for the Google account that has access to your shared location.
-  required: true
-  type: string
-max_gps_accuracy:
-   description: Sometimes Google Maps can report GPS locations with a very low accuracy (few kilometers). That can trigger false zoning. Using this parameter, you can filter these false GPS reports. The number has to be in meters. For example, if you put 200 only GPS reports with an accuracy under 200 will be taken into account - Defaults to 100km if not specified.
-   required: false
-   type: float
-scan_interval:
-  description: The frequency (in seconds) to check for location updates.
-  required: false
-  default: 60
-  type: integer
-{% endconfiguration %}
 
 <div class='note'>
 As of release 0.97 Google passwords are no longer required in your configuration. Users coming from earlier releases should only remove the password entry from their configuration file (username is still required) and restart Open Peer Power. The cookie file previously generated should still be valid and will allow the tracker to continue functioning normally until the cookie is invalidated.

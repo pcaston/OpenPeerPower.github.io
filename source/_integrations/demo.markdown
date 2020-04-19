@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: demo
+excerpt: none
 ---
 
 The `demo` platform allows you to use integrations which are providing a demo of their implementation. The demo entities are dummies but show you how the actual platform looks like. This way you can run own demonstration instance like the online [Open Peer Power demo](/demo/)but combined with your own real/functional platforms.
@@ -47,10 +48,3 @@ demo:
 light:
   - platform: demo
 {% endhighlight %}
-
-{% configuration %}
-"[component]":
-  description: The name of the integration as stated in the listing above the configuration example.
-  required: true
-  type: string
-{% endconfiguration %}

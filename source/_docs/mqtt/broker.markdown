@@ -2,6 +2,7 @@
 title: "MQTT Broker"
 description: "Instructions on how to setup a MQTT broker for Open Peer Power."
 logo: mqtt.png
+excerpt: none
 ---
 
 The MQTT integration needs you to run an MQTT broker for Open Peer Power to connect to.

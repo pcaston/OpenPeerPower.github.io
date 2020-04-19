@@ -2,6 +2,7 @@
 title: "Templating"
 description: "Instructions on how to use the templating feature of Open Peer Power."
 redirect_from: /topics/templating/
+excerpt: none
 ---
 
 This is an advanced feature of Open Peer Power. You'll need a basic understanding of:

@@ -2,6 +2,7 @@
 title: "Sensor Card"
 sidebar_label: Sensor
 description: "The Sensor card gives you a quick overview of your sensors state with an optional graph to visualize change over time."
+excerpt: none
 ---
 
 The Sensor card gives you a quick overview of your sensors state with an optional graph to visualize change over time.

@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: logger
+excerpt: none
 ---
 
 The `logger` integration lets you define the level of logging activities in Home
@@ -70,22 +71,6 @@ logger:
 The log entries are in the form  
 *timestamp* *log-level* *thread* [**namespace**] *message*  
 where **namespace** is the *<component_namespace>* currently logging.
-
-{% configuration %}
-  default:
-    description: Default log level. See [log_level](#log-levels).
-    required: false
-    type: string
-    default: debug
-  logs:
-    description: List of integrations and their log level.
-    required: false
-    type: map
-    keys:
-      '&lt;component_namespace&gt;':
-        description: Logger namespace of the component. See [log_level](#log-levels).
-        type: string
-{% endconfiguration %}
 
 In the example, do note the difference between 'glances_api' and 'homeassistant.components.glances' namespaces,
 both of which are at root. They are logged by different APIs.

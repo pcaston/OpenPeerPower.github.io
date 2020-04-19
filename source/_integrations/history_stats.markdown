@@ -7,6 +7,7 @@ ha_iot_class: Local Polling
 ha_release: 0.39
 ha_quality_scale: internal
 ha_domain: history_stats
+excerpt: none
 ---
 
 The `history_stats` sensor platform provides quick statistics about another integration or platforms, using data from the [history](/integrations/history/).
@@ -36,39 +37,6 @@ sensor:
     end: '{{ now() }}'
 {% endhighlight %}
 {% endraw %}
-
-{% configuration %}
-entity_id:
-  description: The entity you want to track.
-  required: true
-  type: string
-state:
-  description: The state you want to track.
-  required: true
-  type: string
-name:
-  description: Name displayed on the frontend. Note that it is used by Open Peer Power to generate sensor's `object_id` so it is advisable to choose a unique one and change name for frontend using [customization](/docs/configuration/customizing-devices/#friendly_name) or via [Lovelace](/lovelace/entities/#name).
-  required: false
-  default: unnamed statistics
-  type: string
-type:
-  description: "The type of sensor: `time`, `ratio`, or `count`."
-  required: false
-  default: time
-  type: string
-start:
-  description: When to start the measure (timestamp or datetime).
-  required: false
-  type: template
-end:
-  description: When to stop the measure (timestamp or datetime).
-  required: false
-  type: template
-duration:
-  description: Duration of the measure.
-  required: false
-  type: time
-{% endconfiguration %}
 
 <div class='note'>
 

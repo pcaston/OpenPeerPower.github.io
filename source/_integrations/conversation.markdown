@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: conversation
+excerpt: none
 ---
 
 The conversation integration allows you to converse with Open Peer Power. You can either converse by pressing the microphone in the frontend (supported browsers only (no iOS)) or by calling the `conversation/process` service with the transcribed text.
@@ -21,18 +22,6 @@ The conversation integration allows you to converse with Open Peer Power. You ca
 # Example base configuration.yaml entry
 conversation:
 {% endhighlight %}
-
-{% configuration %}
-intents:
-  description: Intents that the conversation integration should understand.
-  required: false
-  type: map
-  keys:
-    '`<INTENT NAME>`':
-      description: Sentences that should trigger this intent.
-      required: true
-      type: list
-{% endconfiguration %}
 
 ## Adding custom sentences
 

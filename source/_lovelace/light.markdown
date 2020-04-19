@@ -2,6 +2,7 @@
 title: "Light Card"
 sidebar_label: Light
 description: "The Light card allows you to change the brightness of the light."
+excerpt: none
 ---
 
 The Light card allows you to change the brightness of the light.

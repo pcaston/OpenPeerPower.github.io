@@ -9,6 +9,7 @@ ha_release: 0.96
 ha_codeowners:
   - '@nielstron'
 ha_domain: fronius
+excerpt: none
 ---
 
 The `fronius` sensor polls a [Fronius](https://www.fronius.com/) solar inverter, battery system or smart meter and present the values as sensors in Open Peer Power.
@@ -24,31 +25,6 @@ sensor:
     monitored_conditions:
     - sensor_type: inverter
 {% endhighlight %}
-
-{% configuration %}
-resource:
-  description: "The IP address of the Fronius device"
-  required: true
-  type: string
-monitored_conditions:
-  description: "Conditions to display in the frontend"
-  required: true
-  type: list
-  keys:
-    sensor_type:
-      description: "The kind of device, can be one of \"inverter\", \"storage\", \"meter\", or \"power_flow\""
-      required: true
-      type: string
-    scope:
-      description: "The device type for storage and inverter, can be either \"device\" or \"system\""
-      required: false
-      type: string
-      default: "device"
-    device:
-      description: "The id of the device to poll"
-      required: false
-      default: "\"1\" for inverters and \"0\" for other devices such as storages in compliance with Fronius Specs"
-{% endconfiguration %}
 
 ## Monitored data
 

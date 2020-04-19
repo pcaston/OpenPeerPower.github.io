@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: scene
+excerpt: none
 ---
 
 You can create scenes that capture the states you want certain entities to be. For example, a scene can specify that light A should be turned on and light B should be bright red.
@@ -34,21 +35,6 @@ scene:
         source: HDMI 1
         state: on
 {% endhighlight %}
-
-{% configuration %}
-name:
-  description: Friendly name of scene.
-  required: true
-  type: string
-icon:
-  description: Icon for the scene.
-  required: false
-  type: string
-entities:
-  description: Entities to control and their desired state.
-  required: true
-  type: list
-{% endconfiguration %}
 
 As you can see, there are two ways to define the states of each `entity_id`:
 

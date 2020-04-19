@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: input_select
+excerpt: none
 ---
 
 The `input_select` integration allows the user to define a list of values that can be selected via the frontend and can be used within conditions of automation. When a user selects a new item, a state transition event is generated. This state event can be used in an `automation` trigger.
@@ -30,31 +31,6 @@ input_select:
       - Visitors with kids
       - Home Alone
 {% endhighlight %}
-
-{% configuration %}
-  input_select:
-    description: Alias for the input. Multiple entries are allowed.
-    required: true
-    type: map
-    keys:
-      options:
-        description: List of options to choose from.
-        required: true
-        type: list
-      name:
-        description: Friendly name of the input.
-        required: false
-        type: string
-      initial:
-        description: Initial value when Open Peer Power starts.
-        required: false
-        type: map
-        default: First element of options
-      icon:
-        description: Icon to display in front of the input element in the frontend.
-        required: false
-        type: icon
-{% endconfiguration %}
 
 <div class='note'>
 

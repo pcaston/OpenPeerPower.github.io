@@ -7,6 +7,7 @@ ha_category:
 ha_iot_class: Configurable
 ha_release: 0.44
 ha_domain: mqtt_json
+excerpt: none
 ---
 
 The `mqtt_json` device tracker platform allows you to detect presence by monitoring an MQTT topic for new locations. To use this platform, you specify a unique topic for each device.
@@ -23,17 +24,6 @@ device_tracker:
       paulus_oneplus: location/paulus
       annetherese_n4: location/annetherese
 {% endhighlight %}
-
-{% configuration %}
-devices:
-  description: List of devices with their topic.
-  required: true
-  type: list
-qos:
-  description: The QoS level of the topic.
-  required: false
-  type: string
-{% endconfiguration %}
 
 ## Usage
 

@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: script
+excerpt: none
 ---
 
 The `script` integration allows users to specify a sequence of actions to be executed by Open Peer Power. These are run when you turn the script on. The script integration will create an entity for each script and allow them to be controlled via services.
@@ -32,42 +33,6 @@ script:
 Script names (e.g., `message_temperature` in the example above) are not allowed to contain capital letters, or dash (minus) characters, i.e., `-`. The preferred way to separate words for better readability is to use underscore (`_`) characters.
 
 </div>
-
-{% configuration %}
-alias:
-  description: Friendly name for the script.
-  required: false
-  type: string
-icon:
-  description: Icon for the script.
-  required: false
-  type: string
-description:
-  description: A description of the script that will be displayed in the Services tab under Developer Tools.
-  required: false
-  default: ''
-  type: string
-fields:
-  description: Information about the parameters that the script uses; see the [Passing variables to scripts](#passing-variables-to-scripts) section below.
-  required: false
-  default: {}
-  type: map
-  keys:
-    PARAMETER_NAME:
-      description: A parameter used by this script.
-      type: map
-      keys:
-        description:
-          description: A description of PARAMETER_NAME.
-          type: string
-        example:
-          description: An example value for PARAMETER_NAME.
-          type: string
-sequence:
-  description: The sequence of actions to be performed in the script.
-  required: true
-  type: list
-{% endconfiguration %}
 
 ### Full Configuration
 

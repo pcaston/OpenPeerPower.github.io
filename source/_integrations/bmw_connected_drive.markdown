@@ -13,6 +13,7 @@ ha_iot_class: Cloud Polling
 ha_codeowners:
   - '@gerard33'
 ha_domain: bmw_connected_drive
+excerpt: none
 ---
 
 The `bmw_connected_drive` integration lets you retrieve data of your BMW vehicle from the BMW Connected Drive portal. You need to have a working BMW Connected Drive account, and a Connected Drive enabled vehicle for this to work.
@@ -44,34 +45,6 @@ bmw_connected_drive:
     region: one of "north_america", "china", "rest_of_world"
 {% endhighlight %}
 
-{% configuration %}
-bmw_connected_drive:
-  description: configuration
-  required: true
-  type: map
-  keys:
-    name:
-      description: Name of your account in Open Peer Power.
-      required: true
-      type: string
-    username:
-      description: Your BMW Connected Drive username.
-      required: true
-      type: string
-    password:
-      description: Your BMW Connected Drive password.
-      required: true
-      type: string
-    region:
-      description: "The region of your Connected Drive account. Please use one of these values: `north_america`, `china`, `rest_of_world`"
-      required: true
-      type: string
-    read_only:
-      description: In read only mode, all services including the lock of the vehicle are disabled.
-      required: false
-      type: boolean
-      default: false
-{% endconfiguration %}
 
 ## Notifications
 
