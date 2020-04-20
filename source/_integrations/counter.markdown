@@ -8,6 +8,8 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@fabaff'
 ha_domain: counter
+excerpt: none
+excerpt: none
 ---
 
 The `counter` integration allows one to count occurrences fired by automations.
@@ -23,45 +25,6 @@ counter:
     initial: 30
     step: 1
 {% endhighlight %}
-
-{% configuration %}
-"[alias]":
-  description: Alias for the counter. Multiple entries are allowed. `alias` should be replaced by the user for their actual value.
-  required: true
-  type: map
-  keys:
-    name:
-      description: Friendly name of the counter.
-      required: false
-      type: string
-    initial:
-      description: Initial value when Open Peer Power starts or the counter is reset.
-      required: false
-      type: integer
-      default: 0
-    restore:
-      description: Try to restore the last known value when Open Peer Power starts.
-      required: false
-      type: boolean
-      default: true
-    step:
-      description: Incremental/step value for the counter.
-      required: false
-      type: integer
-      default: 1
-    minimum:
-      description: Minimum value the counter will have
-      required: false
-      type: integer
-    maximum:
-      description: Maximum value the counter will have
-      required: false
-      type: integer
-    icon:
-      description: Icon to display for the counter.
-      required: false
-      type: icon
-{% endconfiguration %}
 
 Pick an icon that you can find on [materialdesignicons.com](https://materialdesignicons.com/) to use for your input and prefix the name with `mdi:`. For example `mdi:car`, `mdi:ambulance` or `mdi:motorbike`.
 

@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: input_number
+excerpt: none
 ---
 
 The `input_number` integration allows the user to define values that can be controlled via the frontend and can be used within conditions of automation. The frontend can display a slider, or a numeric input box. Changes to the slider or numeric input box generate state events. These state events can be utilized as `automation` triggers as well.
@@ -31,49 +32,6 @@ input_number:
     step: 1
     mode: box
 {% endhighlight %}
-
-{% configuration %}
-  input_number:
-    description: Alias for the input. Multiple entries are allowed.
-    required: true
-    type: map
-    keys:
-      min:
-        description: Minimum value.
-        required: true
-        type: float
-      max:
-        description: Maximum value.
-        required: true
-        type: float
-      name:
-        description: Friendly name of the input.
-        required: false
-        type: string
-      initial:
-        description: Initial value when Open Peer Power starts.
-        required: false
-        type: float
-        default: The value at shutdown
-      step:
-        description: Step value. Smallest value `0.001`.
-        required: false
-        type: float
-        default: 1
-      mode:
-        description: Can specify `box` or `slider`.
-        required: false
-        type: string
-        default: slider
-      unit_of_measurement:
-        description: Unit of measurement in which the value of the slider is expressed in.
-        required: false
-        type: string
-      icon:
-        description: Icon to display in front of the input element in the frontend.
-        required: false
-        type: icon
-{% endconfiguration %}
 
 ### Services
 

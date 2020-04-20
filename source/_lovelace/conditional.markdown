@@ -2,6 +2,7 @@
 title: Conditional Card
 sidebar_label: Conditional
 description: The Conditional card displays another card based on entity states.
+excerpt: none
 ---
 
 The Conditional card displays another card based on entity states.

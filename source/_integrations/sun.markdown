@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@Swamp-Ig'
 ha_domain: sun
+excerpt: none
 ---
 
 The sun integration will use your current location to track if the sun is above or
@@ -25,13 +26,6 @@ This integration is by default enabled, unless you've disabled or removed the [`
 # Example configuration.yaml entry
 sun:
 {% endhighlight %}
-
-{% configuration %}
-elevation:
-  description: "The (physical) elevation of your location, in meters above sea level. Defaults to the `elevation` in `configuration.yaml`, which is retrieved from Google Maps if not set."
-  required: false
-  type: integer
-{% endconfiguration %}
 
 <p class='img'>
 <img src='/images/screenshots/more-info-dialog-sun.png' />

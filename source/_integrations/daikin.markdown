@@ -13,6 +13,7 @@ ha_codeowners:
   - '@fredrike'
   - '@rofrantz'
 ha_domain: daikin
+excerpt: none
 ---
 
 The `daikin` integration integrates Daikin air conditioning systems into Open Peer Power.
@@ -43,14 +44,6 @@ daikin:
   hosts:
     - 192.168.4.161
 {% endhighlight %}
-
-{% configuration %}
-hosts:
-  description: List of IP addresses or hostnames.
-  required: false
-  default: All discovered hosts
-  type: list
-{% endconfiguration %}
 
 ## Climate
 

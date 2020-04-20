@@ -2,6 +2,7 @@
 title: "Webpage Card"
 sidebar_label: Webpage
 description: "The Webpage card allows you to embed your favorite webpage right into Open Peer Power."
+excerpt: none
 ---
 
 The Webpage card allows you to embed your favorite webpage right into Open Peer Power. You can also embed files stored in your `<config-directory>/www` folder and reference them using `/local/<file>`.

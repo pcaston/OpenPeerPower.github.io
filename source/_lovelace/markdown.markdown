@@ -2,6 +2,7 @@
 title: "Markdown Card"
 sidebar_label: Markdown
 description: "The Markdown card is used to render Markdown"
+excerpt: none
 ---
 
 The Markdown card is used to render [Markdown](https://commonmark.org/help/).

@@ -2,6 +2,7 @@
 title: "Plant Status Card"
 sidebar_label: Plant Status
 description: "The Plant Status card is for all the lovely botanists out there."
+excerpt: none
 ---
 
 The Plant Status card is for all the lovely botanists out there.

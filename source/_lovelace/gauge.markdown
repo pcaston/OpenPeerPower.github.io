@@ -2,6 +2,7 @@
 title: "Gauge Card"
 sidebar_label: Gauge
 description: "The Gauge card is a basic card that allows visually seeing sensor data."
+excerpt: none
 ---
 
 The Gauge card is a basic card that allows visually seeing sensor data.

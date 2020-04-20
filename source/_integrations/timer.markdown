@@ -6,6 +6,7 @@ ha_category:
 ha_release: 0.57
 ha_quality_scale: internal
 ha_domain: timer
+excerpt: none
 ---
 
 The `timer` integration aims to simplify automations based on (dynamic) durations.
@@ -26,27 +27,6 @@ timer:
   laundry:
     duration: '00:01:00'
 {% endhighlight %}
-
-{% configuration %}
-"[alias]":
-  description: Alias for the timer. Multiple entries are allowed.
-  required: true
-  type: map
-  keys:
-    name:
-      description: Friendly name of the timer.
-      required: false
-      type: string
-    duration:
-      description: Initial duration in seconds or `00:00:00` when Open Peer Power starts.
-      required: false
-      type: [integer, time]
-      default: 0
-    icon:
-      description: Set a custom icon for the state card.
-      required: false
-      type: icon
-{% endconfiguration %}
 
 Pick an icon that you can find on [materialdesignicons.com](https://materialdesignicons.com/) to use for your timer and prefix the name with `mdi:`. For example `mdi:car`, `mdi:ambulance`, or  `mdi:motorbike`.
 

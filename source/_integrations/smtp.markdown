@@ -7,6 +7,7 @@ ha_release: pre 0.7
 ha_codeowners:
   - '@fabaff'
 ha_domain: smtp
+excerpt: none
 ---
 
 The `smtp` platform allows you to deliver notifications from Open Peer Power to an e-mail recipient.
@@ -21,59 +22,6 @@ notify:
     sender: YOUR_SENDER
     recipient: YOUR_RECIPIENT
 {% endhighlight %}
-
-{% configuration %}
-name:
-  description: Setting the optional parameter `name` allows multiple notifiers to be created. The notifier will bind to the service `notify.NOTIFIER_NAME`.
-  required: false
-  type: string
-  default: notify
-sender:
-  description: E-mail address of the sender.
-  required: true
-  type: string
-recipient:
-  description: E-mail address of the recipient of the notification. This can be a recipient address or a list of addresses for multiple recipients.
-  required: true
-  type: [list, string]
-server:
-  description: SMTP server which is used to end the notifications.
-  required: false
-  type: string
-  default: localhost  
-port:
-  description: The port that the SMTP server is using.  
-  required: false
-  type: integer
-  default: 587
-timeout:
-  description: The timeout in seconds that the SMTP server is using.
-  required: false
-  type: integer
-  default: 5
-username:
-  description: Username for the SMTP account.
-  required: false
-  type: string
-password:
-  description: Password for the SMTP server that belongs to the given username. If the password contains a colon it need to be wrapped in apostrophes.
-  required: false
-  type: string
-encryption:
-  description: Set mode for encryption, `starttls`, `tls` or `none`.
-  required: false
-  type: string
-  default: starttls
-sender_name:
-  description: "Sets a custom 'sender name' in the emails headers (*From*: Custom name <example@mail.com>)."
-  required: false
-  type: string
-debug:  
-  description: Enables Debug, e.g., True or False.
-  required: false
-  type: boolean
-  default: false
-{% endconfiguration %}
 
 A sample configuration entry for Google Mail.
 

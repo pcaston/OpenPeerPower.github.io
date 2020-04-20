@@ -2,6 +2,7 @@
 title: "Weather Forecast Card"
 sidebar_label: Weather Forecast
 description: "The Weather Forecast card displays the weather. Very useful to include on interfaces that people display on the wall."
+excerpt: none
 ---
 
 The Weather Forecast card displays the weather. Very useful to include on interfaces that people display on the wall.

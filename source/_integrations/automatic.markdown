@@ -9,6 +9,7 @@ ha_iot_class: Cloud Push
 ha_codeowners:
   - '@armills'
 ha_domain: automatic
+excerpt: none
 ---
 
 The `automatic` device tracker platform offers presence detection by retrieving your car's information from the [Automatic](https://automatic.com/) cloud service.
@@ -33,26 +34,6 @@ device_tracker:
       - 2007 Honda Element
       - 2004 Subaru Impreza
 {% endhighlight %}
-
-{% configuration %}
-client_id:
-  description: "The OAuth client id (get from https://developer.automatic.com/)."
-  required: true
-  type: string
-secret:
-  description: "The OAuth client secret (get from https://developer.automatic.com/)."
-  required: true
-  type: string
-current_location:
-  description: "Set to `true` if you have requested `scope:current_location` for your account. Open Peer Power will then be able to receive periodic location updates during trips."
-  required: false
-  default: false
-  type: boolean
-devices:
-  description: The list of vehicle display names you wish to track. If not provided, all vehicles will be tracked.
-  required: false
-  type: list
-{% endconfiguration %}
 
 <div class='note'>
   

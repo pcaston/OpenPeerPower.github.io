@@ -6,6 +6,7 @@ ha_category:
 ha_release: 0.88
 ha_quality_scale: internal
 ha_domain: person
+excerpt: none
 ---
 
 The person integration allows connecting [device tracker](/integrations/device_tracker/) entities to one or more person entities. The state updates of a connected device tracker will set the state of the person. When multiple device trackers are used, the state of person will be determined in this order:
@@ -50,25 +51,6 @@ person:
     device_trackers:
       - device_tracker.ada
 {% endhighlight %}
-
-{% configuration %}
-  id:
-    description: A unique id of the person.
-    required: true
-    type: string
-  name:
-    description: The name of the person.
-    required: true
-    type: string
-  user_id:
-    description: The user id of the Open Peer Power user account for the person. *`user_id` (aka `ID`) of users can be inspected in the "Users"/"Manage users" screen in the configuration panel.*
-    required: false
-    type: string
-  device_trackers:
-    description: A list of device tracker entity ids to track. These will represent the state of the person.
-    required: false
-    type: [string, list]
-{% endconfiguration %}
 
 An extended example would look like the following sample:
 

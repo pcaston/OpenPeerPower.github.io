@@ -2,6 +2,7 @@
 title: "Thermostat Card"
 sidebar_label: Thermostat
 description: "The Thermostat card gives control of your climate entity. Allowing you to change the temperature and mode of the entity."
+excerpt: none
 ---
 
 The Thermostat card gives control of your climate entity. Allowing you to change the temperature and mode of the entity.

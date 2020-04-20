@@ -9,6 +9,7 @@ ha_category:
   - Switch
 ha_iot_class: Local Push
 ha_domain: smappee
+excerpt: none
 ---
 
 The `smappee` integration adds support for the [Smappee](https://www.smappee.com/) controller for energy monitoring and Comport plug switches.
@@ -52,30 +53,3 @@ smappee:
   username: YOUR_MYSMAPPEE_USERNAME
   password: YOUR_MYSMAPPEE_PASSWORD
 {% endhighlight %}
-
-{% configuration %}
-host:
-  description: Your Local Smappee unit IP.
-  required: false
-  type: string
-host_password:
-  description: Your Local Smappee password.
-  required: false
-  type: string
-client_id:
-  description: Your Smappee API client ID.
-  required: false
-  type: string
-client_secret:
-  description: Your Smappee API client secret.
-  required: false
-  type: string
-username:
-  description: Your My Smappee username.
-  required: false
-  type: string
-password:
-  description: Your My Smappee password.
-  required: false
-  type: string
-{% endconfiguration %}

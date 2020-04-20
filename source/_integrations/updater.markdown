@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: updater
+excerpt: none
 ---
 
 The `updater` binary sensor will check daily for new releases. The state will be "on" when an update is available. Otherwise, the state will be "off". The newer version, as well as the link to the release notes, are attributes of the updater.
@@ -21,19 +22,6 @@ This integration is by default enabled, unless you've disabled or removed the [`
 {% highlight yaml %}
 updater:
 {% endhighlight %}
-
-{% configuration %}
-reporting:
-  description: Whether or not to share system information when checking for updates.
-  required: false
-  type: boolean
-  default: true
-include_used_components:
-  description: Whether or not to report the integrations that you are using in Open Peer Power.
-  required: false
-  type: boolean
-  default: false
-{% endconfiguration %}
 
 For further information about the Updater's data, please check the [detailed overview](/docs/backend/updater/). If you choose not to share any information when checking for updates, you can set `reporting: false`.
 

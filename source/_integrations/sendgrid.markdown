@@ -6,6 +6,7 @@ ha_category:
   - Notifications
 ha_release: 0.14
 ha_domain: sendgrid
+excerpt: none
 ---
 
 The `sendgrid` notification platform sends email notifications via [SendGrid](https://sendgrid.com/), a proven cloud-based email platform.
@@ -27,29 +28,5 @@ notify:
     sender: SENDER_EMAIL_ADDRESS
     recipient: YOUR_RECIPIENT
 {% endhighlight %}
-
-{% configuration %}
-name:
-  description: Setting the optional parameter `name` allows multiple notifiers to be created. The notifier will bind to the service `notify.NOTIFIER_NAME`.
-  required: false
-  default: notify
-  type: string
-api_key:
-  description: Your SendGrid API key.
-  required: true
-  type: string
-sender:
-  description: The e-mail address of the sender.
-  required: true
-  type: string
-sender_name:
-  description: The name of the sender. Defaults to "Open Peer Power" if not set.
-  required: false
-  type: string
-recipient:
-  description: The recipient of the notification.
-  required: true
-  type: string
-{% endconfiguration %}
 
 To use notifications, please see the [getting started with automation page](/getting-started/automation/).

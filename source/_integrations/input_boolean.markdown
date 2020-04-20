@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: input_boolean
+excerpt: none
 ---
 
 The `input_boolean` integration allows the user to define boolean values that can be controlled via the frontend and can be used within conditions of automation. This can for example be used to disable or enable certain automations.
@@ -22,27 +23,6 @@ input_boolean:
     initial: off
     icon: mdi:car
 {% endhighlight %}
-
-{% configuration %}
-  input_boolean:
-    description: Alias for the input. Multiple entries are allowed.
-    required: true
-    type: map
-    keys:
-      name:
-        description: Friendly name of the input.
-        required: false
-        type: string
-      initial:
-        description: Initial value when Open Peer Power starts.
-        required: false
-        type: boolean
-        default: false
-      icon:
-        description: Icon to display in front of the input element in the frontend.
-        required: false
-        type: icon
-{% endconfiguration %}
 
 ### Services
 

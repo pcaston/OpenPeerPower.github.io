@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: input_text
+excerpt: none
 ---
 
 The `input_text` integration allows the user to define values that can be controlled via the frontend and can be used within conditions of automation. Changes to the value stored in the text box generate state events. These state events can be utilized as `automation` triggers as well. It can also be configured in password mode (obscured text).
@@ -29,46 +30,6 @@ input_text:
     name: Text 4
     mode: password
 {% endhighlight %}
-
-{% configuration %}
-  input_text:
-    description: Alias for the input. Multiple entries are allowed.
-    required: true
-    type: map
-    keys:
-      name:
-        description: Friendly name of the text input.
-        required: false
-        type: string
-      min:
-        description: Minimum length for the text value.
-        required: false
-        type: integer
-        default: 0
-      max:
-        description: Maximum length for the text value. 255 is the maximum number of characters allowed in an entity state.
-        required: false
-        type: integer
-        default: 100
-      initial:
-        description: Initial value when Open Peer Power starts.
-        required: false
-        type: string
-      icon:
-        description: Icon to display in front of the input element in the frontend.
-        required: false
-        type: icon
-      pattern:
-        description: Regex pattern for client-side validation.
-        required: false
-        type: string
-        default: empty
-      mode:
-        description: Can specify `text` or `password`. Elements of type "password" provide a way for the user to securely enter a value.
-        required: false
-        type: string
-        default: text
-{% endconfiguration %}
 
 ### Services
 
