@@ -10,6 +10,7 @@ ha_category:
 ha_release: 0.12
 ha_iot_class: Local Polling
 ha_domain: zigbee
+excerpt: none
 ---
 
 [Zigbee](https://zigbee.org/what-is-zigbee/) integration for Open Peer Power allows you to utilize modules such as the [XBee](https://www.digi.com/xbee) as wireless General Purpose Input/Output (GPIO) devices. The integration requires a local Zigbee device to be connected to a serial port. Through this, it will send and receive commands to and from other devices on the Zigbee mesh network.
@@ -31,19 +32,6 @@ A `zigbee` section must be present in the `configuration.yaml` file and contain 
 # Example configuration.yaml entry
 zigbee:
 {% endhighlight %}
-
-{% configuration %}
-device:
-  description: The serial port to which the local Zigbee device is connected.
-  required: false
-  type: string
-  default: "`/dev/ttyUSB0`"
-baud:
-  description: The baud rate at which to communicate with the local Zigbee device.
-  required: false
-  type: integer
-  default: 9600
-{% endconfiguration %}
 
 To find the possible serial port names of your device, run:
 
@@ -80,26 +68,6 @@ binary_sensor:
     pin: 0
 {% endhighlight %}
 
-{% configuration %}
-name:
-  description: The name you would like to give the binary sensor in Open Peer Power.
-  required: true
-  type: string
-pin:
-  description: The number identifying which pin to use.
-  required: true
-  type: integer
-address:
-  description: The long 64-bit address of the remote Zigbee device whose digital input pin you'd like to sample. Do not include this variable if you want to sample the local Zigbee device's pins.
-  required: false
-  type: string
-on_state:
-  description: Either `high` or `low`, depicting whether the binary sensor is considered `on` when the pin is `high` or `low`.
-  required: false
-  default: high
-  type: string
-{% endconfiguration %}
-
 ## Light
 
 A Zigbee light in this context is a light connected to one of the digital output pins on a Zigbee module. It can simply be switched on and off. By default, a light is considered `on` when the Zigbee device's digital output is held `high` and considered `off` when it is held `low`. This behavior can be inverted by setting the `on_state` configuration variable to `low`.
@@ -112,26 +80,6 @@ light:
     platform: zigbee
     pin: 0
 {% endhighlight %}
-
-{% configuration %}
-name:
-  description: The name you would like to give the light in Open Peer Power.
-  required: true
-  type: string
-pin:
-  description: The number identifying which pin to use.
-  required: true
-  type: integer
-address:
-  description: The long 64-bit address of the remote Zigbee device whose digital output pin you would like to switch. Do not include this variable if you want to switch the local Zigbee device's pins.
-  required: false
-  type: string
-on_state:
-  description: Either `high` or `low`, depicting whether the digital output pin is pulled `high` or `low` when the light is turned on.
-  required: false
-  default: high
-  type: string
-{% endconfiguration %}
 
 ## Sensor
 
@@ -151,30 +99,6 @@ sensor:
     pin: 0
     address: 0013A2004233D138
 {% endhighlight %}
-
-{% configuration %}
-name:
-  description: The name you would like to give the sensor in Open Peer Power.
-  required: true
-  type: string
-type:
-  description: Set to `analog` or `temperature`.
-  required: true
-  type: string
-pin:
-  description: The number identifying which pin to sample.
-  required: false
-  type: integer
-address:
-  description: The long 64-bit address of the remote Zigbee device whose pin you would like to sample. Do not include this variable if you want to sample the local Zigbee device's pins.
-  required: false
-  type: string
-max_volts:
-  description: The maximum voltage which the input pin is able to read.
-  required: false
-  default: 1.2
-  type: float
-{% endconfiguration %}
 
 ### Examples
 
@@ -225,23 +149,3 @@ switch:
     address: 0013A20040791FA2
     on_state: low
 {% endhighlight %}
-
-{% configuration %}
-name:
-  description: The name you would like to give the switch in Open Peer Power.
-  required: true
-  type: string
-pin:
-  description: The number identifying which pin to use.
-  required: true
-  type: integer
-address:
-  description: The long 64-bit address of the remote Zigbee device whose digital output pin you would like to switch. Do not include this variable if you want to switch the local Zigbee device's pins.
-  required: false
-  type: string
-on_state:
-  description: Either `high` or `low`, depicting whether the digital output pin is pulled `high` or `low` when the switch is turned on.
-  required: false
-  default: high
-  type: string
-{% endconfiguration %}

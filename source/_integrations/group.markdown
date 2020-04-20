@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: group
+excerpt: none
 ---
 
 Groups allow the user to combine multiple entities into one.
@@ -32,26 +33,6 @@ group:
       - device_tracker.dad_smith
       - device_tracker.mom_smith
 {% endhighlight %}
-
-{% configuration %}
-name:
-  description: Name of the group.
-  required: false
-  type: string
-entities:
-  description: Array or comma delimited string, list of entities to group.
-  required: true
-  type: list
-all:
-  description: Set this to `true` if the group state should only turn *on* if **all** grouped entities are *on*.
-  required: false
-  type: boolean
-  default: false
-icon:
-  description: The icon that shows in the front end.
-  required: false
-  type: string
-{% endconfiguration %}
 
 ## Group behavior
 

@@ -6,6 +6,7 @@ ha_category:
 ha_release: pre 0.7
 ha_quality_scale: internal
 ha_domain: recorder
+excerpt: none
 ---
 
 The `recorder` integration is responsible for storing details in a database, which then are handled by the [`history` integration](/integrations/history/).
@@ -26,73 +27,6 @@ To change the defaults for the `recorder` integration in your installation, add 
 # Example configuration.yaml entry
 recorder:
 {% endhighlight %}
-
-{% configuration %}
-recorder:
-  description: Enables the recorder integration. Only allowed once.
-  required: true
-  type: map
-  keys:
-    db_url:
-      description: The URL that points to your database.
-      required: false
-      type: string
-    db_max_retries:
-      description: The max amount of times, the recorder retries to connect to the database.
-      required: false
-      default: 10
-      type: integer
-    db_retry_wait:
-      description: The time in seconds, that the recorder sleeps when trying to connect to the database.
-      required: false
-      default: 3
-      type: integer
-    purge_keep_days:
-      description: Specify the number of history days to keep in recorder database after a purge.
-      required: false
-      default: 10
-      type: integer
-    purge_interval:
-      description: How often (in days) the purge task runs. If a scheduled purge is missed (e.g., if Open Peer Power was not running), the schedule will resume soon after Open Peer Power restarts. You can use the [service](#service-purge) call `purge` when required without impacting the purge schedule. If this is set to `0` (zero), automatic purging is disabled.
-      required: false
-      default: 1
-      type: integer
-    commit_interval:
-      description: How often (in seconds) the events and state changes are committed to the database. The default of `1` allows events to be committed almost right away without trashing the disk when an event storm happens. Increasing this will reduce disk I/O and may prolong disk (SD card) lifetime with the trade-off being that the logbook and history will lag. If this is set to `0` (zero), commit are made as soon as possible after an event is processed.
-      required: false
-      default: 1
-      type: integer
-    exclude:
-      description: Configure which integrations should be excluded from recordings.
-      required: false
-      type: map
-      keys:
-        domains:
-          description: The list of domains to be excluded from recordings.
-          required: false
-          type: list
-        entities:
-          description: The list of entity ids to be excluded from recordings.
-          required: false
-          type: list
-        event_types:
-          description: The list of event types to be excluded from recordings.
-          required: false
-          type: list
-    include:
-      description: Configure which integrations should be included in recordings. If set, all other entities will not be recorded.
-      required: false
-      type: map
-      keys:
-        domains:
-          description: The list of domains to be included in the recordings.
-          required: false
-          type: list
-        entities:
-          description: The list of entity ids to be included in the recordings.
-          required: false
-          type: list
-{% endconfiguration %}
 
 Defining domains and entities to `exclude` (aka. blacklist) is convenient when you are basically happy with the information recorded, but just want to remove some entities or domains. Usually, these are entities/domains that do not change or rarely change (like `updater` or `automation`).
 

@@ -9,6 +9,7 @@ ha_iot_class: Local Polling
 ha_codeowners:
   - '@andylockran'
 ha_domain: heatmiser
+excerpt: none
 ---
 
 The `heatmiser` climate platform let you control [Heatmiser DT/DT-E/PRT/PRT-E](https://www.heatmisershop.co.uk/room-thermostats/) thermostats from Heatmiser. The module itself is currently setup to work over a RS232 -> RS485 converter, therefore it connects over IP.
@@ -28,27 +29,3 @@ climate:
 {% endhighlight %}
 
 A single interface can handle up to 32 connected devices.
-
-{% configuration %}
-host:
-  description: The IP address of your interface.
-  required: true
-  type: string
-port:
-  description: The port that the interface is listening on.
-  required: true
-  type: string
-tstats:
-  description: A list of thermostats activated on the gateway.
-  required: true
-  type: list
-  keys:
-    id:
-      description: The ID of the thermostat as configured on the device itself.
-      required: true
-      type: string
-    name:
-      description: A friendly name for the thermostat.
-      required: true
-      type: string
-{% endconfiguration %}

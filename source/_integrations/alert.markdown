@@ -6,6 +6,7 @@ ha_category:
 ha_release: 0.38
 ha_quality_scale: internal
 ha_domain: alert
+excerpt: none
 ---
 
 The `alert` integration is designed to notify you when problematic issues arise.
@@ -39,66 +40,6 @@ alert:
       - kristens_phone
 {% endhighlight %}
 
-{% configuration %}
-name:
-  description: The friendly name of the alert.
-  required: true
-  type: string
-entity_id:
-  description: The ID of the entity to watch.
-  required: true
-  type: string
-title:
-  description: >
-    A title to be used for the notification if the notifier supports it
-    with [template](/docs/configuration/templating/) support.
-  required: false
-  type: template
-state:
-  description: The problem condition for the entity.
-  required: false
-  type: string
-  default: on
-repeat:
-  description: >
-    Number of minutes before the notification should be repeated.
-    Can be either a number or a list of numbers.
-  required: true
-  type: [integer, list]
-can_acknowledge:
-  description: Allows the alert to be unacknowledgeable.
-  required: false
-  type: boolean
-  default: true
-skip_first:
-  description: >
-    Controls whether the notification should be
-    sent immediately or after the first delay.
-  required: false
-  type: boolean
-  default: false
-message:
-  description: >
-    A message to be sent after an alert transitions from `off` to `on`
-    with [template](/docs/configuration/templating/) support.
-  required: false
-  type: template
-done_message:
-  description: >
-    A message sent after an alert transitions from `on` to `off` with
-    [template](/docs/configuration/templating/) support. Is only sent if an alert notification
-    was sent for transitioning from `off` to `on`.
-  required: false
-  type: template
-notifiers:
-  description: "List of `notification` integrations to use for alerts."
-  required: true
-  type: list
-data:
-  description: "Dictionary of extra parameters to send to the notifier."
-  required: false
-  type: list  
-{% endconfiguration %}
 
 In this example, the garage door status (`input_boolean.garage_door`) is watched
 and this alert will be triggered when its status is equal to `on`.

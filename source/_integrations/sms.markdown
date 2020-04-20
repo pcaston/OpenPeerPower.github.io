@@ -9,6 +9,7 @@ ha_iot_class: Local Polling
 ha_codeowners:
   - '@ocalvo'
 ha_domain: sms
+excerpt: none
 ---
 
 The `sms` integration allows having a local execution SMS notification via [Gammu](https://wammu.eu/gammu/). This is ideal when the internet is offline or when the power goes out.
@@ -34,13 +35,6 @@ notify:
     name: sms_person2
     recipient: PHONE_NUMBER
 {% endhighlight %}
-
-{% configuration %}
-device:
-  description: The gsm modem device.
-  required: true
-  type: string
-{% endconfiguration %}
 
 To use notifications, please see the [getting started with automation page](/getting-started/automation/).
 

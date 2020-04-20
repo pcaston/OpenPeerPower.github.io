@@ -2,6 +2,7 @@
 title: "Setup basic information"
 description: "Setting up the basic info of Open Peer Power."
 redirect_from: /getting-started/basic/
+excerpt: none
 ---
 
 As part of the default onboarding process, Open Peer Power can detect your location from IP address geolocation. Open Peer Power will automatically select a temperature unit and time zone based on this location. You may adjust this during onboarding, or afterwards at Configuration -> General. 

@@ -8,6 +8,7 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ha_domain: history
+excerpt: none
 ---
 
 The `history` integration will track everything that is going on within Home
@@ -33,35 +34,6 @@ history:
 Events are saved in a local database. Google Graphs is used to draw the graph.
 Drawing is happening 100% in your browser. No data is transferred to anyone at any time.
 </div>
-
-{% configuration %}
-exclude:
-  description: Configure which integrations should **not** be displayed.
-  required: false
-  type: map
-  keys:
-    entities:
-      description: The list of entity ids to be excluded from the history.
-      required: false
-      type: list
-    domains:
-      description: The list of domains to be excluded from the history.
-      required: false
-      type: list
-include:
-  description: Configure which integrations should be displayed.
-  required: false
-  type: map
-  keys:
-    entities:
-      description: The list of entity ids to be included in the history.
-      required: false
-      type: list
-    domains:
-      description: The list of domains to be included in the history.
-      required: false
-      type: list
-{% endconfiguration %}
 
 Without any `include` or `exclude` configuration the history displays graphs for
  every entity (well that's not exactly true - for instance `hidden` entities or

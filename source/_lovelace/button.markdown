@@ -2,6 +2,7 @@
 title: "Button Card"
 sidebar_label: Button
 description: "The Button card allows you to add buttons to perform tasks."
+excerpt: none
 ---
 
 The Button card allows you to add buttons to perform tasks.

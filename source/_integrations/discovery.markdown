@@ -6,6 +6,7 @@ ha_category:
 ha_release: 0.7
 ha_quality_scale: internal
 ha_domain: discovery
+excerpt: none
 ---
 
 Open Peer Power can discover and automatically configure [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)/[mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) and [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) devices on your network. Currently the `discovery` integration can detect:
@@ -55,17 +56,6 @@ discovery:
   enable:
     - homekit
 {% endhighlight %}
-
-{% configuration discovery %}
-ignore:
-  description: A list of platforms that never will be automatically configured by `discovery`.
-  required: false
-  type: list
-enable:
-  description: A list of platforms not enabled by default that `discovery` should discover.
-  required: false
-  type: list
-{% endconfiguration %}
 
 Valid values for ignore are:
 

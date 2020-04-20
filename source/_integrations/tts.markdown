@@ -5,6 +5,7 @@ ha_release: 0.35
 ha_codeowners:
   - '@pvizeli'
 ha_domain: tts
+excerpt: none
 ---
 
 Text-to-Speech (TTS) enables Open Peer Power to speak to you.
@@ -26,34 +27,6 @@ Depending on your setup, you might need to set a base URL (`base_url`) inside th
 </div>
 
 The following optional parameters can be used with any platform. However, the TTS integration will only look for global settings under the configuration of the first configured platform:
-
-{% configuration %}
-cache:
-  description: Allow TTS to cache voice file to local storage.
-  required: false
-  type: boolean
-  default: true
-cache_dir:
-  description: Folder name or path to a folder for caching files.
-  required: false
-  type: string
-  default: tts
-time_memory:
-  description: Time to hold the voice data inside memory for fast play on a media player. Minimum is 60 s and the maximum 57600 s (16 hours).
-  required: false
-  type: integer
-  default: 300
-base_url:
-  description: A base URL to use *instead* of the one set in the [HTTP component](/integrations/http/). It is used as-is by the `tts` component. In particular, you need to include the protocol scheme `http://` or `https://` and the correct port number. They will not be automatically added for you.
-  required: false
-  type: string
-  default: value of ``http.base_url``
-service_name:
-  description: Define the service name.
-  required: false
-  type: string
-  default:  The service name default set to <platform>_say. For example, for google_translate tts, its service name default is `google_translate_say`.
-{% endconfiguration %}
 
 The extended example from above would look like the following sample:
 

@@ -7,6 +7,7 @@ ha_category:
 ha_release: 0.54
 ha_iot_class: Configurable
 ha_domain: mqtt_statestream
+excerpt: none
 ---
 
 The `mqtt_statestream` integration publishes state changes in Open Peer Power to individual MQTT topics.
@@ -22,49 +23,6 @@ mqtt_statestream:
   publish_attributes: true
   publish_timestamps: true
 {% endhighlight %}
-
-{% configuration %}
-base_topic:
-  description: Base topic used to generate the actual topic used to publish.
-  required: true
-  type: string
-publish_attributes:
-  description: Publish attributes of the entity as well as the state.
-  required: false
-  default: false
-  type: boolean
-publish_timestamps:
-  description: Publish the last_changed and last_updated timestamps for the entity.
-  required: false
-  default: false
-  type: boolean
-exclude:
-  description: Configure which integrations should be excluded from recordings. See *Include/Exclude* section below for details.
-  required: false
-  type: list
-  keys:
-    entities:
-      description: The list of entity ids to be excluded from recordings.
-      required: false
-      type: list
-    domains:
-      description: The list of domains to be excluded from recordings.
-      required: false
-      type: list
-include:
-  description: Configure which integrations should be included in recordings. If set, all other entities will not be recorded.
-  required: false
-  type: list
-  keys:
-    entities:
-      description: The list of entity ids to be included from recordings.
-      required: false
-      type: list
-    domains:
-      description: The list of domains to be included from recordings.
-      required: false
-      type: list
-{% endconfiguration %}
 
 ## Operation
 

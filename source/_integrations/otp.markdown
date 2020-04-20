@@ -7,6 +7,7 @@ ha_iot_class: Local Polling
 ha_release: 0.49
 ha_quality_scale: internal
 ha_domain: otp
+excerpt: none
 ---
 
 The `otp` sensor generates One-Time Passwords according to [RFC6238](https://tools.ietf.org/html/rfc6238) that is compatible with most OTP generators available, including Google Authenticator. You can use this when building custom security solutions and want to use "rolling codes", that change every 30 seconds.
@@ -21,18 +22,6 @@ sensor:
   - platform: otp
     token: SHARED_SECRET_TOKEN
 {% endhighlight %}
-
-{% configuration %}
-name:
-  description: Name of the sensor to use in the frontend.
-  required: false
-  default: OTP Sensor
-  type: string
-token:
-  description: The shared secret you use in your OTP generator (e.g., Google Authenticator on your phone).
-  required: true
-  type: string
-{% endconfiguration %}
 
 ## Generating a token
 

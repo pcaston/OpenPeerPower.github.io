@@ -2,6 +2,7 @@
 title: "Service Calls"
 description: "Instructions on how to call services in Open Peer Power."
 redirect_from: /getting-started/scripts-service-calls/
+excerpt: none
 ---
 
 Various integrations allow calling services when a certain event occurs. The most common one is calling a service when an automation trigger happens. But a service can also be called from a script or via the Amazon Echo.

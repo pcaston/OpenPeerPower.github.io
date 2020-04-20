@@ -5,6 +5,7 @@ ha_category:
   - History
 ha_release: 0.7
 ha_domain: logbook
+excerpt: none
 ---
 
 <img src='/images/screenshots/logbook.png' style='margin-left:10px; float: right;' height="100" />
@@ -23,35 +24,6 @@ This integration is by default enabled, unless you've disabled or removed the [`
 # Example configuration.yaml entry
 logbook:
 {% endhighlight %}
-
-{% configuration %}
-exclude:
-  description: "Configure which integrations should **not** create logbook entries."
-  required: false
-  type: map
-  keys:
-    entities:
-      description: The list of entity ids to be excluded from creating logbook entries.
-      required: false
-      type: list
-    domains:
-      description: The list of domains to be excluded from creating logbook entries.
-      required: false
-      type: list
-include:
-  description: Configure which integrations should create logbook entries.
-  required: false
-  type: map
-  keys:
-    entities:
-      description: The list of entity ids to be included in creating logbook entries.
-      required: false
-      type: list
-    domains:
-      description: The list of domains to be included in creating logbook entries.
-      required: false
-      type: list
-{% endconfiguration %}
 
 If you want to exclude messages of some entities or domains from the logbook
 just add the `exclude` parameter like:

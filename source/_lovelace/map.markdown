@@ -2,6 +2,7 @@
 title: "Map Card"
 sidebar_label: Map
 description: "The Map card that allows you to display entities on a map"
+excerpt: none
 ---
 
 The Map card that allows you to display entities on a map

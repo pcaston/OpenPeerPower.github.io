@@ -5,6 +5,7 @@ ha_category:
   - Voice
 ha_release: 0.64
 ha_domain: homekit
+excerpt: none
 ---
 
 The `homekit` integration allows you to forward entities from Open Peer Power to Apple HomeKit, so they can be controlled from Apple's Home app and Siri. Please make sure that you have read the [considerations](#considerations) listed below to save you some trouble later. However if you do encounter issues, check out the [troubleshooting](#troubleshooting) section.
@@ -51,111 +52,6 @@ homekit:
     switch.bedroom_outlet:
       type: outlet
 {% endhighlight %}
-
-{% configuration %}
-  homekit:
-    description: HomeKit configuration.
-    required: true
-    type: map
-    keys:
-      auto_start:
-        description: Flag if the HomeKit Server should start automatically after the Open Peer Power Core Setup is done. ([Disable Auto Start](#disable-auto-start))
-        required: false
-        type: boolean
-        default: true
-      port:
-        description: Port for the HomeKit extension.
-        required: false
-        type: integer
-        default: 51827
-      name:
-        description: Need to be individual for each instance of Open Peer Power using the integration on the same local network. Between `3` and `25` characters. Alphanumeric and spaces allowed.
-        required: false
-        type: string
-        default: '`Open Peer Power Bridge`'
-      ip_address:
-        description: The local network IP address. Only necessary if the default from Open Peer Power does not work.
-        required: false
-        type: string
-      safe_mode:
-        description: Only set this parameter if you encounter issues during pairing. ([Safe Mode](#safe-mode))
-        required: false
-        type: boolean
-        default: false
-      zeroconf_default_interface:
-        description: By default, zeroconf will attempt to bind to all interfaces. For systems running using network isolation or similar, this may result HomeKit not being seen on the network. Change this option to `true` if HomeKit cannot be discovered.
-        required: true
-        type: boolean
-        default: false
-      advertise_ip:
-        description: If you need to override the IP address used for mDNS advertisement. (For example, using network isolation in Docker and together with an mDNS forwarder like `avahi-daemon` in reflector mode)
-        required: false
-        type: string
-      filter:
-        description: Filters for entities to be included/excluded from HomeKit. ([Configure Filter](#configure-filter))
-        required: false
-        type: map
-        keys:
-          include_domains:
-            description: Domains to be included.
-            required: false
-            type: list
-          include_entities:
-            description: Entities to be included.
-            required: false
-            type: list
-          exclude_domains:
-            description: Domains to be excluded.
-            required: false
-            type: list
-          exclude_entities:
-            description: Entities to be excluded.
-            required: false
-            type: list
-      entity_config:
-        description: Configuration for specific entities. All subordinate keys are the corresponding entity ids to the domains, e.g., `alarm_control_panel.alarm`.
-        required: false
-        type: map
-        keys:
-          '`<ENTITY_ID>`':
-            description: Additional options for specific entities.
-            required: false
-            type: map
-            keys:
-              name:
-                description: Name of the entity to show in HomeKit. HomeKit will cache the name on the first run so the accessory must be [reset](#resetting-accessories) for any change to take effect.
-                required: false
-                type: string
-              linked_battery_sensor:
-                description: The `entity_id` of a `sensor` entity to use as the battery of the accessory. HomeKit will cache an accessory's feature set on the first run so a device must be [reset](#resetting-accessories) for any change to take effect.
-                required: false
-                type: string
-              low_battery_threshold:
-                description: Minimum battery level before the accessory starts reporting a low battery.
-                required: false
-                type: integer
-                default: 20
-              code:
-                description: Code to `arm / disarm` an alarm or `lock / unlock` a lock. Only applicable for `alarm_control_panel` or `lock` entities.
-                required: false
-                type: string
-                default: '`<No code>`'
-              feature_list:
-                description: Only for `media_player` entities. List of feature dictionaries to add for a given entity. Comparable to the platform schema.
-                required: false
-                type: list
-                keys:
-                  feature:
-                    description: Name of the feature to add to the entity representation. Valid features are `on_off`, `play_pause`, `play_stop` and `toggle_mute`. The media_player entity must support the feature to be valid.
-                    required: true
-                    type: string
-              type:
-                description: Only for `switch` entities. Type of accessory to be created within HomeKit. Valid types are `faucet`, `outlet`, `shower`, `sprinkler`, `switch` and `valve`. HomeKit will cache the type on the first run so a device must be [reset](#resetting-accessories) for any change to take effect.
-                required: false
-                type: string
-                default: '`switch`'
-{% endconfiguration %}
-
 
 ## Setup
 

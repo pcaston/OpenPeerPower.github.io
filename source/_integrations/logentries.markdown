@@ -5,6 +5,7 @@ ha_category:
   - History
 ha_release: 0.13
 ha_domain: logentries
+excerpt: none
 ---
 
 The `logentries` integration makes it possible to log all state changes to [Logentries](http://logentries.com/) using Logentries Webhook endpoint.
@@ -18,10 +19,3 @@ To use the `logentries` integration in your installation, add the following to y
 logentries:
   token: TOKEN
 {% endhighlight %}
-
-{% configuration %}
-token:
-  description: The token for the log to use.
-  required: true
-  type: string
-{% endconfiguration %}
