@@ -19,11 +19,6 @@ Actions can be enabled on:
 
 Action that will be performed when an object on a card is tapped.
 
-{% highlight yaml %}
-tap_action:
-  action: toggle
-{% endhighlight %}
-
 {% configuration tap-action %}
 tap_action:
   required: false
