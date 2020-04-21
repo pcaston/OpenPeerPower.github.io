@@ -104,7 +104,7 @@ source /srv/homeassistant/bin/activate
 pip3 install --upgrade homeassistant
 {% endhighlight %}
 
-Once the last command executes, restart the Open Peer Power Core service to apply the latest updates. Please keep in mind that some updates may take longer to start up than others. If Open Peer Power Core fails to start, make sure you check the **Breaking Changes** from the [Release Notes](https://github.com/home-assistant/home-assistant/releases).
+Once the last command executes, restart the Open Peer Power Core service to apply the latest updates. Please keep in mind that some updates may take longer to start up than others. If Open Peer Power Core fails to start, make sure you check the **Breaking Changes** from the [Release Notes](https://github.com/OpenPeerPower/Open-Peer-Power/releases).
 
 ### Run a specific version
 
@@ -139,7 +139,7 @@ For example:
 {% highlight bash %}
 sudo -u homeassistant -H -s
 source /srv/homeassistant/bin/activate
-pip3 install --upgrade git+git://github.com/home-assistant/home-assistant.git@dev
+pip3 install --upgrade git+git://github.com/OpenPeerPower/Open-Peer-Power.git@dev
 {% endhighlight %}
 
 ### Activating the virtual environment

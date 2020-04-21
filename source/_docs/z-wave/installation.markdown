@@ -43,7 +43,7 @@ debug:
   type: boolean
   default: false
 autoheal:
-  description: Allows enabling auto Z-Wave heal at midnight. Warning, this is inefficient and [should not be used](https://github.com/home-assistant/architecture/issues/81#issuecomment-478444085).
+  description: Allows enabling auto Z-Wave heal at midnight. Warning, this is inefficient and [should not be used](https://github.com/OpenPeerPower/architecture/issues/81#issuecomment-478444085).
   required: false
   type: boolean
   default: false

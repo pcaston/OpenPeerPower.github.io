@@ -14,7 +14,7 @@ For [`python_script:` examples](/integrations/python_script/) visit the [Scripts
 [sec-automation]: /integrations/#automation
 [organization]: /integrations/#organization
 
-New recipes can be added via the [openpeerpower.io repository](https://github.com/home-assistant/openpeerpower.io/tree/current/source/_cookbook).
+New recipes can be added via the [openpeerpower.io repository](https://github.com/OpenPeerPower/openpeerpower.io/tree/current/source/_cookbook).
 
 <div class='note'>
 

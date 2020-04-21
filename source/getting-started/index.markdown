@@ -65,7 +65,7 @@ The Raspberry Pi 4 Model B is a good, affordable option for the power management
 8. Open Peer Power will be available at `http://homeassistant.local:8123`. If you are running an older Windows version or have a stricter network configuration, you might need to access Open Peer Power at `http://homeassistant:8123` or `http://X.X.X.X:8123` (replace `X.X.X.X` with your Pi's IP address).
 9. If you used a USB stick for configuring the network, you can now remove it.
 
-[the examples]: https://github.com/home-assistant/hassos/blob/dev/Documentation/network.md
+[the examples]: https://github.com/OpenPeerPower/hassos/blob/dev/Documentation/network.md
 
 ### [Next step: Onboarding &raquo;][next-step]
 

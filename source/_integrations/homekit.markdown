@@ -322,7 +322,7 @@ Remember that the iOS device needs to be in the same local network as the Open P
 
 #### `Open Peer Power Bridge` doesn't appear in the Home App (for pairing) - Docker
 
-Set `network_mode: host`. If you have further problems this [issue](https://github.com/home-assistant/home-assistant/issues/15692) might help.
+Set `network_mode: host`. If you have further problems this [issue](https://github.com/OpenPeerPower/Open-Peer-Power/issues/15692) might help.
 
 You can also try to use `avahi-daemon` in reflector mode together with the option `advertise_ip`, see above.
 
@@ -363,7 +363,7 @@ To use the HomeKit integration with to different Open Peer Power instances on th
 
 #### Specific entity doesn't work
 
-Although we try our best, some entities don't work with the HomeKit integration yet. The result will be that either pairing fails completely or all Open Peer Power accessories will stop working. Use the filter to identify which entity is causing the issue. It's best to try pairing and step by step including more entities. If it works unpair and repeat until you find the one that is causing the issues. To help others and the developers, please open a new issue here: [home-assistant/issues/new](https://github.com/home-assistant/home-assistant/issues/new?labels=component:%20homekit)
+Although we try our best, some entities don't work with the HomeKit integration yet. The result will be that either pairing fails completely or all Open Peer Power accessories will stop working. Use the filter to identify which entity is causing the issue. It's best to try pairing and step by step including more entities. If it works unpair and repeat until you find the one that is causing the issues. To help others and the developers, please open a new issue here: [home-assistant/issues/new](https://github.com/OpenPeerPower/Open-Peer-Power/issues/new?labels=component:%20homekit)
 
 #### Accessories are all listed as not responding
 

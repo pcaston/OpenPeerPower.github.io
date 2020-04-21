@@ -41,17 +41,17 @@ Another common problem is that a required configuration setting is missing. If t
 
 See the [logger](/integrations/logger/) integration for instructions on how to define the level of logging you require for specific modules.
 
-If you find any errors or want to expand the documentation, please [let us know](https://github.com/home-assistant/openpeerpower.io/issues).
+If you find any errors or want to expand the documentation, please [let us know](https://github.com/OpenPeerPower/openpeerpower.io/issues).
 
 #### Problems with dependencies
 
 Almost all integrations have external dependencies to communicate with your devices and services. Sometimes Open Peer Power is unable to install the necessary dependencies. If this is the case, it should show up in `home-assistant.log`.
 
-The first step is trying to restart Open Peer Power and see if the problem persists. If it does, look at the log to see what the error is. If you can't figure it out, please [report it](https://github.com/home-assistant/home-assistant/issues) so we can investigate what is going on.
+The first step is trying to restart Open Peer Power and see if the problem persists. If it does, look at the log to see what the error is. If you can't figure it out, please [report it](https://github.com/OpenPeerPower/Open-Peer-Power/issues) so we can investigate what is going on.
 
 #### Problems with integrations
 
-It can happen that some integrations either do not work right away or stop working after Open Peer Power has been running for a while. If this happens to you, please [report it](https://github.com/home-assistant/home-assistant/issues) so that we can have a look.
+It can happen that some integrations either do not work right away or stop working after Open Peer Power has been running for a while. If this happens to you, please [report it](https://github.com/OpenPeerPower/Open-Peer-Power/issues) so that we can have a look.
 
 #### Multiple files
 

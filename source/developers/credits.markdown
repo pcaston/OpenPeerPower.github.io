@@ -13263,6 +13263,6 @@ This page contains a list of people who have contributed in one way or another t
 1 commit to openpeerpower.io
 ")
 
-This page is irregularly updated using the [`hass-release` tool](https://github.com/home-assistant/hass-release). If you think that you are missing, please let us know.
+This page is irregularly updated using the [`hass-release` tool](https://github.com/OpenPeerPower/hass-release). If you think that you are missing, please let us know.
 
 <i>This page was last updated Sunday, November 17 2019, 13:17:30 UTC.</i>

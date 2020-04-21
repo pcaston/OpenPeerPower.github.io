@@ -13,7 +13,7 @@ excerpt: none
 
 The `updater` binary sensor will check daily for new releases. The state will be "on" when an update is available. Otherwise, the state will be "off". The newer version, as well as the link to the release notes, are attributes of the updater.
 
-The updater integration will also collect basic information about the running Open Peer Power instance and its environment. The information includes the current Open Peer Power version, the time zone, Python version and operating system information. No identifiable information (i.e., IP address, GPS coordinates, etc.) will ever be collected. If you are concerned about your privacy, you are welcome to scrutinize the Python [source code](https://github.com/home-assistant/home-assistant/tree/dev/homeassistant/components/updater).
+The updater integration will also collect basic information about the running Open Peer Power instance and its environment. The information includes the current Open Peer Power version, the time zone, Python version and operating system information. No identifiable information (i.e., IP address, GPS coordinates, etc.) will ever be collected. If you are concerned about your privacy, you are welcome to scrutinize the Python [source code](https://github.com/OpenPeerPower/Open-Peer-Power/tree/dev/homeassistant/components/updater).
 
 ## Configuration
 

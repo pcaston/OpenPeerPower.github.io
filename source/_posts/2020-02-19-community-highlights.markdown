@@ -56,7 +56,7 @@ mosquitto_sub -t \#
 
 ### SQL command-line
 
-_This requires the MariaDB add-on to be installed and the recorder configured to use it ([instructions](https://github.com/home-assistant/hassio-addons/tree/master/mariadb))._
+_This requires the MariaDB add-on to be installed and the recorder configured to use it ([instructions](https://github.com/OpenPeerPower/hassio-addons/tree/master/mariadb))._
 
 To query the available tables:
 

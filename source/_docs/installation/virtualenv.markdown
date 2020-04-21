@@ -91,7 +91,7 @@ For example:
 {% highlight bash %}
 cd homeassistant
 source bin/activate
-pip3 install --upgrade git+git://github.com/home-assistant/home-assistant.git@dev
+pip3 install --upgrade git+git://github.com/OpenPeerPower/Open-Peer-Power.git@dev
 {% endhighlight %}
 
 ### Notes

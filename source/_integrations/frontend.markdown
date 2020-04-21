@@ -32,7 +32,7 @@ frontend:
       primary-color: blue
 {% endhighlight %}
 
-The example above defined two themes named `happy` and `sad`. For each theme you can set values for CSS variables. For a partial list of variables used by the main frontend see [ha-style.ts](https://github.com/home-assistant/home-assistant-polymer/blob/master/src/resources/ha-style.ts).
+The example above defined two themes named `happy` and `sad`. For each theme you can set values for CSS variables. For a partial list of variables used by the main frontend see [ha-style.ts](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/blob/master/src/resources/ha-style.ts).
 
 Check our [community forums](https://community.openpeerpower.io/c/projects/themes) to find themes to use.
 

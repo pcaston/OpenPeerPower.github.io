@@ -208,6 +208,6 @@ If you don't specify any `auth_providers` section in the `configuration.yaml` fi
 
 <div class='note warning'>
 
-[Issue 16441](https://github.com/home-assistant/home-assistant/issues/16441): the legacy API password auth provider, won't be automatically configured if your API password is located in a package. This is because Open Peer Power processes the `auth_provider` during the `core` section loading, which is earlier than the `packages` processing.
+[Issue 16441](https://github.com/OpenPeerPower/Open-Peer-Power/issues/16441): the legacy API password auth provider, won't be automatically configured if your API password is located in a package. This is because Open Peer Power processes the `auth_provider` during the `core` section loading, which is earlier than the `packages` processing.
 
 </div>
