@@ -12,7 +12,7 @@ ha_domain: config
 
 The `config` integration is designed to display panels in the frontend to configure and manage parts of Open Peer Power.
 
-This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.openpeerpower.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
 {% highlight yaml %}
 # Example configuration.yaml entry

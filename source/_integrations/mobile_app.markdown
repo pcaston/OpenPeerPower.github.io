@@ -15,11 +15,11 @@ The Mobile App integration allows Open Peer Power mobile apps to easily integrat
 
 If you are planning to use a mobile application that integrates with Open Peer Power, we recommend that you keep this integration enabled.
 
-If you are a mobile app developer, see the [developer documentation](https://developers.home-assistant.io/docs/en/app_integration_index.html) for instructions on how to build your app on top of the mobile app component.
+If you are a mobile app developer, see the [developer documentation](https://developers.openpeerpower.io/docs/en/app_integration_index.html) for instructions on how to build your app on top of the mobile app component.
 
 ## Configuration
 
-This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.openpeerpower.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
 {% highlight yaml %}
 # Example configuration.yaml entry
@@ -33,4 +33,4 @@ mobile_app:
 
 ## Mobile App Documentation
 
-- [Companion documentation](https://companion.home-assistant.io/)
+- [Companion documentation](https://companion.openpeerpower.io/)

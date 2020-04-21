@@ -41,7 +41,7 @@ Another common problem is that a required configuration setting is missing. If t
 
 See the [logger](/integrations/logger/) integration for instructions on how to define the level of logging you require for specific modules.
 
-If you find any errors or want to expand the documentation, please [let us know](https://github.com/home-assistant/home-assistant.io/issues).
+If you find any errors or want to expand the documentation, please [let us know](https://github.com/home-assistant/openpeerpower.io/issues).
 
 #### Problems with dependencies
 

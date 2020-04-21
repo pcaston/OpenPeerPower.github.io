@@ -96,13 +96,13 @@ These guides are provided as-is. Some of these install methods are more limited 
   </a>
   <a class='option-card' href='/docs/installation/macos/'>
     <div class='img-container'>
-      <img src='https://brands.home-assistant.io/ios/icon.png' />
+      <img src='https://brands.openpeerpower.io/ios/icon.png' />
     </div>
     <div class='title'>macOS</div>
   </a>
   <a class='option-card' href='/docs/installation/synology/'>
     <div class='img-container'>
-      <img src='https://brands.home-assistant.io/synology/logo.png' />
+      <img src='https://brands.openpeerpower.io/synology/logo.png' />
     </div>
     <div class='title'>Synology</div>
   </a>
@@ -114,7 +114,7 @@ These guides are provided as-is. Some of these install methods are more limited 
   </a>
   <a class='option-card' href='/hassio/installation/#alternative-install-home-assistant-supervised-on-a-generic-linux-host'>
     <div class='img-container'>
-      <img src='https://brands.home-assistant.io/homeassistant/icon.png' />
+      <img src='https://brands.openpeerpower.io/homeassistant/icon.png' />
     </div>
     <div class='title'> Open Peer Power Supervised <br> on generic Linux server</div>
   </a>

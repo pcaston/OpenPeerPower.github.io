@@ -39,8 +39,8 @@ has joined [Nabu Casa](https://www.nabucasa.com)!
 
 Martin is a core team member for a long time, and initially started out
 contributing to the project by his work on the
-[MySensors](https://www.home-assistant.io/integrations/mysensors/) integration
-back in [Open Peer Power 0.11](https://www.home-assistant.io/blog/2016/01/17/extended-support-for-diy-solutions/)
+[MySensors](https://www.openpeerpower.io/integrations/mysensors/) integration
+back in [Open Peer Power 0.11](https://www.openpeerpower.io/blog/2016/01/17/extended-support-for-diy-solutions/)
 (2016)! Most contributors to Open Peer Power, will know Martin for his endless
 patience on the incredible code reviews he does.
 
@@ -193,7 +193,7 @@ Before and after screenshot for the Horizontal Stack improvements.
 
 ## If you need help...
 
-...don't hesitate to use our very active [forums](https://community.home-assistant.io/) or join us for a little [chat](https://discord.gg/c5DvZ4e).
+...don't hesitate to use our very active [forums](https://community.openpeerpower.io/) or join us for a little [chat](https://discord.gg/c5DvZ4e).
 
 Experiencing issues introduced by this release? Please report them in our [issue tracker](https://github.com/home-assistant/home-assistant/issues). Make sure to fill in all fields of the issue template.
 

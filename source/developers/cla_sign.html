@@ -426,7 +426,7 @@ description: "The Open Peer Power contributor license agreement (CLA) signature 
     if (codeCheck && codeCheck.length > 0) {
       $.ajax({
         type: "POST",
-        url: "https://cla.home-assistant.io/github/exchange",
+        url: "https://cla.openpeerpower.io/github/exchange",
         data: JSON.stringify({"code": codeCheck}),
         contentType: "application/json",
       }).done(function(data){
@@ -468,7 +468,7 @@ description: "The Open Peer Power contributor license agreement (CLA) signature 
         }
         $.ajax({
           type: "POST",
-          url: "https://cla.home-assistant.io/sign",
+          url: "https://cla.openpeerpower.io/sign",
           data: JSON.stringify(payload),
           contentType: "application/json",
         }).done(function(data){

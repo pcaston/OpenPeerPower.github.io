@@ -34,7 +34,7 @@ setup has a total of 5 Open Peer Power instances, controlling 7x marine aquarium
 Those are some big views Kevin! I bet you will be happy with the new Lovelace
 features that are coming in Open Peer Power Core 0.107. It will help
 you to trim down that a bit, into multiple Lovelace Dashboards (now in
-[beta, sneak peak?](https://rc.home-assistant.io/latest-release-notes/)).
+[beta, sneak peak?](https://rc.openpeerpower.io/latest-release-notes/)).
 
 [Click here to check out Kevin's post on our Facebook group.](https://www.facebook.com/groups/HomeAssistant/permalink/2597624533842234/)
 
@@ -95,7 +95,7 @@ Also, don't forget to share your creations with us via Social Media:
 
 See you next edition!
 
-[chat]: https://www.home-assistant.io/join-chat
+[chat]: https://www.openpeerpower.io/join-chat
 [facebook-group]: https://www.facebook.com/groups/HomeAssistant/
 [instagram]: https://www.instagram.com/homeassistant/
 [reddit]: https://www.reddit.com/r/homeassistant

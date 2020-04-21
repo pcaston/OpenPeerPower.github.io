@@ -70,10 +70,10 @@ Also, don't forget to share your creations with us via Social Media:
 
 See you next edition!
 
-[chat]: https://www.home-assistant.io/join-chat
-[community-highlights-2015]: https://www.home-assistant.io/blog/2015/12/05/community-highlights/
-[community-highlights-2016]: https://www.home-assistant.io/blog/2016/02/20/community-highlights/
-[different-take]: https://community.home-assistant.io/t/a-different-take-on-designing-a-lovelace-ui/162594
+[chat]: https://www.openpeerpower.io/join-chat
+[community-highlights-2015]: https://www.openpeerpower.io/blog/2015/12/05/community-highlights/
+[community-highlights-2016]: https://www.openpeerpower.io/blog/2016/02/20/community-highlights/
+[different-take]: https://community.openpeerpower.io/t/a-different-take-on-designing-a-lovelace-ui/162594
 [esphome]: https://www.esphome.io
 [facebook-group]: https://www.facebook.com/groups/HomeAssistant/
 [instagram]: https://www.instagram.com/homeassistant/

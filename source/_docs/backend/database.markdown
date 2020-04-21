@@ -118,4 +118,4 @@ The `VACUUM` command cleans your database.
 sqlite> VACUUM;
 {% endhighlight %}
 
-For a more interactive way of working with the database, check the [Data Science Portal](https://data.home-assistant.io/).
+For a more interactive way of working with the database, check the [Data Science Portal](https://data.openpeerpower.io/).

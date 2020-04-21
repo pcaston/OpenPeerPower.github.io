@@ -48,7 +48,7 @@ http:
   ssl_key: /etc/letsencrypt/live/hass.example.com/privkey.pem
   cors_allowed_origins:
     - https://google.com
-    - https://www.home-assistant.io
+    - https://www.openpeerpower.io
   use_x_forwarded_for: true
   trusted_proxies:
     - 10.0.0.200
@@ -70,7 +70,7 @@ The `http` platforms are not real platforms within the meaning of the terminolog
 
 To use those kind of [sensors](#sensor) or [binary sensors](#binary-sensor) in your installation no configuration in Open Peer Power is needed. All configuration is done on the devices themselves. This means that you must be able to edit the target URL or endpoint and the payload. The entity will be created after the first message has arrived.
 
-Create a [Long-Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token) in the Open Peer Power UI at the bottom of your profile if you want to use HTTP sensors.
+Create a [Long-Lived Access Tokens](https://developers.openpeerpower.io/docs/en/auth_api.html#long-lived-access-token) in the Open Peer Power UI at the bottom of your profile if you want to use HTTP sensors.
 
 All [requests](/developers/rest_api/#post-apistatesltentity_id) need to be sent to the endpoint of the device and must be **POST**.
 

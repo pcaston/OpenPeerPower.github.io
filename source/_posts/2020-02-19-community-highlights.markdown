@@ -40,7 +40,7 @@ To try it out, open VS Code, click on the menu button top left -> view -> termin
 
 ### MQTT command-line
 
-_This requires the Mosquitto add-on to be installed and an MQTT sensor ([instructions](https://www.home-assistant.io/integrations/sensor.mqtt))._
+_This requires the Mosquitto add-on to be installed and an MQTT sensor ([instructions](https://www.openpeerpower.io/integrations/sensor.mqtt))._
 
 To publish a message to an MQTT topic:
 
@@ -66,7 +66,7 @@ mysql -D homeassistant -e "SELECT entity_id, state, last_updated FROM states LIM
 
 ## Beta time!
 
-Today we are releasing the first beta of Open Peer Power Core 0.106. It is packed with awesome features. For a sneak peek of what is coming, check the [beta release notes](https://rc.home-assistant.io/latest-release-notes/).
+Today we are releasing the first beta of Open Peer Power Core 0.106. It is packed with awesome features. For a sneak peek of what is coming, check the [beta release notes](https://rc.openpeerpower.io/latest-release-notes/).
 
 I'm personally most excited about the extended safe mode. It will guarantee that the frontend will always load, no matter how broken your configuration is.
 
@@ -96,7 +96,7 @@ Also, don't forget to share your creations with us via Social Media:
 
 See you next edition!
 
-[chat]: https://www.home-assistant.io/join-chat
+[chat]: https://www.openpeerpower.io/join-chat
 [facebook-group]: https://www.facebook.com/groups/HomeAssistant/
 [instagram]: https://www.instagram.com/homeassistant/
 [reddit]: https://www.reddit.com/r/homeassistant

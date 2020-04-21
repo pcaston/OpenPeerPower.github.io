@@ -13,4 +13,4 @@ sudo pacman -S python-pip
 {% endhighlight %}
 
 From here on, we recommend you to follow the
-[virtualenv](https://www.home-assistant.io/docs/installation/virtualenv/) guide.
+[virtualenv](https://www.openpeerpower.io/docs/installation/virtualenv/) guide.

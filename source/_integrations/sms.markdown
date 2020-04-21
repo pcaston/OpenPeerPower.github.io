@@ -108,4 +108,4 @@ If the device is still not recognized, remove the parameter -X from the usb_mode
 
 ## More details:
 
-- [Original thread discussion](https://community.home-assistant.io/t/send-sms-with-usb-gsm-modem-when-alarm-triggered/28942/38)
+- [Original thread discussion](https://community.openpeerpower.io/t/send-sms-with-usb-gsm-modem-when-alarm-triggered/28942/38)

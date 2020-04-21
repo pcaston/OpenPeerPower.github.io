@@ -8,7 +8,7 @@ The documentation covers beginner to advanced topics around the installation, se
 <div class="text-center hass-option-cards" markdown="0">
   <a class='option-card' href='/hassio/'>
     <div class='img-container'>
-      <img src='https://brands.home-assistant.io/homeassistant/icon.png' />
+      <img src='https://brands.openpeerpower.io/homeassistant/icon.png' />
     </div>
     <div class='title'>Installation</div>
   </a>
@@ -20,13 +20,13 @@ The documentation covers beginner to advanced topics around the installation, se
   </a>
   <a class='option-card' href='/docs/z-wave/'>
     <div class='img-container'>
-      <img src='https://brands.home-assistant.io/zwave/icon.png' />
+      <img src='https://brands.openpeerpower.io/zwave/icon.png' />
     </div>
     <div class='title'>Z-Wave</div>
   </a>
   <a class='option-card' href='/docs/mqtt/'>
     <div class='img-container'>
-      <img src='https://brands.home-assistant.io/mqtt/icon.png' />
+      <img src='https://brands.openpeerpower.io/mqtt/icon.png' />
     </div>
     <div class='title'>MQTT</div>
   </a>
@@ -38,7 +38,7 @@ The documentation covers beginner to advanced topics around the installation, se
   </a>
   <a class='option-card' href='/docs/ecosystem/ios/'>
     <div class='img-container'>
-      <img src='https://brands.home-assistant.io/ios/icon.png' />
+      <img src='https://brands.openpeerpower.io/ios/icon.png' />
     </div>
     <div class='title'>iOS</div>
   </a>

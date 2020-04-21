@@ -33,7 +33,7 @@ automation:
       data:
         message: "The garage has been left open"
         data:
-          image: https://www.home-assistant.io/images/merchandise/shirt-frontpage.png
+          image: https://www.openpeerpower.io/images/merchandise/shirt-frontpage.png
           actions:
             - action: "close_garage" # The key you are sending for the event
               title: "Close Garage Door" # The button title
@@ -73,7 +73,7 @@ We plan to keep expanding sensors in the near future to add things like cellular
 
 ## Docs
 
-Thanks to a few dedicated volunteers and a mad dash, [we have a newly refreshed docs website](https://companion.home-assistant.io/). It’s using the latest version of [Docusaurus](https://docusaurus.io/), which means it’s got a new coat of paint and even dark mode support. So much easier on the eyes!
+Thanks to a few dedicated volunteers and a mad dash, [we have a newly refreshed docs website](https://companion.openpeerpower.io/). It’s using the latest version of [Docusaurus](https://docusaurus.io/), which means it’s got a new coat of paint and even dark mode support. So much easier on the eyes!
 
 In addition to the tooling updates, we’ve also begun documenting Android and iOS differences. Keep an eye out for the Android and Apple logos to denote what works where.
 

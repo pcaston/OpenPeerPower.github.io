@@ -74,7 +74,7 @@ Here's an example configuration for a single device:
 devicename:
   name: Friendly Name
   mac: EA:AA:55:E7:C6:94
-  picture: https://www.home-assistant.io/images/favicon-192x192.png
+  picture: https://www.openpeerpower.io/images/favicon-192x192.png
   track: true
 {% endhighlight %}
 

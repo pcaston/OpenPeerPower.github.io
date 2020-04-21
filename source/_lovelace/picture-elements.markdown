@@ -118,7 +118,7 @@ tap_action:
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g.,  `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "Path to navigate to (e.g.,  `https://www.openpeerpower.io`) when `action` defined as `url`"
       type: string
       default: none
     service:
@@ -386,7 +386,7 @@ style:
 {% endconfiguration %}
 
 The process for creating and referencing custom elements is the same as for custom cards.
-Please see the [developer documentation](https://developers.home-assistant.io/docs/en/lovelace_custom_card.html)
+Please see the [developer documentation](https://developers.openpeerpower.io/docs/en/lovelace_custom_card.html)
 for more information.
 
 ## How to use the style object

@@ -101,7 +101,7 @@ The message attribute supports the [Markdown formatting syntax](https://daringfi
 | Newline | `\n` |
 | Bold | `**My bold text**` |
 | Cursive | `*My cursive text*` |
-| Link | `[Link](https://home-assistant.io/)` |
+| Link | `[Link](https://openpeerpower.io/)` |
 | Image | `![image](/local/my_image.jpg)` |
 
 <div class="note">

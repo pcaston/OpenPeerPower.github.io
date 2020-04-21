@@ -31,7 +31,7 @@ You really **need** to watch the video below now...
 Well done, Harrie! That looks slick!
 
 More details on his creation can be found on the
-[Open Peer Power Community Forum](https://community.home-assistant.io/t/3d-home-navigation-control-unity-home-assistant/174972).
+[Open Peer Power Community Forum](https://community.openpeerpower.io/t/3d-home-navigation-control-unity-home-assistant/174972).
 
 ## 3D printed interactive floorplan
 
@@ -93,7 +93,7 @@ Also, don't forget to share your creations with us via Social Media:
 
 See you next edition!
 
-[chat]: https://www.home-assistant.io/join-chat
+[chat]: https://www.openpeerpower.io/join-chat
 [facebook-group]: https://www.facebook.com/groups/HomeAssistant/
 [instagram]: https://www.instagram.com/homeassistant/
 [reddit]: https://www.reddit.com/r/homeassistant

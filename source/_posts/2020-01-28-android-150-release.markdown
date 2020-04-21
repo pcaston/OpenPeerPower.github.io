@@ -18,7 +18,7 @@ A cool new feature that has been added is a new home screen widget. Use it to qu
 
 For all you people that want to run the Open Peer Power app on a tablet on the wall, good news! Thanks to [@neopilou] there is now a new option to make the app full screen.
 
-To get the most out of our apps for Android and iOS, check the [Open Peer Power Companion website](https://companion.home-assistant.io/).
+To get the most out of our apps for Android and iOS, check the [Open Peer Power Companion website](https://companion.openpeerpower.io/).
 
 Enjoy the new release! Don't forget to leave a rating if you like the app, it will help other users find the app.
 

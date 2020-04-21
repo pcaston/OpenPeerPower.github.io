@@ -137,7 +137,7 @@ Remark: to restart your Open Peer Power within Synology NAS, you just have to do
 
 <div class='note'>
 
-If you want to use a USB Bluetooth adapter or Z-Wave USB Stick with Open Peer Power on Synology Docker these instructions do not correctly configure the container to access the USB devices. To configure these devices on your Synology Docker Open Peer Power you can follow the instructions provided [here](https://philhawthorne.com/installing-home-assistant-io-on-a-synology-diskstation-nas/) by Phil Hawthorne.
+If you want to use a USB Bluetooth adapter or Z-Wave USB Stick with Open Peer Power on Synology Docker these instructions do not correctly configure the container to access the USB devices. To configure these devices on your Synology Docker Open Peer Power you can follow the instructions provided [here](https://philhawthorne.com/installing-openpeerpower.io-on-a-synology-diskstation-nas/) by Phil Hawthorne.
 
 </div>
 

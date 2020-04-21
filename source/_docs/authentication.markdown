@@ -35,7 +35,7 @@ You can:
 * Select the [theme](/integrations/frontend/#defining-themes) for the interface of Open Peer Power.
 * Enable or disable [multi-factor authentication](/docs/authentication/multi-factor-auth/).
 * Delete _Refresh Tokens_. These are created when you log in from a device. Delete them if you want to force the device to log out.
-* Create [Long Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token) so scripts can securely interact with Open Peer Power. 
+* Create [Long Lived Access Tokens](https://developers.openpeerpower.io/docs/en/auth_api.html#long-lived-access-token) so scripts can securely interact with Open Peer Power. 
 * Log out of Open Peer Power. 
 
 ### Securing your login

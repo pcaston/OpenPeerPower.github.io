@@ -333,7 +333,7 @@ type: entities
 title: Entities card sample
 show_header_toggle: true
 header:
-  image: 'https://www.home-assistant.io/images/lovelace/header-footer/balloons-header.png'
+  image: 'https://www.openpeerpower.io/images/lovelace/header-footer/balloons-header.png'
   type: picture
 entities:
   - entity: alarm_control_panel.alarm
@@ -361,7 +361,7 @@ entities:
   - type: divider
   - type: weblink
     name: Open Peer Power
-    url: https://www.home-assistant.io/
+    url: https://www.openpeerpower.io/
     icon: mdi:home-assistant
 {% endhighlight %}
 

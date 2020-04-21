@@ -137,7 +137,7 @@ description: "Changelog of the Lovelace UI."
 
 ## Changes in 0.86.0
 - ❤️ Lovelace is now the default UI for Open Peer Power!
-- ❤️ New Lovelace [demos](https://demo.home-assistant.io/#/lovelace/0) page
+- ❤️ New Lovelace [demos](https://demo.openpeerpower.io/#/lovelace/0) page
 - 🔧 [thermostat card]: Fix sizing
 - 🔧 [gauge card]: Fix sizing
 - 🔧 [iframe card]: Fix card size

@@ -37,7 +37,7 @@ tap_action:
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g., `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "Path to navigate to (e.g., `https://www.openpeerpower.io`) when `action` defined as `url`"
       type: string
       default: none
     service:
@@ -84,7 +84,7 @@ hold_action:
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g., `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "Path to navigate to (e.g., `https://www.openpeerpower.io`) when `action` defined as `url`"
       type: string
       default: none
     service:
@@ -131,7 +131,7 @@ double_tap_action:
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g., `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "Path to navigate to (e.g., `https://www.openpeerpower.io`) when `action` defined as `url`"
       type: string
       default: none
     service:
