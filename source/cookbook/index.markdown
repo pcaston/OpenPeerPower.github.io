@@ -18,7 +18,7 @@ New recipes can be added via the [openpeerpower.io repository](https://github.co
 
 <div class='note'>
 
-A great place to find popular configurations is on this [GitHub search](https://github.com/search?q=topic%3Ahome-assistant-config&type=Repositories) for repositories with the `home-assistant-config` topic.
+A great place to find popular configurations is on this [GitHub search](https://github.com/search?q=topic%3Aopen-peer-power-config&type=Repositories) for repositories with the `open-peer-power-config` topic.
 
 </div>
 

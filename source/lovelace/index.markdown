@@ -24,7 +24,7 @@ To try it yourself, check out [the demo](https://demo.openpeerpower.io).
 
 ## Discuss Lovelace
 
-- Suggestions are welcome in the [home-assistant-polymer repository](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/)
+- Suggestions are welcome in the [open-peer-power-polymer repository](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/)
 - For help with Lovelace, join the `#frontend` channel on [our chat](/join-chat/) or [our forums](https://community.openpeerpower.io/c/projects/frontend)
 
 ## Additional Lovelace Resources

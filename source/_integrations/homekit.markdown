@@ -139,7 +139,7 @@ homekit:
 automation:
   - alias: 'Start HomeKit'
     trigger:
-      - platform: homeassistant
+      - platform: openpeerpower
         event: start
     action:
       - delay: 00:05  # Waits 5 minutes
@@ -158,7 +158,7 @@ homekit:
 automation:
   - alias: 'Start HomeKit'
     trigger:
-      - platform: homeassistant
+      - platform: openpeerpower
         event: start
     action:
       - wait_template: >-
@@ -298,7 +298,7 @@ If you encounter any issues during pairing, make sure to:
 logger:
   default: warning
   logs:
-    homeassistant.components.homekit: debug
+    openpeerpower.components.homekit: debug
     pyhap: debug
 
 homekit:
@@ -340,7 +340,7 @@ Pairing works fine when the filter is set to only include `demo.demo`, but fails
 
 #### Pairing hangs - no error
 
-1. Make sure that you don't try to add more than 100 accessories, see [device limit](#device-limit). In rare cases, one of your entities doesn't work with the HomeKit component. Use the [filter](#configure-filter) to find out which one. Feel free to open a new issue in the `home-assistant` repository, so we can resolve it.
+1. Make sure that you don't try to add more than 100 accessories, see [device limit](#device-limit). In rare cases, one of your entities doesn't work with the HomeKit component. Use the [filter](#configure-filter) to find out which one. Feel free to open a new issue in the `open-peer-power` repository, so we can resolve it.
 2. Check logs, and search for `Starting accessory Open Peer Power Bridge on address`. Make sure Open Peer Power Bridge hook up to a correct interface. If it did not, explicitly set `homekit.ip_address` configuration variable.
 
 #### Duplicate AID found when attempting to add accessory
@@ -363,7 +363,7 @@ To use the HomeKit integration with to different Open Peer Power instances on th
 
 #### Specific entity doesn't work
 
-Although we try our best, some entities don't work with the HomeKit integration yet. The result will be that either pairing fails completely or all Open Peer Power accessories will stop working. Use the filter to identify which entity is causing the issue. It's best to try pairing and step by step including more entities. If it works unpair and repeat until you find the one that is causing the issues. To help others and the developers, please open a new issue here: [home-assistant/issues/new](https://github.com/OpenPeerPower/Open-Peer-Power/issues/new?labels=component:%20homekit)
+Although we try our best, some entities don't work with the HomeKit integration yet. The result will be that either pairing fails completely or all Open Peer Power accessories will stop working. Use the filter to identify which entity is causing the issue. It's best to try pairing and step by step including more entities. If it works unpair and repeat until you find the one that is causing the issues. To help others and the developers, please open a new issue here: [open-peer-power/issues/new](https://github.com/OpenPeerPower/Open-Peer-Power/issues/new?labels=component:%20homekit)
 
 #### Accessories are all listed as not responding
 

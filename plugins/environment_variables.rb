@@ -2,7 +2,7 @@ module Jekyll
   class EnvironmentVariablesGenerator < Generator
     def generate(site)
       # https://www.netlify.com/docs/continuous-deployment/#build-environment-variables
-      repo_url = ENV['REPOSITORY_URL'] || 'https://github.com/home-assistant/home-assistant.io'
+      repo_url = ENV['REPOSITORY_URL'] || 'https://github.com/openpeerpower/openpeerpower.io'
 
       # Rewrite urls if repo url is the ssh format.
       if repo_url.start_with? 'git@github.com:'

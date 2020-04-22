@@ -4,13 +4,13 @@ description: "Tips on how to troubleshoot your automations."
 redirect_from: /getting-started/automation-troubleshooting/
 ---
 
-You can verify that your automation rules are being initialized correctly by watching both the realtime logs (`homeassistant.log` in the configuration directory) and also the [Logbook](/integrations/logbook/). The realtime logs will show the rules being initialized (once for each trigger), example:
+You can verify that your automation rules are being initialized correctly by watching both the realtime logs (`openpeerpower.log` in the configuration directory) and also the [Logbook](/integrations/logbook/). The realtime logs will show the rules being initialized (once for each trigger), example:
 
 {% highlight text %}
-INFO [homeassistant.components.automation] Initialized rule Rainy Day
-INFO [homeassistant.components.automation] Initialized rule Rainy Day
-INFO [homeassistant.components.automation] Initialized rule Rainy Day
-INFO [homeassistant.components.automation] Initialized rule Rain is over
+INFO [openpeerpower.components.automation] Initialized rule Rainy Day
+INFO [openpeerpower.components.automation] Initialized rule Rainy Day
+INFO [openpeerpower.components.automation] Initialized rule Rainy Day
+INFO [openpeerpower.components.automation] Initialized rule Rain is over
 {% endhighlight %}
 
 The Logbook integration will show a line entry when an automation is triggered. You can look at the previous entry to determine which trigger in the rule triggered the event.

@@ -6,10 +6,10 @@ redirect_from: /topics/packages/
 
 Packages in Open Peer Power provide a way to bundle different component's configuration together. We already learned about the two configuration styles (specifying platforms entries together or individually) on the [adding devices](/docs/configuration/devices/) page. Both of these configuration methods require you to create the integration key in the main `configuration.yaml` file. With packages we have a way to include different components, or different configuration parts using any of the `!include` directives introduced in [splitting the configuration](/docs/configuration/splitting_configuration).
 
-Packages are configured under the core `homeassistant/packages` in the configuration and take the format of a package name (no spaces, all lower case) followed by a dictionary with the package configuration. For example, package `pack_1` would be created as:
+Packages are configured under the core `openpeerpower/packages` in the configuration and take the format of a package name (no spaces, all lower case) followed by a dictionary with the package configuration. For example, package `pack_1` would be created as:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   ...
   packages: 
     pack_1:
@@ -23,7 +23,7 @@ It can be specified inline or in a separate YAML file using `!include`.
 Inline example, main `configuration.yaml`:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   ...
   packages: 
     pack_1:
@@ -38,7 +38,7 @@ homeassistant:
 Include example, main `configuration.yaml`:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   ...
   packages: 
     pack_1: !include my_package.yaml
@@ -77,7 +77,7 @@ Components inside packages can only specify platform entries using configuration
 One way to organize packages is to create a folder named "packages" in your Open Peer Power configuration directory. In the packages directory you can store any number of packages in a YAML file. This entry in your `configuration.yaml` will load all packages:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   packages: !include_dir_named packages
 {% endhighlight %}
 
@@ -87,7 +87,7 @@ See the documentation about [splitting the configuration](/docs/configuration/sp
 The following example allows to have subfolders in the `packages` folder, which could make managing multiple packages easier by grouping:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   packages: !include_dir_merge_named packages/
 {% endhighlight %}
 
@@ -107,6 +107,6 @@ subsystem1_functionality1:
 It is possible to [customize entities](/docs/configuration/customizing-devices/) within packages. Just create your customization entries under:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   customize:
 {% endhighlight %}

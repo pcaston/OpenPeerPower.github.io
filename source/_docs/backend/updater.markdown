@@ -6,8 +6,6 @@ redirect_from: /details/updater/
 
 Starting with 0.31 the [updater component](/integrations/updater/) sends an optional report about Open Peer Power instance.
 
-If you want to opt-in to include integration information, add `include_used_components` to your configuration. This will allow the Open Peer Power developers to focus development efforts on the most popular components.
-
 {% highlight yaml %}
 updater:
   include_used_components: true

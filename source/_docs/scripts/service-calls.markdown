@@ -17,10 +17,10 @@ Use the "Services" tab under Developer Tools to discover available services.
 
 ### The basics
 
-Call the service `homeassistant.turn_on` on the entity `group.living_room`. This will turn all members of `group.living_room` on. You can also use `entity_id: all` and it will turn on all possible entities.
+Call the service `openpeerpower.turn_on` on the entity `group.living_room`. This will turn all members of `group.living_room` on. You can also use `entity_id: all` and it will turn on all possible entities.
 
 {% highlight yaml %}
-service: homeassistant.turn_on
+service: openpeerpower.turn_on
 entity_id: group.living_room
 {% endhighlight %}
 
@@ -58,7 +58,7 @@ You can use the Services Developer Tool to test data to pass in a service call.
 For example, you may test turning on or off a 'group' (See [groups] for more info)
 
 To turn a group on or off, pass the following info:
-- Domain: `homeassistant`
+- Domain: `openpeerpower`
 - Service: `turn_on`
 - Service Data: `{ "entity_id": "group.kitchen" }`
 
@@ -88,19 +88,19 @@ data_template:
   temperature: {% raw %}{{ 22 - distance(states.device_tracker.paulus) }}{% endraw %}
 {% endhighlight %}
 
-### `homeassistant` services
+### `openpeerpower` services
 
-There are four `homeassistant` services that aren't tied to any single domain, these are:
+There are four `openpeerpower` services that aren't tied to any single domain, these are:
 
-* `homeassistant.turn_on` - Turns on an entity (that supports being turned on), for example an `automation`, `switch`, etc
-* `homeassistant.turn_off` - Turns off an entity (that supports being turned off), for example an `automation`, `switch`, etc
-* `homeassistant.toggle` - Turns off an entity that is on, or turns on an entity that is off (that supports being turned on and off)
-* `homeassistant.update_entity` - Request the update of an entity, rather than waiting for the next scheduled update, for example [Google travel time] sensor, a [template sensor], or a [light]
+* `openpeerpower.turn_on` - Turns on an entity (that supports being turned on), for example an `automation`, `switch`, etc
+* `openpeerpower.turn_off` - Turns off an entity (that supports being turned off), for example an `automation`, `switch`, etc
+* `openpeerpower.toggle` - Turns off an entity that is on, or turns on an entity that is off (that supports being turned on and off)
+* `openpeerpower.update_entity` - Request the update of an entity, rather than waiting for the next scheduled update, for example [Google travel time] sensor, a [template sensor], or a [light]
 
-Complete service details and examples can be found on the [Open Peer Power integration][homeassistant-integration-services] page.
+Complete service details and examples can be found on the [Open Peer Power integration][openpeerpower-integration-services] page.
 
 [templating]: /topics/templating/
 [google travel time]: /integrations/google_travel_time/
 [template sensor]: /integrations/template/
 [light]: /integrations/light/
-[homeassistant-integration-services]: /integrations/homeassistant#services
+[openpeerpower-integration-services]: /integrations/openpeerpower#services

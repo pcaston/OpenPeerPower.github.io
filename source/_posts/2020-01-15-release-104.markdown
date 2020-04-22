@@ -163,7 +163,7 @@ is a great and powerful alternative for the Raspberry Pi.
 
 ### Custom now playing poster Lovelace card
 
-Brad Crc made this [impressive demo](https://www.reddit.com/r/homeassistant/comments/e7wo0j/floor_plan_how_to_show_currently_playing_media/)
+Brad Crc made this [impressive demo](https://www.reddit.com/r/openpeerpower/comments/e7wo0j/floor_plan_how_to_show_currently_playing_media/)
 of setting up a custom now playing poster card in Lovelace floor plans.
 This allows you to show currently playing media in your floor plan!
 
@@ -176,10 +176,10 @@ This allows you to show currently playing media in your floor plan!
 Bas Nijholt kept seeing his own theme popping up on Reddit, so he decided it was
 time for him to show off his Lovelace dashboard, featuring this lovely theme.
 
-<blockquote class="reddit-card"><a href="https://www.reddit.com/r/homeassistant/comments/enpeik/i_keep_seeing_my_own_theme_on_reddit_so_now_its/">I keep seeing my own theme on Reddit, so now it's my turn! [OC]</a> from <a href="http://www.reddit.com/r/homeassistant">r/homeassistant</a></blockquote>
+<blockquote class="reddit-card"><a href="https://www.reddit.com/r/openpeerpower/comments/enpeik/i_keep_seeing_my_own_theme_on_reddit_so_now_its/">I keep seeing my own theme on Reddit, so now it's my turn! [OC]</a> from <a href="http://www.reddit.com/r/openpeerpower">r/openpeerpower</a></blockquote>
 <script async src="//embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
 
-His theme is [publicly available on GitHub](https://github.com/basnijholt/lovelace-ios-dark-mode-theme/) and so is [his config](https://github.com/basnijholt/home-assistant-config).
+His theme is [publicly available on GitHub](https://github.com/basnijholt/lovelace-ios-dark-mode-theme/) and so is [his config](https://github.com/basnijholt/open-peer-power-config).
 
 ## New Integrations
 
@@ -633,7 +633,7 @@ Make sure to fill in all fields of the issue template, that is helping us a lot!
 - Sort imports according to PEP8 for velbus ([@basnijholt] - [#29676]) ([velbus docs])
 - Proactively report Alexa Endpoint Health properties ([@clapbr] - [#29736]) ([alexa docs])
 - Sort imports according to PEP8 for pi_hole ([@basnijholt] - [#29726]) ([pi_hole docs])
-- use isort to sort imports according to PEP8 for homeassistant ([@basnijholt] - [#29718]) ([homeassistant docs])
+- use isort to sort imports according to PEP8 for openpeerpower ([@basnijholt] - [#29718]) ([openpeerpower docs])
 - use isort to sort imports according to PEP8 for zone ([@basnijholt] - [#29712]) ([zone docs])
 - use isort to sort imports according to PEP8 for group ([@basnijholt] - [#29713])
 - Sort imports according to PEP8 for neato ([@basnijholt] - [#29724]) ([neato docs])
@@ -729,7 +729,7 @@ Make sure to fill in all fields of the issue template, that is helping us a lot!
 - Cleanup removed component ([@pvizeli] - [#29788])
 - Sort imports according to PEP8 for 'script' folder ([@basnijholt] - [#29790])
 - use isort to sort imports for "setup.py" ([@basnijholt] - [#29792])
-- Sort imports according to PEP8 for 'homeassistant' folder ([@basnijholt] - [#29789])
+- Sort imports according to PEP8 for 'openpeerpower' folder ([@basnijholt] - [#29789])
 - Sort imports according to PEP8 for 'tests' ([@basnijholt] - [#29791])
 - Add config flow to iCloud ([@Quentame] - [#28968]) ([icloud docs]) (breaking change)
 - Sort imports according to PEP8 for components starting with "D" ([@basnijholt] - [#29764])
@@ -1902,7 +1902,7 @@ Make sure to fill in all fields of the issue template, that is helping us a lot!
 [here_travel_time docs]: /integrations/here_travel_time/
 [history docs]: /integrations/history/
 [hive docs]: /integrations/hive/
-[homeassistant docs]: /integrations/homeassistant/
+[openpeerpower docs]: /integrations/openpeerpower/
 [homekit docs]: /integrations/homekit/
 [homekit_controller docs]: /integrations/homekit_controller/
 [homematic docs]: /integrations/homematic/

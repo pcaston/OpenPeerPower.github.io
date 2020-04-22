@@ -8,7 +8,7 @@ ha_release: pre 0.7
 ha_iot_class: Local Push
 ha_config_flow: true
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: mqtt
 ---
 
@@ -38,7 +38,7 @@ mqtt:
   password: hello
 {% endhighlight %}
 
-This allows you to connect to the MQTT broker with user `homeassistant` and password `hello`.
+This allows you to connect to the MQTT broker with user `openpeerpower` and password `hello`.
 
 ## Additional features
 

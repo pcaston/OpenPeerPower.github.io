@@ -8,5 +8,3 @@ The current release cycle is three weeks. This allows for two weeks of developme
 
 Beta's are normally released on the 2nd Wednesday after the last major release. Please subscribe to the Beta Channel on the [Open Peer Power Discord server](https://discord.gg/RMC8WkX) for help running beta versions.
 When a beta release is in progress, the release notes for it can be found under [Beta Release Notes](https://rc.openpeerpower.io/latest-release-notes/).
-
-The release schedule is published in the upcoming events calender on the [Open Peer Power Developers](https://developers.openpeerpower.io/) website.

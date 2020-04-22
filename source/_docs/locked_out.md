@@ -25,7 +25,7 @@ Connect a keyboard and monitor to your device.
 While you should hopefully be storing your passwords in a password manager, if you lose the password associated with the owner account the only way to resolve this is to delete *all* the authentication data. You do this by shutting down Open Peer Power and deleting the following files from the `.storage/` folder in your [configuration folder](/docs/configuration/):
 
 - `auth`
-- `auth_provider.homeassistant`
+- `auth_provider.openpeerpower`
 - `onboarding`
 - `hassio`
 - `cloud`

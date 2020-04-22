@@ -19,7 +19,7 @@ This integration constantly saves data. If you use the default configuration, th
 
 Open Peer Power uses [SQLAlchemy](https://www.sqlalchemy.org/), which is an Object Relational Mapper (ORM). This means that you can use **any** SQL backend for the recorder that is supported by SQLAlchemy, like [MySQL](https://www.mysql.com/), [MariaDB](https://mariadb.org/), [PostgreSQL](https://www.postgresql.org/), or [MS SQL Server](https://www.microsoft.com/en-us/sql-server/).
 
-The default database engine is [SQLite](https://www.sqlite.org/) which does not require any configuration. The database is stored in your Open Peer Power configuration directory ('/config/') and is named `home-assistant_v2.db`.
+The default database engine is [SQLite](https://www.sqlite.org/) which does not require any configuration. The database is stored in your Open Peer Power configuration directory ('/config/') and is named `open-peer-power_v2.db`.
 
 To change the defaults for the `recorder` integration in your installation, add the following to your `configuration.yaml` file:
 
@@ -34,7 +34,7 @@ Defining domains and entities to `exclude` (aka. blacklist) is convenient when y
 # Example configuration.yaml entry with exclude
 recorder:
   purge_keep_days: 5
-  db_url: sqlite:////home/user/.homeassistant/test
+  db_url: sqlite:////home/user/.openpeerpower/test
   exclude:
     domains:
       - automation
@@ -137,7 +137,7 @@ If you are running a database server instance on the same server as Open Peer Po
 To help facilitate this, db_max_retry and db_retry_wait variables have been added to ensure the recorder retries the connection to your database enough times, for your database to start up.
 
 {% highlight bash %}
-sudo nano /etc/systemd/system/home-assistant@homeassistant.service
+sudo nano /etc/systemd/system/open-peer-power@openpeerpower.service
 {% endhighlight %}
 
 and add the service for the database, for example, PostgreSQL:
@@ -163,9 +163,9 @@ Not all Python bindings for the chosen database engine can be installed directly
 If you are in a virtual environment, don't forget to activate it before installing the `mysqlclient` Python package described below.
 
 {% highlight bash %}
-pi@homeassistant:~ $ sudo -u homeassistant -H -s
-homeassistant@homeassistant:~$ source /srv/homeassistant/bin/activate
-(homeassistant) homeassistant@homeassistant:~$ pip3 install mysqlclient
+pi@openpeerpower:~ $ sudo -u openpeerpower -H -s
+openpeerpower@openpeerpower:~$ source /srv/openpeerpower/bin/activate
+(openpeerpower) openpeerpower@openpeerpower:~$ pip3 install mysqlclient
 {% endhighlight %}
 
 For MariaDB you may have to install a few dependencies. If you're using MariaDB version 10.2, `libmariadbclient-dev` was renamed to `libmariadb-dev`. If you're using MariaDB 10.3, the package `libmariadb-dev-compat` must also be installed. For MariaDB v10.0.34 only `libmariadb-dev-compat` is needed. Please install the correct packages based on your MariaDB version.
@@ -225,8 +225,8 @@ pip3 install pyodbc
 If you are in a virtual environment, don't forget to activate it before installing the pyodbc package.
 
 {% highlight bash %}
-sudo -u homeassistant -H -s
-source /srv/homeassistant/bin/activate
+sudo -u openpeerpower -H -s
+source /srv/openpeerpower/bin/activate
 pip3 install pyodbc
 {% endhighlight %}
 

@@ -6,7 +6,7 @@ ha_category:
 ha_release: 0.8
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: logger
 excerpt: none
 ---
@@ -30,7 +30,7 @@ components:
 logger:
   default: info
   logs:
-    homeassistant.components.yamaha: critical
+    openpeerpower.components.yamaha: critical
     custom_components.my_integration: critical
 {% endhighlight %}
 
@@ -43,19 +43,19 @@ logger:
   default: critical
   logs:
     # log level for HA core
-    homeassistant.core: fatal
+    openpeerpower.core: fatal
 
     # log level for MQTT integration
-    homeassistant.components.mqtt: warning
+    openpeerpower.components.mqtt: warning
 
     # log level for all python scripts
-    homeassistant.components.python_script: warning
+    openpeerpower.components.python_script: warning
 
     # individual log level for this python script
-    homeassistant.components.python_script.my_new_script.py: debug
+    openpeerpower.components.python_script.my_new_script.py: debug
 
     # log level for SmartThings lights
-    homeassistant.components.smartthings.light: info
+    openpeerpower.components.smartthings.light: info
 
     # log level for a custom component
     custom_components.my_integration: debug
@@ -64,7 +64,7 @@ logger:
     aiohttp: error
 
     # log level for both 'glances_api' and 'glances' integration
-    homeassistant.components.glances: fatal
+    openpeerpower.components.glances: fatal
     glances_api: fatal
 {% endhighlight %}
 
@@ -72,11 +72,11 @@ The log entries are in the form
 *timestamp* *log-level* *thread* [**namespace**] *message*  
 where **namespace** is the *<component_namespace>* currently logging.
 
-In the example, do note the difference between 'glances_api' and 'homeassistant.components.glances' namespaces,
+In the example, do note the difference between 'glances_api' and 'openpeerpower.components.glances' namespaces,
 both of which are at root. They are logged by different APIs.
 
 If you want to know the namespaces in your own environment then check your log files on startup.
-You will see INFO log messages from homeassistant.loader stating `loaded <component> from <namespace>`.
+You will see INFO log messages from openpeerpower.loader stating `loaded <component> from <namespace>`.
 Those are the namespaces available for you to set a `log level` against.
 
 ### Log Levels
@@ -117,22 +117,22 @@ An example call might look like this:
 {% highlight yaml %}
 service: logger.set_level
 data:
-  homeassistant.core: fatal
-  homeassistant.components.mqtt: warning
-  homeassistant.components.smartthings.light: info
+  openpeerpower.core: fatal
+  openpeerpower.components.mqtt: warning
+  openpeerpower.components.smartthings.light: info
   custom_components.my_integration: debug
   aiohttp: error
 {% endhighlight %}
 
 The log information are stored in the
-[configuration directory](/docs/configuration/) as `home-assistant.log`
+[configuration directory](/docs/configuration/) as `open-peer-power.log`
 and you can read it with the command-line tool `cat` or follow it dynamically
 with `tail -f`.
 
 You can use the example below, when logged in through the [SSH add-on](/addons/ssh/):
 
 {% highlight bash %}
-tail -f /config/home-assistant.log
+tail -f /config/open-peer-power.log
 {% endhighlight %}
 
 On Docker you can use your host command line directly - follow the logs dynamically with:

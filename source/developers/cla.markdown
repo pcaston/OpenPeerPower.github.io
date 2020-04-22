@@ -41,4 +41,4 @@ If you have not signed the CLA and you submit a pull request to a repository und
 
 This Contributor License Agreement (CLA) was first announced on January 21st, 2017 in [this][cla-blog] blog post and adopted January 28th, 2017.
 
-[cla-blog]: /blog/2017/01/21/home-assistant-governance/
+[cla-blog]: /blog/2017/01/21/open-peer-power-governance/

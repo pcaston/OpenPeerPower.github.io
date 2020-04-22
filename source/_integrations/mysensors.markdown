@@ -38,7 +38,7 @@ If you are using the MQTT gateway, you also need to have the [MQTT component](/i
 
 {% highlight yaml %}
 mqtt:
-  client_id: home-assistant-1
+  client_id: open-peer-power-1
 {% endhighlight %}
 
 <div class='note'>
@@ -190,7 +190,7 @@ If you experience dropped messages or that a device is not added to Open Peer Po
 logger:
   default: info
   logs:
-    homeassistant.components.mysensors: debug
+    openpeerpower.components.mysensors: debug
     mysensors: debug
 {% endhighlight %}
 

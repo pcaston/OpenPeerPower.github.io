@@ -22,7 +22,7 @@ To get the most out of our apps for Android and iOS, check the [Open Peer Power 
 
 Enjoy the new release! Don't forget to leave a rating if you like the app, it will help other users find the app.
 
-<a href="https://play.google.com/store/apps/details?id=io.homeassistant.companion.android"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_gb/badges/static/images/badges/en_badge_web_generic.png" width="155" style='border: 0;box-shadow: none;'></a>
+<a href="https://play.google.com/store/apps/details?id=io.openpeerpower.companion.android"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_gb/badges/static/images/badges/en_badge_web_generic.png" width="155" style='border: 0;box-shadow: none;'></a>
 
 [@KBerstene]: https://github.com/KBerstene
 [@JBassett]: https://github.com/JBassett

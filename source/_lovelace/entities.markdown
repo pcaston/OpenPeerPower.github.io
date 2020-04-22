@@ -362,7 +362,7 @@ entities:
   - type: weblink
     name: Open Peer Power
     url: https://www.openpeerpower.io/
-    icon: mdi:home-assistant
+    icon: mdi:open-peer-power
 {% endhighlight %}
 
 <div class='note'>

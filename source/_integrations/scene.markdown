@@ -6,7 +6,7 @@ ha_category:
 ha_release: 0.15
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: scene
 excerpt: none
 ---
@@ -97,7 +97,7 @@ If the scene was previously created by `scene.create`, it will be overwritten. I
 # Example automation using entities
 automation:
   trigger:
-    platform: homeassistant
+    platform: openpeerpower
     event: start
   action:
     service: scene.create

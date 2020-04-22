@@ -5,8 +5,6 @@ description: "Details about the classification of integrations."
 
 The Integration Quality Scale scores each integration based on the code quality and user experience. Each level of the quality scale consists of a list of requirements. If an integration matches all requirements, it's considered to have reached that level.
 
-[Integration Quality Scale](https://developers.openpeerpower.io/docs/en/integration_quality_scale_index.html) for developers.
-
 ## No score
 
 This integration passes the bare minimum requirements. That's the level of most integrations when they are introduced into Open Peer Power. It doesn't mean that they are bad or buggy, just that you need to configure them with an entry in your `configuration.yaml` file.

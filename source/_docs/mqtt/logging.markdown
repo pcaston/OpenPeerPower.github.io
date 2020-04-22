@@ -11,6 +11,6 @@ The [logger](/integrations/logger/) integration allows the logging of received M
 logger:
   default: warning
   logs:
-    homeassistant.components.mqtt: debug
+    openpeerpower.components.mqtt: debug
 {% endhighlight %}
 

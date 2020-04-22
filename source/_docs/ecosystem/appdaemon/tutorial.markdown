@@ -99,7 +99,7 @@ This is starting to get a little more complex in Open Peer Power automations req
 Now lets extend this with a somewhat artificial example to show something that is simple in AppDaemon but very difficult if not impossible using automations. Lets warn someone inside the house that there has been motion outside by flashing a lamp on and off 10 times. We are reacting to the motion as before by turning on the light and setting a timer to turn it off again, but in addition, we set a 1 second timer to run `flash_warning()` which when called, toggles the inside light and sets another timer to call itself a second later. To avoid re-triggering forever, it keeps a count of how many times it has been activated and bales out after 10 iterations.
 
 {% highlight python %}
-import homeassistant.appapi as appapi
+import openpeerpower.appapi as appapi
 
 
 class MotionLights(appapi.AppDaemon):

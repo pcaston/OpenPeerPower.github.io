@@ -36,7 +36,7 @@ Token: IHEDPEBEVA2WVHB7
 To run in a Docker container:
 
 {% highlight shell %}
-$ docker exec -it home-assistant python -c 'import pyotp; print("Token:", pyotp.random_base32())'
+$ docker exec -it open-peer-power python -c 'import pyotp; print("Token:", pyotp.random_base32())'
 Token: IHEDPEBEVA2WVHB7
 {% endhighlight %}
 

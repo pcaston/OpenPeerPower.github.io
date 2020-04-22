@@ -25,12 +25,12 @@ However, this feature is deprecated and will be removed in a future release so y
 
 </div>
 
-Authentication providers are configured in your `configuration.yaml` under the `homeassistant:` block. You can supply more than one, for example:
+Authentication providers are configured in your `configuration.yaml` under the `openpeerpower:` block. You can supply more than one, for example:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   auth_providers:
-    - type: homeassistant
+    - type: openpeerpower
     - type: legacy_api_password
       api_password: !secret http_password
 {% endhighlight %}
@@ -48,9 +48,9 @@ Users can be managed in Open Peer Power by the owner. Go to the configuration pa
 This is the entry in `configuration.yaml` for Open Peer Power auth:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   auth_providers:
-    - type: homeassistant
+    - type: openpeerpower
 {% endhighlight %}
 
 If you don't specify any `auth_providers` section in the `configuration.yaml` file then this provider will be set up automatically.
@@ -70,7 +70,7 @@ The [multi-factor authentication module](/docs/authentication/multi-factor-auth/
 Here is an example in `configuration.yaml` to set up Trusted Networks:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   auth_providers:
     - type: trusted_networks
       trusted_networks:
@@ -102,7 +102,7 @@ allow_bypass_login:
 #### Trusted Users Examples
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   auth_providers:
     - type: trusted_networks
       trusted_networks:
@@ -133,7 +133,7 @@ This is a feature to allow you bring back some of the experience before the user
 
 {% highlight yaml %}
 # assuming you have only one non-system user
-homeassistant:
+openpeerpower:
   auth_providers:
     - type: trusted_networks
       trusted_networks:
@@ -141,7 +141,7 @@ homeassistant:
         - 127.0.0.1
         - ::1
       allow_bypass_login: true
-    - type: homeassistant
+    - type: openpeerpower
 {% endhighlight %}
 
 Assuming you have only the owner created though onboarding process, no other users ever created. The above example configuration will allow you directly access Open Peer Power main page if you access from your internal network (192.168.0.0/24) or from localhost (127.0.0.1). If you get a login abort error, then you can change to use Open Peer Power Authentication Provider to login, if you access your Open Peer Power instance from outside network.
@@ -155,7 +155,7 @@ This provider can be used to integrate Open Peer Power with arbitrary external a
 Here is a configuration example:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   auth_providers:
     - type: command_line
       command: /absolute/path/to/command
@@ -194,7 +194,7 @@ This is a legacy feature for backwards compatibility and will be dropped in a fu
 Activating this auth provider will allow you to authenticate with the API password set in the HTTP component.
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   auth_providers:
    - type: legacy_api_password
      api_password: !secret http_password

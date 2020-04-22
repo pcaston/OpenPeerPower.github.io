@@ -40,7 +40,7 @@ You can read Zane's full blog post here:
 
 <https://www.technicallywizardry.com/iot-cars-vans-home-automation/>
 
-He also made his Open Peer Power configuration [publicly available on GitHub](https://github.com/zaneclaes/van-home-assistant-config).
+He also made his Open Peer Power configuration [publicly available on GitHub](https://github.com/zaneclaes/van-open-peer-power-config).
 
 _Thanks, [Robbie Trencheny](https://twitter.com/robbie) & [cgtobi](https://twitter.com/cgtobi) for sending in this item in! 👍_
 
@@ -85,7 +85,7 @@ Also, don't forget to share your creations with us via Social Media:
 See you next edition!
 
 [chat]: https://www.openpeerpower.io/join-chat
-[facebook-group]: https://www.facebook.com/groups/HomeAssistant/
-[instagram]: https://www.instagram.com/homeassistant/
-[reddit]: https://www.reddit.com/r/homeassistant
+[facebook-group]: https://www.facebook.com/groups/OpenPeerPower/
+[instagram]: https://www.instagram.com/openpeerpower/
+[reddit]: https://www.reddit.com/r/openpeerpower
 [twitter]: https://www.twitter.com/home_assistant

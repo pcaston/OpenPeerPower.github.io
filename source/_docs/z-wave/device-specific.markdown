@@ -74,10 +74,10 @@ so that your serial interface looks like:
 {% highlight text %}
 crw-rw---- 1 root dialout 204, 64 Sep  2 14:38 /dev/ttyAMA0
 {% endhighlight %}
-at this point simply add your user (homeassistant) to the dialout group:
+at this point simply add your user (openpeerpower) to the dialout group:
 
 {% highlight bash %}
-$ sudo usermod -a -G dialout homeassistant
+$ sudo usermod -a -G dialout openpeerpower
 {% endhighlight %}
 
 <div class='note'>

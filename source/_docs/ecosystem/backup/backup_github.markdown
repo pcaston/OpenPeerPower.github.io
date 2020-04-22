@@ -100,7 +100,7 @@ After the `git commit` command, you will be asked to enter a message for the com
 ### Step 4: Creating Repository on GitHub
 
 - Connect to [GitHub](https://github.com) and login to your account (or create an account if you don't already have one).
-- Click "[New Repository](https://github.com/new)" and give your repository a name/description (`Home-AssistantConfig` is used in the example below). You do NOT need to change any other options.
+- Click "[New Repository](https://github.com/new)" and give your repository a name/description (`Open-Peer-PowerConfig` is used in the example below). You do NOT need to change any other options.
 - Click "Create Repository"
 
 ### Step 5: Your initial commit to GitHub
@@ -110,7 +110,7 @@ Once you are sure you are using `secrets.yaml` and `.gitignore` correctly, it is
 In your Open Peer Power directory, type the following commands as the Open Peer Power user, replacing "username" in the URL with your GitHub username:
 
 {% highlight bash %}
-git remote add origin https://github.com/username/Home-AssistantConfig
+git remote add origin https://github.com/username/Open-Peer-PowerConfig
 git push -u origin master
 {% endhighlight %}
 
@@ -131,8 +131,8 @@ You may need to adjust the paths in the script depending on your Open Peer Power
 {% highlight bash %}
 #!/bin/bash
 
-cd /home/homeassistant/.homeassistant
-source /srv/homeassistant/bin/activate
+cd /home/openpeerpower/.openpeerpower
+source /srv/openpeerpower/bin/activate
 hass --script check_config
 
 git add .
@@ -164,7 +164,7 @@ before_install:
   - mv travis_secrets.yaml secrets.yaml
   - sudo apt-get install -y libudev-dev
 install:
-  - pip3 install homeassistant
+  - pip3 install openpeerpower
 script:
   - hass -c . --script check_config
 {% endhighlight %}
@@ -190,7 +190,7 @@ git status
 Examples:
 
 {% highlight bash %}
-homeassistant@raspberrypi:~/.homeassistant $ git ls-files
+openpeerpower@raspberrypi:~/.openpeerpower $ git ls-files
 .gitignore
 README.md
 automation.yaml
@@ -200,7 +200,7 @@ device_tracker.yaml
 group.yaml
 script.yaml
 
-homeassistant@raspberrypi:~/.homeassistant $ git status
+openpeerpower@raspberrypi:~/.openpeerpower $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 Changes not staged for commit:

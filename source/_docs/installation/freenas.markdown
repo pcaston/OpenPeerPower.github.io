@@ -10,8 +10,8 @@ This has been tested on FreeNAS 11.2 and should also work on FreeBSD 11.x as wel
 Enter the Open Peer Power jail. If you don't know which name you have given the jail, you can use the `iocage list` command to check.
 
 {% highlight bash %}
-# If the jail is called 'HomeAssistant'
-iocage exec HomeAssistant
+# If the jail is called 'OpenPeerPower'
+iocage exec OpenPeerPower
 {% endhighlight %}
 
 Install the suggested packages:
@@ -25,26 +25,26 @@ pkg install -y autoconf bash ca_root_nss gmake pkgconf python37 py37-sqlite3
 Create the user and group that Open Peer Power will run as. The user/group ID of `8123` can be replaced if this is already in use in your environment.
 
 {% highlight bash %}
-pw groupadd -n homeassistant -g 8123
-echo 'homeassistant:8123:8123::::::/usr/local/bin/bash:' | adduser -f -
+pw groupadd -n openpeerpower -g 8123
+echo 'openpeerpower:8123:8123::::::/usr/local/bin/bash:' | adduser -f -
 {% endhighlight %}
 
 Create the installation directory:
 
 {% highlight bash %}
-mkdir -p /usr/local/share/homeassistant
-chown -R homeassistant:homeassistant /usr/local/share/homeassistant
+mkdir -p /usr/local/share/openpeerpower
+chown -R openpeerpower:openpeerpower /usr/local/share/openpeerpower
 {% endhighlight %}
 
 Create the virtualenv and install Open Peer Power itself:
 
 {% highlight bash %}
-su homeassistant
-cd /usr/local/share/homeassistant
+su openpeerpower
+cd /usr/local/share/openpeerpower
 python3.7 -m venv .
 source ./bin/activate
 pip3 install --upgrade pip
-pip3 install homeassistant
+pip3 install openpeerpower
 {% endhighlight %}
 
 While still in the `venv`, start Open Peer Power to populate the configuration directory.
@@ -56,7 +56,7 @@ hass --open-ui
 Wait until you see:
 
 {% highlight bash %}
-(MainThread) [homeassistant.core] Starting Open Peer Power
+(MainThread) [openpeerpower.core] Starting Open Peer Power
 {% endhighlight %}
 
 Then escape and exit the `venv`.
@@ -72,49 +72,49 @@ Create the directory and the `rc.d` script for the system-level service that ena
 mkdir /usr/local/etc/rc.d/
 {% endhighlight %}
 
-Then create a file at `/usr/local/etc/rc.d/homeassistant` and insert the content below:
+Then create a file at `/usr/local/etc/rc.d/openpeerpower` and insert the content below:
 
 {% highlight bash %}
-vi /usr/local/etc/rc.d/homeassistant
+vi /usr/local/etc/rc.d/openpeerpower
 {% endhighlight %}
 
 {% highlight bash %}
 #!/bin/sh
 #
-# Based upon work by tprelog at https://github.com/tprelog/iocage-homeassistant/blob/11.3-RELEASE/overlay/usr/local/etc/rc.d/homeassistant
+# Based upon work by tprelog at https://github.com/tprelog/iocage-openpeerpower/blob/11.3-RELEASE/overlay/usr/local/etc/rc.d/openpeerpower
 #
-# PROVIDE: homeassistant
+# PROVIDE: openpeerpower
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-# homeassistant_user: The user account used to run the homeassistant daemon.
+# openpeerpower_user: The user account used to run the openpeerpower daemon.
 #   This is optional, however do not specifically set this to an
 #   empty string as this will cause the daemon to run as root.
-#   Default: homeassistant
-# homeassistant_group: The group account used to run the homeassistant daemon.
+#   Default: openpeerpower
+# openpeerpower_group: The group account used to run the openpeerpower daemon.
 #   This is optional, however do not specifically set this to an
 #   empty string as this will cause the daemon to run with group wheel.
-#   Default: homeassistant
+#   Default: openpeerpower
 #
-# homeassistant_venv: Directory where homeassistant virtualenv is installed.
-#       Default:  "/usr/local/share/homeassistant"
-#       Change:   `sysrc homeassistant_venv="/srv/homeassistant"`
-#       UnChange: `sysrc -x homeassistant_venv`
+# openpeerpower_venv: Directory where openpeerpower virtualenv is installed.
+#       Default:  "/usr/local/share/openpeerpower"
+#       Change:   `sysrc openpeerpower_venv="/srv/openpeerpower"`
+#       UnChange: `sysrc -x openpeerpower_venv`
 #
-# homeassistant_config_dir: Directory where homeassistant config is located.
-#       Default:  "/home/homeassistant/.homeassistant"
-#       Change:   `sysrc homeassistant_config_dir="/home/hass/homeassistant"`
-#       UnChange: `sysrc -x homeassistant_config_dir`
+# openpeerpower_config_dir: Directory where openpeerpower config is located.
+#       Default:  "/home/openpeerpower/.openpeerpower"
+#       Change:   `sysrc openpeerpower_config_dir="/home/hass/openpeerpower"`
+#       UnChange: `sysrc -x openpeerpower_config_dir`
 
 # -------------------------------------------------------
-# Copy this file to '/usr/local/etc/rc.d/homeassistant'
-# `chmod +x /usr/local/etc/rc.d/homeassistant`
-# `sysrc homeassistant_enable=yes`
-# `service homeassistant start`
+# Copy this file to '/usr/local/etc/rc.d/openpeerpower'
+# `chmod +x /usr/local/etc/rc.d/openpeerpower`
+# `sysrc openpeerpower_enable=yes`
+# `service openpeerpower start`
 # -------------------------------------------------------
 
 . /etc/rc.subr
-name=homeassistant
+name=openpeerpower
 rcvar=${name}_enable
 
 pidfile_child="/var/run/${name}.pid"
@@ -122,77 +122,77 @@ pidfile="/var/run/${name}_daemon.pid"
 logfile="/var/log/${name}.log"
 
 load_rc_config ${name}
-: ${homeassistant_enable:="NO"}
-: ${homeassistant_user:="homeassistant"}
-: ${homeassistant_group:="homeassistant"}
-: ${homeassistant_config_dir:="/home/homeassistant/.homeassistant"}
-: ${homeassistant_venv:="/usr/local/share/homeassistant"}
+: ${openpeerpower_enable:="NO"}
+: ${openpeerpower_user:="openpeerpower"}
+: ${openpeerpower_group:="openpeerpower"}
+: ${openpeerpower_config_dir:="/home/openpeerpower/.openpeerpower"}
+: ${openpeerpower_venv:="/usr/local/share/openpeerpower"}
 
 command="/usr/sbin/daemon"
 extra_commands="check_config restart test upgrade"
 
 start_precmd=${name}_precmd
-homeassistant_precmd() {
-    rc_flags="-f -o ${logfile} -P ${pidfile} -p ${pidfile_child} ${homeassistant_venv}/bin/hass --config ${homeassistant_config_dir} ${rc_flags}"
-    [ ! -e "${pidfile_child}" ] && install -g ${homeassistant_group} -o ${homeassistant_user} -- /dev/null "${pidfile_child}"
-    [ ! -e "${pidfile}" ] && install -g ${homeassistant_group} -o ${homeassistant_user} -- /dev/null "${pidfile}"
+openpeerpower_precmd() {
+    rc_flags="-f -o ${logfile} -P ${pidfile} -p ${pidfile_child} ${openpeerpower_venv}/bin/hass --config ${openpeerpower_config_dir} ${rc_flags}"
+    [ ! -e "${pidfile_child}" ] && install -g ${openpeerpower_group} -o ${openpeerpower_user} -- /dev/null "${pidfile_child}"
+    [ ! -e "${pidfile}" ] && install -g ${openpeerpower_group} -o ${openpeerpower_user} -- /dev/null "${pidfile}"
     [ -e "${logfile}" ] && rm -f -- "${logfile}"
-    install -g ${homeassistant_group} -o ${homeassistant_user} -- /dev/null "${logfile}"
-    if [ ! -d "${homeassistant_config_dir}" ]; then
-      install -d -g ${homeassistant_group} -o ${homeassistant_user} -m 775 -- "${homeassistant_config_dir}"
+    install -g ${openpeerpower_group} -o ${openpeerpower_user} -- /dev/null "${logfile}"
+    if [ ! -d "${openpeerpower_config_dir}" ]; then
+      install -d -g ${openpeerpower_group} -o ${openpeerpower_user} -m 775 -- "${openpeerpower_config_dir}"
     fi
 }
 
 stop_postcmd=${name}_postcmd
-homeassistant_postcmd() {
+openpeerpower_postcmd() {
     rm -f -- "${pidfile}"
     rm -f -- "${pidfile_child}"
 }
 
 upgrade_cmd="${name}_upgrade"
-homeassistant_upgrade() {
+openpeerpower_upgrade() {
     service ${name} stop
-    su ${homeassistant_user} -c '
+    su ${openpeerpower_user} -c '
       source ${@}/bin/activate || exit 1
-      pip3 install --upgrade homeassistant
+      pip3 install --upgrade openpeerpower
       deactivate
-    ' _ ${homeassistant_venv} || exit 1
-    [ $? == 0 ] && homeassistant_check_config && service ${name} start
+    ' _ ${openpeerpower_venv} || exit 1
+    [ $? == 0 ] && openpeerpower_check_config && service ${name} start
 }
 
 check_config_cmd="${name}_check_config"
-homeassistant_check_config() {
-    [ ! -e "${homeassistant_config_dir}/configuration.yaml" ] && return 0
+openpeerpower_check_config() {
+    [ ! -e "${openpeerpower_config_dir}/configuration.yaml" ] && return 0
     echo "Performing check on Open Peer Power configuration:"
-    #eval "${homeassistant_venv}/bin/hass --config ${homeassistant_config_dir} --script check_config"
-    su ${homeassistant_user} -c '
+    #eval "${openpeerpower_venv}/bin/hass --config ${openpeerpower_config_dir} --script check_config"
+    su ${openpeerpower_user} -c '
       source ${1}/bin/activate || exit 2
       hass --config ${2} --script check_config || exit 3
       deactivate
-    ' _ ${homeassistant_venv} ${homeassistant_config_dir}
+    ' _ ${openpeerpower_venv} ${openpeerpower_config_dir}
 }
 
 restart_cmd="${name}_restart"
-homeassistant_restart() {
-    homeassistant_check_config || exit 1
+openpeerpower_restart() {
+    openpeerpower_check_config || exit 1
     echo "Restarting Open Peer Power"
     service ${name} stop
     service ${name} start
 }
 
 test_cmd="${name}_test"
-homeassistant_test() {
+openpeerpower_test() {
     echo -e "\nTesting virtualenv...\n"
-    [ ! -d "${homeassistant_venv}" ] && echo -e " NO DIRECTORY: ${homeassistant_venv}\n" && exit
-    [ ! -f "${homeassistant_venv}/bin/activate" ] && echo -e " NO FILE: ${homeassistant_venv}/bin/activate\n" && exit
+    [ ! -d "${openpeerpower_venv}" ] && echo -e " NO DIRECTORY: ${openpeerpower_venv}\n" && exit
+    [ ! -f "${openpeerpower_venv}/bin/activate" ] && echo -e " NO FILE: ${openpeerpower_venv}/bin/activate\n" && exit
 
     ## switch users / activate virtualenv / get version
-    su "${homeassistant_user}" -c '
+    su "${openpeerpower_user}" -c '
       source ${1}/bin/activate || exit 2
       echo " $(python --version)" || exit 3
-      echo " Open Peer Power $(pip3 show homeassistant | grep Version | cut -d" " -f2)" || exit 4
+      echo " Open Peer Power $(pip3 show openpeerpower | grep Version | cut -d" " -f2)" || exit 4
       deactivate
-    ' _ ${homeassistant_venv}
+    ' _ ${openpeerpower_venv}
 
     [ $? != 0 ] && echo "exit $?"
 }
@@ -204,14 +204,14 @@ run_rc_command "$1"
 Make the `rc.d` script executable:
 
 {% highlight bash %}
-chmod +x /usr/local/etc/rc.d/homeassistant
+chmod +x /usr/local/etc/rc.d/openpeerpower
 {% endhighlight %}
 
 Configure the service to start on boot and start the Open Peer Power service:
 
 {% highlight bash %}
-sysrc homeassistant_enable="YES"
-service homeassistant start
+sysrc openpeerpower_enable="YES"
+service openpeerpower start
 {% endhighlight %}
 
 You can also restart the jail to ensure that Open Peer Power starts on boot.
@@ -234,10 +234,10 @@ pkg install libudev-devd
 Then you can install the Z-Wave package
 
 {% highlight bash %}
-su homeassistant
-cd /usr/local/share/homeassistant
+su openpeerpower
+cd /usr/local/share/openpeerpower
 source ./bin/activate.csh
-pip3 install homeassistant-pyozw==0.1.7
+pip3 install openpeerpower-pyozw==0.1.7
 deactivate
 exit
 {% endhighlight %}
@@ -245,7 +245,7 @@ exit
 Stop the Open Peer Power Jail
 
 {% highlight bash %}
-sudo iocage stop HomeAssistant
+sudo iocage stop OpenPeerPower
 {% endhighlight %}
 
 Edit the devfs rules on the FreenNAS Host
@@ -273,13 +273,13 @@ Set it to 7
 Start the Open Peer Power jail
 
 {% highlight bash %}
-sudo iocage start HomeAssistant
+sudo iocage start OpenPeerPower
 {% endhighlight %}
 
 Connect to the Open Peer Power jail and verify that you see the modem devices
 
 {% highlight bash %}
-sudo iocage console HomeAssistant
+sudo iocage console OpenPeerPower
 {% endhighlight %}
 
 {% highlight bash %}
@@ -295,7 +295,7 @@ This should output the following
 Add the Z-Wave configuration to your `configuration.yaml` and restart Open Peer Power
 
 {% highlight bash %}
-vi /home/homeassistant/.homeassistant/configuration.yaml
+vi /home/openpeerpower/.openpeerpower/configuration.yaml
 {% endhighlight %}
 
 {% highlight yaml %}
@@ -305,7 +305,7 @@ zwave:
 {% endhighlight %}
 
 {% highlight bash %}
-service homeassistant restart
+service openpeerpower restart
 {% endhighlight %}
 
 ## Updating
@@ -313,26 +313,26 @@ service homeassistant restart
 Before updating, read the changelog to see what has changed and how it affects your Open Peer Power instance. Enter the jail using `iocage exec <jailname>`. Stop the Open Peer Power service:
 
 {% highlight bash %}
-service homeassistant stop
+service openpeerpower stop
 {% endhighlight %}
 
 Then, enter the `venv`:
 
 {% highlight bash %}
-su homeassistant
-cd /usr/local/share/homeassistant
+su openpeerpower
+cd /usr/local/share/openpeerpower
 source ./bin/activate
 {% endhighlight %}
 
 Upgrade Open Peer Power:
 
 {% highlight bash %}
-pip3 install homeassistant --upgrade
+pip3 install openpeerpower --upgrade
 {% endhighlight %}
 
-Log out of the `homeassistant` user and start Open Peer Power:
+Log out of the `openpeerpower` user and start Open Peer Power:
 
 {% highlight bash %}
 exit
-service homeassistant start
+service openpeerpower start
 {% endhighlight %}

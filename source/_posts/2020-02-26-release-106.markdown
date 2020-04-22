@@ -113,12 +113,6 @@ If you want to have your automations and/or battery in your Lovelace UI, you can
         light.ceiling: off
   {% endhighlight %}
 
-## Custom cards
-
-Are you the creator of an awesome custom card for Lovelace?
-
-We have made some changes to Lovelace that might impact your custom card, so be sure to read the [blog post](https://developers.openpeerpower.io/blog/2020/02/18/106-custom-card-changes.html) on the developers site about this.
-
 ## New Integrations
 
 - Add Salt Fiber Box device tracker ([@bjornorri] - [#30986]) ([salt docs]) (new-integration)
@@ -195,7 +189,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 - **Orange Livebox Play TV** - The Orange Livebox Play TV integration has been removed. A change to the site scraped with this integration has changed, causing the integration to break. This integration violated our design decisions and is therefore removed. - ([@frenck] - [#31525]) (breaking change)
 
-- **Core** - Only administrator users can stop or restart Open Peer Power. - ([@balloob] - [#31509]) ([homeassistant docs])
+- **Core** - Only administrator users can stop or restart Open Peer Power. - ([@balloob] - [#31509]) ([openpeerpower docs])
 
 - **Sure Petcare** - Sure Petcare supports new features and has improved existing features. As a result, you will want to note that the format of the `feeders`/`flaps`/`pets` options changed from a map (`id`/`name`) to a simple list of IDs, which means the `name` option is removed. The `name` is now gathered directly from the Sure Petcare API but changeable via the HA UI.
 
@@ -308,7 +302,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 - Fix Plex sensor title handling ([@jjlawren] - [#31973]) ([plex docs]) (beta fix)
 - Bump ZHA quirks and add skip configuration support ([@dmulcahey] - [#31982]) ([zha docs]) (beta fix)
 - Fix bug in ecobee integration ([@marthoc] - [#32008]) ([ecobee docs]) (beta fix)
-- Fix recursion bug ([@balloob] - [#32009]) ([homeassistant docs]) (beta fix)
+- Fix recursion bug ([@balloob] - [#32009]) ([openpeerpower docs]) (beta fix)
 - Don't return coroutine in DLNA/DMR service handler ([@tsvi] - [#32011]) ([dlna_dmr docs]) (beta fix)
 - Bump pyatmo to 3.2.4 ([@cgtobi] - [#32018]) ([netatmo docs]) (beta fix)
 - Add missing name to logging in DataUpdateCoordinator ([@MatthewFlamm] - [#32023]) (beta fix)
@@ -527,7 +521,7 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Add Minecraft Server Integration ([@elmurato] - [#30992]) ([minecraft_server docs]) (new-integration)
 - Extract services from init.py for HomematicIP Cloud ([@SukramJ] - [#31376]) ([homematicip_cloud docs])
 - Fix exceptions when using newer Samsung TVs ([@escoand] - [#31602]) ([samsungtv docs])
-- Clean up core services ([@balloob] - [#31509]) ([group docs]) ([homeassistant docs]) (breaking change)
+- Clean up core services ([@balloob] - [#31509]) ([group docs]) ([openpeerpower docs]) (breaking change)
 - Bump denonavr to 0.7.12 ([@scarface-4711] - [#31629]) ([denonavr docs])
 - Actually enable alarmdecoder to see open/close state of bypassed RF zones when armed ([@melyux] - [#31426]) ([alarmdecoder docs])
 - Use slug in ping device tracker config validation ([@springstan] - [#31329]) ([ifttt docs]) ([media_extractor docs]) ([onewire docs]) ([ping docs])
@@ -645,7 +639,7 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Upgrade aiohue ([@balloob] - [#31903]) ([hue docs])
 - Add POD support, sleep fitness sensor to EightSleep ([@mezz64] - [#31874]) ([eight_sleep docs])
 - Add logger name to system log ([@balloob] - [#31902]) ([system_log docs])
-- Allow specifying an icon for a scene ([@balloob] - [#31898]) ([homeassistant docs])
+- Allow specifying an icon for a scene ([@balloob] - [#31898]) ([openpeerpower docs])
 - Add icons to scripts ([@balloob] - [#31899]) ([script docs])
 - Bump dependency to 0.10.17 for HomematicIP Cloud ([@SukramJ] - [#31911]) ([homematicip_cloud docs])
 - Start safe mode if invalid core conf ([@balloob] - [#31904])
@@ -690,7 +684,7 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Fix Plex sensor title handling ([@jjlawren] - [#31973]) ([plex docs]) (beta fix)
 - Bump ZHA quirks and add skip configuration support ([@dmulcahey] - [#31982]) ([zha docs]) (beta fix)
 - Fix bug in ecobee integration ([@marthoc] - [#32008]) ([ecobee docs]) (beta fix)
-- Fix recursion bug ([@balloob] - [#32009]) ([homeassistant docs]) (beta fix)
+- Fix recursion bug ([@balloob] - [#32009]) ([openpeerpower docs]) (beta fix)
 - Don't return coroutine in DLNA/DMR service handler ([@tsvi] - [#32011]) ([dlna_dmr docs]) (beta fix)
 - Bump pyatmo to 3.2.4 ([@cgtobi] - [#32018]) ([netatmo docs]) (beta fix)
 - Add missing name to logging in DataUpdateCoordinator ([@MatthewFlamm] - [#32023]) (beta fix)
@@ -1136,7 +1130,7 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 [glances docs]: /integrations/glances/
 [greeneye_monitor docs]: /integrations/greeneye_monitor/
 [group docs]: /integrations/group/
-[homeassistant docs]: /integrations/homeassistant/
+[openpeerpower docs]: /integrations/openpeerpower/
 [homekit_controller docs]: /integrations/homekit_controller/
 [homematic docs]: /integrations/homematic/
 [homematicip_cloud docs]: /integrations/homematicip_cloud/

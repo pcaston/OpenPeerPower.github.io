@@ -6,7 +6,7 @@ ha_category:
 ha_release: pre 0.7
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: history
 excerpt: none
 ---
@@ -110,7 +110,7 @@ history:
 
 #### Implementation details
 
-The history is stored in a SQLite database `home-assistant_v2.db` within your
+The history is stored in a SQLite database `open-peer-power_v2.db` within your
 configuration directory unless the `recorder` integration is set up differently.
 
  - events table is all events except `time_changed` that happened while recorder integration was running.
@@ -137,8 +137,3 @@ from datetime import datetime
 
 datetime.fromtimestamp(1422830502)
 {% endhighlight %}
-
-#### API
-
-The history information is also available through the
-[RESTful API](/developers/rest_api/#get-apihistory).

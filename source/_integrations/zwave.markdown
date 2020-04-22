@@ -16,7 +16,7 @@ ha_iot_class: Local Push
 ha_release: 0.7
 ha_config_flow: true
 ha_codeowners:
-  - '@home-assistant/z-wave'
+  - '@open-peer-power/z-wave'
 ha_domain: zwave
 ---
 
@@ -87,7 +87,7 @@ automation:
           temperature: 24
 {% endhighlight %}
 
-Generally, in Open Peer Power, you can use the `homeassistant/turn_off` service to turn devices off. For the Remotec ZXT-120, you must instead make a service call like the following.
+Generally, in Open Peer Power, you can use the `openpeerpower/turn_off` service to turn devices off. For the Remotec ZXT-120, you must instead make a service call like the following.
 
 {% highlight yaml %}
 automation:

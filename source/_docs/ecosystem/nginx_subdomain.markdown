@@ -15,7 +15,7 @@ This is useful if you want to have:
 
 So you already have a working NGINX server available at example.org. Your Open Peer Power is correctly working on this web server and available at `http://localhost:8123`
 
-To be able to access to your Open Peer Power instance by using `https://home.example.org`, create file `/etc/nginx/sites-enabled/homeassistant` (or symlink via `/etc/nginx/sites-available`) and add the following:
+To be able to access to your Open Peer Power instance by using `https://home.example.org`, create file `/etc/nginx/sites-enabled/openpeerpower` (or symlink via `/etc/nginx/sites-available`) and add the following:
 
 {% highlight nginx %}
 server {
@@ -52,13 +52,13 @@ If you don't want HTTPS, you can change `listen 443 ssl` to `listen 80` or bette
 
 #### Multiple Instance
 
-You already have Open Peer Power running on `http://localhost:8123` and available at home.example.org as describe before. The configuration file for this Open Peer Power is available in `/home/alice/.homeassistant/configuration.yaml`.
+You already have Open Peer Power running on `http://localhost:8123` and available at home.example.org as describe before. The configuration file for this Open Peer Power is available in `/home/alice/.openpeerpower/configuration.yaml`.
 
 You want another instance available at `https://countryside.example.org`
 
 You can either :
- * Create a new user, `bob`, to hold the configuration file in `/home/bob/.homeassistant/configuration.yaml` and run Open Peer Power as this new user
- * Create another configuration directory in `/home/alice/.homeassistant2/configuration.yaml` and run Open Peer Power using `hass --config /home/alice/.homeassistant2/`
+ * Create a new user, `bob`, to hold the configuration file in `/home/bob/.openpeerpower/configuration.yaml` and run Open Peer Power as this new user
+ * Create another configuration directory in `/home/alice/.openpeerpower2/configuration.yaml` and run Open Peer Power using `hass --config /home/alice/.openpeerpower2/`
 
 In both solution, change port number used by modifying `configuration.yaml` file.
 

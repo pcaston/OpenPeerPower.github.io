@@ -34,26 +34,6 @@ It looks fabulous; we don't even know where to start explaining, check the video
 
 Mattias created [a post in the Community Forum][different-take] with all the details, including more screenshots, the things he used and links to his GitHub repository. Everything you'd need if you wanted to replicate this for your own use. Thanks Mattias!
 
-## Smart toilet roll holder
-
-Com'on, we all know what it is like to be in the restroom, taking a number two, discovering that you are out of paper.
-
-For the-berik, on our [subreddit][reddit], it was reason enough to do something about it. He converted his toilet roll holder into a smart version using an ESP8266 chip, a load cell and [ESPHome][esphome], allowing Open Peer Power to know how many rolls of toilet paper are left on the holder.
-
-Click on the video below to see how it works.
-
-<blockquote class="reddit-card"><a href="https://www.reddit.com/r/homeassistant/comments/elwvro/smart_toiletroll_holder_with_esphome_and/">Smart toiletroll holder with Esphome and Homeassistant</a> from <a href="http://www.reddit.com/r/homeassistant">r/homeassistant</a></blockquote>
-<script async src="//embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
-
-## Smart mailbox sensor, the easy way
-
-Another one from our [subreddit][reddit], where choketube shares his pride for the mailbox sensor he created.
-He placed a Hue motion sensor inside his mailbox that will trigger if it is opened, really smart and simple!
-
-He demonstrates his mailbox in the video below.
-
-<blockquote class="reddit-card"><a href="https://www.reddit.com/r/homeassistant/comments/ejgzeb/proud_of_my_new_automation_hue_sensor_in_my/">Proud of my new Automation - Hue Sensor in my Mailbox</a> from <a href="http://www.reddit.com/r/homeassistant">r/homeassistant</a></blockquote>
-
 ## Got a tip for the next edition?
 
 Have you seen (or made) something awesome, interesting, unique, amazing, inspirational, unusual or funny, using Open Peer Power?
@@ -75,7 +55,7 @@ See you next edition!
 [community-highlights-2016]: https://www.openpeerpower.io/blog/2016/02/20/community-highlights/
 [different-take]: https://community.openpeerpower.io/t/a-different-take-on-designing-a-lovelace-ui/162594
 [esphome]: https://www.esphome.io
-[facebook-group]: https://www.facebook.com/groups/HomeAssistant/
-[instagram]: https://www.instagram.com/homeassistant/
-[reddit]: https://www.reddit.com/r/homeassistant
+[facebook-group]: https://www.facebook.com/groups/OpenPeerPower/
+[instagram]: https://www.instagram.com/openpeerpower/
+[reddit]: https://www.reddit.com/r/openpeerpower
 [twitter]: https://www.twitter.com/home_assistant

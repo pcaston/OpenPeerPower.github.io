@@ -133,7 +133,7 @@ You do not need to install any software to use Z-Wave.
 To enable access to the Z-Wave stick, add `--device=/dev/ttyACM0` to the `docker` command that starts your container, for example:
 
 {% highlight bash %}
-docker run -d --name="home-assistant" -v /home/pi/homeassistant:/config -v /etc/localtime:/etc/localtime:ro --net=host --device=/dev/ttyACM0 homeassistant/raspberrypi3-homeassistant
+docker run -d --name="open-peer-power" -v /home/pi/openpeerpower:/config -v /etc/localtime:/etc/localtime:ro --net=host --device=/dev/ttyACM0 openpeerpower/raspberrypi3-openpeerpower
 {% endhighlight %}
 
 If the path of `/dev/ttyACM0` doesn't work then you can find the path of the stick by disconnecting and then reconnecting it, and running the following in the Docker host:
@@ -182,10 +182,10 @@ Or, if there is no result, try to find detailed USB connection info with:
 dmesg | grep USB
 {% endhighlight %}
 
-If Open Peer Power (`hass`) runs with another user (e.g., `homeassistant`) you need to give access to the stick with:
+If Open Peer Power (`hass`) runs with another user (e.g., `openpeerpower`) you need to give access to the stick with:
 
 {% highlight bash %}
-sudo usermod -aG dialout homeassistant
+sudo usermod -aG dialout openpeerpower
 {% endhighlight %}
 
 The output from `ls -ltr` above contains the following information:
@@ -255,16 +255,16 @@ sudo chgrp dialout /dev/ttyAMA0
 sudo chmod g+rw /dev/ttyAMA0
 {% endhighlight %}
 
-Check too that the account you're running Open Peer Power as is in the `dialout` group. For instance, if you're using `homeassistant`:
+Check too that the account you're running Open Peer Power as is in the `dialout` group. For instance, if you're using `openpeerpower`:
 
 {% highlight bash %}
-groups homeassistant
+groups openpeerpower
 {% endhighlight %}
 
 That should include `dialout`, if it doesn't then:
 
 {% highlight bash %}
-sudo usermod -aG dialout homeassistant
+sudo usermod -aG dialout openpeerpower
 {% endhighlight %}
 
 ### Unable to install Python Openzwave

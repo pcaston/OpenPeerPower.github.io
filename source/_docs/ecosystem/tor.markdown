@@ -38,7 +38,7 @@ Next, modify Tor's main configuration file `/etc/tor/torrc` to include the follo
 ## contents of the file ".../hidden_service/hostname" for the address
 ## to tell people.
 ...
-HiddenServiceDir /var/lib/tor/homeassistant/
+HiddenServiceDir /var/lib/tor/openpeerpower/
 HiddenServicePort 80 127.0.0.1:8123
 HiddenServiceAuthorizeClient stealth haremote1
 ...
@@ -55,7 +55,7 @@ $ sudo systemctl restart tor
 Then read the new generated authentication cookie from the Tor-generated hostname file:
 
 {% highlight bash %}
-$ sudo more /var/lib/tor/homeassistant/hostname
+$ sudo more /var/lib/tor/openpeerpower/hostname
 {% endhighlight %}
 
 The output of that command should look something like this, but with your own unique "dot onion" domain and authentication cookie:

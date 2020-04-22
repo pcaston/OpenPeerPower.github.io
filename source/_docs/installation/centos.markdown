@@ -39,7 +39,7 @@ yum install rh-python36
 scl enable rh-python36 bash
 {% endhighlight %}
 
-Once installed, switch to your `homeassistant` user (if you've set one up), enable the software collection and check that it has set up the new version of Python:
+Once installed, switch to your `openpeerpower` user (if you've set one up), enable the software collection and check that it has set up the new version of Python:
 
 {% highlight bash %}
 $ python --version
@@ -54,7 +54,7 @@ You will need to enable the software collection each time you log on before you 
 
 To autostart Open Peer Power using systemd and a python36 (from SCL) virtual environment, follow the main [instructions](/docs/autostart/systemd/) and adjust the template as follows:
 
-Filename: `/etc/systemd/system/home-assistant@homeassistant.service`
+Filename: `/etc/systemd/system/open-peer-power@openpeerpower.service`
 {% highlight txt %}
 [Unit]
 Description=Open Peer Power
@@ -65,7 +65,7 @@ Type=simple
 # %i means the username is derrived from the filename.
 User=%i
 # a python venv for hass exists in /opt/hass/venv
-ExecStart=/srv/homeassistant/bin/hass
+ExecStart=/srv/openpeerpower/bin/hass
 
 [Install]
 WantedBy=multi-user.target

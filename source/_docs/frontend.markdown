@@ -10,6 +10,3 @@ The frontend of Open Peer Power is built with [Polymer](https://www.polymer-proj
 </p>
 
 The [User Interface section](/cookbook/#user-interface) can give you some starting points to expand the frontend.
-
-If you want to work on the frontend, please refer to the [Frontend Development documentation](/developers/frontend/).
-

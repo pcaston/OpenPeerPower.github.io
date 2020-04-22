@@ -8,7 +8,7 @@ The documentation covers beginner to advanced topics around the installation, se
 <div class="text-center hass-option-cards" markdown="0">
   <a class='option-card' href='/hassio/'>
     <div class='img-container'>
-      <img src='https://brands.openpeerpower.io/homeassistant/icon.png' />
+      <img src='https://brands.openpeerpower.io/openpeerpower/icon.png' />
     </div>
     <div class='title'>Installation</div>
   </a>

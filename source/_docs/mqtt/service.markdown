@@ -21,13 +21,13 @@ You need to include either payload or payload_template, but not both.
 </div>
 
 {% highlight yaml %}
-topic: home-assistant/light/1/command
+topic: open-peer-power/light/1/command
 payload: on
 {% endhighlight %}
 
 {% raw %}
 {% highlight yaml %}
-topic: home-assistant/light/1/state
+topic: open-peer-power/light/1/state
 payload_template: {{ states('device_tracker.paulus') }}
 {% endhighlight %}
 {% endraw %}
@@ -35,14 +35,14 @@ payload_template: {{ states('device_tracker.paulus') }}
 `payload` must be a string. If you want to send JSON then you need to format/escape it properly. Like:
 
 {% highlight yaml %}
-topic: home-assistant/light/1/state
+topic: open-peer-power/light/1/state
 payload: "{\"Status\":\"off\", \"Data\":\"something\"}"
 {% endhighlight %}
 
 Example of how to use `qos` and `retain`:
 
 {% highlight yaml %}
-topic: home-assistant/light/1/command
+topic: open-peer-power/light/1/command
 payload: on
 qos: 2
 retain: true

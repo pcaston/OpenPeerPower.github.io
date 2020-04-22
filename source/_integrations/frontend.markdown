@@ -6,7 +6,7 @@ ha_category:
 ha_release: 0.7
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/frontend'
+  - '@open-peer-power/frontend'
 ha_domain: frontend
 excerpt: none
 ---
@@ -51,7 +51,7 @@ Set a theme at the startup of Open Peer Power:
 automation:
   - alias: 'Set theme at startup'
     trigger:
-     - platform: homeassistant
+     - platform: openpeerpower
        event: start
     action:
       service: frontend.set_theme

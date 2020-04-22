@@ -42,7 +42,7 @@ sensor:
 
   You have to provide **exactly 2** of `start`, `end` and `duration`.
 <br/>
-  You can use [template extensions](/topics/templating/#home-assistant-template-extensions) such as `now()` or `as_timestamp()` to handle dynamic dates, as shown in the examples below.
+  You can use [template extensions](/topics/templating/#open-peer-power-template-extensions) such as `now()` or `as_timestamp()` to handle dynamic dates, as shown in the examples below.
 
 </div>
 

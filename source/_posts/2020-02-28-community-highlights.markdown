@@ -31,7 +31,7 @@ You really **need** to watch the video below now...
 Well done, Harrie! That looks slick!
 
 More details on his creation can be found on the
-[Open Peer Power Community Forum](https://community.openpeerpower.io/t/3d-home-navigation-control-unity-home-assistant/174972).
+[Open Peer Power Community Forum](https://community.openpeerpower.io/t/3d-home-navigation-control-unity-open-peer-power/174972).
 
 ## 3D printed interactive floorplan
 
@@ -52,7 +52,7 @@ for the most of us. Still, with some help, you could still achieve some pretty
 nice looking 3D floorplans. [Aaron Godfrey](https://github.com/boralyl) wrote a
 couple of excellent blog posts on this.
 
-In his [first blog post](https://aarongodfrey.dev/home%20automation/floorplan-in-home-assistant/),
+In his [first blog post](https://aarongodfrey.dev/home%20automation/floorplan-in-open-peer-power/),
 Aaron shows you what his floorplan looks like
 
 <div class='videoWrapper'>
@@ -62,7 +62,7 @@ Aaron shows you what his floorplan looks like
 He followed up with two blog posting on how to achieve this:
 
 - [Tips for creating a Floorplan in Sweet Home 3D](https://aarongodfrey.dev/home%20automation/tips_for_creating_a_3d_floorplan_using_sweethome3d/)
-- [Creating an Interactive 3D Floorplan in Open Peer Power](https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/)
+- [Creating an Interactive 3D Floorplan in Open Peer Power](https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-open-peer-power/)
 
 ### Bonus tip: HomeByMe
 
@@ -94,7 +94,7 @@ Also, don't forget to share your creations with us via Social Media:
 See you next edition!
 
 [chat]: https://www.openpeerpower.io/join-chat
-[facebook-group]: https://www.facebook.com/groups/HomeAssistant/
-[instagram]: https://www.instagram.com/homeassistant/
-[reddit]: https://www.reddit.com/r/homeassistant
+[facebook-group]: https://www.facebook.com/groups/OpenPeerPower/
+[instagram]: https://www.instagram.com/openpeerpower/
+[reddit]: https://www.reddit.com/r/openpeerpower
 [twitter]: https://www.twitter.com/home_assistant

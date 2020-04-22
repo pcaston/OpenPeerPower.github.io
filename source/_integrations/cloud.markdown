@@ -6,7 +6,7 @@ ha_category:
   - Voice
 ha_iot_class: Cloud Push
 ha_codeowners:
-  - '@home-assistant/cloud'
+  - '@open-peer-power/cloud'
 ha_domain: cloud
 ---
 

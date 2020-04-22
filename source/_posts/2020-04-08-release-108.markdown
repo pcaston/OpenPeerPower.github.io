@@ -270,7 +270,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
   notify:
     - platform: slack
       api_key: !secret slack_api_key
-      default_channel: "#home-assistant"
+      default_channel: "#open-peer-power"
   {% endhighlight %}
 
 - **Network UPS Tools (NUT)** - The NUT integration is now available as an integration from the UI! ([@bdraco] - [#33457]) ([nut docs]) (breaking change)

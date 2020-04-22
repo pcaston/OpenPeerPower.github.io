@@ -33,19 +33,19 @@ Follow the instructions you see on your screen.
 Go to the folder you have placed `dropbox.py`.
 
 - **Option A:**
-  Copy file `dropbox_uploader.sh` to : `.homeassistant/extraconfig/shell_code/` (so the full path would be similar to: `/home/homeassistant/.homeassistant/extraconfig/shell_code/dropbox_uploader.sh`)
+  Copy file `dropbox_uploader.sh` to : `.openpeerpower/extraconfig/shell_code/` (so the full path would be similar to: `/home/openpeerpower/.openpeerpower/extraconfig/shell_code/dropbox_uploader.sh`)
 - **Option B:**
   Edit `dropbox.py`:
   Change the following line:
 
   {% highlight txt %}
-  uploader = "/home/homeassistant/.homeassistant/extraconfig/shell_code/dropbox_uploader.sh"
+  uploader = "/home/openpeerpower/.openpeerpower/extraconfig/shell_code/dropbox_uploader.sh"
   {% endhighlight %}
 
   to where you placed your file: (for example):
 
   {% highlight txt %}
-  uploader = "/home/homeassistant/MyFolder/dropbox_uploader.sh"
+  uploader = "/home/openpeerpower/MyFolder/dropbox_uploader.sh"
   {% endhighlight %}
 
 {% highlight bash %}

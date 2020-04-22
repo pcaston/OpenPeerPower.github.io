@@ -21,7 +21,7 @@ The add-on used to be only available for x64 devices like intel NUC. With this u
 
 It comes installed with all the extensions necessary for editing Open Peer Power related files:
 
-- [Open Peer Power Config Helper](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-home-assistant)
+- [Open Peer Power Config Helper](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-open-peer-power)
 - [ESPHome VSCode](https://marketplace.visualstudio.com/items?itemName=ESPHome.esphome-vscode)
 - YAML checker
 - Material Design Icons support
@@ -61,7 +61,7 @@ _This requires the MariaDB add-on to be installed and the recorder configured to
 To query the available tables:
 
 {% highlight bash %}
-mysql -D homeassistant -e "SELECT entity_id, state, last_updated FROM states LIMIT 0, 10"
+mysql -D openpeerpower -e "SELECT entity_id, state, last_updated FROM states LIMIT 0, 10"
 {% endhighlight %}
 
 ## Beta time!
@@ -74,7 +74,7 @@ I'm personally most excited about the extended safe mode. It will guarantee that
 
 On Reddit user /u/Jenova70 showed a super slick navigation arrow that indicates the traffic on his daily commute. Very slick! Instructions can be found in the comments.
 
-<blockquote class="reddit-card" data-card-created="1582092743"><a href="https://www.reddit.com/r/homeassistant/comments/f27dtk/i_built_a_physical_navigation_arrow_that_is/">I built a physical "navigation arrow" that is changing color based on the estimated time of arrival at work (Waze commute data :) )</a> from <a href="http://www.reddit.com/r/homeassistant">r/homeassistant</a></blockquote>
+<blockquote class="reddit-card" data-card-created="1582092743"><a href="https://www.reddit.com/r/openpeerpower/comments/f27dtk/i_built_a_physical_navigation_arrow_that_is/">I built a physical "navigation arrow" that is changing color based on the estimated time of arrival at work (Waze commute data :) )</a> from <a href="http://www.reddit.com/r/openpeerpower">r/openpeerpower</a></blockquote>
 
 <script async src="//embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
 
@@ -97,7 +97,7 @@ Also, don't forget to share your creations with us via Social Media:
 See you next edition!
 
 [chat]: https://www.openpeerpower.io/join-chat
-[facebook-group]: https://www.facebook.com/groups/HomeAssistant/
-[instagram]: https://www.instagram.com/homeassistant/
-[reddit]: https://www.reddit.com/r/homeassistant
+[facebook-group]: https://www.facebook.com/groups/OpenPeerPower/
+[instagram]: https://www.instagram.com/openpeerpower/
+[reddit]: https://www.reddit.com/r/openpeerpower
 [twitter]: https://www.twitter.com/home_assistant

@@ -27,7 +27,7 @@ automation:
       - platform: time
         at: '05:00:00'
     action:
-      service: homeassistant.turn_on
+      service: openpeerpower.turn_on
       entity_id: input_boolean.trigger_first_morning
 
 # turns it off an hour after sunrise
@@ -37,7 +37,7 @@ automation:
         event: sunrise
         offset: "01:00:00"
     action:
-      service: homeassistant.turn_off
+      service: openpeerpower.turn_off
       entity_id: input_boolean.trigger_first_morning
 
 
@@ -58,7 +58,7 @@ automation:
     action:
       # turn off the "waiting" boolean regardless of whether lights will turn on
       # so that this happens only once
-      - service: homeassistant.turn_off
+      - service: openpeerpower.turn_off
         entity_id: input_boolean.trigger_first_morning
 
       # But only turn on lights if the living room and kitchen lights are off or dimmed

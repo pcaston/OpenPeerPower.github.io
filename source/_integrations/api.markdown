@@ -6,7 +6,7 @@ ha_category:
 ha_release: 0.7
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: api
 ---
 
@@ -16,5 +16,3 @@ The `api` integration exposes a RESTful API and allows one to interact with a Op
 # Example configuration.yaml entry
 api:
 {% endhighlight %}
-
-For details to use the API, please refer to the [REST API](/developers/rest_api/) in the "Developer" section.

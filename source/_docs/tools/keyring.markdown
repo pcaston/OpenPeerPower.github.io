@@ -26,7 +26,7 @@ If you launch Open Peer Power now, you will be prompted for the keyring password
 
 {% highlight bash %}
 $ hass
-Config directory: /home/homeassistant/.homeassistant
+Config directory: /home/openpeerpower/.openpeerpower
 Please enter password for encrypted keyring:
 {% endhighlight %}
 

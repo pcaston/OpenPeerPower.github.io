@@ -48,17 +48,17 @@ Errors and warnings are posted as the event `system_log_event`, so it is possibl
 | `message`   | Descriptive message of the error, e.g., "Error handling request".           |
 | `timestamp` | Unix timestamp with as a double, e.g., 1517241010.237416.                   |
 
-Live examples of these events can be found in the Open Peer Power log file (`home-assistant.log`) or by just looking in the system log. An example could, for instance, look like this:
+Live examples of these events can be found in the Open Peer Power log file (`open-peer-power.log`) or by just looking in the system log. An example could, for instance, look like this:
 
 {% highlight text %}
-2019-02-14 16:20:35 ERROR (MainThread) [homeassistant.loader] Unable to find integration system_healt
-2019-02-14 16:20:36 ERROR (MainThread) [homeassistant.components.device_tracker] Error setting up platform google_maps
+2019-02-14 16:20:35 ERROR (MainThread) [openpeerpower.loader] Unable to find integration system_healt
+2019-02-14 16:20:36 ERROR (MainThread) [openpeerpower.components.device_tracker] Error setting up platform google_maps
 Traceback (most recent call last):
-  File "/home/fab/Documents/repos/ha/home-assistant/homeassistant/integrations/device_tracker/__init__.py", line 184, in
+  File "/home/fab/Documents/repos/ha/open-peer-power/openpeerpower/integrations/device_tracker/__init__.py", line 184, in
 [...]
 {% endhighlight %}
 
-The message ("Unable to find integration system_healt"), source (`homeassistant.loader`) and level (`ERROR`) can easily be extracted from the log. The exact timestamp and if there is a stack trace that's shown as well. Here is another error caused by the `google_map` integration with additional output present.
+The message ("Unable to find integration system_healt"), source (`openpeerpower.loader`) and level (`ERROR`) can easily be extracted from the log. The exact timestamp and if there is a stack trace that's shown as well. Here is another error caused by the `google_map` integration with additional output present.
 
 ## Examples 
 

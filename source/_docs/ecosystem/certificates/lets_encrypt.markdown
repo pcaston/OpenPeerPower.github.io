@@ -240,18 +240,18 @@ Now SSH in to the device your Open Peer Power is running on.
 
 <div class='note'>
 
-If you're running the 'standard' setup on a Raspberry Pi the chances are you just logged in as the 'pi' user. If not, you may have logged in as the Open Peer Power user. There are commands below that require the Open Peer Power user to be on the `sudoers` list. If you are not using the 'standard' Pi setup it is presumed you will know how to get your Open Peer Power user on the `sudoers` list before continuing.  If you are running the 'standard' Pi setup, from your 'pi' user issue the following command (where `homeassistant` is the Open Peer Power user):
+If you're running the 'standard' setup on a Raspberry Pi the chances are you just logged in as the 'pi' user. If not, you may have logged in as the Open Peer Power user. There are commands below that require the Open Peer Power user to be on the `sudoers` list. If you are not using the 'standard' Pi setup it is presumed you will know how to get your Open Peer Power user on the `sudoers` list before continuing.  If you are running the 'standard' Pi setup, from your 'pi' user issue the following command (where `openpeerpower` is the Open Peer Power user):
 
 {% highlight bash %}
-sudo adduser homeassistant sudo
+sudo adduser openpeerpower sudo
 {% endhighlight %}
 
 </div>
 
-If you did not already log in as the user that currently runs Open Peer Power, change to that user (usually `homeassistant` or `hass` - you may have used a command similar to this in the past):
+If you did not already log in as the user that currently runs Open Peer Power, change to that user (usually `openpeerpower` or `hass` - you may have used a command similar to this in the past):
 
 {% highlight bash %}
-sudo -u homeassistant -H -s
+sudo -u openpeerpower -H -s
 {% endhighlight %}
 
 Make sure you are in the home directory for the Open Peer Power user:
@@ -269,7 +269,7 @@ sudo apt-get install certbot -y
 You might need to stop Open Peer Power before continuing with the next step. You can do this via the Web-UI or use the following command if you are running on Raspbian:
 
 {% highlight bash %}
-sudo systemctl stop home-assistant@homeassistant.service
+sudo systemctl stop open-peer-power@openpeerpower.service
 {% endhighlight %}
 
 You can restart Open Peer Power after the next step using the same command and replacing `stop` with `start`.
@@ -303,10 +303,10 @@ Did all of that go without a hitch? Wahoo! Your Let's Encrypt certificate is now
 
 <div class='note'>
 
-Following on from Step 4 your SSH will still be in the certbot folder. If you edit your configuration files over SSH you will need to change to our `homeassistant` folder:
+Following on from Step 4 your SSH will still be in the certbot folder. If you edit your configuration files over SSH you will need to change to our `openpeerpower` folder:
 
 {% highlight bash %}
-cd ~/.homeassistant
+cd ~/.openpeerpower
 {% endhighlight %}
 
 If you use Samba shares to edit your files you can exit your SSH now.
@@ -447,10 +447,10 @@ Your certificate can be renewed as a 'cron job' - cron jobs are background tasks
 To set a cron job to run the script at regular intervals:
 
 - SSH in to your device running Open Peer Power.
-- Change to your Open Peer Power user (where `homeassistant` is the name of the user):
+- Change to your Open Peer Power user (where `openpeerpower` is the name of the user):
 
   {% highlight bash %}
-  sudo -u homeassistant -H -s
+  sudo -u openpeerpower -H -s
   {% endhighlight %}
 
 - Open the crontab:
@@ -468,7 +468,7 @@ To set a cron job to run the script at regular intervals:
 - If you are a ONE-RULE Person: Scroll to the bottom of the file and paste in the following line
 
   {% highlight text %}
-  30 2 * * 1 certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop home-assistant@homeassistant.service" --post-hook "sudo systemctl start home-assistant@homeassistant.service"
+  30 2 * * 1 certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop open-peer-power@openpeerpower.service" --post-hook "sudo systemctl start open-peer-power@openpeerpower.service"
   {% endhighlight %}
 
 - Let's take a moment to look at the differences here:
@@ -498,7 +498,7 @@ automation:
       service: shell_command.renew_ssl
 {% endhighlight %}
 
-If you are a ONE-RULE person, replace the `certbot` command above with `certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop home-assistant@homeassistant.service" --post-hook "sudo systemctl start home-assistant@homeassistant.service"`
+If you are a ONE-RULE person, replace the `certbot` command above with `certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop open-peer-power@openpeerpower.service" --post-hook "sudo systemctl start open-peer-power@openpeerpower.service"`
 
 #### Option 3
 
@@ -507,10 +507,10 @@ You can manually update the certificate when your certificate is less than 30 da
 To manually update:
 
 - SSH in to your device running Open Peer Power.
-- Change to your Open Peer Power user (where `homeassistant` is the name of the user):
+- Change to your Open Peer Power user (where `openpeerpower` is the name of the user):
 
   {% highlight bash %}
-  sudo -u homeassistant -H -s
+  sudo -u openpeerpower -H -s
   {% endhighlight %}
 
 - Change to your certbot folder
@@ -525,7 +525,7 @@ To manually update:
   certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01
   {% endhighlight %}
 
-- If you are a ONE-RULE person, replace the `certbot` command above with `certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop home-assistant@homeassistant.service" --post-hook "sudo systemctl start home-assistant@homeassistant.service"`
+- If you are a ONE-RULE person, replace the `certbot` command above with `certbot renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop open-peer-power@openpeerpower.service" --post-hook "sudo systemctl start open-peer-power@openpeerpower.service"`
 
 So, now were all set up. We have our secured, remotely accessible Open Peer Power instance and we're on track for keeping our certificates up to date. But what if something goes wrong?  What if the automation didn't fire?  What if the cron job forgot to run?  What if the dog ate my homework? Read on to set up an alert so you can be notified in plenty of time if you need to step in and sort out any failures.
 

@@ -13,7 +13,7 @@ og_image: /images/blog/2020-02-0.105/components.png
 
 <a href='/integrations/#version/0.105'><img src='/images/blog/2020-02-0.105/components.png' style='border: 0;box-shadow: none;'></a>
 
-In case you have missed it, we decided to change the names we use here at Open Peer Power, you can read all about it in [this blog post](/blog/2020/01/29/changing-the-home-assistant-brand/).
+In case you have missed it, we decided to change the names we use here at Open Peer Power, you can read all about it in [this blog post](/blog/2020/01/29/changing-the-open-peer-power-brand/).
 
 Therefore, this is release 0.105 of the Open Peer Power Core!
 
@@ -47,7 +47,7 @@ We believe this feature makes Open Peer Power more robust, easier to use and mor
 
 ## Revamped Supervisor panel
 
-Remember we used to have a Hass.io panel? Well, with the [new naming](/blog/2020/01/29/changing-the-home-assistant-brand/) for Open Peer Power, it has been renamed to the Supervisor panel.
+Remember we used to have a Hass.io panel? Well, with the [new naming](/blog/2020/01/29/changing-the-open-peer-power-brand/) for Open Peer Power, it has been renamed to the Supervisor panel.
 
 So [@ludeeus] has been busy! He rewrote the entire Supervisor panel to match our current frontend technologies and added some really slick new visual elements to it.
 
@@ -894,7 +894,7 @@ Hats over your heart for these shuttered integrations. Pour one out for:
 - Bump aiobotocore to 0.11.1 ([@finnysamuel] - [#30951]) ([aws docs])
 - Use non-deprecated method of instantiating RainMachine client ([@bachya] - [#31149]) ([rainmachine docs])
 - Upgrade huawei-lte-api to 1.4.7 ([@scop] - [#31155]) ([huawei_lte docs])
-- Add unique IDs to automation/scenes ([@balloob] - [#31150]) ([automation docs]) ([config docs]) ([homeassistant docs]) ([script docs])
+- Add unique IDs to automation/scenes ([@balloob] - [#31150]) ([automation docs]) ([config docs]) ([openpeerpower docs]) ([script docs])
 - Add webostv sound_output capability ([@starkillerOG] - [#31121]) ([webostv docs])
 - Check that documentation urls are valid ([@rohankapoorcom] - [#31188]) ([solarlog docs])
 - Disable failing dsmr tests ([@frenck] - [#31202])
@@ -927,7 +927,7 @@ Hats over your heart for these shuttered integrations. Pour one out for:
 - Fix Plugwise climate issues ([@bouwew] - [#31209]) ([plugwise docs])
 - Fix reporting of battery sensor for Tesla ([@alandtse] - [#31232]) ([tesla docs])
 - Add channel-mapping for HomeMatic ([@danielperna84] - [#31178]) ([homematic docs])
-- Update homeassistant-pyozw to 0.1.8 ([@pvizeli] - [#31270]) ([zwave docs])
+- Update openpeerpower-pyozw to 0.1.8 ([@pvizeli] - [#31270]) ([zwave docs])
 - Upgrade pre-commit to 2.0.0 ([@frenck] - [#31267])
 - fix knx light turn_on with ct ([@farmio] - [#31184]) ([knx docs])
 - Fix example for set_datetime service ([@l3d00m] - [#31159])
@@ -1458,7 +1458,7 @@ Hats over your heart for these shuttered integrations. Pour one out for:
 [hassio docs]: /integrations/hassio/
 [hisense_aehw4a1 docs]: /integrations/hisense_aehw4a1/
 [hlk_sw16 docs]: /integrations/hlk_sw16/
-[homeassistant docs]: /integrations/homeassistant/
+[openpeerpower docs]: /integrations/openpeerpower/
 [homekit docs]: /integrations/homekit/
 [homematic docs]: /integrations/homematic/
 [homematicip_cloud docs]: /integrations/homematicip_cloud/
