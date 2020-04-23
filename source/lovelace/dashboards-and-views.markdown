@@ -9,31 +9,6 @@ You can define multiple dashboards that all have their own YAML file, and add cu
 
 The key of the dashboard is used as the URL, this needs to contain a hyphen (`-`).
 
-{% highlight yaml %}
-lovelace:
-  mode: yaml
-  # Include external resources only add when mode is yaml, otherwise manage in the resources in the lovelace configuration panel.
-  resources:
-    - url: /local/my-custom-card.js
-      type: module
-    - url: /local/my-webfont.css
-      type: css
-  # Add more dashboards
-  dashboards:
-    lovelace-generated: # Needs to contain a hyphen (-)
-      mode: yaml
-      filename: notexist.yaml
-      title: Generated
-      icon: mdi:tools
-      show_in_sidebar: true
-      require_admin: true
-    lovelace-hidden:
-      mode: yaml
-      title: hidden
-      show_in_sidebar: false
-      filename: hidden.yaml
-{% endhighlight %}
-
 {% configuration Lovelace %}
 mode:
   required: true
