@@ -6,7 +6,7 @@ ha_category:
 ha_release: 0.34
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: websocket_api
 ---
 
@@ -24,8 +24,6 @@ It is HIGHLY recommended that you set the `api_password`, especially if you are 
 # Example configuration.yaml entry
 websocket_api:
 {% endhighlight %}
-
-For details to use the WebSocket API, please refer to the [WebSocket API documentation](/developers/websocket_api/) .
 
 ## Track current connections
 

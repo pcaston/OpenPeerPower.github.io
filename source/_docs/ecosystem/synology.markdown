@@ -40,7 +40,7 @@ You can find more information [here](https://github.com/orobardet/dsm-reverse-pr
 
 #### HTTP Configuration
 
-- Copy the Open Peer Power specific Reverse Proxy settings from the existing `/etc/nginx/app.d/server.ReverseProxy.conf` file to `/usr/local/etc/nginx/conf.d/http.HomeAssistant.conf`.
+- Copy the Open Peer Power specific Reverse Proxy settings from the existing `/etc/nginx/app.d/server.ReverseProxy.conf` file to `/usr/local/etc/nginx/conf.d/http.OpenPeerPower.conf`.
 - Include these lines in the location declaration:
 
 {% highlight text %}

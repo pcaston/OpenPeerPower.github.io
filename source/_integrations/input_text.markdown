@@ -6,7 +6,7 @@ ha_category:
 ha_release: 0.53
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: input_text
 excerpt: none
 ---

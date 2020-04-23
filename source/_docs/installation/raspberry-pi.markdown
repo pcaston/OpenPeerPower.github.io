@@ -44,30 +44,30 @@ Install the dependencies.
 sudo apt-get install python3 python3-dev python3-venv python3-pip libffi-dev libssl-dev
 {% endhighlight %}
 
-Add an account for Open Peer Power Core called `homeassistant`.
+Add an account for Open Peer Power Core called `openpeerpower`.
 Since this account is only for running Open Peer Power Core the extra arguments of `-rm` is added to create a system account and create a home directory. The arguments `-G dialout,gpio,i2c` adds the user to the `dialout`, `gpio` and the `i2c` group. The first is required for using Z-Wave and Zigbee controllers, while the second is required to communicate with Raspberry's GPIO.
 
 {% highlight bash %}
-sudo useradd -rm homeassistant -G dialout,gpio,i2c
+sudo useradd -rm openpeerpower -G dialout,gpio,i2c
 {% endhighlight %}
 
-Next we will create a directory for the installation of Open Peer Power Core and change the owner to the `homeassistant` account.
+Next we will create a directory for the installation of Open Peer Power Core and change the owner to the `openpeerpower` account.
 
 {% highlight bash %}
 cd /srv
-sudo mkdir homeassistant
-sudo chown homeassistant:homeassistant homeassistant
+sudo mkdir openpeerpower
+sudo chown openpeerpower:openpeerpower openpeerpower
 {% endhighlight %}
 
-Next up is to create and change to a virtual environment for Open Peer Power Core. This will be done as the `homeassistant` account.
+Next up is to create and change to a virtual environment for Open Peer Power Core. This will be done as the `openpeerpower` account.
 
 {% highlight bash %}
-sudo -u homeassistant -H -s
-cd /srv/homeassistant
+sudo -u openpeerpower -H -s
+cd /srv/openpeerpower
 python3 -m venv .
 source bin/activate
 {% endhighlight %}
-Once you have activated the virtual environment (notice the prompt change to `(homeassistant) homeassistant@raspberrypi:/srv/homeassistant $`) you will need to run the following command to install a required Python package.
+Once you have activated the virtual environment (notice the prompt change to `(openpeerpower) openpeerpower@raspberrypi:/srv/openpeerpower $`) you will need to run the following command to install a required Python package.
 
 {% highlight bash %}
 python3 -m pip install wheel
@@ -76,10 +76,10 @@ python3 -m pip install wheel
 Once you have installed the required Python package it is now time to install Open Peer Power Core!
 
 {% highlight bash %}
-pip3 install homeassistant
+pip3 install openpeerpower
 {% endhighlight %}
 
-Start Open Peer Power Core for the first time. This will complete the installation for you, automatically creating the `.homeassistant` configuration directory in the `/home/homeassistant` directory, and installing any basic dependencies.
+Start Open Peer Power Core for the first time. This will complete the installation for you, automatically creating the `.openpeerpower` configuration directory in the `/home/openpeerpower` directory, and installing any basic dependencies.
 
 {% highlight bash %}
 hass
@@ -99,21 +99,21 @@ If you want to setup `hass` as a daemon and autostart it on boot please refer to
 To update to the latest version of Open Peer Power Core follow these simple steps:
 
 {% highlight bash %}
-sudo -u homeassistant -H -s
-source /srv/homeassistant/bin/activate
-pip3 install --upgrade homeassistant
+sudo -u openpeerpower -H -s
+source /srv/openpeerpower/bin/activate
+pip3 install --upgrade openpeerpower
 {% endhighlight %}
 
-Once the last command executes, restart the Open Peer Power Core service to apply the latest updates. Please keep in mind that some updates may take longer to start up than others. If Open Peer Power Core fails to start, make sure you check the **Breaking Changes** from the [Release Notes](https://github.com/home-assistant/home-assistant/releases).
+Once the last command executes, restart the Open Peer Power Core service to apply the latest updates. Please keep in mind that some updates may take longer to start up than others. If Open Peer Power Core fails to start, make sure you check the **Breaking Changes** from the [Release Notes](https://github.com/OpenPeerPower/Open-Peer-Power/releases).
 
 ### Run a specific version
 
 In the event that a Open Peer Power Core version doesn't play well with your hardware setup, you can downgrade to a previous release. For example:
 
 {% highlight bash %}
-sudo -u homeassistant -H -s
-source /srv/homeassistant/bin/activate
-pip3 install homeassistant==0.XX.X
+sudo -u openpeerpower -H -s
+source /srv/openpeerpower/bin/activate
+pip3 install openpeerpower==0.XX.X
 {% endhighlight %}
 
 ### Run the beta version
@@ -121,9 +121,9 @@ pip3 install homeassistant==0.XX.X
 If you would like to test next release before anyone else, you can install the beta version released every two weeks, for example:
 
 {% highlight bash %}
-sudo -u homeassistant -H -s
-source /srv/homeassistant/bin/activate
-pip3 install --pre --upgrade homeassistant
+sudo -u openpeerpower -H -s
+source /srv/openpeerpower/bin/activate
+pip3 install --pre --upgrade openpeerpower
 {% endhighlight %}
 
 ### Run the development version
@@ -137,9 +137,9 @@ If you want to stay on the bleeding-edge Open Peer Power Core development branch
 For example:
 
 {% highlight bash %}
-sudo -u homeassistant -H -s
-source /srv/homeassistant/bin/activate
-pip3 install --upgrade git+git://github.com/home-assistant/home-assistant.git@dev
+sudo -u openpeerpower -H -s
+source /srv/openpeerpower/bin/activate
+pip3 install --upgrade git+git://github.com/OpenPeerPower/Open-Peer-Power.git@dev
 {% endhighlight %}
 
 ### Activating the virtual environment
@@ -147,6 +147,6 @@ pip3 install --upgrade git+git://github.com/home-assistant/home-assistant.git@de
 When instructions tell you to activate the virtual environment, the following commands will do this:
 
 {% highlight bash %}
-sudo -u homeassistant -H -s
-source /srv/homeassistant/bin/activate
+sudo -u openpeerpower -H -s
+source /srv/openpeerpower/bin/activate
 {% endhighlight %}

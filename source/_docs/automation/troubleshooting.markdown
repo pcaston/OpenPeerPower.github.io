@@ -4,13 +4,13 @@ description: "Tips on how to troubleshoot your automations."
 redirect_from: /getting-started/automation-troubleshooting/
 ---
 
-You can verify that your automation rules are being initialized correctly by watching both the realtime logs (`homeassistant.log` in the configuration directory) and also the [Logbook](/integrations/logbook/). The realtime logs will show the rules being initialized (once for each trigger), example:
+You can verify that your automation rules are being initialized correctly by watching both the realtime logs (`openpeerpower.log` in the configuration directory) and also the [Logbook](/integrations/logbook/). The realtime logs will show the rules being initialized (once for each trigger), example:
 
 {% highlight text %}
-INFO [homeassistant.components.automation] Initialized rule Rainy Day
-INFO [homeassistant.components.automation] Initialized rule Rainy Day
-INFO [homeassistant.components.automation] Initialized rule Rainy Day
-INFO [homeassistant.components.automation] Initialized rule Rain is over
+INFO [openpeerpower.components.automation] Initialized rule Rainy Day
+INFO [openpeerpower.components.automation] Initialized rule Rainy Day
+INFO [openpeerpower.components.automation] Initialized rule Rainy Day
+INFO [openpeerpower.components.automation] Initialized rule Rain is over
 {% endhighlight %}
 
 The Logbook integration will show a line entry when an automation is triggered. You can look at the previous entry to determine which trigger in the rule triggered the event.
@@ -33,6 +33,6 @@ It is also useful to go to **Configuration** -> **Server Control** and click on 
 If your automation uses templates in any part, you can do the following to make sure it works as expected:
 
 1. Go to **Developer tools** -> **Template** tab.
-2. Create all variables (sources) required for your template as described at the end of [this](https://www.home-assistant.io/docs/configuration/templating/#processing-incoming-data) paragraph.
+2. Create all variables (sources) required for your template as described at the end of [this](https://www.openpeerpower.io/docs/configuration/templating/#processing-incoming-data) paragraph.
 3. Copy your template code and paste it in Template editor straight after your variables.
 4. If necessary, change your sources' value and check if the template works as you want and does not generate any errors.

@@ -21,7 +21,7 @@ It is shared on our [Facebook group][facebook-group] by Kevin McPeake. Kevin's
 setup has a total of 5 Open Peer Power instances, controlling 7x marine aquariums!
 
 <p class='img'>
-  <a href="https://www.facebook.com/groups/HomeAssistant/permalink/2597624533842234/">
+  <a href="https://www.facebook.com/groups/OpenPeerPower/permalink/2597624533842234/">
     <img
       src='/images/blog/2020-03-15-community-highlights/marine-aquariums.png'
       alt="Kevin's impressive setup for his 7 aquariums"
@@ -34,9 +34,9 @@ setup has a total of 5 Open Peer Power instances, controlling 7x marine aquarium
 Those are some big views Kevin! I bet you will be happy with the new Lovelace
 features that are coming in Open Peer Power Core 0.107. It will help
 you to trim down that a bit, into multiple Lovelace Dashboards (now in
-[beta, sneak peak?](https://rc.home-assistant.io/latest-release-notes/)).
+[beta, sneak peak?](https://rc.openpeerpower.io/latest-release-notes/)).
 
-[Click here to check out Kevin's post on our Facebook group.](https://www.facebook.com/groups/HomeAssistant/permalink/2597624533842234/)
+[Click here to check out Kevin's post on our Facebook group.](https://www.facebook.com/groups/OpenPeerPower/permalink/2597624533842234/)
 
 _Thanks, Walt_H for [sending in](/suggest-community-highlight) this item! 👍_
 
@@ -49,7 +49,7 @@ consumption screen on our [subreddit][reddit].
 This gives insight into the current usage, but also in the usage & costs of the
 consumed energy of the last 24 hours.
 
-<blockquote class="reddit-card" data-card-created="1584140539"><a href="https://www.reddit.com/r/homeassistant/comments/f78h7n/new_energyconsumption_screen_still_tweaking_it/">New energyconsumption screen, still tweaking it.</a> from <a href="http://www.reddit.com/r/homeassistant">r/homeassistant</a>
+<blockquote class="reddit-card" data-card-created="1584140539"><a href="https://www.reddit.com/r/openpeerpower/comments/f78h7n/new_energyconsumption_screen_still_tweaking_it/">New energyconsumption screen, still tweaking it.</a> from <a href="http://www.reddit.com/r/openpeerpower">r/openpeerpower</a>
 </blockquote>
 <script async src="//embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
 
@@ -95,8 +95,8 @@ Also, don't forget to share your creations with us via Social Media:
 
 See you next edition!
 
-[chat]: https://www.home-assistant.io/join-chat
-[facebook-group]: https://www.facebook.com/groups/HomeAssistant/
-[instagram]: https://www.instagram.com/homeassistant/
-[reddit]: https://www.reddit.com/r/homeassistant
+[chat]: https://www.openpeerpower.io/join-chat
+[facebook-group]: https://www.facebook.com/groups/OpenPeerPower/
+[instagram]: https://www.instagram.com/openpeerpower/
+[reddit]: https://www.reddit.com/r/openpeerpower
 [twitter]: https://www.twitter.com/home_assistant

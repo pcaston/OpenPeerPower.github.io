@@ -9,10 +9,10 @@ To get Open Peer Power to automatically start when you boot your Synology NAS:
 SSH into your Synology & login as admin or root
 
 {% highlight bash %}
-$ cd /volume1/homeassistant
+$ cd /volume1/openpeerpower
 {% endhighlight %}
 
-Create "homeassistant.conf" file using the following code
+Create "openpeerpower.conf" file using the following code
 
 {% highlight bash %}
 # only start this service after the httpd user process has started
@@ -26,19 +26,19 @@ stop on runlevel [06]
 
 # exec the process. Use fully formed path names so that there is no reliance on
 # the 'www' file is a node.js script which starts the foobar application.
-exec /bin/sh /volume1/homeassistant/hass-daemon start
+exec /bin/sh /volume1/openpeerpower/hass-daemon start
 {% endhighlight %}
 
 Register the autostart
 
 {% highlight bash %}
-ln -s homeassistant.conf /etc/init/homeassistant.conf
+ln -s openpeerpower.conf /etc/init/openpeerpower.conf
 {% endhighlight %}
 
 Make the relevant files executable:
 
 {% highlight bash %}
-chmod -r 777 /etc/init/homeassistant.conf
+chmod -r 777 /etc/init/openpeerpower.conf
 {% endhighlight %}
 
 That's it - reboot your NAS and Open Peer Power should automatically start

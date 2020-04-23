@@ -40,13 +40,13 @@ You can read Zane's full blog post here:
 
 <https://www.technicallywizardry.com/iot-cars-vans-home-automation/>
 
-He also made his Open Peer Power configuration [publicly available on GitHub](https://github.com/zaneclaes/van-home-assistant-config).
+He also made his Open Peer Power configuration [publicly available on GitHub](https://github.com/zaneclaes/van-open-peer-power-config).
 
 _Thanks, [Robbie Trencheny](https://twitter.com/robbie) & [cgtobi](https://twitter.com/cgtobi) for sending in this item in! 👍_
 
 ## An auto-generating Lovelace UI theme
 
-Dwain Scheeren shared a preview of his Lovelace theme on the [Open Peer Power Community Forum]((https://community.home-assistant.io/t/dwains-theme-an-auto-generating-lovelace-ui-theme/168593)). The cool think about this theme, is that it automatically generates itself!
+Dwain Scheeren shared a preview of his Lovelace theme on the [Open Peer Power Community Forum]((https://community.openpeerpower.io/t/dwains-theme-an-auto-generating-lovelace-ui-theme/168593)). The cool think about this theme, is that it automatically generates itself!
 
 <div class='videoWrapper'>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Wdh0q8K3JSk" frameborder="0" allowfullscreen></iframe>
@@ -54,7 +54,7 @@ Dwain Scheeren shared a preview of his Lovelace theme on the [Open Peer Power Co
 
 Unfortunately, the source code for this isn't available yet, however, Dwain wrote on the forums that he is planning on releasing it soon. We are looking forward to that, Dwain!
 
-You can follow the development of this theme on the [dedicated topic for it on our Community Forum](https://community.home-assistant.io/t/dwains-theme-an-auto-generating-lovelace-ui-theme/168593).
+You can follow the development of this theme on the [dedicated topic for it on our Community Forum](https://community.openpeerpower.io/t/dwains-theme-an-auto-generating-lovelace-ui-theme/168593).
 
 ## Visualizing everything in Grafana
 
@@ -84,8 +84,8 @@ Also, don't forget to share your creations with us via Social Media:
 
 See you next edition!
 
-[chat]: https://www.home-assistant.io/join-chat
-[facebook-group]: https://www.facebook.com/groups/HomeAssistant/
-[instagram]: https://www.instagram.com/homeassistant/
-[reddit]: https://www.reddit.com/r/homeassistant
+[chat]: https://www.openpeerpower.io/join-chat
+[facebook-group]: https://www.facebook.com/groups/OpenPeerPower/
+[instagram]: https://www.instagram.com/openpeerpower/
+[reddit]: https://www.reddit.com/r/openpeerpower
 [twitter]: https://www.twitter.com/home_assistant

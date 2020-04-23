@@ -32,9 +32,9 @@ sudo service hass-daemon install
 
 ## 5. Create logrotate rule
 
-This logrotate script at `/etc/logrotate.d/homeassistant` will create an outage of a few seconds every week at night. If you do not want this add `--log-rotate-days 7` to the `FLAGS` variable in the init script.
+This logrotate script at `/etc/logrotate.d/openpeerpower` will create an outage of a few seconds every week at night. If you do not want this add `--log-rotate-days 7` to the `FLAGS` variable in the init script.
 
-File `/var/log/homeassistant/home-assistant.log`:
+File `/var/log/openpeerpower/open-peer-power.log`:
 
 {% highlight text %}
 {
@@ -55,7 +55,7 @@ File `/var/log/homeassistant/home-assistant.log`:
 
 That's it. Restart your machine and Open Peer Power should start automatically.
 
-If Open Peer Power does not start, check the log file output for errors at `/var/log/homeassistant/home-assistant.log`
+If Open Peer Power does not start, check the log file output for errors at `/var/log/openpeerpower/open-peer-power.log`
 
 ### Extra: Running commands before Open Peer Power executes
 
@@ -79,12 +79,12 @@ If any commands need to run before executing Open Peer Power (like loading a vir
 PRE_EXEC=""
 # Typically /usr/bin/hass
 HASS_BIN="hass"
-RUN_AS="homeassistant"
+RUN_AS="openpeerpower"
 PID_DIR="/var/run/hass"
 PID_FILE="$PID_DIR/hass.pid"
-CONFIG_DIR="/var/opt/homeassistant"
-LOG_DIR="/var/log/homeassistant"
-LOG_FILE="$LOG_DIR/home-assistant.log"
+CONFIG_DIR="/var/opt/openpeerpower"
+LOG_DIR="/var/log/openpeerpower"
+LOG_FILE="$LOG_DIR/open-peer-power.log"
 FLAGS="-v --config $CONFIG_DIR --pid-file $PID_FILE --log-file $LOG_FILE --daemon"
 
 
@@ -197,15 +197,15 @@ esac
 
 # /etc/init.d Service Script for Open Peer Power
 # Created with: https://gist.github.com/naholyr/4275302#file-new-service-sh
-PRE_EXEC="cd /srv/homeassistant; python3 -m venv .; source bin/activate;"
+PRE_EXEC="cd /srv/openpeerpower; python3 -m venv .; source bin/activate;"
 # Typically /usr/bin/hass
 HASS_BIN="hass"
-RUN_AS="homeassistant"
+RUN_AS="openpeerpower"
 PID_DIR="/var/run/hass"
 PID_FILE="$PID_DIR/hass.pid"
-CONFIG_DIR="/home/$RUN_AS/.homeassistant"
-LOG_DIR="/var/log/homeassistant"
-LOG_FILE="$LOG_DIR/home-assistant.log"
+CONFIG_DIR="/home/$RUN_AS/.openpeerpower"
+LOG_DIR="/var/log/openpeerpower"
+LOG_FILE="$LOG_DIR/open-peer-power.log"
 FLAGS="-v --config $CONFIG_DIR --pid-file $PID_FILE --log-file $LOG_FILE --daemon"
 
 start() {

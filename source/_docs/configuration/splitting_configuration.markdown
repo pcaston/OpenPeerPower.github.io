@@ -16,7 +16,7 @@ Now despite the logical assumption that the `configuration.yaml` will be replace
 In this lighter version we will still need what could be called the core snippet:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   # Name of the location where Open Peer Power is running
   name: My Open Peer Power Instance
   # Location required to calculate the time the sun rises and sets
@@ -29,7 +29,7 @@ homeassistant:
   customize: !include customize.yaml
 {% endhighlight %}
 
-Note that each line after `homeassistant:` is indented two (2) spaces. Since the configuration files in Open Peer Power are based on the YAML language, indentation and spacing are important. Also note that seemingly strange entry under `customize:`.
+Note that each line after `openpeerpower:` is indented two (2) spaces. Since the configuration files in Open Peer Power are based on the YAML language, indentation and spacing are important. Also note that seemingly strange entry under `customize:`.
 
 `!include filename.yaml` is the statement that tells Open Peer Power to insert the contents of `filename.yaml` at that point. This is how we are going to break a monolithic and hard to read file (when it gets big) into more manageable chunks.
 
@@ -148,7 +148,7 @@ You'll notice that this example includes a secondary parameter section (under th
 
 That about wraps it up.
 
-If you have issues checkout `home-assistant.log` in the configuration directory as well as your indentations. If all else fails, head over to our [Discord chat server][discord] and ask away.
+If you have issues checkout `open-peer-power.log` in the configuration directory as well as your indentations. If all else fails, head over to our [Discord chat server][discord] and ask away.
 
 ## Debugging multiple configuration files
 
@@ -173,7 +173,7 @@ These work recursively. As an example using `!include_dir_* automation`, will in
 
 {% highlight bash %}
 .
-└── .homeassistant
+└── .openpeerpower
     ├── automation
     │   ├── lights
     │   │   ├── turn_light_off_bedroom.yaml

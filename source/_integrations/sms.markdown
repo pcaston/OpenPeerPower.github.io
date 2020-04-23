@@ -38,7 +38,7 @@ notify:
 
 To use notifications, please see the [getting started with automation page](/getting-started/automation/).
 
-If the integration is used with the Open Peer Power Operating System, then version [3.6](https://github.com/home-assistant/hassos/releases/tag/3.6) or higher is required.
+If the integration is used with the Open Peer Power Operating System, then version [3.6](https://github.com/OpenPeerPower/hassos/releases/tag/3.6) or higher is required.
 
 For installations not running on Open Peer Power or Open Peer Power Core using Docker, you must install `gammu-dev` package:
 
@@ -108,4 +108,4 @@ If the device is still not recognized, remove the parameter -X from the usb_mode
 
 ## More details:
 
-- [Original thread discussion](https://community.home-assistant.io/t/send-sms-with-usb-gsm-modem-when-alarm-triggered/28942/38)
+- [Original thread discussion](https://community.openpeerpower.io/t/send-sms-with-usb-gsm-modem-when-alarm-triggered/28942/38)

@@ -33,7 +33,7 @@ automation:
         before: '23:00:00'
     action:
       # With a single service call, we don't need a '-' before service - though you can if you want to
-      service: homeassistant.turn_on
+      service: openpeerpower.turn_on
       entity_id: group.living_room
 
 # Turn off lights when everybody leaves the house

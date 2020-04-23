@@ -6,7 +6,7 @@ redirect_from: /getting-started/installation-synology/
 
 <div class='note warning'>
 
-Synology only provide Python 3.5.1, which is not compatible with Open Peer Power 0.65.0 or later. Until Synology offer an updated version of Python, Open Peer Power 0.64 is the most recent version that will be able to be installed. You can manually specify the version of Open Peer Power to install, for example to install version 0.64.3 you would do `./python3 -m pip install homeassistant==0.64.3`
+Synology only provide Python 3.5.1, which is not compatible with Open Peer Power 0.65.0 or later. Until Synology offer an updated version of Python, Open Peer Power 0.64 is the most recent version that will be able to be installed. You can manually specify the version of Open Peer Power to install, for example to install version 0.64.3 you would do `./python3 -m pip install openpeerpower==0.64.3`
 
 </div>
 
@@ -33,7 +33,7 @@ Running these commands will:
 Using the Synology webadmin:
 
 - Install python3 using the Synology Package Center
-- Create a `homeassistant` user and add to the "users" group
+- Create a `openpeerpower` user and add to the "users" group
 
 SSH onto your Synology & login as admin or root
 
@@ -59,16 +59,16 @@ Install PIP (Python's package management system)
 Use PIP to install the Open Peer Power package 0.64.3
 
 {% highlight bash %}
-# ./python3 -m pip install homeassistant==0.64.3
+# ./python3 -m pip install openpeerpower==0.64.3
 {% endhighlight %}
 
 Create a Open Peer Power configuration directory & switch to it
 
 {% highlight bash %}
-# mkdir /volume1/homeassistant
-# chown homeassistant /volume1/homeassistant 
-# chmod 755 /volume1/homeassistant
-# cd /volume1/homeassistant
+# mkdir /volume1/openpeerpower
+# chown openpeerpower /volume1/openpeerpower 
+# chmod 755 /volume1/openpeerpower
+# cd /volume1/openpeerpower
 {% endhighlight %}
 
 Hint: alternatively you can also create a "Shared Folder" via Synology WebUI (e.g., via "File Station") - this has the advantage that the folder is visible via "File Station".
@@ -79,18 +79,18 @@ Create hass-daemon file using the following code (edit the variables in uppercas
 #!/bin/sh
 
 # Package
-PACKAGE="homeassistant"
+PACKAGE="openpeerpower"
 DNAME="Open Peer Power"
 
 # Others
-USER="homeassistant"
+USER="openpeerpower"
 PYTHON_DIR="/volume1/@appstore/py3k/usr/local/bin"
 PYTHON="$PYTHON_DIR/python3"
 HASS="$PYTHON_DIR/hass"
-INSTALL_DIR="/volume1/homeassistant"
-PID_FILE="$INSTALL_DIR/home-assistant.pid"
+INSTALL_DIR="/volume1/openpeerpower"
+PID_FILE="$INSTALL_DIR/open-peer-power.pid"
 FLAGS="-v --config $INSTALL_DIR --pid-file $PID_FILE --daemon"
-REDIRECT="> $INSTALL_DIR/home-assistant.log 2>&1"
+REDIRECT="> $INSTALL_DIR/open-peer-power.log 2>&1"
 
 start_daemon ()
 {
@@ -184,20 +184,20 @@ Create links to Python folders to make things easier in the future:
 
 {% highlight bash %}
 # ln -s /volume1/@appstore/py3k/usr/local/bin/python3 python3
-# ln -s /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/homeassistant homeassistant
+# ln -s /volume1/@appstore/py3k/usr/local/lib/python3.5/site-packages/openpeerpower openpeerpower
 {% endhighlight %}
 
 Set the owner and permissions on your configuration folder
 
 {% highlight bash %}
-# chown -R homeassistant:users /volume1/homeassistant
-# chmod -R 664 /volume1/homeassistant
+# chown -R openpeerpower:users /volume1/openpeerpower
+# chmod -R 664 /volume1/openpeerpower
 {% endhighlight %}
 
 Make the daemon file executable:
 
 {% highlight bash %}
-# chmod 755 /volume1/homeassistant/hass-daemon
+# chmod 755 /volume1/openpeerpower/hass-daemon
 {% endhighlight %}
 
 Update your firewall (if it is turned on the Synology device):
@@ -221,23 +221,23 @@ Here are some useful commands:
 - Start Open Peer Power:
 
 {% highlight bash %}
-$ sudo /volume1/homeassistant/hass-daemon start
+$ sudo /volume1/openpeerpower/hass-daemon start
 {% endhighlight %}
 
 - Stop Open Peer Power:
 
 {% highlight bash %}
-$ sudo /volume1/homeassistant/hass-daemon stop
+$ sudo /volume1/openpeerpower/hass-daemon stop
 {% endhighlight %}
 
 - Restart Open Peer Power:
 
 {% highlight bash %}
-$ sudo /volume1/homeassistant/hass-daemon restart
+$ sudo /volume1/openpeerpower/hass-daemon restart
 {% endhighlight %}
 
 - Upgrade Open Peer Power::
 
 {% highlight bash %}
-$  /volume1/@appstore/py3k/usr/local/bin/python3 -m pip install --upgrade homeassistant
+$  /volume1/@appstore/py3k/usr/local/bin/python3 -m pip install --upgrade openpeerpower
 {% endhighlight %}

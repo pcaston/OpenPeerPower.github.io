@@ -6,7 +6,7 @@ ha_category:
 ha_release: 0.23
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: persistent_notification
 ---
 
@@ -101,12 +101,12 @@ The message attribute supports the [Markdown formatting syntax](https://daringfi
 | Newline | `\n` |
 | Bold | `**My bold text**` |
 | Cursive | `*My cursive text*` |
-| Link | `[Link](https://home-assistant.io/)` |
+| Link | `[Link](https://openpeerpower.io/)` |
 | Image | `![image](/local/my_image.jpg)` |
 
 <div class="note">
 
-  `/local/` in this context refers to the `.homeassistant/www/` folder.
+  `/local/` in this context refers to the `.openpeerpower/www/` folder.
 
 </div>
 

@@ -30,7 +30,7 @@ Now let's make a change using the file editor: we are going to change the name, 
  - Click the `configuration.yaml` file (in the `/config/` folder) to load it into the main file editor window.
  - Add the following to this file (preferably at the very top, but it ultimately doesn't matter):
  {% highlight yaml %}
-     homeassistant:
+     openpeerpower:
        name: Home
        latitude: xx.xxxx
        longitude: xx.xxxx
@@ -64,4 +64,4 @@ Maybe you are not a big fan of our web editor and want to use a text editor on y
 
 Go to the add-on store and look for Samba in the core section. After you have installed the add-on, click on START. Open Peer Power should now be available in the networking tab on your computer.
 
-We suggest that to edit `configuration.yaml`, you use the free text editor [Visual Studio Code](https://code.visualstudio.com/) in combination with the [Open Peer Power Configuration Helper extension](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-home-assistant).
+We suggest that to edit `configuration.yaml`, you use the free text editor [Visual Studio Code](https://code.visualstudio.com/) in combination with the [Open Peer Power Configuration Helper extension](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-open-peer-power).

@@ -13,7 +13,7 @@ The workflow for moving private information to `secrets.yaml` is very similar to
 The entries for password and API keys in the `configuration.yaml` file usually looks like the example below.
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   auth_providers:
    - type: legacy_api_password
      api_password: YOUR_PASSWORD
@@ -22,7 +22,7 @@ homeassistant:
 Those entries need to be replaced with `!secret` and an identifier.
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   auth_providers:
    - type: legacy_api_password
      api_password: !secret http_password

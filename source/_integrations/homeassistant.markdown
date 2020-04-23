@@ -1,36 +1,36 @@
 ---
 title: Open Peer Power Core Integration
-description: Description of the homeassistant integration.
+description: Description of the openpeerpower integration.
 ha_release: 0.0
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
-ha_domain: homeassistant
+  - '@open-peer-power/core'
+ha_domain: openpeerpower
 ---
 
-The Open Peer Power integration provides generic implementations like the generic `homeassistant.turn_on`.
+The Open Peer Power integration provides generic implementations like the generic `openpeerpower.turn_on`.
 
 ## Services
 
-The `homeassistant` integration provides services for controlling Open Peer Power itself, as well as generic controls for any entity.
+The `openpeerpower` integration provides services for controlling Open Peer Power itself, as well as generic controls for any entity.
 
-### Service `homeassistant.check_config`
+### Service `openpeerpower.check_config`
 
 Reads the configuration files and checks them for correctness, but **does not** load them into Open Peer Power. Creates a persistent notification and log entry if errors are found.
 
-### Service `homeassistant.reload_core_config`
+### Service `openpeerpower.reload_core_config`
 
 Loads the main configuration file (`configuration.yaml`) and all linked files. Once loaded the new configuration is applied.
 
-### Service `homeassistant.restart`
+### Service `openpeerpower.restart`
 
 Restarts the Open Peer Power instance (also reloading the configuration on start).
 
-### Service `homeassistant.stop`
+### Service `openpeerpower.stop`
 
 Stops the Open Peer Power instance. Open Peer Power must be restarted from the Host device to run again.
 
-### Service `homeassistant.set_location`
+### Service `openpeerpower.set_location`
 
 Update the location of the Open Peer Power default zone (usually "Home").
 
@@ -43,13 +43,13 @@ Update the location of the Open Peer Power default zone (usually "Home").
 
 {% highlight yaml %}
 action:
-  service: homeassistant.set_location
+  service: openpeerpower.set_location
   data:
     latitude: 32.87336
     longitude: 117.22743
 {% endhighlight %}
 
-### Service `homeassistant.toggle` 
+### Service `openpeerpower.toggle` 
 
 Generic service to toggle devices on/off under any domain. Same usage as the light.turn_on, switch.turn_on, etc. services.
 
@@ -61,12 +61,12 @@ Generic service to toggle devices on/off under any domain. Same usage as the lig
 
 {% highlight yaml %}
 action:
-  service: homeassistant.toggle
+  service: openpeerpower.toggle
   data:
     entity_id: light.living_room
 {% endhighlight %}
 
-#### Service `homeassistant.turn_on` 
+#### Service `openpeerpower.turn_on` 
 
 Generic service to turn devices on under any domain. Same usage as the light.turn_on, switch.turn_on, etc. services.
 
@@ -78,12 +78,12 @@ Generic service to turn devices on under any domain. Same usage as the light.tur
 
 {% highlight yaml %}
 action:
-  service: homeassistant.turn_on
+  service: openpeerpower.turn_on
   data:
     entity_id: light.living_room
 {% endhighlight %}
 
-### Service `homeassistant.turn_off` 
+### Service `openpeerpower.turn_off` 
 
 Generic service to turn devices off under any domain. Same usage as the light.turn_on, switch.turn_on, etc. services.
 
@@ -95,12 +95,12 @@ Generic service to turn devices off under any domain. Same usage as the light.tu
 
 {% highlight yaml %}
 action:
-  service: homeassistant.turn_off
+  service: openpeerpower.turn_off
   data:
     entity_id: light.living_room
 {% endhighlight %}
 
-### Service `homeassistant.update_entity` 
+### Service `openpeerpower.update_entity` 
 
 Force one or more entities to update its data rather than wait for the next scheduled update.
 
@@ -112,7 +112,7 @@ Force one or more entities to update its data rather than wait for the next sche
 
 {% highlight yaml %}
 action:
-  service: homeassistant.update_entity
+  service: openpeerpower.update_entity
   data:
     entity_id:
     - light.living_room

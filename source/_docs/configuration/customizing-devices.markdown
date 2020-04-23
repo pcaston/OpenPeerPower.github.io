@@ -25,7 +25,7 @@ By default, all of your devices will be visible and have a default icon determin
 Under the *Configuration* menu you'll find the *Customization* menu. If this menu item is not visible, enable advanced mode on your [profile page](/docs/authentication/#your-account-profile) first. When you select an entity to customize, you'll see all the existing attributes listed and you can customize those or select an additional supported attribute ([see below](/docs/configuration/customizing-devices/#possible-values)). You may also need to add the following to your `configuration.yaml` file, depending when you started using Open Peer Power:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   customize: !include customize.yaml
 {% endhighlight %}
 
@@ -83,12 +83,12 @@ Device class is currently supported by the following components:
 
 <div class='note'>
 
-If you implement `customize`, `customize_domain`, or `customize_glob` you must make sure it is done inside of `homeassistant:` or it will fail.
+If you implement `customize`, `customize_domain`, or `customize_glob` you must make sure it is done inside of `openpeerpower:` or it will fail.
 
 </div>
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   name: Home
   unit_system: metric
   # etc
@@ -125,7 +125,7 @@ homeassistant:
 
 ### Reloading customize
 
- Open Peer Power offers a service to reload the core configuration while Open Peer Power is running called `homeassistant.reload_core_config`. This allows you to change your customize section and see it being applied without having to restart Open Peer Power. To call this service, go to the "Service" tab under Developer Tools, select the `homeassistant.reload_core_config` service and click the "CALL SERVICE" button. Alternatively, you can press the "Reload Location & Customizations" button under Configuration > Server Control.
+ Open Peer Power offers a service to reload the core configuration while Open Peer Power is running called `openpeerpower.reload_core_config`. This allows you to change your customize section and see it being applied without having to restart Open Peer Power. To call this service, go to the "Service" tab under Developer Tools, select the `openpeerpower.reload_core_config` service and click the "CALL SERVICE" button. Alternatively, you can press the "Reload Location & Customizations" button under Configuration > Server Control.
 
 <div class='note warning'>
 New customize information will be applied the next time the state of the entity gets updated.

@@ -4,7 +4,7 @@ description: Internal search module for Open Peer Power.
 ha_category: []
 ha_release: 0.105
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: search
 ---
 

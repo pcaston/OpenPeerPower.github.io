@@ -8,7 +8,7 @@ redirect_from: /topics/platform_options/
 These options are being phased out and are only available for single platform integrations.
 </div>
 
-Some integrations or platforms (those that are based on the [entity](https://github.com/home-assistant/home-assistant/blob/dev/homeassistant/helpers/entity.py) class) allows various extra options to be set.
+Some integrations or platforms (those that are based on the [entity](https://github.com/OpenPeerPower/Open-Peer-Power/blob/dev/openpeerpower/helpers/entity.py) class) allows various extra options to be set.
 
 ### Entity namespace
 

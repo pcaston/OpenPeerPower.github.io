@@ -113,12 +113,6 @@ If you want to have your automations and/or battery in your Lovelace UI, you can
         light.ceiling: off
   {% endhighlight %}
 
-## Custom cards
-
-Are you the creator of an awesome custom card for Lovelace?
-
-We have made some changes to Lovelace that might impact your custom card, so be sure to read the [blog post](https://developers.home-assistant.io/blog/2020/02/18/106-custom-card-changes.html) on the developers site about this.
-
 ## New Integrations
 
 - Add Salt Fiber Box device tracker ([@bjornorri] - [#30986]) ([salt docs]) (new-integration)
@@ -137,9 +131,9 @@ We have made some changes to Lovelace that might impact your custom card, so be 
 
 ## If you need help...
 
-...don't hesitate to use our very active [forums](https://community.home-assistant.io/) or join us for a little [chat](https://discord.gg/c5DvZ4e).
+...don't hesitate to use our very active [forums](https://community.openpeerpower.io/) or join us for a little [chat](https://discord.gg/c5DvZ4e).
 
-Experiencing issues introduced by this release? Please report them in our [issue tracker](https://github.com/home-assistant/home-assistant/issues). Make sure to fill in all fields of the issue template.
+Experiencing issues introduced by this release? Please report them in our [issue tracker](https://github.com/OpenPeerPower/Open-Peer-Power/issues). Make sure to fill in all fields of the issue template.
 
 <!--more-->
 
@@ -195,7 +189,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 
 - **Orange Livebox Play TV** - The Orange Livebox Play TV integration has been removed. A change to the site scraped with this integration has changed, causing the integration to break. This integration violated our design decisions and is therefore removed. - ([@frenck] - [#31525]) (breaking change)
 
-- **Core** - Only administrator users can stop or restart Open Peer Power. - ([@balloob] - [#31509]) ([homeassistant docs])
+- **Core** - Only administrator users can stop or restart Open Peer Power. - ([@balloob] - [#31509]) ([openpeerpower docs])
 
 - **Sure Petcare** - Sure Petcare supports new features and has improved existing features. As a result, you will want to note that the format of the `feeders`/`flaps`/`pets` options changed from a map (`id`/`name`) to a simple list of IDs, which means the `name` option is removed. The `name` is now gathered directly from the Sure Petcare API but changeable via the HA UI.
 
@@ -308,7 +302,7 @@ Experiencing issues introduced by this release? Please report them in our [issue
 - Fix Plex sensor title handling ([@jjlawren] - [#31973]) ([plex docs]) (beta fix)
 - Bump ZHA quirks and add skip configuration support ([@dmulcahey] - [#31982]) ([zha docs]) (beta fix)
 - Fix bug in ecobee integration ([@marthoc] - [#32008]) ([ecobee docs]) (beta fix)
-- Fix recursion bug ([@balloob] - [#32009]) ([homeassistant docs]) (beta fix)
+- Fix recursion bug ([@balloob] - [#32009]) ([openpeerpower docs]) (beta fix)
 - Don't return coroutine in DLNA/DMR service handler ([@tsvi] - [#32011]) ([dlna_dmr docs]) (beta fix)
 - Bump pyatmo to 3.2.4 ([@cgtobi] - [#32018]) ([netatmo docs]) (beta fix)
 - Add missing name to logging in DataUpdateCoordinator ([@MatthewFlamm] - [#32023]) (beta fix)
@@ -345,13 +339,13 @@ Experiencing issues introduced by this release? Please report them in our [issue
 - deCONZ - Race condition on slower systems ([@Kane610] - [#32274]) ([deconz docs])
 - Catch more Hue errors ([@balloob] - [#32275]) ([hue docs])
 
-[#32215]: https://github.com/home-assistant/home-assistant/pull/32215
-[#32216]: https://github.com/home-assistant/home-assistant/pull/32216
-[#32222]: https://github.com/home-assistant/home-assistant/pull/32222
-[#32233]: https://github.com/home-assistant/home-assistant/pull/32233
-[#32273]: https://github.com/home-assistant/home-assistant/pull/32273
-[#32274]: https://github.com/home-assistant/home-assistant/pull/32274
-[#32275]: https://github.com/home-assistant/home-assistant/pull/32275
+[#32215]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32215
+[#32216]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32216
+[#32222]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32222
+[#32233]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32233
+[#32273]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32273
+[#32274]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32274
+[#32275]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32275
 [@Kane610]: https://github.com/Kane610
 [@bachya]: https://github.com/bachya
 [@balloob]: https://github.com/balloob
@@ -372,10 +366,10 @@ Experiencing issues introduced by this release? Please report them in our [issue
 - UniFi - Temporary workaround to get device tracker to mark cli… ([@Kane610] - [#32321]) ([unifi docs])
 - Ensure rest sensors are marked unavailable when http requests… ([@bdraco] - [#32309]) ([rest docs])
 
-[#32309]: https://github.com/home-assistant/home-assistant/pull/32309
-[#32312]: https://github.com/home-assistant/home-assistant/pull/32312
-[#32319]: https://github.com/home-assistant/home-assistant/pull/32319
-[#32321]: https://github.com/home-assistant/home-assistant/pull/32321
+[#32309]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32309
+[#32312]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32312
+[#32319]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32319
+[#32321]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32321
 [@Kane610]: https://github.com/Kane610
 [@balloob]: https://github.com/balloob
 [@bdraco]: https://github.com/bdraco
@@ -397,11 +391,11 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Coronavirus updates ([@balloob] - [#32417])
 - Add unique ID to coronavirus ([@balloob] - [#32423])
 
-[#32329]: https://github.com/home-assistant/core/pull/32329
-[#32363]: https://github.com/home-assistant/core/pull/32363
-[#32410]: https://github.com/home-assistant/core/pull/32410
-[#32417]: https://github.com/home-assistant/core/pull/32417
-[#32423]: https://github.com/home-assistant/core/pull/32423
+[#32329]: https://github.com/OpenPeerPower/core/pull/32329
+[#32363]: https://github.com/OpenPeerPower/core/pull/32363
+[#32410]: https://github.com/OpenPeerPower/core/pull/32410
+[#32417]: https://github.com/OpenPeerPower/core/pull/32417
+[#32423]: https://github.com/OpenPeerPower/core/pull/32423
 [@balloob]: https://github.com/balloob
 [@elmurato]: https://github.com/elmurato
 [@mezz64]: https://github.com/mezz64
@@ -417,12 +411,12 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Remove hassfest blacklisted rest ([@balloob] - [#32441])
 - UniFi - Fix websocket bug ([@Kane610] - [#32449])
 
-[#32426]: https://github.com/home-assistant/core/pull/32426
-[#32427]: https://github.com/home-assistant/core/pull/32427
-[#32435]: https://github.com/home-assistant/core/pull/32435
-[#32440]: https://github.com/home-assistant/core/pull/32440
-[#32441]: https://github.com/home-assistant/core/pull/32441
-[#32449]: https://github.com/home-assistant/core/pull/32449
+[#32426]: https://github.com/OpenPeerPower/core/pull/32426
+[#32427]: https://github.com/OpenPeerPower/core/pull/32427
+[#32435]: https://github.com/OpenPeerPower/core/pull/32435
+[#32440]: https://github.com/OpenPeerPower/core/pull/32440
+[#32441]: https://github.com/OpenPeerPower/core/pull/32441
+[#32449]: https://github.com/OpenPeerPower/core/pull/32449
 [@Kane610]: https://github.com/Kane610
 [@alandtse]: https://github.com/alandtse
 [@axilleas]: https://github.com/axilleas
@@ -436,10 +430,10 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Update python-velbus to fix a missing data file ([@Cereal2nd] - [#32580]) ([velbus docs])
 - Upgrade to coronavirus 1.1.0 ([@balloob] - [#32648]) ([coronavirus docs])
 
-[#32400]: https://github.com/home-assistant/core/pull/32400
-[#32516]: https://github.com/home-assistant/core/pull/32516
-[#32580]: https://github.com/home-assistant/core/pull/32580
-[#32648]: https://github.com/home-assistant/core/pull/32648
+[#32400]: https://github.com/OpenPeerPower/core/pull/32400
+[#32516]: https://github.com/OpenPeerPower/core/pull/32516
+[#32580]: https://github.com/OpenPeerPower/core/pull/32580
+[#32648]: https://github.com/OpenPeerPower/core/pull/32648
 [@Cereal2nd]: https://github.com/Cereal2nd
 [@Quentame]: https://github.com/Quentame
 [@balloob]: https://github.com/balloob
@@ -527,7 +521,7 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Add Minecraft Server Integration ([@elmurato] - [#30992]) ([minecraft_server docs]) (new-integration)
 - Extract services from init.py for HomematicIP Cloud ([@SukramJ] - [#31376]) ([homematicip_cloud docs])
 - Fix exceptions when using newer Samsung TVs ([@escoand] - [#31602]) ([samsungtv docs])
-- Clean up core services ([@balloob] - [#31509]) ([group docs]) ([homeassistant docs]) (breaking change)
+- Clean up core services ([@balloob] - [#31509]) ([group docs]) ([openpeerpower docs]) (breaking change)
 - Bump denonavr to 0.7.12 ([@scarface-4711] - [#31629]) ([denonavr docs])
 - Actually enable alarmdecoder to see open/close state of bypassed RF zones when armed ([@melyux] - [#31426]) ([alarmdecoder docs])
 - Use slug in ping device tracker config validation ([@springstan] - [#31329]) ([ifttt docs]) ([media_extractor docs]) ([onewire docs]) ([ping docs])
@@ -645,7 +639,7 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Upgrade aiohue ([@balloob] - [#31903]) ([hue docs])
 - Add POD support, sleep fitness sensor to EightSleep ([@mezz64] - [#31874]) ([eight_sleep docs])
 - Add logger name to system log ([@balloob] - [#31902]) ([system_log docs])
-- Allow specifying an icon for a scene ([@balloob] - [#31898]) ([homeassistant docs])
+- Allow specifying an icon for a scene ([@balloob] - [#31898]) ([openpeerpower docs])
 - Add icons to scripts ([@balloob] - [#31899]) ([script docs])
 - Bump dependency to 0.10.17 for HomematicIP Cloud ([@SukramJ] - [#31911]) ([homematicip_cloud docs])
 - Start safe mode if invalid core conf ([@balloob] - [#31904])
@@ -690,7 +684,7 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Fix Plex sensor title handling ([@jjlawren] - [#31973]) ([plex docs]) (beta fix)
 - Bump ZHA quirks and add skip configuration support ([@dmulcahey] - [#31982]) ([zha docs]) (beta fix)
 - Fix bug in ecobee integration ([@marthoc] - [#32008]) ([ecobee docs]) (beta fix)
-- Fix recursion bug ([@balloob] - [#32009]) ([homeassistant docs]) (beta fix)
+- Fix recursion bug ([@balloob] - [#32009]) ([openpeerpower docs]) (beta fix)
 - Don't return coroutine in DLNA/DMR service handler ([@tsvi] - [#32011]) ([dlna_dmr docs]) (beta fix)
 - Bump pyatmo to 3.2.4 ([@cgtobi] - [#32018]) ([netatmo docs]) (beta fix)
 - Add missing name to logging in DataUpdateCoordinator ([@MatthewFlamm] - [#32023]) (beta fix)
@@ -717,271 +711,271 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 - Updated frontend to 20200220.4 ([@bramkragten] - [#32205]) ([frontend docs]) (beta fix)
 - Remove deprecated Hue options (fixes CI) ([@frenck] - [#32027]) ([hue docs]) (breaking change) (beta fix)
 
-[#27341]: https://github.com/home-assistant/home-assistant/pull/27341
-[#27841]: https://github.com/home-assistant/home-assistant/pull/27841
-[#27984]: https://github.com/home-assistant/home-assistant/pull/27984
-[#28082]: https://github.com/home-assistant/home-assistant/pull/28082
-[#28639]: https://github.com/home-assistant/home-assistant/pull/28639
-[#28712]: https://github.com/home-assistant/home-assistant/pull/28712
-[#28898]: https://github.com/home-assistant/home-assistant/pull/28898
-[#29927]: https://github.com/home-assistant/home-assistant/pull/29927
-[#30004]: https://github.com/home-assistant/home-assistant/pull/30004
-[#30095]: https://github.com/home-assistant/home-assistant/pull/30095
-[#30121]: https://github.com/home-assistant/home-assistant/pull/30121
-[#30628]: https://github.com/home-assistant/home-assistant/pull/30628
-[#30635]: https://github.com/home-assistant/home-assistant/pull/30635
-[#30697]: https://github.com/home-assistant/home-assistant/pull/30697
-[#30712]: https://github.com/home-assistant/home-assistant/pull/30712
-[#30843]: https://github.com/home-assistant/home-assistant/pull/30843
-[#30894]: https://github.com/home-assistant/home-assistant/pull/30894
-[#30922]: https://github.com/home-assistant/home-assistant/pull/30922
-[#30933]: https://github.com/home-assistant/home-assistant/pull/30933
-[#30979]: https://github.com/home-assistant/home-assistant/pull/30979
-[#30986]: https://github.com/home-assistant/home-assistant/pull/30986
-[#30992]: https://github.com/home-assistant/home-assistant/pull/30992
-[#31023]: https://github.com/home-assistant/home-assistant/pull/31023
-[#31073]: https://github.com/home-assistant/home-assistant/pull/31073
-[#31086]: https://github.com/home-assistant/home-assistant/pull/31086
-[#31122]: https://github.com/home-assistant/home-assistant/pull/31122
-[#31141]: https://github.com/home-assistant/home-assistant/pull/31141
-[#31177]: https://github.com/home-assistant/home-assistant/pull/31177
-[#31183]: https://github.com/home-assistant/home-assistant/pull/31183
-[#31187]: https://github.com/home-assistant/home-assistant/pull/31187
-[#31194]: https://github.com/home-assistant/home-assistant/pull/31194
-[#31234]: https://github.com/home-assistant/home-assistant/pull/31234
-[#31235]: https://github.com/home-assistant/home-assistant/pull/31235
-[#31243]: https://github.com/home-assistant/home-assistant/pull/31243
-[#31259]: https://github.com/home-assistant/home-assistant/pull/31259
-[#31280]: https://github.com/home-assistant/home-assistant/pull/31280
-[#31286]: https://github.com/home-assistant/home-assistant/pull/31286
-[#31287]: https://github.com/home-assistant/home-assistant/pull/31287
-[#31289]: https://github.com/home-assistant/home-assistant/pull/31289
-[#31299]: https://github.com/home-assistant/home-assistant/pull/31299
-[#31308]: https://github.com/home-assistant/home-assistant/pull/31308
-[#31311]: https://github.com/home-assistant/home-assistant/pull/31311
-[#31324]: https://github.com/home-assistant/home-assistant/pull/31324
-[#31326]: https://github.com/home-assistant/home-assistant/pull/31326
-[#31327]: https://github.com/home-assistant/home-assistant/pull/31327
-[#31328]: https://github.com/home-assistant/home-assistant/pull/31328
-[#31329]: https://github.com/home-assistant/home-assistant/pull/31329
-[#31337]: https://github.com/home-assistant/home-assistant/pull/31337
-[#31344]: https://github.com/home-assistant/home-assistant/pull/31344
-[#31359]: https://github.com/home-assistant/home-assistant/pull/31359
-[#31368]: https://github.com/home-assistant/home-assistant/pull/31368
-[#31373]: https://github.com/home-assistant/home-assistant/pull/31373
-[#31376]: https://github.com/home-assistant/home-assistant/pull/31376
-[#31379]: https://github.com/home-assistant/home-assistant/pull/31379
-[#31381]: https://github.com/home-assistant/home-assistant/pull/31381
-[#31382]: https://github.com/home-assistant/home-assistant/pull/31382
-[#31388]: https://github.com/home-assistant/home-assistant/pull/31388
-[#31390]: https://github.com/home-assistant/home-assistant/pull/31390
-[#31391]: https://github.com/home-assistant/home-assistant/pull/31391
-[#31392]: https://github.com/home-assistant/home-assistant/pull/31392
-[#31393]: https://github.com/home-assistant/home-assistant/pull/31393
-[#31394]: https://github.com/home-assistant/home-assistant/pull/31394
-[#31401]: https://github.com/home-assistant/home-assistant/pull/31401
-[#31406]: https://github.com/home-assistant/home-assistant/pull/31406
-[#31408]: https://github.com/home-assistant/home-assistant/pull/31408
-[#31410]: https://github.com/home-assistant/home-assistant/pull/31410
-[#31411]: https://github.com/home-assistant/home-assistant/pull/31411
-[#31415]: https://github.com/home-assistant/home-assistant/pull/31415
-[#31417]: https://github.com/home-assistant/home-assistant/pull/31417
-[#31419]: https://github.com/home-assistant/home-assistant/pull/31419
-[#31423]: https://github.com/home-assistant/home-assistant/pull/31423
-[#31424]: https://github.com/home-assistant/home-assistant/pull/31424
-[#31426]: https://github.com/home-assistant/home-assistant/pull/31426
-[#31427]: https://github.com/home-assistant/home-assistant/pull/31427
-[#31428]: https://github.com/home-assistant/home-assistant/pull/31428
-[#31430]: https://github.com/home-assistant/home-assistant/pull/31430
-[#31434]: https://github.com/home-assistant/home-assistant/pull/31434
-[#31435]: https://github.com/home-assistant/home-assistant/pull/31435
-[#31437]: https://github.com/home-assistant/home-assistant/pull/31437
-[#31439]: https://github.com/home-assistant/home-assistant/pull/31439
-[#31440]: https://github.com/home-assistant/home-assistant/pull/31440
-[#31441]: https://github.com/home-assistant/home-assistant/pull/31441
-[#31442]: https://github.com/home-assistant/home-assistant/pull/31442
-[#31444]: https://github.com/home-assistant/home-assistant/pull/31444
-[#31446]: https://github.com/home-assistant/home-assistant/pull/31446
-[#31450]: https://github.com/home-assistant/home-assistant/pull/31450
-[#31452]: https://github.com/home-assistant/home-assistant/pull/31452
-[#31453]: https://github.com/home-assistant/home-assistant/pull/31453
-[#31454]: https://github.com/home-assistant/home-assistant/pull/31454
-[#31471]: https://github.com/home-assistant/home-assistant/pull/31471
-[#31509]: https://github.com/home-assistant/home-assistant/pull/31509
-[#31519]: https://github.com/home-assistant/home-assistant/pull/31519
-[#31525]: https://github.com/home-assistant/home-assistant/pull/31525
-[#31527]: https://github.com/home-assistant/home-assistant/pull/31527
-[#31528]: https://github.com/home-assistant/home-assistant/pull/31528
-[#31534]: https://github.com/home-assistant/home-assistant/pull/31534
-[#31551]: https://github.com/home-assistant/home-assistant/pull/31551
-[#31556]: https://github.com/home-assistant/home-assistant/pull/31556
-[#31561]: https://github.com/home-assistant/home-assistant/pull/31561
-[#31567]: https://github.com/home-assistant/home-assistant/pull/31567
-[#31580]: https://github.com/home-assistant/home-assistant/pull/31580
-[#31602]: https://github.com/home-assistant/home-assistant/pull/31602
-[#31611]: https://github.com/home-assistant/home-assistant/pull/31611
-[#31616]: https://github.com/home-assistant/home-assistant/pull/31616
-[#31621]: https://github.com/home-assistant/home-assistant/pull/31621
-[#31626]: https://github.com/home-assistant/home-assistant/pull/31626
-[#31629]: https://github.com/home-assistant/home-assistant/pull/31629
-[#31634]: https://github.com/home-assistant/home-assistant/pull/31634
-[#31645]: https://github.com/home-assistant/home-assistant/pull/31645
-[#31647]: https://github.com/home-assistant/home-assistant/pull/31647
-[#31648]: https://github.com/home-assistant/home-assistant/pull/31648
-[#31654]: https://github.com/home-assistant/home-assistant/pull/31654
-[#31661]: https://github.com/home-assistant/home-assistant/pull/31661
-[#31664]: https://github.com/home-assistant/home-assistant/pull/31664
-[#31667]: https://github.com/home-assistant/home-assistant/pull/31667
-[#31672]: https://github.com/home-assistant/home-assistant/pull/31672
-[#31679]: https://github.com/home-assistant/home-assistant/pull/31679
-[#31682]: https://github.com/home-assistant/home-assistant/pull/31682
-[#31685]: https://github.com/home-assistant/home-assistant/pull/31685
-[#31686]: https://github.com/home-assistant/home-assistant/pull/31686
-[#31695]: https://github.com/home-assistant/home-assistant/pull/31695
-[#31697]: https://github.com/home-assistant/home-assistant/pull/31697
-[#31710]: https://github.com/home-assistant/home-assistant/pull/31710
-[#31711]: https://github.com/home-assistant/home-assistant/pull/31711
-[#31713]: https://github.com/home-assistant/home-assistant/pull/31713
-[#31714]: https://github.com/home-assistant/home-assistant/pull/31714
-[#31717]: https://github.com/home-assistant/home-assistant/pull/31717
-[#31718]: https://github.com/home-assistant/home-assistant/pull/31718
-[#31727]: https://github.com/home-assistant/home-assistant/pull/31727
-[#31731]: https://github.com/home-assistant/home-assistant/pull/31731
-[#31732]: https://github.com/home-assistant/home-assistant/pull/31732
-[#31735]: https://github.com/home-assistant/home-assistant/pull/31735
-[#31738]: https://github.com/home-assistant/home-assistant/pull/31738
-[#31739]: https://github.com/home-assistant/home-assistant/pull/31739
-[#31741]: https://github.com/home-assistant/home-assistant/pull/31741
-[#31742]: https://github.com/home-assistant/home-assistant/pull/31742
-[#31743]: https://github.com/home-assistant/home-assistant/pull/31743
-[#31744]: https://github.com/home-assistant/home-assistant/pull/31744
-[#31746]: https://github.com/home-assistant/home-assistant/pull/31746
-[#31750]: https://github.com/home-assistant/home-assistant/pull/31750
-[#31751]: https://github.com/home-assistant/home-assistant/pull/31751
-[#31755]: https://github.com/home-assistant/home-assistant/pull/31755
-[#31756]: https://github.com/home-assistant/home-assistant/pull/31756
-[#31758]: https://github.com/home-assistant/home-assistant/pull/31758
-[#31760]: https://github.com/home-assistant/home-assistant/pull/31760
-[#31762]: https://github.com/home-assistant/home-assistant/pull/31762
-[#31764]: https://github.com/home-assistant/home-assistant/pull/31764
-[#31765]: https://github.com/home-assistant/home-assistant/pull/31765
-[#31768]: https://github.com/home-assistant/home-assistant/pull/31768
-[#31770]: https://github.com/home-assistant/home-assistant/pull/31770
-[#31772]: https://github.com/home-assistant/home-assistant/pull/31772
-[#31773]: https://github.com/home-assistant/home-assistant/pull/31773
-[#31774]: https://github.com/home-assistant/home-assistant/pull/31774
-[#31775]: https://github.com/home-assistant/home-assistant/pull/31775
-[#31780]: https://github.com/home-assistant/home-assistant/pull/31780
-[#31781]: https://github.com/home-assistant/home-assistant/pull/31781
-[#31782]: https://github.com/home-assistant/home-assistant/pull/31782
-[#31789]: https://github.com/home-assistant/home-assistant/pull/31789
-[#31790]: https://github.com/home-assistant/home-assistant/pull/31790
-[#31792]: https://github.com/home-assistant/home-assistant/pull/31792
-[#31795]: https://github.com/home-assistant/home-assistant/pull/31795
-[#31796]: https://github.com/home-assistant/home-assistant/pull/31796
-[#31797]: https://github.com/home-assistant/home-assistant/pull/31797
-[#31798]: https://github.com/home-assistant/home-assistant/pull/31798
-[#31801]: https://github.com/home-assistant/home-assistant/pull/31801
-[#31802]: https://github.com/home-assistant/home-assistant/pull/31802
-[#31803]: https://github.com/home-assistant/home-assistant/pull/31803
-[#31804]: https://github.com/home-assistant/home-assistant/pull/31804
-[#31805]: https://github.com/home-assistant/home-assistant/pull/31805
-[#31806]: https://github.com/home-assistant/home-assistant/pull/31806
-[#31808]: https://github.com/home-assistant/home-assistant/pull/31808
-[#31809]: https://github.com/home-assistant/home-assistant/pull/31809
-[#31810]: https://github.com/home-assistant/home-assistant/pull/31810
-[#31811]: https://github.com/home-assistant/home-assistant/pull/31811
-[#31812]: https://github.com/home-assistant/home-assistant/pull/31812
-[#31819]: https://github.com/home-assistant/home-assistant/pull/31819
-[#31828]: https://github.com/home-assistant/home-assistant/pull/31828
-[#31831]: https://github.com/home-assistant/home-assistant/pull/31831
-[#31836]: https://github.com/home-assistant/home-assistant/pull/31836
-[#31837]: https://github.com/home-assistant/home-assistant/pull/31837
-[#31842]: https://github.com/home-assistant/home-assistant/pull/31842
-[#31845]: https://github.com/home-assistant/home-assistant/pull/31845
-[#31847]: https://github.com/home-assistant/home-assistant/pull/31847
-[#31848]: https://github.com/home-assistant/home-assistant/pull/31848
-[#31851]: https://github.com/home-assistant/home-assistant/pull/31851
-[#31855]: https://github.com/home-assistant/home-assistant/pull/31855
-[#31861]: https://github.com/home-assistant/home-assistant/pull/31861
-[#31863]: https://github.com/home-assistant/home-assistant/pull/31863
-[#31864]: https://github.com/home-assistant/home-assistant/pull/31864
-[#31865]: https://github.com/home-assistant/home-assistant/pull/31865
-[#31868]: https://github.com/home-assistant/home-assistant/pull/31868
-[#31871]: https://github.com/home-assistant/home-assistant/pull/31871
-[#31874]: https://github.com/home-assistant/home-assistant/pull/31874
-[#31875]: https://github.com/home-assistant/home-assistant/pull/31875
-[#31876]: https://github.com/home-assistant/home-assistant/pull/31876
-[#31886]: https://github.com/home-assistant/home-assistant/pull/31886
-[#31888]: https://github.com/home-assistant/home-assistant/pull/31888
-[#31890]: https://github.com/home-assistant/home-assistant/pull/31890
-[#31895]: https://github.com/home-assistant/home-assistant/pull/31895
-[#31896]: https://github.com/home-assistant/home-assistant/pull/31896
-[#31897]: https://github.com/home-assistant/home-assistant/pull/31897
-[#31898]: https://github.com/home-assistant/home-assistant/pull/31898
-[#31899]: https://github.com/home-assistant/home-assistant/pull/31899
-[#31902]: https://github.com/home-assistant/home-assistant/pull/31902
-[#31903]: https://github.com/home-assistant/home-assistant/pull/31903
-[#31904]: https://github.com/home-assistant/home-assistant/pull/31904
-[#31905]: https://github.com/home-assistant/home-assistant/pull/31905
-[#31911]: https://github.com/home-assistant/home-assistant/pull/31911
-[#31912]: https://github.com/home-assistant/home-assistant/pull/31912
-[#31913]: https://github.com/home-assistant/home-assistant/pull/31913
-[#31914]: https://github.com/home-assistant/home-assistant/pull/31914
-[#31915]: https://github.com/home-assistant/home-assistant/pull/31915
-[#31916]: https://github.com/home-assistant/home-assistant/pull/31916
-[#31917]: https://github.com/home-assistant/home-assistant/pull/31917
-[#31920]: https://github.com/home-assistant/home-assistant/pull/31920
-[#31921]: https://github.com/home-assistant/home-assistant/pull/31921
-[#31922]: https://github.com/home-assistant/home-assistant/pull/31922
-[#31927]: https://github.com/home-assistant/home-assistant/pull/31927
-[#31930]: https://github.com/home-assistant/home-assistant/pull/31930
-[#31932]: https://github.com/home-assistant/home-assistant/pull/31932
-[#31934]: https://github.com/home-assistant/home-assistant/pull/31934
-[#31935]: https://github.com/home-assistant/home-assistant/pull/31935
-[#31936]: https://github.com/home-assistant/home-assistant/pull/31936
-[#31941]: https://github.com/home-assistant/home-assistant/pull/31941
-[#31942]: https://github.com/home-assistant/home-assistant/pull/31942
-[#31943]: https://github.com/home-assistant/home-assistant/pull/31943
-[#31944]: https://github.com/home-assistant/home-assistant/pull/31944
-[#31959]: https://github.com/home-assistant/home-assistant/pull/31959
-[#31962]: https://github.com/home-assistant/home-assistant/pull/31962
-[#31963]: https://github.com/home-assistant/home-assistant/pull/31963
-[#31965]: https://github.com/home-assistant/home-assistant/pull/31965
-[#31966]: https://github.com/home-assistant/home-assistant/pull/31966
-[#31968]: https://github.com/home-assistant/home-assistant/pull/31968
-[#31969]: https://github.com/home-assistant/home-assistant/pull/31969
-[#31970]: https://github.com/home-assistant/home-assistant/pull/31970
-[#31973]: https://github.com/home-assistant/home-assistant/pull/31973
-[#31979]: https://github.com/home-assistant/home-assistant/pull/31979
-[#31981]: https://github.com/home-assistant/home-assistant/pull/31981
-[#31982]: https://github.com/home-assistant/home-assistant/pull/31982
-[#32008]: https://github.com/home-assistant/home-assistant/pull/32008
-[#32009]: https://github.com/home-assistant/home-assistant/pull/32009
-[#32011]: https://github.com/home-assistant/home-assistant/pull/32011
-[#32018]: https://github.com/home-assistant/home-assistant/pull/32018
-[#32023]: https://github.com/home-assistant/home-assistant/pull/32023
-[#32027]: https://github.com/home-assistant/home-assistant/pull/32027
-[#32031]: https://github.com/home-assistant/home-assistant/pull/32031
-[#32033]: https://github.com/home-assistant/home-assistant/pull/32033
-[#32039]: https://github.com/home-assistant/home-assistant/pull/32039
-[#32044]: https://github.com/home-assistant/home-assistant/pull/32044
-[#32046]: https://github.com/home-assistant/home-assistant/pull/32046
-[#32054]: https://github.com/home-assistant/home-assistant/pull/32054
-[#32068]: https://github.com/home-assistant/home-assistant/pull/32068
-[#32071]: https://github.com/home-assistant/home-assistant/pull/32071
-[#32109]: https://github.com/home-assistant/home-assistant/pull/32109
-[#32119]: https://github.com/home-assistant/home-assistant/pull/32119
-[#32136]: https://github.com/home-assistant/home-assistant/pull/32136
-[#32138]: https://github.com/home-assistant/home-assistant/pull/32138
-[#32151]: https://github.com/home-assistant/home-assistant/pull/32151
-[#32163]: https://github.com/home-assistant/home-assistant/pull/32163
-[#32186]: https://github.com/home-assistant/home-assistant/pull/32186
-[#32189]: https://github.com/home-assistant/home-assistant/pull/32189
-[#32190]: https://github.com/home-assistant/home-assistant/pull/32190
-[#32191]: https://github.com/home-assistant/home-assistant/pull/32191
-[#32199]: https://github.com/home-assistant/home-assistant/pull/32199
-[#32205]: https://github.com/home-assistant/home-assistant/pull/32205
+[#27341]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/27341
+[#27841]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/27841
+[#27984]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/27984
+[#28082]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/28082
+[#28639]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/28639
+[#28712]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/28712
+[#28898]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/28898
+[#29927]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/29927
+[#30004]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30004
+[#30095]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30095
+[#30121]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30121
+[#30628]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30628
+[#30635]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30635
+[#30697]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30697
+[#30712]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30712
+[#30843]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30843
+[#30894]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30894
+[#30922]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30922
+[#30933]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30933
+[#30979]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30979
+[#30986]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30986
+[#30992]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/30992
+[#31023]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31023
+[#31073]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31073
+[#31086]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31086
+[#31122]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31122
+[#31141]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31141
+[#31177]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31177
+[#31183]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31183
+[#31187]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31187
+[#31194]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31194
+[#31234]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31234
+[#31235]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31235
+[#31243]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31243
+[#31259]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31259
+[#31280]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31280
+[#31286]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31286
+[#31287]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31287
+[#31289]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31289
+[#31299]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31299
+[#31308]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31308
+[#31311]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31311
+[#31324]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31324
+[#31326]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31326
+[#31327]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31327
+[#31328]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31328
+[#31329]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31329
+[#31337]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31337
+[#31344]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31344
+[#31359]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31359
+[#31368]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31368
+[#31373]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31373
+[#31376]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31376
+[#31379]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31379
+[#31381]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31381
+[#31382]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31382
+[#31388]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31388
+[#31390]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31390
+[#31391]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31391
+[#31392]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31392
+[#31393]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31393
+[#31394]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31394
+[#31401]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31401
+[#31406]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31406
+[#31408]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31408
+[#31410]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31410
+[#31411]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31411
+[#31415]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31415
+[#31417]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31417
+[#31419]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31419
+[#31423]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31423
+[#31424]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31424
+[#31426]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31426
+[#31427]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31427
+[#31428]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31428
+[#31430]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31430
+[#31434]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31434
+[#31435]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31435
+[#31437]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31437
+[#31439]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31439
+[#31440]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31440
+[#31441]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31441
+[#31442]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31442
+[#31444]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31444
+[#31446]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31446
+[#31450]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31450
+[#31452]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31452
+[#31453]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31453
+[#31454]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31454
+[#31471]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31471
+[#31509]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31509
+[#31519]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31519
+[#31525]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31525
+[#31527]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31527
+[#31528]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31528
+[#31534]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31534
+[#31551]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31551
+[#31556]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31556
+[#31561]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31561
+[#31567]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31567
+[#31580]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31580
+[#31602]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31602
+[#31611]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31611
+[#31616]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31616
+[#31621]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31621
+[#31626]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31626
+[#31629]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31629
+[#31634]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31634
+[#31645]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31645
+[#31647]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31647
+[#31648]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31648
+[#31654]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31654
+[#31661]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31661
+[#31664]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31664
+[#31667]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31667
+[#31672]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31672
+[#31679]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31679
+[#31682]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31682
+[#31685]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31685
+[#31686]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31686
+[#31695]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31695
+[#31697]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31697
+[#31710]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31710
+[#31711]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31711
+[#31713]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31713
+[#31714]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31714
+[#31717]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31717
+[#31718]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31718
+[#31727]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31727
+[#31731]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31731
+[#31732]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31732
+[#31735]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31735
+[#31738]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31738
+[#31739]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31739
+[#31741]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31741
+[#31742]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31742
+[#31743]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31743
+[#31744]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31744
+[#31746]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31746
+[#31750]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31750
+[#31751]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31751
+[#31755]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31755
+[#31756]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31756
+[#31758]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31758
+[#31760]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31760
+[#31762]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31762
+[#31764]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31764
+[#31765]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31765
+[#31768]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31768
+[#31770]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31770
+[#31772]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31772
+[#31773]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31773
+[#31774]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31774
+[#31775]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31775
+[#31780]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31780
+[#31781]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31781
+[#31782]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31782
+[#31789]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31789
+[#31790]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31790
+[#31792]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31792
+[#31795]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31795
+[#31796]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31796
+[#31797]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31797
+[#31798]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31798
+[#31801]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31801
+[#31802]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31802
+[#31803]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31803
+[#31804]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31804
+[#31805]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31805
+[#31806]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31806
+[#31808]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31808
+[#31809]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31809
+[#31810]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31810
+[#31811]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31811
+[#31812]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31812
+[#31819]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31819
+[#31828]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31828
+[#31831]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31831
+[#31836]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31836
+[#31837]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31837
+[#31842]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31842
+[#31845]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31845
+[#31847]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31847
+[#31848]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31848
+[#31851]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31851
+[#31855]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31855
+[#31861]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31861
+[#31863]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31863
+[#31864]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31864
+[#31865]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31865
+[#31868]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31868
+[#31871]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31871
+[#31874]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31874
+[#31875]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31875
+[#31876]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31876
+[#31886]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31886
+[#31888]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31888
+[#31890]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31890
+[#31895]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31895
+[#31896]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31896
+[#31897]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31897
+[#31898]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31898
+[#31899]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31899
+[#31902]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31902
+[#31903]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31903
+[#31904]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31904
+[#31905]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31905
+[#31911]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31911
+[#31912]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31912
+[#31913]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31913
+[#31914]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31914
+[#31915]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31915
+[#31916]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31916
+[#31917]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31917
+[#31920]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31920
+[#31921]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31921
+[#31922]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31922
+[#31927]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31927
+[#31930]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31930
+[#31932]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31932
+[#31934]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31934
+[#31935]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31935
+[#31936]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31936
+[#31941]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31941
+[#31942]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31942
+[#31943]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31943
+[#31944]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31944
+[#31959]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31959
+[#31962]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31962
+[#31963]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31963
+[#31965]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31965
+[#31966]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31966
+[#31968]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31968
+[#31969]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31969
+[#31970]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31970
+[#31973]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31973
+[#31979]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31979
+[#31981]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31981
+[#31982]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/31982
+[#32008]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32008
+[#32009]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32009
+[#32011]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32011
+[#32018]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32018
+[#32023]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32023
+[#32027]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32027
+[#32031]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32031
+[#32033]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32033
+[#32039]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32039
+[#32044]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32044
+[#32046]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32046
+[#32054]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32054
+[#32068]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32068
+[#32071]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32071
+[#32109]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32109
+[#32119]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32119
+[#32136]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32136
+[#32138]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32138
+[#32151]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32151
+[#32163]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32163
+[#32186]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32186
+[#32189]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32189
+[#32190]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32190
+[#32191]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32191
+[#32199]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32199
+[#32205]: https://github.com/OpenPeerPower/Open-Peer-Power/pull/32205
 [@Adminiuga]: https://github.com/Adminiuga
 [@BKPepe]: https://github.com/BKPepe
 [@CHAZICLE]: https://github.com/CHAZICLE
@@ -1136,7 +1130,7 @@ Added a Coronavirus integration to help monitor the ongoing epidemic. [More info
 [glances docs]: /integrations/glances/
 [greeneye_monitor docs]: /integrations/greeneye_monitor/
 [group docs]: /integrations/group/
-[homeassistant docs]: /integrations/homeassistant/
+[openpeerpower docs]: /integrations/openpeerpower/
 [homekit_controller docs]: /integrations/homekit_controller/
 [homematic docs]: /integrations/homematic/
 [homematicip_cloud docs]: /integrations/homematicip_cloud/

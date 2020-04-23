@@ -13,7 +13,7 @@ If you're running a Linux-based platform, we strongly recommend you follow the i
 Once Python is installed, execute the following code in a console:
 
 {% highlight bash %}
-pip3 install homeassistant
+pip3 install openpeerpower
 hass --open-ui
 {% endhighlight %}
 

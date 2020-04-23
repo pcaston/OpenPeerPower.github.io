@@ -14,7 +14,7 @@ If you are still logged in to the web interface with your user, then you are in 
 
 If you’ve forgotten your user, then deleting the files mentioned above will be necessary to start a new onboarding process.
 
-If you know the user, but not the password and you can access the [ Open Peer Power console](https://www.home-assistant.io/hassio/commandline/) and use the command below:
+If you know the user, but not the password and you can access the [ Open Peer Power console](https://www.openpeerpower.io/hassio/commandline/) and use the command below:
 
 Connect a keyboard and monitor to your device.
 
@@ -25,7 +25,7 @@ Connect a keyboard and monitor to your device.
 While you should hopefully be storing your passwords in a password manager, if you lose the password associated with the owner account the only way to resolve this is to delete *all* the authentication data. You do this by shutting down Open Peer Power and deleting the following files from the `.storage/` folder in your [configuration folder](/docs/configuration/):
 
 - `auth`
-- `auth_provider.homeassistant`
+- `auth_provider.openpeerpower`
 - `onboarding`
 - `hassio`
 - `cloud`

@@ -13,11 +13,9 @@ ha_domain: zeroconf
 
 The `zeroconf` integration will scan the network for supported devices and services. Discovered integrations will show up in the discovered section on the integrations page in the configuration panel. It will also make Open Peer Power discoverable for other services in the network. Zeroconf is also sometimes known as Bonjour, Rendezvous, and Avahi.
 
-Integrations can opt-in to be found by adding either [a Zeroconf section](https://developers.home-assistant.io/docs/en/next/creating_integration_manifest.html#zeroconf) or [a HomeKit section](https://developers.home-assistant.io/docs/en/next/creating_integration_manifest.html#homekit) to their `manifest.json`.
-
 ## Configuration
 
-This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, and you wish to have Open Peer Power scan for integrations using zeroconf and HomeKit, the following example shows you how to enable this integration manually:
+This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.openpeerpower.io/integrations/default_config/) line from your configuration. If that is the case, and you wish to have Open Peer Power scan for integrations using zeroconf and HomeKit, the following example shows you how to enable this integration manually:
 
 {% highlight yaml %}
 # Example configuration.yaml entry

@@ -7,7 +7,6 @@ excerpt: none
 
 This is an advanced feature of Open Peer Power. You'll need a basic understanding of:
 
-- [ Open Peer Power architecture](/developers/architecture/), especially states.
 - The [State object](/topics/state_object/).
 
 Templating is a powerful feature that allows you to control information going into and out of the system. It is used for:

@@ -9,7 +9,7 @@ ha_release: pre 0.7
 ha_iot_class: Local Push
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: http
 excerpt: none
 ---
@@ -48,7 +48,7 @@ http:
   ssl_key: /etc/letsencrypt/live/hass.example.com/privkey.pem
   cors_allowed_origins:
     - https://google.com
-    - https://www.home-assistant.io
+    - https://www.openpeerpower.io
   use_x_forwarded_for: true
   trusted_proxies:
     - 10.0.0.200
@@ -60,19 +60,9 @@ The [Set up encryption using Let's Encrypt](/blog/2015/12/13/setup-encryption-us
 
 Or use a self signed certificate following the instructions here [Self-signed certificate for SSL/TLS](/docs/ecosystem/certificates/tls_self_signed_certificate/).
 
-## APIs
-
-On top of the `http` integration is a [REST API](/developers/rest_api/), [Python API](/developers/python_api/) and [WebSocket API](/developers/websocket_api/) available. There is also support for [Server-sent events](/developers/server_sent_events/).
-
-The `http` platforms are not real platforms within the meaning of the terminology used around Open Peer Power. Open Peer Power's [REST API](/developers/rest_api/) sends and receives messages over HTTP.
-
 ## HTTP sensors
 
 To use those kind of [sensors](#sensor) or [binary sensors](#binary-sensor) in your installation no configuration in Open Peer Power is needed. All configuration is done on the devices themselves. This means that you must be able to edit the target URL or endpoint and the payload. The entity will be created after the first message has arrived.
-
-Create a [Long-Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token) in the Open Peer Power UI at the bottom of your profile if you want to use HTTP sensors.
-
-All [requests](/developers/rest_api/#post-apistatesltentity_id) need to be sent to the endpoint of the device and must be **POST**.
 
 ## IP filtering and banning
 
@@ -138,8 +128,6 @@ $ curl -X POST -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
     http://localhost:8123/api/states/binary_sensor.radio
 {% endhighlight %}
 
-To check if the sensor is working, use again `curl` to retrieve the [current state](/developers/rest_api/#get-apistatesltentity_id).
-
 {% highlight bash %}
 $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
        -H "Content-Type: application/json" \
@@ -160,8 +148,6 @@ $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
 In this section you'll find some real-life examples of how to use this sensor, besides `curl`, which was shown earlier.
 
 #### Using Python request module
-
-As already shown on the [API](/developers/rest_api/) page, it's very simple to use Python and the [Requests](https://requests.kennethreitz.org/en/latest/) module for the interaction with Open Peer Power.
 
 {% highlight python %}
 response = requests.post(
@@ -215,8 +201,6 @@ $ curl -X POST -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
        -d '{"state": "20", "attributes": {"unit_of_measurement": "°C", "friendly_name": "Bathroom Temp"}}' \
        http://localhost:8123/api/states/sensor.bathroom_temperature
 {% endhighlight %}
-
-You can then use `curl` again to retrieve the [current sensor state](/developers/rest_api/#get-apistatesltentity_id) and verify the sensor is working.
 
 {% highlight bash %}
 $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \

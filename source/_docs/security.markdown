@@ -23,8 +23,6 @@ The default port of Open Peer Power is 8123. This is the port where the [`fronte
 
 ## SSH
 
-The SSH connection for [debugging](https://developers.home-assistant.io/docs/en/hassio_debugging.html) on port 22222 is not enabled by default and can only be used with keys.
-
 If SSH is used with the [SSH server add-on](/addons/ssh/) then the user is responsible for the configuration and security.
 
 ## Source code

@@ -4,13 +4,13 @@ description: "Details about the database used by Open Peer Power."
 redirect_from: /details/database/
 ---
 
-Database is used in by Open Peer Power as history and tracker only, to store the events and its parameters. The default database used by Open Peer Power is [SQLite](https://www.sqlite.org/), and the database file is stored in your [configuration directory](/getting-started/configuration/) (e.g., `<path to config dir>/.homeassistant/home-assistant_v2.db`). If you prefer to run a database server (e.g.,  PostgreSQL), use the [`recorder` component](/integrations/recorder/).
+Database is used in by Open Peer Power as history and tracker only, to store the events and its parameters. The default database used by Open Peer Power is [SQLite](https://www.sqlite.org/), and the database file is stored in your [configuration directory](/getting-started/configuration/) (e.g., `<path to config dir>/.openpeerpower/open-peer-power_v2.db`). If you prefer to run a database server (e.g.,  PostgreSQL), use the [`recorder` component](/integrations/recorder/).
 
 To work with the SQLite database manually from the command-line, you will need an [installation](http://www.sqlitetutorial.net/download-install-sqlite/) of `sqlite3`. Alternatively [DB Browser for SQLite](http://sqlitebrowser.org/) provides a viewer for exploring the database data and an editor for executing SQL commands.
 First load your database with `sqlite3`:
 
 {% highlight bash %}
-$ sqlite3 home-assistant_v2.db
+$ sqlite3 open-peer-power_v2.db
 SQLite version 3.13.0 2016-05-18 10:57:30
 Enter ".help" for usage hints.
 sqlite>
@@ -29,7 +29,7 @@ You could also start `sqlite3` and attach the database later. Not sure what data
 sqlite> .databases
 seq  name             file
 ---  ---------------  ----------------------------------------------------------
-0    main             /home/fab/.homeassistant/home-assistant_v2.db
+0    main             /home/fab/.openpeerpower/open-peer-power_v2.db
 {% endhighlight %}
 
 ### Schema
@@ -118,4 +118,4 @@ The `VACUUM` command cleans your database.
 sqlite> VACUUM;
 {% endhighlight %}
 
-For a more interactive way of working with the database, check the [Data Science Portal](https://data.home-assistant.io/).
+For a more interactive way of working with the database, check the [Data Science Portal](https://data.openpeerpower.io/).

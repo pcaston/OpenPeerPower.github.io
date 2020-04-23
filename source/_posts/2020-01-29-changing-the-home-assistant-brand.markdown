@@ -6,7 +6,7 @@ date_formatted: "January 29, 2020"
 author: Paulus Schoutsen
 author_twitter: balloob
 categories: Announcements
-og_image: /images/blog/2020-01-29-changing-the-home-assistant-brand/social.png
+og_image: /images/blog/2020-01-29-changing-the-open-peer-power-brand/social.png
 ---
 
 Over the last few years, we have accumulated a wide range of projects under our

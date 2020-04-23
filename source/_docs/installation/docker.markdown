@@ -8,7 +8,7 @@ redirect_from: /getting-started/installation-docker/
 
 These below instructions are for an installation of Open Peer Power Core running in your own Docker environment, which you manage yourself.
 
-For an installation of Open Peer Power Supervised, which includes Open Peer Power's add-on ecosystem, see the instructions for installing [Open Peer Power Supervised on a generic Linux host](/hassio/installation/#alternative-install-home-assistant-supervised-on-a-generic-linux-host/).
+For an installation of Open Peer Power Supervised, which includes Open Peer Power's add-on ecosystem, see the instructions for installing [Open Peer Power Supervised on a generic Linux host](/hassio/installation/#alternative-install-open-peer-power-supervised-on-a-generic-linux-host/).
 
 </div>
 
@@ -19,19 +19,19 @@ Installation with Docker is straightforward. Adjust the following command so tha
 ### Linux
 
 {% highlight bash %}
-docker run --init -d --name="home-assistant" -e "TZ=America/New_York" -v /PATH_TO_YOUR_CONFIG:/config --net=host homeassistant/home-assistant:stable
+docker run --init -d --name="open-peer-power" -e "TZ=America/New_York" -v /PATH_TO_YOUR_CONFIG:/config --net=host openpeerpower/open-peer-power:stable
 {% endhighlight %}
 
 ### Raspberry Pi 3 (Raspbian)
 
 {% highlight bash %}
-docker run --init -d --name="home-assistant" -e "TZ=America/New_York" -v /PATH_TO_YOUR_CONFIG:/config --net=host homeassistant/raspberrypi3-homeassistant:stable
+docker run --init -d --name="open-peer-power" -e "TZ=America/New_York" -v /PATH_TO_YOUR_CONFIG:/config --net=host openpeerpower/raspberrypi3-openpeerpower:stable
 {% endhighlight %}
 
-You need to replace `/PATH_TO_YOUR_CONFIG` with your path to the configuration, for example if you choose your configuration path to be `/home/pi/homeassistant`, then command would be:
+You need to replace `/PATH_TO_YOUR_CONFIG` with your path to the configuration, for example if you choose your configuration path to be `/home/pi/openpeerpower`, then command would be:
 
 {% highlight bash %}
-docker run --init -d --name="home-assistant" -e "TZ=America/New_York" -v /home/pi/homeassistant:/config --net=host homeassistant/raspberrypi3-homeassistant:stable
+docker run --init -d --name="open-peer-power" -e "TZ=America/New_York" -v /home/pi/openpeerpower:/config --net=host openpeerpower/raspberrypi3-openpeerpower:stable
 {% endhighlight %}
 
 ### macOS
@@ -41,7 +41,7 @@ When using `docker-ce` (or `boot2docker`) on macOS, you are unable to map the lo
 If you wish to browse directly to `http://localhost:8123` from your macOS host, meaning forward ports directly to the container, replace the `--net=host` switch with `-p 8123:8123`. More detail can be found in [the Docker forums](https://forums.docker.com/t/should-docker-run-net-host-work/14215/10).
 
 {% highlight bash %}
-docker run --init -d --name="home-assistant" -e "TZ=America/Los_Angeles" -v /PATH_TO_YOUR_CONFIG:/config -p 8123:8123 homeassistant/home-assistant:stable
+docker run --init -d --name="open-peer-power" -e "TZ=America/Los_Angeles" -v /PATH_TO_YOUR_CONFIG:/config -p 8123:8123 openpeerpower/open-peer-power:stable
 {% endhighlight %}
 
 Alternatively, `docker-compose` works with any recent release of `docker-ce` on macOS. Note that (further down this page) we provide an example `docker-compose.yml` however it differs from the `docker run` example above. To make the .yml directives match, you would need to make _two_ changes: first add the equivalent `ports:` directive, then _remove_ the `network_mode: host` section. This is because `Port mapping is incompatible with network_mode: host:`. More details can be found at [Docker networking documentation](https://docs.docker.com/network/). Note also the `/dev/tty*` device name used by your Arduino etc. devices will differ from the Linux example, so the compose `mount:` may require updates.
@@ -56,13 +56,13 @@ Before proceeding, make sure you have shared out a drive for Docker to mount to.
 <https://docs.docker.com/docker-for-windows/troubleshoot/#verify-domain-user-has-permissions-for-shared-drives-volumes>
 
 {% highlight powershell %}
-docker run --init -d --name="home-assistant" -e "TZ=America/Los_Angeles" -v /PATH_TO_YOUR_CONFIG:/config --net=host homeassistant/home-assistant:stable
+docker run --init -d --name="open-peer-power" -e "TZ=America/Los_Angeles" -v /PATH_TO_YOUR_CONFIG:/config --net=host openpeerpower/open-peer-power:stable
 {% endhighlight %}
 
-It’s easier to understand the trick when put into practice. Here we would like to mount a current working directory (something like `C:\Users\<your login name>\homeassistant` make sure this exists first) into the `homeassistant/home-assistant:stable` image at the `/config` location in the container. We would do that as so:
+It’s easier to understand the trick when put into practice. Here we would like to mount a current working directory (something like `C:\Users\<your login name>\openpeerpower` make sure this exists first) into the `openpeerpower/open-peer-power:stable` image at the `/config` location in the container. We would do that as so:
 
 {% highlight powershell %}
-docker run --init -d --name="home-assistant" -e "TZ=America/Los_Angeles" -v //c/Users/<your login name>/homeassistant:/config --net=host homeassistant/home-assistant:stable
+docker run --init -d --name="open-peer-power" -e "TZ=America/Los_Angeles" -v //c/Users/<your login name>/openpeerpower:/config --net=host openpeerpower/open-peer-power:stable
 {% endhighlight %}
 
 When running Open Peer Power in Docker on Windows, you may have some difficulty getting ports to map for routing (since the `--net=host` switch actually applies to the hypervisor's network interface). To get around this, you will need to add port proxy ipv4 rules to your local Windows machine, like so (Replacing '192.168.1.10' with whatever your Windows IP is, and '10.0.50.2' with whatever your Docker container's IP is):
@@ -82,14 +82,14 @@ The steps would be:
 
 - Install "Docker" package on your Synology NAS
 - Launch Docker-app and move to "Registry"-section
-- Find "homeassistant/home-assistant" within registry and click on "Download". Choose the "stable" tag.
+- Find "openpeerpower/open-peer-power" within registry and click on "Download". Choose the "stable" tag.
 - Wait for some time until your NAS has pulled the image
 - Move to the "Image"-section of the Docker-app
 - Click on "Launch"
-- Choose a container-name you want (e.g., "homeassistant")
+- Choose a container-name you want (e.g., "openpeerpower")
 - Click on "Advanced Settings"
 - Set "Enable auto-restart" if you like
-- Within "Volume" click on "Add Folder" and choose either an existing folder or add a new folder. The "mount path" has to be "/config", so that Open Peer Power will use it for the configs and logs. It is therefore recommended that the folder you choose should be named "config" or "homeassistant/config" to avoid confusion when referencing it within service calls.
+- Within "Volume" click on "Add Folder" and choose either an existing folder or add a new folder. The "mount path" has to be "/config", so that Open Peer Power will use it for the configs and logs. It is therefore recommended that the folder you choose should be named "config" or "openpeerpower/config" to avoid confusion when referencing it within service calls.
 - Within "Network" select "Use same network as Docker Host"
 - To ensure that Open Peer Power displays the correct timezone go to the "Environment" tab and click the plus sign then add `variable` = `TZ` & `value` = `Europe/London` choosing [your correct timezone](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 - Confirm the "Advanced Settings"
@@ -115,7 +115,7 @@ Adjust the following Terminal command as follows :
 Run it in Terminal.  
 
 {% highlight bash %}
-sudo docker run --restart always -d --name="homeassistant" -v /PATH_TO_YOUR_CONFIG:/config --device=/PATH_TO_YOUR_USB_STICK -e TZ=Australia/Melbourne --net=host homeassistant/home-assistant:stable
+sudo docker run --restart always -d --name="openpeerpower" -v /PATH_TO_YOUR_CONFIG:/config --device=/PATH_TO_YOUR_USB_STICK -e TZ=Australia/Melbourne --net=host openpeerpower/open-peer-power:stable
 {% endhighlight %}
 
 Complete the remainder of the Z-Wave configuration by [following the instructions here.](/docs/z-wave/installation)
@@ -123,7 +123,7 @@ Complete the remainder of the Z-Wave configuration by [following the instruction
 Remark: to update your Open Peer Power on your Docker within Synology NAS, you just have to do the following:
 
 - Go to the Docker-app and move to "Registry"-section
-- Find "homeassistant/home-assistant" within registry and click on "Download". Choose the "stable" tag.
+- Find "openpeerpower/open-peer-power" within registry and click on "Download". Choose the "stable" tag.
 - Wait until the system-message/-notification comes up, that the download is finished (there is no progress bar)
 - Move to "Container"-section
 - Stop your container if it's running
@@ -137,7 +137,7 @@ Remark: to restart your Open Peer Power within Synology NAS, you just have to do
 
 <div class='note'>
 
-If you want to use a USB Bluetooth adapter or Z-Wave USB Stick with Open Peer Power on Synology Docker these instructions do not correctly configure the container to access the USB devices. To configure these devices on your Synology Docker Open Peer Power you can follow the instructions provided [here](https://philhawthorne.com/installing-home-assistant-io-on-a-synology-diskstation-nas/) by Phil Hawthorne.
+If you want to use a USB Bluetooth adapter or Z-Wave USB Stick with Open Peer Power on Synology Docker these instructions do not correctly configure the container to access the USB devices. To configure these devices on your Synology Docker Open Peer Power you can follow the instructions provided [here](https://philhawthorne.com/installing-openpeerpower.io-on-a-synology-diskstation-nas/) by Phil Hawthorne.
 
 </div>
 
@@ -149,10 +149,10 @@ The steps would be:
 
 - Install "Container Station" package on your Qnap NAS
 - Launch Container Station and move to "Create Container"-section
-- Search image "homeassistant/home-assistant" with Docker Hub and click on "Install"
-  Make attention to CPU architecture of your NAS. For ARM CPU types the correct image is "homeassistant/armhf-homeassistant"
+- Search image "openpeerpower/open-peer-power" with Docker Hub and click on "Install"
+  Make attention to CPU architecture of your NAS. For ARM CPU types the correct image is "openpeerpower/armhf-openpeerpower"
 - Choose "stable" version and click next
-- Choose a container-name you want (e.g., "homeassistant")
+- Choose a container-name you want (e.g., "openpeerpower")
 - Click on "Advanced Settings"
 - Within "Shared Folders" click on "Volume from host" > "Add" and choose either an existing folder or add a new folder. The "mount point has to be `/config`, so that Open Peer Power will use it for the configuration and logs.
 - Within "Network" and select Network Mode to "Host"
@@ -175,7 +175,7 @@ If you want to use a USB Bluetooth adapter or Z-Wave USB stick with Open Peer Po
   The above command should show you any USB devices plugged into your NAS. If you have more than one, you may get multiple items returned. Like : `ttyACM0`
   
 - Run Docker command:
-  `docker run --init --name home-assistant --net=host --privileged -itd -v /share/CACHEDEV1_DATA/Public/homeassistant/config:/config -e variable=TZ -e value=Europe/London --device /dev/ttyACM0 homeassistant/home-assistant:stable`
+  `docker run --init --name open-peer-power --net=host --privileged -itd -v /share/CACHEDEV1_DATA/Public/openpeerpower/config:/config -e variable=TZ -e value=Europe/London --device /dev/ttyACM0 openpeerpower/open-peer-power:stable`
   
   `-v` is your configuration path
   `-e` is set timezone
@@ -193,7 +193,7 @@ That will tell Open Peer Power where to look for our Z-Wave radio.
 
 - Connect to your NAS over SSH
 - Run Docker command:
-  `docker run --init --name home-assistant --net=host --privileged -itd -v /share/CACHEDEV1_DATA/Public/homeassistant/config:/config -e variable=TZ -e value=Europe/London -v /dev/bus/usb:/dev/bus/usb -v /var/run/dbus:/var/run/dbus homeassistant/home-assistant:stable`
+  `docker run --init --name open-peer-power --net=host --privileged -itd -v /share/CACHEDEV1_DATA/Public/openpeerpower/config:/config -e variable=TZ -e value=Europe/London -v /dev/bus/usb:/dev/bus/usb -v /var/run/dbus:/var/run/dbus openpeerpower/open-peer-power:stable`
   
   First `-v` is your configuration path
   `-e` is set timezone
@@ -209,8 +209,8 @@ device_tracker:
 
 If you change the configuration you have to restart the server. To do that you have 2 options.
 
- 1. You can go to the <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> service developer tools, select the service `homeassistant/restart` and click "Call Service".
- 2. Or you can restart it from a terminal by running `docker restart home-assistant`
+ 1. You can go to the <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> service developer tools, select the service `openpeerpower/restart` and click "Call Service".
+ 2. Or you can restart it from a terminal by running `docker restart open-peer-power`
 
 ## Docker Compose
 
@@ -219,9 +219,9 @@ As the Docker command becomes more complex, switching to `docker-compose` can be
 {% highlight yaml %}
   version: '3'
   services:
-    homeassistant:
-      container_name: home-assistant
-      image: homeassistant/home-assistant:stable
+    openpeerpower:
+      container_name: open-peer-power
+      image: openpeerpower/open-peer-power:stable
       volumes:
         - /PATH_TO_YOUR_CONFIG:/config
       environment:
@@ -247,9 +247,9 @@ docker-compose restart
 In order to use Z-Wave, Zigbee or other integrations that require access to devices, you need to map the appropriate device into the container. Ensure the user that is running the container has the correct privileges to access the `/dev/tty*` file, then add the device mapping to your Docker command:
 
 {% highlight bash %}
-$ docker run --init -d --name="home-assistant" -v /PATH_TO_YOUR_CONFIG:/config \
+$ docker run --init -d --name="open-peer-power" -v /PATH_TO_YOUR_CONFIG:/config \
    -e "TZ=Australia/Melbourne" --device /dev/ttyUSB0:/dev/ttyUSB0 \
-   --net=host homeassistant/home-assistant:stable
+   --net=host openpeerpower/open-peer-power:stable
 {% endhighlight %}
 
 or in a `docker-compose.yml` file:
@@ -257,9 +257,9 @@ or in a `docker-compose.yml` file:
 {% highlight yaml %}
   version: '3'
   services:
-    homeassistant:
-      container_name: home-assistant
-      image: homeassistant/home-assistant:stable
+    openpeerpower:
+      container_name: open-peer-power
+      image: openpeerpower/open-peer-power:stable
       volumes:
         - /PATH_TO_YOUR_CONFIG:/config
       devices:

@@ -102,7 +102,7 @@ Or, you can manually configure `zha` section in `configuration.yaml`. The path t
 # Example configuration.yaml entry
 zha:
   usb_path: /dev/ttyUSB2
-  database_path: /home/homeassistant/.homeassistant/zigbee.db
+  database_path: /home/openpeerpower/.openpeerpower/zigbee.db
 {% endhighlight %}
 
 If you are use ZiGate, you have to use some special usb_path configuration:
@@ -163,12 +163,12 @@ Create a `docker-compose.yml` with the following data:
 {% highlight yaml %}
 version: '2'
 services:
-  homeassistant:
+  openpeerpower:
     # customisable name
-    container_name: home-assistant
+    container_name: open-peer-power
 
     # must be image for your platform, this is the rpi3 variant
-    image: homeassistant/raspberrypi3-homeassistant
+    image: openpeerpower/raspberrypi3-openpeerpower
     volumes:
       - <DIRECTORY HOLDING HOME ASSISTANT CONFIG FILES>:/config
       - /etc/localtime:/etc/localtime:ro

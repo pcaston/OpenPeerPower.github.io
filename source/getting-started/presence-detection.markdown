@@ -45,6 +45,6 @@ The map view will hide all devices that are home.
 [trigger]: /getting-started/automation-trigger/#zone-trigger
 [condition]: /getting-started/automation-condition/#zone-condition
 [ha-map]: /integrations/map/
-[companion]: https://companion.home-assistant.io/
+[companion]: https://companion.openpeerpower.io/
 
 ### [Next step: Join the Community &raquo;](/getting-started/join-the-community/)

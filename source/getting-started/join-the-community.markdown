@@ -13,6 +13,6 @@ Now that you've got that going, let's see what is next:
 
 You're now ready to be a part of our world-wide community of tinkerers. Welcome!
 
-[our forums]: https://community.home-assistant.io/
+[our forums]: https://community.openpeerpower.io/
 [our chat]: /join-chat/
 [video tutorials]: https://www.youtube.com/results?search_query=home+assistant

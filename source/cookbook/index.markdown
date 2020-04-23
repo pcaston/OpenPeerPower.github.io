@@ -8,17 +8,17 @@ hide_github_edit: true
 
 This is a community curated list of different ways to use Open Peer Power. Most of these examples are using the [automation] integration and other built-in [automation related][sec-automation] and [organization] integrations available.
 
-For [`python_script:` examples](/integrations/python_script/) visit the [Scripts section](https://community.home-assistant.io/c/projects/scripts) in our forum.
+For [`python_script:` examples](/integrations/python_script/) visit the [Scripts section](https://community.openpeerpower.io/c/projects/scripts) in our forum.
 
 [automation]: /getting-started/automation/
 [sec-automation]: /integrations/#automation
 [organization]: /integrations/#organization
 
-New recipes can be added via the [home-assistant.io repository](https://github.com/home-assistant/home-assistant.io/tree/current/source/_cookbook).
+New recipes can be added via the [openpeerpower.io repository](https://github.com/OpenPeerPower/openpeerpower.io/tree/current/source/_cookbook).
 
 <div class='note'>
 
-A great place to find popular configurations is on this [GitHub search](https://github.com/search?q=topic%3Ahome-assistant-config&type=Repositories) for repositories with the `home-assistant-config` topic.
+A great place to find popular configurations is on this [GitHub search](https://github.com/search?q=topic%3Aopen-peer-power-config&type=Repositories) for repositories with the `open-peer-power-config` topic.
 
 </div>
 

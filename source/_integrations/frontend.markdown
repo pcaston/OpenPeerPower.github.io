@@ -6,12 +6,12 @@ ha_category:
 ha_release: 0.7
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/frontend'
+  - '@open-peer-power/frontend'
 ha_domain: frontend
 excerpt: none
 ---
 
-This offers the official frontend to control Open Peer Power. This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+This offers the official frontend to control Open Peer Power. This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.openpeerpower.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
 {% highlight yaml %}
 # Example configuration.yaml entry
@@ -32,9 +32,9 @@ frontend:
       primary-color: blue
 {% endhighlight %}
 
-The example above defined two themes named `happy` and `sad`. For each theme you can set values for CSS variables. For a partial list of variables used by the main frontend see [ha-style.ts](https://github.com/home-assistant/home-assistant-polymer/blob/master/src/resources/ha-style.ts).
+The example above defined two themes named `happy` and `sad`. For each theme you can set values for CSS variables. For a partial list of variables used by the main frontend see [ha-style.ts](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/blob/master/src/resources/ha-style.ts).
 
-Check our [community forums](https://community.home-assistant.io/c/projects/themes) to find themes to use.
+Check our [community forums](https://community.openpeerpower.io/c/projects/themes) to find themes to use.
 
 ### Theme automation
 
@@ -51,7 +51,7 @@ Set a theme at the startup of Open Peer Power:
 automation:
   - alias: 'Set theme at startup'
     trigger:
-     - platform: homeassistant
+     - platform: openpeerpower
        event: start
     action:
       service: frontend.set_theme

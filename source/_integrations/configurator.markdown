@@ -6,7 +6,7 @@ ha_category:
 ha_release: 0.7
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: configurator
 ---
 
@@ -20,6 +20,6 @@ The configurator integration allows integrations to request information from the
 - Input fields can be defined with a description, and optional type
 - It will trigger a callback when the button is pressed
 
-The Hue integration in [the demo](/demo) and Plex are implemented using the configurator. See [the source of the demo integration](https://github.com/home-assistant/home-assistant/tree/dev/homeassistant/components/demo) for a simple example.
+The Hue integration in [the demo](/demo) and Plex are implemented using the configurator. See [the source of the demo integration](https://github.com/OpenPeerPower/Open-Peer-Power/tree/dev/openpeerpower/components/demo) for a simple example.
 
-See [the source](https://github.com/home-assistant/home-assistant/tree/dev/homeassistant/components/configurator) for more details on how to use the configurator integration.
+See [the source](https://github.com/OpenPeerPower/Open-Peer-Power/tree/dev/openpeerpower/components/configurator) for more details on how to use the configurator integration.

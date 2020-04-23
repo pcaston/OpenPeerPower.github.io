@@ -43,14 +43,14 @@ Upstart will launch init scripts that are located in the directory `/etc/init.d/
 #
 # After installation, HA should start automatically. If HA does not start,
 # check the log file output for errors.
-#       /var/opt/homeassistant/home-assistant.log
+#       /var/opt/openpeerpower/open-peer-power.log
 
 PRE_EXEC=""
 RUN_AS="USER"
 PID_FILE="/var/run/hass.pid"
-CONFIG_DIR="/var/opt/homeassistant"
+CONFIG_DIR="/var/opt/openpeerpower"
 FLAGS="-v --config $CONFIG_DIR --pid-file $PID_FILE --daemon"
-REDIRECT="> $CONFIG_DIR/home-assistant.log 2>&1"
+REDIRECT="> $CONFIG_DIR/open-peer-power.log 2>&1"
 
 start() {
   if [ -f $PID_FILE ] && kill -0 $(cat $PID_FILE) 2> /dev/null; then
@@ -126,6 +126,6 @@ sudo service hass-daemon start
 sudo service hass-daemon stop
 {% endhighlight %}
 
-When running Open Peer Power with this script, the configuration directory will be located at `/var/opt/homeassistant`. This directory will contain a verbose log rather than simply an error log.
+When running Open Peer Power with this script, the configuration directory will be located at `/var/opt/openpeerpower`. This directory will contain a verbose log rather than simply an error log.
 
 When running daemons, it is good practice to have the daemon run under its own username rather than the default user's name. Instructions for setting this up are outside the scope of this document.

@@ -35,7 +35,7 @@ You can:
 * Select the [theme](/integrations/frontend/#defining-themes) for the interface of Open Peer Power.
 * Enable or disable [multi-factor authentication](/docs/authentication/multi-factor-auth/).
 * Delete _Refresh Tokens_. These are created when you log in from a device. Delete them if you want to force the device to log out.
-* Create [Long Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token) so scripts can securely interact with Open Peer Power. 
+* Create so scripts can securely interact with Open Peer Power. 
 * Log out of Open Peer Power. 
 
 ### Securing your login
@@ -60,7 +60,7 @@ If you're seeing authentication failures from `127.0.0.1` and you're using the `
 Under the new authentication system you'll see the following warning logged when the [legacy API password](/docs/authentication/providers/#legacy-api-password) is supplied, but not configured in Open Peer Power:
 
 {% highlight txt %}
-WARNING (MainThread) [homeassistant.components.http.auth] You need to use a bearer token to access /blah/blah from 192.0.2.4
+WARNING (MainThread) [openpeerpower.components.http.auth] You need to use a bearer token to access /blah/blah from 192.0.2.4
 {% endhighlight %}
 
 If you see this, you need to add an [`api_password`](/integrations/http/#api_password) to your `http:` configuration.
@@ -70,7 +70,7 @@ If you see this, you need to add an [`api_password`](/integrations/http/#api_pas
 If you see the following, then this is a message for integration developers, to tell them they need to update how they authenticate to Open Peer Power. As an end user you don't need to do anything:
 
 {% highlight txt %}
-INFO (MainThread) [homeassistant.components.http.auth] You need to use a bearer token to access /blah/blah from 192.0.2.4
+INFO (MainThread) [openpeerpower.components.http.auth] You need to use a bearer token to access /blah/blah from 192.0.2.4
 {% endhighlight %}
 
 ### Lost owner password
@@ -80,7 +80,7 @@ Before using the procedure below, make sure you explore options provided [here](
 While you should hopefully be storing your passwords in a password manager, if you lose the password associated with the owner account the only way to resolve this is to delete *all* the authentication data. You do this by shutting down Open Peer Power and deleting the following files from the `.storage/` folder in your [configuration folder](/docs/configuration/):
 
 - `auth`
-- `auth_provider.homeassistant`
+- `auth_provider.openpeerpower`
 - `onboarding`
 - `hassio`
 - `cloud`
@@ -98,12 +98,12 @@ This is because we only allow an IP address as a client ID when your IP address 
 If you don't have a valid domain name for your Open Peer Power instance, you can modify the `hosts` file on your computer to fake one. On Windows, edit the `C:\Windows\System32\Drivers\etc\hosts` file with administrator privilege, or on Linux the `/etc/hosts` file,  and add following entry:
 
 {% highlight text %}
-12.34.56.78 homeassistant.home
+12.34.56.78 openpeerpower.home
 {% endhighlight %}
 
 Replace `12.34.56.78` with your Open Peer Power's public IP address.
 
-This will allow you to open Open Peer Power at `http://homeassistant.home:8123/`
+This will allow you to open Open Peer Power at `http://openpeerpower.home:8123/`
 
 ### Stuck on Loading data
 

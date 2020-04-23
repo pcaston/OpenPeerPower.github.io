@@ -80,7 +80,7 @@ optional arguments:
   -d, --daemon          run as a background process
 {% endhighlight %}
 
--c is the path to the configuration file. If not specified, AppDaemon will look for a file named `appdaemon.cfg` first in `~/.homeassistant` then in `/etc/appdaemon`. If the file is not specified and it is not found in either location, AppDaemon will raise an exception.
+-c is the path to the configuration file. If not specified, AppDaemon will look for a file named `appdaemon.cfg` first in `~/.openpeerpower` then in `/etc/appdaemon`. If the file is not specified and it is not found in either location, AppDaemon will raise an exception.
 
 -d and -p are used by the init file to start the process as a daemon and are not required if running from the command line. 
 

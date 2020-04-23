@@ -6,8 +6,6 @@ redirect_from: /getting-started/devices/
 
  Open Peer Power will be able to automatically discover many devices and services available on your network if you have [the discovery component](/integrations/discovery/) enabled (the default setting).
 
-See the [integrations overview page](/integrations/) to find installation instructions for your devices and services. If you can't find support for your favorite device or service, [consider adding support](/developers/add_new_platform/).
-
 Classification for the available integrations:
 
 - [IoT class](/blog/2016/02/12/classifying-the-internet-of-things): Classifier for the device's behavior.

@@ -118,7 +118,7 @@ tap_action:
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g.,  `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "Path to navigate to (e.g.,  `https://www.openpeerpower.io`) when `action` defined as `url`"
       type: string
       default: none
     service:
@@ -385,10 +385,6 @@ style:
   default: "position: absolute, transform: translate(-50%, -50%)"
 {% endconfiguration %}
 
-The process for creating and referencing custom elements is the same as for custom cards.
-Please see the [developer documentation](https://developers.home-assistant.io/docs/en/lovelace_custom_card.html)
-for more information.
-
 ## How to use the style object
 
 Position and style your elements using [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets). More/other keys are also possible.
@@ -474,7 +470,7 @@ elements:
     style:
       top: 95%
       left: 60%
-    service: homeassistant.turn_off
+    service: openpeerpower.turn_off
     service_data:
       entity_id: group.all_lights
   - type: icon

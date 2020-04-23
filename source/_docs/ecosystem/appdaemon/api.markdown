@@ -8,10 +8,10 @@ redirect_from: /ecosystem/appdaemon/api/
 
 Automations in AppDaemon are performed by creating a piece of code (essentially a Python Class) and then instantiating it as an Object one or more times by configuring it as an App in the configuration file. The App is given a chance to register itself for whatever events it wants to subscribe to, and AppDaemon will then make calls back into the Object's code when those events occur, allowing the App to respond to the event with some kind of action.
 
-The first step is to create a unique file within the apps directory (as defined in the `[AppDaemon]` section of configuration file). This file is in fact a Python module, and is expected to contain one or more classes derived from the supplied `AppDaemon` class, imported from the supplied `homeassistant.appapi` module. The start of an app might look like this:
+The first step is to create a unique file within the apps directory (as defined in the `[AppDaemon]` section of configuration file). This file is in fact a Python module, and is expected to contain one or more classes derived from the supplied `AppDaemon` class, imported from the supplied `openpeerpower.appapi` module. The start of an app might look like this:
 
 {% highlight python %}
-import homeassistant.appapi as appapi
+import openpeerpower.appapi as appapi
 
 
 class MotionLights(appapi.AppDaemon):
@@ -48,7 +48,7 @@ These, along with their various subscription calls and helper functions, will be
 To wrap up this section, here is a complete functioning App (with comments):
 
 {% highlight python %}
-import homeassistant.appapi as appapi
+import openpeerpower.appapi as appapi
 import datetime
 
 # Declare Class
@@ -1181,7 +1181,7 @@ self.call_service("notify/notify", title="Hello", message="Hello World")
 {% endhighlight %}
 ### turn_on()
 
-This is a convenience function for the `homeassistant.turn_on` function. It is able to turn on pretty much anything in Open Peer Power that can be turned on or run:
+This is a convenience function for the `openpeerpower.turn_on` function. It is able to turn on pretty much anything in Open Peer Power that can be turned on or run:
 
 - Lights
 - Switches
@@ -1220,7 +1220,7 @@ self.turn_on("light.office_1", color_name="green")
 
 ### turn_off()
 
-This is a convenience function for the `homeassistant.turn_off` function. Like `homeassistant.turn_on`, it is able to turn off pretty much anything in Open Peer Power that can be turned off.
+This is a convenience function for the `openpeerpower.turn_off` function. Like `openpeerpower.turn_on`, it is able to turn off pretty much anything in Open Peer Power that can be turned off.
 
 #### Synopsis
 
@@ -1247,7 +1247,7 @@ self.turn_off("light.office_1")
 
 ### toggle()
 
-This is a convenience function for the `homeassistant.toggle` function. It is able to flip the state of pretty much anything in Open Peer Power that can be turned on or off.
+This is a convenience function for the `openpeerpower.toggle` function. It is able to flip the state of pretty much anything in Open Peer Power that can be turned on or off.
 
 #### Synopsis
 
@@ -1367,8 +1367,8 @@ self.notify("", "Switching mode to Evening")
 
 Events are a fundamental part of how Open Peer Power works under the covers. HA has an event bus that all integrations can read and write to, enabling integrations to inform other integrations when important events take place. We have already seen how state changes can be propagated to AppDaemon - a state change however is merely an example of an event within Open Peer Power. There are several other event types, among them are:
 
-- `homeassistant_start`
-- `homeassistant_stop`
+- `openpeerpower_start`
+- `openpeerpower_stop`
 - `state_changed`
 - `service_registered`
 - `call_service`

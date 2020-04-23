@@ -18,7 +18,7 @@ If you use Chrome browser version 58 or above and/or **don't want to have issues
 
 To create a certificate locally, you need the [OpenSSL](https://www.openssl.org/) command-line tool.
 
-Change to your Open Peer Power [configuration directory](/getting-started/configuration/) like `~/.homeassistant`. This will make it easier to backup your certificate and the key. Run the command shown below.
+Change to your Open Peer Power [configuration directory](/getting-started/configuration/) like `~/.openpeerpower`. This will make it easier to backup your certificate and the key. Run the command shown below.
 
 The certificate **must** be `.pem` extension.
 
@@ -46,8 +46,8 @@ Non-Hass.io:
 
 {% highlight yaml %}
 http:
-  ssl_certificate: /home/your_user/.homeassistant/fullchain.pem
-  ssl_key: /home/your_user/.homeassistant/privkey.pem
+  ssl_certificate: /home/your_user/.openpeerpower/fullchain.pem
+  ssl_key: /home/your_user/.openpeerpower/privkey.pem
 {% endhighlight %}
 
 A restart of Open Peer Power is required for the new certificate to take effect.
@@ -64,7 +64,7 @@ chmod 600 fullchain.pem privkey.pem
 Non-hass-io:
 
 {% highlight bash %}
-sudo chown homeassistant:homeassistant fullchain.pem privkey.pem
+sudo chown openpeerpower:openpeerpower fullchain.pem privkey.pem
 sudo chmod 600 fullchain.pem privkey.pem
 {% endhighlight %}
 

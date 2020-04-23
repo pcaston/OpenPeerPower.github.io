@@ -4,7 +4,7 @@ description: Allows Open Peer Power to start up in safe mode.
 ha_category: []
 ha_release: 0.105
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: safe_mode
 ---
 

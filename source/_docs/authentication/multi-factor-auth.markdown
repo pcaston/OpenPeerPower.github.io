@@ -29,7 +29,7 @@ You can turn MFA on and off in the [profile page](/docs/authentication/#your-acc
 Enable TOTP in your `configuration.yaml` like this:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   auth_mfa_modules:
     - type: totp
 {% endhighlight %}
@@ -69,7 +69,7 @@ The Notify MFA module uses the [notify component](/integrations/notify/) to send
 Add Notify MFA to your `configuration.yaml` file like this:
 
 {% highlight yaml %}
-homeassistant:
+openpeerpower:
   auth_mfa_modules:
     - type: notify
       include:
@@ -93,7 +93,7 @@ message:
 
 {% highlight yaml %}
 # Example configuration, with a message template.
-homeassistant:
+openpeerpower:
   auth_mfa_modules:
     - type: totp
       name: Authenticator app

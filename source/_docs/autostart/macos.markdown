@@ -15,9 +15,9 @@ $ hass --script macos install
  Open Peer Power has been installed.         Open it here: http://localhost:8123
 {% endhighlight %}
 
- Open Peer Power will log to `~/Library/Logs/homeassistant.log`
+ Open Peer Power will log to `~/Library/Logs/openpeerpower.log`
 
-Configuration is kept in `~/.homeassistant`
+Configuration is kept in `~/.openpeerpower`
 
 To uninstall the service, run:
 

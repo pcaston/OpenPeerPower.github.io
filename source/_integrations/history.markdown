@@ -6,7 +6,7 @@ ha_category:
 ha_release: pre 0.7
 ha_quality_scale: internal
 ha_codeowners:
-  - '@home-assistant/core'
+  - '@open-peer-power/core'
 ha_domain: history
 excerpt: none
 ---
@@ -17,7 +17,7 @@ component for storing the data and uses the same database setting.
 If any entities are excluded from being recorded,
 no history will be available for these entities.
 
-This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.openpeerpower.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
 
 {% highlight yaml %}
 # Basic configuration.yaml entry
@@ -110,7 +110,7 @@ history:
 
 #### Implementation details
 
-The history is stored in a SQLite database `home-assistant_v2.db` within your
+The history is stored in a SQLite database `open-peer-power_v2.db` within your
 configuration directory unless the `recorder` integration is set up differently.
 
  - events table is all events except `time_changed` that happened while recorder integration was running.
@@ -137,8 +137,3 @@ from datetime import datetime
 
 datetime.fromtimestamp(1422830502)
 {% endhighlight %}
-
-#### API
-
-The history information is also available through the
-[RESTful API](/developers/rest_api/#get-apihistory).

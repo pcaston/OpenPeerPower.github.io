@@ -37,17 +37,17 @@ Mount the drive (as root) to `/media`
 
 ### Prepare the USB Device
 
-Change to the `/media` directory and create a folder called `hassbackup`. Change the ownership to the user that runs Open Peer Power. In this example case, the user and group are both `homeassistant`.
+Change to the `/media` directory and create a folder called `hassbackup`. Change the ownership to the user that runs Open Peer Power. In this example case, the user and group are both `openpeerpower`.
 
 {% highlight bash %}
 # cd /media/
 /media# mkdir hassbackup
-/media# chown homeassistant:homeassistant hassbackup/
+/media# chown openpeerpower:openpeerpower hassbackup/
 /media# ls -al
 total 28
 drwxr-xr-x  4 root          root           4096 Apr 29 10:36 .
 drwxr-xr-x 22 root          root           4096 Mar 22 18:37 ..
-drwxr-xr-x  2 homeassistant homeassistant  4096 Apr 29 10:36 hassbackup
+drwxr-xr-x  2 openpeerpower openpeerpower  4096 Apr 29 10:36 hassbackup
 drwx------  2 root          root          16384 Apr 29 10:18 lost+found
 {% endhighlight %}
 
@@ -65,7 +65,7 @@ Setting up zip (3.0-8) ...
 
 ### Download and Run Script
 
-Become the `homeassistant` user (or whatever user runs Open Peer Power). Change to whatever directory you would like the [script](https://gist.github.com/riemers/041c6a386a2eab95c55ba3ccaa10e7b0) placed into and run the following command.
+Become the `openpeerpower` user (or whatever user runs Open Peer Power). Change to whatever directory you would like the [script](https://gist.github.com/riemers/041c6a386a2eab95c55ba3ccaa10e7b0) placed into and run the following command.
 
 {% highlight bash %}
 # wget https://gist.githubusercontent.com/riemers/041c6a386a2eab95c55ba3ccaa10e7b0/raw/86727d4e72e9757da4f68f1c9d784720e72d0e99/usb_backup.sh
@@ -80,7 +80,7 @@ Make the downloaded script executable.
 Edit the script file using your preferred text editor (use nano if you are not advanced). Change the paths to reflect your configuration, then simply run `./usb_backup.sh`.
 
 {% highlight bash %}
-$ .homeassistant/extraconfig/shell_code/usb_backup.sh
+$ .openpeerpower/extraconfig/shell_code/usb_backup.sh
 [i] Creating backup
 [i] Backup complete: /media/hassbackup/hass-config_20170429_112728.zip
 [i] Keeping all files no prunning set
@@ -88,11 +88,11 @@ $ .homeassistant/extraconfig/shell_code/usb_backup.sh
 
 ### Set Up Crontab
 
-To automatically backup your configuration on a schedule, you can add a crontab for it as the `homeassistant` user.
+To automatically backup your configuration on a schedule, you can add a crontab for it as the `openpeerpower` user.
 Change the path below to the directory where you placed the `usb_backup.sh` and run the following line. This will backup every night at 3 am.
 
 {% highlight bash %}
-(crontab -l 2>/dev/null; echo "0 3 * * * /home/homeassistant/.homeassistant/extraconfig/shell_code/usb_backup.sh") | crontab -
+(crontab -l 2>/dev/null; echo "0 3 * * * /home/openpeerpower/.openpeerpower/extraconfig/shell_code/usb_backup.sh") | crontab -
 {% endhighlight %}
 
 ### Auto Mount the USB Device

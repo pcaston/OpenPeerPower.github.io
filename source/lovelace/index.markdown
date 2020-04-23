@@ -20,12 +20,12 @@ Lovelace is the name of the Open Peer Power user interface. It is a fast, custom
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XY3R0xI45wA" frameborder="0" allowfullscreen></iframe>
 </div>
 
-To try it yourself, check out [the demo](https://demo.home-assistant.io).
+To try it yourself, check out [the demo](https://demo.openpeerpower.io).
 
 ## Discuss Lovelace
 
-- Suggestions are welcome in the [home-assistant-polymer repository](https://github.com/home-assistant/home-assistant-polymer/)
-- For help with Lovelace, join the `#frontend` channel on [our chat](/join-chat/) or [our forums](https://community.home-assistant.io/c/projects/frontend)
+- Suggestions are welcome in the [open-peer-power-polymer repository](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/)
+- For help with Lovelace, join the `#frontend` channel on [our chat](/join-chat/) or [our forums](https://community.openpeerpower.io/c/projects/frontend)
 
 ## Additional Lovelace Resources
 

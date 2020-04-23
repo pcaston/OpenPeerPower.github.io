@@ -18,7 +18,7 @@ Now that you installed python, there are two ways to install Open Peer Power:
 2. Alternatively, you can install Open Peer Power for the user you created when first booting Armbian:
 
 {% highlight bash %}
-sudo pip3 install homeassistant
+sudo pip3 install openpeerpower
 hass --open-ui
 {% endhighlight %}
 
@@ -26,4 +26,4 @@ Running these commands will:
 
 - Install Open Peer Power
 - Launch Open Peer Power and serve the web interface on `http://localhost:8123`
-- The configuration files will be created in `/home/{user}/.homeassistant`
+- The configuration files will be created in `/home/{user}/.openpeerpower`

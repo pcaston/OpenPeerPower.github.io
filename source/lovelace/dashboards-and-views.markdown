@@ -9,45 +9,6 @@ You can define multiple dashboards that all have their own YAML file, and add cu
 
 The key of the dashboard is used as the URL, this needs to contain a hyphen (`-`).
 
-{% highlight yaml %}
-lovelace:
-  mode: yaml
-  # Include external resources only add when mode is yaml, otherwise manage in the resources in the lovelace configuration panel.
-  resources:
-    - url: /local/my-custom-card.js
-      type: module
-    - url: /local/my-webfont.css
-      type: css
-  # Add more dashboards
-  dashboards:
-    lovelace-generated: # Needs to contain a hyphen (-)
-      mode: yaml
-      filename: notexist.yaml
-      title: Generated
-      icon: mdi:tools
-      show_in_sidebar: true
-      require_admin: true
-    lovelace-hidden:
-      mode: yaml
-      title: hidden
-      show_in_sidebar: false
-      filename: hidden.yaml
-{% endhighlight %}
-
-You can also add YAML dashboards when your main dashboard is UI configurated:
-{% highlight yaml %}
-lovelace:
-  mode: storage
-  # Add yaml dashboards
-  dashboards:
-    lovelace-yaml:
-      mode: yaml
-      title: YAML
-      icon: mdi:script
-      show_in_sidebar: true
-      filename: lovelace.yaml
-{% endhighlight %}
-
 {% configuration Lovelace %}
 mode:
   required: true
@@ -140,11 +101,11 @@ views:
 
         # The picture entity card will represent an entity with a picture
       - type: picture-entity
-        image: https://www.home-assistant.io/images/default-social.png
+        image: https://www.openpeerpower.io/images/default-social.png
         entity: light.bed_light
 
     # Specify a tab icon if you want the view tab to be an icon.
-  - icon: mdi:home-assistant
+  - icon: mdi:open-peer-power
     # Title of the view. Will be used as the tooltip for tab icon
     title: Second view
     cards:
@@ -410,7 +371,7 @@ tap_action:
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g.,  `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "Path to navigate to (e.g.,  `https://www.openpeerpower.io`) when `action` defined as `url`"
       type: string
       default: none
     service:
@@ -445,7 +406,7 @@ hold_action:
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g.,  `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "Path to navigate to (e.g.,  `https://www.openpeerpower.io`) when `action` defined as `url`"
       type: string
       default: none
     service:
@@ -480,7 +441,7 @@ double_tap_action:
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g.,  `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "Path to navigate to (e.g.,  `https://www.openpeerpower.io`) when `action` defined as `url`"
       type: string
       default: none
     service:

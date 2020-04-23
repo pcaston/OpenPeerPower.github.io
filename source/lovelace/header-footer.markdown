@@ -16,7 +16,7 @@ Widget to show a picture as a header or a footer. A picture can have touch actio
 {% highlight yaml %}
 header:
   type: picture
-  image: 'https://www.home-assistant.io/images/lovelace/header-footer/balloons-header.png'
+  image: 'https://www.openpeerpower.io/images/lovelace/header-footer/balloons-header.png'
 {% endhighlight %}
 
 {% configuration header-footer %}

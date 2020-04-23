@@ -131,7 +131,7 @@ Open Peer Power contains an embedded MQTT broker called [HBMQTT](https://pypi.py
 | Host           | localhost                          |
 | Port           | 1883                               |
 | Protocol       | 3.1.1                              |
-| User           | `homeassistant`                    |
+| User           | `openpeerpower`                    |
 | Password       | _password set under MQTT settings_ |
 | Websocket port | 8080                               |
 

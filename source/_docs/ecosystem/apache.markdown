@@ -68,13 +68,13 @@ In case you are getting occasional HTTP 504 error messages ("Gateway Timeout") o
 
 #### Multiple Instance
 
-You already have Open Peer Power running on `http://localhost:8123` and available at home.example.org as describe before. The configuration file for this Open Peer Power is available in `/home/alice/.homeassistant/configuration.yaml`
+You already have Open Peer Power running on `http://localhost:8123` and available at home.example.org as describe before. The configuration file for this Open Peer Power is available in `/home/alice/.openpeerpower/configuration.yaml`
 
 You want another instance available at `https://countryside.example.org`
 
 You can either :
- * Create a new user, `bob`, to hold the configuration file in `/home/bob/.homeassistant/configuration.yaml` and run Open Peer Power as this new user
- * Create another configuration directory in `/home/alice/.homeassistan2/configuration.yaml` and run Open Peer Power using `hass --config /home/alice/.homeassistant2/`
+ * Create a new user, `bob`, to hold the configuration file in `/home/bob/.openpeerpower/configuration.yaml` and run Open Peer Power as this new user
+ * Create another configuration directory in `/home/alice/.homeassistan2/configuration.yaml` and run Open Peer Power using `hass --config /home/alice/.openpeerpower2/`
 
 In both solution, change port number used by modifying `configuration.yaml`
 

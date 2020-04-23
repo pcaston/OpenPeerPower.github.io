@@ -108,4 +108,4 @@ If you see `Not initializing discovery because could not install dependency netd
 
 ### DSM and Synology
 
-For DSM/Synology, install via debian-chroot [see this forum post](https://community.home-assistant.io/t/error-starting-home-assistant-on-synology-for-first-time/917/15).
+For DSM/Synology, install via debian-chroot [see this forum post](https://community.openpeerpower.io/t/error-starting-open-peer-power-on-synology-for-first-time/917/15).

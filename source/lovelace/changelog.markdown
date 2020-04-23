@@ -31,63 +31,63 @@ description: "Changelog of the Lovelace UI."
 * 🚸 Prompt user to confirm logout (#4501) @iantrich
 
 ## Changes in 0.104.0
-- ❤️ Add ability to remove Lovelace configuration [#4430](https://github.com/home-assistant/home-assistant-polymer/pull/4430) @bramkragten
-- ❤️ Add support to add all device entities to Lovelace [#4356](https://github.com/home-assistant/home-assistant-polymer/pull/4356) @bramkragten
-- 📣 Upgrade MDI icons to 4.7.95 [#4341](https://github.com/home-assistant/home-assistant-polymer/pull/4341) @bonanitech
+- ❤️ Add ability to remove Lovelace configuration [#4430](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4430) @bramkragten
+- ❤️ Add support to add all device entities to Lovelace [#4356](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4356) @bramkragten
+- 📣 Upgrade MDI icons to 4.7.95 [#4341](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4341) @bonanitech
 
 ## Changes in 0.101.0
-- ❤️ [entities card]: Add actions on rows [#4023](https://github.com/home-assistant/home-assistant-polymer/pull/4023) @iantrich
-- ❤️ [entities card]: New `icon` option for title [#4024](https://github.com/home-assistant/home-assistant-polymer/pull/4024) @iantrich
-- ❤️ [views]: New `visible` option [#3811](https://github.com/home-assistant/home-assistant-polymer/pull/3811) @iantrich
-- ❤️ [views]: Custom badges [#3867](https://github.com/home-assistant/home-assistant-polymer/pull/3867) @iantrich
-- ❤️ [views]: New `entity-filter` badge [#3867](https://github.com/home-assistant/home-assistant-polymer/pull/3867) @iantrich
-- ❤️ [views]: New `state-label` badge [#3867](https://github.com/home-assistant/home-assistant-polymer/pull/3867) @iantrich
-- ❤️ [views]: Add actions to `state-label` badge [#4028](https://github.com/home-assistant/home-assistant-polymer/pull/4028) @iantrich
-- ❤️ [shopping list card]: New `theme` option [#4057](https://github.com/home-assistant/home-assistant-polymer/pull/4057) @iantrich
-- ❤️ [plant status card]: New `theme` option [#4057](https://github.com/home-assistant/home-assistant-polymer/pull/4057) @iantrich
-- ❤️ [Markdown card]: New `theme` option [#4057](https://github.com/home-assistant/home-assistant-polymer/pull/4057) @iantrich
-- ❤️ [alarm panel card]: New `theme` option [#4057](https://github.com/home-assistant/home-assistant-polymer/pull/4057) @iantrich
-- ❤️ [picture card]: New `theme` option [#4057](https://github.com/home-assistant/home-assistant-polymer/pull/4057) @iantrich
-- ❤️ [picture elements card]: New `theme` option [#4057](https://github.com/home-assistant/home-assistant-polymer/pull/4057) @iantrich
-- ❤️ [picture elements card]: Add actions to `state-badge` element [#4028](https://github.com/home-assistant/home-assistant-polymer/pull/4028) @iantrich
-- ❤️ [picture entity card]: New `theme` option [#4057](https://github.com/home-assistant/home-assistant-polymer/pull/4057) @iantrich
-- ❤️ [picture glance card]: New `theme` option [#4057](https://github.com/home-assistant/home-assistant-polymer/pull/4057) @iantrich
-- ❤️ [picture glance card]: New `show_state` option for entities [#3937](https://github.com/home-assistant/home-assistant-polymer/pull/3937) @iantrich
-- ❤️ [weather forecast card]: New `theme` option [#4057](https://github.com/home-assistant/home-assistant-polymer/pull/4057) @iantrich
-- ❤️ [vertical stack card]: New `title` option [#3839](https://github.com/home-assistant/home-assistant-polymer/pull/3839) @iantrich
-- ❤️ [horizontal stack card]: New `title` option [#3839](https://github.com/home-assistant/home-assistant-polymer/pull/3839) @iantrich
-- ❤️ New `double_tap_action` option [#3879](https://github.com/home-assistant/home-assistant-polymer/pull/3879) @iantrich
-- ❤️ New `confirmation` option for actions [#4006](https://github.com/home-assistant/home-assistant-polymer/pull/4006) @iantrich
-- ❤️ Theming: New CSS switch style: `switch-checked-color` [#4017](https://github.com/home-assistant/home-assistant-polymer/pull/4017) @iantrich
-- ❤️ Theming: New CSS switch style: `switch-unchecked-color` [#4017](https://github.com/home-assistant/home-assistant-polymer/pull/4017) @iantrich
-- ❤️ Theming: New CSS switch style: `switch-unchecked-button-color` [#4017](https://github.com/home-assistant/home-assistant-polymer/pull/4017) @iantrich
-- ❤️ Theming: New CSS switch style: `switch-unchecked-track-color` [#4017](https://github.com/home-assistant/home-assistant-polymer/pull/4017) @iantrich
-- 📣 Upgrade MDI icons to 4.5.95 [#3977](https://github.com/home-assistant/home-assistant-polymer/pull/3977) @bonanitech
-- 📣 Display card errors in YAML instead of JSON [#4018](https://github.com/home-assistant/home-assistant-polymer/pull/4018) @iantrich
-- ⚠️ revert Lovelace selectable text [#4095](https://github.com/home-assistant/home-assistant-polymer/pull/4095) @iantrich
-- 🔧 [alarm panel card]: Visual accessibility changes [#3991](https://github.com/home-assistant/home-assistant-polymer/pull/3991) @mr-awk
-- 🔧 [entities card]: Fix media row secondary info [#3957](https://github.com/home-assistant/home-assistant-polymer/pull/3957) @iantrich
-- 🔧 [light card]: Fix name wrapping [#3972](https://github.com/home-assistant/home-assistant-polymer/pull/3972) @shbatm
-- 🔧 [map card]: Fix zone icon visibility [#4085](https://github.com/home-assistant/home-assistant-polymer/pull/4085) @springstan
-- 📣 [Markdown card]: Add default text to card editor [#3960](https://github.com/home-assistant/home-assistant-polymer/pull/3960) @akargl
+- ❤️ [entities card]: Add actions on rows [#4023](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4023) @iantrich
+- ❤️ [entities card]: New `icon` option for title [#4024](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4024) @iantrich
+- ❤️ [views]: New `visible` option [#3811](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3811) @iantrich
+- ❤️ [views]: Custom badges [#3867](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3867) @iantrich
+- ❤️ [views]: New `entity-filter` badge [#3867](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3867) @iantrich
+- ❤️ [views]: New `state-label` badge [#3867](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3867) @iantrich
+- ❤️ [views]: Add actions to `state-label` badge [#4028](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4028) @iantrich
+- ❤️ [shopping list card]: New `theme` option [#4057](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4057) @iantrich
+- ❤️ [plant status card]: New `theme` option [#4057](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4057) @iantrich
+- ❤️ [Markdown card]: New `theme` option [#4057](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4057) @iantrich
+- ❤️ [alarm panel card]: New `theme` option [#4057](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4057) @iantrich
+- ❤️ [picture card]: New `theme` option [#4057](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4057) @iantrich
+- ❤️ [picture elements card]: New `theme` option [#4057](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4057) @iantrich
+- ❤️ [picture elements card]: Add actions to `state-badge` element [#4028](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4028) @iantrich
+- ❤️ [picture entity card]: New `theme` option [#4057](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4057) @iantrich
+- ❤️ [picture glance card]: New `theme` option [#4057](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4057) @iantrich
+- ❤️ [picture glance card]: New `show_state` option for entities [#3937](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3937) @iantrich
+- ❤️ [weather forecast card]: New `theme` option [#4057](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4057) @iantrich
+- ❤️ [vertical stack card]: New `title` option [#3839](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3839) @iantrich
+- ❤️ [horizontal stack card]: New `title` option [#3839](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3839) @iantrich
+- ❤️ New `double_tap_action` option [#3879](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3879) @iantrich
+- ❤️ New `confirmation` option for actions [#4006](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4006) @iantrich
+- ❤️ Theming: New CSS switch style: `switch-checked-color` [#4017](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4017) @iantrich
+- ❤️ Theming: New CSS switch style: `switch-unchecked-color` [#4017](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4017) @iantrich
+- ❤️ Theming: New CSS switch style: `switch-unchecked-button-color` [#4017](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4017) @iantrich
+- ❤️ Theming: New CSS switch style: `switch-unchecked-track-color` [#4017](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4017) @iantrich
+- 📣 Upgrade MDI icons to 4.5.95 [#3977](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3977) @bonanitech
+- 📣 Display card errors in YAML instead of JSON [#4018](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4018) @iantrich
+- ⚠️ revert Lovelace selectable text [#4095](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4095) @iantrich
+- 🔧 [alarm panel card]: Visual accessibility changes [#3991](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3991) @mr-awk
+- 🔧 [entities card]: Fix media row secondary info [#3957](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3957) @iantrich
+- 🔧 [light card]: Fix name wrapping [#3972](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3972) @shbatm
+- 🔧 [map card]: Fix zone icon visibility [#4085](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/4085) @springstan
+- 📣 [Markdown card]: Add default text to card editor [#3960](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3960) @akargl
 
 ## Changes in 0.100.0
-- ❤️ [picture glance card]: New configuration `tap_action` and `hold_action` for `entities` [#3807](https://github.com/home-assistant/home-assistant-polymer/pull/3807) @iantrich
-- ❤️ [entities card]: New configuration `image` for `entities` [#3832](https://github.com/home-assistant/home-assistant-polymer/pull/3832) @iantrich
-- ❤️ [entity filter card]: Support for operators in `state_filter` and individual `state_filter` option for `entitites` [#3692](https://github.com/home-assistant/home-assistant-polymer/pull/3692) @iantrich
-- ❤️ [light card]: New configuration `icon` [#3771](https://github.com/home-assistant/home-assistant-polymer/pull/3771) @iantrich
-- ❤️ [picture entity card]: UI Editor [#3708](https://github.com/home-assistant/home-assistant-polymer/pull/3708) @iantrich
-- ❤️ [picture glance card]: UI Editor [#3709](https://github.com/home-assistant/home-assistant-polymer/pull/3709) @iantrich
-- ❤️ [history graph card]: UI Editor [#3782](https://github.com/home-assistant/home-assistant-polymer/pull/3782) @iantrich
-- ❤️ Add `state_filter` to picture cards [#3791](https://github.com/home-assistant/home-assistant-polymer/pull/3791) @iantrich
-- ❤️ Add a setting for vibration [#3813](https://github.com/home-assistant/home-assistant-polymer/pull/3813) @bramkragten
-- ❤️ New Action `url` [#3773](https://github.com/home-assistant/home-assistant-polymer/pull/3773) @iantrich
-- 📣 Add support for panels to cast [#3796](https://github.com/home-assistant/home-assistant-polymer/pull/3796) @bramkragten
-- 📣 Allow for user text selection (Android Chrome not supported) [#3605](https://github.com/home-assistant/home-assistant-polymer/pull/3605) @iantrich
-- ⚠️ Switch paper-toggle-button to mwc-switch [#3683](https://github.com/home-assistant/home-assistant-polymer/pull/3683) @iantrich
-- 🔧 [map card]: Align background with tiles [#3858](https://github.com/home-assistant/home-assistant-polymer/pull/3858) @bramkragten
-- 🔧 [map card]: Fix dark switch for map card editor [#3856](https://github.com/home-assistant/home-assistant-polymer/pull/3856) @bramkragten
-- 🔧 [views]: Guard for null badges [#3841](https://github.com/home-assistant/home-assistant-polymer/pull/3841) @bramkragten
+- ❤️ [picture glance card]: New configuration `tap_action` and `hold_action` for `entities` [#3807](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3807) @iantrich
+- ❤️ [entities card]: New configuration `image` for `entities` [#3832](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3832) @iantrich
+- ❤️ [entity filter card]: Support for operators in `state_filter` and individual `state_filter` option for `entitites` [#3692](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3692) @iantrich
+- ❤️ [light card]: New configuration `icon` [#3771](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3771) @iantrich
+- ❤️ [picture entity card]: UI Editor [#3708](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3708) @iantrich
+- ❤️ [picture glance card]: UI Editor [#3709](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3709) @iantrich
+- ❤️ [history graph card]: UI Editor [#3782](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3782) @iantrich
+- ❤️ Add `state_filter` to picture cards [#3791](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3791) @iantrich
+- ❤️ Add a setting for vibration [#3813](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3813) @bramkragten
+- ❤️ New Action `url` [#3773](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3773) @iantrich
+- 📣 Add support for panels to cast [#3796](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3796) @bramkragten
+- 📣 Allow for user text selection (Android Chrome not supported) [#3605](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3605) @iantrich
+- ⚠️ Switch paper-toggle-button to mwc-switch [#3683](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3683) @iantrich
+- 🔧 [map card]: Align background with tiles [#3858](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3858) @bramkragten
+- 🔧 [map card]: Fix dark switch for map card editor [#3856](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3856) @bramkragten
+- 🔧 [views]: Guard for null badges [#3841](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/3841) @bramkragten
 
 ## Changes in 0.99.0
 - ❤️ [glance card]: New configuration `show_last_changed` for `entities`
@@ -115,11 +115,11 @@ description: "Changelog of the Lovelace UI."
 - 🔧 Break long strings in notifications
 
 ## Changes in 0.88.0
-- ❤️ Theming: New CSS card style `ha-card-box-shadow` ([#2855](https://github.com/home-assistant/home-assistant-polymer/pull/2855))
-- 📣 Disable toast notifications for successful operations ([#2700](https://github.com/home-assistant/home-assistant-polymer/pull/2822))
-- 📣 Color Picker: Toggleable between segmented and continuous ([#2806](https://github.com/home-assistant/home-assistant-polymer/pull/2806))
-- 🔧 Fix login issue on Firefox ([#2860](https://github.com/home-assistant/home-assistant-polymer/pull/2860))
-- 🔧 [light card]: Fix click events ([#2850](https://github.com/home-assistant/home-assistant-polymer/pull/2850))
+- ❤️ Theming: New CSS card style `ha-card-box-shadow` ([#2855](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/2855))
+- 📣 Disable toast notifications for successful operations ([#2700](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/2822))
+- 📣 Color Picker: Toggleable between segmented and continuous ([#2806](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/2806))
+- 🔧 Fix login issue on Firefox ([#2860](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/2860))
+- 🔧 [light card]: Fix click events ([#2850](https://github.com/OpenPeerPower/Open-Peer-Power-polymer/pull/2850))
 
 ## Changes in 0.87.0
 - ❤️ Theming: New CSS card style `ha-card-border-radius`
@@ -137,7 +137,7 @@ description: "Changelog of the Lovelace UI."
 
 ## Changes in 0.86.0
 - ❤️ Lovelace is now the default UI for Open Peer Power!
-- ❤️ New Lovelace [demos](https://demo.home-assistant.io/#/lovelace/0) page
+- ❤️ New Lovelace [demos](https://demo.openpeerpower.io/#/lovelace/0) page
 - 🔧 [thermostat card]: Fix sizing
 - 🔧 [gauge card]: Fix sizing
 - 🔧 [iframe card]: Fix card size
@@ -273,7 +273,7 @@ description: "Changelog of the Lovelace UI."
 - 📣 [picture glance card]: Support added to open the more info dialog for cameras and media players.
 - 📣 [picture elements card]: Support new element type `image`
 - 📣 [picture elements card]: Support new element type `service-icon`
-- 🔧 [entity filter card]: Fix edge cases that could make it crash ([supports this new use case](https://github.com/home-assistant/ui-schema/issues/82))
+- 🔧 [entity filter card]: Fix edge cases that could make it crash ([supports this new use case](https://github.com/OpenPeerPower/ui-schema/issues/82))
 - 🔧 [picture glance card]: Fix crash when the state of entity was unavailable
 - 🔧 [picture glance card]: Use custom off states
 - 🔧 [picture glance card]: Fixed to work again with [entity filter card]

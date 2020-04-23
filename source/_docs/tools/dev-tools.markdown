@@ -95,7 +95,7 @@ Even though MQTT in general provides deeper functionality, the developer tools s
 
 ## Logs
 
-This section displays `syslog` information, and the contents of `home-assistant.log` with an option to clear and refresh the logs.
+This section displays `syslog` information, and the contents of `open-peer-power.log` with an option to clear and refresh the logs.
 
 ## Info
 
