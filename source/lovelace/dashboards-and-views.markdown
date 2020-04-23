@@ -43,7 +43,6 @@ lovelace:
     lovelace-yaml:
       mode: yaml
       title: YAML
-      icon: mdi:script
       show_in_sidebar: true
       filename: lovelace.yaml
 {% endhighlight %}
