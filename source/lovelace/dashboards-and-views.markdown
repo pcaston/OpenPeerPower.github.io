@@ -34,19 +34,6 @@ lovelace:
       filename: hidden.yaml
 {% endhighlight %}
 
-You can also add YAML dashboards when your main dashboard is UI configurated:
-{% highlight yaml %}
-lovelace:
-  mode: storage
-  # Add yaml dashboards
-  dashboards:
-    lovelace-yaml:
-      mode: yaml
-      title: YAML
-      show_in_sidebar: true
-      filename: lovelace.yaml
-{% endhighlight %}
-
 {% configuration Lovelace %}
 mode:
   required: true
